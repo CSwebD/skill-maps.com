@@ -49,7 +49,7 @@ Skill Maps is an interactive learning platform that offers structured roadmaps a
 1. Clone the repo:
 
    ```bash
-   git clone https://github.com/your-username/skill-maps.git
+   git clone https://github.com/CSwebD/skill-maps.git
    cd skill-maps
    ```
 2. (Optional) Install a simple HTTP server:
