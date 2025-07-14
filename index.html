@@ -1,212 +1,193 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Skill Maps</title>
-    <link rel="icon" href="logo.jpg" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <link rel="stylesheet" type="text/css" href="squares.css">
-    <link rel="stylesheet" type="text/css" href="mobile.css">
-    <link rel="stylesheet" type="text/css" href="description-t.css">
-
-    <link rel="stylesheet" type="text/css" href="style-sub.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description" content="Learn Python with Skill Maps! Our comprehensive course includes video tutorials, hands-on projects, and quizzes to test your knowledge. Start your Python journey today!">
-
-    <!-- Open Graph Protocol -->
-    <meta property="og:title" content="Skill Maps - Python Course">
-    <meta property="og:description" content="Comprehensive Python course with video tutorials, hands-on projects, and quizzes.">
-    <meta property="og:image" content="https://www.skill-maps.com/logo.jpg">
-    <meta property="og:url" content="https://www.skill-maps.com">
-
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-        {
-            "@context": "http://schema.org",
-            "@type": "Organization",
-            "name": "Skill Maps",
-            "url": "https://www.skill-maps.com",
-            "logo": "https://www.skill-maps.com/logo.jpg"
-        }
-    </script>
-
-    <script src="script.js"></script>
-    <script src="https://kit.fontawesome.com/yourcode.js"></script>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skill Maps</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+  <style>body { font-family: 'Inter', sans-serif; } html { scroll-behavior: smooth; }</style>
 </head>
-    
-<body>
-    <!-- Placeholder for the panel bar -->
-    <div id="panel-bar-placeholder"></div>
-    <script src="panel-bar.js"></script> 
+<body class="bg-gray-50 text-gray-800">
+  <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md shadow-sm z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+      <a href="#hero" class="flex items-center"><img src="logo.jpg" alt="Skill Maps Logo" class="h-8 w-auto" /></a>
+      <button id="navToggle" class="sm:hidden text-gray-800 focus:outline-none">
+        <i class="fas fa-bars fa-xl"></i>
+      </button>
+      <div id="navLinks" class="hidden sm:flex items-center space-x-8 text-sm">
+        <a href="#hero" class="hover:text-green-700">Home</a>
+        <a href="#domains" class="hover:text-green-700">Domains</a>
+        <a href="#maps" class="hover:text-green-700">Skill Maps</a>
+        <a href="#articles" class="hover:text-green-700">Blog</a>
+        <a href="#faq" class="hover:text-green-700">FAQ</a>
+        <a href="#signin" class="px-4 py-2 bg-green-700 text-white rounded-md hover:bg-green-800">Sign In</a>
+      </div>
+    </div>
+    <div id="mobileMenu" class="sm:hidden hidden bg-white shadow-inner">
+      <a href="#hero" class="block px-6 py-3 hover:bg-gray-100">Home</a>
+      <a href="#domains" class="block px-6 py-3 hover:bg-gray-100">Domains</a>
+      <a href="#maps" class="block px-6 py-3 hover:bg-gray-100">Skill Maps</a>
+      <a href="#articles" class="block px-6 py-3 hover:bg-gray-100">Blog</a>
+      <a href="#faq" class="block px-6 py-3 hover:bg-gray-100">FAQ</a>
+      <a href="#signin" class="block px-6 py-3 bg-green-700 text-white hover:bg-green-800">Sign In</a>
+    </div>
+  </nav>
 
-    <section id="head">
-        <div class="head container">
-            <img src="logo4.jpg">
-        </div>
+  <main class="pt-24">
+    <section id="hero" class="relative flex flex-col items-center justify-center text-center h-screen bg-gradient-to-r from-green-600 to-blue-500">
+      <div class="absolute inset-0 bg-[url('https://via.placeholder.com/1600x900')] bg-cover bg-center opacity-20"></div>
+      <div class="z-10 px-6">
+        <h1 class="text-5xl md:text-6xl font-extrabold text-white drop-shadow-lg mb-4">Shape Your Future<br/>with Skill Maps</h1>
+        <p class="text-lg md:text-xl text-green-100 mb-8 max-w-2xl drop-shadow">Interactive learning pathways, curated skill maps, and expert articles across IT domains.</p>
+        <a href="Role_based_Roadmaps.html" class="px-8 py-4 bg-white text-green-700 font-semibold rounded-full hover:bg-green-100 transition transform hover:scale-105">Explore Domains</a>
+      </div>
     </section>
 
-    <!-- Description-title -->
-    <section id="description-t">
-        <div class="container">
-            <div class="content">
-                <h1>Shape Your Future with Skill Maps</h1>
-                <p>Study online from anywhere - for <b>FREE</b>.
-                    <br>Technology and AI are driving the future.
-                    <br>Explore over 20 courses in Development Skills, Roles, and AI.
-                    <br><b>New!</b> Dive into our <b><a href="Blog.html">Blog</a></b> for the latest insights and trends.
-                </p>
+    <section id="domains" class="py-16 bg-blue-50">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-4xl font-bold text-gray-800 mb-8 text-center">Domains</h2>
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <a href="Frontend.html" class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 p-8 text-center block">
+            <i class="fas fa-code fa-3x text-green-600 mb-4"></i>
+            <h3 class="text-2xl font-semibold mb-2">Development</h3>
+            <p class="text-gray-600">Frontend, Backend &amp; Full-Stack</p>
+          </a>
+          <a href="DevOps.html" class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 p-8 text-center block">
+            <i class="fas fa-server fa-3x text-blue-600 mb-4"></i>
+            <h3 class="text-2xl font-semibold mb-2">DevOps &amp; SRE</h3>
+            <p class="text-gray-600">CI/CD, Infrastructure &amp; Monitoring</p>
+          </a>
+          <a href="AI.html" class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 p-8 text-center block">
+            <i class="fas fa-robot fa-3x text-red-600 mb-4"></i>
+            <h3 class="text-2xl font-semibold mb-2">AI &amp; ML</h3>
+            <p class="text-gray-600">Machine &amp; Deep Learning</p>
+          </a>
+          <a href="Role_based_Roadmaps.html" class="bg-gray-100 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 p-8 text-center block">
+            <i class="fas fa-th-large fa-3x text-gray-500 mb-4"></i>
+            <h3 class="text-2xl font-semibold mb-2">All Domains</h3>
+            <p class="text-gray-600 mb-4 text-center">Explore all available domains and topics.</p>
+            <span class="inline-block text-green-700 font-semibold hover:underline">View All →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="maps" class="py-16 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-4xl font-bold text-gray-800 mb-8 text-center">Skill Maps</h2>
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <a href="Python.html" class="bg-gray-100 rounded-xl h-64 flex flex-col items-center justify-center p-8 hover:bg-gray-200 transition block">
+            <i class="fab fa-python fa-4x text-yellow-500 mb-4"></i>
+            <h3 class="text-2xl font-semibold mb-2">Python</h3>
+            <p class="text-gray-600 text-center">Versatile scripting, automation & data science pathways.</p>
+          </a>
+          <a href="Java.html" class="bg-gray-100 rounded-xl h-64 flex flex-col items-center justify-center p-8 hover:bg-gray-200 transition block">
+            <i class="fab fa-java fa-4x text-red-500 mb-4"></i>
+            <h3 class="text-2xl font-semibold mb-2">Java</h3>
+            <p class="text-gray-600 text-center">Robust backend, enterprise applications & JVM ecosystem.</p>
+          </a>
+          <a href="Docker.html" class="bg-gray-100 rounded-xl h-64 flex flex-col items-center justify-center p-8 hover:bg-gray-200 transition block">
+            <i class="fab fa-docker fa-4x text-blue-500 mb-4"></i>
+            <h3 class="text-2xl font-semibold mb-2">Docker</h3>
+            <p class="text-gray-600 text-center">Containerization, DevOps workflows & deployment strategies.</p>
+          </a>
+          <a href="Skill_Based_Roadmaps.html" class="bg-gray-100 rounded-xl h-64 flex flex-col items-center justify-center p-8 hover:bg-gray-200 transition block">
+            <i class="fas fa-th-large fa-4x text-gray-500 mb-4"></i>
+            <h3 class="text-2xl font-semibold mb-2">All Skill Maps</h3>
+            <p class="text-gray-600 text-center">Browse all interactive skill maps and pathways.</p>
+            <span class="inline-block text-green-700 font-semibold mt-4 hover:underline">View All →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="articles" class="py-16 bg-purple-50">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-4xl font-bold text-gray-800 mb-8 text-center">Latest Articles</h2>
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <article class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1">
+            <div class="h-40 bg-[url('https://via.placeholder.com/400x200?text=DevOps+Pipelines')] bg-cover bg-center"></div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Building Modern DevOps Pipelines</h3>
+              <p class="text-gray-600 text-sm mb-4">Discover best CI/CD and infrastructure-as-code practices.</p>
+              <a href="blog/0008.html" class="inline-block text-green-700 font-semibold hover:underline">Read More →</a>
             </div>
-        </div>
-    </section>
-
-    <section id="sections1">
-        <div class="sections container">
-            <div class="search-container">
-                <h2>What topic are you interested in exploring?</h2>
-    
-                <div class="split-container">
-                    <!-- Left Side - Buttons -->
-                    <div class="roadmap-buttons">
-                        <button class="toggle-btn" data-target="skills">Skill Roadmap</button>
-                        <button class="toggle-btn" data-target="roles">Role Roadmap</button>
-                        <button class="toggle-btn" data-target="ai">AI Roadmap</button>
-                        <button class="toggle-btn" data-target="blog">Blog</button>
-                    </div>
-    
-                    <!-- Right Side - Submenus (Initially Hidden) -->
-                    <div class="submenu-container">
-                        <div class="submenu" id="skills">
-                            <a href="/skills/Angular.html">Angular</a>
-                            <a href="/skills/Docker.html">Docker</a>
-                            <a href="/skills/Java.html">Java</a>
-                            <a href="/skills/Python.html">Python</a>
-                            <a href="/skills/Vue.html">Vue</a>
-                        </div>
-
-                        <div class="submenu" id="roles">
-                            <a href="/roles/Frontend.html">Frontend</a>
-                            <a href="/roles/Backend.html">Backend</a>
-                            <a href="/roles/FullStack.html">FullStack</a>
-                            <a href="/roles/DevOps.html">DevOps</a>
-                        </div>
-
-                        <div class="submenu" id="ai">
-                            <a href="/AI/Introduction_to_AI.html">Introduction to AI</a>
-                            <a href="/AI/maths_and_statistics_for_ai.html">Maths and Statistics for AI</a>
-                            <a href="/AI/machine_learning.html">Machine Learning</a>
-                            <a href="/AI/deep_learning.html">Deep Learning</a>
-                        </div>
-    
-                        <div class="submenu" id="blog">
-                            <a href="blog.html">AI Trends</a>
-                            <a href="blog.html">... all Articles</a>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="browse-links">
-                    <a href="browse_all_courses.html">Browse all courses</a>
-                </div>
+          </article>
+          <article class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1">
+            <div class="h-40 bg-[url('https://via.placeholder.com/400x200?text=Just+Say+No...')] bg-cover bg-center"></div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Just Say No to JavaScript and Say Hi to...</h3>
+              <p class="text-gray-600 text-sm mb-4">Exploring better alternatives to JavaScript in modern development.</p>
+              <a href="blog/0007.html" class="inline-block text-blue-700 font-semibold hover:underline">Read More →</a>
             </div>
-        </div>
-    </section>
-    
-    
-    
-    
-    <!-- CSS (Add to your stylesheet) -->
-    <style>
-        .submenu {
-            display: none;
-            margin-top: 10px;
-        }
-        .submenu a {
-            display: block;
-            margin: 5px 0;
-            text-decoration: none;
-            color: #007BFF;
-            padding-left: 15px;
-        }
-        .submenu a:hover {
-            text-decoration: underline;
-        }
-        .toggle-btn {
-            margin: 10px 0;
-            display: block;
-            background-color: #f1f1f1;
-            border: none;
-            padding: 10px 15px;
-            cursor: pointer;
-            font-size: 16px;
-            text-align: left;
-        }
-        .toggle-btn:hover {
-            background-color: #ddd;
-        }
-    </style>
-    
-    
-    
-    <!-- Description -->
-    <section id="description">
-        <div class="description container">
-            <div class="description-top">
-                <h1 class="section-title">What is skill-maps.com?</h1>
-                <p class="paragraph"><br>An effective option to learn how to create computer programmes, web apps, and
-                    software is to take an
-                    online programming language course. The building blocks of any software development are programming
-                    languages, and there are several to pick from, each with unique advantages and disadvantages. These
-                    programmes offer both more in-depth instruction for seasoned developers as well as assistance to
-                    newcomers
-                    learning the fundamentals of programming. Online courses allow students to study at their own speed,
-                    from
-                    the convenience of their homes, and sometimes at a fraction of the price of traditional
-                    classroom-based
-                    courses. An online programming language course is a great place to start if you want to acquire a
-                    new skill
-                    for a career shift or just want to learn more about the fascinating world of programming.</p>
+          </article>
+          <article class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1">
+            <div class="h-40 bg-[url('https://via.placeholder.com/400x200?text=DeepSeek+Vs+ChatGPT')] bg-cover bg-center"></div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">What is DeepSeek and How is it Outdoing ChatGPT?</h3>
+              <p class="text-gray-600 text-sm mb-4">A deep dive into DeepSeek’s innovations over traditional models.</p>
+              <a href="blog/0006.html" class="inline-block text-purple-70 fi font-semibold hover:underline">Read More →</a>
             </div>
+          </article>
+          <article class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 flex flex-col justify-center items-center p-6">
+            <i class="fas fa-book-open fa-3x text-gray-400 mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">All Articles</h3>
+            <p class="text-gray-600 text-sm mb-4 text-center">Browse our full blog for more resources and insights.</p>
+            <a href="blog.html" class="inline-block text-green-700 font-semibold hover:underline">View All →</a>
+          </article>
         </div>
+      </div>
     </section>
 
-    <section id="new-courses">
-        <div class="new-courses container">
-            <div class="new-courses-top">
-                <h1 class="section-title">New courses</h1>
-                <p class="paragraph"><br>
-                    <a href="Angular.html"># Angular Everything that is there to learn about Angular and the ecosystem_<br></a>
-                    <a href="DevOps.html"># Step by step guide for DevOps, SRE or any other Operations Role_<br></a>
-                    <a href="JavaScript.html"># Step by step guide to learn JavaScript_<br></a>
-                    <a href="Backend.html"># Step by step guide to becoming a modern Backend Developer_<br></a>
-                </p>
-            </div>
+    <section id="faq" class="py-16 bg-red-50">
+      <div class="max-w-4xl mx-auto px-6">
+        <h2 class="text-4xl font-bold text-gray-800 mb-8 text-center">Frequently Asked Questions</h2>
+        <div class="space-y-4">
+          <details class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition">
+            <summary class="font-semibold text-lg cursor-pointer">How do I track my progress?</summary>
+            <p class="mt-2 text-gray-600">Create an account to view and track your learning journey.</p>
+          </details>
+          <details class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition">
+            <summary class="font-semibold text-lg cursor-pointer">Are the courses free?</summary>
+            <p class="mt-2 text-gray-600">All pathways and materials are completely free.</p>
+          </details>
+          <details class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition">
+            <summary class="font-semibold text-lg cursor-pointer">Can I contribute content?</summary>
+            <p class="mt-2 text-gray-600">Yes! Join our community to share your expertise.</p>
+          </details>
+          <details class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition">
+            <summary class="font-semibold text-lg cursor-pointer">All FAQs</summary>
+            <p class="mt-2 text-gray-600">Find answers to the top 10 questions and more.</p>
+            <a href="top_10_questions.html" class="inline-block text-green-700 font-semibold hover:underline mt-2">View All →</a>
+          </details>
         </div>
+      </div>
     </section>
 
-    <section id="top10">
-        <div class="top10 container">
-            <div class="top10-top">
-                <h1 class="section-title">Top 10 Questions</h1>
-                <p class="paragraph">
-                    <a href="top_10_questions.html#question1">- What is programming?<br></a>
-                    <a href="top_10_questions.html#question2">- What programming languages should I learn?<br></a>
-                    <a href="top_10_questions.html#question3">- What are the differences between compiled and
-                        interpreted programming
-                        languages?<br></a>
-                    <a href="top_10_questions.html#question4">- What is an algorithm and why is it important in
-                        programming?<br></a>
-                </p>
-            </div>
+    <footer class="bg-white py-12">
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <p class="text-gray-600 mb-4">&copy; 2025 Skill Maps. All rights reserved.</p>
+        <div class="flex justify-center space-x-6 mb-4">
+          <a href="#" class="text-gray-600 hover:text-gray-800"><i class="fab fa-facebook fa-lg"></i></a>
+          <a href="#" class="text-gray-600 hover:text-gray-800"><i class="fab fa-twitter fa-lg"></i></a>
+          <a href="#" class="text-gray-600 hover:text-gray-800"><i class="fab fa-discord fa-lg"></i></a>
+          <a href="#" class="text-gray-600 hover:text-gray-800"><i class="fab fa-linkedin fa-lg"></i></a>
+          <a href="#" class="text-gray-600 hover:text-gray-800"><i class="fab fa-youtube fa-lg"></i></a>
         </div>
-    </section>
+      </div>
+    </footer>
+  </main>
 
-    <!-- Placeholder for the footer -->
-    <div id="footer-placeholder"></div>
-    <script src="footer.js"></script>
-    <script src="analytics.js"></script>
-    <script src="course.js"></script>
+  <script>
+    document.getElementById('navToggle').addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+    });
+    document.getElementById('exploreBtn').addEventListener('click', () => {
+      document.getElementById('domains').scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
 </body>
-
 </html>
