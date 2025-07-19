@@ -1,204 +1,156 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>SM - Skill based Roadmaps</title>
-    <link rel="icon" href="logo.jpg" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <link rel="stylesheet" type="text/css" href="mobile.css">
-    <link rel="stylesheet" type="text/css" href="squares.css">
-    <link rel="stylesheet" type="text/css" href="course-options.css">
-    <link rel="stylesheet" type="text/css" href="style-sub.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="script.js"></script>
-    <script src="https://kit.fontawesome.com/yourcode.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skill-Based Roadmaps | Skill Maps</title>
+  <link rel="icon" href="logo.jpg" type="image/x-icon">
+  <meta name="description" content="Follow curated skill-based roadmaps to master tools and technologies like Python, Java, Docker, and more." />
+  <meta property="og:title" content="Skill-Based Roadmaps | Skill Maps" />
+  <meta property="og:description" content="Master programming languages, frameworks, and tools through guided roadmaps." />
+  <meta property="og:url" content="https://skill-maps.com/Skill_Based_Roadmaps.html" />
+  <meta property="og:image" content="https://www.skill-maps.com/logo.jpg" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+  <style>body { font-family: 'Inter', sans-serif; } html { scroll-behavior: smooth; }</style>
 </head>
-    
-<body>
-    <!-- Placeholder for the panel bar -->
-    <div id="panel-bar-placeholder"></div>
-    <script src="panel-bar.js"></script> 
+<body class="bg-gray-50 text-gray-800">
 
-    <section id="head">
-        <div class="head container">
-            <h2 class="title-page">Skill Roadmap</h2>
-        </div>
-    </section>
+<!-- NAVBAR -->
+<nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md shadow-sm z-50">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+    <a href="index.html#hero" class="text-2xl font-bold text-green-700 hover:text-green-800 transition">Skill Maps</a>
+    <button id="navToggle" class="sm:hidden text-gray-800 focus:outline-none">
+      <i class="fas fa-bars fa-xl"></i>
+    </button>
+    <div id="navLinks" class="hidden sm:flex items-center space-x-8 text-sm">
+      <a href="index.html#hero" class="hover:text-green-700">Home</a>
+      <a href="index.html#domains" class="hover:text-green-700">Domains</a>
+      <a href="index.html#maps" class="hover:text-green-700">Skill Maps</a>
+      <a href="index.html#articles" class="hover:text-green-700">Blog</a>
+      <a href="index.html#faq" class="hover:text-green-700">FAQ</a>
+    </div>
+  </div>
+  <div id="mobileMenu" class="sm:hidden hidden bg-white shadow-inner">
+    <a href="index.html#hero" class="block px-6 py-3 hover:bg-gray-100">Home</a>
+    <a href="index.html#domains" class="block px-6 py-3 hover:bg-gray-100">Domains</a>
+    <a href="index.html#maps" class="block px-6 py-3 hover:bg-gray-100">Skill Maps</a>
+    <a href="index.html#articles" class="block px-6 py-3 hover:bg-gray-100">Blog</a>
+    <a href="index.html#faq" class="block px-6 py-3 hover:bg-gray-100">FAQ</a>
+  </div>
+</nav>
 
-        <!--Course options-->
-        <section id="box-section">
-            <div class="box-container">
-                <a href="/skills/Python.html" class="box">
-                    <h3 class="course-name">Python</h3>
-                    <p class="course-category"><b>Category:</b> Skill Based Roadmaps</p>
-                    <p class="course-description"><b>Description: </b><i>
-                        Master Python programming, a versatile language used for web development, data analysis, and machine learning.
-                    </i></p>
-                    <p class="course-duration"><b>Duration:</b> 3h 41m</p>
-                </a>
-                <a href="/skills/Java.html" class="box">
-                    <h3 class="course-name">Java</h3>
-                    <p class="course-category"><b>Category:</b> Skill Based Roadmaps</p>
-                    <p class="course-description"><b>Description: </b><i>
-                        Learn Java, a robust, object-oriented language ideal for building platform-independent applications.
-                    </i></p>
-                    <p class="course-duration"><b>Duration:</b> 5h 15m</p>
-                </a>
-                <a href="/skills/Vue.html" class="box">
-                    <h3 class="course-name">Vue</h3>
-                    <p class="course-category"><b>Category:</b> Skill Based Roadmaps</p>
-                    <p class="course-description"><b>Description: </b><i>
-                        Explore Vue.js, a progressive JavaScript framework for building user interfaces and single-page applications.
-                    </i></p>
-                    <p class="course-duration"><b>Duration:</b> 4h 40m</p>
-                </a>
-                <a href="/skills/Docker.html" class="box">
-                    <h3 class="course-name">Docker</h3>
-                    <p class="course-category"><b>Category:</b> Skill Based Roadmaps</p>
-                    <p class="course-description"><b>Description: </b><i>
-                        Understand Docker, a platform for developing, shipping, and running applications in isolated containers.
-                    </i></p>
-                    <p class="course-duration"><b>Duration:</b> 4h 2m</p>
-                </a>
-                <a href="/skills/Angular.html" class="box">
-                    <h3 class="course-name">Angular</h3>
-                    <p class="course-category"><b>Category:</b> Skill Based Roadmaps</p>
-                    <p class="course-description"><b>Description: </b><i>
-                        Dive into Angular, a powerful framework for building dynamic web applications with TypeScript.
-                    </i></p>
-                    <p class="course-duration"><b>Duration:</b> 3h 50m</p>
-                </a>
-                <!-- Add more boxes as needed -->
-            </div>
-        </section>
+<!-- MAIN -->
+<main class="pt-24">
+  <section class="text-center bg-gradient-to-r from-green-600 to-blue-500 py-24 relative">
+    <div class="absolute inset-0 bg-[url('https://via.placeholder.com/1600x600')] bg-cover bg-center opacity-10"></div>
+    <div class="relative z-10 max-w-4xl mx-auto px-6">
+      <h1 class="text-5xl font-extrabold text-white drop-shadow mb-4">Skill-Based Learning Roadmaps</h1>
+      <p class="text-xl text-green-100 max-w-2xl mx-auto">Master programming languages, tools, and frameworks with structured skill maps.</p>
+    </div>
+  </section>
 
-    <!-- Search course -->
-    <section id="sections1">
-        <div class="sections container">
-            <div class="search-container">
-                <h2>Search for a Course or Roadmap</h2>
-                <form class="search-form" id="search-form">
-                    <select name="search-type" id="search-type">
-                        <option value="">Select Search Type...</option>
-                        <option value="roadmap">Roadmap</option>
-                        <option value="course">Course Title</option>
-                    </select>
-    
-                    <div id="roadmap-options" class="search-options" style="display: none;">
-                        <select name="roadmap-category" id="roadmap-category">
-                            <option value="">Select Roadmap Category...</option>
-                            <option value="roles">Roles</option>
-                            <option value="skills">Skills</option>
-                            <option value="ai">AI</option>
-                        </select>
-                    </div>
-    
-                    <div id="course-options" class="search-options" style="display: none;">
-                        <select name="course-title" id="course-title">
-                            <option value="">Select Course Title...</option>
-                            <option value="Python">Python</option>
-                            <option value="Java">Java</option>                            
-                            <option value="Vue">Vue</option>
-                            <option value="Docker">Docker</option>
-                            <option value="Angular">Angular</option>
-                            <option value="Frontend">Frontend</option>                            
-                            <option value="Backend">Backend</option>
-                            <option value="DevOps">DevOps</option>
-                            <option value="FullStuck">FullStuck</option>                            
-                            <option value="Software Architect">Software Architect</option>
-                            <option value="Introduction to AI">Introduction to AI</option>                            
-                            <option value="Maths and Statisctics for AI">Maths and Statisctics for AI</option>
-                            <option value="Machine Learning">Machine Learning</option>
-                            <option value="Deep learning">Deep learning</option>
-                            <option value="Natural Language Processing">Natural Language Processing</option>                            
-                            <option value="AI Ethics">AI Ethics</option>
-                            <option value="AI Practics and Projects">AI Practics and Projects</option>
-                            <option value="AI Resources">AI Resources</option>
-                        </select>
-                    </div>
-    
-                    <button type="submit">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </form>
-                <div class="browse-links">
-                    <a href="all-courses.html">Browse all courses</a>
-                </div>
-            </div>
-        </div>
-    </section>
+  <section class="py-16 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Explore Skill Roadmaps</h2>
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <a href="skills/Python.html" class="bg-gray-100 p-8 rounded-2xl shadow hover:shadow-xl transition transform hover:-translate-y-2 text-center">
+        <i class="fab fa-python fa-4x text-yellow-500 mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">Python</h3>
+        <p class="text-gray-600 text-sm">Scripting, data science, automation, and backend development.</p>
+      </a>
+      <a href="skills/Java.html" class="bg-gray-100 p-8 rounded-2xl shadow hover:shadow-xl transition transform hover:-translate-y-2 text-center">
+        <i class="fab fa-java fa-4x text-red-500 mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">Java</h3>
+        <p class="text-gray-600 text-sm">OOP, Spring Boot, enterprise systems & Android apps.</p>
+      </a>
+      <a href="skills/Docker.html" class="bg-gray-100 p-8 rounded-2xl shadow hover:shadow-xl transition transform hover:-translate-y-2 text-center">
+        <i class="fab fa-docker fa-4x text-blue-500 mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">Docker</h3>
+        <p class="text-gray-600 text-sm">Containerization, deployment, and DevOps pipelines.</p>
+      </a>
+      <a href="skills/Vue.html" class="bg-gray-100 p-8 rounded-2xl shadow hover:shadow-xl transition transform hover:-translate-y-2 text-center">
+        <i class="fab fa-vuejs fa-4x text-green-500 mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">Vue.js</h3>
+        <p class="text-gray-600 text-sm">Build dynamic, component-based frontend applications.</p>
+      </a>
+      <a href="skills/Angular.html" class="bg-gray-100 p-8 rounded-2xl shadow hover:shadow-xl transition transform hover:-translate-y-2 text-center">
+        <i class="fab fa-angular fa-4x text-red-600 mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">Angular</h3>
+        <p class="text-gray-600 text-sm">Full-featured framework for frontend architecture.</p>
+      </a>
+    </div>
+  </div>
+</section>
 
+</main>
 
-    <section id="video-course">
-        <div class="video-course container">
-            <div class="video-course-top">
-                <h1 class="section-title">Introduction to Programming</h1>
-                <p class="paragraph"><br>
-                    <iframe class="tutorial-video" width="1200" height="675" src="https://www.youtube.com/embed/zOjov-2OZ0E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </p>
-            </div>
-        </div>
-    </section>
+<!-- FOOTER LINKS -->
+<section class="bg-white py-12">
+  <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+    <div>
+      <h4 class="text-lg font-semibold text-gray-800 mb-4">Domains</h4>
+      <ul class="space-y-2 text-gray-600">
+        <li><a href="roles/Frontend.html" class="hover:underline">Frontend</a></li>
+        <li><a href="roles/Backend.html" class="hover:underline">Backend</a></li>
+        <li><a href="roles/DevOps.html" class="hover:underline">DevOps</a></li>
+        <li><a href="roles/FullStack.html" class="hover:underline">FullStack</a></li>
+        <li><a href="Software_Architect.html" class="hover:underline">Software Architecture</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-lg font-semibold text-gray-800 mb-4">Skill Maps</h4>
+      <ul class="space-y-2 text-gray-600">
+        <li><a href="skills/Python.html" class="hover:underline">Python</a></li>
+        <li><a href="skills/Java.html" class="hover:underline">Java</a></li>
+        <li><a href="skills/Vue.html" class="hover:underline">Vue</a></li>
+        <li><a href="skills/Docker.html" class="hover:underline">Docker</a></li>
+        <li><a href="skills/Angular.html" class="hover:underline">Angular</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-lg font-semibold text-gray-800 mb-4">AI</h4>
+      <ul class="space-y-2 text-gray-600">
+        <li><a href="AI/Introduction_to_AI.html" class="hover:underline">Introduction to AI</a></li>
+        <li><a href="AI/maths_and_statistics_for_ai.html" class="hover:underline">Maths & Statistics</a></li>
+        <li><a href="AI/machine_learning.html" class="hover:underline">Machine Learning</a></li>
+        <li><a href="AI/deep_learning.html" class="hover:underline">Deep Learning</a></li>
+        <li><a href="AI/natural_language_processing.html" class="hover:underline">NLP</a></li>
+        <li><a href="AI/ai_ethics.html" class="hover:underline">AI Ethics</a></li>
+        <li><a href="AI/practics_and_projects.html" class="hover:underline">Projects</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-lg font-semibold text-gray-800 mb-4">Other Pages</h4>
+      <ul class="space-y-2 text-gray-600">
+        <li><a href="blog.html" class="hover:underline">Blog</a></li>
+        <li><a href="about.html" class="hover:underline">About</a></li>
+        <li><a href="contact.html" class="hover:underline">Contact</a></li>
+        <li><a href="https://cris-ai.com/" class="hover:underline" target="_blank">Other Projects</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-    <section id="text-course">
-        <div class="text-course container">
-            <div class="text-course-top">
-                <h1 class="section-title">Description</h1>
-                <p class="paragraph"><br>Introduction to programming is the fundamental step towards understanding and creating software applications. It involves learning the basic concepts, principles, and syntax of a programming language. Programming introduces individuals to the logic and problem-solving skills required to develop algorithms and write code. It covers topics such as variables, data types, control structures, functions, and loops. Through programming, individuals gain the ability to break down complex problems into smaller, manageable tasks and create step-by-step instructions for the computer to execute. It cultivates a mindset of computational thinking and provides a foundation for further exploration in various programming languages and application development. Programming empowers individuals to bring their ideas to life and opens doors to a world of innovation and creativity.</p>
-            </div>
-        </div>
-    </section>
+<!-- FOOTER -->
+<footer class="bg-white py-12">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <p class="text-gray-600 mb-4">&copy; 2025 Skill Maps. All rights reserved.</p>
+    <div class="flex justify-center space-x-6 mb-4">
+      <a href="https://www.facebook.com/groups/212272531621204" class="text-gray-600 hover:text-gray-800"><i class="fab fa-facebook fa-lg"></i></a>
+      <a href="https://x.com/SkillMapsCom" class="text-gray-600 hover:text-gray-800"><i class="fab fa-twitter fa-lg"></i></a>
+      <a href="https://discord.com/invite/QnBUjtpT" class="text-gray-600 hover:text-gray-800"><i class="fab fa-discord fa-lg"></i></a>
+      <a href="https://www.linkedin.com/company/104516478/admin/dashboard/" class="text-gray-600 hover:text-gray-800"><i class="fab fa-linkedin fa-lg"></i></a>
+      <a href="https://www.youtube.com/channel/UCCM1SLARq4kiJ_1Qr6F3msQ" class="text-gray-600 hover:text-gray-800"><i class="fab fa-youtube fa-lg"></i></a>
+    </div>
+  </div>
+</footer>
 
-    <section id="new-courses">
-        <div class="new-courses container">
-            <div class="new-courses-top">
-                <h1 class="section-title">New courses</h1>
-                <p class="paragraph"><br>
-                    <a href="Angular.html"># Angular Everything that is there to learn about Angular and the ecosystem
-                        in 2023
-                        _<br></a>
-                    <a href="DevOps.html"># Step by step guide for DevOps, SRE or any other Operations Role in 2023
-                        _<br></a>
-                    <a href="JavaScript.html"># Step by step guide to learn JavaScript in 2023 _<br></a>
-                    <a href="Backend.html"># Step by step guide to becoming a modern backend developer in 2023 _<br></a>
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section id="top10">
-        <div class="top10 container">
-            <div class="top10-top">
-                <h1 class="section-title">Top 10 Questions</h1>
-                <p class="paragraph">
-                    <a href="top_10_questions.html#question1">- What is programming?<br></a>
-                    <a href="top_10_questions.html#question2">- What programming languages should I learn?<br></a>
-                    <a href="top_10_questions.html#question3">- What are the differences between compiled and
-                        interpreted programming
-                        languages?<br></a>
-                    <a href="top_10_questions.html#question4">- What is an algorithm and why is it important in
-                        programming?<br></a>
-                    <a href="top_10_questions.html#question5"></a>- What is the difference between a variable and a
-                    constant in programming?<br>
-                    <a href="top_10_questions.html#question6">- How do I debug my code?<br></a>
-                    <a href="top_10_questions.html#question7">- What is object-oriented programming?<br></a>
-                    <a href="top_10_questions.html#question8">- How do I choose the right data structure for my
-                        program?<br></a>
-                    <a href="top_10_questions.html#question9">- What are APIs and how do they work?<br></a>
-                    <a href="top_10_questions.html#question10">- What is version control and why is it important in
-                        programming?<br></a>
-                    <a href="top_10_questions.html">... other questions.</a>
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Placeholder for the footer -->
-    <div id="footer-placeholder"></div>
-    <script src="footer.js"></script>
-    <script src="analytics.js"></script>
-    <script src="course.js"></script>
+<script>
+  document.getElementById('navToggle').addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.toggle('hidden');
+  });
+</script>
 </body>
-
 </html>
