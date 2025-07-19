@@ -5,8 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Skill Maps</title>
-  <link rel="icon" href="logo.jpg" type="image/x-icon" />
+  <link rel="icon" href="logo.jpg" type="image/x-icon">
   <meta name="description" content="Shape your future with structured learning pathways in Development, DevOps, Data, and AI." />
+  <!-- Open Graph -->
   <meta property="og:title" content="Skill Maps" />
   <meta property="og:description" content="Interactive learning pathways in Development, DevOps, Data, and AI." />
   <meta property="og:url" content="https://www.skill-maps.com" />
@@ -14,19 +15,45 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
-  <style>
-    body { font-family: 'Inter', sans-serif; }
-    html { scroll-behavior: smooth; }
-  </style>
+  <style>body { font-family: 'Inter', sans-serif; } html { scroll-behavior: smooth; }</style>
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name": "Skill Maps",
+    "url": "https://www.skill-maps.com",
+    "logo": "https://www.skill-maps.com/logo.jpg"
+  }
+  </script>
 </head>
 <body class="bg-gray-50 text-gray-800">
-
-  <!-- Load Navbar -->
-  <div id="nav-placeholder"></div>
+  <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md shadow-sm z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+      <a href="#hero" class="text-2xl font-bold text-green-700 hover:text-green-800 transition">Skill Maps</a>
+      <button id="navToggle" class="sm:hidden text-gray-800 focus:outline-none">
+        <i class="fas fa-bars fa-xl"></i>
+      </button>
+      <div id="navLinks" class="hidden sm:flex items-center space-x-8 text-sm">
+        <a href="#hero" class="hover:text-green-700">Home</a>
+        <a href="#domains" class="hover:text-green-700">Domains</a>
+        <a href="#maps" class="hover:text-green-700">Skill Maps</a>
+        <a href="#articles" class="hover:text-green-700">Blog</a>
+        <a href="#faq" class="hover:text-green-700">FAQ</a>
+        
+      </div>
+    </div>
+    <div id="mobileMenu" class="sm:hidden hidden bg-white shadow-inner">
+      <a href="#hero" class="block px-6 py-3 hover:bg-gray-100">Home</a>
+      <a href="#domains" class="block px-6 py-3 hover:bg-gray-100">Domains</a>
+      <a href="#maps" class="block px-6 py-3 hover:bg-gray-100">Skill Maps</a>
+      <a href="#articles" class="block px-6 py-3 hover:bg-gray-100">Blog</a>
+      <a href="#faq" class="block px-6 py-3 hover:bg-gray-100">FAQ</a>
+      
+    </div>
+  </nav>
 
   <main class="pt-16">
-
-    <!-- HERO Section -->
     <section id="hero" class="relative flex flex-col items-center justify-center text-center h-screen bg-gradient-to-r from-green-600 to-blue-500">
       <div class="absolute inset-0 bg-[url('https://via.placeholder.com/1600x900')] bg-cover bg-center opacity-20"></div>
       <div class="z-10 px-6">
@@ -36,7 +63,6 @@
       </div>
     </section>
 
-    <!-- Domains Section -->
     <section id="domains" class="py-16 bg-blue-50">
       <div class="max-w-6xl mx-auto px-6">
         <h2 class="text-4xl font-bold text-gray-800 mb-8 text-center">Domains</h2>
@@ -66,7 +92,6 @@
       </div>
     </section>
 
-    <!-- Skill Maps Section -->
     <section id="maps" class="py-16 bg-white">
       <div class="max-w-6xl mx-auto px-6">
         <h2 class="text-4xl font-bold text-gray-800 mb-8 text-center">Skill Maps</h2>
@@ -96,7 +121,44 @@
       </div>
     </section>
 
-    <!-- FAQ Section -->
+    <section id="articles" class="py-16 bg-purple-50">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-4xl font-bold text-gray-800 mb-8 text-center">Latest Articles</h2>
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <article class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1">
+            <div class="h-40 bg-[url('https://via.placeholder.com/400x200?text=DevOps+Pipelines')] bg-cover bg-center"></div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Building Modern DevOps Pipelines</h3>
+              <p class="text-gray-600 text-sm mb-4">Discover best CI/CD and infrastructure-as-code practices.</p>
+              <a href="blog/0008.html" class="inline-block text-green-700 font-semibold hover:underline">Read More →</a>
+            </div>
+          </article>
+          <article class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1">
+            <div class="h-40 bg-[url('https://via.placeholder.com/400x200?text=Just+Say+No...')] bg-cover bg-center"></div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Just Say No to JavaScript and Say Hi to...</h3>
+              <p class="text-gray-600 text-sm mb-4">Exploring better alternatives to JavaScript in modern development.</p>
+              <a href="blog/0007.html" class="inline-block text-blue-700 font-semibold hover:underline">Read More →</a>
+            </div>
+          </article>
+          <article class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1">
+            <div class="h-40 bg-[url('https://via.placeholder.com/400x200?text=DeepSeek+Vs+ChatGPT')] bg-cover bg-center"></div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">What is DeepSeek and How is it Outdoing ChatGPT?</h3>
+              <p class="text-gray-600 text-sm mb-4">A deep dive into DeepSeek’s innovations over traditional models.</p>
+              <a href="blog/0006.html" class="inline-block text-purple-70 fi font-semibold hover:underline">Read More →</a>
+            </div>
+          </article>
+          <article class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 flex flex-col justify-center items-center p-6">
+            <i class="fas fa-book-open fa-3x text-gray-400 mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">All Articles</h3>
+            <p class="text-gray-600 text-sm mb-4 text-center">Browse our full blog for more resources and insights.</p>
+            <a href="blog.html" class="inline-block text-green-700 font-semibold hover:underline">View All →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section id="faq" class="py-16 bg-red-50">
       <div class="max-w-4xl mx-auto px-6">
         <h2 class="text-4xl font-bold text-gray-800 mb-8 text-center">Frequently Asked Questions</h2>
@@ -122,36 +184,80 @@
       </div>
     </section>
 
+    
+    <!-- Footer Links Section -->
+    <section class="bg-white py-12">
+      <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+        <!-- Domains -->
+        <div>
+          <h4 class="text-lg font-semibold text-gray-800 mb-4">Domains</h4>
+          <ul class="space-y-2 text-gray-600">
+            <li><a href="roles/Frontend.html" class="hover:underline">Frontend</a></li>
+            <li><a href="roles/Backend.html" class="hover:underline">Backend</a></li>
+            <li><a href="roles/DevOps.html" class="hover:underline">DevOps</a></li>
+            <li><a href="roles/FullStack.html" class="hover:underline">FullStack</a></li>
+            <li><a href="Software_Architect.html" class="hover:underline">Software Architecture</a></li>
+          </ul>
+        </div>
+        <!-- Skill Maps -->
+        <div>
+          <h4 class="text-lg font-semibold text-gray-800 mb-4">Skill Maps</h4>
+          <ul class="space-y-2 text-gray-600">
+            <li><a href="skills/Python.html" class="hover:underline">Python</a></li>
+            <li><a href="skills/Java.html" class="hover:underline">Java</a></li>
+            <li><a href="skills/Vue.html" class="hover:underline">Vue</a></li>
+            <li><a href="skills/Docker.html" class="hover:underline">Docker</a></li>
+            <li><a href="skills/Angular.html" class="hover:underline">Angular</a></li>
+          </ul>
+        </div>
+        <!-- AI -->
+        <div>
+          <h4 class="text-lg font-semibold text-gray-800 mb-4">AI</h4>
+          <ul class="space-y-2 text-gray-600">
+            <li><a href="AI/Introduction_to_AI.html" class="hover:underline">Introduction to AI</a></li>
+            <li><a href="AI/maths_and_statistics_for_ai.html" class="hover:underline">Maths & Statistics</a></li>
+            <li><a href="AI/machine_learning.html" class="hover:underline">Machine Learning</a></li>
+            <li><a href="AI/deep_learning.html" class="hover:underline">Deep Learning</a></li>
+            <li><a href="AI/natural_language_processing.html" class="hover:underline">Natural Language Processing</a></li>
+            <li><a href="AI/ai_ethics.html" class="hover:underline">AI Ethics</a></li>
+            <li><a href="AI/practics_and_projects.html" class="hover:underline">Practices & Projects</a></li>
+          </ul>
+        </div>
+        <!-- Other pages -->
+        <div>
+          <h4 class="text-lg font-semibold text-gray-800 mb-4">Other Pages</h4>
+          <ul class="space-y-2 text-gray-600">
+            <li><a href="blog.html" class="hover:underline">Blog</a></li>
+            <li><a href="about.html" class="hover:underline">About</a></li>
+            <li><a href="contact.html" class="hover:underline">Contact</a></li>
+            <li><a href="https://cris-ai.com/" class="hover:underline" target="_blank">Other Projects</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- End Footer Links Section -->
+    <footer class="bg-white py-12">
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <p class="text-gray-600 mb-4">&copy; 2025 Skill Maps. All rights reserved.</p>
+        <div class="flex justify-center space-x-6 mb-4">
+          <a href="#" class="text-gray-600 hover:text-gray-800"><i class="fab fa-facebook fa-lg"></i></a>
+          <a href="#" class="text-gray-600 hover:text-gray-800"><i class="fab fa-twitter fa-lg"></i></a>
+          <a href="#" class="text-gray-600 hover:text-gray-800"><i class="fab fa-discord fa-lg"></i></a>
+          <a href="#" class="text-gray-600 hover:text-gray-800"><i class="fab fa-linkedin fa-lg"></i></a>
+          <a href="#" class="text-gray-600 hover:text-gray-800"><i class="fab fa-youtube fa-lg"></i></a>
+        </div>
+      </div>
+    </footer>
+    <script src="analytics.js"></script>
   </main>
 
-  <!-- Load Footer -->
-  <div id="footer-placeholder"></div>
-
-  <!-- Dynamic Load Navbar and Footer -->
   <script>
-    // Load navbar
-    fetch('nav-bar.html')
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('nav-placeholder').innerHTML = data;
-
-        const toggle = document.getElementById('navToggle');
-        if (toggle) {
-          toggle.addEventListener('click', () => {
-            document.getElementById('mobileMenu')?.classList.toggle('hidden');
-          });
-        }
-      });
-
-    // Load footer
-    fetch('foote2.html')
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('footer-placeholder').innerHTML = data;
-      });
+    document.getElementById('navToggle').addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+    });
+    document.getElementById('exploreBtn').addEventListener('click', () => {
+      document.getElementById('domains').scrollIntoView({ behavior: 'smooth' });
+    });
   </script>
-
-  <!-- Optional Analytics -->
-  <script src="analytics.js"></script>
 </body>
 </html>
