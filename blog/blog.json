@@ -1,0 +1,47 @@
+[
+  {
+    "id": "0001",
+    "title": "AI Roadmap for Beginners",
+    "desc": "AI Roadmap for Beginners"
+  },
+  {
+    "id": "0002",
+    "title": "Master Docker in 30 Days",
+    "desc": "A hands-on roadmap with container exercises and labs."
+  },
+  {
+    "id": "0003",
+    "title": "Top Python Libraries in 2025",
+    "desc": "Discover the most powerful libraries for data & automation."
+  },
+  {
+    "id": "0004",
+    "title": "Vue vs React vs Angular",
+    "desc": "Compare the top frontend frameworks for your next project."
+  },
+  {
+    "id": "0005",
+    "title": "Becoming a Backend Engineer",
+    "desc": "From API design to databases — your roadmap to backend."
+  },
+  {
+    "id": "0006",
+    "title": "What is DeepSeek?",
+    "desc": "Why DeepSeek may outpace ChatGPT in next-gen AI."
+  },
+  {
+    "id": "0007",
+    "title": "Just Say No to JS?",
+    "desc": "Alternatives to JavaScript that might surprise you."
+  },
+  {
+    "id": "0008",
+    "title": "Building Modern CI/CD",
+    "desc": "DevOps pipelines explained with real-world examples."
+  },
+  {
+    "id": "0009",
+    "title": "AI Project Ideas in 2025",
+    "desc": "Practical, portfolio-ready project ideas using AI tools."
+  }
+]
