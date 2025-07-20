@@ -1,10 +1,5 @@
 [
   {
-    "id": "0001",
-    "title": "AI Roadmap for Beginners",
-    "desc": "AI Roadmap for Beginners"
-  },
-  {
     "id": "0002",
     "title": "Master Docker in 30 Days",
     "desc": "A hands-on roadmap with container exercises and labs."
@@ -40,8 +35,8 @@
     "desc": "DevOps pipelines explained with real-world examples."
   },
   {
-    "id": "0009",
-    "title": "AI Project Ideas in 2025",
-    "desc": "Practical, portfolio-ready project ideas using AI tools."
+    "id": "0001",
+    "title": "Skill Maps Blog",
+    "desc": "Tips, tutorials, and insights from the world of tech and learning."
   }
 ]
