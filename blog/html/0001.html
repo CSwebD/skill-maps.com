@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Roadmap for Beginners</title>
+    <link rel="icon" href="/logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/blog/styles.css">
+    <link rel="stylesheet" type="text/css" href="/squares.css">
+    <link rel="stylesheet" type="text/css" href="/mobile.css">
+    <link rel="stylesheet" type="text/css" href="/description-t.css">
+    <link rel="stylesheet" type="text/css" href="/style-sub.css">
+    <link rel="stylesheet" type="text/css" href="article-style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Start your AI journey with our beginner-friendly roadmap. Learn AI and machine learning step by step.">
+
+    <!-- Open Graph Protocol -->
+    <meta property="og:title" content="Skill Maps - AI Roadmap for Beginners">
+    <meta property="og:description" content="Kickstart your journey into AI and machine learning. Explore tools and paths to become proficient in AI.">
+    <meta property="og:image" content="https://www.skill-maps.com/logo.jpg">
+    <meta property="og:url" content="https://www.skill-maps.com/ai-roadmap.html">
+
+    <script src="/script.js"></script>
+</head>
+    
+<body>
+    <!-- Panel Bar -->
+    <div id="panel-bar-placeholder"></div>
+    <script src="/panel-bar.js"></script> 
+
+    <!-- Back Button -->
+    <div class="back-button-container">
+        <button onclick="history.back()" class="back-button">
+            <i class="fas fa-arrow-left"></i> Back
+        </button>
+    </div>
+
+    <!-- Article Header Section -->
+    <section id="description-t">
+        <div class="container">
+            <div class="content">
+                <h1>AI Roadmap for Beginners</h1>
+                <p>Start your journey into AI and machine learning with essential skills and tools.</p>
+            </div>
+        </div>
+    </section> 
+
+    <!-- Article Content Section -->
+    <section id="description">
+        <div class="description container">
+            <div class="description-top">
+                <h1 class="section-title">Why Learn AI?</h1>
+                <p class="paragraph">
+                    Artificial Intelligence (AI) is transforming industries and becoming an integral part of daily life. Whether in healthcare, finance, or automation, AI is creating innovative solutions that drive the future. Learning AI opens the door to countless opportunities and the chance to work on groundbreaking projects.
+                </p>
+
+                <h2>What is AI?</h2>
+                <p class="paragraph">
+                    AI refers to the development of computer systems capable of performing tasks that typically require human intelligence. These tasks include visual perception, speech recognition, decision-making, and language translation.
+                </p>
+
+                <h2>How to Start Learning AI</h2>
+                <ul class="responsive-list">
+                    <li><strong>Step 1: Learn Programming</strong> - Python is the most popular language for AI development.</li>
+                    <li><strong>Step 2: Master Mathematics</strong> - AI relies on statistics, linear algebra, and probability.</li>
+                    <li><strong>Step 3: Explore Machine Learning</strong> - Learn the foundations of machine learning algorithms and models.</li>
+                    <li><strong>Step 4: Work on Real Projects</strong> - Apply your skills to projects like image classification or chatbot development.</li>
+                </ul>
+
+                <h2>Essential Tools for AI Development</h2>
+                <ul class="responsive-list">
+                    <li><strong>Jupyter Notebooks:</strong> Interactive environment for running Python code.</li>
+                    <li><strong>Google Colab:</strong> Free GPU-based Jupyter environment for AI projects.</li>
+                    <li><strong>TensorFlow and PyTorch:</strong> The leading AI and deep learning frameworks.</li>
+                    <li><strong>Scikit-Learn:</strong> Machine learning library for data science and model building.</li>
+                </ul>
+
+                <h2>Simple AI Project: Image Classification</h2>
+                <p class="paragraph">Start with a basic project to classify images using TensorFlow:</p>
+                <pre><code>
+from tensorflow import keras
+from tensorflow.keras import layers
+
+model = keras.Sequential([
+    layers.Dense(64, activation='relu'),
+    layers.Dense(10, activation='softmax')
+])
+
+print("AI model ready to train!")
+                </code></pre>
+
+                <h2>Join AI Communities</h2>
+                <p class="paragraph">
+                    Engage with AI communities like <a href="https://www.kaggle.com/" target="_blank">Kaggle</a> and <a href="https://ai.google/research/" target="_blank">Google AI</a>. Participating in hackathons and online competitions can fast-track your learning and connect you with industry experts.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+    <script src="/footer.js"></script>
+    <script src="/analytics.js"></script>
+</body>
+</html>
