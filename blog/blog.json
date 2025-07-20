@@ -1,38 +1,38 @@
 [
   {
-    "id": "0002",
-    "title": "Master Docker in 30 Days",
-    "desc": "A hands-on roadmap with container exercises and labs."
-  },
-  {
-    "id": "0003",
-    "title": "Top Python Libraries in 2025",
-    "desc": "Discover the most powerful libraries for data & automation."
-  },
-  {
-    "id": "0004",
-    "title": "Vue vs React vs Angular",
-    "desc": "Compare the top frontend frameworks for your next project."
-  },
-  {
-    "id": "0005",
-    "title": "Becoming a Backend Engineer",
-    "desc": "From API design to databases — your roadmap to backend."
-  },
-  {
-    "id": "0006",
-    "title": "What is DeepSeek?",
-    "desc": "Why DeepSeek may outpace ChatGPT in next-gen AI."
+    "id": "0008",
+    "title": "ChatGPT-3o: What Makes It So Special?",
+    "desc": "Artificial intelligence is moving fast, and OpenAI’s latest model, ChatGPT-3o, is shaking things up. But what makes it so special? Is it just another update, or are we witnessing the future of AI in action? Let’s find out."
   },
   {
     "id": "0007",
-    "title": "Just Say No to JS?",
-    "desc": "Alternatives to JavaScript that might surprise you."
+    "title": "Just Say No to JavaScript and Hi to...",
+    "desc": "JavaScript has been the king of the web for years, but new alternatives are emerging. Let’s explore what’s next."
   },
   {
-    "id": "0008",
-    "title": "Building Modern CI/CD",
-    "desc": "DevOps pipelines explained with real-world examples."
+    "id": "0006",
+    "title": "What is DeepSeek and How is it Outdoing ChatGPT?",
+    "desc": "DeepSeek is making waves in the AI space—here’s how it’s challenging ChatGPT and why you should pay attention."
+  },
+  {
+    "id": "0005",
+    "title": "Top 8 Free AI Tools That Will Blow Your Mind",
+    "desc": "Discover powerful AI tools that are completely free and can transform how you work, create, and innovate."
+  },
+  {
+    "id": "0004",
+    "title": "Free AI Courses by NVIDIA",
+    "desc": "Upskill with NVIDIA's world-class AI training programs."
+  },
+  {
+    "id": "0003",
+    "title": "Top 10 IDEs and Code Editors",
+    "desc": "Boost your coding efficiency with these powerful tools."
+  },
+  {
+    "id": "0002",
+    "title": "Master Python Development",
+    "desc": "Learn Python through hands-on projects and tutorials."
   },
   {
     "id": "0001",
