@@ -1,85 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>AI Roadmap for Beginners</title>
-    <link rel="icon" href="/logo.jpg" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="/blog/styles.css">
-    <link rel="stylesheet" type="text/css" href="/squares.css">
-    <link rel="stylesheet" type="text/css" href="/mobile.css">
-    <link rel="stylesheet" type="text/css" href="/description-t.css">
-    <link rel="stylesheet" type="text/css" href="/style-sub.css">
-    <link rel="stylesheet" type="text/css" href="article-style.css">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>AI Roadmap for Beginners - Skill Maps</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Start your AI journey with our beginner-friendly roadmap. Learn AI and machine learning step by step." />
+  <link rel="icon" href="/logo.jpg" type="image/x-icon" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+  <style>body { font-family: 'Inter', sans-serif; } html { scroll-behavior: smooth; }</style>
 
-    <meta name="description" content="Start your AI journey with our beginner-friendly roadmap. Learn AI and machine learning step by step.">
-
-    <!-- Open Graph Protocol -->
-    <meta property="og:title" content="Skill Maps - AI Roadmap for Beginners">
-    <meta property="og:description" content="Kickstart your journey into AI and machine learning. Explore tools and paths to become proficient in AI.">
-    <meta property="og:image" content="https://www.skill-maps.com/logo.jpg">
-    <meta property="og:url" content="https://www.skill-maps.com/ai-roadmap.html">
-
-    <script src="/script.js"></script>
+  <!-- Open Graph -->
+  <meta property="og:title" content="AI Roadmap for Beginners - Skill Maps" />
+  <meta property="og:description" content="Kickstart your journey into AI and machine learning. Explore tools and paths to become proficient in AI." />
+  <meta property="og:image" content="https://www.skill-maps.com/logo.jpg" />
+  <meta property="og:url" content="https://www.skill-maps.com/blog/0001.html" />
 </head>
-    
-<body>
-    <!-- Panel Bar -->
-    <div id="panel-bar-placeholder"></div>
-    <script src="/panel-bar.js"></script> 
 
+<body class="bg-gray-50 text-gray-800">
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md shadow-sm z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+      <a href="/" class="text-2xl font-bold text-green-700 hover:text-green-800 transition">Skill Maps</a>
+      <button id="navToggle" class="sm:hidden text-gray-800 focus:outline-none">
+        <i class="fas fa-bars fa-xl"></i>
+      </button>
+      <div id="navLinks" class="hidden sm:flex items-center space-x-8 text-sm">
+        <a href="/" class="hover:text-green-700">Home</a>
+        <a href="/#domains" class="hover:text-green-700">Domains</a>
+        <a href="/#maps" class="hover:text-green-700">Skill Maps</a>
+        <a href="/#articles" class="hover:text-green-700">Blog</a>
+        <a href="/#faq" class="hover:text-green-700">FAQ</a>
+      </div>
+    </div>
+    <div id="mobileMenu" class="sm:hidden hidden bg-white shadow-inner">
+      <a href="/" class="block px-6 py-3 hover:bg-gray-100">Home</a>
+      <a href="/#domains" class="block px-6 py-3 hover:bg-gray-100">Domains</a>
+      <a href="/#maps" class="block px-6 py-3 hover:bg-gray-100">Skill Maps</a>
+      <a href="/#articles" class="block px-6 py-3 hover:bg-gray-100">Blog</a>
+      <a href="/#faq" class="block px-6 py-3 hover:bg-gray-100">FAQ</a>
+    </div>
+  </nav>
+
+  <main class="pt-24">
     <!-- Back Button -->
-    <div class="back-button-container">
-        <button onclick="history.back()" class="back-button">
-            <i class="fas fa-arrow-left"></i> Back
-        </button>
+    <div class="max-w-6xl mx-auto px-6 mb-4">
+      <button onclick="history.back()" class="text-sm text-green-700 hover:underline flex items-center gap-2">
+        <i class="fas fa-arrow-left"></i> Back to Blog
+      </button>
     </div>
 
-    <!-- Article Header Section -->
-    <section id="description-t">
-        <div class="container">
-            <div class="content">
-                <h1>AI Roadmap for Beginners</h1>
-                <p>Start your journey into AI and machine learning with essential skills and tools.</p>
-            </div>
+    <!-- Article Header -->
+    <section class="bg-gradient-to-r from-green-600 to-blue-500 py-20 text-center text-white">
+      <div class="max-w-4xl mx-auto px-6">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-4">AI Roadmap for Beginners</h1>
+        <p class="text-lg md:text-xl text-green-100">Start your journey into AI and machine learning with essential skills and tools.</p>
+      </div>
+    </section>
+
+    <!-- Article Content -->
+    <section class="py-16 bg-white">
+      <div class="max-w-4xl mx-auto px-6 space-y-8">
+        <div>
+          <h2 class="text-2xl font-bold mb-2">Why Learn AI?</h2>
+          <p class="text-gray-700">
+            Artificial Intelligence (AI) is transforming industries and becoming an integral part of daily life.
+            Whether in healthcare, finance, or automation, AI is creating innovative solutions that drive the future.
+            Learning AI opens the door to countless opportunities and the chance to work on groundbreaking projects.
+          </p>
         </div>
-    </section> 
 
-    <!-- Article Content Section -->
-    <section id="description">
-        <div class="description container">
-            <div class="description-top">
-                <h1 class="section-title">Why Learn AI?</h1>
-                <p class="paragraph">
-                    Artificial Intelligence (AI) is transforming industries and becoming an integral part of daily life. Whether in healthcare, finance, or automation, AI is creating innovative solutions that drive the future. Learning AI opens the door to countless opportunities and the chance to work on groundbreaking projects.
-                </p>
+        <div>
+          <h2 class="text-2xl font-bold mb-2">What is AI?</h2>
+          <p class="text-gray-700">
+            AI refers to the development of computer systems capable of performing tasks that typically require human intelligence,
+            such as visual perception, speech recognition, decision-making, and language translation.
+          </p>
+        </div>
 
-                <h2>What is AI?</h2>
-                <p class="paragraph">
-                    AI refers to the development of computer systems capable of performing tasks that typically require human intelligence. These tasks include visual perception, speech recognition, decision-making, and language translation.
-                </p>
+        <div>
+          <h2 class="text-2xl font-bold mb-2">How to Start Learning AI</h2>
+          <ul class="list-disc pl-6 text-gray-700 space-y-2">
+            <li><strong>Step 1:</strong> Learn Programming – Python is the most popular language for AI development.</li>
+            <li><strong>Step 2:</strong> Master Mathematics – AI relies on statistics, linear algebra, and probability.</li>
+            <li><strong>Step 3:</strong> Explore Machine Learning – Learn foundational algorithms and models.</li>
+            <li><strong>Step 4:</strong> Work on Real Projects – Apply your skills with tasks like image classification or chatbot development.</li>
+          </ul>
+        </div>
 
-                <h2>How to Start Learning AI</h2>
-                <ul class="responsive-list">
-                    <li><strong>Step 1: Learn Programming</strong> - Python is the most popular language for AI development.</li>
-                    <li><strong>Step 2: Master Mathematics</strong> - AI relies on statistics, linear algebra, and probability.</li>
-                    <li><strong>Step 3: Explore Machine Learning</strong> - Learn the foundations of machine learning algorithms and models.</li>
-                    <li><strong>Step 4: Work on Real Projects</strong> - Apply your skills to projects like image classification or chatbot development.</li>
-                </ul>
+        <div>
+          <h2 class="text-2xl font-bold mb-2">Essential Tools for AI Development</h2>
+          <ul class="list-disc pl-6 text-gray-700 space-y-2">
+            <li><strong>Jupyter Notebooks:</strong> Interactive Python coding environment.</li>
+            <li><strong>Google Colab:</strong> Free Jupyter notebooks with GPU support.</li>
+            <li><strong>TensorFlow and PyTorch:</strong> Leading frameworks for machine learning and deep learning.</li>
+            <li><strong>Scikit-Learn:</strong> A simple and powerful library for traditional ML tasks.</li>
+          </ul>
+        </div>
 
-                <h2>Essential Tools for AI Development</h2>
-                <ul class="responsive-list">
-                    <li><strong>Jupyter Notebooks:</strong> Interactive environment for running Python code.</li>
-                    <li><strong>Google Colab:</strong> Free GPU-based Jupyter environment for AI projects.</li>
-                    <li><strong>TensorFlow and PyTorch:</strong> The leading AI and deep learning frameworks.</li>
-                    <li><strong>Scikit-Learn:</strong> Machine learning library for data science and model building.</li>
-                </ul>
-
-                <h2>Simple AI Project: Image Classification</h2>
-                <p class="paragraph">Start with a basic project to classify images using TensorFlow:</p>
-                <pre><code>
+        <div>
+          <h2 class="text-2xl font-bold mb-2">Simple AI Project: Image Classification</h2>
+          <p class="text-gray-700 mb-2">Start with a basic TensorFlow model to classify images:</p>
+          <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto"><code>
 from tensorflow import keras
 from tensorflow.keras import layers
 
@@ -89,19 +112,41 @@ model = keras.Sequential([
 ])
 
 print("AI model ready to train!")
-                </code></pre>
-
-                <h2>Join AI Communities</h2>
-                <p class="paragraph">
-                    Engage with AI communities like <a href="https://www.kaggle.com/" target="_blank">Kaggle</a> and <a href="https://ai.google/research/" target="_blank">Google AI</a>. Participating in hackathons and online competitions can fast-track your learning and connect you with industry experts.
-                </p>
-            </div>
+          </code></pre>
         </div>
+
+        <div>
+          <h2 class="text-2xl font-bold mb-2">Join AI Communities</h2>
+          <p class="text-gray-700">
+            Engage with platforms like
+            <a href="https://www.kaggle.com/" class="text-green-700 hover:underline" target="_blank">Kaggle</a>
+            and
+            <a href="https://ai.google/research/" class="text-green-700 hover:underline" target="_blank">Google AI</a>.
+            Participate in hackathons and challenges to accelerate your learning and connect with industry experts.
+          </p>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
-    <div id="footer-placeholder"></div>
-    <script src="/footer.js"></script>
-    <script src="/analytics.js"></script>
+    <footer class="bg-white py-12">
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <p class="text-gray-600 mb-4">&copy; 2025 Skill Maps. All rights reserved.</p>
+        <div class="flex justify-center space-x-6 mb-4">
+          <a href="https://www.facebook.com/groups/212272531621204" class="text-gray-600 hover:text-gray-800"><i class="fab fa-facebook fa-lg"></i></a>
+          <a href="https://x.com/SkillMapsCom" class="text-gray-600 hover:text-gray-800"><i class="fab fa-twitter fa-lg"></i></a>
+          <a href="https://discord.com/invite/QnBUjtpT" class="text-gray-600 hover:text-gray-800"><i class="fab fa-discord fa-lg"></i></a>
+          <a href="https://www.linkedin.com/company/104516478/admin/dashboard/" class="text-gray-600 hover:text-gray-800"><i class="fab fa-linkedin fa-lg"></i></a>
+          <a href="https://www.youtube.com/channel/UCCM1SLARq4kiJ_1Qr6F3msQ" class="text-gray-600 hover:text-gray-800"><i class="fab fa-youtube fa-lg"></i></a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('navToggle').addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+    });
+  </script>
 </body>
 </html>
