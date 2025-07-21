@@ -46,7 +46,7 @@
     "title": "Skill Maps Blog",
     "desc": "Tips, tutorials, and insights from the world of tech and learning.",
     "date": "2025-07-17",
-    "link": "./blog/html/0001.html",
-    "image": "./blog/html/0001.jpg"
+    "link": "/blog/html/0001.html",
+    "image": "/blog/html/0001.jpg"
   }
 ]
