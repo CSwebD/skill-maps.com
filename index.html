@@ -124,37 +124,8 @@
     <section id="articles" class="py-16 bg-purple-50">
       <div class="max-w-6xl mx-auto px-6">
         <h2 class="text-4xl font-bold text-gray-800 mb-8 text-center">Latest Articles</h2>
-        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          <article class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1">
-            <div class="h-40 bg-[url('https://via.placeholder.com/400x200?text=DevOps+Pipelines')] bg-cover bg-center"></div>
-            <div class="p-6">
-              <h3 class="text-xl font-semibold mb-2">Building Modern DevOps Pipelines</h3>
-              <p class="text-gray-600 text-sm mb-4">Discover best CI/CD and infrastructure-as-code practices.</p>
-              <a href="blog/0008.html" class="inline-block text-green-700 font-semibold hover:underline">Read More →</a>
-            </div>
-          </article>
-          <article class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1">
-            <div class="h-40 bg-[url('https://via.placeholder.com/400x200?text=Just+Say+No...')] bg-cover bg-center"></div>
-            <div class="p-6">
-              <h3 class="text-xl font-semibold mb-2">Just Say No to JavaScript and Say Hi to...</h3>
-              <p class="text-gray-600 text-sm mb-4">Exploring better alternatives to JavaScript in modern development.</p>
-              <a href="blog/0007.html" class="inline-block text-blue-700 font-semibold hover:underline">Read More →</a>
-            </div>
-          </article>
-          <article class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1">
-            <div class="h-40 bg-[url('https://via.placeholder.com/400x200?text=DeepSeek+Vs+ChatGPT')] bg-cover bg-center"></div>
-            <div class="p-6">
-              <h3 class="text-xl font-semibold mb-2">What is DeepSeek and How is it Outdoing ChatGPT?</h3>
-              <p class="text-gray-600 text-sm mb-4">A deep dive into DeepSeek’s innovations over traditional models.</p>
-              <a href="blog/0006.html" class="inline-block text-purple-70 fi font-semibold hover:underline">Read More →</a>
-            </div>
-          </article>
-          <article class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 flex flex-col justify-center items-center p-6">
-            <i class="fas fa-book-open fa-3x text-gray-400 mb-4"></i>
-            <h3 class="text-xl font-semibold mb-2">All Articles</h3>
-            <p class="text-gray-600 text-sm mb-4 text-center">Browse our full blog for more resources and insights.</p>
-            <a href="blog.html" class="inline-block text-green-700 font-semibold hover:underline">View All →</a>
-          </article>
+        <div id="latestGrid" class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <!-- JS auto will inject cards here -->
         </div>
       </div>
     </section>
@@ -251,13 +222,57 @@
     <script src="analytics.js"></script>
   </main>
 
-  <script>
-    document.getElementById('navToggle').addEventListener('click', () => {
-      document.getElementById('mobileMenu').classList.toggle('hidden');
-    });
-    document.getElementById('exploreBtn').addEventListener('click', () => {
-      document.getElementById('domains').scrollIntoView({ behavior: 'smooth' });
-    });
-  </script>
+<script>
+  async function loadLatest() {
+    try {
+      const res = await fetch('./blog/blog.json');
+      const all = await res.json();
+      const latest = all.slice(0, 3); // first 3 articles
+      const grid = document.getElementById('latestGrid');
+
+      // Inject the 3 latest articles
+      latest.forEach(a => {
+        const card = document.createElement('article');
+        card.className = "bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1";
+
+        const thumb = document.createElement('div');
+        thumb.className = "h-40 bg-cover bg-center";
+        thumb.style.backgroundImage = `url('${a.image}')`;
+
+        const content = document.createElement('div');
+        content.className = "p-6 flex-1 flex flex-col";
+        content.innerHTML = `
+          <h3 class="text-xl font-semibold mb-2">${a.title}</h3>
+          <p class="text-gray-600 text-sm mb-4 flex-1">${a.desc}</p>
+          <a href="${a.link}" class="text-green-700 font-semibold hover:underline mt-auto">Read More →</a>
+        `;
+
+        card.appendChild(thumb);
+        card.appendChild(content);
+        grid.appendChild(card);
+      });
+
+      // Add a 'View All Articles' card
+      const viewAll = document.createElement('article');
+      viewAll.className = "bg-white border-2 border-green-200 rounded-xl flex flex-col items-center justify-center text-center p-6 hover:bg-green-50 transition transform hover:-translate-y-1";
+
+      viewAll.innerHTML = `
+        <i class="fas fa-book-open fa-3x text-green-600 mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">View All Articles</h3>
+        <p class="text-gray-600 mb-4">Browse our full collection of articles and insights.</p>
+        <a href="blog.html" class="text-green-700 font-semibold hover:underline">Find More →</a>
+      `;
+
+      grid.appendChild(viewAll);
+
+    } catch (err) {
+      console.error('Failed to load latest articles', err);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', loadLatest);
+</script>
+
+
 </body>
 </html>
