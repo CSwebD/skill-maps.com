@@ -150,7 +150,7 @@
 
   async function loadArticleData() {
     try {
-      const res = await fetch('blog.json'); // Fixed path
+      const res = await fetch('./blog/blog.json'); // Fixed path
       allArticles = await res.json();
       renderArticles();
     } catch (error) {
