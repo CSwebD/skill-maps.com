@@ -167,26 +167,31 @@
     articlesToShow.forEach(article => {
       const card = document.createElement('article');
       card.className = "bg-gray-50 rounded-xl shadow hover:shadow-2xl transition overflow-hidden";
-      card.innerHTML = `
-        <div class="h-40 bg-[url('${article.image}')] bg-cover bg-center"></div>
-        <div class="p-6">
-          <h3 class="text-xl font-semibold mb-2">${article.title}</h3>
-          <p class="text-sm text-gray-500 mb-1">${new Date(article.date).toLocaleDateString()}</p>
-          <p class="text-sm text-gray-600 mb-4">${article.desc}</p>
-          <a href="${article.link}" class="text-green-700 font-semibold hover:underline">Read More →</a>
-        </div>
+
+      // Create the image container dynamically:
+      const imgDiv = document.createElement('div');
+      imgDiv.className = "h-40 bg-cover bg-center";
+      // Inline style for the actual URL:
+      imgDiv.style.backgroundImage = `url('${article.image}')`;
+
+      const content = document.createElement('div');
+      content.className = "p-6";
+      content.innerHTML = `
+        <h3 class="text-xl font-semibold mb-2">${article.title}</h3>
+        <p class="text-sm text-gray-500 mb-1">${new Date(article.date).toLocaleDateString()}</p>
+        <p class="text-sm text-gray-600 mb-4">${article.desc}</p>
+        <a href="${article.link}" class="text-green-700 font-semibold hover:underline">Read More →</a>
       `;
+
+      card.appendChild(imgDiv);
+      card.appendChild(content);
       blogGrid.appendChild(card);
     });
 
     visibleCount += increment;
-
-    if (articlesToShow.length >= (filtered || allArticles).length) {
-      loadMoreBtn.style.display = 'none';
-    } else {
-      loadMoreBtn.style.display = 'inline-block';
-    }
+    loadMoreBtn.style.display = (visibleCount < list.length) ? 'inline-block' : 'none';
   }
+
 
   loadMoreBtn.addEventListener('click', () => renderArticles());
   searchInput.addEventListener('input', e => {
