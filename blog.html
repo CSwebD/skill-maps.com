@@ -61,6 +61,16 @@
         />
       </div>
 
+      <!-- Categories Filter -->
+      <div class="flex flex-wrap justify-center gap-3 mb-10" id="categoryFilter">
+        <button data-category="all" class="category-btn px-4 py-2 rounded-full bg-green-600 text-white font-medium hover:bg-green-700 transition">All</button>
+        <button data-category="AI" class="category-btn px-4 py-2 rounded-full bg-gray-200 text-gray-800 hover:bg-green-600 hover:text-white transition">AI</button>
+        <button data-category="Tech" class="category-btn px-4 py-2 rounded-full bg-gray-200 text-gray-800 hover:bg-green-600 hover:text-white transition">Tech</button>
+        <button data-category="Development" class="category-btn px-4 py-2 rounded-full bg-gray-200 text-gray-800 hover:bg-green-600 hover:text-white transition">Development</button>
+        <button data-category="Research" class="category-btn px-4 py-2 rounded-full bg-gray-200 text-gray-800 hover:bg-green-600 hover:text-white transition">Research</button>
+      </div>
+
+
       <div id="blogGrid" class="grid gap-8 md:grid-cols-2 lg:grid-cols-3"></div>
 
       <div class="text-center mt-10">
@@ -147,6 +157,25 @@
   const blogGrid = document.getElementById('blogGrid');
   const loadMoreBtn = document.getElementById('loadMoreBtn');
   const searchInput = document.getElementById('searchInput');
+
+  // CATEGORY FILTER
+  const categoryBtns = document.querySelectorAll('.category-btn');
+
+  categoryBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      categoryBtns.forEach(b => b.classList.remove('bg-green-600', 'text-white'));
+      btn.classList.add('bg-green-600', 'text-white');
+
+      const category = btn.getAttribute('data-category');
+      let filtered = (category === 'all')
+        ? allArticles
+        : allArticles.filter(article => article.category === category);
+
+      visibleCount = 0;
+      renderArticles(filtered);
+    });
+  });
+
 
   async function loadArticleData() {
     try {
