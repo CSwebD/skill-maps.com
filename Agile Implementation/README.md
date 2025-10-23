@@ -15,9 +15,9 @@ The platform allows users to:
 
 | Role | Name / Responsibility | Key Duties |
 |------|------------------------|-------------|
-| **Product Owner** | Team Lead (You) | Define vision, prioritize backlog, gather feedback from users |
-| **Scrum Master** | Team Lead (You) | Facilitate Agile process, organize sprints, remove blockers |
-| **Developers (2)** | You + Developer 2 | Design, develop, test, and deploy platform features |
+| **Product Owner** | Team Lead (CSwebD) | Define vision, prioritize backlog, gather feedback from users |
+| **Scrum Master** | Team Lead (CSwebD) | Facilitate Agile process, organize sprints, remove blockers |
+| **Developers (2)** | CSwebD + Developer 2 | Design, develop, test, and deploy platform features |
 | **Marketolog** | Team Member | Promote platform, write articles, manage social media, collect and analyze user data via Google Analytics |
 | **Users** | External stakeholders | Provide feedback on usability, content quality, and features |
 
