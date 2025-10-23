@@ -73,17 +73,20 @@ Each sprint includes:
 
 ---
 
-## 📊 Collaboration Workflow
-1. Each feature or fix is tracked as a **GitHub Issue**.  
-2. Issues are organized in the **GitHub Project Kanban board** under:
-   - 🟩 To Do  
-   - 🟨 In Progress  
-   - 🟦 In Review  
-   - 🟪 Done  
-3. Branch naming convention:  
-   - `feature/feature-name`  
-   - `fix/bug-description`  
-4. All merges require peer review (at least one approval).  
+## 📋 Agile Board Overview (GitHub Projects)
+
+Our Agile workflow is managed in **GitHub Projects**, using a Kanban-style board with the following columns:
+
+| Status | Description | Example Items |
+|---------|--------------|----------------|
+| 🟩 **Backlog** | Features and tasks not yet started | Registration (Accounts for Users), SQL – Store all Data |
+| 🟦 **Ready** | Items ready to be worked on in the next sprint | New Roadmap Domain (Cloud Computing) |
+| 🟨 **In Progress** | Tasks currently being developed | Organize Files into Folders |
+| 🟪 **In Review** | Items pending code review and testing | *(empty this sprint)* |
+| 🟧 **Done** | Completed and merged tasks | New Section: “Blogs” |
+
+This board provides clear visibility of what’s being planned, built, reviewed, and delivered — keeping the Agile cycle transparent for all team members and stakeholders.
+ 
 
 ---
 
