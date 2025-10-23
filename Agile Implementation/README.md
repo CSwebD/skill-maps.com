@@ -60,19 +60,6 @@ Each sprint includes:
 
 ---
 
-## 🧰 Tools & Technologies
-
-| Category | Tool |
-|-----------|------|
-| **Version Control** | [GitHub](https://github.com/) |
-| **Project Management** | GitHub Projects (Kanban board) |
-| **Development Stack** | React, Node.js / Express, MongoDB (or similar) |
-| **Collaboration** | Slack / Discord for daily syncs |
-| **Analytics** | Google Analytics, social media insights |
-| **Deployment** | Vercel / Netlify (Frontend), Render / AWS / Azure (Backend) |
-
----
-
 ## 📋 Agile Board Overview (GitHub Projects)
 
 Our Agile workflow is managed in **GitHub Projects**, using a Kanban-style board with the following columns:
