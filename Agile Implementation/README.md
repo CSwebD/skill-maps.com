@@ -17,7 +17,7 @@ The platform allows users to:
 |------|------------------------|-------------|
 | **Product Owner** | Team Lead (CSwebD) | Define vision, prioritize backlog, gather feedback from users |
 | **Scrum Master** | Team Lead (CSwebD) | Facilitate Agile process, organize sprints, remove blockers |
-| **Developers (2)** | CSwebD + Developer 2 | Design, develop, test, and deploy platform features |
+| **Developers (2)** | CSwebD + 2nd Developer | Design, develop, test, and deploy platform features |
 | **Marketolog** | Team Member | Promote platform, write articles, manage social media, collect and analyze user data via Google Analytics |
 | **Users** | External stakeholders | Provide feedback on usability, content quality, and features |
 
