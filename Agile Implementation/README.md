@@ -24,80 +24,95 @@ The platform allows users to:
 ---
 
 ## ⚙️ Agile Framework
-We follow the **Scrum** framework with 2-week sprint cycles and continuous feedback loops.
+We follow the **Scrum** methodology using **2-week sprints**. Each sprint delivers a usable increment of the platform while incorporating user feedback and analytics insights.
 
 ### 🔁 Sprint Cycle
-Each sprint includes:
-1. **Sprint Planning** – Define sprint goal and select backlog items  
-2. **Daily Stand-Ups** – Quick progress updates and blocker discussions  
-3. **Development & Testing** – Build and test features incrementally  
-4. **Sprint Review** – Demonstrate features to stakeholders and gather feedback  
-5. **Sprint Retrospective** – Reflect and improve team processes  
+1. **Sprint Planning** – Define sprint goals and select backlog items  
+2. **Daily Stand-ups** – Share progress and identify blockers  
+3. **Development & Testing** – Build, test, and integrate features incrementally  
+4. **Sprint Review** – Demonstrate deliverables to stakeholders and collect feedback  
+5. **Sprint Retrospective** – Reflect on process improvements and lessons learned  
 
 ---
 
-## 🧩 Product Backlog (Example Items)
-
-| ID | User Story | Priority | Status |
-|----|-------------|-----------|---------|
-| US1 | As a user, I want to browse skill maps so I can choose what to learn. | High | Done |
-| US2 | As a user, I want to mark modules as completed to track progress. | High | In Progress |
-| US3 | As a contributor, I want to submit new skill maps for review. | Medium | Backlog |
-| US4 | As a marketolog, I want to view analytics data to understand user engagement. | Medium | Backlog |
-| US5 | As a user, I want mobile-friendly navigation for ease of use. | Medium | Backlog |
-
----
-
-## 🗓️ Sprint Plan (Example)
+## 🗓️ Sprint Plan
 
 | Sprint | Duration | Goal | Main Deliverables |
 |--------|-----------|------|-------------------|
-| Sprint 1 | 2 weeks | Core platform setup | Login system, skill map structure, basic UI |
-| Sprint 2 | 2 weeks | User progress tracking | Completion toggles, profile page |
-| Sprint 3 | 2 weeks | Content contribution | Map submission, admin review panel |
-| Sprint 4 | 2 weeks | Analytics & marketing | Integrate Google Analytics, optimize SEO |
-| Sprint 5 | 2 weeks | UX & performance | Mobile support, optimization, bug fixes |
+| **Sprint 1** | 2 weeks | Add a new content section | 🟧 *New Section: Blogs* |
+| **Sprint 2** | 2 weeks | Implement user accounts | 🟦 *User Registration, Authentication, SQL Database* |
+| **Sprint 3** | 2 weeks | Enable learning progress tracking | 🟨 *Record and visualize user progress in roadmaps* |
+| **Sprint 4** | 2 weeks | Add an AI Chat Bot for personalized guidance | 🟪 *AI assistant to help users find resources and track goals* |
 
 ---
 
-## 📋 Agile Board Overview (GitHub Projects)
+## 🧩 Product Backlog (Sample User Stories)
 
-Our Agile workflow is managed in **GitHub Projects**, using a Kanban-style board with the following columns:
-
-| Status | Description | Example Items |
-|---------|--------------|----------------|
-| 🟩 **Backlog** | Features and tasks not yet started | Registration (Accounts for Users), SQL – Store all Data |
-| 🟦 **Ready** | Items ready to be worked on in the next sprint | New Roadmap Domain (Cloud Computing) |
-| 🟨 **In Progress** | Tasks currently being developed | Organize Files into Folders |
-| 🟪 **In Review** | Items pending code review and testing | *(empty this sprint)* |
-| 🟧 **Done** | Completed and merged tasks | New Section: “Blogs” |
-
-This board provides clear visibility of what’s being planned, built, reviewed, and delivered — keeping the Agile cycle transparent for all team members and stakeholders.
- 
+| ID | User Story | Priority | Status |
+|----|-------------|-----------|---------|
+| US1 | As a user, I want to read articles in a blog section. | High | ✅ Done |
+| US2 | As a user, I want to register and log in to save my progress. | High | ⏳ In Progress |
+| US3 | As a user, I want to record my skill progress on roadmaps. | High | ⏳ Planned |
+| US4 | As a user, I want to chat with an AI assistant for learning advice. | Medium | 🕓 Backlog |
+| US5 | As a marketolog, I want to analyze user traffic using Google Analytics. | Medium | 🕓 Backlog |
 
 ---
 
-## 📈 Marketing & Analytics
-The marketolog plays a vital role in growth and feedback:
-- Publishes posts about new features and learning content  
-- Runs social media campaigns (LinkedIn, Twitter/X, Instagram)  
-- Collects data from Google Analytics and shares insights with the team  
-- Suggests improvements based on user activity and engagement trends  
+## 📋 Agile Board Overview
+
+Below is the Agile Board from **GitHub Projects**, used to visualize current sprint progress:
+
+![Agile Board Overview](./kanban.png)
+
+**Board Columns:**
+- 🟩 **Backlog** – Tasks not started yet  
+- 🟦 **Ready** – Items planned for next sprint  
+- 🟨 **In Progress** – Tasks being developed  
+- 🟪 **In Review** – Features pending review and testing  
+- 🟧 **Done** – Completed and deployed features  
+
+This board ensures transparency across the development process and helps the team and stakeholders track progress effectively.
+
+---
+
+## 🧰 Tools & Technologies
+
+| Category | Tool |
+|-----------|------|
+| **Version Control** | [GitHub](https://github.com/) |
+| **Project Management** | GitHub Projects (Kanban board) |
+| **Frontend** | React / Next.js |
+| **Backend** | Node.js / Express / SQL |
+| **AI Integration** | OpenAI API (Chat Assistant) |
+| **Analytics** | Google Analytics |
+| **Deployment** | Vercel / Render |
+| **Communication** | Slack / Discord |
+
+---
+
+## 📊 Marketing & Analytics
+
+The **Marketolog**:
+- Publishes blog posts and social media updates  
+- Analyzes traffic via **Google Analytics**  
+- Identifies top-performing topics and user engagement metrics  
+- Provides data insights to guide future development and marketing focus  
+
+Feedback from analytics is used to adjust priorities in the product backlog.
 
 ---
 
 ## 💬 Feedback & Continuous Improvement
-User feedback is collected through:
-- Contact form and feedback surveys  
-- Social media comments and messages  
-- Google Analytics usage data  
+User feedback is collected via:
+- On-site surveys and forms  
+- Social media engagement  
+- Analytics data (bounce rates, time on page, feature usage)
 
-Insights from these sources feed into new **user stories** added to the Product Backlog for future sprints.
+Insights are reviewed during sprint retrospectives and transformed into new **user stories** for the next sprint.
 
 ---
 
-## 🧠 Agile Values in Practice
-We adhere to the four core Agile values:
+## 🧠 Agile Principles in Practice
 
 1. **Individuals and interactions** over processes and tools  
 2. **Working software** over comprehensive documentation  
@@ -106,8 +121,7 @@ We adhere to the four core Agile values:
 
 ---
 
-## 🚀 Project Vision Statement
+## 🚀 Project Vision
 > “Empower learners to understand their current skills, visualize their growth path, and achieve mastery — one roadmap at a time.”
 
 ---
-
