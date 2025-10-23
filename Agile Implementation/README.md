@@ -62,7 +62,7 @@ We follow the **Scrum** methodology using **2-week sprints**. Each sprint delive
 
 Below is the Agile Board from **GitHub Projects**, used to visualize current sprint progress:
 
-![Agile Board Overview](./kanban.png)
+![Agile Board Overview](./Kanban.jpg)
 
 **Board Columns:**
 - 🟩 **Backlog** – Tasks not started yet  
