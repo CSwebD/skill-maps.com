@@ -1,0 +1,54 @@
+#box-section {
+    padding: 20px;
+    background-color: #f9f9f9; /* Adjust background color as needed */
+}
+
+.box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between boxes */
+    justify-content: flex-start; /* Align items to the start */
+}
+
+.box {
+    width: calc(33.333% - 20px); /* 3 boxes per row, considering the gap */
+    background-color: #ffffff; /* Background color for the boxes */
+    border: 1px solid #ddd; /* Border around the boxes */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Padding inside the boxes */
+    text-align: left; /* Align text to the left */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transitions for hover effects */
+    text-decoration: none; /* Remove underline from links */
+    color: inherit; /* Inherit color for text */
+}
+
+.box:hover {
+    background-color: #f1f1f1; /* Background color change on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+.box .course-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.box .course-category,
+.box .course-description,
+.box .course-duration {
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    .box {
+        width: calc(50% - 20px); /* 2 boxes per row for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .box {
+        width: 100%; /* 1 box per row for very small screens */
+    }
+}
