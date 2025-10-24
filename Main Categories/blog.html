@@ -42,10 +42,10 @@
 
 <!-- HEADER -->
 <main class="pt-24">
-  <section class="bg-gradient-to-r from-orange-700 to-pink-700 text-white py-20 text-center">
+  <section class="bg-gradient-to-r from-[#fef3c7] to-[#fde68a] text-white py-20 text-center">
     <div class="max-w-3xl mx-auto px-6">
-      <h1 class="text-5xl font-extrabold mb-4">Skill Maps Blog</h1>
-      <p class="text-lg text-indigo-100">Tips, tutorials, and insights from the world of tech and learning.</p>
+      <h1 class="text-5xl font-extrabold text-amber-800 drop-shadow mb-4">Skill Maps Blog</h1>
+      <p class="text-xl text-gray-700 max-w-2xl mx-auto">Tips, tutorials, and insights from the world of tech and learning.</p>
     </div>
   </section>
 
@@ -145,7 +145,6 @@
         </div>
       </div>
     </footer>
-    <script src="analytics.js"></script>
   </main>
 
 <!-- SCRIPT -->
@@ -179,7 +178,7 @@
 
   async function loadArticleData() {
     try {
-      const res = await fetch('./blog/blog.json'); // Fixed path
+      const res = await fetch('../blog/blog.json'); // Fixed path
       allArticles = await res.json();
       renderArticles();
     } catch (error) {
@@ -239,6 +238,9 @@
   window.addEventListener('DOMContentLoaded', loadArticleData);
 </script>
 
+    <!-- Placeholder for the footer -->
+    <div id="footer-placeholder"></div>
+    <script src="../js/analytics.js"></script>
 
 </body>
 </html>
