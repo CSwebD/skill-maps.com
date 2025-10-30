@@ -1,144 +1,126 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>SM - Python</title>
-    <link rel="icon" href="/logo.jpg" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="/styles.css">
-    <link rel="stylesheet" type="text/css" href="/quiz.css">
-    <link rel="stylesheet" type="text/css" href="/mobile.css">
-    <link rel="stylesheet" type="text/css" href="/style-sub.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="/script.js"></script>
-    <script src="https://kit.fontawesome.com/yourcode.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SM - Python Development</title>
+  <link rel="icon" href="../images/logo.jpg" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Meta & Open Graph -->
+  <meta name="description" content="Learn Python step by step with videos and practical projects.">
+  <meta property="og:title" content="Skill Maps - Python Development">
+  <meta property="og:description" content="Master Python through structured lessons and hands-on projects.">
+  <meta property="og:url" content="https://www.skill-maps.com/domains/Python.html">
+  <meta property="og:image" content="https://www.skill-maps.com/images/logo.jpg">
+
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
-<body>
-    <!-- Placeholder for the panel bar -->
-    <div id="panel-bar-placeholder"></div>
-    <script src="/panel-bar.js"></script> 
+<body class="text-gray-800">
 
+  <!-- NAVBAR -->
+  <div id="panel-bar-placeholder"></div>
+  <script src="panel-nav.js"></script>
+
+  <main class="pt-16 max-w-6xl mx-auto px-6 space-y-12">
+
+    <!-- HEADER -->
     <section id="head">
-        <div class="head container">
-            <h2 class="title-page">Python</h2>
-        </div>
+      <h2 class="title-page">Python Development</h2>
     </section>
 
-    <section id="video-course">
-        <div class="video-course container">
-            <div class="video-course-top">
-                <h1 class="section-title">Quick intro into Python:</h1>
-                <p class="paragraph">
-                    <iframe class="tutorial-video" width="1200" height="650" src="https://www.youtube.com/embed/fWjsdhR3z3c?si=mlMBRbv44QYLzXgH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <i>Source: ["How to Code in Java | Learn Java Basics in Under 10 Minutes | Java Tutorial For Beginners" by Teves Development, Youtube]</i>
-                </p>
-            </div>
-        </div>
+    <!-- INTRO VIDEO -->
+    <section id="video-course" class="space-y-6">
+      <h1 class="section-title">Quick Introduction to Python</h1>
+      <iframe class="tutorial-video" src="https://www.youtube.com/embed/fWjsdhR3z3c" title="Python Overview" frameborder="0" allowfullscreen></iframe>
+      <p class="paragraph italic text-gray-600">Source: “Python Basics for Beginners” — Teves Development (YouTube)</p>
     </section>
 
-    <section id="text-course">
-        <div class="text-course container">
-            <div class="text-course-top">
-                <h2 style="text-align: center;">Welcome to Python - Full Course</p>
-                <br><br><h1 class="section-title">Instructions:</h1>
-                <p class="paragraph">
-                    For this course, you will need to write your code in PyCharm, Visual Studio Code (needs to be installed on desktop), or other online tools like Programiz.
-                    <br>1. The first step is to watch the video <i>"Python - Full Course"</i>;
-                    <br>2. Next, there are 3 projects. Watch how to build them, then you will be guided to modify and test them so you can add them to your portfolio.
-                    <br>3. At the end, you will check your knowledge about Python by taking an exam. If you pass it, you will be able to redeem your certificate.
-                    <br><p style="text-align: center;">Good luck!</p>
-                    <br><br>
-                </p>                
-                <!-- Minimized paragraphs -->
-                <p class="minimized-paragraph" onclick="toggleParagraph(1)">Python - Full Course (video)</p>
-                <div id="paragraph-1" class="paragraph-content hide">
-                    <iframe class="tutorial-video" width="1000" height="562.50" src="https://www.youtube.com/embed/PXMJ6FS7llk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <i>Source: ["Automate with Python – Full Course for Beginners" by freeCodeCamp.org, Youtube]</i>
-                    <br><br><b>Exercise:</b>
-                    <br>- Watch this video and make some notes. Once done, go to the next stage, your first project in Python.
-                    <br><br>
-                </div>                
+    <!-- COURSE INSTRUCTIONS -->
+    <section id="text-course" class="space-y-6">
+      <h2 class="text-center section-title">Welcome to Python - Full Course</h2>
+      <h3 class="section-title">Instructions</h3>
+      <p class="paragraph">
+        To complete this course, you’ll need a code editor such as <b>PyCharm</b> or <b>Visual Studio Code</b>, or an online IDE like <b>Programiz</b>.
+        <br><br>
+        1. Watch the <i>"Python - Full Course"</i> video.<br>
+        2. Complete the three guided projects to build practical Python skills.<br>
+        3. Upload your projects to your <b>GitHub portfolio</b>.
+        <br><br>
+        <span class="text-center font-bold">Good luck — start coding in Python!</span>
+      </p>
 
-                <p class="minimized-paragraph" onclick="toggleParagraph(2)">Project 1: Simple Sentiment Text Analysis</p>
-                <div id="paragraph-2" class="paragraph-content hide">
-                    <iframe class="tutorial-video" width="1000" height="562.50" src="https://www.youtube.com/embed/tXuvh5_Xyrw?si=JKWqDezf_Tw_-iBO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <i>Source: ["Simple Sentiment Text Analysis in Python" by NeuralNine, Youtube]</i>
-                    <br><br><b>Exercise:</b>
-                    <br>1. Follow the video and build this code. You can use Visual Studio Code (it's free). Test your code;
-                    <br>2. Try to build something similar with your own code. Test it, if it works, upload it to your GitHub account.
-                    <br>3. Go to the next stage: the second project in Python.
-                    <br><br>
-                </div>
+      <!-- LESSON 1 -->
+      <p class="minimized-paragraph" onclick="toggleParagraph(1)">Python - Full Course (Video)</p>
+      <div id="paragraph-1" class="paragraph-content hidden">
+        <iframe class="tutorial-video" src="https://www.youtube.com/embed/PXMJ6FS7llk" title="Python Full Course" frameborder="0" allowfullscreen></iframe>
+        <p class="paragraph italic text-gray-600 mt-2">Source: “Automate with Python – Full Course for Beginners” — freeCodeCamp.org (YouTube)</p>
+        <p class="paragraph mt-2"><b>Exercise:</b> Watch the video, take notes, and prepare for your first project.</p>
+      </div>
 
-                <p class="minimized-paragraph" onclick="toggleParagraph(3)">Project 2: Self-Driving AI Car Simulation</p>
-                <div id="paragraph-3" class="paragraph-content hide">
-                    <iframe class="tutorial-video" width="1000" height="562.50" src="https://www.youtube.com/embed/Cy155O5R1Oo?si=RhK3bDf6VcEo0u-Z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <i>Source: ["Self-Driving AI Car Simulation in Python" by NeuralNine, Youtube]</i>
-                    <br><br><b>Exercise:</b>
-                    <br>1. Follow the video and build this code. Test your code;
-                    <br>2. Try to build something similar with your own code. Test it, if it works, upload it to your GitHub account.
-                    <br>3. Go to the next stage: the third project in Python.
-                    <br><br>
-                </div>
+      <!-- PROJECT 1 -->
+      <p class="minimized-paragraph" onclick="toggleParagraph(2)">Project 1: Simple Sentiment Text Analysis</p>
+      <div id="paragraph-2" class="paragraph-content hidden">
+        <iframe class="tutorial-video" src="https://www.youtube.com/embed/tXuvh5_Xyrw" title="Project 1" frameborder="0" allowfullscreen></iframe>
+        <p class="paragraph italic text-gray-600 mt-2">Source: “Simple Sentiment Text Analysis in Python” — NeuralNine (YouTube)</p>
+        <p class="paragraph mt-2"><b>Exercise:</b>
+          <br>1. Follow the tutorial and build the project.<br>
+          2. Customize and test your code.<br>
+          3. Upload your version to your <b>GitHub portfolio</b>.
+        </p>
+      </div>
 
-                <p class="minimized-paragraph" onclick="toggleParagraph(4)">Project 3: Financial AI Assistant</p>
-                <div id="paragraph-4" class="paragraph-content hide">
-                    <iframe class="tutorial-video" width="1000" height="562.50" src="https://www.youtube.com/embed/Y47kjQvffPo?si=1Gw0T1QP0HJkVvm7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <i>Source: ["Financial AI Assistant in Python" by NeuralNine, Youtube]</i>
-                    <br><br><b>Exercise:</b>
-                    <br>1. Follow the video and build this code. Test your code;
-                    <br>2. Try to build something similar with your own code. Test it, if it works, upload it to your GitHub account.
-                    <br>3. The next stage is an exam. You have 10 questions, with a total time of 10 minutes. To pass, you need to get 8 out of 10. You can retake it. Once you pass, you will have 1 minute to redeem your certificate by entering your full name correctly!
-                    <br><br>
-                </div>
+      <!-- PROJECT 2 -->
+      <p class="minimized-paragraph" onclick="toggleParagraph(3)">Project 2: Self-Driving AI Car Simulation</p>
+      <div id="paragraph-3" class="paragraph-content hidden">
+        <iframe class="tutorial-video" src="https://www.youtube.com/embed/Cy155O5R1Oo" title="Project 2" frameborder="0" allowfullscreen></iframe>
+        <p class="paragraph italic text-gray-600 mt-2">Source: “Self-Driving AI Car Simulation in Python” — NeuralNine (YouTube)</p>
+        <p class="paragraph mt-2"><b>Exercise:</b>
+          <br>1. Follow the tutorial and build the project.<br>
+          2. Customize and test your code.<br>
+          3. Upload to GitHub once tested successfully.
+        </p>
+      </div>
 
-                <p class="minimized-paragraph" onclick="toggleParagraph(5)">Exam (Redeem Certificate)</p>
-                <div id="paragraph-5" class="paragraph-content">
-                    <div class="quiz-container">
-                        <div id="quiz">
-                            <div id="question-count"></div>
-                            <div id="question"></div>
-                            <div class="choices">
-                                <button class="choice" onclick="selectAnswer(0)"></button>
-                                <button class="choice" onclick="selectAnswer(1)"></button>
-                                <button class="choice" onclick="selectAnswer(2)"></button>
-                                <button class="choice" onclick="selectAnswer(3)"></button>
-                            </div>
-                            <button id="prev-btn" class="hide" onclick="prevQuestion()">Previous</button>
-                            <button id="next-btn" onclick="nextQuestion()">Next</button>
-                            <div id="timer"></div>
-                        </div>
-                        <div id="result" class="hide">
-                            <h2>Results</h2>
-                            <p id="result-message"></p>
-                            <p>Your score: <span id="score"></span></p>
-                            <div id="result-details"></div>
-                            <button onclick="restartQuiz()">Restart Quiz</button>
-                            <div id="redeem-certificate" class="hide">
-                                <input type="text" id="name" placeholder="Enter your name">
-                                <button onclick="generateCertificate()">Generate Certificate</button>
-                                <div id="redemption-timer" class="hide"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <!-- PROJECT 3 -->
+      <p class="minimized-paragraph" onclick="toggleParagraph(4)">Project 3: Financial AI Assistant</p>
+      <div id="paragraph-4" class="paragraph-content hidden">
+        <iframe class="tutorial-video" src="https://www.youtube.com/embed/Y47kjQvffPo" title="Project 3" frameborder="0" allowfullscreen></iframe>
+        <p class="paragraph italic text-gray-600 mt-2">Source: “Financial AI Assistant in Python” — NeuralNine (YouTube)</p>
+        <p class="paragraph mt-2"><b>Exercise:</b>
+          <br>1. Follow the tutorial and build the project.<br>
+          2. Customize and test your code.<br>
+          3. Upload to your <b>GitHub portfolio</b>.
+        </p>
+      </div>
 
-                <p class="paragraph">
-                    <br><h1 class="section-title" style="margin-top: 20px;">Summary</h1>
-                    <br>Now you can add your own projects to your GitHub account and post your certificate on LinkedIn. You can also explore and learn other programming languages using the <a href="Skill_Based_Roadmaps.html">Skill-Based Roadmaps</a> or choose a career path from the <a href="Role_based_Roadmaps.html">Role-Based Roadmaps</a>.
-                    <br>
-                </p>
-            </div>
-        </div>
+      <!-- SUMMARY -->
+      <h1 class="section-title mt-6">Summary</h1>
+      <p class="paragraph">
+        Congratulations on completing the Python course!  
+        <br><br>
+        • Upload your projects to <b>GitHub</b> and share them on <b>LinkedIn</b>.<br>
+        • Continue learning through our <a href="../skills.html" class="text-blue-600 hover:underline">Skill-Based Roadmaps</a>.<br>
+        • Explore career paths using the <a href="../domains.html" class="text-blue-600 hover:underline">Role-Based Roadmaps</a>.
+      </p>
+      <br>
     </section>
+  </main>
 
-    <!-- Placeholder for the footer -->
-    <div id="footer-placeholder"></div>
-    <script src="/footer.js"></script>
-    <script src="/skills/python-quiz.js"></script>
-    <script src="/skills/python-certificate.js"></script>
-    <script src="/analytics.js"></script>
+  <!-- FOOTER -->
+  <div id="footer-placeholder"></div>
+  <script src="footer.js"></script>
+  <script src="analytics.js"></script>
+
+  <script>
+    function toggleParagraph(num) {
+      document.getElementById(`paragraph-${num}`).classList.toggle('hidden');
+    }
+  </script>
+
 </body>
 </html>

@@ -1,145 +1,127 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>SM - Vue JS</title>
-    <link rel="icon" href="/logo.jpg" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="/styles.css">
-    <link rel="stylesheet" type="text/css" href="/quiz.css">
-    <link rel="stylesheet" type="text/css" href="/mobile.css">
-    <link rel="stylesheet" type="text/css" href="/style-sub.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="/script.js"></script>
-    <script src="https://kit.fontawesome.com/yourcode.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SM - Vue JS Development</title>
+  <link rel="icon" href="../images/logo.jpg" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Meta & Open Graph -->
+  <meta name="description" content="Learn Vue.js step by step with videos and practical projects.">
+  <meta property="og:title" content="Skill Maps - Vue JS Development">
+  <meta property="og:description" content="Master Vue.js through structured lessons and hands-on projects.">
+  <meta property="og:url" content="https://www.skill-maps.com/domains/Vue.html">
+  <meta property="og:image" content="https://www.skill-maps.com/images/logo.jpg">
+
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
-<body>
-    <!-- Placeholder for the panel bar -->
-    <div id="panel-bar-placeholder"></div>
-    <script src="/panel-bar.js"></script> 
+<body class="text-gray-800">
 
+  <!-- NAVBAR -->
+  <div id="panel-bar-placeholder"></div>
+  <script src="panel-nav.js"></script>
+
+  <main class="pt-16 max-w-6xl mx-auto px-6 space-y-12">
+
+    <!-- HEADER -->
     <section id="head">
-        <div class="head container">
-            <h2 class="title-page">Vue JS</h2>
-        </div>
+      <h2 class="title-page">Vue JS Development</h2>
     </section>
 
-    <section id="video-course">
-        <div class="video-course container">
-            <div class="video-course-top">
-                <h1 class="section-title">Quick intro into Vue JS:</h1>
-                <p class="paragraph">
-                    <iframe class="tutorial-video" width="1200" height="675" src="https://www.youtube.com/embed/YrxBCBibVo0?si=JXS1JdSlh6mdOoxA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    Source: ["Vue JS 3 Tutorial for Beginners #1 - Introduction" by Net Ninja, Youtube]
-                </p>
-            </div>
-        </div>
+    <!-- INTRO VIDEO -->
+    <section id="video-course" class="space-y-6">
+      <h1 class="section-title">Quick Introduction to Vue JS</h1>
+      <iframe class="tutorial-video" src="https://www.youtube.com/embed/YrxBCBibVo0" title="Vue JS Overview" frameborder="0" allowfullscreen></iframe>
+      <p class="paragraph italic text-gray-600">Source: “Vue JS 3 Tutorial for Beginners #1 - Introduction” — Net Ninja (YouTube)</p>
     </section>
 
-    <section id="text-course">
-        <div class="text-course container">
-            <div class="text-course-top">
-                <h2 style="text-align: center;">Welcome to Vue.js - Full Course</p>
-                <br><br><h1 class="section-title">Instructions:</h1>
-                <p class="paragraph">
-                    For this course, you will need to write your code in Visual Studio Code (needs to be installed on desktop), or other online tools like Programiz.
-                    <br>1. The first step is to watch the video <i>"Vue.js - Full Course"</i>;
-                    <br>2. Next, there are 3 projects. Watch how to build them, then you will be guided to modify and test them so you can add them to your portfolio.
-                    <br>3. At the end, you will check your knowledge about Vue.js by taking an exam. If you pass it, you will be able to redeem your certificate.
-                    <br><p style="text-align: center;">Good luck!</p>
-                    <br><br>
-                </p>                
+    <!-- COURSE INSTRUCTIONS -->
+    <section id="text-course" class="space-y-6">
+      <h2 class="text-center section-title">Welcome to Vue.js - Full Course</h2>
+      <h3 class="section-title">Instructions</h3>
+      <p class="paragraph">
+        You will need <b>Visual Studio Code</b> or an online IDE like <b>Programiz</b>.
+        <br><br>
+        1. Watch the <i>"Vue.js - Full Course"</i> video.<br>
+        2. Complete the three guided projects.<br>
+        3. Upload your projects to your <b>GitHub portfolio</b>.
+        <br><br>
+        <span class="text-center font-bold">Good luck — start coding in Vue.js!</span>
+      </p>
 
-                <!-- Minimized paragraphs -->
-                <p class="minimized-paragraph" onclick="toggleParagraph(1)">Vue JS - Full Course (video)</p>
-                <div id="paragraph-1" class="paragraph-content hide">
-                    <iframe class="tutorial-video" width="1000" height="562.50" src="https://www.youtube.com/embed/4deVCNJq3qc?si=HokDPd0RvusCCa7R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <i>Source: ["Learn Vue.js - Full Course for Beginners - 2019" by freeCodeCamp.org, Youtube]</i>
-                    <br><br><b>Exercise:</b>
-                    <br>- Watch this video and make some notes. Once done, go to the next stage, your first project in Vue.js.
-                    <br><br>
-                </div>                
+      <!-- LESSON 1 -->
+      <p class="minimized-paragraph" onclick="toggleParagraph(1)">Vue JS - Full Course (Video)</p>
+      <div id="paragraph-1" class="paragraph-content hidden">
+        <iframe class="tutorial-video" src="https://www.youtube.com/embed/4deVCNJq3qc" title="Vue Full Course" frameborder="0" allowfullscreen></iframe>
+        <p class="paragraph italic text-gray-600 mt-2">Source: “Learn Vue.js - Full Course for Beginners - 2019” — freeCodeCamp.org (YouTube)</p>
+        <p class="paragraph mt-2"><b>Exercise:</b> Watch the video, take notes, and prepare for your first project.</p>
+      </div>
 
-                <p class="minimized-paragraph" onclick="toggleParagraph(2)">Project 1: Weather App</p>
-                <div id="paragraph-2" class="paragraph-content hide">
-                    <iframe class="tutorial-video" width="1000" height="562.50" src="https://www.youtube.com/embed/JLc-hWsPTUY?si=h4JQssDYvmb1Rf8n" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <i>Source: ["Build a Weather App in VueJS | Vue Beginner Tutorial" by Tyler Potts, Youtube]</i>
-                    <br><br><b>Exercise:</b>
-                    <br>1. Follow the video and build this code. You can use Visual Studio Code (it's free). Test your code;
-                    <br>2. Try to build something similar with your own code. Test it, if it works, upload it to your GitHub account.
-                    <br>3. Go to the next stage: the second project in Vue.js.
-                    <br><br>
-                </div>
+      <!-- PROJECT 1 -->
+      <p class="minimized-paragraph" onclick="toggleParagraph(2)">Project 1: Weather App</p>
+      <div id="paragraph-2" class="paragraph-content hidden">
+        <iframe class="tutorial-video" src="https://www.youtube.com/embed/JLc-hWsPTUY" title="Project 1" frameborder="0" allowfullscreen></iframe>
+        <p class="paragraph italic text-gray-600 mt-2">Source: “Build a Weather App in VueJS | Vue Beginner Tutorial” — Tyler Potts (YouTube)</p>
+        <p class="paragraph mt-2"><b>Exercise:</b>
+          <br>1. Build the app following the tutorial.<br>
+          2. Customize and test your code.<br>
+          3. Upload to your <b>GitHub portfolio</b>.
+        </p>
+      </div>
 
-                <p class="minimized-paragraph" onclick="toggleParagraph(3)">Project 2: ANIME Search Database</p>
-                <div id="paragraph-3" class="paragraph-content hide">
-                    <iframe class="tutorial-video" width="1000" height="562.50" src="https://www.youtube.com/embed/AI5lsNeVyO8?si=7duTVFlsTuY3QH0O" title="YouTube video player" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <i>Source: ["Build an ANIME Search Database in Vue 3 ~ Jikan Anime API for beginners" by Tyler Potts, Youtube]</i>
-                    <br><br><b>Exercise:</b>
-                    <br>1. Follow the video and build this code. Test your code;
-                    <br>2. Try to build something similar with your own code. Test it, if it works, upload it to your GitHub account.
-                    <br>3. Go to the next stage: the third project in Vue.js.
-                    <br><br>
-                </div>
+      <!-- PROJECT 2 -->
+      <p class="minimized-paragraph" onclick="toggleParagraph(3)">Project 2: ANIME Search Database</p>
+      <div id="paragraph-3" class="paragraph-content hidden">
+        <iframe class="tutorial-video" src="https://www.youtube.com/embed/AI5lsNeVyO8" title="Project 2" frameborder="0" allowfullscreen></iframe>
+        <p class="paragraph italic text-gray-600 mt-2">Source: “Build an ANIME Search Database in Vue 3 ~ Jikan Anime API for beginners” — Tyler Potts (YouTube)</p>
+        <p class="paragraph mt-2"><b>Exercise:</b>
+          <br>1. Build the database following the tutorial.<br>
+          2. Customize and test your code.<br>
+          3. Upload to GitHub once done.
+        </p>
+      </div>
 
-                <p class="minimized-paragraph" onclick="toggleParagraph(4)">Project 3: Income Tracker</p>
-                <div id="paragraph-4" class="paragraph-content hide">
-                    <iframe class="tutorial-video" width="1000" height="562.50" src="https://www.youtube.com/embed/AjV7k7t78Ik?si=tT1RI4mWd-VxOEmr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <i>Source: ["Build an Income Tracker in Vue JS ~ Composition API" by Tyler Potts, Youtube]</i>
-                    <br><br><b>Exercise:</b>
-                    <br>1. Follow the video and build this code. Test your code;
-                    <br>2. Try to build something similar with your own code. Test it, if it works, upload it to your GitHub account.
-                    <br>3. The next stage is an exam. You have 10 questions, with a total time of 10 minutes. To pass, you need to get 8 out of 10. You can retake it. Once you pass, you will have 1 minute to redeem your certificate by entering your full name correctly!
-                    <br><br>
-                </div>
+      <!-- PROJECT 3 -->
+      <p class="minimized-paragraph" onclick="toggleParagraph(4)">Project 3: Income Tracker</p>
+      <div id="paragraph-4" class="paragraph-content hidden">
+        <iframe class="tutorial-video" src="https://www.youtube.com/embed/AjV7k7t78Ik" title="Project 3" frameborder="0" allowfullscreen></iframe>
+        <p class="paragraph italic text-gray-600 mt-2">Source: “Build an Income Tracker in Vue JS ~ Composition API” — Tyler Potts (YouTube)</p>
+        <p class="paragraph mt-2"><b>Exercise:</b>
+          <br>1. Build the tracker following the tutorial.<br>
+          2. Customize and test your code.<br>
+          3. Upload to your <b>GitHub portfolio</b>.
+        </p>
+      </div>
 
-                <p class="minimized-paragraph" onclick="toggleParagraph(5)">Exam (Redeem Certificate)</p>
-                <div id="paragraph-5" class="paragraph-content">
-                    <div class="quiz-container">
-                        <div id="quiz">
-                            <div id="question-count"></div>
-                            <div id="question"></div>
-                            <div class="choices">
-                                <button class="choice" onclick="selectAnswer(0)"></button>
-                                <button class="choice" onclick="selectAnswer(1)"></button>
-                                <button class="choice" onclick="selectAnswer(2)"></button>
-                                <button class="choice" onclick="selectAnswer(3)"></button>
-                            </div>
-                            <button id="prev-btn" class="hide" onclick="prevQuestion()">Previous</button>
-                            <button id="next-btn" onclick="nextQuestion()">Next</button>
-                            <div id="timer"></div>
-                        </div>
-                        <div id="result" class="hide">
-                            <h2>Results</h2>
-                            <p id="result-message"></p>
-                            <p>Your score: <span id="score"></span></p>
-                            <div id="result-details"></div>
-                            <button onclick="restartQuiz()">Restart Quiz</button>
-                            <div id="redeem-certificate" class="hide">
-                                <input type="text" id="name" placeholder="Enter your name">
-                                <button onclick="generateCertificate()">Generate Certificate</button>
-                                <div id="redemption-timer" class="hide"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <p class="paragraph">
-                    <h1 class="section-title" style="margin-top: 20px;">Summary</h1>
-                    <br>Now you can add your own projects to your GitHub account and post your certificate on LinkedIn. You can also explore and learn other programming languages using the <a href="Skill_Based_Roadmaps.html">Skill-Based Roadmaps</a> or choose a career path from the <a href="Role_based_Roadmaps.html">Role-Based Roadmaps</a>.
-                    <br>
-                </p>
-            </div>
-        </div>
+      <!-- SUMMARY -->
+      <h1 class="section-title mt-6">Summary</h1>
+      <p class="paragraph">
+        Complete your Vue.js projects and upload them to <b>GitHub</b>.  
+        <br><br>
+        • Share your projects on <b>LinkedIn</b>.<br>
+        • Continue learning through <a href="../skills.html" class="text-blue-600 hover:underline">Skill-Based Roadmaps</a>.<br>
+        • Explore career paths via <a href="../domains.html" class="text-blue-600 hover:underline">Role-Based Roadmaps</a>.
+      </p>
+      <br>
     </section>
 
-    <!-- Placeholder for the footer -->
-    <div id="footer-placeholder"></div>
-    <script src="/footer.js"></script>
-    <script src="/skills/vue-quiz.js"></script>
-    <script src="/skills/vue-certificate.js"></script>
-    <script src="/analytics.js"></script>
+  </main>
+
+  <!-- FOOTER -->
+  <div id="footer-placeholder"></div>
+  <script src="footer.js"></script>
+  <script src="analytics.js"></script>
+
+  <script>
+    function toggleParagraph(num) {
+      document.getElementById(`paragraph-${num}`).classList.toggle('hidden');
+    }
+  </script>
+
 </body>
 </html>
