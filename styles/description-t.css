@@ -1,0 +1,47 @@
+#description-t {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    margin-bottom: 40px;
+}
+
+#description-t a {
+    color: #2d642b;  /* Default color for the link */
+    text-decoration: none;  /* Remove underline */
+    font-weight: bold;  /* Make the link bold */
+    transition: color 0.3s ease, background-color 0.3s ease;
+    padding: 5px 10px;  /* Padding to give the hover effect more space */
+    border-radius: 5px;  /* Rounded corners for a nicer look */
+}
+
+#description-t a:hover {
+    background-color: #000;  /* Black background on hover */
+    color: #fff;  /* White text on hover */
+    text-decoration: none;  /* Ensure underline doesn't reappear */
+}
+
+
+#description-t .container {
+    max-width: 1200px;
+    background-color: #f8f8f8; /* Light background color for contrast */
+    padding: 40px 20px; /* Padding for spacing */
+    text-align: center; /* Center align text */
+    margin: 0 auto; /* Center the container */
+}
+
+#description-t .content {
+    max-width: 800px; /* Maximum width for the content */
+    margin: 0 auto; /* Center the content */
+}
+
+#description-t h1 {
+    font-size: 2.5rem; /* Large font size for the heading */
+    color: #2d642b; /* Color matching the style */
+    margin-bottom: 20px; /* Spacing below the heading */
+}
+
+#description-t p {
+    font-size: 1.2rem; /* Slightly larger font size for readability */
+    color: #333; /* Dark color for text */
+    margin-bottom: 30px; /* Spacing below the paragraph */
+}
