@@ -1,0 +1,95 @@
+:root {
+    /* Logo and mixed colors */
+    --bk-logo: #2e4053;
+    --S-logo: #ffffff;
+    --M-logo: #58a4b0;
+
+    /* Button gradients */
+    --Roles-pr: linear-gradient(to bottom right, #3498db, #2980b9); /* Blue gradient */
+    --Skills-pr: linear-gradient(to bottom right, #27ae60, #2ecc71); /* Green gradient */
+    --AI-pr: linear-gradient(to bottom right, #9b59b6, #8e44ad); /* Purple gradient */
+
+    /* Button text color and font */
+    --button-text-color: #ffffff;
+    --button-font-size: 24px;
+    --button-font-family: 'Arial', sans-serif; /* Change the font family as needed */
+    --button-font-weight: bold; /* Make text bold */
+    --button-letter-spacing: 1px; /* Increase letter spacing for clarity */
+}
+
+.sections1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
+    padding: 20px; /* Padding around the section */
+}
+
+.four-squares {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns for three buttons */
+    gap: 20px; /* Gap between buttons */
+    max-width: 800px; /* Adjust as needed */
+    width: 100%; /* Full width */
+    padding: 20px; /* Padding inside the container */
+    box-sizing: border-box; /* Include padding in width and height calculations */
+    justify-items: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    margin: 0 auto; /* Center the grid container */
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px; /* Adjust height as needed */
+    width: 150px; /* Ensure buttons are square */
+    color: var(--button-text-color); /* Text color from root variable */
+    text-align: center;
+    text-decoration: none;
+    font-size: var(--button-font-size); /* Use custom font size */
+    font-family: var(--button-font-family); /* Use custom font family */
+    font-weight: var(--button-font-weight); /* Use custom font weight */
+    letter-spacing: var(--button-letter-spacing); /* Use custom letter spacing */
+    border: 2px solid transparent; /* Add border for icon-like appearance */
+    border-radius: 10px; /* Rounded corners for buttons */
+    transition: background 0.3s ease, border-color 0.3s ease; /* Smooth transitions */
+    overflow: hidden; /* Ensure no overflow of gradient */
+}
+
+.button:hover {
+    filter: brightness(90%);
+    border-color: var(--button-text-color); /* Change border color on hover */
+}
+
+/* Specific button styles */
+.button-roles {
+    background-image: var(--Roles-pr); /* Use blue gradient background */
+}
+
+.button-skills {
+    background-image: var(--Skills-pr); /* Use green gradient background */
+}
+
+.button-ai {
+    background-image: var(--AI-pr); /* Use purple gradient background */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .four-squares {
+        grid-template-columns: 1fr; /* One column for smaller screens */
+        gap: 15px; /* Adjust gap for smaller screens */
+    }
+
+    .button {
+        width: 100%; /* Full width for smaller screens */
+        height: auto; /* Adjust height for smaller screens */
+        padding: 20px; /* Padding inside the button */
+    }
+}
+
+/* Additional gap below the buttons */
+.sections {
+    margin-bottom: 40px; /* Add more gap below the sections container */
+}

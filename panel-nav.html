@@ -1,0 +1,42 @@
+<nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md shadow-sm z-50">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+    <a href="index.html" class="text-2xl font-bold text-green-700 hover:text-green-800 transition">Skill Maps</a>
+
+    <!-- Mobile menu toggle -->
+    <button id="navToggle" class="sm:hidden text-gray-800 focus:outline-none">
+      <i class="fas fa-bars fa-xl"></i>
+    </button>
+
+    <!-- Desktop navigation -->
+    <div id="navLinks" class="hidden sm:flex items-center space-x-8 text-sm">
+      <a href="index.html" class="hover:text-green-700">Home</a>
+      <a href="domains.html" class="hover:text-green-700">Domains</a>
+      <a href="skills.html" class="hover:text-green-700">Skill Maps</a>
+      <a href="ai.html" class="hover:text-green-700">AI</a>
+      <a href="blog.html" class="hover:text-green-700">Blog</a>
+      <a href="FAQs.html" class="hover:text-green-700">FAQ</a>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="sm:hidden hidden bg-white shadow-inner">
+    <a href="index.html" class="block px-6 py-3 hover:bg-gray-100">Home</a>
+    <a href="domains.html" class="block px-6 py-3 hover:bg-gray-100">Domains</a>
+    <a href="skills.html" class="block px-6 py-3 hover:bg-gray-100">Skill Maps</a>
+    <a href="ai.html" class="hover:text-green-700">AI</a>
+    <a href="blog.html" class="block px-6 py-3 hover:bg-gray-100">Blog</a>
+    <a href="FAQs.html" class="block px-6 py-3 hover:bg-gray-100">FAQ</a>
+  </div>
+</nav>
+
+<!-- JavaScript for mobile menu toggle -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const navToggle = document.getElementById('navToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    navToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  });
+</script>

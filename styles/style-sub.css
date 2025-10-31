@@ -1,0 +1,69 @@
+/* Video-course */
+#video-course .container {
+    min-height: 55vh;    
+    max-width: 1300px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+    gap:20px;
+    background-color: #111;
+}
+#video-course .video-course{
+    flex-direction: column;
+    text-align: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 60px 0;
+}
+#video-course .video-course .section-title{
+    color: rgb(230, 227, 227);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.4rem;
+}
+#video-course .video-course-top{
+    text-align: justify;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+#video-course .video-course-top .paragraph{
+    color: rgb(180, 177, 177);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1rem;
+}
+
+/* text-course */
+#text-course .container {
+    min-height: 55vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+    gap:20px;
+    background-color: var(--bk-section);
+}
+#text-course .text-course{
+    flex-direction: column;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 0;
+}
+#text-course .text-course .section-title{
+    color: var(--text-section);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.4rem;
+}
+#text-course .text-course-top{
+    text-align: justify;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+#text-course .text-course-top .paragraph{
+    color: --text-section;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1rem;
+}
