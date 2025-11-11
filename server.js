@@ -17,11 +17,16 @@ const PORT = process.env.PORT || 3000;
 // Helmet - sets security headers
 app.use(helmet());
 
-// CORS - only allow your frontend domain
 const corsOptions = {
-  origin: process.env.FRONTEND_URL || 'https://www.skill-maps.com/',
-  optionsSuccessStatus: 200,
-  credentials: true
+  origin: [
+    'https://cswebd.github.io',  // Your GitHub Pages domain
+    'http://localhost:8080',      // Local testing
+    'http://127.0.0.1:8080',      // Local testing
+    'http://localhost:3000',      // Local testing
+    'file://'                     // Local file testing
+  ],
+  credentials: true,
+  optionsSuccessStatus: 200
 };
 app.use(cors(corsOptions));
 
@@ -307,4 +312,5 @@ app.listen(PORT, () => {
   console.log(`\n🚀 Server running on port ${PORT}`);
   console.log(`📝 Environment: ${process.env.NODE_ENV || 'development'}\n`);
 });
+
 
