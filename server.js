@@ -17,30 +17,13 @@ const PORT = process.env.PORT || 3000;
 // Helmet - sets security headers
 app.use(helmet());
 
-// CORS - Allow GitHub Pages and local testing
-const allowedOrigins = [
-  'https://cswebd.github.io',
-  'http://localhost:8080',
-  'http://127.0.0.1:8080',
-  'http://localhost:3000',
-  'http://127.0.0.1:3000'
-];
-
-app.use(cors({
-  origin: function(origin, callback) {
-    // Allow requests with no origin (mobile apps, Postman, etc.)
-    if (!origin) return callback(null, true);
-    
-    if (allowedOrigins.indexOf(origin) === -1) {
-      console.log('Blocked origin:', origin);
-      return callback(new Error('CORS policy violation'), false);
-    }
-    return callback(null, true);
-  },
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-}));
+// CORS - only allow your frontend domain
+const corsOptions = {
+  origin: process.env.FRONTEND_URL || 'https://your-frontend-domain.com',
+  optionsSuccessStatus: 200,
+  credentials: true
+};
+app.use(cors(corsOptions));
 
 // Rate limiting - prevent brute force attacks
 const limiter = rateLimit({
@@ -324,6 +307,3 @@ app.listen(PORT, () => {
   console.log(`\n🚀 Server running on port ${PORT}`);
   console.log(`📝 Environment: ${process.env.NODE_ENV || 'development'}\n`);
 });
-
-
-
