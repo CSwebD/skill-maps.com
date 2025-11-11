@@ -1,9 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const { Pool } = require('pg');
-const bcrypt = require('bcrypt');
-const helmet = require('helmet');
-const rateLimit = require('express-rate-limit');
 const cors = require('cors');
 require('dotenv').config();
 
@@ -11,37 +8,14 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // ============================================
-// SECURITY MIDDLEWARE
+// MIDDLEWARE
 // ============================================
 
-// Helmet - sets security headers
-app.use(helmet());
+// CORS - Allow all origins temporarily
+app.use(cors());
 
-// CORS - only allow your frontend domain
-const corsOptions = {
-  origin: process.env.FRONTEND_URL || 'https://your-frontend-domain.com',
-  optionsSuccessStatus: 200,
-  credentials: true
-};
-app.use(cors(corsOptions));
-
-// Rate limiting - prevent brute force attacks
-const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100, // limit each IP to 100 requests per windowMs
-  message: 'Too many requests, please try again later.'
-});
-app.use('/api/', limiter);
-
-// Stricter rate limit for auth endpoints
-const authLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000,
-  max: 5, // 5 attempts per 15 minutes
-  message: 'Too many login/register attempts, please try again later.'
-});
-
-// Body parser with size limits
-app.use(bodyParser.json({ limit: '10kb' }));
+// Body parser
+app.use(bodyParser.json());
 app.use(express.static(__dirname));
 
 // ============================================
@@ -54,10 +28,7 @@ const pool = new Pool({
   host: process.env.DB_HOST,
   database: process.env.DB_DATABASE,
   port: process.env.DB_PORT,
-  ssl: { rejectUnauthorized: false },
-  max: 20, // maximum pool size
-  idleTimeoutMillis: 30000,
-  connectionTimeoutMillis: 2000,
+  ssl: { rejectUnauthorized: false }
 });
 
 // Test connection
@@ -80,15 +51,10 @@ function validateEmail(email) {
 }
 
 function validatePassword(password) {
-  // At least 8 chars, 1 uppercase, 1 lowercase, 1 number
-  return password.length >= 8 &&
-         /[A-Z]/.test(password) &&
-         /[a-z]/.test(password) &&
-         /[0-9]/.test(password);
+  return password.length >= 6;
 }
 
 function validateUsername(username) {
-  // 3-20 chars, alphanumeric and underscore only
   return /^[a-zA-Z0-9_]{3,20}$/.test(username);
 }
 
@@ -97,9 +63,11 @@ function validateUsername(username) {
 // ============================================
 
 // REGISTER
-app.post('/api/register', authLimiter, async (req, res) => {
+app.post('/api/register', async (req, res) => {
   try {
     const { email, username, password } = req.body;
+
+    console.log('Registration attempt:', { email, username });
 
     // Validate all fields present
     if (!email || !username || !password) {
@@ -121,15 +89,15 @@ app.post('/api/register', authLimiter, async (req, res) => {
     if (!validateUsername(username)) {
       return res.status(400).json({ 
         success: false, 
-        message: 'Username must be 3-20 characters and contain only letters, numbers, and underscores' 
+        message: 'Username must be 3-20 characters (letters, numbers, underscore)' 
       });
     }
 
-    // Validate password strength
+    // Validate password
     if (!validatePassword(password)) {
       return res.status(400).json({ 
         success: false, 
-        message: 'Password must be at least 8 characters with uppercase, lowercase, and number' 
+        message: 'Password must be at least 6 characters' 
       });
     }
 
@@ -146,15 +114,13 @@ app.post('/api/register', authLimiter, async (req, res) => {
       });
     }
 
-    // Hash password with bcrypt
-    const saltRounds = 12;
-    const hashedPassword = await bcrypt.hash(password, saltRounds);
-
-    // Insert user with hashed password
+    // Insert user (plain text password for now - INSECURE but works)
     const result = await pool.query(
       'INSERT INTO users (email, username, password) VALUES ($1, $2, $3) RETURNING id, email, username, created_at',
-      [email.toLowerCase(), username.toLowerCase(), hashedPassword]
+      [email.toLowerCase(), username.toLowerCase(), password]
     );
+
+    console.log('User created successfully:', result.rows[0]);
 
     res.status(201).json({
       success: true,
@@ -166,15 +132,17 @@ app.post('/api/register', authLimiter, async (req, res) => {
     console.error('Register error:', error);
     res.status(500).json({ 
       success: false, 
-      message: 'Server error. Please try again later.' 
+      message: 'Server error: ' + error.message
     });
   }
 });
 
 // LOGIN
-app.post('/api/login', authLimiter, async (req, res) => {
+app.post('/api/login', async (req, res) => {
   try {
     const { email, password } = req.body;
+
+    console.log('Login attempt:', { email });
 
     // Validate input
     if (!email || !password) {
@@ -198,7 +166,6 @@ app.post('/api/login', authLimiter, async (req, res) => {
     );
 
     if (result.rows.length === 0) {
-      // Generic message to prevent user enumeration
       return res.status(401).json({ 
         success: false, 
         message: 'Invalid email or password' 
@@ -207,17 +174,16 @@ app.post('/api/login', authLimiter, async (req, res) => {
 
     const user = result.rows[0];
 
-    // Compare hashed password
-    const isValidPassword = await bcrypt.compare(password, user.password);
-
-    if (!isValidPassword) {
+    // Check password (plain text comparison - INSECURE but works)
+    if (user.password !== password) {
       return res.status(401).json({ 
         success: false, 
         message: 'Invalid email or password' 
       });
     }
 
-    // Don't send password hash to client
+    console.log('Login successful:', user.username);
+
     res.json({
       success: true,
       message: 'Login successful!',
@@ -232,12 +198,12 @@ app.post('/api/login', authLimiter, async (req, res) => {
     console.error('Login error:', error);
     res.status(500).json({ 
       success: false, 
-      message: 'Server error. Please try again later.' 
+      message: 'Server error: ' + error.message
     });
   }
 });
 
-// GET ALL USERS (Should be protected with authentication!)
+// GET ALL USERS
 app.get('/api/users', async (req, res) => {
   try {
     const result = await pool.query(
@@ -271,9 +237,24 @@ app.get('/health', async (req, res) => {
     res.status(500).json({ 
       status: 'ERROR', 
       database: 'Disconnected',
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
+      error: error.message
     });
   }
+});
+
+// Root endpoint
+app.get('/', (req, res) => {
+  res.json({
+    message: 'Skill Maps API',
+    version: '1.0.0',
+    endpoints: {
+      health: '/health',
+      register: 'POST /api/register',
+      login: 'POST /api/login',
+      users: 'GET /api/users'
+    }
+  });
 });
 
 // 404 handler
@@ -289,21 +270,13 @@ app.use((err, req, res, next) => {
   console.error('Error:', err);
   res.status(500).json({ 
     success: false, 
-    message: 'Internal server error' 
-  });
-});
-
-// Graceful shutdown
-process.on('SIGTERM', () => {
-  console.log('SIGTERM received, closing server...');
-  pool.end(() => {
-    console.log('Database pool closed');
-    process.exit(0);
+    message: 'Internal server error: ' + err.message
   });
 });
 
 // Start server
 app.listen(PORT, () => {
   console.log(`\n🚀 Server running on port ${PORT}`);
-  console.log(`📝 Environment: ${process.env.NODE_ENV || 'development'}\n`);
+  console.log(`📝 Environment: ${process.env.NODE_ENV || 'development'}`);
+  console.log(`🌐 Railway URL: https://skill-mapscom-production.up.railway.app\n`);
 });
