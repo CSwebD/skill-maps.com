@@ -19,7 +19,7 @@ app.use(helmet());
 
 // CORS - only allow your frontend domain
 const corsOptions = {
-  origin: process.env.FRONTEND_URL || 'https://skill-maps.com/',
+  origin: process.env.FRONTEND_URL || 'https://www.skill-maps.com/',
   optionsSuccessStatus: 200,
   credentials: true
 };
@@ -307,3 +307,4 @@ app.listen(PORT, () => {
   console.log(`\n🚀 Server running on port ${PORT}`);
   console.log(`📝 Environment: ${process.env.NODE_ENV || 'development'}\n`);
 });
+
