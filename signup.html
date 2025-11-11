@@ -236,7 +236,7 @@
 
             } catch (error) {
                 console.error('Signup error:', error);
-                showMessage('Network error. Please check if server is running on http://localhost:3000', 'error');
+                showMessage('Network error. Unable to connect to server. Please try again later.', 'error');
             } finally {
                 // Reset button state
                 signupBtn.disabled = false;
