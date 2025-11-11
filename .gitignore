@@ -1,13 +1,24 @@
+# Environment variables
+.env
+.env.local
+.env.production
+
 # Dependencies
 node_modules/
-
-# Environment variables (IMPORTANT!)
-.env
 
 # System files
 .DS_Store
 Thumbs.db
+desktop.ini
 
-# IDE
+# IDE files
 .vscode/
 .idea/
+*.swp
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+.cache/
