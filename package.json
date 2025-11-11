@@ -4,8 +4,7 @@
   "description": "Backend API for Skill Maps platform",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
+    "start": "node server.js"
   },
   "keywords": ["learning", "education", "api"],
   "author": "Skill Maps Team",
@@ -19,8 +18,5 @@
     "pg": "^8.11.0",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.1"
   }
 }
