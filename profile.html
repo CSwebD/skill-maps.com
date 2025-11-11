@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - Skill Maps</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Placeholder for the panel bar -->
+    <div id="panel-bar-placeholder"></div>
+    <script src="panel-nav.js"></script> 
+
+    <div class="max-w-5xl mx-auto px-4 py-24">
+        <!-- Profile Header -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 mb-6">
+            <div class="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-6">
+                <!-- Profile Picture -->
+                <div class="relative">
+                    <div class="w-32 h-32 bg-gradient-to-br from-green-500 to-green-700 rounded-full flex items-center justify-center text-white text-5xl font-bold">
+                        <span id="profileInitial">U</span>
+                    </div>
+                    <button class="absolute bottom-0 right-0 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 transition">
+                        <i class="fas fa-camera text-green-700"></i>
+                    </button>
+                </div>
+
+                <!-- Profile Info -->
+                <div class="flex-1 text-center md:text-left">
+                    <h1 id="profileUsername" class="text-3xl font-bold text-gray-800 mb-2">Username</h1>
+                    <p id="profileEmail" class="text-gray-600 mb-4">email@example.com</p>
+                    <div class="flex flex-wrap justify-center md:justify-start gap-2">
+                        <span class="px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-medium">
+                            <i class="fas fa-calendar-alt mr-1"></i>
+                            Joined <span id="joinedDate">Jan 2025</span>
+                        </span>
+                        <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
+                            <i class="fas fa-trophy mr-1"></i>
+                            <span id="completedCourses">0</span> Courses Completed
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Edit Button -->
+                <button onclick="location.href='settings.html'" class="px-6 py-3 bg-green-700 text-white rounded-lg hover:bg-green-800 transition font-medium">
+                    <i class="fas fa-edit mr-2"></i> Edit Profile
+                </button>
+            </div>
+        </div>
+
+        <!-- Stats Grid
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+            <div class="bg-white rounded-xl shadow p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-600 text-sm">Total Progress</p>
+                        <p class="text-3xl font-bold text-gray-800 mt-1">45%</p>
+                    </div>
+                    <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-chart-line text-green-700 text-xl"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-600 text-sm">Learning Streak</p>
+                        <p class="text-3xl font-bold text-gray-800 mt-1">12 Days</p>
+                    </div>
+                    <div class="w-14 h-14 bg-orange-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-fire text-orange-500 text-xl"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-600 text-sm">Achievements</p>
+                        <p class="text-3xl font-bold text-gray-800 mt-1">8</p>
+                    </div>
+                    <div class="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-medal text-purple-700 text-xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        -->
+
+        <!-- Tabs -->
+        <div class="bg-white rounded-2xl shadow-lg">
+            <div class="border-b border-gray-200">
+                <div class="flex overflow-x-auto">
+                    <button class="tab-btn active px-6 py-4 text-green-700 border-b-2 border-green-700 font-medium whitespace-nowrap" data-tab="courses">
+                        <i class="fas fa-book mr-2"></i> My Courses
+                    </button>
+                    <button class="tab-btn px-6 py-4 text-gray-600 hover:text-green-700 font-medium whitespace-nowrap" data-tab="achievements">
+                        <i class="fas fa-trophy mr-2"></i> Achievements
+                    </button>
+                    <button class="tab-btn px-6 py-4 text-gray-600 hover:text-green-700 font-medium whitespace-nowrap" data-tab="activity">
+                        <i class="fas fa-clock mr-2"></i> Recent Activity
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="p-6">
+                <!-- My Courses Tab -->
+                <div id="courses" class="tab-content">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="border-2 border-gray-200 rounded-xl p-4 hover:border-green-500 transition">
+                            <div class="flex items-start justify-between mb-3">
+                                <div>
+                                    <h3 class="font-bold text-gray-800">JavaScript Fundamentals</h3>
+                                    <p class="text-sm text-gray-600">Web Development</p>
+                                </div>
+                                <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">
+                                    In Progress
+                                </span>
+                            </div>
+                            <div class="mb-2">
+                                <div class="flex justify-between text-sm mb-1">
+                                    <span class="text-gray-600">Progress</span>
+                                    <span class="font-medium text-gray-800">65%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-green-600 h-2 rounded-full" style="width: 65%"></div>
+                                </div>
+                            </div>
+                            <button class="w-full mt-3 px-4 py-2 bg-green-700 text-white rounded-lg hover:bg-green-800 transition text-sm font-medium">
+                                Continue Learning
+                            </button>
+                        </div>
+
+                        <div class="border-2 border-gray-200 rounded-xl p-4 hover:border-green-500 transition">
+                            <div class="flex items-start justify-between mb-3">
+                                <div>
+                                    <h3 class="font-bold text-gray-800">AI & Machine Learning</h3>
+                                    <p class="text-sm text-gray-600">Artificial Intelligence</p>
+                                </div>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium">
+                                    Completed
+                                </span>
+                            </div>
+                            <div class="mb-2">
+                                <div class="flex justify-between text-sm mb-1">
+                                    <span class="text-gray-600">Progress</span>
+                                    <span class="font-medium text-gray-800">100%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-green-600 h-2 rounded-full" style="width: 100%"></div>
+                                </div>
+                            </div>
+                            <button class="w-full mt-3 px-4 py-2 border-2 border-green-700 text-green-700 rounded-lg hover:bg-green-50 transition text-sm font-medium">
+                                View Certificate
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Achievements Tab -->
+                <div id="achievements" class="tab-content hidden">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="text-center p-4 border-2 border-gray-200 rounded-xl hover:border-green-500 transition">
+                            <div class="text-5xl mb-2">🏆</div>
+                            <p class="font-semibold text-gray-800 text-sm">First Course</p>
+                            <p class="text-xs text-gray-600 mt-1">Completed</p>
+                        </div>
+                        <div class="text-center p-4 border-2 border-gray-200 rounded-xl hover:border-green-500 transition">
+                            <div class="text-5xl mb-2">🔥</div>
+                            <p class="font-semibold text-gray-800 text-sm">10 Day Streak</p>
+                            <p class="text-xs text-gray-600 mt-1">Completed</p>
+                        </div>
+                        <div class="text-center p-4 border-2 border-gray-200 rounded-xl hover:border-green-500 transition">
+                            <div class="text-5xl mb-2">⭐</div>
+                            <p class="font-semibold text-gray-800 text-sm">Quick Learner</p>
+                            <p class="text-xs text-gray-600 mt-1">Completed</p>
+                        </div>
+                        <div class="text-center p-4 border-2 border-gray-200 rounded-xl opacity-50">
+                            <div class="text-5xl mb-2">🎯</div>
+                            <p class="font-semibold text-gray-800 text-sm">Master Level</p>
+                            <p class="text-xs text-gray-600 mt-1">Locked</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activity Tab -->
+                <div id="activity" class="tab-content hidden">
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg">
+                            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-green-700"></i>
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-gray-800 font-medium">Completed "JavaScript Functions" module</p>
+                                <p class="text-sm text-gray-600">2 hours ago</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg">
+                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-trophy text-blue-700"></i>
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-gray-800 font-medium">Earned "Quick Learner" achievement</p>
+                                <p class="text-sm text-gray-600">1 day ago</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg">
+                            <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-book text-purple-700"></i>
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-gray-800 font-medium">Started "AI & Machine Learning" course</p>
+                                <p class="text-sm text-gray-600">3 days ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Load navigation
+        fetch('panel-nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navPlaceholder').innerHTML = data;
+            });
+
+        // Check authentication
+        const currentUser = JSON.parse(localStorage.getItem('currentUser') || 'null');
+        
+        if (!currentUser) {
+            window.location.href = 'login.html';
+        } else {
+            // Load user profile data
+            document.getElementById('profileUsername').textContent = currentUser.username || 'User';
+            document.getElementById('profileEmail').textContent = currentUser.email || 'email@example.com';
+            document.getElementById('profileInitial').textContent = (currentUser.username || currentUser.email).charAt(0).toUpperCase();
+            
+            // Format join date
+            if (currentUser.createdAt) {
+                const date = new Date(currentUser.createdAt);
+                document.getElementById('joinedDate').textContent = date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+            }
+        }
+
+        // Tab switching
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tabName = btn.dataset.tab;
+                
+                // Remove active class from all buttons
+                tabBtns.forEach(b => {
+                    b.classList.remove('active', 'text-green-700', 'border-b-2', 'border-green-700');
+                    b.classList.add('text-gray-600');
+                });
+                
+                // Add active class to clicked button
+                btn.classList.add('active', 'text-green-700', 'border-b-2', 'border-green-700');
+                btn.classList.remove('text-gray-600');
+                
+                // Hide all tab contents
+                tabContents.forEach(content => content.classList.add('hidden'));
+                
+                // Show selected tab content
+                document.getElementById(tabName).classList.remove('hidden');
+            });
+        });
+    </script>
+    
+    <!-- Placeholder for the footer -->
+    <div id="footer-placeholder"></div>
+    <script src="analytics.js"></script>
+    <script src="nav-switcher.js"></script>
+    <script src="footer.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SM - Introduction to AI</title>
+  <link rel="icon" href="../images/logo.jpg" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <!-- Meta & Open Graph -->
+  <meta name="description" content="Master Angular through structured lessons and projects.">
+  <meta property="og:title" content="Skill Maps - Angular Development">
+  <meta property="og:description" content="Learn Angular step by step with videos and practical projects.">
+  <meta property="og:url" content="https://www.skill-maps.com/domains/Angular.html">
+  <meta property="og:image" content="https://www.skill-maps.com/images/logo.jpg">
+
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="text-gray-800">
+
+  <!-- NAVBAR -->
+  <div id="panel-bar-placeholder"></div>
+  <script src="panel-nav.js"></script>
+
+  <main class="pt-16 max-w-6xl mx-auto px-6 space-y-12">
+
+    <!-- HEADER -->
+    <section id="head">
+      <h2 class="title-page">Introduction to AI</h2>
+    </section>
+
+    <!-- INTRO VIDEO -->
+    <section id="video-course" class="space-y-6">
+      <h1 class="section-title">Quick Introduction to AI</h1>
+      <iframe class="tutorial-video" src="https://www.youtube.com/embed/ad79nYk2keg" title="Introduction to AI" frameborder="0" allowfullscreen></iframe>
+      <p class="paragraph italic text-gray-600">Source: “What Is AI? | Artificial Intelligence | AI In 5 Mins” — Simplilearn (YouTube)</p>
+    </section>
+
+    <!-- COURSE INSTRUCTIONS -->
+    <section id="text-course" class="space-y-6">
+      <h2 class="text-center section-title">Welcome to the AI Full Course</h2>
+      <h3 class="section-title">Instructions</h3>
+      <p class="paragraph">
+        This course provides an overview of AI, exploring its origins, types, and evolution over time.
+        <br><br>
+        1. Watch the “Introduction to AI” video.<br>
+        2. Complete each chapter by watching the videos and doing the exercises.<br>
+        3. Take notes to reinforce learning.
+        <br><br>
+        <span class="text-center font-bold">Enjoy your AI journey!</span>
+      </p>
+
+      <!-- CHAPTER 1 -->
+      <p class="minimized-paragraph" onclick="toggleParagraph(1)">Chapter 1: AI History</p>
+      <div id="paragraph-1" class="paragraph-content hidden">
+        <iframe class="tutorial-video" src="https://www.youtube.com/embed/b9chqJ2TgzA" title="AI History" frameborder="0" allowfullscreen></iframe>
+        <p class="paragraph italic text-gray-600 mt-2">Source: “History of the entire AI field, I guess” — bycloud (YouTube)</p>
+        <p class="paragraph mt-2"><b>Exercise:</b> Watch the video and make notes on AI milestones and evolution.</p>
+      </div>
+
+      <!-- CHAPTER 2 -->
+      <p class="minimized-paragraph" onclick="toggleParagraph(2)">Chapter 2: AI Basics</p>
+      <div id="paragraph-2" class="paragraph-content hidden">
+        <iframe class="tutorial-video" src="https://www.youtube.com/embed/faBRsREN1Dg" title="AI Basics" frameborder="0" allowfullscreen></iframe>
+        <p class="paragraph italic text-gray-600 mt-2">Source: “Basics Of Artificial Intelligence | AI Training For Beginners” — Simplilearn (YouTube)</p>
+        <p class="paragraph mt-2"><b>Exercise:</b> Watch the video and take notes on Narrow AI vs General AI, trends, and future developments.</p>
+      </div>
+
+      <!-- SUMMARY -->
+      <h1 class="section-title mt-6">Summary</h1>
+      <p class="paragraph">
+        Explore other AI chapters, continue learning programming with our <a href="Skill_Based_Roadmaps.html" class="text-blue-600 hover:underline">Skill-Based Roadmaps</a>, or choose a career path from <a href="Role_based_Roadmaps.html" class="text-blue-600 hover:underline">Role-Based Roadmaps</a>.
+      </p>
+      <br>
+
+    </section>
+
+  </main>
+
+    <!-- Placeholder for the footer -->
+    <div id="footer-placeholder"></div>
+    <script src="analytics.js"></script>
+    <script src="nav-switcher.js"></script>
+    <script src="footer.js"></script>
+
+  <script>
+    function toggleParagraph(num) {
+      document.getElementById(`paragraph-${num}`).classList.toggle('hidden');
+    }
+  </script>
+
+</body>
+</html>

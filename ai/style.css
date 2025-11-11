@@ -1,0 +1,76 @@
+body { 
+  font-family: 'Inter', sans-serif; 
+  background: #f5f3ff; /* very soft lavender */
+  scroll-behavior: smooth; 
+  color: #111827; /* main text: near-black */
+}
+
+/* Video styling */
+.tutorial-video { 
+  width: 100%; 
+  aspect-ratio: 16/9; 
+  border-radius: 1rem; 
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08); 
+}
+
+/* Collapsible titles */
+.minimized-paragraph {
+  cursor: pointer; 
+  font-weight: 600;
+  background: linear-gradient(to right, #ede9fe, #ddd6fe);
+  border: 1px solid #ddd6fe;
+  padding: 1rem 1.25rem;
+  border-radius: 0.75rem;
+  transition: all 0.25s ease;
+  text-align: center;
+  margin-bottom: 0.75rem;
+  color: #4c1d95; /* purple but not bright */
+}
+
+.minimized-paragraph:hover {
+  background: #c4b5fd;
+  color: #fff;
+}
+
+/* Expanded block */
+.paragraph-content { 
+  margin-top: 0.75rem; 
+  background: #ffffff; 
+  padding: 1.5rem; 
+  border-radius: 1rem; 
+  box-shadow: 0 4px 14px rgba(0,0,0,0.05); 
+}
+
+/* Section titles */
+.section-title { 
+  font-size: 2rem; 
+  font-weight: 700; 
+  color: #4c1d95;
+}
+
+/* Page title */
+h2.title-page { 
+  font-size: 3rem; 
+  font-weight: 800; 
+  text-align: center; 
+  color: #4c1d95;
+  margin-bottom: 2rem; 
+}
+
+/* Paragraph text — now black */
+.paragraph { 
+  color: #111827; 
+  line-height: 1.75; 
+}
+
+/* Links */
+a { 
+  color: #4c1d95;
+  font-weight: 600; 
+  transition: color 0.3s ease;
+}
+
+a:hover { 
+  color: #6d28d9; 
+  text-decoration: underline; 
+}

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | Skill Maps</title>
+  <link rel="icon" href="../images/logo.jpg" type="image/x-icon" />
+  <meta name="description" content="Articles on DevOps, AI, Web Development and more." />
+  <meta property="og:title" content="Blog | Skill Maps" />
+  <meta property="og:description" content="Learn with the latest articles, tips, and tutorials." />
+  <meta property="og:url" content="https://skill-maps.com/blog.html" />
+  <meta property="og:image" content="https://www.skill-maps.com/logo.jpg" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+  <style>body { font-family: 'Inter', sans-serif; } html { scroll-behavior: smooth; }</style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+
+  <!-- Placeholder for the panel bar -->
+  <div id="panel-bar-placeholder"></div>
+  <script src="panel-nav.js"></script> 
+
+<!-- HEADER -->
+<main class="pt-24">
+  <section class="bg-gradient-to-r from-[#fef3c7] to-[#fde68a] text-white py-20 text-center">
+    <div class="max-w-3xl mx-auto px-6">
+      <h1 class="text-5xl font-extrabold text-amber-800 drop-shadow mb-4">Skill Maps Blog</h1>
+      <p class="text-xl text-gray-700 max-w-2xl mx-auto">Tips, tutorials, and insights from the world of tech and learning.</p>
+    </div>
+  </section>
+
+  <!-- SEARCH + ARTICLES -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="mb-8 max-w-md mx-auto">
+        <input
+          id="searchInput"
+          type="text"
+          placeholder="Search articles..."
+          class="w-full px-4 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-green-500"
+        />
+      </div>
+
+      <!-- Categories Filter -->
+      <div class="flex flex-wrap justify-center gap-3 mb-10" id="categoryFilter">
+        <button data-category="all" class="category-btn px-4 py-2 rounded-full bg-green-600 text-white font-medium hover:bg-green-700 transition">All</button>
+        <button data-category="AI" class="category-btn px-4 py-2 rounded-full bg-gray-200 text-gray-800 hover:bg-green-600 hover:text-white transition">AI</button>
+        <button data-category="Tech" class="category-btn px-4 py-2 rounded-full bg-gray-200 text-gray-800 hover:bg-green-600 hover:text-white transition">Tech</button>
+        <button data-category="Development" class="category-btn px-4 py-2 rounded-full bg-gray-200 text-gray-800 hover:bg-green-600 hover:text-white transition">Development</button>
+        <button data-category="Research" class="category-btn px-4 py-2 rounded-full bg-gray-200 text-gray-800 hover:bg-green-600 hover:text-white transition">Research</button>
+      </div>
+
+
+      <div id="blogGrid" class="grid gap-8 md:grid-cols-2 lg:grid-cols-3"></div>
+
+      <div class="text-center mt-10">
+        <button id="loadMoreBtn" class="px-6 py-3 bg-green-600 text-white font-semibold rounded-full hover:bg-green-700 transition">
+          Load More Articles
+        </button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer Links Section -->
+    <section class="bg-white py-12">
+      <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+        <!-- Domains -->
+        <div>
+          <h4 class="text-lg font-semibold text-gray-800 mb-4">Domains</h4>
+          <ul class="space-y-2 text-gray-600">
+            <li><a href="roles/Frontend.html" class="hover:underline">Frontend</a></li>
+            <li><a href="roles/Backend.html" class="hover:underline">Backend</a></li>
+            <li><a href="roles/DevOps.html" class="hover:underline">DevOps</a></li>
+            <li><a href="roles/FullStack.html" class="hover:underline">FullStack</a></li>
+            <li><a href="Software_Architect.html" class="hover:underline">Software Architecture</a></li>
+          </ul>
+        </div>
+        <!-- Skill Maps -->
+        <div>
+          <h4 class="text-lg font-semibold text-gray-800 mb-4">Skill Maps</h4>
+          <ul class="space-y-2 text-gray-600">
+            <li><a href="skills/Python.html" class="hover:underline">Python</a></li>
+            <li><a href="skills/Java.html" class="hover:underline">Java</a></li>
+            <li><a href="skills/Vue.html" class="hover:underline">Vue</a></li>
+            <li><a href="skills/Docker.html" class="hover:underline">Docker</a></li>
+            <li><a href="skills/Angular.html" class="hover:underline">Angular</a></li>
+          </ul>
+        </div>
+        <!-- AI -->
+        <div>
+          <h4 class="text-lg font-semibold text-gray-800 mb-4">AI</h4>
+          <ul class="space-y-2 text-gray-600">
+            <li><a href="AI/Introduction_to_AI.html" class="hover:underline">Introduction to AI</a></li>
+            <li><a href="AI/maths_and_statistics_for_ai.html" class="hover:underline">Maths & Statistics</a></li>
+            <li><a href="AI/machine_learning.html" class="hover:underline">Machine Learning</a></li>
+            <li><a href="AI/deep_learning.html" class="hover:underline">Deep Learning</a></li>
+            <li><a href="AI/natural_language_processing.html" class="hover:underline">Natural Language Processing</a></li>
+            <li><a href="AI/ai_ethics.html" class="hover:underline">AI Ethics</a></li>
+            <li><a href="AI/practics_and_projects.html" class="hover:underline">Practices & Projects</a></li>
+          </ul>
+        </div>
+        <!-- Other pages -->
+        <div>
+          <h4 class="text-lg font-semibold text-gray-800 mb-4">Other Pages</h4>
+          <ul class="space-y-2 text-gray-600">
+            <li><a href="blog.html" class="hover:underline">Blog</a></li>
+            <li><a href="about.html" class="hover:underline">About</a></li>
+            <li><a href="contact.html" class="hover:underline">Contact</a></li>
+            <li><a href="https://cris-ai.com/" class="hover:underline" target="_blank">Other Projects</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- End Footer Links Section -->
+    <footer class="bg-white py-12">
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <p class="text-gray-600 mb-4">&copy; 2025 Skill Maps. All rights reserved.</p>
+        <div class="flex justify-center space-x-6 mb-4">
+          <a href="https://www.facebook.com/groups/212272531621204" class="text-gray-600 hover:text-gray-800"><i class="fab fa-facebook fa-lg"></i></a>
+          <a href="https://x.com/SkillMapsCom" class="text-gray-600 hover:text-gray-800"><i class="fab fa-twitter fa-lg"></i></a>
+          <a href="https://discord.com/invite/QnBUjtpT" class="text-gray-600 hover:text-gray-800"><i class="fab fa-discord fa-lg"></i></a>
+          <a href="https://www.linkedin.com/company/104516478/admin/dashboard/" class="text-gray-600 hover:text-gray-800"><i class="fab fa-linkedin fa-lg"></i></a>
+          <a href="https://www.youtube.com/channel/UCCM1SLARq4kiJ_1Qr6F3msQ" class="text-gray-600 hover:text-gray-800"><i class="fab fa-youtube fa-lg"></i></a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+<!-- SCRIPT -->
+<script>
+  let allArticles = [];
+  let visibleCount = 0;
+  const increment = 6;
+
+  const blogGrid = document.getElementById('blogGrid');
+  const loadMoreBtn = document.getElementById('loadMoreBtn');
+  const searchInput = document.getElementById('searchInput');
+
+  // CATEGORY FILTER
+  const categoryBtns = document.querySelectorAll('.category-btn');
+
+  categoryBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      categoryBtns.forEach(b => b.classList.remove('bg-green-600', 'text-white'));
+      btn.classList.add('bg-green-600', 'text-white');
+
+      const category = btn.getAttribute('data-category');
+      let filtered = (category === 'all')
+        ? allArticles
+        : allArticles.filter(article => article.category === category);
+
+      visibleCount = 0;
+      renderArticles(filtered);
+    });
+  });
+
+
+  async function loadArticleData() {
+    try {
+      const res = await fetch('../blog/blog.json'); // Fixed path
+      allArticles = await res.json();
+      renderArticles();
+    } catch (error) {
+      console.error("Could not load blog.json", error);
+      blogGrid.innerHTML = "<p class='text-center text-gray-600'>Failed to load articles.</p>";
+    }
+  }
+
+  function renderArticles(filtered = null) {
+    const list = filtered || allArticles;
+    const articlesToShow = list.slice(0, visibleCount + increment);
+    blogGrid.innerHTML = '';
+
+    articlesToShow.forEach(article => {
+      const card = document.createElement('article');
+      card.className = "bg-gray-50 rounded-xl shadow hover:shadow-2xl transition overflow-hidden";
+
+      // Create the image container dynamically:
+      const imgDiv = document.createElement('div');
+      imgDiv.className = "h-40 bg-cover bg-center";
+      // Inline style for the actual URL:
+      imgDiv.style.backgroundImage = `url('${article.image}')`;
+
+      const content = document.createElement('div');
+      content.className = "p-6";
+      content.innerHTML = `
+        <h3 class="text-xl font-semibold mb-2">${article.title}</h3>
+        <p class="text-sm text-gray-500 mb-1">${new Date(article.date).toLocaleDateString()}</p>
+        <p class="text-sm text-gray-600 mb-4">${article.desc}</p>
+        <a href="${article.link}" class="text-green-700 font-semibold hover:underline">Read More →</a>
+      `;
+
+      card.appendChild(imgDiv);
+      card.appendChild(content);
+      blogGrid.appendChild(card);
+    });
+
+    visibleCount += increment;
+    loadMoreBtn.style.display = (visibleCount < list.length) ? 'inline-block' : 'none';
+  }
+
+
+  loadMoreBtn.addEventListener('click', () => renderArticles());
+  searchInput.addEventListener('input', e => {
+    const q = e.target.value.toLowerCase();
+    const filtered = allArticles.filter(article =>
+      article.title.toLowerCase().includes(q) || article.desc.toLowerCase().includes(q)
+    );
+    visibleCount = 0;
+    renderArticles(filtered);
+  });
+
+
+
+  window.addEventListener('DOMContentLoaded', loadArticleData);
+</script>
+
+    <!-- Placeholder for the footer -->
+    <div id="footer-placeholder"></div>
+    <script src="analytics.js"></script>
+    <script src="nav-switcher.js"></script>
+    <script src="footer.js"></script>
+
+</body>
+</html>

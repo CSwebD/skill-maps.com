@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SM - Deep Learning</title>
+  <link rel="icon" href="../images/logo.jpg" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <!-- Meta & Open Graph -->
+  <meta name="description" content="Master Angular through structured lessons and projects.">
+  <meta property="og:title" content="Skill Maps - Angular Development">
+  <meta property="og:description" content="Learn Angular step by step with videos and practical projects.">
+  <meta property="og:url" content="https://www.skill-maps.com/domains/Angular.html">
+  <meta property="og:image" content="https://www.skill-maps.com/images/logo.jpg">
+
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <div id="panel-bar-placeholder"></div>
+  <script src="panel-nav.js"></script>
+
+  <main class="pt-16 max-w-6xl mx-auto px-6 space-y-12">
+
+    <!-- Header -->
+    <section id="head">
+      <h2 class="title-page">Deep Learning</h2>
+    </section>
+
+    <!-- Intro Video -->
+    <section id="video-course" class="space-y-6">
+      <h1 class="section-title">Quick Introduction to Deep Learning</h1>
+
+      <iframe class="tutorial-video" src="https://www.youtube.com/embed/6M5VXKLf4D4" title="Deep Learning Intro" frameborder="0" allowfullscreen></iframe>
+
+      <p class="paragraph italic text-gray-600">
+        Source: “Deep Learning Tutorial for Beginners (Simplilearn)”
+      </p>
+    </section>
+
+    <!-- Course Overview -->
+    <section id="text-course" class="space-y-6">
+
+      <h1 class="section-title">Course Overview</h1>
+
+      <p class="paragraph">
+        Welcome to the Deep Learning course!
+        <br><br>
+        This course explores:
+        <br>- Artificial Neural Networks (ANNs)<br>
+        - Modern Deep Learning Architectures<br>
+        - Advanced models like CNNs, RNNs, GANs & Autoencoders<br><br>
+        Take notes, think critically, and enjoy the journey.
+      </p>
+
+      <!-- Chapter 1 -->
+      <p class="minimized-paragraph" onclick="toggleParagraph(1)">Chapter 1: Basics of Neural Networks</p>
+      <div id="paragraph-1" class="paragraph-content hidden">
+        <iframe class="tutorial-video" src="https://www.youtube.com/embed/XxZ0BibMTjw" title="Neural Networks Explained" frameborder="0" allowfullscreen></iframe>
+        <p class="paragraph italic text-gray-600 mt-2">
+          Source: TileStats (YouTube)
+        </p>
+        <p class="paragraph mt-2">
+          <b>Exercise:</b> Draw a basic neuron: input → weights → activation → output.
+        </p>
+      </div>
+
+      <!-- Chapter 2 -->
+      <p class="minimized-paragraph" onclick="toggleParagraph(2)">Chapter 2: Deep Learning Architectures</p>
+      <div id="paragraph-2" class="paragraph-content hidden">
+        <iframe class="tutorial-video" src="https://www.youtube.com/embed/hhH48T2MEPw" title="Deep Learning Architectures" frameborder="0" allowfullscreen></iframe>
+        <p class="paragraph italic text-gray-600 mt-2">
+          Source: Analytics Vidhya (YouTube)
+        </p>
+        <p class="paragraph mt-2">
+          <b>Exercise:</b> Research: What is the difference between CNN and RNN?
+        </p>
+      </div>
+
+      <!-- Chapter 3 -->
+      <p class="minimized-paragraph" onclick="toggleParagraph(3)">Chapter 3: Advanced Topics in Deep Learning</p>
+      <div id="paragraph-3" class="paragraph-content hidden">
+        <iframe class="tutorial-video" src="https://www.youtube.com/embed/orj8l3Pyoh0" title="Advanced Deep Learning Topics" frameborder="0" allowfullscreen></iframe>
+        <p class="paragraph italic text-gray-600 mt-2">
+          Source: Matthias Niessner (YouTube)
+        </p>
+        <p class="paragraph mt-2">
+          <b>Exercise:</b> Choose one topic: GANs, Autoencoders, or Transfer Learning. Write a short explanation.
+        </p>
+      </div>
+
+      <!-- Summary -->
+      <h1 class="section-title mt-6">Summary</h1>
+
+      <p class="paragraph">
+        Great progress!
+        <br><br>
+        Continue exploring AI:
+        <br>→ Next: <a href="AI.html" class="text-blue-600 hover:underline">Artificial Intelligence</a>
+        <br>→ Or explore <a href="Skill_Based_Roadmaps.html" class="text-blue-600 hover:underline">Skill-Based Roadmaps</a>
+        <br>→ Or explore careers via <a href="Role_based_Roadmaps.html" class="text-blue-600 hover:underline">Role-Based Roadmaps</a>
+      </p>
+      <br>
+
+    </section>
+  </main>
+
+    <!-- Placeholder for the footer -->
+    <div id="footer-placeholder"></div>
+    <script src="analytics.js"></script>
+    <script src="nav-switcher.js"></script>
+    <script src="footer.js"></script>
+
+  <!-- Collapsible Script -->
+  <script>
+    function toggleParagraph(num) {
+      document.getElementById(`paragraph-${num}`).classList.toggle('hidden');
+    }
+  </script>
+
+</body>
+</html>

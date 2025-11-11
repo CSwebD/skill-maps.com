@@ -1,0 +1,74 @@
+[
+  {
+    "id": "0008",
+    "title": "ChatGPT-3o: What Makes It So Special?",
+    "desc": "Artificial intelligence is moving fast, and OpenAI’s latest model, ChatGPT-3o, is shaking things up. But what makes it so special? Is it just another update, or are we witnessing the future of AI in action? Let’s find out.",
+    "date": "2025-07-17",
+    "image": "/blog/images/0008.png",
+    "link":  "/blog/html/0008.html",
+    "category": "AI"
+  },
+  {
+    "id": "0007",
+    "title": "Just Say No to JavaScript and Hi to...",
+    "desc": "JavaScript has been the king of the web for years, but new alternatives are emerging. Let’s explore what’s next.",
+    "date": "2025-07-17",
+    "image": "/blog/images/0007.png",
+    "link":  "/blog/html/0007.html",
+    "category": "Development"
+  },
+  {
+    "id": "0006",
+    "title": "What is DeepSeek and How is it Outdoing ChatGPT?",
+    "desc": "DeepSeek is making waves in the AI space—here’s how it’s challenging ChatGPT and why you should pay attention.",
+    "date": "2025-07-17",
+    "image": "/blog/images/0006.jpg",
+    "link":  "/blog/html/0006.html",
+    "category": "AI"
+  },
+  {
+    "id": "0005",
+    "title": "Top 8 Free AI Tools That Will Blow Your Mind",
+    "desc": "Discover powerful AI tools that are completely free and can transform how you work, create, and innovate.",
+    "date": "2025-07-17",
+    "image": "/blog/images/0005.jpg",
+    "link":  "/blog/html/0005.html",
+    "category": "AI"
+  },
+  {
+    "id": "0004",
+    "title": "Free AI Courses by NVIDIA",
+    "desc": "Upskill with NVIDIA's world-class AI training programs.",
+    "date": "2025-07-17",
+    "image": "/blog/images/0004.jpg",
+    "link":  "/blog/html/0004.html",
+    "category": "AI"
+  },
+  {
+    "id": "0003",
+    "title": "Top 10 IDEs and Code Editors",
+    "desc": "Boost your coding efficiency with these powerful tools.",
+    "date": "2025-07-17",
+    "image": "/blog/images/0003-a.png",
+    "link":  "/blog/html/0003.html",
+    "category": "Development"
+  },
+  {
+    "id": "0002",
+    "title": "Master Python Development",
+    "desc": "Learn Python through hands-on projects and tutorials.",
+    "date": "2025-07-17",
+    "image": "/blog/images/0002.jpg",
+    "link":  "/blog/html/0002.html",
+    "category": "Development"
+  },
+  {
+    "id": "0001",
+    "title": "Skill Maps Blog",
+    "desc": "Tips, tutorials, and insights from the world of tech and learning.",
+    "date": "2025-07-17",
+    "image": "/blog/images/0001.jpg",
+    "link":  "/blog/html/0001.html",
+    "category": "Development"
+  }
+]

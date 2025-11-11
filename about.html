@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SM - About</title>
+
+  <link rel="icon" href="../images/logo.jpg" type="image/x-icon" />
+  <meta name="description" content="Learn about Skill Maps — an interactive platform that helps you grow through structured learning pathways in tech, development, and AI." />
+
+  <!-- Tailwind CSS + Fonts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+  <!-- NAVBAR -->
+  <div id="panel-bar-placeholder"></div>
+  <script src="panel-nav.js"></script>
+
+  <main class="pt-24">
+  <!-- HEADER -->
+  <section class="bg-gradient-to-r from-amber-200 to-yellow-100 py-24 text-center">
+    <div class="max-w-3xl mx-auto px-6">
+      <h1 class="text-5xl font-extrabold text-amber-800 mb-4 drop-shadow">About Skill Maps</h1>
+      <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+        Empowering learners through clear, structured pathways in technology, software engineering, and AI.
+      </p>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <section class="py-20">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <!-- Text Content -->
+      <div>
+        <h2 class="text-3xl font-semibold text-green-700 mb-6">Our Mission</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Skill Maps is designed to make learning software development and modern technologies accessible to everyone.
+          We provide clear, structured learning paths that guide you from beginner to advanced levels — helping you
+          acquire real-world skills at your own pace.
+        </p>
+        <p class="text-gray-600 leading-relaxed">
+          Whether you're preparing for a career in tech, improving your professional skill set, or exploring new areas
+          like AI, Data Science, or DevOps — Skill Maps offers curated content, resources, and insights to support your journey.
+        </p>
+      </div>
+
+      <!-- Image or Illustration -->
+      <div class="flex justify-center">
+        <img src="../images/about-illustration.svg" alt="Learning Illustration" class="w-4/5 max-w-sm rounded-2xl shadow-lg border border-gray-100" onerror="this.style.display='none'">
+      </div>
+    </div>
+  </section>
+
+  <!-- SECOND SECTION -->
+  <section class="bg-white py-20 border-t border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-semibold text-green-700 mb-6">Why Skill Maps?</h2>
+      <p class="text-gray-600 max-w-3xl mx-auto leading-relaxed mb-10">
+        Traditional learning resources can be overwhelming and unstructured. Skill Maps bridges that gap by creating
+        an interactive roadmap that helps you visualize your progress and discover what to learn next — all in one place.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-8 text-left">
+        <div class="bg-gray-50 p-6 rounded-xl shadow hover:shadow-lg transition">
+          <i class="fas fa-lightbulb text-green-600 text-3xl mb-4"></i>
+          <h3 class="font-semibold text-xl mb-2">Structured Learning</h3>
+          <p class="text-gray-600 text-sm">Follow step-by-step learning paths for key technology domains like Development, AI, and DevOps.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-xl shadow hover:shadow-lg transition">
+          <i class="fas fa-users text-green-600 text-3xl mb-4"></i>
+          <h3 class="font-semibold text-xl mb-2">Community Driven</h3>
+          <p class="text-gray-600 text-sm">Connect with learners and professionals who share your interests and goals.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-xl shadow hover:shadow-lg transition">
+          <i class="fas fa-chart-line text-green-600 text-3xl mb-4"></i>
+          <h3 class="font-semibold text-xl mb-2">Career Focused</h3>
+          <p class="text-gray-600 text-sm">Every path is designed with employability in mind — helping you reach your dream role faster.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  </main>
+
+    <!-- Placeholder for the footer -->
+    <div id="footer-placeholder"></div>
+    <script src="analytics.js"></script>
+    <script src="nav-switcher.js"></script>
+    <script src="footer.js"></script>
+</body>
+</html>

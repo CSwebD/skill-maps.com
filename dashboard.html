@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Skill Maps</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Navigation -->
+    <div id="navPlaceholder"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 py-24">
+        <!-- Welcome Header -->
+        <div class="mb-8">
+            <h1 class="text-4xl font-bold text-gray-800 mb-2">
+                Welcome back, <span id="dashboardUsername" class="text-green-700">User</span>!
+            </h1>
+            <p class="text-gray-600">Start learning today and track your progress</p>
+        </div>
+
+        <!-- Quick Actions Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <!-- My Profile -->
+            <a href="profile.html" class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition group">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center text-green-700 text-2xl group-hover:bg-green-700 group-hover:text-white transition">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+                <h3 class="font-bold text-gray-800 mb-2 text-lg">My Profile</h3>
+                <p class="text-sm text-gray-600">View your learning progress and achievements</p>
+            </a>
+
+            <!-- Role Maps -->
+            <a href="domains.html" class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition group">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-700 text-2xl group-hover:bg-blue-700 group-hover:text-white transition">
+                        <i class="fas fa-book"></i>
+                    </div>
+                </div>
+                <h3 class="font-bold text-gray-800 mb-2 text-lg">Role Maps</h3>
+                <p class="text-sm text-gray-600">Explore available domain courses</p>
+            </a>
+
+            <!-- Skill Maps -->
+            <a href="skills.html" class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition group">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center text-purple-700 text-2xl group-hover:bg-purple-700 group-hover:text-white transition">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                </div>
+                <h3 class="font-bold text-gray-800 mb-2 text-lg">Skill Maps</h3>
+                <p class="text-sm text-gray-600">Track your learning path</p>
+            </a>
+
+            <!-- AI Roadmaps -->
+            <a href="ai.html" class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition group">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-700 text-2xl group-hover:bg-indigo-700 group-hover:text-white transition">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                </div>
+                <h3 class="font-bold text-gray-800 mb-2 text-lg">AI Roadmaps</h3>
+                <p class="text-sm text-gray-600">Learn about artificial intelligence</p>
+            </a>
+
+            <!-- Blog -->
+            <a href="blog.html" class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition group">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center text-orange-700 text-2xl group-hover:bg-orange-700 group-hover:text-white transition">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                </div>
+                <h3 class="font-bold text-gray-800 mb-2 text-lg">Blog</h3>
+                <p class="text-sm text-gray-600">Read latest articles and updates</p>
+            </a>
+
+            <!-- FAQs -->
+            <a href="FAQs.html" class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition group">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center text-yellow-700 text-2xl group-hover:bg-yellow-700 group-hover:text-white transition">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                </div>
+                <h3 class="font-bold text-gray-800 mb-2 text-lg">FAQs</h3>
+                <p class="text-sm text-gray-600">Find answers to common questions</p>
+            </a>
+
+            <!-- Explore Other Projects -->
+            <a href="https://cris-ai.com/" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-br from-green-500 to-blue-600 p-6 rounded-xl shadow hover:shadow-lg transition group">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-white/20 backdrop-blur rounded-lg flex items-center justify-center text-white text-2xl group-hover:bg-white/30 transition">
+                        <i class="fas fa-external-link-alt"></i>
+                    </div>
+                </div>
+                <h3 class="font-bold text-white mb-2 text-lg">Explore Other Projects</h3>
+                <p class="text-sm text-white/90">Check out our other amazing projects</p>
+            </a>
+
+        </div>
+
+        <!-- Stats Section (Optional) -->
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-xl shadow">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-600 text-sm">Courses Started</p>
+                        <p class="text-3xl font-bold text-gray-800 mt-1">0</p>
+                    </div>
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-play text-green-700 text-xl"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-600 text-sm">Courses Completed</p>
+                        <p class="text-3xl font-bold text-gray-800 mt-1">0</p>
+                    </div>
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-check text-blue-700 text-xl"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Load navigation -->
+    <script>
+        fetch('panel-nav.html')
+            .then(r => r.text())
+            .then(data => {
+                document.getElementById('navPlaceholder').innerHTML = data;
+            });
+    </script>
+
+    <!-- Load navigation switcher -->
+    <script src="nav-switcher.js"></script>
+    
+    <!-- Load footer -->
+    <script src="footer.js"></script>
+    
+    <!-- Analytics -->
+    <script src="analytics.js"></script>
+    
+    <!-- Check if logged in and update username -->
+    <script>
+        const currentUser = JSON.parse(localStorage.getItem('currentUser') || 'null');
+        
+        if (!currentUser) {
+            // Not logged in - redirect to login
+            window.location.href = 'login.html';
+        } else {
+            // Display username
+            const usernameDisplay = document.getElementById('dashboardUsername');
+            if (usernameDisplay) {
+                usernameDisplay.textContent = currentUser.username || currentUser.email;
+            }
+        }
+    </script>
+</body>
+</html>

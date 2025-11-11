@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SM - FAQs</title>
+
+  <link rel="icon" href="../images/logo.jpg" type="image/x-icon" />
+  <meta name="description" content="Frequently Asked Questions about Skill Maps – your guide to structured learning in tech, DevOps, and AI." />
+  <meta property="og:title" content="FAQs - Skill Maps" />
+  <meta property="og:description" content="Answers to common questions about Skill Maps and how to get started." />
+  <meta property="og:url" content="https://www.skill-maps.com/FAQs.html" />
+  <meta property="og:image" content="https://www.skill-maps.com/images/logo.jpg" />
+
+  <!-- TailwindCSS + Fonts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+  <!-- NAVBAR -->
+  <div id="panel-bar-placeholder"></div>
+  <script src="panel-nav.js"></script>
+
+  <main class="pt-24">
+  <!-- HEADER -->
+  <section class="bg-gradient-to-r from-amber-200 to-yellow-100 py-24 text-center shadow-sm">
+    <div class="max-w-3xl mx-auto px-6">
+      <h1 class="text-5xl font-extrabold text-amber-800 mb-4 drop-shadow">Frequently Asked Questions</h1>
+      <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+        Find quick answers to common questions about how Skill Maps works and how you can make the most of it.
+      </p>
+    </div>
+  </section>
+
+  <!-- MAIN FAQ CONTENT -->
+  <main class="py-20 px-6 max-w-4xl mx-auto">
+    <div class="space-y-6">
+      <!-- FAQ Item -->
+      <details class="bg-white border border-gray-100 p-6 rounded-2xl shadow hover:shadow-lg transition">
+        <summary class="flex items-center justify-between text-lg font-semibold cursor-pointer text-green-700">
+          <span>How do I track my progress?</span>
+          <i class="fas fa-chevron-down text-gray-400"></i>
+        </summary>
+        <p class="mt-3 text-gray-600 pl-1">You can create an account on Skill Maps to unlock progress tracking across all roadmaps and skill pathways.</p>
+      </details>
+
+      <details class="bg-white border border-gray-100 p-6 rounded-2xl shadow hover:shadow-lg transition">
+        <summary class="flex items-center justify-between text-lg font-semibold cursor-pointer text-green-700">
+          <span>Are the learning pathways free?</span>
+          <i class="fas fa-chevron-down text-gray-400"></i>
+        </summary>
+        <p class="mt-3 text-gray-600 pl-1">Yes — all Skill Maps content is completely free to access for all learners worldwide.</p>
+      </details>
+
+      <details class="bg-white border border-gray-100 p-6 rounded-2xl shadow hover:shadow-lg transition">
+        <summary class="flex items-center justify-between text-lg font-semibold cursor-pointer text-green-700">
+          <span>Can I contribute content?</span>
+          <i class="fas fa-chevron-down text-gray-400"></i>
+        </summary>
+        <p class="mt-3 text-gray-600 pl-1">Absolutely! Join our Discord community or contact us to collaborate and share your expertise.</p>
+      </details>
+
+      <details class="bg-white border border-gray-100 p-6 rounded-2xl shadow hover:shadow-lg transition">
+        <summary class="flex items-center justify-between text-lg font-semibold cursor-pointer text-green-700">
+          <span>Are there certificates?</span>
+          <i class="fas fa-chevron-down text-gray-400"></i>
+        </summary>
+        <p class="mt-3 text-gray-600 pl-1">We’re developing certification options for key roadmaps and skill challenges — stay tuned for updates.</p>
+      </details>
+
+      <details class="bg-white border border-gray-100 p-6 rounded-2xl shadow hover:shadow-lg transition">
+        <summary class="flex items-center justify-between text-lg font-semibold cursor-pointer text-green-700">
+          <span>Who maintains Skill Maps?</span>
+          <i class="fas fa-chevron-down text-gray-400"></i>
+        </summary>
+        <p class="mt-3 text-gray-600 pl-1">Skill Maps is maintained by a team of software engineers, educators, and open-source contributors. Learn more on our <a href="about.html" class="text-green-600 hover:text-green-700 font-medium">About</a> page.</p>
+      </details>
+    </div>
+
+    <!-- Contact Call-to-Action -->
+    <div class="mt-16 text-center">
+      <p class="text-gray-700 text-lg mb-4">Didn’t find what you were looking for?</p>
+      <a href="contact.html" class="inline-block bg-green-600 text-white px-6 py-3 rounded-xl shadow hover:bg-green-700 transition font-semibold">
+        Contact Us
+      </a>
+    </div>
+  </main>
+
+    <!-- Placeholder for the footer -->
+    <div id="footer-placeholder"></div>
+    <script src="analytics.js"></script>
+    <script src="nav-switcher.js"></script>
+    <script src="footer.js"></script>
+
+  <!-- FAQ Icon Rotation -->
+  <script>
+    document.querySelectorAll("details").forEach((el) => {
+      el.addEventListener("toggle", () => {
+        const icon = el.querySelector("i");
+        if (el.open) icon.classList.replace("fa-chevron-down", "fa-chevron-up");
+        else icon.classList.replace("fa-chevron-up", "fa-chevron-down");
+      });
+    });
+  </script>
+</body>
+</html>
+

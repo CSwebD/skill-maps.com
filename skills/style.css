@@ -1,0 +1,76 @@
+body { 
+  font-family: 'Inter', sans-serif; 
+  background: #dbeafe; /* soft blue background */
+  scroll-behavior: smooth; 
+}
+
+/* Video styling */
+.tutorial-video { 
+  width: 100%; 
+  aspect-ratio: 16/9; 
+  border-radius: 1rem; 
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1); 
+}
+
+/* Collapsible paragraph titles */
+.minimized-paragraph {
+  cursor: pointer; 
+  font-weight: 600;
+  background: linear-gradient(to right, #dbeafe, #93c5fd);
+  border: 1px solid #93c5fd;
+  padding: 1rem 1.25rem;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+  text-align: center;
+  margin-bottom: 0.75rem;
+  color: #1e40af; /* text-blue-800 */
+}
+
+.minimized-paragraph:hover {
+  background: linear-gradient(to right, #93c5fd, #60a5fa);
+  color: white;
+}
+
+/* Expanded paragraph box */
+.paragraph-content { 
+  margin-top: 0.75rem; 
+  background: #fff; 
+  padding: 1.5rem; 
+  border-radius: 1rem; 
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
+}
+
+/* Section title */
+.section-title { 
+  font-size: 2rem; 
+  font-weight: 700; 
+  color: #1e40af; /* deep blue */
+  margin-bottom: 1rem; 
+}
+
+/* Page title */
+h2.title-page { 
+  font-size: 3rem; 
+  font-weight: 800; 
+  text-align: center; 
+  color: #1d4ed8; /* slightly brighter blue */
+  margin-bottom: 2rem; 
+}
+
+/* Paragraph text */
+.paragraph { 
+  color: #1e3a8a; /* text-blue-900 */
+  line-height: 1.8; 
+}
+
+/* Links */
+a { 
+  color: #1e40af; 
+  font-weight: 600; 
+  transition: color 0.3s ease;
+}
+
+a:hover { 
+  color: #1d4ed8; 
+  text-decoration: underline; 
+}

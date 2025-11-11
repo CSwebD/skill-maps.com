@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SM - Practics and Projects</title>
+  <link rel="icon" href="../images/logo.jpg" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <meta name="description" content="AI Practics and Projects course with real portfolio-ready work.">
+  <meta property="og:title" content="Skill Maps - Practics and Projects">
+  <meta property="og:description" content="Hands-on AI projects to build real experience.">
+  <meta property="og:url" content="https://www.skill-maps.com/domains/practics_and_projects.html">
+  <meta property="og:image" content="https://www.skill-maps.com/images/logo.jpg">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="text-gray-800">
+
+  <div id="panel-bar-placeholder"></div>
+  <script src="panel-nav.js"></script>
+
+  <main class="pt-16 max-w-6xl mx-auto px-6 space-y-12">
+
+    <section id="head">
+      <h2 class="title-page">(AI) Practics and Projects</h2>
+    </section>
+
+    <section id="video-course" class="space-y-6">
+      <h1 class="section-title">Quick Introduction to Capstone Projects</h1>
+      <iframe class="tutorial-video" src="https://www.youtube.com/embed/S2SobVF1C-E" frameborder="0" allowfullscreen></iframe>
+      <p class="paragraph italic text-gray-600">Source: "What is a Capstone Project?" – InfiniteWisdom</p>
+    </section>
+
+    <section id="text-course" class="space-y-6">
+      <h2 class="text-center section-title">Welcome to the Practics & Projects Course</h2>
+
+      <h3 class="section-title">Overview</h3>
+      <p class="paragraph">
+        In this course, you will complete real-world AI projects. You will collect data, train models, evaluate outputs, and document your results.
+      </p>
+
+      <h3 class="section-title">Instructions</h3>
+      <p class="paragraph">
+        1. Watch each project walkthrough.<br>
+        2. Rebuild the project yourself.<br>
+        3. Modify it to make it unique.<br>
+        4. Upload to GitHub to showcase.<br><br>
+        <span class="font-bold text-center block">Good luck!</span>
+      </p>
+
+      <p class="minimized-paragraph" onclick="toggleParagraph(1)">Project 1: Deep CNN Image Classifier</p>
+      <div id="paragraph-1" class="paragraph-content hidden">
+        <iframe class="tutorial-video" src="https://www.youtube.com/embed/jztwpsIzEGc" frameborder="0" allowfullscreen></iframe>
+        <p class="paragraph italic text-gray-600 mt-2">Source: Nicholas Renotte</p>
+        <p class="paragraph mt-2"><b>Exercise:</b> Build, modify, and publish your version.</p>
+      </div>
+
+      <p class="minimized-paragraph" onclick="toggleParagraph(2)">Project 2: Sentiment Analysis (NLTK & Transformers)</p>
+      <div id="paragraph-2" class="paragraph-content hidden">
+        <iframe class="tutorial-video" src="https://www.youtube.com/embed/QpzMWQvxXWk" frameborder="0" allowfullscreen></iframe>
+        <p class="paragraph italic text-gray-600 mt-2">Source: Rob Mulla</p>
+        <p class="paragraph mt-2"><b>Exercise:</b> Train on your own dataset and compare results.</p>
+      </div>
+
+      <p class="minimized-paragraph" onclick="toggleParagraph(3)">Project 3: Predicting Stock Prices</p>
+      <div id="paragraph-3" class="paragraph-content hidden">
+        <iframe class="tutorial-video" src="https://www.youtube.com/embed/PuZY9q-aKLw" frameborder="0" allowfullscreen></iframe>
+        <p class="paragraph italic text-gray-600 mt-2">Source: NeuralNine</p>
+        <p class="paragraph mt-2"><b>Exercise:</b> Add alternative features and compare predictions.</p>
+      </div>
+
+      <h1 class="section-title mt-6">Summary</h1>
+      <p class="paragraph">
+        Upload your completed work to GitHub and LinkedIn. Continue exploring skill and role-based paths below:<br>
+        → <a href="Skill_Based_Roadmaps.html" class="text-blue-600 hover:underline">Skill-Based Roadmaps</a><br>
+        → <a href="Role_based_Roadmaps.html" class="text-blue-600 hover:underline">Role-Based Roadmaps</a>
+      </p>
+      <br>
+
+    </section>
+  </main>
+
+    <!-- Placeholder for the footer -->
+    <div id="footer-placeholder"></div>
+    <script src="analytics.js"></script>
+    <script src="nav-switcher.js"></script>
+    <script src="footer.js"></script>
+
+  <script>
+    function toggleParagraph(num) {
+      document.getElementById(`paragraph-${num}`).classList.toggle('hidden');
+    }
+  </script>
+
+</body>

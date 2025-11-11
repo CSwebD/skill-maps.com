@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SM - Maths & Statistics for AI</title>
+  <link rel="icon" href="../images/logo.jpg" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <!-- Meta & Open Graph -->
+  <meta name="description" content="Learn the core mathematics and statistics behind AI, including linear algebra, calculus, probability, and more.">
+  <meta property="og:title" content="Skill Maps - Maths & Statistics for AI">
+  <meta property="og:description" content="Master foundational math concepts required for machine learning and AI.">
+  <meta property="og:url" content="https://www.skill-maps.com/domains/maths_and_statistics_for_ai.html">
+  <meta property="og:image" content="https://www.skill-maps.com/images/logo.jpg">
+
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="text-gray-800 font-inter">
+
+  <!-- NAVBAR -->
+  <div id="panel-bar-placeholder"></div>
+  <script src="panel-nav.js"></script>
+
+  <main class="pt-16 max-w-6xl mx-auto px-6 space-y-12">
+
+    <!-- HEADER -->
+    <section id="head">
+      <h2 class="title-page">Maths & Statistics for AI</h2>
+    </section>
+
+    <!-- INTRO VIDEO -->
+    <section id="video-course" class="space-y-6">
+      <h1 class="section-title">Quick Introduction to AI Mathematics</h1>
+      <iframe class="tutorial-video" src="https://www.youtube.com/embed/OmJ-4B-mS-Y" title="Map of Mathematics" frameborder="0" allowfullscreen></iframe>
+      <p class="paragraph italic text-gray-600">Source: “The Map of Mathematics” — Domain of Science (YouTube)</p>
+    </section>
+
+    <!-- COURSE INSTRUCTIONS -->
+    <section id="text-course" class="space-y-6">
+      <h2 class="text-center section-title">Welcome to the Maths & Statistics Full Course</h2>
+      <h3 class="section-title">Instructions</h3>
+      <p class="paragraph">
+        To complete this course, simply:
+        <br><br>
+        1. Watch each lesson's video.<br>
+        2. Expand the chapters to access explanations and exercises.<br>
+        3. Take notes and try the practice tasks.
+        <br><br>
+        <span class="text-center font-bold">Your understanding of AI begins here.</span>
+      </p>
+
+      <!-- CHAPTER 1 -->
+      <p class="minimized-paragraph" onclick="toggleParagraph(1)">Chapter 1: Linear Algebra Essentials</p>
+      <div id="paragraph-1" class="paragraph-content hidden">
+        <iframe class="tutorial-video" src="https://www.youtube.com/embed/LlKAna21fLE" title="Linear Algebra for ML" frameborder="0" allowfullscreen></iframe>
+        <p class="paragraph italic text-gray-600 mt-2">Source: TensorFlow / ML Tech Talks</p>
+        <p class="paragraph mt-2"><b>Exercise:</b> Practice vector addition, dot products, and matrix multiplication.</p>
+      </div>
+
+      <!-- CHAPTER 2 -->
+      <p class="minimized-paragraph" onclick="toggleParagraph(2)">Chapter 2: Probability & Statistics Basics</p>
+      <div id="paragraph-2" class="paragraph-content hidden">
+        <iframe class="tutorial-video" src="https://www.youtube.com/embed/FAO1bIyZnaw" title="Probability & Statistics" frameborder="0" allowfullscreen></iframe>
+        <p class="paragraph italic text-gray-600 mt-2">Source: Simplilearn</p>
+        <p class="paragraph mt-2"><b>Exercise:</b> Compute mean, variance, and experiment with probability distributions.</p>
+      </div>
+
+      <!-- CHAPTER 3 -->
+      <p class="minimized-paragraph" onclick="toggleParagraph(3)">Chapter 3: Calculus for Machine Learning</p>
+      <div id="paragraph-3" class="paragraph-content hidden">
+        <iframe class="tutorial-video" src="https://www.youtube.com/embed/MDL384gsAk0" title="Calculus for ML" frameborder="0" allowfullscreen></iframe>
+        <p class="paragraph italic text-gray-600 mt-2">Source: Simplilearn</p>
+        <p class="paragraph mt-2"><b>Exercise:</b> Study derivatives, gradients, and the chain rule.</p>
+      </div>
+
+      <!-- CHAPTER 4 -->
+      <p class="minimized-paragraph" onclick="toggleParagraph(4)">Chapter 4: Optimization & Numerical Methods</p>
+      <div id="paragraph-4" class="paragraph-content hidden">
+        <p class="paragraph">Study gradient descent, step size (learning rate), and convergence behavior.</p>
+        <p class="paragraph mt-2"><b>Exercise:</b> Implement gradient descent on a simple quadratic function.</p>
+      </div>
+
+      <!-- SUMMARY -->
+      <h1 class="section-title mt-6">Summary</h1>
+      <p class="paragraph">
+        Continue your learning journey with our <a href="Skill_Based_Roadmaps.html" class="text-blue-600 hover:underline">Skill-Based Roadmaps</a> or explore career paths via <a href="Role_based_Roadmaps.html" class="text-blue-600 hover:underline">Role-Based Roadmaps</a>.
+      </p>
+      <br>
+
+    </section>
+
+  </main>
+
+    <!-- Placeholder for the footer -->
+    <div id="footer-placeholder"></div>
+    <script src="analytics.js"></script>
+    <script src="nav-switcher.js"></script>
+    <script src="footer.js"></script>
+
+  <script>
+    function toggleParagraph(num) {
+      document.getElementById(`paragraph-${num}`).classList.toggle('hidden');
+    }
+  </script>
+
+</body>
