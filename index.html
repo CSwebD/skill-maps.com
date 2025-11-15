@@ -16,7 +16,20 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
-  <style>body { font-family: 'Inter', sans-serif; } html { scroll-behavior: smooth; }</style>
+  <style>body { font-family: 'Inter', sans-serif; } html { scroll-behavior: smooth; }
+  
+  /* Smooth slide transitions */
+  .slide {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    pointer-events: none;
+  }
+  
+  .slide.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  </style>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Structured Data -->
@@ -44,7 +57,7 @@
   <div id="slides" class="absolute inset-0 transition-all duration-700 ease-in-out">
 
     <!-- Slide 1: Domains -->
-<div class="slide absolute inset-0 flex flex-col items-center justify-center text-center bg-gradient-to-br from-[#dcfce7] to-[#86efac] text-gray-900 bg-cover bg-center" style="background-image: url('/images/pic1.jpg'); /* Add your image path here */">
+<div class="slide active absolute inset-0 flex flex-col items-center justify-center text-center bg-gradient-to-br from-[#dcfce7] to-[#86efac] text-gray-900 bg-cover bg-center" style="background-image: url('/images/pic1.jpg'); /* Add your image path here */">
   <!-- Semi-transparent overlay for text readability -->
   <div class="absolute inset-0 bg-black opacity-40"></div>
   
@@ -62,7 +75,7 @@
 
 
 <!-- Slide 2: Skills -->
-<div class="slide absolute inset-0 hidden flex flex-col items-center justify-center text-center bg-gradient-to-br from-[#dbeafe] to-[#93c5fd] text-gray-900 bg-cover bg-center" style="background-image: url('/images/pic2.jpg'); /* Add your image path here */">
+<div class="slide absolute inset-0 flex flex-col items-center justify-center text-center bg-gradient-to-br from-[#dbeafe] to-[#93c5fd] text-gray-900 bg-cover bg-center" style="background-image: url('/images/pic2.jpg'); /* Add your image path here */">
   <!-- Semi-transparent overlay for text readability -->
   <div class="absolute inset-0 bg-black opacity-40"></div>
   
@@ -78,7 +91,7 @@
 </div>
 
 <!-- Slide 3: Blog -->
-<div class="slide absolute inset-0 hidden flex flex-col items-center justify-center text-center bg-gradient-to-br from-[#fef3c7] to-[#fde68a] text-gray-900 bg-cover bg-center" style="background-image: url('/images/pic3.jpg'); /* Add your image path here */">
+<div class="slide absolute inset-0 flex flex-col items-center justify-center text-center bg-gradient-to-br from-[#fef3c7] to-[#fde68a] text-gray-900 bg-cover bg-center" style="background-image: url('/images/pic3.jpg'); /* Add your image path here */">
   <!-- Semi-transparent overlay for text readability -->
   <div class="absolute inset-0 bg-black opacity-40"></div>
   
@@ -94,7 +107,7 @@
 </div>
 
 <!-- Slide 4: AI -->
-<div class="slide absolute inset-0 hidden flex flex-col items-center justify-center text-center bg-gradient-to-br from-[#ede9fe] to-[#c4b5fd] text-gray-900 bg-cover bg-center" style="background-image: url('/images/pic4.png'); /* Add your image path here */">
+<div class="slide absolute inset-0 flex flex-col items-center justify-center text-center bg-gradient-to-br from-[#ede9fe] to-[#c4b5fd] text-gray-900 bg-cover bg-center" style="background-image: url('/images/pic4.png'); /* Add your image path here */">
   <!-- Semi-transparent overlay for text readability -->
   <div class="absolute inset-0 bg-black opacity-40"></div>
   
@@ -231,9 +244,13 @@
 
   function showSlide(index) {
     slides.forEach((slide, i) => {
-      slide.classList.toggle('hidden', i !== index);
-      dots[i].classList.toggle('opacity-100', i === index);
-      dots[i].classList.toggle('opacity-50', i !== index);
+      if (i === index) {
+        slide.classList.add('active');
+      } else {
+        slide.classList.remove('active');
+      }
+      dots[i].classList.toggle('bg-green-400', i === index);
+      dots[i].classList.toggle('bg-gray-400', i !== index);
     });
   }
 
@@ -260,7 +277,7 @@ document.getElementById('prevSlide').addEventListener('click', prevSlide);
   });
 
   showSlide(current);
-  setInterval(nextSlide, 30000); // Timer 10sec
+  setInterval(nextSlide, 5000); // Timer 5sec
 </script>
 
 
