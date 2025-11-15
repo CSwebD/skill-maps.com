@@ -128,12 +128,14 @@
     blogGrid.innerHTML = '';
 
     articlesToShow.forEach(article => {
-      const card = document.createElement('article');
-      card.className = "bg-gray-50 rounded-xl shadow hover:shadow-2xl transition overflow-hidden";
+      // Create wrapper link
+      const cardLink = document.createElement('a');
+      cardLink.href = article.link;
+      cardLink.className = "block bg-gray-50 rounded-xl shadow hover:shadow-2xl transition overflow-hidden";
 
       // Create the image container dynamically:
       const imgDiv = document.createElement('div');
-      imgDiv.className = "h-40 bg-cover bg-center";
+      imgDiv.className = "h-40 bg-cover bg-center cursor-pointer";
       // Inline style for the actual URL:
       imgDiv.style.backgroundImage = `url('${article.image}')`;
 
@@ -143,12 +145,12 @@
         <h3 class="text-xl font-semibold mb-2">${article.title}</h3>
         <p class="text-sm text-gray-500 mb-1">${new Date(article.date).toLocaleDateString()}</p>
         <p class="text-sm text-gray-600 mb-4">${article.desc}</p>
-        <a href="${article.link}" class="text-green-700 font-semibold hover:underline">Read More →</a>
+        <span class="text-green-700 font-semibold hover:underline">Read More →</span>
       `;
 
-      card.appendChild(imgDiv);
-      card.appendChild(content);
-      blogGrid.appendChild(card);
+      cardLink.appendChild(imgDiv);
+      cardLink.appendChild(content);
+      blogGrid.appendChild(cardLink);
     });
 
     visibleCount += increment;
