@@ -3,113 +3,459 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SM - Java Development</title>
+  <title>Learn Java Programming - Complete Beginner's Guide | Skill Maps</title>
   <link rel="icon" href="../images/logo.jpg" type="image/x-icon">
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- Meta & Open Graph -->
-  <meta name="description" content="Learn Java step by step through structured videos and practical projects.">
-  <meta property="og:title" content="Skill Maps - Java Development">
-  <meta property="og:description" content="Master Java with video tutorials and hands-on projects.">
-  <meta property="og:url" content="https://www.skill-maps.com/domains/Java.html">
+  <meta name="description" content="Start your Java programming journey today. Learn core concepts, build real projects, and launch your career in software development with our step-by-step guide.">
+  <meta name="keywords" content="learn java, java tutorial, java programming, java projects, java course, java for beginners, object oriented programming">
+  <meta property="og:title" content="Learn Java Programming - Beginner's Guide | Skill Maps">
+  <meta property="og:description" content="Master Java through hands-on projects and practical tutorials. Perfect for beginners ready to start coding.">
+  <meta property="og:url" content="https://www.skill-maps.com/skills/Java.html">
   <meta property="og:image" content="https://www.skill-maps.com/images/logo.jpg">
+  <meta property="og:type" content="article">
 
   <!-- TailwindCSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7439109164508333"
+     crossorigin="anonymous"></script>
 </head>
 
-<body class="text-gray-800">
+<body class="text-gray-800 space-y-12">
 
   <!-- NAVBAR -->
   <div id="panel-bar-placeholder"></div>
   <script src="panel-nav.js"></script>
 
-  <main class="pt-16 max-w-6xl mx-auto px-6 space-y-12">
+  <main class="pt-16 max-w-6xl mx-auto px-6 pb-12">
 
     <!-- HEADER -->
-    <section id="head">
-      <h2 class="title-page">Java Development</h2>
+    <section id="head" class="text-center py-12 bg-gradient-to-r from-red-50 to-orange-50 rounded-lg mb-12">
+      <h1 class="text-5xl font-bold text-gray-900 mb-4">Learn Java Programming</h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">Your practical roadmap to mastering Java—from your first "Hello World" to building real applications that solve actual problems.</p>
     </section>
 
-    <!-- INTRO VIDEO -->
-    <section id="video-course" class="space-y-6">
-      <h1 class="section-title">Quick Introduction to Java</h1>
-      <iframe class="tutorial-video" src="https://www.youtube.com/embed/r3Hc1EC3iPQ?si=e6ctpcq49NFuSl5x" title="Java Overview" frameborder="0" allowfullscreen></iframe>
-      <p class="paragraph italic text-gray-600">Source: “How to Code in Java | Learn Java Basics in Under 10 Minutes” — Teves Development (YouTube)</p>
+    <!-- WHAT IS JAVA -->
+    <section class="mb-12 bg-white rounded-lg shadow-sm p-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">So, What Exactly is Java?</h2>
+      <p class="text-lg text-gray-700 leading-relaxed mb-4">
+        Let's be honest—you've probably heard about Java before. Maybe you've seen it mentioned in job postings, or someone told you it's a "must-learn" language. But what actually makes Java special?
+      </p>
+      <p class="text-lg text-gray-700 leading-relaxed mb-4">
+        Java is a programming language that was created back in 1995 by James Gosling at Sun Microsystems. The big idea behind Java was simple but powerful: "Write Once, Run Anywhere." This means you can write your Java code on a Windows laptop, and it'll run perfectly on a Mac, Linux server, or even your Android phone. Pretty cool, right?
+      </p>
+      <p class="text-lg text-gray-700 leading-relaxed mb-4">
+        Today, Java powers some of the world's largest systems. We're talking about banking applications that handle millions of transactions, enterprise software that runs major corporations, and yes—billions of Android devices in people's pockets. If you've ever used Netflix, Spotify, or pretty much any Android app, you've interacted with Java code.
+      </p>
+      <div class="bg-orange-50 border-l-4 border-orange-500 p-6 mt-6">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">Why Developers Love Java</h3>
+        <ul class="space-y-2 text-gray-700">
+          <li><strong>It's everywhere:</strong> Java runs on over 3 billion devices worldwide—from your phone to your smart TV</li>
+          <li><strong>Strong job market:</strong> Consistently one of the most in-demand programming languages for well-paid positions</li>
+          <li><strong>Object-oriented:</strong> Teaches you fundamental programming concepts that transfer to other languages</li>
+          <li><strong>Mature ecosystem:</strong> Decades of development mean there's a library or framework for almost anything you want to build</li>
+          <li><strong>Great community:</strong> Stuck on something? There's probably already a Stack Overflow answer waiting for you</li>
+          <li><strong>Enterprise standard:</strong> Large companies love Java for its stability, security, and scalability</li>
+        </ul>
+      </div>
     </section>
 
-    <!-- COURSE INSTRUCTIONS -->
-    <section id="text-course" class="space-y-6">
-      <h2 class="text-center section-title">Welcome to the Java Full Course</h2>
-      <h3 class="section-title">Instructions</h3>
-      <p class="paragraph">
-        To complete this course, you’ll need a code editor such as <b>Eclipse</b>, <b>Visual Studio Code</b>, or an online IDE like <b>Programiz</b>.
-        <br><br>
-        1. Watch the <i>"Java - Full Course"</i> video.<br>
-        2. Complete the three guided projects to build practical Java skills.<br>
-        3. Upload your projects to your <b>GitHub portfolio</b>.
-        <br><br>
-        <span class="text-center font-bold">Good luck — enjoy learning Java!</span>
+    <!-- WHY LEARN JAVA -->
+    <section class="mb-12 bg-white rounded-lg shadow-sm p-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">Why Should You Learn Java in 2025?</h2>
+      <p class="text-lg text-gray-700 leading-relaxed mb-4">
+        Fair question! With so many programming languages out there—Python, JavaScript, Go, Rust—why spend time learning Java? Here's the honest truth: Java isn't going anywhere, and knowing it opens doors.
+      </p>
+      <p class="text-lg text-gray-700 leading-relaxed mb-6">
+        Whether you're looking to land your first developer job, switch careers, or just understand how software really works, Java gives you a solid foundation. Plus, once you know Java, picking up other languages becomes much easier because you'll understand the core concepts that power most modern programming.
+      </p>
+      
+      <div class="grid md:grid-cols-2 gap-6 mt-6">
+        <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-lg">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3"><i class="fas fa-briefcase text-green-600 mr-2"></i>Real Career Opportunities</h3>
+          <p class="text-gray-700">Java developers are consistently in demand. Companies need people who can maintain existing systems and build new ones. Roles range from Junior Developer to Software Architect, with salaries that reflect the language's enterprise value.</p>
+        </div>
+        <div class="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-lg">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3"><i class="fas fa-mobile-alt text-blue-600 mr-2"></i>Android Development</h3>
+          <p class="text-gray-700">Want to build mobile apps? Java was Android's original language and is still widely used. Understanding Java gives you direct access to the world's most popular mobile platform with billions of potential users.</p>
+        </div>
+        <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-lg">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3"><i class="fas fa-building text-purple-600 mr-2"></i>Enterprise Software</h3>
+          <p class="text-gray-700">Banks, insurance companies, healthcare systems—they all run on Java. Learning Java means you can work on software that actually matters, handling real business problems for major organizations.</p>
+        </div>
+        <div class="bg-gradient-to-br from-orange-50 to-red-50 p-6 rounded-lg">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3"><i class="fas fa-brain text-orange-600 mr-2"></i>Learn to Think Like a Programmer</h3>
+          <p class="text-gray-700">Java forces you to understand fundamental concepts like object-oriented programming, memory management, and type systems. These skills make you a better developer, regardless of what language you use later.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PREREQUISITES -->
+    <section class="mb-12 bg-white rounded-lg shadow-sm p-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">What You'll Need to Get Started</h2>
+      <p class="text-lg text-gray-700 leading-relaxed mb-4">
+        Good news: you don't need much to start learning Java. No expensive courses, no fancy computer, just some free tools and your willingness to practice. Here's everything you need to begin your journey.
+      </p>
+      
+      <h3 class="text-2xl font-semibold text-gray-900 mb-4 mt-6">The Essentials</h3>
+      <div class="bg-gray-50 p-6 rounded-lg mb-6">
+        <ul class="space-y-3 text-gray-700">
+          <li><strong>Zero programming experience required:</strong> This roadmap assumes you're starting from scratch. If you can use a computer and follow instructions, you can learn Java.</li>
+          <li><strong>Java Development Kit (JDK):</strong> Free download from Oracle or adopt OpenJDK. Think of this as the engine that runs your Java code. Don't worry—we'll walk you through installation.</li>
+          <li><strong>A code editor:</strong> Eclipse and IntelliJ IDEA are popular (both have free versions), or you can start with something lighter like VS Code. Choose whichever feels comfortable.</li>
+          <li><strong>Time commitment:</strong> Realistically, plan for 10-15 hours per week. You could complete this roadmap in 4-6 weeks if you're consistent, though everyone learns at their own pace.</li>
+        </ul>
+      </div>
+
+      <h3 class="text-2xl font-semibold text-gray-900 mb-4">Choosing Your Development Environment</h3>
+      <div class="grid md:grid-cols-3 gap-4">
+        <div class="border border-gray-200 p-4 rounded-lg">
+          <h4 class="font-semibold text-gray-900 mb-2">Eclipse IDE</h4>
+          <p class="text-sm text-gray-600">Free, powerful, and specifically built for Java. A bit old-school looking, but it gets the job done. Great for beginners because it catches mistakes early.</p>
+        </div>
+        <div class="border border-gray-200 p-4 rounded-lg">
+          <h4 class="font-semibold text-gray-900 mb-2">IntelliJ IDEA</h4>
+          <p class="text-sm text-gray-600">Modern interface with intelligent code completion. The Community Edition is free and has everything you need. Many professional developers swear by this one.</p>
+        </div>
+        <div class="border border-gray-200 p-4 rounded-lg">
+          <h4 class="font-semibold text-gray-900 mb-2">Online IDEs</h4>
+          <p class="text-sm text-gray-600">Not ready to install anything? Try Replit or JDoodle. They run in your browser, so you can start coding immediately. Perfect for quick experiments.</p>
+        </div>
+      </div>
+
+      <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mt-6">
+        <p class="text-gray-800"><strong>Pro tip:</strong> Don't overthink your setup! Start with any free IDE and begin coding. You can always switch later. The important thing is to start writing code, not spending hours configuring the perfect environment.</p>
+      </div>
+    </section>
+
+    <!-- LEARNING PATH -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Your Java Learning Path</h2>
+      <p class="text-lg text-gray-700 text-center max-w-3xl mx-auto mb-8">
+        Here's how we'll build your Java skills: start with the basics, then immediately apply what you learn through real projects. No boring theory—we're building things that actually work.
       </p>
 
-      <!-- LESSON 1 -->
-      <p class="minimized-paragraph" onclick="toggleParagraph(1)">Java - Full Course (Video)</p>
-      <div id="paragraph-1" class="paragraph-content hidden">
-        <iframe class="tutorial-video" src="https://www.youtube.com/embed/A74TOX803D0" title="Java Full Course" frameborder="0" allowfullscreen></iframe>
-        <p class="paragraph italic text-gray-600 mt-2">Source: “Java Programming for Beginners – Full Course” — freeCodeCamp.org (YouTube)</p>
-        <p class="paragraph mt-2"><b>Exercise:</b> Watch the video and take notes to prepare for your first project.</p>
+      <!-- INTRO VIDEO -->
+      <div class="bg-white rounded-lg shadow-sm p-8 mb-8">
+        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Step 1: Java in 10 Minutes (Yes, Really!)</h3>
+        <p class="text-gray-700 mb-4">
+          Before diving deep, let's get a quick overview. This 10-minute video will show you what Java code looks like and what makes it tick. Don't worry if everything doesn't click immediately—that's completely normal. Just get a feel for the language.
+        </p>
+        <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/r3Hc1EC3iPQ?si=e6ctpcq49NFuSl5x" title="Java Overview" frameborder="0" allowfullscreen></iframe>
+        <p class="text-sm italic text-gray-600 mt-3">Source: "How to Code in Java | Learn Java Basics in Under 10 Minutes" – Teves Development (YouTube)</p>
+      </div>
+
+      <!-- FULL COURSE -->
+      <div class="bg-white rounded-lg shadow-sm p-8 mb-8">
+        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Step 2: The Complete Java Fundamentals Course</h3>
+        <p class="text-gray-700 mb-4">
+          Alright, now we're getting into the real stuff. This comprehensive course takes you from absolute beginner to capable Java programmer. You'll learn everything from basic syntax to object-oriented programming—the concepts that make Java powerful.
+        </p>
+        <p class="text-gray-700 mb-4">
+          <strong>Here's the deal:</strong> This video is long (we're talking hours, not minutes). But here's the secret—you don't need to watch it all in one sitting. Break it into manageable chunks. Watch a section, pause, code along, take a break. Come back when you're ready. The goal is understanding, not speed.
+        </p>
+        
+        <div class="bg-blue-50 border-l-4 border-blue-400 p-4 mb-4">
+          <p class="text-gray-800"><strong>Learning Strategy:</strong> Code along with the instructor. Seriously, don't just watch—type the code yourself. You'll make mistakes, and that's perfect. Debugging your own errors teaches you more than watching someone else's perfect code ever will.</p>
+        </div>
+
+        <button onclick="toggleParagraph(1)" class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-200 mb-4">
+          <i class="fas fa-play-circle mr-2"></i>Start the Full Course
+        </button>
+        
+        <div id="paragraph-1" class="paragraph-content hidden">
+          <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/A74TOX803D0" title="Java Full Course" frameborder="0" allowfullscreen></iframe>
+          <p class="text-sm italic text-gray-600 mt-3">Source: "Java Programming for Beginners – Full Course" – freeCodeCamp.org (YouTube)</p>
+          
+          <div class="mt-6 bg-orange-50 p-6 rounded-lg">
+            <h4 class="font-semibold text-gray-900 mb-3">What You'll Master:</h4>
+            <ul class="grid md:grid-cols-2 gap-2 text-gray-700">
+              <li>• Variables and data types (the building blocks)</li>
+              <li>• Control flow: if/else statements and loops</li>
+              <li>• Methods and how to organize your code</li>
+              <li>• Object-oriented programming (OOP) concepts</li>
+              <li>• Classes and objects (this is where Java shines)</li>
+              <li>• Inheritance and polymorphism</li>
+              <li>• Working with files and data</li>
+              <li>• Exception handling (dealing with errors gracefully)</li>
+            </ul>
+          </div>
+
+          <div class="mt-4 p-4 bg-gray-50 rounded-lg">
+            <p class="font-semibold text-gray-900 mb-2"><i class="fas fa-lightbulb text-orange-600 mr-2"></i>Quick Exercise:</p>
+            <p class="text-gray-700">After finishing the course, challenge yourself: build a simple bank account system where users can deposit, withdraw, and check their balance. It sounds simple, but it'll test whether you really understand classes, methods, and basic logic. No tutorial for this one—you've got this!</p>
+          </div>
+        </div>
       </div>
 
       <!-- PROJECT 1 -->
-      <p class="minimized-paragraph" onclick="toggleParagraph(2)">Project 1: Investment Earnings</p>
-      <div id="paragraph-2" class="paragraph-content hidden">
-        <iframe class="tutorial-video" src="https://www.youtube.com/embed/J4eLUMln84c?si=nLQViv8cqhgD3MZ2" title="Project 1" frameborder="0" allowfullscreen></iframe>
-        <p class="paragraph italic text-gray-600 mt-2">Source: “Investment earnings - Java example” — Begin Coding Fast (YouTube)</p>
-        <p class="paragraph mt-2"><b>Exercise:</b>
-          <br>1. Follow the tutorial and build the project.<br>
-          2. Customize and test your code.<br>
-          3. Upload your version to your <b>GitHub portfolio</b>.
+      <div class="bg-white rounded-lg shadow-sm p-8 mb-8">
+        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Project 1: Investment Earnings Calculator</h3>
+        <p class="text-gray-700 mb-4">
+          Time to build something practical! This project creates a calculator that shows how investments grow over time. It's the kind of tool people actually use in real life. You'll work with user input, mathematical operations, and displaying results—fundamental skills you'll use in every Java program you write.
         </p>
+        <p class="text-gray-700 mb-4">
+          Why this project? Because it teaches you how to take input, process it with logic, and give back meaningful output. These are the three things every application does, from mobile apps to web services.
+        </p>
+
+        <div class="bg-green-50 border-l-4 border-green-400 p-4 mb-4">
+          <p class="text-gray-800"><strong>Skills You'll Practice:</strong> User input handling, mathematical calculations, formatting output, and basic financial logic. Plus, you'll have something cool to show friends who ask "what can you build?"</p>
+        </div>
+
+        <button onclick="toggleParagraph(2)" class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-200 mb-4">
+          <i class="fas fa-code mr-2"></i>Build Project 1
+        </button>
+        
+        <div id="paragraph-2" class="paragraph-content hidden">
+          <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/J4eLUMln84c?si=nLQViv8cqhgD3MZ2" title="Investment Calculator Project" frameborder="0" allowfullscreen></iframe>
+          <p class="text-sm italic text-gray-600 mt-3">Source: "Investment earnings - Java example" – Begin Coding Fast (YouTube)</p>
+          
+          <div class="mt-6 space-y-4">
+            <div class="bg-gray-50 p-5 rounded-lg">
+              <h4 class="font-semibold text-gray-900 mb-3"><i class="fas fa-tasks text-green-600 mr-2"></i>How to Approach This:</h4>
+              <ol class="list-decimal list-inside space-y-2 text-gray-700">
+                <li>Watch the tutorial first to understand the concept</li>
+                <li>Code along, but pause frequently to understand each line</li>
+                <li>Once it works, break it on purpose! Change values, remove code—see what happens</li>
+                <li>Add your own features (maybe calculate taxes? or compare different interest rates?)</li>
+                <li>Clean up your code, add comments explaining what each part does</li>
+              </ol>
+            </div>
+
+            <div class="bg-blue-50 p-5 rounded-lg">
+              <h4 class="font-semibold text-gray-900 mb-3"><i class="fas fa-rocket text-blue-600 mr-2"></i>Make It Your Own:</h4>
+              <ul class="space-y-2 text-gray-700">
+                <li>• Add compound interest calculations (daily, monthly, yearly)</li>
+                <li>• Create a comparison feature for different investment scenarios</li>
+                <li>• Display results in a formatted table</li>
+                <li>• Add input validation (what happens if someone enters negative numbers?)</li>
+              </ul>
+            </div>
+
+            <div class="bg-yellow-50 p-5 rounded-lg">
+              <p class="font-semibold text-gray-900 mb-2"><i class="fas fa-comment text-yellow-600 mr-2"></i>Portfolio Tip:</p>
+              <p class="text-gray-700">When you upload this to GitHub, write a README that explains what the calculator does, how to use it, and what you learned building it. Future employers love seeing your thought process, not just your code.</p>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- PROJECT 2 -->
-      <p class="minimized-paragraph" onclick="toggleParagraph(3)">Project 2: Average Stock Price</p>
-      <div id="paragraph-3" class="paragraph-content hidden">
-        <iframe class="tutorial-video" src="https://www.youtube.com/embed/oTK8urCl-_c?si=hQNqcBiY2cUJjTGl" title="Project 2" frameborder="0" allowfullscreen></iframe>
-        <p class="paragraph italic text-gray-600 mt-2">Source: “Average stock price - Java example” — Begin Coding Fast (YouTube)</p>
-        <p class="paragraph mt-2"><b>Exercise:</b>
-          <br>1. Follow the tutorial and build the project.<br>
-          2. Test and customize the code.<br>
-          3. Upload to your <b>GitHub portfolio</b>.
+      <div class="bg-white rounded-lg shadow-sm p-8 mb-8">
+        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Project 2: Stock Price Analyzer</h3>
+        <p class="text-gray-700 mb-4">
+          Let's level up! This project calculates average stock prices over time. You'll work with arrays (lists of data), loops, and more complex calculations. This is closer to what real financial software does—processing multiple data points to find meaningful patterns.
         </p>
+        <p class="text-gray-700 mb-4">
+          Here's what makes this project valuable: you're not just learning to code, you're learning to handle data. And in today's world, data processing is everywhere—from tracking fitness metrics to analyzing business trends.
+        </p>
+
+        <div class="bg-purple-50 border-l-4 border-purple-400 p-4 mb-4">
+          <p class="text-gray-800"><strong>Skills You'll Level Up:</strong> Working with arrays, iterating through data, calculating averages, and understanding how to process collections of information. These concepts are fundamental to almost every real-world application.</p>
+        </div>
+
+        <button onclick="toggleParagraph(3)" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-200 mb-4">
+          <i class="fas fa-chart-line mr-2"></i>Build Project 2
+        </button>
+        
+        <div id="paragraph-3" class="paragraph-content hidden">
+          <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/oTK8urCl-_c?si=hQNqcBiY2cUJjTGl" title="Stock Price Project" frameborder="0" allowfullscreen></iframe>
+          <p class="text-sm italic text-gray-600 mt-3">Source: "Average stock price - Java example" – Begin Coding Fast (YouTube)</p>
+          
+          <div class="mt-6 space-y-4">
+            <div class="bg-gray-50 p-5 rounded-lg">
+              <h4 class="font-semibold text-gray-900 mb-3"><i class="fas fa-list-check text-purple-600 mr-2"></i>Build It Step by Step:</h4>
+              <ol class="list-decimal list-inside space-y-2 text-gray-700">
+                <li>Get the basic version working first—don't try to be fancy</li>
+                <li>Test it with simple numbers to verify your logic</li>
+                <li>Add error handling for edge cases</li>
+                <li>Experiment with finding min/max prices, not just averages</li>
+                <li>Think about how you'd explain your code to someone else</li>
+              </ol>
+            </div>
+
+            <div class="bg-blue-50 p-5 rounded-lg">
+              <h4 class="font-semibold text-gray-900 mb-3"><i class="fas fa-plus-circle text-blue-600 mr-2"></i>Bonus Challenges:</h4>
+              <ul class="space-y-2 text-gray-700">
+                <li>• Find the highest and lowest prices in your dataset</li>
+                <li>• Calculate the price change percentage between first and last entries</li>
+                <li>• Add date tracking so you know when each price occurred</li>
+                <li>• Create a simple trend indicator (is the price generally going up or down?)</li>
+              </ul>
+            </div>
+
+            <div class="bg-yellow-50 p-5 rounded-lg">
+              <p class="font-semibold text-gray-900 mb-2"><i class="fas fa-star text-yellow-600 mr-2"></i>Real Talk:</p>
+              <p class="text-gray-700">Arrays are tricky for everyone at first. If you're confused, that's normal. Take it slow. Print out values at each step to see what's happening. Understanding arrays is a major milestone in your coding journey.</p>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- PROJECT 3 -->
-      <p class="minimized-paragraph" onclick="toggleParagraph(4)">Project 3: Multiple-Choice Test</p>
-      <div id="paragraph-4" class="paragraph-content hidden">
-        <iframe class="tutorial-video" src="https://www.youtube.com/embed/28kAWFjaugY?si=ELcjBLxUihqQ5P2G" title="Project 3" frameborder="0" allowfullscreen></iframe>
-        <p class="paragraph italic text-gray-600 mt-2">Source: “Create a multiple-choice test - Java Example” — Begin Coding Fast (YouTube)</p>
-        <p class="paragraph mt-2"><b>Exercise:</b>
-          <br>1. Follow the tutorial and build the project.<br>
-          2. Customize and test it.<br>
-          3. Upload to your <b>GitHub portfolio</b>.
+      <div class="bg-white rounded-lg shadow-sm p-8 mb-8">
+        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Project 3: Multiple-Choice Quiz Application</h3>
+        <p class="text-gray-700 mb-4">
+          Now we're talking! Build an interactive quiz program that asks questions, checks answers, and keeps score. This project brings together everything you've learned—user interaction, logic, data management, and control flow. It's complex enough to be impressive but approachable enough that you can actually finish it.
         </p>
+        <p class="text-gray-700 mb-4">
+          Why is this project awesome? Because quiz apps are everywhere—in education, training, games, you name it. Building one shows you understand how to create interactive applications that respond to user choices. That's a big deal.
+        </p>
+
+        <div class="bg-indigo-50 border-l-4 border-indigo-400 p-4 mb-4">
+          <p class="text-gray-800"><strong>What Makes This Project Click:</strong> You're combining input handling, conditional logic, loops, and score tracking. It's like a mini version of real application development, where multiple systems work together to create a complete experience.</p>
+        </div>
+
+        <button onclick="toggleParagraph(4)" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-200 mb-4">
+          <i class="fas fa-question-circle mr-2"></i>Build Project 3
+        </button>
+        
+        <div id="paragraph-4" class="paragraph-content hidden">
+          <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/28kAWFjaugY?si=ELcjBLxUihqQ5P2G" title="Quiz Application Project" frameborder="0" allowfullscreen></iframe>
+          <p class="text-sm italic text-gray-600 mt-3">Source: "Create a multiple-choice test - Java Example" – Begin Coding Fast (YouTube)</p>
+          
+          <div class="mt-6 space-y-4">
+            <div class="bg-gray-50 p-5 rounded-lg">
+              <h4 class="font-semibold text-gray-900 mb-3"><i class="fas fa-clipboard-list text-indigo-600 mr-2"></i>Your Development Roadmap:</h4>
+              <ol class="list-decimal list-inside space-y-2 text-gray-700">
+                <li>Start with just one question—get that working perfectly</li>
+                <li>Add multiple questions once one works smoothly</li>
+                <li>Implement score tracking (how many did they get right?)</li>
+                <li>Add feedback for each answer (tell them why they got it right or wrong)</li>
+                <li>Display a final score with some encouraging message</li>
+              </ol>
+            </div>
+
+            <div class="bg-blue-50 p-5 rounded-lg">
+              <h4 class="font-semibold text-gray-900 mb-3"><i class="fas fa-magic text-blue-600 mr-2"></i>Level It Up:</h4>
+              <ul class="space-y-2 text-gray-700">
+                <li>• Randomize question order so the quiz is different each time</li>
+                <li>• Add a timer for each question (make it exciting!)</li>
+                <li>• Create different difficulty levels (easy, medium, hard)</li>
+                <li>• Save high scores to a file so users can compete with themselves</li>
+                <li>• Add categories (history, science, programming, etc.)</li>
+              </ul>
+            </div>
+
+            <div class="bg-yellow-50 p-5 rounded-lg">
+              <p class="font-semibold text-gray-900 mb-2"><i class="fas fa-trophy text-yellow-600 mr-2"></i>Portfolio Gold:</p>
+              <p class="text-gray-700">This is your showcase project. Take time to make it polished—good error handling, clear instructions for users, well-commented code. Add a demo video showing it in action. This is the project that makes interviewers say "tell me more about this."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEXT STEPS -->
+    <section class="mb-12 bg-gradient-to-r from-red-50 to-orange-50 rounded-lg shadow-sm p-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">You Did It! Now What?</h2>
+      <p class="text-lg text-gray-700 leading-relaxed mb-6">
+        If you made it through all three projects, give yourself some credit. Seriously. You've gone from zero Java knowledge to building working applications. That's not nothing—that's real progress. But this is just the beginning. Here's how to keep the momentum going.
+      </p>
+
+      <div class="bg-white rounded-lg p-6 mb-6">
+        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Your Next Moves</h3>
+        <div class="space-y-4">
+          <div class="flex items-start">
+            <div class="flex-shrink-0 bg-blue-100 rounded-full p-3 mr-4">
+              <i class="fab fa-github text-blue-600 text-xl"></i>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900 mb-1">Show Off Your Work</h4>
+              <p class="text-gray-700">Get all three projects on GitHub. Write decent README files—explain what each project does, how to run it, what you learned. Future employers will look at this, so make it count. Clean code with good documentation beats perfect code with no explanation.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <div class="flex-shrink-0 bg-green-100 rounded-full p-3 mr-4">
+              <i class="fab fa-linkedin text-green-600 text-xl"></i>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900 mb-1">Tell Your Network</h4>
+              <p class="text-gray-700">Post on LinkedIn about completing these projects. Share what challenged you, what you learned, and what you're building next. You'd be surprised how many opportunities come from simply showing up and sharing your journey publicly.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <div class="flex-shrink-0 bg-purple-100 rounded-full p-3 mr-4">
+              <i class="fas fa-code text-purple-600 text-xl"></i>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900 mb-1">Keep Building</h4>
+              <p class="text-gray-700">The best way to solidify your Java skills? Build more stuff. Pick problems you actually care about and solve them with code. Want to track your expenses? Build that. Need a tool to organize something? Code it. Real projects beat tutorials every time.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <div class="flex-shrink-0 bg-orange-100 rounded-full p-3 mr-4">
+              <i class="fas fa-map text-orange-600 text-xl"></i>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900 mb-1">Explore What's Next</h4>
+              <p class="text-gray-700">Ready to specialize? Check out Spring Boot for web development, Android Studio for mobile apps, or JavaFX for desktop applications. Or explore our <a href="../skills.html" class="text-blue-600 hover:underline font-semibold">other skill roadmaps</a> to complement your Java knowledge with databases, APIs, or cloud technologies.</p>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- SUMMARY -->
-      <h1 class="section-title mt-6">Summary</h1>
-      <p class="paragraph">
-        Congratulations on completing the Java course!  
-        <br><br>
-        • Upload your projects to <b>GitHub</b> and share them on <b>LinkedIn</b>.<br>
-        • Continue learning with our <a href="../skills.html" class="text-blue-600 hover:underline">Skill-Based Roadmaps</a>.<br>
-        • Explore career paths using the <a href="../domains.html" class="text-blue-600 hover:underline">Role-Based Roadmaps</a>.
-      </p>
-      <br>
-
+      <div class="bg-red-600 text-white rounded-lg p-6">
+        <h3 class="text-xl font-semibold mb-3">The Real Secret to Learning Java</h3>
+        <p class="mb-4">Here it is: consistency beats intensity every time. An hour of coding every day beats a 10-hour marathon session on weekends. Don't worry about being perfect or knowing everything. Just keep writing code, making mistakes, fixing them, and moving forward.</p>
+        <p class="text-red-100 italic">"First, solve the problem. Then, write the code." – John Johnson</p>
+      </div>
     </section>
+
+    <!-- ADDITIONAL RESOURCES -->
+    <section class="mb-12 bg-white rounded-lg shadow-sm p-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">More Ways to Level Up Your Java Skills</h2>
+      <p class="text-lg text-gray-700 mb-6">
+        These resources have helped thousands of developers improve their Java skills. Bookmark this section and come back whenever you're stuck or want to learn something new.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="border border-gray-200 rounded-lg p-5">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3"><i class="fas fa-book text-orange-600 mr-2"></i>Learning Resources</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>• <a href="https://docs.oracle.com/javase/tutorial/" class="text-blue-600 hover:underline" target="_blank" rel="noopener">Oracle's Java Tutorials</a> (the official documentation—super helpful)</li>
+            <li>• <a href="https://www.baeldung.com/" class="text-blue-600 hover:underline" target="_blank" rel="noopener">Baeldung</a> (in-depth Java articles and guides)</li>
+            <li>• Java: The Complete Reference by Herbert Schildt (if you prefer books)</li>
+          </ul>
+        </div>
+
+        <div class="border border-gray-200 rounded-lg p-5">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3"><i class="fas fa-users text-green-600 mr-2"></i>Community Help</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>• Stack Overflow (someone has probably had your exact problem)</li>
+            <li>• r/learnjava on Reddit (friendly community for beginners)</li>
+            <li>• Java Discord servers (real-time help from other developers)</li>
+          </ul>
+        </div>
+
+        <div class="border border-gray-200 rounded-lg p-5">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3"><i class="fas fa-code text-blue-600 mr-2"></i>Practice Coding</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>• Codewars (solve challenges, level up your skills)</li>
+            <li>• LeetCode (great for interview prep)</li>
+            <li>• HackerRank Java track (structured problems)</li>
+          </ul>
+        </div>
+
+        <div class="border border-gray-200 rounded-lg p-5">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3"><i class="fas fa-lightbulb text-purple-600 mr-2"></i>Project Ideas</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>• Build a simple todo list app</li>
+            <li>• Create a contact management system</li>
+            <li>• Make a basic game (tic-tac-toe, hangman)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- Placeholder for the footer -->

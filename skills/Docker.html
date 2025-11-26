@@ -3,99 +3,412 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SM - Docker Development</title>
+  <title>Learn Docker - Master Container Technology | Skill Maps</title>
   <link rel="icon" href="../images/logo.jpg" type="image/x-icon">
   <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- Meta & Open Graph -->
-  <meta name="description" content="Learn Docker step by step through structured videos and practical projects.">
-  <meta property="og:title" content="Skill Maps - Docker Development">
-  <meta property="og:description" content="Master Docker with video tutorials and hands-on projects.">
-  <meta property="og:url" content="https://www.skill-maps.com/domains/Docker.html">
+  <meta name="description" content="Learn Docker from scratch and master containerization. Build, deploy, and manage applications with Docker through hands-on projects and practical tutorials.">
+  <meta name="keywords" content="learn docker, docker tutorial, containerization, devops, docker containers, docker compose, kubernetes, docker projects">
+  <meta property="og:title" content="Learn Docker - Complete Containerization Guide | Skill Maps">
+  <meta property="og:description" content="Master Docker and revolutionize how you build and deploy applications. Learn containerization with real-world projects.">
+  <meta property="og:url" content="https://www.skill-maps.com/skills/Docker.html">
   <meta property="og:image" content="https://www.skill-maps.com/images/logo.jpg">
+  <meta property="og:type" content="article">
 
   <!-- TailwindCSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7439109164508333"
+     crossorigin="anonymous"></script>
 </head>
 
-<body class="text-gray-800">
+<body class="text-gray-800 space-y-12">
 
   <!-- NAVBAR -->
   <div id="panel-bar-placeholder"></div>
   <script src="panel-nav.js"></script>
 
-  <main class="pt-16 max-w-6xl mx-auto px-6 space-y-12">
+  <main class="pt-16 max-w-6xl mx-auto px-6 pb-12">
 
     <!-- HEADER -->
-    <section id="head">
-      <h2 class="title-page">Docker Development</h2>
+    <section id="head" class="text-center py-12 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg mb-12">
+      <h1 class="text-5xl font-bold text-gray-900 mb-4">Master Docker & Containerization</h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">Stop saying "it works on my machine." Learn Docker and ship your applications anywhere, consistently, every single time.</p>
     </section>
 
-    <!-- INTRO VIDEO -->
-    <section id="video-course" class="space-y-6">
-      <h1 class="section-title">Quick Introduction to Docker</h1>
-      <iframe class="tutorial-video" src="https://www.youtube.com/embed/rIrNIzy6U_g?si=a_3-SeGpO68Wa-hp" title="Docker Overview" frameborder="0" allowfullscreen></iframe>
-      <p class="paragraph italic text-gray-600">Source: “100+ Docker Concepts You Need to Know” — Fireship (YouTube)</p>
+    <!-- WHAT IS DOCKER -->
+    <section class="mb-12 bg-white rounded-lg shadow-sm p-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">What is Docker? (And Why Should You Care?)</h2>
+      <p class="text-lg text-gray-700 leading-relaxed mb-4">
+        Picture this: You spend hours getting your application working perfectly on your laptop. Dependencies installed, environment variables set, everything runs smoothly. Then you try to deploy it to a server, and... nothing works. Different OS, missing packages, conflicting versions. Sound familiar? That's the nightmare Docker solves.
+      </p>
+      <p class="text-lg text-gray-700 leading-relaxed mb-4">
+        Docker is containerization technology—think of it like shipping containers for your code. Just as physical shipping containers revolutionized global trade by making goods transportable anywhere, Docker containers package your application with everything it needs to run: code, runtime, libraries, dependencies, configuration. One container, runs everywhere. Your laptop, the cloud, your colleague's machine—doesn't matter. It just works.
+      </p>
+      <p class="text-lg text-gray-700 leading-relaxed mb-4">
+        Here's what makes Docker game-changing: Before Docker, developers said "it works on my machine" and shrugged. Now? If it works in a Docker container, it works everywhere. This isn't just convenient—it's transformed how the entire tech industry builds and deploys software. Companies like Netflix, Spotify, and Uber rely on Docker to deploy applications millions of times per day.
+      </p>
+      <div class="bg-blue-50 border-l-4 border-blue-500 p-6 mt-6">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">Why Docker Matters</h3>
+        <ul class="space-y-2 text-gray-700">
+          <li><strong>Consistency:</strong> Same environment from development to production—no more "works on my machine" excuses</li>
+          <li><strong>Isolation:</strong> Each application runs in its own container, preventing conflicts and making systems more stable</li>
+          <li><strong>Portability:</strong> Build once, run anywhere—local machine, AWS, Google Cloud, Azure, doesn't matter</li>
+          <li><strong>Speed:</strong> Containers start in seconds, not minutes. Deploy faster, iterate quicker, ship more often</li>
+          <li><strong>Efficiency:</strong> Lightweight compared to virtual machines—run more applications on the same hardware</li>
+          <li><strong>DevOps essential:</strong> Docker is fundamental to modern CI/CD pipelines and cloud-native development</li>
+        </ul>
+      </div>
     </section>
 
-    <!-- COURSE INSTRUCTIONS -->
-    <section id="text-course" class="space-y-6">
-      <h2 class="text-center section-title">Welcome to the Docker Full Course</h2>
-      <h3 class="section-title">Instructions</h3>
-      <p class="paragraph">
-        To complete this course, you’ll need a code editor such as <b>Visual Studio Code</b> or an online IDE like <b>Programiz</b>.
-        <br><br>
-        1. Watch the <i>"Docker - Full Course"</i> video.<br>
-        2. Complete the three guided projects to build practical Docker skills.<br>
-        3. Upload your projects to your <b>GitHub portfolio</b>.
-        <br><br>
-        <span class="text-center font-bold">Good luck — enjoy learning Docker!</span>
+    <!-- WHY LEARN DOCKER -->
+    <section class="mb-12 bg-white rounded-lg shadow-sm p-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">Why Learn Docker in 2025?</h2>
+      <p class="text-lg text-gray-700 leading-relaxed mb-4">
+        Let me be blunt: if you want to work in modern software development, you need Docker. It's not optional anymore. Check any DevOps or cloud engineering job posting—Docker is there. Even if you're a pure developer, understanding Docker makes you significantly more valuable. Why? Because you understand the full lifecycle of your application, not just the code.
+      </p>
+      <p class="text-lg text-gray-700 leading-relaxed mb-6">
+        The tech industry has shifted to containers. Microservices, cloud-native applications, Kubernetes—they all build on Docker. Learning Docker isn't just about adding a skill to your resume; it's about understanding how modern software actually gets built and deployed in production. It's the difference between knowing how to write code and knowing how to ship code.
+      </p>
+      
+      <div class="grid md:grid-cols-2 gap-6 mt-6">
+        <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-lg">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3"><i class="fas fa-rocket text-blue-600 mr-2"></i>Career Accelerator</h3>
+          <p class="text-gray-700">Docker knowledge dramatically increases your job opportunities. DevOps Engineer, Site Reliability Engineer, Cloud Architect, Full Stack Developer—all these roles expect Docker competency. It's often the skill that gets you past the initial screening.</p>
+        </div>
+        <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-lg">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3"><i class="fas fa-cogs text-green-600 mr-2"></i>Development Efficiency</h3>
+          <p class="text-gray-700">Stop wasting time on environment setup. With Docker, new team members can start contributing in hours, not days. Need PostgreSQL, Redis, and MongoDB for your project? Docker-compose up, and you're done. All three running in seconds.</p>
+        </div>
+        <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-lg">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3"><i class="fas fa-cloud text-purple-600 mr-2"></i>Cloud-Native Ready</h3>
+          <p class="text-gray-700">AWS, Azure, Google Cloud—they all run containers. Understanding Docker is your gateway to cloud computing. Plus, it's the foundation for Kubernetes, which is how massive applications scale across thousands of machines.</p>
+        </div>
+        <div class="bg-gradient-to-br from-orange-50 to-red-50 p-6 rounded-lg">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3"><i class="fas fa-shield-alt text-orange-600 mr-2"></i>Problem Prevention</h3>
+          <p class="text-gray-700">Docker containers are predictable. They eliminate entire categories of bugs related to environment differences. Deploy with confidence knowing if it worked in testing, it'll work in production. That's powerful peace of mind.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PREREQUISITES -->
+    <section class="mb-12 bg-white rounded-lg shadow-sm p-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">What You Need to Get Started</h2>
+      <p class="text-lg text-gray-700 leading-relaxed mb-4">
+        Docker has a bit of a learning curve—I won't lie about that. But it's not because Docker itself is complicated; it's because containers represent a different way of thinking about applications. Once the mental model clicks, everything makes sense. Here's what you need to begin.
+      </p>
+      
+      <h3 class="text-2xl font-semibold text-gray-900 mb-4 mt-6">The Essentials</h3>
+      <div class="bg-gray-50 p-6 rounded-lg mb-6">
+        <ul class="space-y-3 text-gray-700">
+          <li><strong>Basic command line comfort:</strong> Docker lives in the terminal. You don't need to be a command line wizard, but you should be comfortable navigating directories and running commands.</li>
+          <li><strong>Understanding of applications:</strong> Know how applications generally work—frontend, backend, databases. Docker packages these things, so understanding what you're packaging helps.</li>
+          <li><strong>Docker Desktop installed:</strong> Free download for Windows, Mac, or Linux. This gives you Docker Engine (the core) and a nice GUI for managing containers.</li>
+          <li><strong>Code editor:</strong> VS Code works great. The Docker extension is helpful but not required.</li>
+          <li><strong>Time to experiment:</strong> Docker rewards experimentation. Plan for 10-15 hours per week to really grasp it. The concepts are worth the investment.</li>
+        </ul>
+      </div>
+
+      <h3 class="text-2xl font-semibold text-gray-900 mb-4">System Requirements</h3>
+      <div class="grid md:grid-cols-3 gap-4">
+        <div class="border border-gray-200 p-4 rounded-lg">
+          <h4 class="font-semibold text-gray-900 mb-2">Windows</h4>
+          <p class="text-sm text-gray-600">Windows 10/11 with WSL2 (Windows Subsystem for Linux). Docker Desktop makes setup straightforward. You'll be containerizing in 15 minutes.</p>
+        </div>
+        <div class="border border-gray-200 p-4 rounded-lg">
+          <h4 class="font-semibold text-gray-900 mb-2">Mac</h4>
+          <p class="text-sm text-gray-600">macOS 10.15 or newer. Docker Desktop for Mac is polished and works beautifully. Apple Silicon (M1/M2) fully supported now.</p>
+        </div>
+        <div class="border border-gray-200 p-4 rounded-lg">
+          <h4 class="font-semibold text-gray-900 mb-2">Linux</h4>
+          <p class="text-sm text-gray-600">Any recent distribution. Docker runs natively on Linux (it's a Linux technology after all). Installation is straightforward via package managers.</p>
+        </div>
+      </div>
+
+      <div class="bg-cyan-50 border-l-4 border-cyan-400 p-4 mt-6">
+        <p class="text-gray-800"><strong>First-timer tip:</strong> Docker Desktop is your friend. Yes, pros use command line exclusively, but when you're learning, the visual interface helps you understand what's happening. There's no shame in using tools that make learning easier.</p>
+      </div>
+    </section>
+
+    <!-- LEARNING PATH -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Your Docker Learning Journey</h2>
+      <p class="text-lg text-gray-700 text-center max-w-3xl mx-auto mb-8">
+        We're taking a hands-on approach. You'll learn Docker by actually using it, not by memorizing commands. Build containers, break things, fix them, understand why they work. That's how you really learn this stuff.
       </p>
 
-      <!-- LESSON 1 -->
-      <p class="minimized-paragraph" onclick="toggleParagraph(1)">Docker - Full Course (Video)</p>
-      <div id="paragraph-1" class="paragraph-content hidden">
-        <iframe class="tutorial-video" src="https://www.youtube.com/embed/fqMOX6JJhGo?si=Ig1J_EqM7dCi1RDI" title="Docker Full Course" frameborder="0" allowfullscreen></iframe>
-        <p class="paragraph italic text-gray-600 mt-2">Source: “Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers” — freeCodeCamp.org (YouTube)</p>
-        <p class="paragraph mt-2"><b>Exercise:</b> Watch the video, take notes, and prepare for your first project.</p>
+      <!-- INTRO VIDEO -->
+      <div class="bg-white rounded-lg shadow-sm p-8 mb-8">
+        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Step 1: Docker in 100 Concepts (The Big Picture)</h3>
+        <p class="text-gray-700 mb-4">
+          Before diving into the weeds, let's get the 10,000-foot view. This video blazes through Docker concepts fast, and that's intentional. You won't understand everything first watch—that's fine. You're building mental scaffolding. Watch it, let the concepts wash over you, and don't stress about memorizing anything. Just get familiar with the vocabulary.
+        </p>
+        <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/rIrNIzy6U_g?si=a_3-SeGpO68Wa-hp" title="Docker Overview" frameborder="0" allowfullscreen></iframe>
+        <p class="text-sm italic text-gray-600 mt-3">Source: "100+ Docker Concepts You Need to Know" – Fireship (YouTube)</p>
+        
+        <div class="bg-blue-50 p-4 rounded-lg mt-4">
+          <p class="text-gray-700"><strong>Watch strategy:</strong> Don't pause, don't take notes, just watch it through once. Let your brain absorb the concepts passively. You'll revisit these ideas as you build projects, and suddenly they'll click. Trust the process.</p>
+        </div>
+      </div>
+
+      <!-- FULL COURSE -->
+      <div class="bg-white rounded-lg shadow-sm p-8 mb-8">
+        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Step 2: Docker Deep Dive (The Foundation)</h3>
+        <p class="text-gray-700 mb-4">
+          Now we build the foundation. This comprehensive course covers Docker from installation to deployment. You'll learn containers, images, volumes, networks, Docker Compose—everything. This is where Docker stops being abstract and becomes concrete. Follow along, code along, and give yourself permission to pause and experiment.
+        </p>
+        <p class="text-gray-700 mb-4">
+          <strong>Important:</strong> This course is meaty—over 2 hours. Break it into sessions. Watch 30 minutes, then experiment with what you learned before continuing. Trying to absorb everything at once is a recipe for overwhelm. Docker rewards practice, not marathon learning sessions.
+        </p>
+        
+        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-4">
+          <p class="text-gray-800"><strong>Learning hack:</strong> After each section, try to break something on purpose. Delete a file, change a configuration, use the wrong image. Then fix it. This "break and repair" method teaches you way more than just following along perfectly.</p>
+        </div>
+
+        <button onclick="toggleParagraph(1)" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-200 mb-4">
+          <i class="fas fa-play-circle mr-2"></i>Start the Docker Course
+        </button>
+        
+        <div id="paragraph-1" class="paragraph-content hidden">
+          <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/fqMOX6JJhGo?si=Ig1J_EqM7dCi1RDI" title="Docker Full Course" frameborder="0" allowfullscreen></iframe>
+          <p class="text-sm italic text-gray-600 mt-3">Source: "Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers" – freeCodeCamp.org (YouTube)</p>
+          
+          <div class="mt-6 bg-cyan-50 p-6 rounded-lg">
+            <h4 class="font-semibold text-gray-900 mb-3">Core Concepts You'll Master:</h4>
+            <ul class="grid md:grid-cols-2 gap-2 text-gray-700">
+              <li>• Images vs Containers (the blueprint vs the building)</li>
+              <li>• Dockerfile creation (how to package your apps)</li>
+              <li>• Container lifecycle (run, stop, remove, manage)</li>
+              <li>• Docker Hub (where images live)</li>
+              <li>• Volumes (persistent data storage)</li>
+              <li>• Networks (container communication)</li>
+              <li>• Docker Compose (multi-container applications)</li>
+              <li>• Best practices (security, optimization, efficiency)</li>
+            </ul>
+          </div>
+
+          <div class="mt-4 p-4 bg-gray-50 rounded-lg">
+            <p class="font-semibold text-gray-900 mb-2"><i class="fas fa-tasks text-blue-600 mr-2"></i>Practice Challenge:</p>
+            <p class="text-gray-700">After completing the course, containerize a simple application you've built before—maybe that Python script or Node.js app. Write a Dockerfile from scratch. This forces you to apply what you learned without following a tutorial. That's when real learning happens.</p>
+          </div>
+        </div>
       </div>
 
       <!-- PROJECT 1 -->
-      <p class="minimized-paragraph" onclick="toggleParagraph(2)">Project 1: Game 2048</p>
-      <div id="paragraph-2" class="paragraph-content hidden">
-        <iframe class="tutorial-video" src="https://www.youtube.com/embed/XeoZstvyew8?si=WWK3AQvSR5DQe9sW" title="Docker Project 1" frameborder="0" allowfullscreen></iframe>
-        <p class="paragraph italic text-gray-600 mt-2">Source: “Simple DevOps Project - Create a Game using Docker and Deploy to AWS” — Cloud Champ (YouTube)</p>
-        <p class="paragraph mt-2"><b>Exercise:</b>
-          <br>1. Follow the tutorial to build the project.<br>
-          2. Customize and test your code.<br>
-          3. Upload your version to your <b>GitHub portfolio</b>.
+      <div class="bg-white rounded-lg shadow-sm p-8 mb-8">
+        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Project 1: Containerize and Deploy a Game</h3>
+        <p class="text-gray-700 mb-4">
+          Let's make this real. You're going to containerize the classic 2048 game and deploy it. This project teaches you the complete workflow: build an image, run a container, expose ports (so users can access it), and deploy to a cloud server. This is the process you'll use for literally every containerized application—from games to enterprise software.
         </p>
+        <p class="text-gray-700 mb-4">
+          What makes this project valuable? It's end-to-end. You're not just running someone else's container; you're building, testing, and deploying your own. You'll understand Dockerfiles, image layers, port mapping, and cloud deployment. These are job-ready skills.
+        </p>
+
+        <div class="bg-green-50 border-l-4 border-green-400 p-4 mb-4">
+          <p class="text-gray-800"><strong>You're Learning:</strong> Dockerfile creation, image building, container networking, port exposure, cloud deployment basics, and the complete Docker workflow from code to production.</p>
+        </div>
+
+        <button onclick="toggleParagraph(2)" class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-200 mb-4">
+          <i class="fas fa-gamepad mr-2"></i>Build Project 1
+        </button>
+        
+        <div id="paragraph-2" class="paragraph-content hidden">
+          <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/XeoZstvyew8?si=WWK3AQvSR5DQe9sW" title="Docker Game Project" frameborder="0" allowfullscreen></iframe>
+          <p class="text-sm italic text-gray-600 mt-3">Source: "Simple DevOps Project - Create a Game using Docker and Deploy to AWS" – Cloud Champ (YouTube)</p>
+          
+          <div class="mt-6 space-y-4">
+            <div class="bg-gray-50 p-5 rounded-lg">
+              <h4 class="font-semibold text-gray-900 mb-3"><i class="fas fa-route text-green-600 mr-2"></i>Project Roadmap:</h4>
+              <ol class="list-decimal list-inside space-y-2 text-gray-700">
+                <li>Set up the game source code locally</li>
+                <li>Write a Dockerfile to containerize the application</li>
+                <li>Build the Docker image and test locally</li>
+                <li>Push your image to Docker Hub</li>
+                <li>Deploy to AWS (or your preferred cloud provider)</li>
+                <li>Access your running game via public URL</li>
+              </ol>
+            </div>
+
+            <div class="bg-blue-50 p-5 rounded-lg">
+              <h4 class="font-semibold text-gray-900 mb-3"><i class="fas fa-lightbulb text-blue-600 mr-2"></i>Extension Ideas:</h4>
+              <ul class="space-y-2 text-gray-700">
+                <li>• Use a multi-stage build to optimize image size</li>
+                <li>• Add environment variables for configuration</li>
+                <li>• Implement health checks in your container</li>
+                <li>• Set up automatic rebuilds when code changes</li>
+                <li>• Add HTTPS using reverse proxy containers</li>
+              </ul>
+            </div>
+
+            <div class="bg-yellow-50 p-5 rounded-lg">
+              <p class="font-semibold text-gray-900 mb-2"><i class="fas fa-exclamation-circle text-yellow-600 mr-2"></i>Common Gotchas:</p>
+              <p class="text-gray-700">Port mapping confuses everyone at first. Remember: `-p 8080:80` means "map host port 8080 to container port 80." Left side is your machine, right side is the container. Draw it out if needed—there's no shame in visual aids.</p>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- PROJECT 2 & 3 -->
-      <p class="minimized-paragraph" onclick="toggleParagraph(3)">Project 2 & 3: Docker Projects</p>
-      <div id="paragraph-3" class="paragraph-content hidden">
-        <iframe class="tutorial-video" src="https://www.youtube.com/embed/ne6R0Zluqj4?si=XjExvZE-xwBkPw7j" title="Docker Projects 2 & 3" frameborder="0" allowfullscreen></iframe>
-        <p class="paragraph italic text-gray-600 mt-2">Source: “6 Docker Projects for Absolute Beginners | Part 1” — Tech With Otabek (YouTube)</p>
-        <p class="paragraph mt-2"><b>Exercise:</b>
-          <br>1. Follow the tutorials and build the projects.<br>
-          2. Customize the projects and test your code.<br>
-          3. Upload your completed projects to your <b>GitHub portfolio</b>.
+      <!-- PROJECTS 2 & 3 -->
+      <div class="bg-white rounded-lg shadow-sm p-8 mb-8">
+        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Projects 2 & 3: Real-World Docker Applications</h3>
+        <p class="text-gray-700 mb-4">
+          Time to level up. These projects walk you through containerizing real applications—web servers, databases, multi-service architectures. You'll use Docker Compose to orchestrate multiple containers, implement persistent storage with volumes, and configure container networking. This is Docker as it's used in production environments.
         </p>
-      </div>
+        <p class="text-gray-700 mb-4">
+          Why multiple projects? Because repetition builds mastery. Each project reinforces concepts while introducing new challenges. By project three, you'll be thinking in containers. When you see an application, you'll instinctively know how to containerize it. That's the goal.
+        </p>
 
-      <!-- SUMMARY -->
-      <h1 class="section-title mt-6">Summary</h1>
-      <p class="paragraph">
-        Congratulations on completing the Docker course!  
-        <br><br>
-        • Upload your projects to <b>GitHub</b> and share them on <b>LinkedIn</b>.<br>
-        • Continue learning with our <a href="../skills.html" class="text-blue-600 hover:underline">Skill-Based Roadmaps</a>.<br>
-        • Explore career paths using the <a href="../domains.html" class="text-blue-600 hover:underline">Role-Based Roadmaps</a>.
+        <div class="bg-purple-50 border-l-4 border-purple-400 p-4 mb-4">
+          <p class="text-gray-800"><strong>Advanced Concepts:</strong> Docker Compose, multi-container applications, service dependencies, volume mounting, network isolation, environment configuration, and production deployment patterns.</p>
+        </div>
+
+        <button onclick="toggleParagraph(3)" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-200 mb-4">
+          <i class="fas fa-layer-group mr-2"></i>Build Projects 2 & 3
+        </button>
+        
+        <div id="paragraph-3" class="paragraph-content hidden">
+          <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/ne6R0Zluqj4?si=XjExvZE-xwBkPw7j" title="Docker Projects" frameborder="0" allowfullscreen></iframe>
+          <p class="text-sm italic text-gray-600 mt-3">Source: "6 Docker Projects for Absolute Beginners | Part 1" – Tech With Otabek (YouTube)</p>
+          
+          <div class="mt-6 space-y-4">
+            <div class="bg-gray-50 p-5 rounded-lg">
+              <h4 class="font-semibold text-gray-900 mb-3"><i class="fas fa-clipboard-list text-purple-600 mr-2"></i>What You'll Build:</h4>
+              <ol class="list-decimal list-inside space-y-2 text-gray-700">
+                <li>A multi-tier web application with frontend and backend</li>
+                <li>Database containerization with persistent data</li>
+                <li>Microservices communicating through networks</li>
+                <li>Complete stacks using Docker Compose</li>
+                <li>Production-ready container configurations</li>
+              </ol>
+            </div>
+
+            <div class="bg-blue-50 p-5 rounded-lg">
+              <h4 class="font-semibold text-gray-900 mb-3"><i class="fas fa-star text-blue-600 mr-2"></i>Pro Tips:</h4>
+              <ul class="space-y-2 text-gray-700">
+                <li>• Use `.dockerignore` files to keep images lean</li>
+                <li>• Name your containers meaningfully (`web-app` not `container1`)</li>
+                <li>• Keep Dockerfiles simple and readable—your future self will thank you</li>
+                <li>• Use Docker Compose for local development—it's a game changer</li>
+                <li>• Always specify image versions (don't use `latest` in production)</li>
+              </ul>
+            </div>
+
+            <div class="bg-yellow-50 p-5 rounded-lg">
+              <p class="font-semibold text-gray-900 mb-2"><i class="fas fa-trophy text-yellow-600 mr-2"></i>Portfolio Power Move:</p>
+              <p class="text-gray-700">Create a GitHub repo with all your Docker projects. Include clear README files explaining the architecture, how to run each project, and what you learned. Add architecture diagrams—even simple ones. This shows employers you don't just follow tutorials; you understand systems.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEXT STEPS -->
+    <section class="mb-12 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg shadow-sm p-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">You're Now a Docker Developer!</h2>
+      <p class="text-lg text-gray-700 leading-relaxed mb-6">
+        Take a second to appreciate what you've accomplished. Docker has a reputation for being complex, and you just conquered it. You can containerize applications, orchestrate multi-service architectures, and deploy to the cloud. These aren't beginner skills—this is what companies pay DevOps engineers six figures to do.
       </p>
-      <br>
+
+      <div class="bg-white rounded-lg p-6 mb-6">
+        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Where to Go From Here</h3>
+        <div class="space-y-4">
+          <div class="flex items-start">
+            <div class="flex-shrink-0 bg-blue-100 rounded-full p-3 mr-4">
+              <i class="fab fa-github text-blue-600 text-xl"></i>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900 mb-1">Document Everything</h4>
+              <p class="text-gray-700">Get all your Docker projects on GitHub with excellent documentation. Include Dockerfiles, docker-compose files, and deployment instructions. Make it so anyone could clone your repo and run your project immediately. That's the standard.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <div class="flex-shrink-0 bg-green-100 rounded-full p-3 mr-4">
+              <i class="fas fa-ship text-green-600 text-xl"></i>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900 mb-1">Learn Kubernetes Next</h4>
+              <p class="text-gray-700">Docker is the foundation; Kubernetes is the orchestration layer. K8s manages Docker containers at scale. It's the natural next step, and with Docker knowledge, Kubernetes makes way more sense. You're already 50% there.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <div class="flex-shrink-0 bg-purple-100 rounded-full p-3 mr-4">
+              <i class="fas fa-code text-purple-600 text-xl"></i>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900 mb-1">Containerize Your Own Projects</h4>
+              <p class="text-gray-700">Got a personal project? Containerize it. Working on something for a client? Containerize it. The best way to cement Docker skills is by using them constantly. Make containers your default deployment strategy.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <div class="flex-shrink-0 bg-orange-100 rounded-full p-3 mr-4">
+              <i class="fas fa-cloud text-orange-600 text-xl"></i>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900 mb-1">Master CI/CD Pipelines</h4>
+              <p class="text-gray-700">Learn GitHub Actions or GitLab CI to automatically build and deploy your Docker containers. This is how modern software ships—code push triggers automatic build, test, and deploy. It's powerful and companies love developers who understand the full pipeline.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-blue-600 text-white rounded-lg p-6">
+        <h3 class="text-xl font-semibold mb-3">The Container Mindset</h3>
+        <p class="mb-4">Docker isn't just a tool—it's a way of thinking about applications. Everything becomes portable, reproducible, and manageable. Once you think in containers, you'll wonder how you ever worked without them. You're not just running applications differently; you're building them better.</p>
+        <p class="text-blue-100 italic">"Docker is not just about containers. It's about consistency, repeatability, and peace of mind."</p>
+      </div>
+    </section>
+
+    <!-- ADDITIONAL RESOURCES -->
+    <section class="mb-12 bg-white rounded-lg shadow-sm p-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">Continue Your Docker Journey</h2>
+      <p class="text-lg text-gray-700 mb-6">
+        These resources will help you deepen your Docker expertise. Bookmark them—you'll reference them constantly as you tackle more complex containerization challenges.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="border border-gray-200 rounded-lg p-5">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3"><i class="fas fa-book text-blue-600 mr-2"></i>Essential Documentation</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>• <a href="https://docs.docker.com/" class="text-blue-600 hover:underline" target="_blank" rel="noopener">Official Docker Docs</a> (comprehensive and well-maintained)</li>
+            <li>• <a href="https://docs.docker.com/compose/" class="text-blue-600 hover:underline" target="_blank" rel="noopener">Docker Compose Documentation</a> (multi-container mastery)</li>
+            <li>• Docker Best Practices guides (security, optimization, production)</li>
+          </ul>
+        </div>
+
+        <div class="border border-gray-200 rounded-lg p-5">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3"><i class="fas fa-users text-green-600 mr-2"></i>Community & Support</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>• Docker Community Forums (official support)</li>
+            <li>• r/docker on Reddit (active community)</li>
+            <li>• Docker Slack channels (real-time help)</li>
+          </ul>
+        </div>
+
+        <div class="border border-gray-200 rounded-lg p-5">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3"><i class="fas fa-graduation-cap text-purple-600 mr-2"></i>Advanced Learning</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>• Kubernetes fundamentals (container orchestration)</li>
+            <li>• Docker security best practices</li>
+            <li>• Multi-stage builds and optimization</li>
+          </ul>
+        </div>
+
+        <div class="border border-gray-200 rounded-lg p-5">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3"><i class="fas fa-toolbox text-orange-600 mr-2"></i>Useful Tools</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>• Docker Hub (public container registry)</li>
+            <li>• Portainer (container management UI)</li>
+            <li>• Dive (analyze image layers)</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
   </main>

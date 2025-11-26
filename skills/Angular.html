@@ -3,111 +3,466 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SM - Angular Development</title>
+  <title>Learn Angular - Enterprise Web Development | Skill Maps</title>
   <link rel="icon" href="../images/logo.jpg" type="image/x-icon">
   <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- Meta & Open Graph -->
-  <meta name="description" content="Master Angular through structured lessons and projects.">
-  <meta property="og:title" content="Skill Maps - Angular Development">
-  <meta property="og:description" content="Learn Angular step by step with videos and practical projects.">
-  <meta property="og:url" content="https://www.skill-maps.com/domains/Angular.html">
+  <meta name="description" content="Master Angular and build enterprise-scale web applications. Learn TypeScript, components, services, and modern Angular patterns with hands-on projects.">
+  <meta name="keywords" content="learn angular, angular tutorial, angular projects, typescript, enterprise web development, angular framework, rxjs">
+  <meta property="og:title" content="Learn Angular - Enterprise Framework Guide | Skill Maps">
+  <meta property="og:description" content="Master Angular for building scalable enterprise applications. Learn the complete framework with TypeScript and RxJS.">
+  <meta property="og:url" content="https://www.skill-maps.com/skills/Angular.html">
   <meta property="og:image" content="https://www.skill-maps.com/images/logo.jpg">
+  <meta property="og:type" content="article">
 
   <!-- TailwindCSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7439109164508333"
+     crossorigin="anonymous"></script>
 </head>
 
-<body class="text-gray-800">
+<body class="text-gray-800 space-y-12">
 
   <!-- NAVBAR -->
   <div id="panel-bar-placeholder"></div>
   <script src="panel-nav.js"></script>
 
-  <main class="pt-16 max-w-6xl mx-auto px-6 space-y-12">
+  <main class="pt-16 max-w-6xl mx-auto px-6 pb-12">
 
     <!-- HEADER -->
-    <section id="head">
-      <h2 class="title-page">Angular Development</h2>
+    <section id="head" class="text-center py-12 bg-gradient-to-r from-red-50 to-pink-50 rounded-lg mb-12">
+      <h1 class="text-5xl font-bold text-gray-900 mb-4">Master Angular: The Enterprise Framework</h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">Learn the full-featured framework that powers applications at Google, Microsoft, and Fortune 500 companies worldwide.</p>
     </section>
 
-    <!-- INTRO VIDEO -->
-    <section id="video-course" class="space-y-6">
-      <h1 class="section-title">Quick Introduction to Angular</h1>
-      <iframe class="tutorial-video" src="https://www.youtube.com/embed/y14f_VFsZIA?si=31UPLzgRLAJR6MoH" title="Angular Overview" frameborder="0" allowfullscreen></iframe>
-      <p class="paragraph italic text-gray-600">Source: “Angular Basics, Pros and Cons Explained” — AltexSoft (YouTube)</p>
+    <!-- WHAT IS ANGULAR -->
+    <section class="mb-12 bg-white rounded-lg shadow-sm p-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">What's Angular All About?</h2>
+      <p class="text-lg text-gray-700 leading-relaxed mb-4">
+        Angular has a reputation, and let's address it upfront: people say it's complex, opinionated, and has a steep learning curve. You know what? They're not wrong. Angular is complex—but here's the thing: enterprise applications are complex. Angular gives you the tools to manage that complexity at scale. It's not the easiest framework to learn, but it might be the most powerful.
+      </p>
+      <p class="text-lg text-gray-700 leading-relaxed mb-4">
+        Built and maintained by Google, Angular is a complete platform for building web applications. Not just a library—a full framework with opinions about architecture, testing, routing, forms, HTTP requests, everything. This "batteries included" approach means you're not cobbling together a dozen libraries and hoping they work together. Angular provides the complete package, battle-tested at massive scale.
+      </p>
+      <p class="text-lg text-gray-700 leading-relaxed mb-4">
+        Who uses Angular? Google (obviously), Microsoft for Office 365 and Xbox, Forbes, BMW, and countless banks and healthcare companies. These aren't startups moving fast and breaking things—these are enterprises that need applications to work reliably for millions of users over years. That's Angular's sweet spot. It's designed for projects where structure, maintainability, and scalability matter more than quick prototyping.
+      </p>
+      <div class="bg-red-50 border-l-4 border-red-500 p-6 mt-6">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">Why Angular Stands Out</h3>
+        <ul class="space-y-2 text-gray-700">
+          <li><strong>Complete framework:</strong> Everything you need is included and designed to work together seamlessly</li>
+          <li><strong>TypeScript by default:</strong> Strong typing catches errors before they reach production. Your IDE becomes incredibly helpful</li>
+          <li><strong>Enterprise-grade:</strong> Built for large teams and long-term maintenance. Code structure is enforced and predictable</li>
+          <li><strong>Powerful CLI:</strong> Generate components, services, modules with single commands. Consistency across your codebase</li>
+          <li><strong>RxJS integration:</strong> Handle complex asynchronous operations elegantly. Power and complexity in one package</li>
+          <li><strong>Google backing:</strong> Long-term support and regular updates. Angular isn't going anywhere</li>
+        </ul>
+      </div>
     </section>
 
-    <!-- COURSE INSTRUCTIONS -->
-    <section id="text-course" class="space-y-6">
-      <h2 class="text-center section-title">Welcome to the Angular Full Course</h2>
-      <h3 class="section-title">Instructions</h3>
-      <p class="paragraph">
-        To complete this course, you’ll need a code editor such as <b>Visual Studio Code</b> or an online IDE like <b>Programiz</b>.
-        <br><br>
-        1. Watch the <i>"Angular - Full Course"</i> video.<br>
-        2. Complete the three guided projects to build practical skills.<br>
-        3. Upload your projects to your <b>GitHub portfolio</b>.
-        <br><br>
-        <span class="text-center font-bold">Good luck — let’s begin your Angular journey!</span>
+    <!-- WHY LEARN ANGULAR -->
+    <section class="mb-12 bg-white rounded-lg shadow-sm p-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">Why Learn Angular in 2025?</h2>
+      <p class="text-lg text-gray-700 leading-relaxed mb-4">
+        Let's be real: Angular doesn't have the hype of React or the developer love of Vue. But here's what it does have: enterprise adoption. If you want to work on large-scale applications for big companies, Angular knowledge opens doors. Banks, insurance companies, healthcare systems, government projects—they love Angular because it enforces structure and scales well.
+      </p>
+      <p class="text-lg text-gray-700 leading-relaxed mb-6">
+        The learning curve is steeper, yes. You need to understand TypeScript, RxJS, dependency injection, and Angular's specific patterns. But once you climb that curve, you're incredibly valuable. Angular developers are in high demand precisely because fewer people know it well. Less competition, higher salaries, more opportunities at enterprise companies. That's the trade-off.
+      </p>
+      
+      <div class="grid md:grid-cols-2 gap-6 mt-6">
+        <div class="bg-gradient-to-br from-red-50 to-pink-50 p-6 rounded-lg">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3"><i class="fas fa-building text-red-600 mr-2"></i>Enterprise Focus</h3>
+          <p class="text-gray-700">Angular dominates enterprise environments. Fortune 500 companies, financial institutions, healthcare systems—they choose Angular for mission-critical applications. These companies pay well and value stability over trends.</p>
+        </div>
+        <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-lg">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3"><i class="fas fa-shield-alt text-blue-600 mr-2"></i>Structure & Standards</h3>
+          <p class="text-gray-700">Angular enforces best practices and architectural patterns. Large teams need consistency—Angular provides it. Your code looks like everyone else's Angular code. This makes collaboration and maintenance easier at scale.</p>
+        </div>
+        <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-lg">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3"><i class="fas fa-toolbox text-green-600 mr-2"></i>Complete Tooling</h3>
+          <p class="text-gray-700">Angular CLI is phenomenal. Generate entire features with a command. Built-in testing, production builds, deployment optimization—it's all there. You spend time solving problems, not configuring build tools.</p>
+        </div>
+        <div class="bg-gradient-to-br from-purple-50 to-violet-50 p-6 rounded-lg">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3"><i class="fas fa-code text-purple-600 mr-2"></i>TypeScript Mastery</h3>
+          <p class="text-gray-700">Learning Angular means learning TypeScript deeply. Type safety prevents entire categories of bugs. Your development experience improves dramatically with autocomplete, refactoring support, and compile-time error checking.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PREREQUISITES -->
+    <section class="mb-12 bg-white rounded-lg shadow-sm p-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">What You Need to Know First</h2>
+      <p class="text-lg text-gray-700 leading-relaxed mb-4">
+        Angular isn't a beginner's first framework—let's be honest about that. You should be comfortable with JavaScript before jumping into Angular and TypeScript. That said, if you've built a few projects with vanilla JS or jQuery, you're probably ready. Angular will push you, but that's how you grow.
+      </p>
+      
+      <h3 class="text-2xl font-semibold text-gray-900 mb-4 mt-6">Prerequisites (Be Honest with Yourself)</h3>
+      <div class="bg-gray-50 p-6 rounded-lg mb-6">
+        <ul class="space-y-3 text-gray-700">
+          <li><strong>Strong JavaScript fundamentals:</strong> Variables, functions, arrays, objects, ES6 features. If these feel shaky, shore them up first. Angular will expose gaps quickly.</li>
+          <li><strong>HTML & CSS proficiency:</strong> Angular templates are HTML with directives. You need solid HTML knowledge. CSS frameworks like Bootstrap or Tailwind pair well with Angular.</li>
+          <li><strong>TypeScript basics helpful:</strong> Angular uses TypeScript exclusively. You can learn as you go, but understanding types, interfaces, and classes beforehand smooths the path.</li>
+          <li><strong>Command line comfort:</strong> Angular CLI lives in the terminal. You'll use it constantly. Get comfortable with basic command line navigation.</li>
+          <li><strong>Node.js and npm installed:</strong> Angular requires Node. Download from nodejs.org, install, and you're set.</li>
+          <li><strong>Serious time commitment:</strong> Angular takes longer to learn than React or Vue. Plan for 15-20 hours per week minimum. The payoff is worth it, but don't underestimate the investment.</li>
+        </ul>
+      </div>
+
+      <h3 class="text-2xl font-semibold text-gray-900 mb-4">Your Development Environment</h3>
+      <div class="grid md:grid-cols-3 gap-4">
+        <div class="border border-gray-200 p-4 rounded-lg">
+          <h4 class="font-semibold text-gray-900 mb-2">Visual Studio Code</h4>
+          <p class="text-sm text-gray-600">VS Code is the standard for Angular development. Install Angular Language Service and Angular Snippets extensions. Your life will be easier.</p>
+        </div>
+        <div class="border border-gray-200 p-4 rounded-lg">
+          <h4 class="font-semibold text-gray-900 mb-2">Angular CLI</h4>
+          <p class="text-sm text-gray-600">Install globally with npm: `npm install -g @angular/cli`. This is your main tool for creating projects, generating components, and building applications.</p>
+        </div>
+        <div class="border border-gray-200 p-4 rounded-lg">
+          <h4 class="font-semibold text-gray-900 mb-2">Browser DevTools</h4>
+          <p class="text-sm text-gray-600">Install Angular DevTools extension for Chrome or Firefox. Inspect component trees, check performance, and debug state. Essential for development.</p>
+        </div>
+      </div>
+
+      <div class="bg-pink-50 border-l-4 border-pink-400 p-4 mt-6">
+        <p class="text-gray-800"><strong>Reality check:</strong> Angular has more moving parts than other frameworks. Modules, components, services, dependency injection, RxJS—it's a lot at first. That's okay. You don't need to understand everything immediately. Start building, and understanding follows. The confusion is temporary; the skills are permanent.</p>
+      </div>
+    </section>
+
+    <!-- LEARNING PATH -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Your Angular Learning Journey</h2>
+      <p class="text-lg text-gray-700 text-center max-w-3xl mx-auto mb-8">
+        We're focusing on modern Angular with TypeScript. Build real applications, understand the framework's opinions, and develop patterns that scale to enterprise applications. This is professional-grade development.
       </p>
 
-      <!-- LESSON 1 -->
-      <p class="minimized-paragraph" onclick="toggleParagraph(1)">Angular - Full Course (Video)</p>
-      <div id="paragraph-1" class="paragraph-content hidden">
-        <iframe class="tutorial-video" src="https://www.youtube.com/embed/k5E2AVpwsko?si=bOBQxUqQPGuKKE-Z" title="Angular Full Course" frameborder="0" allowfullscreen></iframe>
-        <p class="paragraph italic text-gray-600 mt-2">Source: “Angular Tutorial for Beginners: Learn Angular & TypeScript” — Programming with Mosh (YouTube)</p>
-        <p class="paragraph mt-2"><b>Exercise:</b> Watch the full video, take notes, and prepare for your first project.</p>
+      <!-- INTRO VIDEO -->
+      <div class="bg-white rounded-lg shadow-sm p-8 mb-8">
+        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Step 1: Understanding Angular (The Foundation)</h3>
+        <p class="text-gray-700 mb-4">
+          Start here to understand what Angular is, why it exists, and what problems it solves. This video covers Angular's philosophy, its pros and cons honestly, and when you should (and shouldn't) use it. Context matters—understand the "why" before diving into the "how."
+        </p>
+        <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/y14f_VFsZIA?si=31UPLzgRLAJR6MoH" title="Angular Overview" frameborder="0" allowfullscreen></iframe>
+        <p class="text-sm italic text-gray-600 mt-3">Source: "Angular Basics, Pros and Cons Explained" – AltexSoft (YouTube)</p>
+      </div>
+
+      <!-- FULL COURSE -->
+      <div class="bg-white rounded-lg shadow-sm p-8 mb-8">
+        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Step 2: Angular & TypeScript Complete Course</h3>
+        <p class="text-gray-700 mb-4">
+          This is the big one. Complete Angular training from fundamentals to advanced concepts. Components, services, dependency injection, routing, forms, HTTP requests, RxJS, and more. Mosh is an excellent teacher—clear, thorough, and practical. This course gives you the foundation everything else builds on.
+        </p>
+        <p class="text-gray-700 mb-4">
+          <strong>How to approach this:</strong> This course is several hours of dense material. Don't try to consume it all at once. Watch a section, code along immediately, experiment on your own, then move to the next section. Active learning beats passive watching. Build things alongside the course, not after.
+        </p>
+        
+        <div class="bg-red-50 border-l-4 border-red-400 p-4 mb-4">
+          <p class="text-gray-800"><strong>Learning strategy:</strong> Angular's dependency injection will confuse you. RxJS observables will confuse you. That's normal—they confuse everyone at first. Don't let confusion stop you. Keep building, keep coding. Understanding comes through repetition, not revelation. Trust the process.</p>
+        </div>
+
+        <button onclick="toggleParagraph(1)" class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-200 mb-4">
+          <i class="fas fa-play-circle mr-2"></i>Start the Angular Course
+        </button>
+        
+        <div id="paragraph-1" class="paragraph-content hidden">
+          <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/k5E2AVpwsko?si=bOBQxUqQPGuKKE-Z" title="Angular Full Course" frameborder="0" allowfullscreen></iframe>
+          <p class="text-sm italic text-gray-600 mt-3">Source: "Angular Tutorial for Beginners: Learn Angular & TypeScript" – Programming with Mosh (YouTube)</p>
+          
+          <div class="mt-6 bg-pink-50 p-6 rounded-lg">
+            <h4 class="font-semibold text-gray-900 mb-3">Everything You'll Learn:</h4>
+            <ul class="grid md:grid-cols-2 gap-2 text-gray-700">
+              <li>• TypeScript fundamentals and type system</li>
+              <li>• Components and component architecture</li>
+              <li>• Templates, directives, and data binding</li>
+              <li>• Services and dependency injection</li>
+              <li>• Routing and navigation</li>
+              <li>• Forms (template-driven and reactive)</li>
+              <li>• HTTP client and API integration</li>
+              <li>• RxJS and reactive programming</li>
+            </ul>
+          </div>
+
+          <div class="mt-4 p-4 bg-gray-50 rounded-lg">
+            <p class="font-semibold text-gray-900 mb-2"><i class="fas fa-dumbbell text-red-600 mr-2"></i>Practice Exercise:</p>
+            <p class="text-gray-700">After completing the course, build a book library app from scratch. Users can add books, mark them as read, filter by genre, and search titles. Use Angular services for data management, routing for different views, and forms for adding books. No tutorial—apply what you learned.</p>
+          </div>
+        </div>
       </div>
 
       <!-- PROJECT 1 -->
-      <p class="minimized-paragraph" onclick="toggleParagraph(2)">Project 1: Tic-Tac-Toe PWA</p>
-      <div id="paragraph-2" class="paragraph-content hidden">
-        <iframe class="tutorial-video" src="https://www.youtube.com/embed/G0bBLvWXBvc?si=_jNovMj484r0k7ht" title="Angular Project 1" frameborder="0" allowfullscreen></iframe>
-        <p class="paragraph italic text-gray-600 mt-2">Source: “Angular for Beginners - Let's build a Tic-Tac-Toe PWA” — Fireship (YouTube)</p>
-        <p class="paragraph mt-2"><b>Exercise:</b>
-          <br>1. Follow the tutorial and build the project.<br>
-          2. Add your own features and test your app.<br>
-          3. Upload your version to your <b>GitHub</b> portfolio.
+      <div class="bg-white rounded-lg shadow-sm p-8 mb-8">
+        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Project 1: Tic-Tac-Toe Progressive Web App</h3>
+        <p class="text-gray-700 mb-4">
+          Build a classic game as a Progressive Web App. This project teaches Angular fundamentals—components, state management, event handling, and game logic. Plus, you'll make it a PWA, meaning it can be installed and work offline. Combining Angular with PWA features shows you understand modern web development.
         </p>
+        <p class="text-gray-700 mb-4">
+          Why this project matters: It's simple enough to complete but complex enough to teach important patterns. Managing game state, handling user interactions, detecting win conditions, implementing restart functionality—these patterns apply to any interactive application. Plus, PWA features are impressive on a portfolio.
+        </p>
+
+        <div class="bg-blue-50 border-l-4 border-blue-400 p-4 mb-4">
+          <p class="text-gray-800"><strong>You're Learning:</strong> Component communication, state management, event binding, conditional rendering, Angular's change detection, and PWA implementation. These are foundational skills for any Angular application.</p>
+        </div>
+
+        <button onclick="toggleParagraph(2)" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-200 mb-4">
+          <i class="fas fa-gamepad mr-2"></i>Build the Tic-Tac-Toe PWA
+        </button>
+        
+        <div id="paragraph-2" class="paragraph-content hidden">
+          <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/G0bBLvWXBvc?si=_jNovMj484r0k7ht" title="Tic-Tac-Toe PWA" frameborder="0" allowfullscreen></iframe>
+          <p class="text-sm italic text-gray-600 mt-3">Source: "Angular for Beginners - Let's build a Tic-Tac-Toe PWA" – Fireship (YouTube)</p>
+          
+          <div class="mt-6 space-y-4">
+            <div class="bg-gray-50 p-5 rounded-lg">
+              <h4 class="font-semibold text-gray-900 mb-3"><i class="fas fa-list-check text-blue-600 mr-2"></i>Build Steps:</h4>
+              <ol class="list-decimal list-inside space-y-2 text-gray-700">
+                <li>Create project structure with Angular CLI</li>
+                <li>Build the game board component</li>
+                <li>Implement game logic and win detection</li>
+                <li>Add player switching and move validation</li>
+                <li>Create restart and score tracking</li>
+                <li>Convert to PWA with service workers</li>
+                <li>Test installation and offline functionality</li>
+              </ol>
+            </div>
+
+            <div class="bg-green-50 p-5 rounded-lg">
+              <h4 class="font-semibold text-gray-900 mb-3"><i class="fas fa-plus-circle text-green-600 mr-2"></i>Enhancement Ideas:</h4>
+              <ul class="space-y-2 text-gray-700">
+                <li>• Add AI opponent with difficulty levels</li>
+                <li>• Implement multiplayer with real-time updates</li>
+                <li>• Create animations for moves and wins</li>
+                <li>• Add sound effects for better UX</li>
+                <li>• Implement undo/redo functionality</li>
+              </ul>
+            </div>
+
+            <div class="bg-yellow-50 p-5 rounded-lg">
+              <p class="font-semibold text-gray-900 mb-2"><i class="fas fa-star text-yellow-600 mr-2"></i>PWA Power:</p>
+              <p class="text-gray-700">PWA features make your app feel native. Users can install it to their home screen and use it offline. This isn't just cool—it's practical. Many companies want PWAs for mobile-like experiences without app store hassles.</p>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- PROJECT 2 -->
-      <p class="minimized-paragraph" onclick="toggleParagraph(3)">Project 2: To-Do List App</p>
-      <div id="paragraph-3" class="paragraph-content hidden">
-        <iframe class="tutorial-video" src="https://www.youtube.com/embed/pLKVa1l7KMs?si=cqCCTmoBi4tmP8tA" title="Angular Project 2" frameborder="0" allowfullscreen></iframe>
-        <p class="paragraph italic text-gray-600 mt-2">Source: “To Do List in Angular | Angular tutorial” — Code Logic (YouTube)</p>
-        <p class="paragraph mt-2"><b>Exercise:</b>
-          <br>1. Build the project and test functionality.<br>
-          2. Try customizing the UI and features.<br>
-          3. Upload to GitHub once tested successfully.
+      <div class="bg-white rounded-lg shadow-sm p-8 mb-8">
+        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Project 2: Task Management Application</h3>
+        <p class="text-gray-700 mb-4">
+          Build a full-featured to-do list with Angular. This project goes deep into forms, local storage, CRUD operations, and list management. To-do apps might seem basic, but implementing them well requires understanding data flow, state management, and user experience design. This is where Angular's structure really helps.
         </p>
+        <p class="text-gray-700 mb-4">
+          What makes this valuable: You're building patterns used in every business application—creating records, reading lists, updating items, deleting data. Plus, you'll implement filtering, sorting, and search. These features appear in dashboards, admin panels, and data management systems everywhere.
+        </p>
+
+        <div class="bg-purple-50 border-l-4 border-purple-400 p-4 mb-4">
+          <p class="text-gray-800"><strong>Core Skills:</strong> Reactive forms, form validation, CRUD operations, local storage API, component lifecycle hooks, Angular pipes for filtering/sorting, and creating reusable components.</p>
+        </div>
+
+        <button onclick="toggleParagraph(3)" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-200 mb-4">
+          <i class="fas fa-tasks mr-2"></i>Build the Task Manager
+        </button>
+        
+        <div id="paragraph-3" class="paragraph-content hidden">
+          <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/pLKVa1l7KMs?si=cqCCTmoBi4tmP8tA" title="To-Do List App" frameborder="0" allowfullscreen></iframe>
+          <p class="text-sm italic text-gray-600 mt-3">Source: "To Do List in Angular | Angular tutorial" – Code Logic (YouTube)</p>
+          
+          <div class="mt-6 space-y-4">
+            <div class="bg-gray-50 p-5 rounded-lg">
+              <h4 class="font-semibold text-gray-900 mb-3"><i class="fas fa-code text-purple-600 mr-2"></i>Implementation Path:</h4>
+              <ol class="list-decimal list-inside space-y-2 text-gray-700">
+                <li>Set up reactive forms for task input</li>
+                <li>Implement add, edit, and delete functionality</li>
+                <li>Create task list with status toggle</li>
+                <li>Add filtering (all, active, completed)</li>
+                <li>Implement local storage persistence</li>
+                <li>Add search and sorting capabilities</li>
+              </ol>
+            </div>
+
+            <div class="bg-green-50 p-5 rounded-lg">
+              <h4 class="font-semibold text-gray-900 mb-3"><i class="fas fa-rocket text-green-600 mr-2"></i>Professional Features:</h4>
+              <ul class="space-y-2 text-gray-700">
+                <li>• Add categories/tags for organization</li>
+                <li>• Implement due dates and reminders</li>
+                <li>• Create priority levels (high, medium, low)</li>
+                <li>• Add bulk operations (complete all, delete completed)</li>
+                <li>• Implement drag-and-drop reordering</li>
+              </ul>
+            </div>
+
+            <div class="bg-yellow-50 p-5 rounded-lg">
+              <p class="font-semibold text-gray-900 mb-2"><i class="fas fa-brain text-yellow-600 mr-2"></i>Learning Moment:</p>
+              <p class="text-gray-700">Reactive forms in Angular are powerful but have a learning curve. Don't fight them—embrace the pattern. Once form validation and data binding click, you'll appreciate Angular's approach. It scales beautifully to complex forms.</p>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- PROJECT 3 -->
-      <p class="minimized-paragraph" onclick="toggleParagraph(4)">Project 3: Employee Payroll App</p>
-      <div id="paragraph-4" class="paragraph-content hidden">
-        <iframe class="tutorial-video" src="https://www.youtube.com/embed/sWOXETusJNw?si=CscYCjLyVvpwN9qb" title="Angular Project 3" frameborder="0" allowfullscreen></iframe>
-        <p class="paragraph italic text-gray-600 mt-2">Source: “Angular Employee Payroll, Salary App” — Amit Shukla (YouTube)</p>
-        <p class="paragraph mt-2"><b>Exercise:</b>
-          <br>1. Build the payroll app following the tutorial.<br>
-          <br>2. Test and improve it with your own modifications.<br>
-          3. Add it to your GitHub portfolio as your third Angular project.
+      <div class="bg-white rounded-lg shadow-sm p-8 mb-8">
+        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Project 3: Employee Payroll System</h3>
+        <p class="text-gray-700 mb-4">
+          Build an enterprise-style application for managing employee payroll. This project pulls everything together—complex forms, calculations, data tables, filtering, and business logic. It's the type of application Angular was designed for: structured, maintainable, and scalable. This is your portfolio showpiece.
         </p>
+        <p class="text-gray-700 mb-4">
+          Why this matters: Payroll systems represent real business applications. You're handling sensitive data, complex calculations, multiple views, and business rules. Completing this project demonstrates you can build production-ready applications that solve actual business problems. That's what gets you hired.
+        </p>
+
+        <div class="bg-indigo-50 border-l-4 border-indigo-400 p-4 mb-4">
+          <p class="text-gray-800"><strong>Enterprise Skills:</strong> Complex forms with validation, data tables with sorting/pagination, calculated fields, business logic implementation, service architecture, and creating maintainable, scalable code structure.</p>
+        </div>
+
+        <button onclick="toggleParagraph(4)" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-200 mb-4">
+          <i class="fas fa-calculator mr-2"></i>Build the Payroll System
+        </button>
+        
+        <div id="paragraph-4" class="paragraph-content hidden">
+          <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/sWOXETusJNw?si=CscYCjLyVvpwN9qb" title="Payroll System" frameborder="0" allowfullscreen></iframe>
+          <p class="text-sm italic text-gray-600 mt-3">Source: "Angular Employee Payroll, Salary App" – Amit Shukla (YouTube)</p>
+          
+          <div class="mt-6 space-y-4">
+            <div class="bg-gray-50 p-5 rounded-lg">
+              <h4 class="font-semibold text-gray-900 mb-3"><i class="fas fa-building text-indigo-600 mr-2"></i>Application Features:</h4>
+              <ol class="list-decimal list-inside space-y-2 text-gray-700">
+                <li>Employee management (add, edit, delete)</li>
+                <li>Salary calculations with deductions and bonuses</li>
+                <li>Data table with search, sort, and filter</li>
+                <li>Detailed employee view with full information</li>
+                <li>Report generation and summary statistics</li>
+                <li>Form validation and error handling</li>
+              </ol>
+            </div>
+
+            <div class="bg-green-50 p-5 rounded-lg">
+              <h4 class="font-semibold text-gray-900 mb-3"><i class="fas fa-trophy text-green-600 mr-2"></i>Advanced Features:</h4>
+              <ul class="space-y-2 text-gray-700">
+                <li>• Add department and role management</li>
+                <li>• Implement attendance tracking</li>
+                <li>• Create monthly payroll reports</li>
+                <li>• Add tax calculations by bracket</li>
+                <li>• Generate printable pay slips</li>
+                <li>• Implement data export (CSV, PDF)</li>
+              </ul>
+            </div>
+
+            <div class="bg-yellow-50 p-5 rounded-lg">
+              <p class="font-semibold text-gray-900 mb-2"><i class="fas fa-medal text-yellow-600 mr-2"></i>Portfolio Impact:</p>
+              <p class="text-gray-700">This is your enterprise-grade project. Polish it thoroughly—professional UI, robust error handling, complete documentation. This single project can demonstrate enterprise Angular skills better than a dozen simple apps. Make it count.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEXT STEPS -->
+    <section class="mb-12 bg-gradient-to-r from-red-50 to-pink-50 rounded-lg shadow-sm p-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">You've Conquered Angular!</h2>
+      <p class="text-lg text-gray-700 leading-relaxed mb-6">
+        Not going to lie—if you made it through Angular, you've done something impressive. This isn't the easiest framework, and you pushed through the complexity. You now understand enterprise application architecture, TypeScript, dependency injection, reactive programming with RxJS, and Angular's comprehensive ecosystem. These are professional-grade skills.
+      </p>
+
+      <div class="bg-white rounded-lg p-6 mb-6">
+        <h3 class="text-2xl font-semibold text-gray-900 mb-4">What's Next in Your Angular Journey</h3>
+        <div class="space-y-4">
+          <div class="flex items-start">
+            <div class="flex-shrink-0 bg-blue-100 rounded-full p-3 mr-4">
+              <i class="fab fa-github text-blue-600 text-xl"></i>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900 mb-1">Build Your Portfolio</h4>
+              <p class="text-gray-700">Upload all three projects with comprehensive documentation. Angular projects benefit from architecture diagrams—show component relationships, service dependencies, data flow. Explain your design decisions. This depth impresses enterprise hiring managers.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <div class="flex-shrink-0 bg-green-100 rounded-full p-3 mr-4">
+              <i class="fas fa-atom text-green-600 text-xl"></i>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900 mb-1">Master RxJS</h4>
+              <p class="text-gray-700">RxJS is Angular's secret weapon for complex asynchronous operations. Dive deeper into operators, subjects, and reactive patterns. Understanding RxJS well separates junior from senior Angular developers.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <div class="flex-shrink-0 bg-purple-100 rounded-full p-3 mr-4">
+              <i class="fas fa-server text-purple-600 text-xl"></i>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900 mb-1">Learn Backend Integration</h4>
+              <p class="text-gray-700">Angular pairs well with .NET, Java Spring, or Node.js backends. Learn how to build and consume RESTful APIs. Understanding full-stack architecture makes you incredibly valuable to enterprise teams.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <div class="flex-shrink-0 bg-orange-100 rounded-full p-3 mr-4">
+              <i class="fas fa-vial text-orange-600 text-xl"></i>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900 mb-1">Master Testing</h4>
+              <p class="text-gray-700">Angular has excellent testing support with Jasmine and Karma. Learn unit testing, component testing, and end-to-end testing. Enterprise companies expect tested code—this skill pays dividends.</p>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- SUMMARY -->
-      <h1 class="section-title mt-6">Summary</h1>
-      <p class="paragraph">
-        Congratulations on completing the Angular course!  
-        <br><br>
-        • Upload your projects to <b>GitHub</b> and share them on <b>LinkedIn</b>.<br>
-        • Continue learning through our <a href="../skills.html" class="text-blue-600 hover:underline">Skill-Based Roadmaps</a>.<br>
-        • Or explore career options in <a href="../domains.html" class="text-blue-600 hover:underline">Role-Based Roadmaps</a>.
+      <div class="bg-red-600 text-white rounded-lg p-6">
+        <h3 class="text-xl font-semibold mb-3">The Angular Advantage</h3>
+        <p class="mb-4">You chose the harder path, and that's precisely what makes you valuable. Angular developers command respect because they've proven they can handle complexity. You understand architecture, you write typed code, you think in services and components. That's enterprise-level thinking.</p>
+        <p class="text-red-100 italic">"Angular is not the easiest framework. It's the one that makes large applications maintainable." – Every enterprise developer</p>
+      </div>
+    </section>
+
+    <!-- ADDITIONAL RESOURCES -->
+    <section class="mb-12 bg-white rounded-lg shadow-sm p-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">Continue Your Angular Mastery</h2>
+      <p class="text-lg text-gray-700 mb-6">
+        These resources will help you become an Angular expert. The learning never stops, but that's what keeps it interesting.
       </p>
-      <br>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="border border-gray-200 rounded-lg p-5">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3"><i class="fas fa-book text-red-600 mr-2"></i>Official Resources</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>• <a href="https://angular.io/docs" class="text-blue-600 hover:underline" target="_blank" rel="noopener">Angular Documentation</a> (comprehensive and authoritative)</li>
+            <li>• <a href="https://angular.io/guide/styleguide" class="text-blue-600 hover:underline" target="_blank" rel="noopener">Angular Style Guide</a> (best practices from the Angular team)</li>
+            <li>• Angular Blog for updates and new features</li>
+          </ul>
+        </div>
+
+        <div class="border border-gray-200 rounded-lg p-5">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3"><i class="fas fa-users text-blue-600 mr-2"></i>Community</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>• Stack Overflow Angular tag</li>
+            <li>• r/Angular on Reddit</li>
+            <li>• Angular Discord community</li>
+          </ul>
+        </div>
+
+        <div class="border border-gray-200 rounded-lg p-5">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3"><i class="fas fa-code text-purple-600 mr-2"></i>Advanced Topics</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>• Angular Universal (server-side rendering)</li>
+            <li>• NgRx (state management)</li>
+            <li>• Angular Material (UI components)</li>
+          </ul>
+        </div>
+
+        <div class="border border-gray-200 rounded-lg p-5">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3"><i class="fas fa-tools text-orange-600 mr-2"></i>Development Tools</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>• Angular CLI (your main tool)</li>
+            <li>• Angular DevTools (debugging)</li>
+            <li>• Compodoc (documentation generation)</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
   </main>
