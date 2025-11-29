@@ -1,10 +1,19 @@
 [  
   {
+    "id": "0011",
+    "title": "AI Is Making It Harder for Junior Developers to Get Hired—But New Opportunities Are Emerging",
+    "desc": "Entry-level positions dropped 60% since 2022. A brutally honest look at the multiple factors affecting junior hiring and 12 practical pathways into development.",
+    "date": "2024-11-29",
+    "image": "/blog/images/0011.png",
+    "link": "/blog/html/AI-Is-Making-It-Harder-for-Junior-Developers-to-Get-Hired-But-New-Opportunities-Are-Emerging.html",
+    "category": "Career"
+  },
+  {
     "id": "0010",
     "title": "Writing Code is So Over: The AI Revolution in Software Development",
     "desc": "A comprehensive research analysis exploring how artificial intelligence is fundamentally transforming software engineering, from manual coding to natural language programming and autonomous agents.",
     "date": "2024-11-29",
-    "image": "/blog/images/0010.jpg",
+    "image": "/blog/images/0010.png",
     "link": "/blog/html/writing-code-is-so-over-the-ai-revolution-in-software-development.html",
     "category": "Research"
   },
