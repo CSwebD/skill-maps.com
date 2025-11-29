@@ -1,4 +1,13 @@
-[
+[  
+  {
+    "id": "0010",
+    "title": "Writing Code is So Over: The AI Revolution in Software Development",
+    "desc": "A comprehensive research analysis exploring how artificial intelligence is fundamentally transforming software engineering, from manual coding to natural language programming and autonomous agents.",
+    "date": "2024-11-29",
+    "image": "/blog/images/0010.png",
+    "link": "/blog/html/0010.html",
+    "category": "Research"
+  },
   {
     "id": "0009",
     "title": "5 Things I Wish I Knew Before Graduating as a Software Engineer",
