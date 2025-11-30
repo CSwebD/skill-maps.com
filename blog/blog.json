@@ -1,7 +1,15 @@
-[  
+[ {
+    "id": "0012",
+    "title": "Graduate Schemes December 2025: Your Complete Guide to UK's Best Opportunities",
+    "desc": "Over 500 live graduate schemes across finance, tech, consulting, law, and engineering. Practical application strategies and direct links to top UK employers.",
+    "date": "2024-11-30",
+    "image": "/blog/images/0012.png",
+    "link": "/blog/html/Graduate-Schemes-December-2025-Your-Complete-Guide-to-UKs-Best-Opportunities.html",
+    "category": "Career"
+  },
   {
     "id": "0011",
-    "title": "AI Is Making It Harder for Junior Developers to Get Hired—But New Opportunities Are Emerging",
+    "title": "AI Is Making It Harder for Junior Developers to Get Hired But New Opportunities Are Emerging",
     "desc": "Entry-level positions dropped 60% since 2022. A brutally honest look at the multiple factors affecting junior hiring and 12 practical pathways into development.",
     "date": "2024-11-29",
     "image": "/blog/images/0011.jpg",
