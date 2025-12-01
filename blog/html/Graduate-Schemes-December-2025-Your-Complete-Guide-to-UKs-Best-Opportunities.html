@@ -19,8 +19,39 @@
   <style>
     body { font-family: 'Inter', sans-serif; } 
     html { scroll-behavior: smooth; }
-    .scheme-item { transition: all 0.3s ease; }
-    .scheme-item:hover { transform: translateX(5px); background-color: #f9fafb; }
+    .table-container {
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th {
+      cursor: pointer;
+      user-select: none;
+      position: relative;
+      padding-right: 25px;
+    }
+    th:hover {
+      background-color: #f3f4f6;
+    }
+    th::after {
+      content: '⇅';
+      position: absolute;
+      right: 8px;
+      opacity: 0.3;
+    }
+    th.sort-asc::after {
+      content: '↑';
+      opacity: 1;
+    }
+    th.sort-desc::after {
+      content: '↓';
+      opacity: 1;
+    }
+    tr:hover {
+      background-color: #f9fafb;
+    }
   </style>
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -71,18 +102,15 @@
         <span class="bg-white/20 backdrop-blur-sm px-4 py-1 rounded-full text-sm font-medium">
           <i class="fas fa-calendar-alt mr-2"></i>December 2025
         </span>
-        <span class="bg-white/20 backdrop-blur-sm px-4 py-1 rounded-full text-sm font-medium">
-          <i class="fas fa-clock mr-2"></i>18 min read
-        </span>
       </div>
       <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Graduate Schemes December 2025</h1>
       <p class="text-lg md:text-xl text-blue-100">Over 500 live graduate schemes closing in December 2025. Here's everything you need to know, from application strategies to insider tips, for securing your place on a top graduate programme.</p>
     </div>
   </section>
 
-  <!-- Article Section -->
+    <!-- Article Section -->
   <section class="py-16">
-    <div class="max-w-6xl mx-auto px-6 space-y-12">
+    <div class="max-w-4xl mx-auto px-6 space-y-12">
 
       <!-- Introduction -->
       <div>
@@ -105,6 +133,7 @@
       <div class="bg-gray-100 p-4 rounded-lg text-center my-8">
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7439109164508333"
              crossorigin="anonymous"></script>
+        <!-- Index-Header -->
         <ins class="adsbygoogle"
              style="display:block"
              data-ad-client="ca-pub-7439109164508333"
@@ -115,128 +144,383 @@
              (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
       </div>
+    </div>
+  </section class="py-16">
+    
 
-      <!-- Important Note -->
-      <div class="bg-yellow-50 border-l-4 border-yellow-500 p-6 rounded-lg">
+  <!-- Important Notice -->
+  <section class="py-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-lg">
         <div class="flex items-start">
-          <i class="fas fa-exclamation-triangle text-yellow-600 text-2xl mr-4 mt-1"></i>
+          <i class="fas fa-exclamation-triangle text-amber-600 text-xl mr-3 mt-1"></i>
           <div>
-            <h3 class="text-lg font-semibold text-yellow-900 mb-2">Important Notice</h3>
-            <p class="text-gray-700">
-              This is a list of graduate schemes that expire this month (December 2025). Some of them may still be active while others may have already closed. We recommend verifying the application status directly on the company's career page before applying.
+            <h3 class="font-bold text-amber-900 mb-2">Important Note</h3>
+            <p class="text-amber-800">
+              This is a list of graduate schemes that expire this month (December 2025). Some of them may still be active while others may have closed. Please check the individual company websites for the most current information and application deadlines.
             </p>
           </div>
         </div>
       </div>
-
-      <!-- Graduate Schemes List -->
-      <div>
-        <h2 class="text-3xl font-bold mb-6 text-indigo-600">December 2025 Graduate Schemes</h2>
-        
-        <!-- Sorting Controls -->
-        <div class="bg-white p-4 rounded-lg shadow-md mb-6 flex flex-wrap gap-4 items-center">
-          <label class="font-semibold text-gray-700">Sort by:</label>
-          <button onclick="sortBy('company')" class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
-            <i class="fas fa-building mr-2"></i>Company Name
-          </button>
-          <button onclick="sortBy('field')" class="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition">
-            <i class="fas fa-folder mr-2"></i>Field
-          </button>
-        </div>
-
-        <!-- Graduate Schemes Container -->
-        <div id="schemesContainer" class="space-y-4">
-          <!-- Schemes will be rendered here by JavaScript -->
-        </div>
-      </div>
-
-      <!-- AdSense: Display Ad -->
-      <div class="bg-gray-100 p-4 rounded-lg text-center my-8">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7439109164508333"
-             crossorigin="anonymous"></script>
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-7439109164508333"
-             data-ad-slot="4111274044"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-      </div>
-
-      <!-- The Application Process -->
-      <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-lg border-l-4 border-blue-600">
-        <h2 class="text-3xl font-bold mb-6 text-blue-900"><i class="fas fa-clipboard-list mr-3"></i>The Application Process</h2>
-        
-        <div class="space-y-6">
-          <div>
-            <h3 class="text-xl font-semibold text-gray-800 mb-3">1. Research & Preparation</h3>
-            <p class="text-gray-700">
-              Start by thoroughly researching companies and their graduate schemes. Understand their values, culture, and what they're looking for in candidates. Make a list of 5-10 schemes that genuinely interest you rather than applying to dozens.
-            </p>
-          </div>
-
-          <div>
-            <h3 class="text-xl font-semibold text-gray-800 mb-3">2. Application Form</h3>
-            <p class="text-gray-700">
-              Most graduate schemes require an online application form covering your academic background, work experience, and competency-based questions. Tailor each application to the specific company—generic applications rarely succeed. Use the STAR method (Situation, Task, Action, Result) for competency questions.
-            </p>
-          </div>
-
-          <div>
-            <h3 class="text-xl font-semibold text-gray-800 mb-3">3. Online Tests</h3>
-            <p class="text-gray-700">
-              Expect to complete numerical reasoning, verbal reasoning, and situational judgement tests. Practice these in advance using free resources. Most tests are timed, so familiarising yourself with the format helps manage time pressure.
-            </p>
-          </div>
-
-          <div>
-            <h3 class="text-xl font-semibold text-gray-800 mb-3">4. Video Interview</h3>
-            <p class="text-gray-700">
-              Many schemes now use pre-recorded video interviews where you answer questions on camera. Prepare thoroughly, practice speaking clearly, and ensure good lighting and a professional background.
-            </p>
-          </div>
-
-          <div>
-            <h3 class="text-xl font-semibold text-gray-800 mb-3">5. Assessment Centre</h3>
-            <p class="text-gray-700">
-              The final stage typically includes group exercises, individual presentations, case studies, and formal interviews. Demonstrate teamwork, leadership, analytical thinking, and cultural fit. Be yourself—assessors are looking for authenticity as well as competence.
-            </p>
-          </div>
-
-          <div class="bg-white p-6 rounded-lg shadow-md mt-6">
-            <h4 class="font-semibold text-gray-800 mb-3"><i class="fas fa-lightbulb text-yellow-500 mr-2"></i>Top Application Tips</h4>
-            <ul class="space-y-2 text-gray-700">
-              <li>• Start applications early—don't wait until the deadline</li>
-              <li>• Customise every application to the specific scheme</li>
-              <li>• Use concrete examples from your experience</li>
-              <li>• Proofread everything multiple times</li>
-              <li>• Ask for feedback if you're rejected</li>
-              <li>• Track your applications in a spreadsheet</li>
-              <li>• Follow up professionally after interviews</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- AdSense: Display Ad -->
-      <div class="bg-gray-100 p-4 rounded-lg text-center my-8">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7439109164508333"
-             crossorigin="anonymous"></script>
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-7439109164508333"
-             data-ad-slot="4111274044"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-      </div>
-
     </div>
   </section>
+
+  <!-- Graduate Schemes Table -->
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div class="p-6 bg-gradient-to-r from-indigo-600 to-blue-600 text-white">
+          <h2 class="text-3xl font-bold mb-2">
+            <i class="fas fa-list mr-3"></i>Graduate Schemes December 2025
+          </h2>
+          <p class="text-blue-100">Click on column headers to sort. Click on the position name to visit the application page.</p>
+        </div>
+        
+        <div class="p-6">
+          <div class="mb-4 flex items-center gap-4">
+            <label for="searchInput" class="font-semibold text-gray-700">
+              <i class="fas fa-search mr-2"></i>Search:
+            </label>
+            <input 
+              type="text" 
+              id="searchInput" 
+              placeholder="Search by company, field, or position..." 
+              class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+            />
+          </div>
+
+          <div class="table-container">
+            <table id="schemesTable" class="min-w-full">
+              <thead class="bg-gray-50">
+                <tr>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider border-b-2 border-gray-200" data-column="company">
+                    Company
+                  </th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider border-b-2 border-gray-200" data-column="field">
+                    Field
+                  </th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider border-b-2 border-gray-200" data-column="position">
+                    Graduate Offer
+                  </th>
+                </tr>
+              </thead>
+              <tbody id="tableBody" class="bg-white divide-y divide-gray-200">
+                <!-- Table rows will be populated by JavaScript -->
+              </tbody>
+            </table>
+          </div>
+
+          <div id="noResults" class="hidden text-center py-8 text-gray-500">
+            <i class="fas fa-search text-4xl mb-3"></i>
+            <p class="text-lg">No results found. Try adjusting your search.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Application Process -->
+  <section class="py-16 bg-gradient-to-br from-blue-50 to-indigo-50">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-8 text-indigo-700">
+        <i class="fas fa-clipboard-check mr-3"></i>The Application Process
+      </h2>
+
+      <div class="space-y-6">
+        <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-indigo-600">
+          <h3 class="text-xl font-semibold mb-3 text-gray-800">
+            <i class="fas fa-file-alt text-indigo-600 mr-2"></i>1. Online Application
+          </h3>
+          <p class="text-gray-700 mb-3">
+            Most graduate schemes begin with an online application form. This typically includes your personal details, academic qualifications, work experience, and competency-based questions.
+          </p>
+          <div class="bg-blue-50 p-4 rounded-md">
+            <p class="text-sm text-gray-700"><strong>Top Tip:</strong> Tailor each application to the specific company and role. Generic applications are easily spotted and rarely successful.</p>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-purple-600">
+          <h3 class="text-xl font-semibold mb-3 text-gray-800">
+            <i class="fas fa-brain text-purple-600 mr-2"></i>2. Online Tests
+          </h3>
+          <p class="text-gray-700 mb-3">
+            If your application is successful, you'll typically be invited to complete online assessments. These may include:
+          </p>
+          <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+            <li>Numerical reasoning tests</li>
+            <li>Verbal reasoning tests</li>
+            <li>Situational judgement tests</li>
+            <li>Personality questionnaires</li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-600">
+          <h3 class="text-xl font-semibold mb-3 text-gray-800">
+            <i class="fas fa-video text-green-600 mr-2"></i>3. Video Interview
+          </h3>
+          <p class="text-gray-700 mb-3">
+            Many companies now use video interviews as an initial screening tool. You'll typically be asked to record responses to pre-set questions within a time limit.
+          </p>
+          <div class="bg-green-50 p-4 rounded-md">
+            <p class="text-sm text-gray-700"><strong>Top Tip:</strong> Practice your video interview skills beforehand. Pay attention to lighting, background, and speaking clearly.</p>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-orange-600">
+          <h3 class="text-xl font-semibold mb-3 text-gray-800">
+            <i class="fas fa-users text-orange-600 mr-2"></i>4. Assessment Centre
+          </h3>
+          <p class="text-gray-700 mb-3">
+            The assessment centre is typically the final stage. It usually includes a combination of:
+          </p>
+          <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+            <li>Group exercises</li>
+            <li>Individual presentations</li>
+            <li>Case study analysis</li>
+            <li>Competency-based interviews</li>
+            <li>Social activities (informal assessment)</li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-pink-600">
+          <h3 class="text-xl font-semibold mb-3 text-gray-800">
+            <i class="fas fa-check-circle text-pink-600 mr-2"></i>5. Final Interview & Offer
+          </h3>
+          <p class="text-gray-700 mb-3">
+            Some schemes have a final interview with senior management before making an offer. If successful, you'll receive a formal offer letter with details about your start date, salary, and programme structure.
+          </p>
+        </div>
+
+        <div class="bg-indigo-100 p-6 rounded-lg border border-indigo-300 mt-8">
+          <h3 class="text-lg font-semibold mb-3 text-indigo-900">
+            <i class="fas fa-lightbulb text-indigo-700 mr-2"></i>Key Application Tips
+          </h3>
+          <ul class="space-y-2 text-gray-800">
+            <li><strong>Start Early:</strong> Don't wait until the deadline. Many schemes operate on a rolling basis.</li>
+            <li><strong>Research Thoroughly:</strong> Understand the company's values, culture, and what they're looking for.</li>
+            <li><strong>Use the STAR Method:</strong> Structure your examples using Situation, Task, Action, Result.</li>
+            <li><strong>Be Authentic:</strong> Companies want to see the real you, not a rehearsed script.</li>
+            <li><strong>Follow Up:</strong> Send thank-you emails after interviews and stay in touch with recruiters.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JavaScript for Table Functionality -->
+  <script>
+    const graduateSchemes = [
+      { company: "Age UK", field: "IT", position: "Junior Service Desk Analyst 2026", link: "https://www.ageuk.org.uk/about-us/jobs/current-vacancies/" },
+      { company: "Allstate", field: "Engineering", position: "Graduate Product Engineer Opportunities 2026", link: "https://www.allstateni.com/careers/graduates.aspx" },
+      { company: "Ampa Group", field: "Law", position: "Trainee Solicitor 2028", link: "https://careers.ampa.co.uk/postings/3d14ebbc-7d26-4fc0-b84c-2159d068da54" },
+      { company: "Analog Devices", field: "Engineering", position: "Associate Engineer Analog Design Engineering 2026", link: "https://www.analog.com/en/careers.html" },
+      { company: "Aon", field: "Consulting", position: "Employee Benefits Consulting Graduate Programme 2026", link: "https://jobs.aon.com/jobs/92488?lang=en-us" },
+      { company: "Aon", field: "Business Development", position: "Business Development Graduate Programme 2026", link: "https://jobs.aon.com/jobs/95094?lang=en-us" },
+      { company: "Arcadis", field: "Quantity Surveying", position: "Graduate Quantity Surveyor", link: "https://careers.arcadis.com/locations/uk/early-careers/graduates/" },
+      { company: "Arup", field: "Facilities Management", position: "Graduate Facilities Manager 2026", link: "https://www.google.com/search?q=Arup+Graduate+Facilities+Manager+2026" },
+      { company: "Arup", field: "Engineering", position: "Hydrology & Hydraulics Graduate 2026", link: "https://careers.arup.com/earlycareers/vacancy/graduate-hydrology--hydraulics-5810/5836/description/" },
+      { company: "Aviva", field: "Insurance", position: "Pricing & Underwriting Graduate Pathway 2026", link: "https://careers.aviva.co.uk/early-careers/graduates/underwriting-graduate-pathway/" },
+      { company: "Aviva", field: "Transformation", position: "Change & Transformation Graduate Pathway 2026", link: "https://careers.aviva.co.uk/early-careers/graduates/" },
+      { company: "Babcock International Group", field: "Engineering", position: "Digital Engineering Graduate Programme 2026", link: "https://earlycareers.babcockinternational.com/graduate-programmes/digital-engineering/" },
+      { company: "Babcock International Group", field: "Engineering", position: "Naval Architecture Graduate Programme 2026", link: "https://jobs.babcockinternational.com/Babcock/job/Devonport%2C-Plymouth-Naval-Architecture-Graduate-Programme-PL1-4SG/1245452301/" },
+      { company: "Bakkavör", field: "Manufacturing", position: "Manufacturing Graduate Programme 2026", link: "https://jobs.bakkavor.com/content/Graduate-Programmes/?locale=en_GB" },
+      { company: "Bakkavör", field: "Product Development", position: "Food Product Development for the UK Grocery Market Graduate Programme 2026", link: "https://www.bakkavorearlycareers.co.uk/graduate/product-development" },
+      { company: "Barratt Developments", field: "Sales", position: "Sales ASPIRE Graduate Programme 2026", link: "https://barrattcareers.co.uk/apprentices-graduates/aspire-programme/" },
+      { company: "Barratt Developments", field: "Land & Planning", position: "Land and Planning ASPIRE Graduate Programme 2026", link: "https://barrattcareers.co.uk/apprentices-graduates/aspire-programme/" },
+      { company: "Barratt Developments", field: "Planning", position: "Planner 2025", link: "https://jobs.barrattcareers.co.uk/vacancies/30548/planner--gladman-developments.html" },
+      { company: "BBC", field: "Technology", position: "Software Engineering Graduate Scheme 2026", link: "https://careers.bbc.co.uk/job/BBC-Software-Engineering-Graduate-Scheme/33950-en_GB/" },
+      { company: "Benefact Group", field: "Insurance", position: "General Insurance Management Graduate Programme 2026", link: "https://careers.benefactgroup.com/jobs/6570251-general-insurance-management-graduate-programme" },
+      { company: "Botham Accounting", field: "Audit", position: "Graduate Trainee Auditor (September) 2026", link: "https://www.bothamaccounting.co.uk/jobs/graduate-trainee-auditor-september-2026/" },
+      { company: "Botham Accounting", field: "Accounting", position: "Graduate Trainee Accountant ACA (September) 2026", link: "https://www.bothamaccounting.co.uk/jobs/graduate-trainee-aca-september-2026/" },
+      { company: "BRUSH Group", field: "Engineering", position: "Graduate Project Engineer 2026", link: "https://jobsearch.brush.eu/vacancies/vacancy-search-results.aspx" },
+      { company: "BRUSH Group", field: "Engineering", position: "Graduate Electrical Design Engineer 2026", link: "https://jobsearch.brush.eu/vacancies/vacancy-search-results.aspx" },
+      { company: "Buckinghamshire Council", field: "Planning", position: "Graduate Planning Officer 2026", link: "https://jobs.buckinghamshire.gov.uk/job_detail/336299/" },
+      { company: "Buro Happold", field: "Advisory", position: "Advisory Analyst 2026", link: "https://www.burohappold.com/careers/entry/" },
+      { company: "Buro Happold", field: "Sustainability", position: "Graduate Sustainability Consultant 2026", link: "https://vacancies.burohappold.com/jobs/job/Graduate-Sustainability-Consultant/1593" },
+      { company: "Buro Happold", field: "Environmental", position: "Graduate Environmental Consultant 2026", link: "https://vacancies.burohappold.com/jobs/job/Graduate-Environmental-Consultant/1575" },
+      { company: "Capgemini", field: "Consulting", position: "Accelerate Graduate Programme Workforce & Organisation 2026", link: "https://www.capgemini.com/gb-en/careers/career-paths/careers-at-capgemini-invent/accelerate-programme/workforce-and-organisation-pathway/" },
+      { company: "Christie's", field: "Art & Auction", position: "Graduate Training Programme (EMEA) 2026", link: "https://www.christies.com/en/about/careers/graduate-training" },
+      { company: "Compass Group UK & Ireland Ltd", field: "Various", position: "Register your interest in our 2026 Programmes", link: "https://www.compass-group.co.uk/grads/recruitment/" },
+      { company: "Cooper Parry", field: "Audit", position: "Audit Not For Profit Graduate 2026", link: "https://www.cooperparry.com/work-here/" },
+      { company: "Costain", field: "Engineering", position: "Graduate Mechanical Engineer 2026", link: "https://www.costain.com/careers/early-careers/graduate-roles/" },
+      { company: "Costain", field: "Engineering", position: "Graduate Electrical ICA Design Engineer 2026", link: "https://careers.costain.com/en/sites/Costain/jobs?keyword=graduate&mode=location" },
+      { company: "Costain", field: "Quantity Surveying", position: "Graduate Quantity Surveyor (Midlands & South) 2026 - Expression of Interest", link: "https://careers.costain.com/en/sites/Costain/jobs?keyword=graduate&mode=location" },
+      { company: "Costain", field: "Quantity Surveying", position: "Graduate Quantity Surveyor (North) 2026 - Expression of Interest", link: "https://careers.costain.com/en/sites/Costain/jobs?keyword=graduate&mode=location" },
+      { company: "DNV", field: "Engineering", position: "Graduate Technical Safety / Process Engineers 2026", link: "https://jobs.dnv.com/job-search/energy-systems/engineer/london-united-kingdom-aberdeen/graduate-technical-safety-process-engineers/300001359111559" },
+      { company: "Epwin Group", field: "Operations", position: "Operations Graduate 2026", link: "https://www.epwin-careers.co.uk/vacancies" },
+      { company: "Expedia Group", field: "Technology", position: "Machine Learning Scientist - Masters Graduate - 2026 – London", link: "https://careers.expediagroup.com/jobs/" },
+      { company: "Expedia Group", field: "Technology", position: "Machine Learning Scientist - PhD Graduate - 2026 – London", link: "https://careers.expediagroup.com/jobs/" },
+      { company: "Express Solicitors Ltd", field: "Law", position: "Graduate Scheme 2026", link: "https://www.expresssolicitors.co.uk/about/careers/graduates" },
+      { company: "Farrer & Co", field: "Marketing", position: "Junior Marketing Communications Executive 2026", link: "https://www.farrer.co.uk/careers/" },
+      { company: "Fieldfisher", field: "Law", position: "Training Contract 2028 (London)", link: "https://fieldfisher.current-vacancies.com/Jobs/Advert/3976195?cid=2074&t=Training-Contract-------London-" },
+      { company: "Fieldfisher", field: "Law", position: "Training Contract 2028 (Birmingham)", link: "https://fieldfisher.current-vacancies.com/Jobs/Advert/3976273?cid=2074&t=Training-Contract-------Birmingham-" },
+      { company: "Financial Conduct Authority", field: "Regulatory", position: "2026 Regulatory Graduate Programme – London", link: "https://www.fca.org.uk/careers/early-careers" },
+      { company: "Financial Conduct Authority", field: "Regulatory", position: "2026 Regulatory Graduate Programme – Edinburgh", link: "https://www.fca.org.uk/careers/early-careers" },
+      { company: "Financial Conduct Authority", field: "Economics", position: "2026 Economics Graduate Programme – Leeds", link: "https://www.fca.org.uk/careers/early-careers" },
+      { company: "Frontline", field: "Social Work", position: "Trainee Social Worker", link: "https://thefrontline.org.uk/become-a-social-worker/" },
+      { company: "Fugro", field: "Various", position: "Fugro Graduate Roles 2026 – Register Your Interest", link: "https://www.fugro.com/careers" },
+      { company: "Gartner", field: "Business Development", position: "Business Development Manager", link: "https://jobs.gartner.com/jobs/" },
+      { company: "Goodwin", field: "Law", position: "Trainee Solicitor Programme – 2028", link: "https://www.goodwinlaw.com/en/careers-pages/early-careers-in-the-united-kingdom" },
+      { company: "Hanson Wade Group", field: "Marketing", position: "Marketing Assistant", link: "https://careers.hansonwadegroup.com/" },
+      { company: "Hilton", field: "Finance", position: "2026 Hilton Finesse Finance Graduate Programme – EMEA", link: "https://jobs.hilton.com/emea/en/job/EUR015ME/2026-Hilton-Finesse-Finance-Graduate-Programme-Europe-Middle-East-Africa" },
+      { company: "Hilton", field: "Hotel Management", position: "2026 Elevator Graduate Programme - Europe, Middle East & Africa", link: "https://jobs.hilton.com/emea/en/job/EUR015MD/2026-Hilton-Elevator-Hotel-Leadership-Graduate-Programme-Europe-Middle-East-Africa" },
+      { company: "Igne Group Ltd", field: "Engineering", position: "Geotechnical/Geo-environmental Engineer 2026", link: "https://www.igne.com/careers" },
+      { company: "Imperial Brands", field: "Innovation", position: "Innovation Graduate", link: "https://www.imperialbrandsplc.com/careers" },
+      { company: "Johnson Matthey", field: "Chemistry", position: "Reaction Hazards Chemists 2026", link: "https://matthey.com/careers" },
+      { company: "Lidl GB", field: "Retail", position: "Retail Graduate Management Programme 2026", link: "https://careers.lidl.co.uk/early-careers/retail-graduate-management-programme" },
+      { company: "Lift Schools", field: "Education", position: "Trainee English Teacher", link: "https://www.liftschools.org/itt" },
+      { company: "Lift Schools", field: "Education", position: "Trainee Biology Teacher", link: "https://www.liftschools.org/itt-your-training" },
+      { company: "Linklaters", field: "Law", position: "Singapore – London Training Contract 2028/2029", link: "https://careers.linklaters.com/en/early-careers/your-application" },
+      { company: "Linklaters", field: "Law", position: "Direct Training Contract 2028/2029", link: "https://careers.linklaters.com/en/early-careers/your-application" },
+      { company: "Lloyds Banking Group", field: "Technology", position: "Data Science and AI Graduate Scheme 2026", link: "https://www.lloydsbankinggrouptalent.com/our-opportunities/graduates/data-science-and-ai-graduate-scheme/" },
+      { company: "Lloyds Banking Group", field: "Banking", position: "Consumer Relationships Graduate Scheme 2026", link: "https://www.lloydsbankinggrouptalent.com/our-opportunities/graduates/consumer-relationships-graduate-scheme/" },
+      { company: "M Group Services", field: "Quantity Surveying", position: "Assistant Quantity Surveyor 2026", link: "https://jobs.mgroupltd.com/vacancies/45781/apprentice-quantity-surveyor.html" },
+      { company: "MBDA", field: "Engineering", position: "Systems Design Engineer Graduate Programme 2026", link: "https://www.mbdacareers.co.uk/early-careers/graduate-programmes" },
+      { company: "MBDA", field: "Engineering", position: "Electronics Engineer Graduate Programme 2026", link: "https://www.mbdacareers.co.uk/early-careers/graduate-programmes" },
+      { company: "Mercedes AMG High Performance Powertrains", field: "Engineering", position: "Quality Engineering Graduate Scheme 2026", link: "https://www.mercedes-amg-hpp.com/early-careers/" },
+      { company: "Mercedes AMG High Performance Powertrains", field: "Engineering", position: "Motor Control Graduate 2026", link: "https://www.mercedes-amg-hpp.com/early-careers/" },
+      { company: "MI5, MI6 & GCHQ", field: "Language", position: "Arabic Language Specialist", link: "https://www.gchq-careers.co.uk/our-careers/specialist-roles/language-specialists.html" },
+      { company: "Molson Coors Beverage Company", field: "Operations", position: "Production Operations Graduate (Brewing) 2026", link: "https://www.molsoncoors.com/careers" },
+      { company: "Moore Kingston Smith", field: "Audit", position: "Audit Graduate Programme (ACA) – Varied sectors - March 2026", link: "https://mooreks.pinpointhq.com/postings/8461767d-0a34-4839-8cd5-28be08d7dc8b" },
+      { company: "National Gas", field: "Commercial", position: "Commercial Graduate Scheme (Major Programmes) 2026", link: "https://jobs.nationalgas.com/job/Sherwood-Park-Commercial-Graduate-Scheme-%28Major-Programmes%29-NG15-0ED/1330174455/" },
+      { company: "National Gas", field: "Project Management", position: "Project Management Graduate Scheme (Major Programmes) 2026", link: "https://jobs.nationalgas.com/job/Sherwood-Park-Commercial-Graduate-Scheme-%28Major-Programmes%29-NG15-0ED/1330174455/" },
+      { company: "National Gas", field: "Data Science", position: "Commercial Graduate Scheme (Data Science) 2026", link: "https://jobs.nationalgas.com/content/Early-Careers-Graduates/?locale=en_GB" },
+      { company: "National Gas", field: "Economics", position: "Commercial Graduate Scheme (Economics) 2025", link: "https://jobs.nationalgas.com/content/Early-Careers-Graduates/?locale=en_GB" },
+      { company: "Nationwide Building Society", field: "Strategy", position: "Strategy & Business Support Development Programme", link: "https://nationwide-jobs.co.uk/early-careers/graduate-programme" },
+      { company: "Nationwide Building Society", field: "Data & Analytics", position: "Data & Analytics Development Programme", link: "https://nationwide-jobs.co.uk/data-and-analytics-sdp" },
+      { company: "Network Rail", field: "Finance", position: "Finance Graduate Scheme 2026", link: "https://www.earlycareers.networkrail.co.uk/scheme/finance-graduate/" },
+      { company: "Network Rail", field: "Engineering", position: "Civil Engineering Graduate Scheme 2026", link: "https://www.earlycareers.networkrail.co.uk/scheme/civil-engineering-graduate-scheme/" },
+      { company: "Newton", field: "Consulting", position: "Graduate Consultant", link: "https://newtonimpact.com/careers/early-careers/graduate-consultant-role/" },
+      { company: "P&G", field: "Sales", position: "Sales Graduate 2026", link: "https://www.pgcareers.com/uk/en/recent-grads" },
+      { company: "Ramboll UK Ltd", field: "Building Physics", position: "Building Physics Graduate 2026", link: "https://www.ramboll.com/careers/5d027aaf-8c7f-496b-5593-08de234b32c2" },
+      { company: "Ramboll UK Ltd", field: "Engineering", position: "Graduate Electrical Engineer (Data Centres) 2026", link: "https://www.ramboll.com/careers/5be601bc-3866-492d-558e-08de234b32c2" },
+      { company: "Ridge and Partners LLP", field: "Property", position: "Evolve Graduate Programme 2026", link: "https://ridge.co.uk/careers/graduate-scheme/" },
+      { company: "Ridge and Partners LLP", field: "Building Surveying", position: "Graduate Building Surveyor (Evolve) 2026", link: "https://ridge.co.uk/careers/graduate-scheme/" },
+      { company: "Rockborne", field: "Data", position: "Graduate Data Training Programme 2025", link: "https://rockborne.com/graduates/" },
+      { company: "Shell", field: "Various", position: "Shell Graduate Programme 2026", link: "https://www.shell.com/careers/about-careers-at-shell/shell-graduate-programme.html" },
+      { company: "Sigma Labs", field: "Data", position: "Data Consultant Graduate Programme (February 2026 Cohort)", link: "https://www.sigmalabs.co.uk/our-careers" },
+      { company: "Skanska", field: "Quantity Surveying", position: "Graduate Quantity Surveyor Kent 2026", link: "https://www.skanska.co.uk/about-skanska/careers/early-careers/" },
+      { company: "Spence & Partners", field: "Pensions", position: "Pensions Management Graduate Trainee 2026", link: "https://www.spenceandpartners.co.uk/company/life-at-spence/" },
+      { company: "Spirit AeroSystems", field: "Engineering", position: "Engineering Graduate 2026", link: "https://careers.spiritaero.com/jobs/15549?lang=en-us" },
+      { company: "Standard Chartered", field: "Banking", position: "Wealth and Retail Banking Graduate - Hong Kong", link: "https://jobs.standardchartered.com/job/Wealth-and-Retail-Banking-Graduate-Programme-Hong-Kong-2026/41640-en_GB/?&feedid=363857" },
+      { company: "Standard Chartered", field: "Finance", position: "Financial Markets Graduate - Hong Kong", link: "https://www.sc.com/en/global-careers/early-careers/local-programmes-for-students/hong-kong-student-opportunities/" },
+      { company: "Tara Developments Limited", field: "Sales & Marketing", position: "Sales & Marketing Graduate 2026", link: "https://www.tara-group.co.uk/graduates" },
+      { company: "Tarmac", field: "Finance", position: "Finance Graduate 2026", link: "https://tarmaccareers.com/early-careers/" },
+      { company: "Tarmac", field: "IT", position: "IT (Combined Finance Automation) Graduate 2026", link: "https://careershub.tarmac.com/members/?j=7288" },
+      { company: "TFT Consultants", field: "Building Surveying", position: "Graduate Building Surveyor 2026", link: "https://www.tftconsultants.com/graduates" },
+      { company: "The AA", field: "Marketing", position: "Social Media Marketing Executive 2026", link: "https://www.theaacareers.co.uk/roles/early-careers/?sType=AA+External+Careers+Site" },
+      { company: "Unilever", field: "Cyber Security", position: "Cyber Security Unilever Future Leaders Programme 2026", link: "https://careers.unilever.com/job/united-kingdom/unilever-future-leadership-programme-technology-management-cyber-security-uk/34155/86949062576" },
+      { company: "Uniphar Group", field: "Various", position: "Medical Science, Commercial & Finance Graduate Program 2026", link: "https://uniphar.com/commercial/recruitment-and-outsourcing/" },
+      { company: "University of Dundee", field: "Research", position: "Research Assistant (Clinical Trial Assessor) 2026", link: "https://www.dundee.ac.uk/work-for-us/jobs/uod2036" },
+      { company: "University of Edinburgh", field: "Research", position: "Research, Engagement and Impact (REI) Administrator 2026", link: "https://research-office.ed.ac.uk/about" },
+      { company: "University of Edinburgh", field: "Editorial", position: "Editorial Assistant (Critical African Studies) 2026", link: "https://www.sps.ed.ac.uk/centre-african-studies" },
+      { company: "University of Warwick", field: "Engineering", position: "Graduate Trainee Engineer (Battery Materials and Cells Group) 2026", link: "https://warwick.ac.uk/fac/sci/wmg/research/research-areas/battery-materials-and-cells/" },
+      { company: "University of Warwick", field: "Engineering", position: "Graduate Trainee Engineer 2026", link: "https://warwick.ac.uk/services/lmd/graduate-scheme/" },
+      { company: "Well Pharmacy", field: "Pharmacy", position: "Trainee or Qualified Pharmacy Assistant 2026", link: "https://jobsearch.well.co.uk/jobs/job/Trainee-or-Qualified-Pharmacy-Assistant/10626" },
+      { company: "Well Pharmacy", field: "Pharmacy", position: "Trainee Pharmacy Assistant 2026", link: "https://jobsearch.well.co.uk/jobs/job/Trainee-Pharmacy-Assistant/10614" },
+      { company: "Wells Fargo", field: "Finance", position: "Commercial Real Estate Early Career Program 2026", link: "https://www.wellsfargojobs.com/en/jobs/r-505290/commercial-real-estate-early-career-program/" },
+      { company: "Wessex Water", field: "Planning", position: "Trainee Planner 2026", link: "https://careers.ytluk.co.uk/wessex-water" },
+      { company: "William Grant & Sons", field: "Technical", position: "Technical Graduate 2026", link: "https://careershub.williamgrant.com/members/modules/job/detail.php?record=3495" },
+      { company: "Willmott Dixon", field: "Building Services", position: "Building Services Management Trainee 2026", link: "https://www.willmottdixon.co.uk/trainee" },
+      { company: "Willmott Dixon", field: "Planning", position: "Planner Management Trainee 2026", link: "https://www.willmottdixon.co.uk/trainee" },
+      { company: "Wood", field: "Project Management", position: "Graduate Project Manager (Renewable Energy) 2026", link: "https://careers.woodplc.com/early-careers" },
+      { company: "Yorkshire Water", field: "Engineering", position: "Water Catchment and Production Asset Management (Engineering) Graduate 2026", link: "https://mycareers.yorkshirewater.com/go/Graduates/3963301/" }
+    ];
+
+    let currentData = [...graduateSchemes];
+    let currentSort = { column: null, ascending: true };
+
+    function renderTable(data) {
+      const tableBody = document.getElementById('tableBody');
+      const noResults = document.getElementById('noResults');
+      
+      if (data.length === 0) {
+        tableBody.innerHTML = '';
+        noResults.classList.remove('hidden');
+        return;
+      }
+      
+      noResults.classList.add('hidden');
+      
+      tableBody.innerHTML = data.map(scheme => `
+        <tr class="hover:bg-gray-50">
+          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+            ${scheme.company}
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
+            ${scheme.field}
+          </td>
+          <td class="px-6 py-4 text-sm text-blue-600">
+            <a href="${scheme.link}" target="_blank" class="hover:underline hover:text-blue-800">
+              ${scheme.position}
+              <i class="fas fa-external-link-alt ml-1 text-xs"></i>
+            </a>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function sortTable(column) {
+      const headers = document.querySelectorAll('th[data-column]');
+      
+      if (currentSort.column === column) {
+        currentSort.ascending = !currentSort.ascending;
+      } else {
+        currentSort.column = column;
+        currentSort.ascending = true;
+      }
+      
+      headers.forEach(header => {
+        header.classList.remove('sort-asc', 'sort-desc');
+      });
+      
+      const activeHeader = document.querySelector(`th[data-column="${column}"]`);
+      activeHeader.classList.add(currentSort.ascending ? 'sort-asc' : 'sort-desc');
+      
+      currentData.sort((a, b) => {
+        let aVal = a[column].toLowerCase();
+        let bVal = b[column].toLowerCase();
+        
+        if (currentSort.ascending) {
+          return aVal < bVal ? -1 : aVal > bVal ? 1 : 0;
+        } else {
+          return aVal > bVal ? -1 : aVal < bVal ? 1 : 0;
+        }
+      });
+      
+      renderTable(currentData);
+    }
+
+    function filterTable(searchTerm) {
+      searchTerm = searchTerm.toLowerCase();
+      
+      if (!searchTerm) {
+        currentData = [...graduateSchemes];
+      } else {
+        currentData = graduateSchemes.filter(scheme => 
+          scheme.company.toLowerCase().includes(searchTerm) ||
+          scheme.field.toLowerCase().includes(searchTerm) ||
+          scheme.position.toLowerCase().includes(searchTerm)
+        );
+      }
+      
+      renderTable(currentData);
+    }
+
+    // Event listeners
+    document.querySelectorAll('th[data-column]').forEach(header => {
+      header.addEventListener('click', () => {
+        sortTable(header.dataset.column);
+      });
+    });
+
+    document.getElementById('searchInput').addEventListener('input', (e) => {
+      filterTable(e.target.value);
+    });
+
+    // Initial render - sorted by company name
+    sortTable('company');
+  </script>
   
   <!-- Placeholder for the footer -->
   <div id="footer-placeholder"></div>
@@ -244,176 +528,6 @@
   <script src="nav-switcher.js"></script>
   <script src="footer.js"></script>
   <script src="share.js"></script>
-
-  <!-- Graduate Schemes Data and Sorting Script -->
-  <script>
-    const graduateSchemes = [
-      { company: "Age UK", field: "IT/Technology", role: "Junior Service Desk Analyst 2026", url: "https://www.ageuk.org.uk/about-us/jobs/current-vacancies/" },
-      { company: "Allstate", field: "Engineering", role: "Graduate Product Engineer Opportunities 2026", url: "https://www.allstateni.com/careers/graduates.aspx" },
-      { company: "Ampa Group", field: "Law", role: "Trainee Solicitor 2028", url: "https://careers.ampa.co.uk/postings/3d14ebbc-7d26-4fc0-b84c-2159d068da54" },
-      { company: "Analog Devices", field: "Engineering", role: "Associate Engineer Analog Design Engineering 2026", url: "https://www.analog.com/en/careers.html" },
-      { company: "Aon", field: "Consulting", role: "Employee Benefits Consulting Graduate Programme 2026", url: "https://jobs.aon.com/jobs/92488?lang=en-us" },
-      { company: "Aon", field: "Business Development", role: "Business Development Graduate Programme 2026", url: "https://jobs.aon.com/jobs/95094?lang=en-us" },
-      { company: "Arcadis", field: "Construction/Surveying", role: "Graduate Quantity Surveyor", url: "https://careers.arcadis.com/locations/uk/early-careers/graduates/" },
-      { company: "Arup", field: "Facilities Management", role: "Graduate Facilities Manager 2026", url: "https://www.google.com/search?q=Arup+Graduate+Facilities+Manager+2026" },
-      { company: "Arup", field: "Engineering", role: "Hydrology & Hydraulics Graduate 2026", url: "https://careers.arup.com/earlycareers/vacancy/graduate-hydrology--hydraulics-5810/5836/description/" },
-      { company: "Aviva", field: "Insurance", role: "Pricing & Underwriting Graduate Pathway 2026", url: "https://careers.aviva.co.uk/early-careers/graduates/underwriting-graduate-pathway/" },
-      { company: "Aviva", field: "Business Transformation", role: "Change & Transformation Graduate Pathway 2026", url: "https://careers.aviva.co.uk/early-careers/graduates/" },
-      { company: "Babcock International Group", field: "Engineering", role: "Digital Engineering Graduate Programme 2026", url: "https://earlycareers.babcockinternational.com/graduate-programmes/digital-engineering/" },
-      { company: "Babcock International Group", field: "Engineering", role: "Naval Architecture Graduate Programme 2026", url: "https://jobs.babcockinternational.com/Babcock/job/Devonport%2C-Plymouth-Naval-Architecture-Graduate-Programme-PL1-4SG/1245452301/" },
-      { company: "Bakkavör", field: "Manufacturing", role: "Manufacturing Graduate Programme 2026", url: "https://jobs.bakkavor.com/content/Graduate-Programmes/?locale=en_GB" },
-      { company: "Bakkavör", field: "Product Development", role: "Food Product Development for the UK Grocery Market Graduate Programme 2026", url: "https://www.bakkavorearlycareers.co.uk/graduate/product-development" },
-      { company: "Barratt Developments", field: "Sales", role: "Sales ASPIRE Graduate Programme 2026", url: "https://barrattcareers.co.uk/apprentices-graduates/aspire-programme/" },
-      { company: "Barratt Developments", field: "Planning", role: "Land and Planning ASPIRE Graduate Programme 2026", url: "https://barrattcareers.co.uk/apprentices-graduates/aspire-programme/" },
-      { company: "Barratt Developments", field: "Planning", role: "Planner 2025", url: "https://jobs.barrattcareers.co.uk/vacancies/30548/planner--gladman-developments.html" },
-      { company: "BBC", field: "Technology", role: "Software Engineering Graduate Scheme 2026", url: "https://careers.bbc.co.uk/job/BBC-Software-Engineering-Graduate-Scheme/33950-en_GB/" },
-      { company: "Benefact Group", field: "Insurance", role: "General Insurance Management Graduate Programme 2026", url: "https://careers.benefactgroup.com/jobs/6570251-general-insurance-management-graduate-programme" },
-      { company: "Botham Accounting", field: "Accounting", role: "Graduate Trainee Auditor (September) 2026", url: "https://www.bothamaccounting.co.uk/jobs/graduate-trainee-auditor-september-2026/" },
-      { company: "Botham Accounting", field: "Accounting", role: "Graduate Trainee Accountant ACA (September) 2026", url: "https://www.bothamaccounting.co.uk/jobs/graduate-trainee-aca-september-2026/" },
-      { company: "BRUSH Group", field: "Engineering", role: "Graduate Project Engineer 2026", url: "https://jobsearch.brush.eu/vacancies/vacancy-search-results.aspx" },
-      { company: "BRUSH Group", field: "Engineering", role: "Graduate Electrical Design Engineer 2026", url: "https://jobsearch.brush.eu/vacancies/vacancy-search-results.aspx" },
-      { company: "Buckinghamshire Council", field: "Planning", role: "Graduate Planning Officer 2026", url: "https://jobs.buckinghamshire.gov.uk/job_detail/336299/" },
-      { company: "Buro Happold", field: "Advisory", role: "Advisory Analyst 2026", url: "https://www.burohappold.com/careers/entry/" },
-      { company: "Buro Happold", field: "Sustainability", role: "Graduate Sustainability Consultant 2026", url: "https://vacancies.burohappold.com/jobs/job/Graduate-Sustainability-Consultant/1593" },
-      { company: "Buro Happold", field: "Environmental", role: "Graduate Environmental Consultant 2026", url: "https://vacancies.burohappold.com/jobs/job/Graduate-Environmental-Consultant/1575" },
-      { company: "Capgemini", field: "Consulting", role: "Accelerate Graduate Programme Workforce & Organisation 2026", url: "https://www.capgemini.com/gb-en/careers/career-paths/careers-at-capgemini-invent/accelerate-programme/workforce-and-organisation-pathway/" },
-      { company: "Christie's", field: "Arts/Auction", role: "Graduate Training Programme (EMEA) 2026", url: "https://www.christies.com/en/about/careers/graduate-training" },
-      { company: "Compass Group UK & Ireland Ltd", field: "Various", role: "Register your interest in our 2026 Programmes", url: "https://www.compass-group.co.uk/grads/recruitment/" },
-      { company: "Cooper Parry", field: "Accounting", role: "Audit Not For Profit Graduate 2026", url: "https://www.cooperparry.com/work-here/" },
-      { company: "Costain", field: "Engineering", role: "Graduate Mechanical Engineer 2026", url: "https://www.costain.com/careers/early-careers/graduate-roles/" },
-      { company: "Costain", field: "Engineering", role: "Graduate Electrical ICA Design Engineer 2026", url: "https://careers.costain.com/en/sites/Costain/jobs?keyword=graduate&mode=location" },
-      { company: "Costain", field: "Construction/Surveying", role: "Graduate Quantity Surveyor (Midlands & South) 2026 - Expression of Interest", url: "https://careers.costain.com/en/sites/Costain/jobs?keyword=graduate&mode=location" },
-      { company: "Costain", field: "Construction/Surveying", role: "Graduate Quantity Surveyor (North) 2026 - Expression of Interest", url: "https://careers.costain.com/en/sites/Costain/jobs?keyword=graduate&mode=location" },
-      { company: "DNV", field: "Engineering", role: "Graduate Technical Safety / Process Engineers 2026", url: "https://jobs.dnv.com/job-search/energy-systems/engineer/london-united-kingdom-aberdeen/graduate-technical-safety-process-engineers/300001359111559" },
-      { company: "Epwin Group", field: "Operations", role: "Operations Graduate 2026", url: "https://www.epwin-careers.co.uk/vacancies" },
-      { company: "Expedia Group", field: "Technology/AI", role: "Machine Learning Scientist - Masters Graduate - 2026 – London", url: "https://careers.expediagroup.com/jobs/" },
-      { company: "Expedia Group", field: "Technology/AI", role: "Machine Learning Scientist - PhD Graduate - 2026 – London", url: "https://careers.expediagroup.com/jobs/" },
-      { company: "Express Solicitors Ltd", field: "Law", role: "Graduate Scheme 2026", url: "https://www.expresssolicitors.co.uk/about/careers/graduates" },
-      { company: "Farrer & Co", field: "Marketing", role: "Junior Marketing Communications Executive 2026", url: "https://www.farrer.co.uk/careers/" },
-      { company: "Fieldfisher", field: "Law", role: "Training Contract 2028 (London)", url: "https://fieldfisher.current-vacancies.com/Jobs/Advert/3976195?cid=2074&t=Training-Contract-------London-" },
-      { company: "Fieldfisher", field: "Law", role: "Training Contract 2028 (Birmingham)", url: "https://fieldfisher.current-vacancies.com/Jobs/Advert/3976273?cid=2074&t=Training-Contract-------Birmingham-" },
-      { company: "Financial Conduct Authority", field: "Regulatory", role: "2026 Regulatory Graduate Programme – London", url: "https://www.fca.org.uk/careers/early-careers" },
-      { company: "Financial Conduct Authority", field: "Regulatory", role: "2026 Regulatory Graduate Programme – Edinburgh", url: "https://www.fca.org.uk/careers/early-careers" },
-      { company: "Financial Conduct Authority", field: "Economics", role: "2026 Economics Graduate Programme – Leeds", url: "https://www.fca.org.uk/careers/early-careers" },
-      { company: "Frontline", field: "Social Work", role: "Trainee Social Worker", url: "https://thefrontline.org.uk/become-a-social-worker/" },
-      { company: "Fugro", field: "Various", role: "Fugro Graduate Roles 2026 – Register Your Interest", url: "https://www.fugro.com/careers" },
-      { company: "Gartner", field: "Business Development", role: "Business Development Manager", url: "https://jobs.gartner.com/jobs/" },
-      { company: "Goodwin", field: "Law", role: "Trainee Solicitor Programme – 2028", url: "https://www.goodwinlaw.com/en/careers-pages/early-careers-in-the-united-kingdom" },
-      { company: "Hanson Wade Group", field: "Marketing", role: "Marketing Assistant", url: "https://careers.hansonwadegroup.com/" },
-      { company: "Hilton", field: "Finance", role: "2026 Hilton Finesse Finance Graduate Programme – EMEA", url: "https://jobs.hilton.com/emea/en/job/EUR015ME/2026-Hilton-Finesse-Finance-Graduate-Programme-Europe-Middle-East-Africa" },
-      { company: "Hilton", field: "Hotel Management", role: "2026 Elevator Graduate Programme - Europe, Middle East & Africa", url: "https://jobs.hilton.com/emea/en/job/EUR015MD/2026-Hilton-Elevator-Hotel-Leadership-Graduate-Programme-Europe-Middle-East-Africa" },
-      { company: "Igne Group Ltd", field: "Engineering", role: "Geotechnical/Geo-environmental Engineer 2026", url: "https://www.igne.com/careers" },
-      { company: "Imperial Brands", field: "Innovation", role: "Innovation Graduate", url: "https://www.imperialbrandsplc.com/careers" },
-      { company: "Johnson Matthey", field: "Chemistry", role: "Reaction Hazards Chemists 2026", url: "https://matthey.com/careers" },
-      { company: "Lidl GB", field: "Retail", role: "Retail Graduate Management Programme 2026", url: "https://careers.lidl.co.uk/early-careers/retail-graduate-management-programme" },
-      { company: "Lift Schools", field: "Education", role: "Trainee English Teacher", url: "https://www.liftschools.org/itt" },
-      { company: "Lift Schools", field: "Education", role: "Trainee Biology Teacher", url: "https://www.liftschools.org/itt-your-training" },
-      { company: "Linklaters", field: "Law", role: "Singapore – London Training Contract 2028/2029", url: "https://careers.linklaters.com/en/early-careers/your-application" },
-      { company: "Linklaters", field: "Law", role: "Direct Training Contract 2028/2029", url: "https://careers.linklaters.com/en/early-careers/your-application" },
-      { company: "Lloyds Banking Group", field: "Technology/Data", role: "Data Science and AI Graduate Scheme 2026", url: "https://www.lloydsbankinggrouptalent.com/our-opportunities/graduates/data-science-and-ai-graduate-scheme/" },
-      { company: "Lloyds Banking Group", field: "Banking", role: "Consumer Relationships Graduate Scheme 2026", url: "https://www.lloydsbankinggrouptalent.com/our-opportunities/graduates/consumer-relationships-graduate-scheme/" },
-      { company: "M Group Services", field: "Construction/Surveying", role: "Assistant Quantity Surveyor 2026", url: "https://jobs.mgroupltd.com/vacancies/45781/apprentice-quantity-surveyor.html" },
-      { company: "MBDA", field: "Engineering", role: "Systems Design Engineer Graduate Programme 2026", url: "https://www.mbdacareers.co.uk/early-careers/graduate-programmes" },
-      { company: "MBDA", field: "Engineering", role: "Electronics Engineer Graduate Programme 2026", url: "https://www.mbdacareers.co.uk/early-careers/graduate-programmes" },
-      { company: "Mercedes AMG High Performance Powertrains", field: "Engineering", role: "Quality Engineering Graduate Scheme 2026", url: "https://www.mercedes-amg-hpp.com/early-careers/" },
-      { company: "Mercedes AMG High Performance Powertrains", field: "Engineering", role: "Motor Control Graduate 2026", url: "https://www.mercedes-amg-hpp.com/early-careers/" },
-      { company: "MI5, MI6 & GCHQ", field: "Languages", role: "Arabic Language Specialist", url: "https://www.gchq-careers.co.uk/our-careers/specialist-roles/language-specialists.html" },
-      { company: "Molson Coors Beverage Company", field: "Manufacturing", role: "Production Operations Graduate (Brewing) 2026", url: "https://www.molsoncoors.com/careers" },
-      { company: "Moore Kingston Smith", field: "Accounting", role: "Audit Graduate Programme (ACA) – Varied sectors - March 2026", url: "https://mooreks.pinpointhq.com/postings/8461767d-0a34-4839-8cd5-28be08d7dc8b" },
-      { company: "National Gas", field: "Commercial", role: "Commercial Graduate Scheme (Major Programmes) 2026", url: "https://jobs.nationalgas.com/job/Sherwood-Park-Commercial-Graduate-Scheme-%28Major-Programmes%29-NG15-0ED/1330174455/" },
-      { company: "National Gas", field: "Project Management", role: "Project Management Graduate Scheme (Major Programmes) 2026", url: "https://jobs.nationalgas.com/job/Sherwood-Park-Commercial-Graduate-Scheme-%28Major-Programmes%29-NG15-0ED/1330174455/" },
-      { company: "National Gas", field: "Data Science", role: "Commercial Graduate Scheme (Data Science) 2026", url: "https://jobs.nationalgas.com/content/Early-Careers-Graduates/?locale=en_GB" },
-      { company: "National Gas", field: "Economics", role: "Commercial Graduate Scheme (Economics) 2025", url: "https://jobs.nationalgas.com/content/Early-Careers-Graduates/?locale=en_GB" },
-      { company: "Nationwide Building Society", field: "Strategy", role: "Strategy & Business Support Development Programme", url: "https://nationwide-jobs.co.uk/early-careers/graduate-programme" },
-      { company: "Nationwide Building Society", field: "Data/Analytics", role: "Data & Analytics Development Programme", url: "https://nationwide-jobs.co.uk/data-and-analytics-sdp" },
-      { company: "Network Rail", field: "Finance", role: "Finance Graduate Scheme 2026", url: "https://www.earlycareers.networkrail.co.uk/scheme/finance-graduate/" },
-      { company: "Network Rail", field: "Engineering", role: "Civil Engineering Graduate Scheme 2026", url: "https://www.earlycareers.networkrail.co.uk/scheme/civil-engineering-graduate-scheme/" },
-      { company: "Newton", field: "Consulting", role: "Graduate Consultant", url: "https://newtonimpact.com/careers/early-careers/graduate-consultant-role/" },
-      { company: "P&G", field: "Sales", role: "Sales Graduate 2026", url: "https://www.pgcareers.com/uk/en/recent-grads" },
-      { company: "Ramboll UK Ltd", field: "Engineering", role: "Building Physics Graduate 2026", url: "https://www.ramboll.com/careers/5d027aaf-8c7f-496b-5593-08de234b32c2" },
-      { company: "Ramboll UK Ltd", field: "Engineering", role: "Graduate Electrical Engineer (Data Centres) 2026", url: "https://www.ramboll.com/careers/5be601bc-3866-492d-558e-08de234b32c2" },
-      { company: "Ridge and Partners LLP", field: "Surveying", role: "Evolve Graduate Programme 2026", url: "https://ridge.co.uk/careers/graduate-scheme/" },
-      { company: "Ridge and Partners LLP", field: "Surveying", role: "Graduate Building Surveyor (Evolve) 2026", url: "https://ridge.co.uk/careers/graduate-scheme/" },
-      { company: "Rockborne", field: "Data/Analytics", role: "Graduate Data Training Programme 2025", url: "https://rockborne.com/graduates/" },
-      { company: "Shell", field: "Energy", role: "Shell Graduate Programme 2026", url: "https://www.shell.com/careers/about-careers-at-shell/shell-graduate-programme.html" },
-      { company: "Sigma Labs", field: "Data/Analytics", role: "Data Consultant Graduate Programme (February 2026 Cohort)", url: "https://www.sigmalabs.co.uk/our-careers" },
-      { company: "Skanska", field: "Construction/Surveying", role: "Graduate Quantity Surveyor Kent 2026", url: "https://www.skanska.co.uk/about-skanska/careers/early-careers/" },
-      { company: "Spence & Partners", field: "Pensions", role: "Pensions Management Graduate Trainee 2026", url: "https://www.spenceandpartners.co.uk/company/life-at-spence/" },
-      { company: "Spirit AeroSystems", field: "Engineering", role: "Engineering Graduate 2026", url: "https://careers.spiritaero.com/jobs/15549?lang=en-us" },
-      { company: "Standard Chartered", field: "Banking", role: "Wealth and Retail Banking Graduate - Hong Kong", url: "https://jobs.standardchartered.com/job/Wealth-and-Retail-Banking-Graduate-Programme-Hong-Kong-2026/41640-en_GB/?&feedid=363857" },
-      { company: "Standard Chartered", field: "Finance", role: "Financial Markets Graduate - Hong Kong", url: "https://www.sc.com/en/global-careers/early-careers/local-programmes-for-students/hong-kong-student-opportunities/" },
-      { company: "Tara Developments Limited", field: "Sales/Marketing", role: "Sales & Marketing Graduate 2026", url: "https://www.tara-group.co.uk/graduates" },
-      { company: "Tarmac", field: "Finance", role: "Finance Graduate 2026", url: "https://tarmaccareers.com/early-careers/" },
-      { company: "Tarmac", field: "IT/Finance", role: "IT (Combined Finance Automation) Graduate 2026", url: "https://careershub.tarmac.com/members/?j=7288" },
-      { company: "TFT Consultants", field: "Surveying", role: "Graduate Building Surveyor 2026", url: "https://www.tftconsultants.com/graduates" },
-      { company: "The AA", field: "Marketing", role: "Social Media Marketing Executive 2026", url: "https://www.theaacareers.co.uk/roles/early-careers/?sType=AA+External+Careers+Site" },
-      { company: "Unilever", field: "Cyber Security", role: "Cyber Security Unilever Future Leaders Programme 2026", url: "https://careers.unilever.com/job/united-kingdom/unilever-future-leadership-programme-technology-management-cyber-security-uk/34155/86949062576" },
-      { company: "Uniphar Group", field: "Healthcare/Science", role: "Medical Science, Commercial & Finance Graduate Program 2026", url: "https://uniphar.com/commercial/recruitment-and-outsourcing/" },
-      { company: "University of Dundee", field: "Research", role: "Research Assistant (Clinical Trial Assessor) 2026", url: "https://www.dundee.ac.uk/work-for-us/jobs/uod2036" },
-      { company: "University of Edinburgh", field: "Research", role: "Research, Engagement and Impact (REI) Administrator 2026", url: "https://research-office.ed.ac.uk/about" },
-      { company: "University of Edinburgh", field: "Editorial", role: "Editorial Assistant (Critical African Studies) 2026", url: "https://www.sps.ed.ac.uk/centre-african-studies" },
-      { company: "University of Warwick", field: "Engineering", role: "Graduate Trainee Engineer (Battery Materials and Cells Group) 2026", url: "https://warwick.ac.uk/fac/sci/wmg/research/research-areas/battery-materials-and-cells/" },
-      { company: "University of Warwick", field: "Engineering", role: "Graduate Trainee Engineer 2026", url: "https://warwick.ac.uk/services/lmd/graduate-scheme/" },
-      { company: "Well Pharmacy", field: "Pharmacy", role: "Trainee or Qualified Pharmacy Assistant 2026", url: "https://jobsearch.well.co.uk/jobs/job/Trainee-or-Qualified-Pharmacy-Assistant/10626" },
-      { company: "Well Pharmacy", field: "Pharmacy", role: "Trainee Pharmacy Assistant 2026", url: "https://jobsearch.well.co.uk/jobs/job/Trainee-Pharmacy-Assistant/10614" },
-      { company: "Wells Fargo", field: "Real Estate/Finance", role: "Commercial Real Estate Early Career Program 2026", url: "https://www.wellsfargojobs.com/en/jobs/r-505290/commercial-real-estate-early-career-program/" },
-      { company: "Wessex Water", field: "Planning", role: "Trainee Planner 2026", url: "https://careers.ytluk.co.uk/wessex-water" },
-      { company: "William Grant & Sons", field: "Manufacturing/Technical", role: "Technical Graduate 2026", url: "https://careershub.williamgrant.com/members/modules/job/detail.php?record=3495" },
-      { company: "Willmott Dixon", field: "Construction", role: "Building Services Management Trainee 2026", url: "https://www.willmottdixon.co.uk/trainee" },
-      { company: "Willmott Dixon", field: "Planning", role: "Planner Management Trainee 2026", url: "https://www.willmottdixon.co.uk/trainee" },
-      { company: "Wood", field: "Project Management", role: "Graduate Project Manager (Renewable Energy) 2026", url: "https://careers.woodplc.com/early-careers" },
-      { company: "Yorkshire Water", field: "Engineering", role: "Water Catchment and Production Asset Management (Engineering) Graduate 2026", url: "https://mycareers.yorkshirewater.com/go/Graduates/3963301/" }
-    ];
-
-    let currentSort = 'company';
-
-    function renderSchemes(schemes) {
-      const container = document.getElementById('schemesContainer');
-      container.innerHTML = '';
-
-      schemes.forEach((scheme, index) => {
-        const schemeDiv = document.createElement('div');
-        schemeDiv.className = 'scheme-item bg-white p-6 rounded-lg shadow-md border-l-4 border-indigo-500';
-        schemeDiv.innerHTML = `
-          <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-            <div class="flex-1">
-              <h3 class="text-xl font-bold text-gray-800 mb-2">
-                <i class="fas fa-building text-indigo-600 mr-2"></i>${scheme.company}
-              </h3>
-              <p class="text-sm text-gray-600 mb-1">
-                <i class="fas fa-folder text-purple-600 mr-2"></i><strong>Field:</strong> ${scheme.field}
-              </p>
-              <p class="text-gray-700">
-                <i class="fas fa-graduation-cap text-green-600 mr-2"></i>${scheme.role}
-              </p>
-            </div>
-            <div>
-              <a href="${scheme.url}" target="_blank" class="inline-flex items-center px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition shadow-md">
-                <i class="fas fa-external-link-alt mr-2"></i>Apply Now
-              </a>
-            </div>
-          </div>
-        `;
-        container.appendChild(schemeDiv);
-      });
-    }
-
-    function sortBy(type) {
-      currentSort = type;
-      let sorted = [...graduateSchemes];
-      
-      if (type === 'company') {
-        sorted.sort((a, b) => a.company.localeCompare(b.company));
-      } else if (type === 'field') {
-        sorted.sort((a, b) => a.field.localeCompare(b.field));
-      }
-      
-      renderSchemes(sorted);
-    }
-
-    // Initial render
-    renderSchemes(graduateSchemes);
-  </script>
 
   <!-- Nav Toggle Script -->
   <script>
