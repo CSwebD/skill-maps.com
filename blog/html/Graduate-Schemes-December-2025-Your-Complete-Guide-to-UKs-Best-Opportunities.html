@@ -16,7 +16,12 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
-  <style>body { font-family: 'Inter', sans-serif; } html { scroll-behavior: smooth; }</style>
+  <style>
+    body { font-family: 'Inter', sans-serif; } 
+    html { scroll-behavior: smooth; }
+    .scheme-item { transition: all 0.3s ease; }
+    .scheme-item:hover { transform: translateX(5px); background-color: #f9fafb; }
+  </style>
   <!-- Structured Data -->
   <script type="application/ld+json">
   {
@@ -75,16 +80,9 @@
     </div>
   </section>
 
-  <!-- Featured Image -->
-  <section class="py-8">
-    <div class="max-w-4xl mx-auto px-6">
-      <img src="/blog/images/0012.png" alt="Graduate schemes December 2025 opportunities" class="w-full rounded-lg shadow-lg">
-    </div>
-  </section>
-
   <!-- Article Section -->
   <section class="py-16">
-    <div class="max-w-4xl mx-auto px-6 space-y-12">
+    <div class="max-w-6xl mx-auto px-6 space-y-12">
 
       <!-- Introduction -->
       <div>
@@ -107,7 +105,6 @@
       <div class="bg-gray-100 p-4 rounded-lg text-center my-8">
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7439109164508333"
              crossorigin="anonymous"></script>
-        <!-- Index-Header -->
         <ins class="adsbygoogle"
              style="display:block"
              data-ad-client="ca-pub-7439109164508333"
@@ -119,95 +116,37 @@
         </script>
       </div>
 
-      <!-- Section 1: What Are Graduate Schemes? -->
-      <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-lg border-l-4 border-blue-600">
-        <h2 class="text-2xl font-bold mb-4 text-blue-700">What Actually Are Graduate Schemes?</h2>
-        
-        <h3 class="text-xl font-semibold mb-3 text-gray-800">The Basics</h3>
-        <p class="text-gray-700 mb-4">
-          A graduate scheme is essentially a structured training programme designed specifically for recent university graduates. Unlike standard graduate jobs where you're hired for one specific role, graduate schemes typically last between one and three years and often include rotations through different departments.
-        </p>
-        <p class="text-gray-700 mb-4">
-          Think of it as a professional apprenticeship for graduates. You're paid a full salary—usually quite competitive—whilst receiving formal training, mentorship, and exposure to multiple areas of the business. The goal is to fast-track talented individuals into more senior positions by giving them a comprehensive understanding of how the organisation operates.
-        </p>
-
-        <h3 class="text-xl font-semibold mb-3 text-gray-800">Why Companies Run Graduate Schemes</h3>
-        <p class="text-gray-700 mb-4">
-          From the employer's perspective, graduate schemes are talent pipelines. They're investing in developing future leaders who understand their company culture, systems, and strategic priorities. It's far more cost-effective to train someone from scratch than to hire experienced professionals at senior levels who might not fit the organisational culture.
-        </p>
-        <p class="text-gray-700 mb-4">
-          For you as a graduate, this means opportunities at organisations you might not otherwise access. Top firms like Deloitte, the NHS, Goldman Sachs, and the Civil Service actively seek out bright graduates who show potential rather than requiring years of experience. It's one of the few times in your career where your degree classification and potential matter more than your CV.
-        </p>
-
-        <h3 class="text-xl font-semibold mb-3 text-gray-800">The Reality Check</h3>
-        <p class="text-gray-700 mb-4">
-          Here's what they don't always tell you: graduate schemes are brutally competitive. We're talking about acceptance rates that would make Oxbridge blush. Some schemes receive over a hundred applications for every position. The selection process can involve multiple stages—online applications, psychometric tests, video interviews, assessment centres, and final interviews—spread across several months.
-        </p>
-        <p class="text-gray-700 mb-4">
-          But don't let that discourage you. The competition is stiff precisely because these programmes offer genuine value. The average graduate scheme salary starts at around £29,000 to £32,000, but can reach £47,000 for specialist programmes. More importantly, research shows that eighty-three per cent of graduates receive salary increases after completing their schemes, with average salaries rising from £32,000 to £50,000 over three years—a fifty-six per cent increase.
-        </p>
+      <!-- Important Note -->
+      <div class="bg-yellow-50 border-l-4 border-yellow-500 p-6 rounded-lg">
+        <div class="flex items-start">
+          <i class="fas fa-exclamation-triangle text-yellow-600 text-2xl mr-4 mt-1"></i>
+          <div>
+            <h3 class="text-lg font-semibold text-yellow-900 mb-2">Important Notice</h3>
+            <p class="text-gray-700">
+              This is a list of graduate schemes that expire this month (December 2025). Some of them may still be active while others may have already closed. We recommend verifying the application status directly on the company's career page before applying.
+            </p>
+          </div>
+        </div>
       </div>
 
-      <!-- Section 2: Types of Graduate Schemes -->
+      <!-- Graduate Schemes List -->
       <div>
-        <h2 class="text-2xl font-bold mb-4 text-indigo-600">Types of Graduate Schemes Available</h2>
+        <h2 class="text-3xl font-bold mb-6 text-indigo-600">December 2025 Graduate Schemes</h2>
         
-        <div class="grid md:grid-cols-2 gap-6">
-          <!-- Professional Services -->
-          <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-purple-500">
-            <h3 class="text-xl font-bold mb-3 text-purple-700"><i class="fas fa-chart-line mr-2"></i>Professional Services</h3>
-            <p class="text-gray-700 mb-3">Accounting, consulting, audit, and advisory roles at firms like Deloitte, PwC, EY, KPMG, and specialist consultancies.</p>
-            <p class="text-sm text-gray-600"><strong>Typical duration:</strong> 2-3 years<br><strong>Common qualifications:</strong> ACA, ACCA, CTA</p>
-          </div>
+        <!-- Sorting Controls -->
+        <div class="bg-white p-4 rounded-lg shadow-md mb-6 flex flex-wrap gap-4 items-center">
+          <label class="font-semibold text-gray-700">Sort by:</label>
+          <button onclick="sortBy('company')" class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
+            <i class="fas fa-building mr-2"></i>Company Name
+          </button>
+          <button onclick="sortBy('field')" class="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition">
+            <i class="fas fa-folder mr-2"></i>Field
+          </button>
+        </div>
 
-          <!-- Technology & Engineering -->
-          <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-blue-500">
-            <h3 class="text-xl font-bold mb-3 text-blue-700"><i class="fas fa-code mr-2"></i>Technology & Engineering</h3>
-            <p class="text-gray-700 mb-3">Software development, data science, cyber security, and engineering programmes across tech giants and innovative startups.</p>
-            <p class="text-sm text-gray-600"><strong>Typical duration:</strong> 1-2 years<br><strong>Focus areas:</strong> Full-stack development, DevOps, AI/ML</p>
-          </div>
-
-          <!-- Finance & Banking -->
-          <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-green-500">
-            <h3 class="text-xl font-bold mb-3 text-green-700"><i class="fas fa-pound-sign mr-2"></i>Finance & Banking</h3>
-            <p class="text-gray-700 mb-3">Investment banking, asset management, trading, and commercial banking at institutions like Goldman Sachs, UBS, JP Morgan, and NatWest.</p>
-            <p class="text-sm text-gray-600"><strong>Typical duration:</strong> 2-3 years<br><strong>Salary range:</strong> £35,000-£50,000+</p>
-          </div>
-
-          <!-- Engineering & Construction -->
-          <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-orange-500">
-            <h3 class="text-xl font-bold mb-3 text-orange-700"><i class="fas fa-hard-hat mr-2"></i>Engineering & Construction</h3>
-            <p class="text-gray-700 mb-3">Civil, mechanical, electrical engineering, quantity surveying, and project management with major infrastructure firms.</p>
-            <p class="text-sm text-gray-600"><strong>Typical duration:</strong> 2-4 years<br><strong>Common routes:</strong> Chartered status pathways</p>
-          </div>
-
-          <!-- Law & Legal Services -->
-          <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-red-500">
-            <h3 class="text-xl font-bold mb-3 text-red-700"><i class="fas fa-balance-scale mr-2"></i>Law & Legal Services</h3>
-            <p class="text-gray-700 mb-3">Training contracts, graduate apprenticeships, and paralegal programmes leading to solicitor qualification.</p>
-            <p class="text-sm text-gray-600"><strong>Typical duration:</strong> 2-3 years<br><strong>Outcome:</strong> SQE qualification</p>
-          </div>
-
-          <!-- Public Sector & Civil Service -->
-          <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-indigo-500">
-            <h3 class="text-xl font-bold mb-3 text-indigo-700"><i class="fas fa-landmark mr-2"></i>Public Sector & Civil Service</h3>
-            <p class="text-gray-700 mb-3">Fast Stream programmes, NHS management schemes, local government, and regulatory bodies like the FCA.</p>
-            <p class="text-sm text-gray-600"><strong>Typical duration:</strong> 2-3 years<br><strong>Focus:</strong> Policy, leadership, operations</p>
-          </div>
-
-          <!-- Retail & FMCG -->
-          <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-pink-500">
-            <h3 class="text-xl font-bold mb-3 text-pink-700"><i class="fas fa-shopping-cart mr-2"></i>Retail & FMCG</h3>
-            <p class="text-gray-700 mb-3">Management programmes, buying, supply chain, and marketing roles with companies like Lidl, Tesco, Unilever, and Asda.</p>
-            <p class="text-sm text-gray-600"><strong>Typical duration:</strong> 1-2 years<br><strong>Focus:</strong> Store operations, commercial</p>
-          </div>
-
-          <!-- Science & Research -->
-          <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-teal-500">
-            <h3 class="text-xl font-bold mb-3 text-teal-700"><i class="fas fa-flask mr-2"></i>Science & Research</h3>
-            <p class="text-gray-700 mb-3">R&D, laboratory work, pharmaceuticals, and environmental sciences with organisations like GSK, AstraZeneca, and research institutions.</p>
-            <p class="text-sm text-gray-600"><strong>Typical duration:</strong> 1-3 years<br><strong>Requirements:</strong> Relevant science degree</p>
-          </div>
+        <!-- Graduate Schemes Container -->
+        <div id="schemesContainer" class="space-y-4">
+          <!-- Schemes will be rendered here by JavaScript -->
         </div>
       </div>
 
@@ -226,114 +165,57 @@
         </script>
       </div>
 
-      <!-- Section 3: Application Process -->
-      <div class="bg-gradient-to-br from-yellow-50 to-amber-50 p-6 rounded-lg border-l-4 border-yellow-600">
-        <h2 class="text-2xl font-bold mb-4 text-yellow-700">The Application Process: What to Expect</h2>
-        
-        <h3 class="text-xl font-semibold mb-3 text-gray-800">Stage 1: Online Application</h3>
-        <p class="text-gray-700 mb-4">
-          This is where most candidates fall at the first hurdle. The application form isn't just about filling in your details—it's your first interview. Expect to answer competency-based questions, sometimes requiring 250-300 words each. Questions like "Describe a time when you demonstrated leadership" or "Why do you want to work for our company?" aren't casual—they're being scored against specific criteria.
-        </p>
-        <p class="text-gray-700 mb-4">
-          <strong>Top tip from experience:</strong> Don't use generic answers. Every single application should be tailored to that specific company and programme. Reference their values, recent news, specific aspects of their scheme that appeal to you. Recruiters can spot copy-paste answers a mile away, and they're an instant rejection.
-        </p>
-
-        <h3 class="text-xl font-semibold mb-3 text-gray-800">Stage 2: Psychometric Testing</h3>
-        <p class="text-gray-700 mb-4">
-          Around eighty-four per cent of UK employers use online aptitude tests in their graduate recruitment process. These typically include numerical reasoning (interpreting data and graphs), verbal reasoning (analysing written information), and logical reasoning (pattern recognition). Some also include situational judgement tests where you respond to workplace scenarios.
-        </p>
-        <p class="text-gray-700 mb-4">
-          Here's what helped me: practice beforehand. Genuinely, practice makes a massive difference. Sites like AssessmentDay, JobTestPrep, and GraduateFirst offer test simulations. Familiarity with question formats significantly improves both speed and accuracy. The tests are usually timed, so knowing what to expect reduces anxiety and helps you perform better.
-        </p>
-
-        <h3 class="text-xl font-semibold mb-3 text-gray-800">Stage 3: Video Interviews</h3>
-        <p class="text-gray-700 mb-4">
-          Video interviews have become standard since 2020. These can be either pre-recorded (you record responses to questions with limited preparation time) or live with a recruiter. For pre-recorded interviews, you'll typically get 30 seconds to read a question and 2-3 minutes to respond.
-        </p>
-        <p class="text-gray-700 mb-4">
-          <strong>Practical advice:</strong> Set up in a quiet, well-lit space. Test your technology beforehand. Look at the camera, not the screen. Dress professionally from head to toe (yes, even though they can only see your top half—it affects your mindset). And please, remove anything embarrassing from your background. One candidate got rejected because their shelf had a collection of empty beer bottles visible behind them.
-        </p>
-
-        <h3 class="text-xl font-semibold mb-3 text-gray-800">Stage 4: Assessment Centre</h3>
-        <p class="text-gray-700 mb-4">
-          If you've made it this far, congratulations—you're in the top ten to twenty per cent of applicants. Assessment centres typically last a full day and include multiple activities: group exercises, presentations, case studies, individual interviews, and sometimes written tasks.
-        </p>
-        <p class="text-gray-700 mb-4">
-          The group exercise is where many people slip up. You're being assessed on teamwork, communication, and leadership—not on having the loudest voice or the "best" answer. Listen actively, build on others' ideas, facilitate discussion, and be aware of time. The candidates who dominate the conversation rarely get offers. The ones who bring the whole team to a strong conclusion do.
-        </p>
-
-        <h3 class="text-xl font-semibold mb-3 text-gray-800">Stage 5: Final Interview</h3>
-        <p class="text-gray-700 mb-4">
-          The final interview is usually with senior managers or partners. Expect in-depth competency questions using the STAR format (Situation, Task, Action, Result). They'll probe your examples, asking follow-up questions to test whether you're genuinely describing your experiences or embellishing.
-        </p>
-        <p class="text-gray-700 mb-4">
-          Prepare at least five to seven strong examples from your university projects, part-time work, volunteering, or extracurricular activities. Make sure they cover different competencies: leadership, teamwork, problem-solving, resilience, communication, and commercial awareness. Quantify your results wherever possible—"increased social media engagement by 40%" is much stronger than "improved our social media presence."
-        </p>
-      </div>
-
-      <!-- Section 4: Practical Application Tips -->
-      <div>
-        <h2 class="text-2xl font-bold mb-4 text-indigo-600">How to Actually Stand Out</h2>
+      <!-- The Application Process -->
+      <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-lg border-l-4 border-blue-600">
+        <h2 class="text-3xl font-bold mb-6 text-blue-900"><i class="fas fa-clipboard-list mr-3"></i>The Application Process</h2>
         
         <div class="space-y-6">
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-semibold mb-3 text-gray-800"><i class="fas fa-clock text-indigo-600 mr-2"></i>Apply Early—Seriously</h3>
-            <p class="text-gray-700 mb-3">
-              Many top schemes operate on rolling admissions. This means they review applications as they come in and can close when they've found enough quality candidates—sometimes weeks before the official deadline. Aim to submit within the first two to three weeks of applications opening.
-            </p>
+          <div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-3">1. Research & Preparation</h3>
             <p class="text-gray-700">
-              I made this mistake in my first round of applications. I waited until mid-November thinking I had plenty of time until the January deadline. By the time I submitted, several firms had already filled most of their spots and were only occasionally inviting exceptional candidates. Don't repeat my error.
+              Start by thoroughly researching companies and their graduate schemes. Understand their values, culture, and what they're looking for in candidates. Make a list of 5-10 schemes that genuinely interest you rather than applying to dozens.
             </p>
           </div>
 
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-semibold mb-3 text-gray-800"><i class="fas fa-search text-indigo-600 mr-2"></i>Research Thoroughly</h3>
-            <p class="text-gray-700 mb-3">
-              Generic applications are death. Every company can tell when you've copy-pasted answers. Before applying, spend genuine time understanding the company. Read their annual reports, recent news articles, follow them on LinkedIn, watch employee testimonials on YouTube. Understand their values, culture, recent projects, and strategic priorities.
-            </p>
+          <div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-3">2. Application Form</h3>
             <p class="text-gray-700">
-              Reference specific things in your application. "I'm impressed by your AI for Good initiative" beats "I admire your commitment to innovation" every single time. Specificity demonstrates genuine interest.
+              Most graduate schemes require an online application form covering your academic background, work experience, and competency-based questions. Tailor each application to the specific company—generic applications rarely succeed. Use the STAR method (Situation, Task, Action, Result) for competency questions.
             </p>
           </div>
 
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-semibold mb-3 text-gray-800"><i class="fas fa-bullseye text-indigo-600 mr-2"></i>Quality Over Quantity</h3>
-            <p class="text-gray-700 mb-3">
-              It's tempting to apply to fifty schemes and hope something sticks. Resist this urge. Five really strong, tailored applications will yield better results than twenty rushed ones. Each application should feel personalised to that specific company and role.
-            </p>
+          <div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-3">3. Online Tests</h3>
             <p class="text-gray-700">
-              I've applied to both extremes. In my first attempt, I sent out 30 applications with minor tweaks. Got three interviews, zero offers. Second attempt, I focused on 12 carefully chosen schemes with fully customised applications. Got seven interviews, two offers. The difference was night and day.
+              Expect to complete numerical reasoning, verbal reasoning, and situational judgement tests. Practice these in advance using free resources. Most tests are timed, so familiarising yourself with the format helps manage time pressure.
             </p>
           </div>
 
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-semibold mb-3 text-gray-800"><i class="fas fa-users text-indigo-600 mr-2"></i>Use Your Network</h3>
-            <p class="text-gray-700 mb-3">
-              Attend virtual and in-person careers fairs. Connect with current graduate scheme participants on LinkedIn and politely ask for 15-minute informal chats. Most people are surprisingly willing to help if you're respectful and specific about what you'd like to learn.
-            </p>
+          <div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-3">4. Video Interview</h3>
             <p class="text-gray-700">
-              Follow companies on LinkedIn and Twitter. They often share application tips, what they're looking for, and insights into their assessment process. The NHS Graduate Management Training Scheme, for instance, regularly posts tips from current trainees about preparing for assessment centres.
+              Many schemes now use pre-recorded video interviews where you answer questions on camera. Prepare thoroughly, practice speaking clearly, and ensure good lighting and a professional background.
             </p>
           </div>
 
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-semibold mb-3 text-gray-800"><i class="fas fa-chart-line text-indigo-600 mr-2"></i>If You Have a 2:2</h3>
-            <p class="text-gray-700 mb-3">
-              Many graduate schemes require a 2:1 degree minimum, but not all. Companies like BBC, some Civil Service streams, Lidl, and various smaller firms focus more on aptitude and fit than degree classification. Some have even started running internal assessments rather than requiring CVs, opening opportunities for less academic but highly capable candidates.
-            </p>
+          <div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-3">5. Assessment Centre</h3>
             <p class="text-gray-700">
-              If you have a 2:2, compensate with strong work experience, impressive extracurriculars, clear evidence of skills development, and stellar application answers. Also, consider schemes that explicitly welcome 2:2 applicants rather than wasting time on those with rigid academic requirements.
+              The final stage typically includes group exercises, individual presentations, case studies, and formal interviews. Demonstrate teamwork, leadership, analytical thinking, and cultural fit. Be yourself—assessors are looking for authenticity as well as competence.
             </p>
           </div>
 
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-semibold mb-3 text-gray-800"><i class="fas fa-smile text-indigo-600 mr-2"></i>Show Personality</h3>
-            <p class="text-gray-700 mb-3">
-              Graduate schemes aren't just about qualifications—they're about finding people who'll fit into the team and represent the company well. Let your personality come through in applications and interviews. Be professional, yes, but also be human.
-            </p>
-            <p class="text-gray-700">
-              I've seen candidates lose offers because they were too robotic in interviews. Companies want people who are engaging, authentic, and genuinely enthusiastic. If you're excited about the opportunity, show it. If you're nervous, it's okay to acknowledge that too. Authenticity resonates.
-            </p>
+          <div class="bg-white p-6 rounded-lg shadow-md mt-6">
+            <h4 class="font-semibold text-gray-800 mb-3"><i class="fas fa-lightbulb text-yellow-500 mr-2"></i>Top Application Tips</h4>
+            <ul class="space-y-2 text-gray-700">
+              <li>• Start applications early—don't wait until the deadline</li>
+              <li>• Customise every application to the specific scheme</li>
+              <li>• Use concrete examples from your experience</li>
+              <li>• Proofread everything multiple times</li>
+              <li>• Ask for feedback if you're rejected</li>
+              <li>• Track your applications in a spreadsheet</li>
+              <li>• Follow up professionally after interviews</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -352,153 +234,6 @@
              (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
       </div>
-
-      <!-- Section 5: UK Graduate Schemes -->
-      <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-lg border-l-4 border-green-600">
-        <h2 class="text-2xl font-bold mb-4 text-green-700">UK Graduate Schemes - December 2025 & Beyond</h2>
-        <p class="text-gray-700 mb-6">
-          Below are major UK graduate schemes currently accepting applications or operating on rolling recruitment. Most December deadlines fall between early to mid-December, with many schemes reviewing applications on a rolling basis. Always check the company's official careers page for the most current deadline information.
-        </p>
-
-        <div class="bg-white p-6 rounded-lg shadow">
-          <h3 class="text-xl font-semibold mb-4 text-gray-800"><i class="fas fa-building text-indigo-600 mr-2"></i>Professional Services & Consulting</h3>
-          <ul class="space-y-3 text-gray-700">
-            <li>• <a href="https://careers.deloitte.com/uk/en/students-graduates" target="_blank" class="text-blue-600 hover:underline font-medium">Deloitte UK - Graduate Programmes</a> - Audit, Consulting, Tax, Technology (Rolling recruitment)</li>
-            <li>• <a href="https://www.pwc.co.uk/careers/student-jobs/student-opportunities.html" target="_blank" class="text-blue-600 hover:underline font-medium">PwC UK - Graduate Opportunities</a> - Multiple streams across all service lines</li>
-            <li>• <a href="https://www.ey.com/en_uk/careers/students" target="_blank" class="text-blue-600 hover:underline font-medium">EY UK - Student & Graduate Programmes</a> - Assurance, Tax, Strategy & Transactions, Technology</li>
-            <li>• <a href="https://kpmgcareers.co.uk/graduate" target="_blank" class="text-blue-600 hover:underline font-medium">KPMG UK - Graduate Programmes</a> - Audit, Tax, Deal Advisory, Technology</li>
-            <li>• <a href="https://www.accenture.com/gb-en/careers/students-graduates" target="_blank" class="text-blue-600 hover:underline font-medium">Accenture UK - Graduate & Entry Level</a> - Technology, Consulting, Operations</li>
-            <li>• <a href="https://www.capgemini.com/careers" target="_blank" class="text-blue-600 hover:underline font-medium">Capgemini - UK Graduate Programme</a> - Technology & Business Consulting</li>
-          </ul>
-        </div>
-
-        <div class="bg-white p-6 rounded-lg shadow mt-4">
-          <h3 class="text-xl font-semibold mb-4 text-gray-800"><i class="fas fa-landmark text-green-600 mr-2"></i>Finance & Banking</h3>
-          <ul class="space-y-3 text-gray-700">
-            <li>• <a href="https://www.goldmansachs.com/careers/students/programs/emea/united-kingdom/index.html" target="_blank" class="text-blue-600 hover:underline font-medium">Goldman Sachs - UK Graduate Programmes</a> - Investment Banking, Markets, Engineering</li>
-            <li>• <a href="https://www.jpmorgan.com/global/careers/students" target="_blank" class="text-blue-600 hover:underline font-medium">J.P. Morgan - Early Careers UK</a> - Banking, Markets, Technology</li>
-            <li>• <a href="https://www.morganstanley.com/people-opportunities/students-graduates" target="_blank" class="text-blue-600 hover:underline font-medium">Morgan Stanley - Students & Graduates</a> - Multiple divisions</li>
-            <li>• <a href="https://www.ubs.com/global/en/careers/students.html" target="_blank" class="text-blue-600 hover:underline font-medium">UBS - Graduate Talent Programme</a> - Global Banking, Wealth Management</li>
-            <li>• <a href="https://www.barclays.co.uk/student-and-graduate/" target="_blank" class="text-blue-600 hover:underline font-medium">Barclays - Graduate Programmes</a> - Banking, Technology, Operations</li>
-            <li>• <a href="https://www.lloydsbankinggrouptalent.com/graduates" target="_blank" class="text-blue-600 hover:underline font-medium">Lloyds Banking Group - Graduate Schemes</a> - Multiple schemes including Data Science & AI</li>
-            <li>• <a href="https://jobs.natwest.com/graduate" target="_blank" class="text-blue-600 hover:underline font-medium">NatWest Group - Graduate Programmes</a> - Commercial, Technology, Engineering</li>
-            <li>• <a href="https://www.hsbc.com/careers/students-and-graduates" target="_blank" class="text-blue-600 hover:underline font-medium">HSBC - Graduate Programmes</a> - Global Banking & Markets</li>
-            <li>• <a href="https://www.santander.co.uk/about-santander/careers/students-graduates" target="_blank" class="text-blue-600 hover:underline font-medium">Santander UK - Graduate Programme</a> - Finance, Technology</li>
-          </ul>
-        </div>
-
-        <div class="bg-white p-6 rounded-lg shadow mt-4">
-          <h3 class="text-xl font-semibold mb-4 text-gray-800"><i class="fas fa-code text-blue-600 mr-2"></i>Technology</h3>
-          <ul class="space-y-3 text-gray-700">
-            <li>• <a href="https://careers.google.com/students/" target="_blank" class="text-blue-600 hover:underline font-medium">Google - Students & Grads</a> - Software Engineering, Product Management</li>
-            <li>• <a href="https://www.metacareers.com/careerprograms/students" target="_blank" class="text-blue-600 hover:underline font-medium">Meta - University Programs</a> - Engineering, Data Science</li>
-            <li>• <a href="https://www.amazon.jobs/en-gb/teams/university-recruiting" target="_blank" class="text-blue-600 hover:underline font-medium">Amazon - University Recruiting</a> - Software Development, Business</li>
-            <li>• <a href="https://www.microsoft.com/en-us/university" target="_blank" class="text-blue-600 hover:underline font-medium">Microsoft - University Programmes</a> - Engineering, Business</li>
-            <li>• <a href="https://careers.bbc.co.uk/content/Apprentices-and-Graduates" target="_blank" class="text-blue-600 hover:underline font-medium">BBC - Graduate Schemes</a> - Software Engineering, Production, Journalism</li>
-            <li>• <a href="https://www.bt.com/careers/apprentices-and-graduates" target="_blank" class="text-blue-600 hover:underline font-medium">BT - Graduate Programme</a> - Technology & Engineering</li>
-          </ul>
-        </div>
-
-        <div class="bg-white p-6 rounded-lg shadow mt-4">
-          <h3 class="text-xl font-semibold mb-4 text-gray-800"><i class="fas fa-balance-scale text-red-600 mr-2"></i>Law</h3>
-          <ul class="space-y-3 text-gray-700">
-            <li>• <a href="https://www.linklaters.com/en/careers/students-and-graduates" target="_blank" class="text-blue-600 hover:underline font-medium">Linklaters - Training Contracts</a> - 2028/2029 intake</li>
-            <li>• <a href="https://www.cliffordchance.com/careers/what-we-look-for/students-and-graduates.html" target="_blank" class="text-blue-600 hover:underline font-medium">Clifford Chance - Vacation Schemes & Training Contracts</a></li>
-            <li>• <a href="https://www.allenovery.com/en-gb/global/careers/careers-in-the-uk/students-and-graduates" target="_blank" class="text-blue-600 hover:underline font-medium">Allen & Overy - Graduate Recruitment</a></li>
-            <li>• <a href="https://www.freshfields.com/en-gb/careers/our-programmes/law-students/" target="_blank" class="text-blue-600 hover:underline font-medium">Freshfields - Training Contracts</a></li>
-            <li>• <a href="https://www.slaughterandmay.com/careers/training-in-london/" target="_blank" class="text-blue-600 hover:underline font-medium">Slaughter and May - Training Contract</a></li>
-            <li>• <a href="https://www.hoganlovells.com/en/careers/students-and-graduates" target="_blank" class="text-blue-600 hover:underline font-medium">Hogan Lovells - Training Contracts</a></li>
-          </ul>
-        </div>
-
-        <div class="bg-white p-6 rounded-lg shadow mt-4">
-          <h3 class="text-xl font-semibold mb-4 text-gray-800"><i class="fas fa-hard-hat text-orange-600 mr-2"></i>Engineering & Construction</h3>
-          <ul class="space-y-3 text-gray-700">
-            <li>• <a href="https://www.baesystems.com/en/careers/careers-in-the-uk/graduates" target="_blank" class="text-blue-600 hover:underline font-medium">BAE Systems - Graduate Programmes</a> - Engineering, Business, Technology</li>
-            <li>• <a href="https://www.rolls-royce.com/careers/people-and-skills/graduates.aspx" target="_blank" class="text-blue-600 hover:underline font-medium">Rolls-Royce - Graduate Programme</a> - Engineering disciplines</li>
-            <li>• <a href="https://www.arup.com/careers/early-careers" target="_blank" class="text-blue-600 hover:underline font-medium">Arup - Graduate Programme</a> - Engineering, Consulting</li>
-            <li>• <a href="https://www.networkrail.co.uk/careers/early-careers/" target="_blank" class="text-blue-600 hover:underline font-medium">Network Rail - Graduate Schemes</a> - Engineering, Project Management</li>
-            <li>• <a href="https://www.balfourbeat ty.com/careers/graduates/" target="_blank" class="text-blue-600 hover:underline font-medium">Balfour Beatty - Graduate Programmes</a> - Engineering, Quantity Surveying</li>
-            <li>• <a href="https://www.atkinsglobal.com/en-GB/careers/graduates" target="_blank" class="text-blue-600 hover:underline font-medium">Atkins - Graduate Scheme</a> - Engineering & Design</li>
-            <li>• <a href="https://www.mottmac.com/careers/graduates-and-students" target="_blank" class="text-blue-600 hover:underline font-medium">Mott MacDonald - Graduate Programme</a> - Multiple engineering streams</li>
-          </ul>
-        </div>
-
-        <div class="bg-white p-6 rounded-lg shadow mt-4">
-          <h3 class="text-xl font-semibold mb-4 text-gray-800"><i class="fas fa-briefcase text-purple-600 mr-2"></i>Public Sector</h3>
-          <ul class="space-y-3 text-gray-700">
-            <li>• <a href="https://www.faststream.gov.uk/" target="_blank" class="text-blue-600 hover:underline font-medium">Civil Service Fast Stream</a> - Policy, Operations, Digital & Technology</li>
-            <li>• <a href="https://www.nhsgraduates.co.uk/" target="_blank" class="text-blue-600 hover:underline font-medium">NHS Graduate Management Training Scheme</a> - General Management, HR, Finance, Health Informatics</li>
-            <li>• <a href="https://www.fca.org.uk/careers/early-careers" target="_blank" class="text-blue-600 hover:underline font-medium">Financial Conduct Authority - Graduate Programmes</a> - Regulatory, Economics</li>
-            <li>• <a href="https://www.local.gov.uk/our-support/workforce-and-hr-support/national-graduate-development-programme" target="_blank" class="text-blue-600 hover:underline font-medium">National Graduate Development Programme</a> - Local Government</li>
-          </ul>
-        </div>
-
-        <div class="bg-white p-6 rounded-lg shadow mt-4">
-          <h3 class="text-xl font-semibold mb-4 text-gray-800"><i class="fas fa-shopping-cart text-pink-600 mr-2"></i>Retail & FMCG</h3>
-          <ul class="space-y-3 text-gray-700">
-            <li>• <a href="https://www.aldirecruitment.co.uk/graduate-areas-managers" target="_blank" class="text-blue-600 hover:underline font-medium">Aldi - Graduate Area Manager Programme</a></li>
-            <li>• <a href="https://careers.lidl.co.uk/graduates" target="_blank" class="text-blue-600 hover:underline font-medium">Lidl - Retail Graduate Management Programme</a></li>
-            <li>• <a href="https://www.tesco-careers.com/early-careers/" target="_blank" class="text-blue-600 hover:underline font-medium">Tesco - Graduate Programmes</a> - Multiple schemes</li>
-            <li>• <a href="https://www.unilever.co.uk/careers/graduates-and-interns/" target="_blank" class="text-blue-600 hover:underline font-medium">Unilever - Future Leaders Programme</a> - Multiple streams</li>
-            <li>• <a href="https://www.diageo.com/en/careers/early-careers" target="_blank" class="text-blue-600 hover:underline font-medium">Diageo - Graduate Programmes</a> - Sales, Marketing, Supply Chain</li>
-            <li>• <a href="https://www.pg.com/careers/students/" target="_blank" class="text-blue-600 hover:underline font-medium">Procter & Gamble - Student Opportunities</a></li>
-            <li>• <a href="https://your.asda.com/early-careers" target="_blank" class="text-blue-600 hover:underline font-medium">Asda - Graduate Programmes</a> - Retail, Data & Technology, Buying</li>
-          </ul>
-        </div>
-
-        <div class="bg-blue-50 p-6 rounded-lg border border-blue-200 mt-6">
-          <h3 class="text-lg font-semibold text-blue-900 mb-3"><i class="fas fa-info-circle mr-2"></i>Application Resources</h3>
-          <ul class="space-y-2 text-gray-700">
-            <li>• <strong>Deadline Trackers:</strong> <a href="https://www.brightnetwork.co.uk/application-deadlines/jobs/graduate-schemes/" target="_blank" class="text-blue-600 hover:underline">Bright Network</a> | <a href="https://www.prospects.ac.uk/" target="_blank" class="text-blue-600 hover:underline">Prospects</a></li>
-            <li>• <strong>Job Boards:</strong> <a href="https://targetjobs.co.uk/" target="_blank" class="text-blue-600 hover:underline">TargetJobs</a> | <a href="https://www.graduate-jobs.com/" target="_blank" class="text-blue-600 hover:underline">Graduate-Jobs.com</a></li>
-            <li>• Many schemes operate <strong>rolling recruitment</strong> - apply as soon as you're ready</li>
-            <li>• December deadlines are common for September 2026 start dates</li>
-            <li>• Always verify current deadlines directly on company career pages</li>
-            <li>• International students should check visa sponsorship availability before applying</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- AdSense: Display Ad -->
-      <div class="bg-gray-100 p-4 rounded-lg text-center my-8">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7439109164508333"
-             crossorigin="anonymous"></script>
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-7439109164508333"
-             data-ad-slot="4111274044"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-      </div>
-
-      <!-- Final Thoughts -->
-      <div class="bg-gradient-to-br from-indigo-50 to-purple-50 p-6 rounded-lg border-l-4 border-indigo-600">
-        <h2 class="text-2xl font-bold mb-4 text-indigo-700">Final Thoughts: Is It Worth It?</h2>
-        <p class="text-gray-700 mb-4">
-          Look, I won't pretend graduate schemes are perfect. The application process is exhausting. The competition is fierce. You'll face rejection—probably multiple times. Some schemes have unrealistic workloads or don't live up to their promises. And there's always a risk that you'll commit to two years only to discover it's not what you wanted.
-        </p>
-        <p class="text-gray-700 mb-4">
-          But here's what I've learned from both my applications and from speaking with people currently on schemes: for most graduates, they're worth considering. The structured training, the exposure to different business areas, the mentorship, the networking opportunities, and yes, the competitive salary and progression prospects—these things matter, especially when you're just starting out.
-        </p>
-        <p class="text-gray-700 mb-4">
-          Graduate schemes aren't the only path. Plenty of successful professionals never went through formal programmes. If you're entrepreneurial, have a specific passion, want to dive straight into a particular role, or simply don't want the structure, that's completely valid. But if you're uncertain about your direction, want comprehensive training, value career progression frameworks, and are willing to work hard in a competitive environment, they're genuinely valuable.
-        </p>
-        <p class="text-gray-700 mb-4">
-          The key is being strategic. Don't apply to every scheme you see. Research thoroughly, understand what you're committing to, tailor every application, and be genuinely enthusiastic about the opportunities you pursue. Quality matters far more than quantity.
-        </p>
-        <p class="text-gray-700 mb-4 font-semibold text-lg">
-          And remember—December isn't your last chance. If you miss these deadlines, there will be January openings, spring recruitment, and rolling opportunities throughout the year. But if you're ready now, don't wait. The best time to apply was October. The second-best time is today.
-        </p>
-        <p class="text-gray-700">
-          Good luck with your applications. You've got this. And if you face rejection? Learn from it, improve, and keep going. The right opportunity will come—often from the application you least expected.
-        </p>
-      </div>
-
-
 
     </div>
   </section>
@@ -510,10 +245,180 @@
   <script src="footer.js"></script>
   <script src="share.js"></script>
 
+  <!-- Graduate Schemes Data and Sorting Script -->
+  <script>
+    const graduateSchemes = [
+      { company: "Age UK", field: "IT/Technology", role: "Junior Service Desk Analyst 2026", url: "https://www.ageuk.org.uk/about-us/jobs/current-vacancies/" },
+      { company: "Allstate", field: "Engineering", role: "Graduate Product Engineer Opportunities 2026", url: "https://www.allstateni.com/careers/graduates.aspx" },
+      { company: "Ampa Group", field: "Law", role: "Trainee Solicitor 2028", url: "https://careers.ampa.co.uk/postings/3d14ebbc-7d26-4fc0-b84c-2159d068da54" },
+      { company: "Analog Devices", field: "Engineering", role: "Associate Engineer Analog Design Engineering 2026", url: "https://www.analog.com/en/careers.html" },
+      { company: "Aon", field: "Consulting", role: "Employee Benefits Consulting Graduate Programme 2026", url: "https://jobs.aon.com/jobs/92488?lang=en-us" },
+      { company: "Aon", field: "Business Development", role: "Business Development Graduate Programme 2026", url: "https://jobs.aon.com/jobs/95094?lang=en-us" },
+      { company: "Arcadis", field: "Construction/Surveying", role: "Graduate Quantity Surveyor", url: "https://careers.arcadis.com/locations/uk/early-careers/graduates/" },
+      { company: "Arup", field: "Facilities Management", role: "Graduate Facilities Manager 2026", url: "https://www.google.com/search?q=Arup+Graduate+Facilities+Manager+2026" },
+      { company: "Arup", field: "Engineering", role: "Hydrology & Hydraulics Graduate 2026", url: "https://careers.arup.com/earlycareers/vacancy/graduate-hydrology--hydraulics-5810/5836/description/" },
+      { company: "Aviva", field: "Insurance", role: "Pricing & Underwriting Graduate Pathway 2026", url: "https://careers.aviva.co.uk/early-careers/graduates/underwriting-graduate-pathway/" },
+      { company: "Aviva", field: "Business Transformation", role: "Change & Transformation Graduate Pathway 2026", url: "https://careers.aviva.co.uk/early-careers/graduates/" },
+      { company: "Babcock International Group", field: "Engineering", role: "Digital Engineering Graduate Programme 2026", url: "https://earlycareers.babcockinternational.com/graduate-programmes/digital-engineering/" },
+      { company: "Babcock International Group", field: "Engineering", role: "Naval Architecture Graduate Programme 2026", url: "https://jobs.babcockinternational.com/Babcock/job/Devonport%2C-Plymouth-Naval-Architecture-Graduate-Programme-PL1-4SG/1245452301/" },
+      { company: "Bakkavör", field: "Manufacturing", role: "Manufacturing Graduate Programme 2026", url: "https://jobs.bakkavor.com/content/Graduate-Programmes/?locale=en_GB" },
+      { company: "Bakkavör", field: "Product Development", role: "Food Product Development for the UK Grocery Market Graduate Programme 2026", url: "https://www.bakkavorearlycareers.co.uk/graduate/product-development" },
+      { company: "Barratt Developments", field: "Sales", role: "Sales ASPIRE Graduate Programme 2026", url: "https://barrattcareers.co.uk/apprentices-graduates/aspire-programme/" },
+      { company: "Barratt Developments", field: "Planning", role: "Land and Planning ASPIRE Graduate Programme 2026", url: "https://barrattcareers.co.uk/apprentices-graduates/aspire-programme/" },
+      { company: "Barratt Developments", field: "Planning", role: "Planner 2025", url: "https://jobs.barrattcareers.co.uk/vacancies/30548/planner--gladman-developments.html" },
+      { company: "BBC", field: "Technology", role: "Software Engineering Graduate Scheme 2026", url: "https://careers.bbc.co.uk/job/BBC-Software-Engineering-Graduate-Scheme/33950-en_GB/" },
+      { company: "Benefact Group", field: "Insurance", role: "General Insurance Management Graduate Programme 2026", url: "https://careers.benefactgroup.com/jobs/6570251-general-insurance-management-graduate-programme" },
+      { company: "Botham Accounting", field: "Accounting", role: "Graduate Trainee Auditor (September) 2026", url: "https://www.bothamaccounting.co.uk/jobs/graduate-trainee-auditor-september-2026/" },
+      { company: "Botham Accounting", field: "Accounting", role: "Graduate Trainee Accountant ACA (September) 2026", url: "https://www.bothamaccounting.co.uk/jobs/graduate-trainee-aca-september-2026/" },
+      { company: "BRUSH Group", field: "Engineering", role: "Graduate Project Engineer 2026", url: "https://jobsearch.brush.eu/vacancies/vacancy-search-results.aspx" },
+      { company: "BRUSH Group", field: "Engineering", role: "Graduate Electrical Design Engineer 2026", url: "https://jobsearch.brush.eu/vacancies/vacancy-search-results.aspx" },
+      { company: "Buckinghamshire Council", field: "Planning", role: "Graduate Planning Officer 2026", url: "https://jobs.buckinghamshire.gov.uk/job_detail/336299/" },
+      { company: "Buro Happold", field: "Advisory", role: "Advisory Analyst 2026", url: "https://www.burohappold.com/careers/entry/" },
+      { company: "Buro Happold", field: "Sustainability", role: "Graduate Sustainability Consultant 2026", url: "https://vacancies.burohappold.com/jobs/job/Graduate-Sustainability-Consultant/1593" },
+      { company: "Buro Happold", field: "Environmental", role: "Graduate Environmental Consultant 2026", url: "https://vacancies.burohappold.com/jobs/job/Graduate-Environmental-Consultant/1575" },
+      { company: "Capgemini", field: "Consulting", role: "Accelerate Graduate Programme Workforce & Organisation 2026", url: "https://www.capgemini.com/gb-en/careers/career-paths/careers-at-capgemini-invent/accelerate-programme/workforce-and-organisation-pathway/" },
+      { company: "Christie's", field: "Arts/Auction", role: "Graduate Training Programme (EMEA) 2026", url: "https://www.christies.com/en/about/careers/graduate-training" },
+      { company: "Compass Group UK & Ireland Ltd", field: "Various", role: "Register your interest in our 2026 Programmes", url: "https://www.compass-group.co.uk/grads/recruitment/" },
+      { company: "Cooper Parry", field: "Accounting", role: "Audit Not For Profit Graduate 2026", url: "https://www.cooperparry.com/work-here/" },
+      { company: "Costain", field: "Engineering", role: "Graduate Mechanical Engineer 2026", url: "https://www.costain.com/careers/early-careers/graduate-roles/" },
+      { company: "Costain", field: "Engineering", role: "Graduate Electrical ICA Design Engineer 2026", url: "https://careers.costain.com/en/sites/Costain/jobs?keyword=graduate&mode=location" },
+      { company: "Costain", field: "Construction/Surveying", role: "Graduate Quantity Surveyor (Midlands & South) 2026 - Expression of Interest", url: "https://careers.costain.com/en/sites/Costain/jobs?keyword=graduate&mode=location" },
+      { company: "Costain", field: "Construction/Surveying", role: "Graduate Quantity Surveyor (North) 2026 - Expression of Interest", url: "https://careers.costain.com/en/sites/Costain/jobs?keyword=graduate&mode=location" },
+      { company: "DNV", field: "Engineering", role: "Graduate Technical Safety / Process Engineers 2026", url: "https://jobs.dnv.com/job-search/energy-systems/engineer/london-united-kingdom-aberdeen/graduate-technical-safety-process-engineers/300001359111559" },
+      { company: "Epwin Group", field: "Operations", role: "Operations Graduate 2026", url: "https://www.epwin-careers.co.uk/vacancies" },
+      { company: "Expedia Group", field: "Technology/AI", role: "Machine Learning Scientist - Masters Graduate - 2026 – London", url: "https://careers.expediagroup.com/jobs/" },
+      { company: "Expedia Group", field: "Technology/AI", role: "Machine Learning Scientist - PhD Graduate - 2026 – London", url: "https://careers.expediagroup.com/jobs/" },
+      { company: "Express Solicitors Ltd", field: "Law", role: "Graduate Scheme 2026", url: "https://www.expresssolicitors.co.uk/about/careers/graduates" },
+      { company: "Farrer & Co", field: "Marketing", role: "Junior Marketing Communications Executive 2026", url: "https://www.farrer.co.uk/careers/" },
+      { company: "Fieldfisher", field: "Law", role: "Training Contract 2028 (London)", url: "https://fieldfisher.current-vacancies.com/Jobs/Advert/3976195?cid=2074&t=Training-Contract-------London-" },
+      { company: "Fieldfisher", field: "Law", role: "Training Contract 2028 (Birmingham)", url: "https://fieldfisher.current-vacancies.com/Jobs/Advert/3976273?cid=2074&t=Training-Contract-------Birmingham-" },
+      { company: "Financial Conduct Authority", field: "Regulatory", role: "2026 Regulatory Graduate Programme – London", url: "https://www.fca.org.uk/careers/early-careers" },
+      { company: "Financial Conduct Authority", field: "Regulatory", role: "2026 Regulatory Graduate Programme – Edinburgh", url: "https://www.fca.org.uk/careers/early-careers" },
+      { company: "Financial Conduct Authority", field: "Economics", role: "2026 Economics Graduate Programme – Leeds", url: "https://www.fca.org.uk/careers/early-careers" },
+      { company: "Frontline", field: "Social Work", role: "Trainee Social Worker", url: "https://thefrontline.org.uk/become-a-social-worker/" },
+      { company: "Fugro", field: "Various", role: "Fugro Graduate Roles 2026 – Register Your Interest", url: "https://www.fugro.com/careers" },
+      { company: "Gartner", field: "Business Development", role: "Business Development Manager", url: "https://jobs.gartner.com/jobs/" },
+      { company: "Goodwin", field: "Law", role: "Trainee Solicitor Programme – 2028", url: "https://www.goodwinlaw.com/en/careers-pages/early-careers-in-the-united-kingdom" },
+      { company: "Hanson Wade Group", field: "Marketing", role: "Marketing Assistant", url: "https://careers.hansonwadegroup.com/" },
+      { company: "Hilton", field: "Finance", role: "2026 Hilton Finesse Finance Graduate Programme – EMEA", url: "https://jobs.hilton.com/emea/en/job/EUR015ME/2026-Hilton-Finesse-Finance-Graduate-Programme-Europe-Middle-East-Africa" },
+      { company: "Hilton", field: "Hotel Management", role: "2026 Elevator Graduate Programme - Europe, Middle East & Africa", url: "https://jobs.hilton.com/emea/en/job/EUR015MD/2026-Hilton-Elevator-Hotel-Leadership-Graduate-Programme-Europe-Middle-East-Africa" },
+      { company: "Igne Group Ltd", field: "Engineering", role: "Geotechnical/Geo-environmental Engineer 2026", url: "https://www.igne.com/careers" },
+      { company: "Imperial Brands", field: "Innovation", role: "Innovation Graduate", url: "https://www.imperialbrandsplc.com/careers" },
+      { company: "Johnson Matthey", field: "Chemistry", role: "Reaction Hazards Chemists 2026", url: "https://matthey.com/careers" },
+      { company: "Lidl GB", field: "Retail", role: "Retail Graduate Management Programme 2026", url: "https://careers.lidl.co.uk/early-careers/retail-graduate-management-programme" },
+      { company: "Lift Schools", field: "Education", role: "Trainee English Teacher", url: "https://www.liftschools.org/itt" },
+      { company: "Lift Schools", field: "Education", role: "Trainee Biology Teacher", url: "https://www.liftschools.org/itt-your-training" },
+      { company: "Linklaters", field: "Law", role: "Singapore – London Training Contract 2028/2029", url: "https://careers.linklaters.com/en/early-careers/your-application" },
+      { company: "Linklaters", field: "Law", role: "Direct Training Contract 2028/2029", url: "https://careers.linklaters.com/en/early-careers/your-application" },
+      { company: "Lloyds Banking Group", field: "Technology/Data", role: "Data Science and AI Graduate Scheme 2026", url: "https://www.lloydsbankinggrouptalent.com/our-opportunities/graduates/data-science-and-ai-graduate-scheme/" },
+      { company: "Lloyds Banking Group", field: "Banking", role: "Consumer Relationships Graduate Scheme 2026", url: "https://www.lloydsbankinggrouptalent.com/our-opportunities/graduates/consumer-relationships-graduate-scheme/" },
+      { company: "M Group Services", field: "Construction/Surveying", role: "Assistant Quantity Surveyor 2026", url: "https://jobs.mgroupltd.com/vacancies/45781/apprentice-quantity-surveyor.html" },
+      { company: "MBDA", field: "Engineering", role: "Systems Design Engineer Graduate Programme 2026", url: "https://www.mbdacareers.co.uk/early-careers/graduate-programmes" },
+      { company: "MBDA", field: "Engineering", role: "Electronics Engineer Graduate Programme 2026", url: "https://www.mbdacareers.co.uk/early-careers/graduate-programmes" },
+      { company: "Mercedes AMG High Performance Powertrains", field: "Engineering", role: "Quality Engineering Graduate Scheme 2026", url: "https://www.mercedes-amg-hpp.com/early-careers/" },
+      { company: "Mercedes AMG High Performance Powertrains", field: "Engineering", role: "Motor Control Graduate 2026", url: "https://www.mercedes-amg-hpp.com/early-careers/" },
+      { company: "MI5, MI6 & GCHQ", field: "Languages", role: "Arabic Language Specialist", url: "https://www.gchq-careers.co.uk/our-careers/specialist-roles/language-specialists.html" },
+      { company: "Molson Coors Beverage Company", field: "Manufacturing", role: "Production Operations Graduate (Brewing) 2026", url: "https://www.molsoncoors.com/careers" },
+      { company: "Moore Kingston Smith", field: "Accounting", role: "Audit Graduate Programme (ACA) – Varied sectors - March 2026", url: "https://mooreks.pinpointhq.com/postings/8461767d-0a34-4839-8cd5-28be08d7dc8b" },
+      { company: "National Gas", field: "Commercial", role: "Commercial Graduate Scheme (Major Programmes) 2026", url: "https://jobs.nationalgas.com/job/Sherwood-Park-Commercial-Graduate-Scheme-%28Major-Programmes%29-NG15-0ED/1330174455/" },
+      { company: "National Gas", field: "Project Management", role: "Project Management Graduate Scheme (Major Programmes) 2026", url: "https://jobs.nationalgas.com/job/Sherwood-Park-Commercial-Graduate-Scheme-%28Major-Programmes%29-NG15-0ED/1330174455/" },
+      { company: "National Gas", field: "Data Science", role: "Commercial Graduate Scheme (Data Science) 2026", url: "https://jobs.nationalgas.com/content/Early-Careers-Graduates/?locale=en_GB" },
+      { company: "National Gas", field: "Economics", role: "Commercial Graduate Scheme (Economics) 2025", url: "https://jobs.nationalgas.com/content/Early-Careers-Graduates/?locale=en_GB" },
+      { company: "Nationwide Building Society", field: "Strategy", role: "Strategy & Business Support Development Programme", url: "https://nationwide-jobs.co.uk/early-careers/graduate-programme" },
+      { company: "Nationwide Building Society", field: "Data/Analytics", role: "Data & Analytics Development Programme", url: "https://nationwide-jobs.co.uk/data-and-analytics-sdp" },
+      { company: "Network Rail", field: "Finance", role: "Finance Graduate Scheme 2026", url: "https://www.earlycareers.networkrail.co.uk/scheme/finance-graduate/" },
+      { company: "Network Rail", field: "Engineering", role: "Civil Engineering Graduate Scheme 2026", url: "https://www.earlycareers.networkrail.co.uk/scheme/civil-engineering-graduate-scheme/" },
+      { company: "Newton", field: "Consulting", role: "Graduate Consultant", url: "https://newtonimpact.com/careers/early-careers/graduate-consultant-role/" },
+      { company: "P&G", field: "Sales", role: "Sales Graduate 2026", url: "https://www.pgcareers.com/uk/en/recent-grads" },
+      { company: "Ramboll UK Ltd", field: "Engineering", role: "Building Physics Graduate 2026", url: "https://www.ramboll.com/careers/5d027aaf-8c7f-496b-5593-08de234b32c2" },
+      { company: "Ramboll UK Ltd", field: "Engineering", role: "Graduate Electrical Engineer (Data Centres) 2026", url: "https://www.ramboll.com/careers/5be601bc-3866-492d-558e-08de234b32c2" },
+      { company: "Ridge and Partners LLP", field: "Surveying", role: "Evolve Graduate Programme 2026", url: "https://ridge.co.uk/careers/graduate-scheme/" },
+      { company: "Ridge and Partners LLP", field: "Surveying", role: "Graduate Building Surveyor (Evolve) 2026", url: "https://ridge.co.uk/careers/graduate-scheme/" },
+      { company: "Rockborne", field: "Data/Analytics", role: "Graduate Data Training Programme 2025", url: "https://rockborne.com/graduates/" },
+      { company: "Shell", field: "Energy", role: "Shell Graduate Programme 2026", url: "https://www.shell.com/careers/about-careers-at-shell/shell-graduate-programme.html" },
+      { company: "Sigma Labs", field: "Data/Analytics", role: "Data Consultant Graduate Programme (February 2026 Cohort)", url: "https://www.sigmalabs.co.uk/our-careers" },
+      { company: "Skanska", field: "Construction/Surveying", role: "Graduate Quantity Surveyor Kent 2026", url: "https://www.skanska.co.uk/about-skanska/careers/early-careers/" },
+      { company: "Spence & Partners", field: "Pensions", role: "Pensions Management Graduate Trainee 2026", url: "https://www.spenceandpartners.co.uk/company/life-at-spence/" },
+      { company: "Spirit AeroSystems", field: "Engineering", role: "Engineering Graduate 2026", url: "https://careers.spiritaero.com/jobs/15549?lang=en-us" },
+      { company: "Standard Chartered", field: "Banking", role: "Wealth and Retail Banking Graduate - Hong Kong", url: "https://jobs.standardchartered.com/job/Wealth-and-Retail-Banking-Graduate-Programme-Hong-Kong-2026/41640-en_GB/?&feedid=363857" },
+      { company: "Standard Chartered", field: "Finance", role: "Financial Markets Graduate - Hong Kong", url: "https://www.sc.com/en/global-careers/early-careers/local-programmes-for-students/hong-kong-student-opportunities/" },
+      { company: "Tara Developments Limited", field: "Sales/Marketing", role: "Sales & Marketing Graduate 2026", url: "https://www.tara-group.co.uk/graduates" },
+      { company: "Tarmac", field: "Finance", role: "Finance Graduate 2026", url: "https://tarmaccareers.com/early-careers/" },
+      { company: "Tarmac", field: "IT/Finance", role: "IT (Combined Finance Automation) Graduate 2026", url: "https://careershub.tarmac.com/members/?j=7288" },
+      { company: "TFT Consultants", field: "Surveying", role: "Graduate Building Surveyor 2026", url: "https://www.tftconsultants.com/graduates" },
+      { company: "The AA", field: "Marketing", role: "Social Media Marketing Executive 2026", url: "https://www.theaacareers.co.uk/roles/early-careers/?sType=AA+External+Careers+Site" },
+      { company: "Unilever", field: "Cyber Security", role: "Cyber Security Unilever Future Leaders Programme 2026", url: "https://careers.unilever.com/job/united-kingdom/unilever-future-leadership-programme-technology-management-cyber-security-uk/34155/86949062576" },
+      { company: "Uniphar Group", field: "Healthcare/Science", role: "Medical Science, Commercial & Finance Graduate Program 2026", url: "https://uniphar.com/commercial/recruitment-and-outsourcing/" },
+      { company: "University of Dundee", field: "Research", role: "Research Assistant (Clinical Trial Assessor) 2026", url: "https://www.dundee.ac.uk/work-for-us/jobs/uod2036" },
+      { company: "University of Edinburgh", field: "Research", role: "Research, Engagement and Impact (REI) Administrator 2026", url: "https://research-office.ed.ac.uk/about" },
+      { company: "University of Edinburgh", field: "Editorial", role: "Editorial Assistant (Critical African Studies) 2026", url: "https://www.sps.ed.ac.uk/centre-african-studies" },
+      { company: "University of Warwick", field: "Engineering", role: "Graduate Trainee Engineer (Battery Materials and Cells Group) 2026", url: "https://warwick.ac.uk/fac/sci/wmg/research/research-areas/battery-materials-and-cells/" },
+      { company: "University of Warwick", field: "Engineering", role: "Graduate Trainee Engineer 2026", url: "https://warwick.ac.uk/services/lmd/graduate-scheme/" },
+      { company: "Well Pharmacy", field: "Pharmacy", role: "Trainee or Qualified Pharmacy Assistant 2026", url: "https://jobsearch.well.co.uk/jobs/job/Trainee-or-Qualified-Pharmacy-Assistant/10626" },
+      { company: "Well Pharmacy", field: "Pharmacy", role: "Trainee Pharmacy Assistant 2026", url: "https://jobsearch.well.co.uk/jobs/job/Trainee-Pharmacy-Assistant/10614" },
+      { company: "Wells Fargo", field: "Real Estate/Finance", role: "Commercial Real Estate Early Career Program 2026", url: "https://www.wellsfargojobs.com/en/jobs/r-505290/commercial-real-estate-early-career-program/" },
+      { company: "Wessex Water", field: "Planning", role: "Trainee Planner 2026", url: "https://careers.ytluk.co.uk/wessex-water" },
+      { company: "William Grant & Sons", field: "Manufacturing/Technical", role: "Technical Graduate 2026", url: "https://careershub.williamgrant.com/members/modules/job/detail.php?record=3495" },
+      { company: "Willmott Dixon", field: "Construction", role: "Building Services Management Trainee 2026", url: "https://www.willmottdixon.co.uk/trainee" },
+      { company: "Willmott Dixon", field: "Planning", role: "Planner Management Trainee 2026", url: "https://www.willmottdixon.co.uk/trainee" },
+      { company: "Wood", field: "Project Management", role: "Graduate Project Manager (Renewable Energy) 2026", url: "https://careers.woodplc.com/early-careers" },
+      { company: "Yorkshire Water", field: "Engineering", role: "Water Catchment and Production Asset Management (Engineering) Graduate 2026", url: "https://mycareers.yorkshirewater.com/go/Graduates/3963301/" }
+    ];
+
+    let currentSort = 'company';
+
+    function renderSchemes(schemes) {
+      const container = document.getElementById('schemesContainer');
+      container.innerHTML = '';
+
+      schemes.forEach((scheme, index) => {
+        const schemeDiv = document.createElement('div');
+        schemeDiv.className = 'scheme-item bg-white p-6 rounded-lg shadow-md border-l-4 border-indigo-500';
+        schemeDiv.innerHTML = `
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <div class="flex-1">
+              <h3 class="text-xl font-bold text-gray-800 mb-2">
+                <i class="fas fa-building text-indigo-600 mr-2"></i>${scheme.company}
+              </h3>
+              <p class="text-sm text-gray-600 mb-1">
+                <i class="fas fa-folder text-purple-600 mr-2"></i><strong>Field:</strong> ${scheme.field}
+              </p>
+              <p class="text-gray-700">
+                <i class="fas fa-graduation-cap text-green-600 mr-2"></i>${scheme.role}
+              </p>
+            </div>
+            <div>
+              <a href="${scheme.url}" target="_blank" class="inline-flex items-center px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition shadow-md">
+                <i class="fas fa-external-link-alt mr-2"></i>Apply Now
+              </a>
+            </div>
+          </div>
+        `;
+        container.appendChild(schemeDiv);
+      });
+    }
+
+    function sortBy(type) {
+      currentSort = type;
+      let sorted = [...graduateSchemes];
+      
+      if (type === 'company') {
+        sorted.sort((a, b) => a.company.localeCompare(b.company));
+      } else if (type === 'field') {
+        sorted.sort((a, b) => a.field.localeCompare(b.field));
+      }
+      
+      renderSchemes(sorted);
+    }
+
+    // Initial render
+    renderSchemes(graduateSchemes);
+  </script>
+
   <!-- Nav Toggle Script -->
   <script>
-    document.getElementById('navToggle').addEventListener('click', () => {
-      document.getElementById('mobileMenu').classList.toggle('hidden');
+    document.getElementById('navToggle')?.addEventListener('click', () => {
+      document.getElementById('mobileMenu')?.classList.toggle('hidden');
     });
   </script>
 
