@@ -175,28 +175,8 @@
     <section id="maps" class="py-16 bg-blue-50">
       <div class="max-w-6xl mx-auto px-6">
         <h2 class="text-4xl font-bold text-gray-800 mb-8 text-center">Skill Maps</h2>
-        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          <a href="skills.html" class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 p-8 text-center block">
-            <i class="fab fa-python fa-4x text-yellow-500 mb-4"></i>
-            <h3 class="text-2xl font-semibold mb-2">Python</h3>
-            <p class="text-gray-600 text-center">Versatile scripting, automation & data science pathways.</p>
-          </a>
-          <a href="skills.html" class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 p-8 text-center block">
-            <i class="fab fa-java fa-4x text-red-500 mb-4"></i>
-            <h3 class="text-2xl font-semibold mb-2">Java</h3>
-            <p class="text-gray-600 text-center">Robust backend, enterprise applications & JVM ecosystem.</p>
-          </a>
-          <a href="skills.html" class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 p-8 text-center block">
-            <i class="fab fa-docker fa-4x text-blue-500 mb-4"></i>
-            <h3 class="text-2xl font-semibold mb-2">Docker</h3>
-            <p class="text-gray-600 text-center">Containerization, DevOps workflows & deployment strategies.</p>
-          </a>
-          <a href="skills.html" class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 p-8 text-center block">
-            <i class="fas fa-th-large fa-3x text-gray-500 mb-4"></i>
-            <h3 class="text-2xl font-semibold mb-2">All Skill Maps</h3>
-            <p class="text-gray-600 text-center">Browse all interactive skill maps and pathways.</p>
-            <span class="inline-block text-green-700 font-semibold mt-4 hover:underline">View All →</span>
-          </a>
+        <div id="skillsContainer" class="space-y-4">
+          <!-- Skills will be loaded here dynamically -->
         </div>
       </div>
     </section>
@@ -345,6 +325,60 @@ document.getElementById('prevSlide').addEventListener('click', prevSlide);
   }
 
   document.addEventListener('DOMContentLoaded', loadLatest);
+</script>
+
+<script>
+  async function loadSkills() {
+    try {
+      const res = await fetch('./skills/skills.json');
+      const all = await res.json();
+      const latest5 = all.slice(0, 5); // first 5 courses
+      const container = document.getElementById('skillsContainer');
+
+      // Create the 5 latest skill boxes
+      latest5.forEach(skill => {
+        const skillBox = document.createElement('a');
+        skillBox.href = skill.link;
+        skillBox.className = "block bg-white rounded-lg shadow-md hover:shadow-xl transition transform hover:scale-[1.02] p-6";
+        
+        skillBox.innerHTML = `
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+            <div class="flex items-center justify-between">
+              <h3 class="text-xl md:text-2xl font-semibold text-gray-800 md:min-w-[150px]">${skill.title}</h3>
+              <span class="text-gray-500 font-medium whitespace-nowrap md:hidden">${skill.date}</span>
+            </div>
+            <p class="text-gray-600 md:flex-1 md:px-8">${skill.desc}</p>
+            <span class="text-gray-500 font-medium whitespace-nowrap hidden md:block">${skill.date}</span>
+          </div>
+        `;
+        
+        container.appendChild(skillBox);
+      });
+
+      // Add "All Skill Maps" button
+      const viewAllBox = document.createElement('a');
+      viewAllBox.href = "skills.html";
+      viewAllBox.className = "block bg-green-50 border-2 border-green-200 rounded-lg shadow-md hover:shadow-xl hover:bg-green-100 transition transform hover:scale-[1.02] p-6";
+      
+      viewAllBox.innerHTML = `
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+          <div class="flex items-center justify-between">
+            <h3 class="text-xl md:text-2xl font-semibold text-gray-800 md:min-w-[150px]">All Skill Maps</h3>
+            <span class="text-green-700 font-semibold whitespace-nowrap md:hidden">View All →</span>
+          </div>
+          <p class="text-gray-600 md:flex-1 md:px-8">Browse all interactive skill maps and pathways</p>
+          <span class="text-green-700 font-semibold whitespace-nowrap hidden md:block">View All →</span>
+        </div>
+      `;
+      
+      container.appendChild(viewAllBox);
+
+    } catch (err) {
+      console.error('Failed to load skills', err);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', loadSkills);
 </script>
 
     <!-- Placeholder for the footer -->
