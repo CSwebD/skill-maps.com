@@ -1,0 +1,58 @@
+[
+  {
+    "id": "0007",
+    "title": "Linux",
+    "desc": "Master Linux fundamentals, command line, and system administration",
+    "date": "soon",
+    "link": "/skills/Linux.html",
+    "category": "Development"
+  },
+  {
+    "id": "0006",
+    "title": "Angular",
+    "desc": "Build dynamic web applications with Angular framework",
+    "date": "2025-03-17",
+    "link": "/skills/Angular.html",
+    "category": "Development"
+  },
+  {
+    "id": "0005",
+    "title": "Vue.js",
+    "desc": "Learn progressive JavaScript framework for building user interfaces",
+    "date": "2025-03-10",
+    "link": "/skills/Vue.html",
+    "category": "Development"
+  },
+  {
+    "id": "0004",
+    "title": "Docker",
+    "desc": "Containerization, DevOps workflows and deployment strategies",
+    "date": "2025-02-24",
+    "link": "/skills/Docker.html",
+    "category": "Development"
+  },
+  {
+    "id": "0003",
+    "title": "JavaScript",
+    "desc": "Master modern JavaScript for interactive web development",
+    "date": "2025-02-20",
+    "link": "/skills/JavaScript.html",
+    "category": "Development"
+  },
+  {
+    "id": "0002",
+    "title": "Java",
+    "desc": "Robust backend, enterprise applications and JVM ecosystem",
+    "date": "2025-02-17",
+    "link": "/skills/Java.html",
+    "category": "Development"
+  },
+  {
+    "id": "0001",
+    "title": "Python",
+    "desc": "Versatile programming for web, data science and automation",
+    "date": "2025-01-17",
+    "link": "/skills/Python.html",
+    "category": "Development"
+  }
+]
