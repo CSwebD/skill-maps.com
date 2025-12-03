@@ -1,8 +1,17 @@
 [ {
+    "id": "0013",
+    "title": "Gemini AI Deep Research Can Read Your Gmail",
+    "desc": "Google's latest AI feature raises important questions about privacy and data access. Here's what you need to know about how Gemini Deep Research interacts with your personal emails.",
+    "date": "2025-12-03",
+    "image": "/blog/images/0013.png",
+    "link": "/blog/html/Gemini-AI-Deep-Research-Can-Read-Your-Gmail.html",
+    "category": "Career"
+  },
+  {
     "id": "0012",
     "title": "Graduate Schemes December 2025: Your Complete Guide to UK's Best Opportunities",
     "desc": "Over 500 live graduate schemes across finance, tech, consulting, law, and engineering. Practical application strategies and direct links to top UK employers.",
-    "date": "2024-11-30",
+    "date": "2025-11-30",
     "image": "/blog/images/0012.png",
     "link": "/blog/html/Graduate-Schemes-December-2025-Your-Complete-Guide-to-UKs-Best-Opportunities.html",
     "category": "Career"
@@ -11,7 +20,7 @@
     "id": "0011",
     "title": "AI Is Making It Harder for Junior Developers to Get Hired But New Opportunities Are Emerging",
     "desc": "Entry-level positions dropped 60% since 2022. A brutally honest look at the multiple factors affecting junior hiring and 12 practical pathways into development.",
-    "date": "2024-11-29",
+    "date": "2025-11-29",
     "image": "/blog/images/0011.jpg",
     "link": "/blog/html/AI-Is-Making-It-Harder-for-Junior-Developers-to-Get-Hired-But-New-Opportunities-Are-Emerging.html",
     "category": "Career"
@@ -20,7 +29,7 @@
     "id": "0010",
     "title": "Writing Code is So Over: The AI Revolution in Software Development",
     "desc": "A comprehensive research analysis exploring how artificial intelligence is fundamentally transforming software engineering, from manual coding to natural language programming and autonomous agents.",
-    "date": "2024-11-29",
+    "date": "2025-11-29",
     "image": "/blog/images/0010.png",
     "link": "/blog/html/writing-code-is-so-over-the-ai-revolution-in-software-development.html",
     "category": "Research"
@@ -29,7 +38,7 @@
     "id": "0009",
     "title": "5 Things I Wish I Knew Before Graduating as a Software Engineer",
     "desc": "From a First Class Honours graduate working in London's tech scene: practical insights about projects, job hunting, and breaking into software engineering that university doesn't teach you.",
-    "date": "2024-11-15",
+    "date": "2025-11-15",
     "image": "/blog/images/0009.png",
     "link": "/blog/html/0009.html",
     "category": "Career"
