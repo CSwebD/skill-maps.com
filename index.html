@@ -52,334 +52,538 @@
   <div id="panel-bar-placeholder"></div>
   <script src="panel-nav.js"></script> 
 
-  <main class="pt-16">
-    <section id="hero" class="relative h-screen overflow-hidden text-gray-100 font-inter">
-  <div id="slides" class="absolute inset-0 transition-all duration-700 ease-in-out">
+          <section id="articles" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-4xl font-bold text-gray-800 mb-8">Latest Articles</h2>
+        
+        <!-- Main Grid: 40% - 40% - 20% -->
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-6">
+          
+          <!-- LEFT COLUMN: 40% - Single Latest Post -->
+          <div class="lg:col-span-2">
+            <div id="latestPost" class="h-full">
+              <!-- Latest post will load here -->
+            </div>
+          </div>
 
-    <!-- Slide 1: Domains -->
-<div class="slide active absolute inset-0 flex flex-col items-center justify-center text-center bg-gradient-to-br from-[#dcfce7] to-[#86efac] text-gray-900 bg-cover bg-center" style="background-image: url('/images/pic1.jpg'); /* Add your image path here */">
-  <!-- Semi-transparent overlay for text readability -->
-  <div class="absolute inset-0 bg-black opacity-40"></div>
-  
-  <div class="z-10 px-6 relative">
-    <h1 class="text-5xl md:text-6xl font-bold mb-4 text-white drop-shadow-lg">Explore IT Domains</h1>
-    <p class="text-lg md:text-xl text-white mb-8 max-w-2xl mx-auto drop-shadow-md">
-      Shape your future with <span class="font-semibold">Skill Maps</span> — your guide to mastering Development, DevOps, and Data.
-    </p>
-    <a href="domains.html" class="px-8 py-4 bg-green-800 text-white font-semibold rounded-full hover:bg-green-700 transition transform hover:scale-105 shadow-lg">
-      Explore Domains
-    </a>
-  </div>
-</div>
+          <!-- MIDDLE COLUMN: 40% - Posts 2-5 -->
+          <div class="lg:col-span-2">
+            <div id="middlePosts" class="space-y-6">
+              <!-- Posts 2-5 will load here -->
+            </div>
+          </div>
 
+          <!-- RIGHT COLUMN: 20% - Posts 6-8 + Discover More -->
+          <div class="lg:col-span-1">
+            <div id="rightPosts" class="space-y-6">
+              <!-- Posts 6-8 and discover more will load here -->
+            </div>
+          </div>
 
-
-<!-- Slide 2: Skills -->
-<div class="slide absolute inset-0 flex flex-col items-center justify-center text-center bg-gradient-to-br from-[#dbeafe] to-[#93c5fd] text-gray-900 bg-cover bg-center" style="background-image: url('/images/pic2.jpg'); /* Add your image path here */">
-  <!-- Semi-transparent overlay for text readability -->
-  <div class="absolute inset-0 bg-black opacity-40"></div>
-  
-  <div class="z-10 px-6 relative">
-    <h1 class="text-5xl md:text-6xl font-bold mb-4 text-white drop-shadow-lg">Master Key Skills</h1>
-    <p class="text-lg md:text-xl text-white mb-8 max-w-2xl mx-auto drop-shadow-md">
-      Build real-world skills and boost your career with <span class="font-semibold">guided learning paths</span>.
-    </p>
-    <a href="skills.html" class="px-8 py-4 bg-blue-800 text-white font-semibold rounded-full hover:bg-blue-700 transition transform hover:scale-105 shadow-lg">
-      View Skill Maps
-    </a>
-  </div>
-</div>
-
-<!-- Slide 3: Blog -->
-<div class="slide absolute inset-0 flex flex-col items-center justify-center text-center bg-gradient-to-br from-[#fef3c7] to-[#fde68a] text-gray-900 bg-cover bg-center" style="background-image: url('/images/pic3.jpg'); /* Add your image path here */">
-  <!-- Semi-transparent overlay for text readability -->
-  <div class="absolute inset-0 bg-black opacity-40"></div>
-  
-  <div class="z-10 px-6 relative">
-    <h1 class="text-5xl md:text-6xl font-bold mb-4 text-white drop-shadow-lg">Read Expert Articles</h1>
-    <p class="text-lg md:text-xl text-white mb-8 max-w-2xl mx-auto drop-shadow-md">
-      Expand your knowledge through <span class="font-semibold">insights from industry professionals</span>.
-    </p>
-    <a href="blog.html" class="px-8 py-4 bg-amber-800 text-white font-semibold rounded-full hover:bg-amber-700 transition transform hover:scale-105 shadow-lg">
-      Go to Blog
-    </a>
-  </div>
-</div>
-
-<!-- Slide 4: AI -->
-<div class="slide absolute inset-0 flex flex-col items-center justify-center text-center bg-gradient-to-br from-[#ede9fe] to-[#c4b5fd] text-gray-900 bg-cover bg-center" style="background-image: url('/images/pic4.png'); /* Add your image path here */">
-  <!-- Semi-transparent overlay for text readability -->
-  <div class="absolute inset-0 bg-black opacity-40"></div>
-  
-  <div class="z-10 px-6 relative">
-    <h1 class="text-5xl md:text-6xl font-bold mb-4 text-white drop-shadow-lg">AI Pathways</h1>
-    <p class="text-lg md:text-xl text-white mb-8 max-w-2xl mx-auto drop-shadow-md">
-      Unlock the power of <span class="font-semibold">Artificial Intelligence</span> with our AI roadmap.
-    </p>
-    <a href="ai.html"  class="px-8 py-4 bg-purple-800 text-white font-semibold rounded-full hover:bg-purple-700 transition transform hover:scale-105 shadow-lg">
-      Dive into AI
-    </a>
-  </div>
-</div>
-
-
-  </div>
-
-  <!-- Navigation dots -->
-  <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-3 z-20">
-    <button class="dot w-3 h-3 rounded-full bg-green-400 hover:bg-green-300"></button>
-    <button class="dot w-3 h-3 rounded-full bg-gray-400 hover:bg-green-300"></button>
-    <button class="dot w-3 h-3 rounded-full bg-gray-400 hover:bg-green-300"></button>
-    <button class="dot w-3 h-3 rounded-full bg-gray-400 hover:bg-green-300"></button>
-  </div>
-
-    <!-- Left and Right Arrows -->
-  <button id="prevSlide" class="absolute left-6 top-1/2 transform -translate-y-1/2 bg-gray-800/50 text-white p-3 rounded-full hover:bg-gray-700 transition z-20">
-    <i class="fas fa-chevron-left fa-lg"></i>
-  </button>
-  <button id="nextSlide" class="absolute right-6 top-1/2 transform -translate-y-1/2 bg-gray-800/50 text-white p-3 rounded-full hover:bg-gray-700 transition z-20">
-    <i class="fas fa-chevron-right fa-lg"></i>
-  </button>
-
-</section>
-
-    <section id="domains" class="py-16 bg-white">
-      <div class="max-w-6xl mx-auto px-6">
-        <h2 class="text-4xl font-bold text-gray-800 mb-8 text-center">Domains</h2>
-        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          <a href="domains.html" class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 p-8 text-center block">
-            <i class="fas fa-code fa-3x text-green-600 mb-4"></i>
-            <h3 class="text-2xl font-semibold mb-2">Development</h3>
-            <p class="text-gray-600">Frontend, Backend &amp; Full-Stack</p>
-          </a>
-          <a href="domains.html" class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 p-8 text-center block">
-            <i class="fas fa-server fa-3x text-blue-600 mb-4"></i>
-            <h3 class="text-2xl font-semibold mb-2">DevOps &amp; SRE</h3>
-            <p class="text-gray-600">CI/CD, Infrastructure &amp; Monitoring</p>
-          </a>
-          <a href="domains.html" class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 p-8 text-center block">
-            <i class="fas fa-robot fa-3x text-red-600 mb-4"></i>
-            <h3 class="text-2xl font-semibold mb-2">AI &amp; ML</h3>
-            <p class="text-gray-600">Machine &amp; Deep Learning</p>
-          </a>
-          <a href="domains.html" class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 p-8 text-center block">
-            <i class="fas fa-th-large fa-3x text-gray-500 mb-4"></i>
-            <h3 class="text-2xl font-semibold mb-2">All Domains</h3>
-            <p class="text-gray-600 mb-4 text-center">Explore all available domains and topics.</p>
-            <span class="inline-block text-green-700 font-semibold hover:underline">View All →</span>
-          </a>
-        </div>
-      </div>
-    </section>
-    
-    <section id="maps" class="py-16 bg-blue-50">
-      <div class="max-w-6xl mx-auto px-6">
-        <h2 class="text-4xl font-bold text-gray-800 mb-8 text-center">Skill Maps</h2>
-        <div id="skillsContainer" class="space-y-4">
-          <!-- Skills will be loaded here dynamically -->
         </div>
       </div>
     </section>
 
-    <section id="articles" class="py-16 bg-white">
-      <div class="max-w-6xl mx-auto px-6">
-        <h2 class="text-4xl font-bold text-gray-800 mb-8 text-center">Latest Articles</h2>
-        <div id="latestGrid" class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          <!-- JS auto will inject cards here -->
-        </div>
-      </div>
-    </section>
-    
-    <section id="faq" class="py-16 bg-blue-50">
-      <div class="max-w-4xl mx-auto px-6">
-        <h2 class="text-4xl font-bold text-gray-800 mb-8 text-center">Frequently Asked Questions</h2>
-        <div class="space-y-4">
-          <details class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition">
-            <summary class="font-semibold text-lg cursor-pointer">How do I track my progress?</summary>
-            <p class="mt-2 text-gray-600">Create an account to view and track your learning journey.</p>
-          </details>
-          <details class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition">
-            <summary class="font-semibold text-lg cursor-pointer">Are the courses free?</summary>
-            <p class="mt-2 text-gray-600">All pathways and materials are completely free.</p>
-          </details>
-          <details class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition">
-            <summary class="font-semibold text-lg cursor-pointer">Can I contribute content?</summary>
-            <p class="mt-2 text-gray-600">Yes! Join our community to share your expertise.</p>
-          </details>
-          <details class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition">
-            <summary class="font-semibold text-lg cursor-pointer">All FAQs</summary>
-            <p class="mt-2 text-gray-600">Find answers to the top 10 questions and more.</p>
-            <a href="FAQs.html" class="inline-block text-green-700 font-semibold hover:underline mt-2">View All →</a>
-          </details>
-        </div>
-      </div>
-    </section>
+      <script>
+      async function loadBlogPosts() {
+        try {
+          const res = await fetch('./blog/blog.json');
+          const posts = await res.json();
 
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7439109164508333"
-     crossorigin="anonymous"></script>
-<!-- Index-Header -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-7439109164508333"
-     data-ad-slot="4111274044"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-    
-  </main>
+          // Latest Post (1st)
+          if (posts[0]) {
+            const latestContainer = document.getElementById('latestPost');
+            const post = posts[0];
+            
+            latestContainer.innerHTML = `
+              <a href="${post.link}" class="block group h-full">
+                <div class="relative h-80 overflow-hidden rounded-lg mb-4">
+                  <img src="${post.image}" alt="${post.title}" 
+                       class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="space-y-2">
+                  <div class="flex items-center justify-between">
+                    <span class="inline-block text-xs font-semibold text-green-700 uppercase tracking-wide">
+                      ${post.category || 'Article'}
+                    </span>
+                    <span class="text-xs text-gray-500">${post.date || ''}</span>
+                  </div>
+                  <h3 class="text-2xl font-bold text-gray-900 group-hover:text-green-700 transition-colors">
+                    ${post.title}
+                  </h3>
+                  <p class="text-gray-600 leading-relaxed">
+                    ${post.desc}
+                  </p>
+                </div>
+              </a>
+            `;
+          }
 
-<script>
-  const slides = document.querySelectorAll('#hero .slide');
-  const dots = document.querySelectorAll('#hero .dot');
-  let current = 0;
+          // Middle Posts (2nd-5th)
+          const middleContainer = document.getElementById('middlePosts');
+          const middlePosts = posts.slice(1, 5);
+          
+          middlePosts.forEach(post => {
+            const postCard = document.createElement('a');
+            postCard.href = post.link;
+            postCard.className = "flex gap-4 group";
+            
+            postCard.innerHTML = `
+              <div class="relative w-32 h-32 flex-shrink-0 overflow-hidden rounded-lg">
+                <img src="${post.image}" alt="${post.title}" 
+                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+              </div>
+              <div class="flex-1 space-y-1">
+                <div class="flex items-center justify-between">
+                  <span class="inline-block text-xs font-semibold text-green-700 uppercase tracking-wide">
+                    ${post.category || 'Article'}
+                  </span>
+                  <span class="text-xs text-gray-500">${post.date || ''}</span>
+                </div>
+                <h4 class="text-lg font-bold text-gray-900 group-hover:text-green-700 transition-colors line-clamp-2">
+                  ${post.title}
+                </h4>
+                <p class="text-sm text-gray-600 line-clamp-2">
+                  ${post.desc}
+                </p>
+              </div>
+            `;
+            
+            middleContainer.appendChild(postCard);
+          });
 
-  function showSlide(index) {
-    slides.forEach((slide, i) => {
-      if (i === index) {
-        slide.classList.add('active');
-      } else {
-        slide.classList.remove('active');
+          // Right Posts (6th-8th)
+          const rightContainer = document.getElementById('rightPosts');
+          const rightPosts = posts.slice(5, 9);
+          
+          rightPosts.forEach(post => {
+            const postCard = document.createElement('a');
+            postCard.href = post.link;
+            postCard.className = "block group pb-6 border-b border-gray-200 last:border-b-0";
+            
+            postCard.innerHTML = `
+              <div class="space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="inline-block text-xs font-semibold text-green-700 uppercase tracking-wide">
+                    ${post.category || 'Article'}
+                  </span>
+                  <span class="text-xs text-gray-500">${post.date || ''}</span>
+                </div>
+                <h4 class="text-base font-bold text-gray-900 group-hover:text-green-700 transition-colors line-clamp-3">
+                  ${post.title}
+                </h4>
+              </div>
+            `;
+            
+            rightContainer.appendChild(postCard);
+          });
+
+          // Discover More Card
+          const discoverCard = document.createElement('a');
+          discoverCard.href = "blog.html";
+          discoverCard.className = "block bg-green-100 border-2 border-green-700 rounded-lg p-4 hover:bg-green-100 transition-colors group";
+          
+          discoverCard.innerHTML = `
+            <div class="space-y-2">
+              <span class="inline-block text-xs font-semibold text-green-700 uppercase tracking-wide">
+                More
+              </span>
+              <h4 class="text-base font-bold text-gray-900 group-hover:text-red-500 transition-colors">
+                Discover other posts
+              </h4>
+              <p class="text-sm text-gray-600">
+                Browse our full collection
+              </p>
+            </div>
+          `;
+          
+          rightContainer.appendChild(discoverCard);
+
+        } catch (err) {
+          console.error('Failed to load blog posts', err);
+        }
       }
-      dots[i].classList.toggle('bg-green-400', i === index);
-      dots[i].classList.toggle('bg-gray-400', i !== index);
-    });
-  }
 
-  // Auto slide every 6 seconds ...
-  function nextSlide() {
-  current = (current + 1) % slides.length;
-  showSlide(current);
-}
+      document.addEventListener('DOMContentLoaded', loadBlogPosts);
+    </script>
 
-function prevSlide() {
-  current = (current - 1 + slides.length) % slides.length;
-  showSlide(current);
-}
+  <section id="domains" class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-gray-800 mb-12">Domains</h2>
+      <div id="domainsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+        <!-- Domains will be loaded here dynamically -->
+      </div>
+      
+      <!-- Explore More Button -->
+      <div class="text-center">
+        <a href="domains.html" class="inline-flex items-center gap-2 px-8 py-4 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors shadow-md hover:shadow-lg">
+          <span>Explore All Domains</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
 
-document.getElementById('nextSlide').addEventListener('click', nextSlide);
-document.getElementById('prevSlide').addEventListener('click', prevSlide);
+  <script>
+    // Icon mapping for different domains
+    const domainIcons = {
+      'Frontend Developer': { icon: 'fas fa-laptop-code', color: 'bg-blue-600' },
+      'Backend Developer': { icon: 'fas fa-server', color: 'bg-green-600' },
+      'DevOps Engineer': { icon: 'fas fa-infinity', color: 'bg-purple-600' },
+      'AI/ML Engineer': { icon: 'fas fa-robot', color: 'bg-red-600' },
+      'Full-Stack Developer': { icon: 'fas fa-code', color: 'bg-indigo-600' },
+      'Software Architect': { icon: 'fas fa-project-diagram', color: 'bg-orange-600' }
+    };
 
+    function loadDomains() {
+      // Manual domains list
+      const domains = [
+        { title: 'Frontend Developer', link: 'domains.html#frontend' },
+        { title: 'Backend Developer', link: 'domains.html#backend' },
+        { title: 'DevOps Engineer', link: 'domains.html#devops' },
+        { title: 'AI/ML Engineer', link: 'domains.html#aiml' },
+        { title: 'Full-Stack Developer', link: 'domains.html#fullstack' },
+        { title: 'Software Architect', link: 'domains.html#architect' }
+      ];
+      
+      const container = document.getElementById('domainsContainer');
 
-  dots.forEach((dot, i) => {
-    dot.addEventListener('click', () => {
-      current = i;
-      showSlide(current);
-    });
-  });
-
-  showSlide(current);
-  setInterval(nextSlide, 5000); // Timer 5sec
-</script>
-
-
-<script>
-  async function loadLatest() {
-    try {
-      const res = await fetch('./blog/blog.json');
-      const all = await res.json();
-      const latest = all.slice(0, 3); // first 3 articles
-      const grid = document.getElementById('latestGrid');
-
-      // Inject the 3 latest articles
-      latest.forEach(a => {
-        const cardLink = document.createElement('a');
-        cardLink.href = a.link;
-        cardLink.className = "block bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1";
-
-        const thumb = document.createElement('div');
-        thumb.className = "h-40 bg-cover bg-center cursor-pointer";
-        thumb.style.backgroundImage = `url('${a.image}')`;
-
-        const content = document.createElement('div');
-        content.className = "p-6 flex-1 flex flex-col";
-        content.innerHTML = `
-          <h3 class="text-xl font-semibold mb-2">${a.title}</h3>
-          <p class="text-gray-600 text-sm mb-4 flex-1">${a.desc}</p>
-          <span class="text-green-700 font-semibold hover:underline mt-auto">Read More →</span>
+      domains.forEach(domain => {
+        // Get icon and color from mapping, or use default
+        const iconData = domainIcons[domain.title] || { icon: 'fas fa-briefcase', color: 'bg-gray-600' };
+        
+        const domainBox = document.createElement('a');
+        domainBox.href = domain.link;
+        domainBox.className = "group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100";
+        
+        domainBox.innerHTML = `
+          <div class="flex items-center gap-3 p-3">
+            <div class="${iconData.color} w-10 h-10 rounded-lg flex items-center justify-center text-white shadow-md group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+              <i class="${iconData.icon} text-lg"></i>
+            </div>
+            <h3 class="text-base font-semibold text-gray-800 group-hover:text-green-600 transition-colors">
+              ${domain.title}
+            </h3>
+          </div>
         `;
-
-        cardLink.appendChild(thumb);
-        cardLink.appendChild(content);
-        grid.appendChild(cardLink);
+        
+        container.appendChild(domainBox);
       });
-
-      // Add a 'View All Articles' card
-      const viewAll = document.createElement('a');
-      viewAll.href = "blog.html";
-      viewAll.className = "block bg-white border-2 border-green-200 rounded-xl flex flex-col items-center justify-center text-center p-6 hover:bg-green-50 transition transform hover:-translate-y-1";
-
-      viewAll.innerHTML = `
-        <i class="fas fa-book-open fa-3x text-green-600 mb-4"></i>
-        <h3 class="text-xl font-semibold mb-2">View All Articles</h3>
-        <p class="text-gray-600 mb-4">Browse our full collection of articles and insights.</p>
-        <span class="text-green-700 font-semibold hover:underline">Find More →</span>
-      `;
-
-      grid.appendChild(viewAll);
-
-    } catch (err) {
-      console.error('Failed to load latest articles', err);
     }
-  }
 
-  document.addEventListener('DOMContentLoaded', loadLatest);
-</script>
+    document.addEventListener('DOMContentLoaded', loadDomains);
+  </script>
+    
+  <section id="maps" class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-gray-800 mb-12">Skill Maps</h2>
+      <div id="skillsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+        <!-- Skills will be loaded here dynamically -->
+      </div>
+      
+      <!-- Explore More Button -->
+      <div class="text-center">
+        <a href="skills.html" class="inline-flex items-center gap-2 px-8 py-4 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors shadow-md hover:shadow-lg">
+          <span>Explore More Skills</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
 
-<script>
-  async function loadSkills() {
-    try {
-      const res = await fetch('./skills/skills.json');
-      const all = await res.json();
-      const latest5 = all.slice(0, 5); // first 5 courses
+  <script>
+    // Icon mapping for different skills
+    const skillIcons = {
+      'Python': { icon: 'fab fa-python', color: 'bg-blue-500' },
+      'Java': { icon: 'fab fa-java', color: 'bg-red-600' },
+      'JavaScript': { icon: 'fab fa-js', color: 'bg-yellow-400' },
+      'Docker': { icon: 'fab fa-docker', color: 'bg-blue-600' },
+      'Vue.js': { icon: 'fab fa-vuejs', color: 'bg-green-500' },
+      'Angular': { icon: 'fab fa-angular', color: 'bg-red-500' }
+    };
+
+    async function loadSkills() {
+      // Manual skill list
+      const skills = [
+        { title: 'Python', link: 'skills/python.html' },
+        { title: 'Java', link: 'skills/java.html' },
+        { title: 'JavaScript', link: 'skills/javascript.html' },
+        { title: 'Docker', link: 'skills/docker.html' },
+        { title: 'Vue.js', link: 'skills/vue.html' },
+        { title: 'Angular', link: 'skills/angular.html' }
+      ];
+      
       const container = document.getElementById('skillsContainer');
 
-      // Create the 5 latest skill boxes
-      latest5.forEach(skill => {
-        const skillBox = document.createElement('a');
-        skillBox.href = skill.link;
-        skillBox.className = "block bg-white rounded-lg shadow-md hover:shadow-xl transition transform hover:scale-[1.02] p-6";
-        
-        skillBox.innerHTML = `
-          <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
-            <div class="flex items-center justify-between">
-              <h3 class="text-xl md:text-2xl font-semibold text-gray-800 md:min-w-[150px]">${skill.title}</h3>
-              <span class="text-gray-500 font-medium whitespace-nowrap md:hidden">${skill.date}</span>
+      skills.forEach(skill => {
+          // Get icon and color from mapping, or use default
+          const iconData = skillIcons[skill.title] || { icon: 'fas fa-map', color: 'bg-green-600' };
+          
+          const skillBox = document.createElement('a');
+          skillBox.href = skill.link;
+          skillBox.className = "group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100";
+          
+          skillBox.innerHTML = `
+            <div class="flex items-center gap-3 p-3">
+              <div class="${iconData.color} w-10 h-10 rounded-lg flex items-center justify-center text-white shadow-md group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                <i class="${iconData.icon} text-lg"></i>
+              </div>
+              <h3 class="text-base font-semibold text-gray-800 group-hover:text-green-600 transition-colors">
+                ${skill.title}
+              </h3>
             </div>
-            <p class="text-gray-600 md:flex-1 md:px-8">${skill.desc}</p>
-            <span class="text-gray-500 font-medium whitespace-nowrap hidden md:block">${skill.date}</span>
+          `;
+          
+          container.appendChild(skillBox);
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', loadSkills);
+  </script>
+
+    <section id="interview-prep" class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="mb-12">
+        <h2 class="text-4xl font-bold text-gray-800 mb-4">Interview Preparation</h2>
+        <p class="text-lg text-gray-600 max-w-3xl">
+          Master technical interviews with structured learning paths. Follow our stage-by-stage guides to build strong fundamentals and ace your interviews.
+        </p>
+      </div>
+
+      <!-- Data Structures Example -->
+      <div class="bg-white rounded-2xl shadow-xl p-8 mb-12 border-2 border-green-100">
+        <div class="flex items-start gap-6 mb-8">
+          <div class="bg-gradient-to-br from-blue-500 to-blue-600 w-16 h-16 rounded-xl flex items-center justify-center text-white shadow-lg flex-shrink-0">
+            <i class="fas fa-sitemap text-2xl"></i>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-2xl font-bold text-gray-800 mb-2">Data Structures</h3>
+            <p class="text-gray-600">
+              Master the fundamental building blocks of programming. Learn to choose and implement the right data structure for any problem.
+            </p>
+          </div>
+        </div>
+
+        <!-- Stages -->
+        <div class="space-y-6">
+          
+          <!-- Stage 1 -->
+          <div class="border-l-4 border-green-500 pl-6 py-2">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="bg-green-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">1</span>
+              <h4 class="text-xl font-bold text-gray-800">Fundamentals - Arrays & Strings</h4>
+            </div>
+            <p class="text-gray-600 mb-3">
+              <strong>What to expect:</strong> Learn basic operations, two-pointer techniques, sliding window patterns, and string manipulation. Focus on time/space complexity analysis.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-sm text-gray-600"><strong>Practice on:</strong></span>
+              <a href="https://leetcode.com/tag/array/" target="_blank" class="px-3 py-1 bg-blue-50 text-blue-700 rounded-lg text-sm font-medium hover:bg-blue-100 transition">LeetCode Arrays</a>
+              <a href="https://www.hackerrank.com/domains/data-structures/arrays" target="_blank" class="px-3 py-1 bg-green-50 text-green-700 rounded-lg text-sm font-medium hover:bg-green-100 transition">HackerRank</a>
+              <a href="https://www.geeksforgeeks.org/array-data-structure/" target="_blank" class="px-3 py-1 bg-orange-50 text-orange-700 rounded-lg text-sm font-medium hover:bg-orange-100 transition">GeeksforGeeks</a>
+            </div>
+          </div>
+
+          <!-- Stage 2 -->
+          <div class="border-l-4 border-blue-500 pl-6 py-2">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="bg-blue-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">2</span>
+              <h4 class="text-xl font-bold text-gray-800">Linked Lists</h4>
+            </div>
+            <p class="text-gray-600 mb-3">
+              <strong>What to expect:</strong> Understand node-based structures, pointer manipulation, reversal techniques, cycle detection, and merge operations. Practice both singly and doubly linked lists.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-sm text-gray-600"><strong>Practice on:</strong></span>
+              <a href="https://leetcode.com/tag/linked-list/" target="_blank" class="px-3 py-1 bg-blue-50 text-blue-700 rounded-lg text-sm font-medium hover:bg-blue-100 transition">LeetCode Linked Lists</a>
+              <a href="https://www.codewars.com/kata/search/linked-list" target="_blank" class="px-3 py-1 bg-red-50 text-red-700 rounded-lg text-sm font-medium hover:bg-red-100 transition">CodeWars</a>
+              <a href="https://www.algoexpert.io/data-structures" target="_blank" class="px-3 py-1 bg-purple-50 text-purple-700 rounded-lg text-sm font-medium hover:bg-purple-100 transition">AlgoExpert</a>
+            </div>
+          </div>
+
+          <!-- Stage 3 -->
+          <div class="border-l-4 border-purple-500 pl-6 py-2">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="bg-purple-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">3</span>
+              <h4 class="text-xl font-bold text-gray-800">Stacks, Queues & Hash Tables</h4>
+            </div>
+            <p class="text-gray-600 mb-3">
+              <strong>What to expect:</strong> Master LIFO/FIFO operations, implement min/max stacks, learn hash table collision handling, and solve problems using HashMap/HashSet for O(1) lookups.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-sm text-gray-600"><strong>Practice on:</strong></span>
+              <a href="https://leetcode.com/tag/stack/" target="_blank" class="px-3 py-1 bg-blue-50 text-blue-700 rounded-lg text-sm font-medium hover:bg-blue-100 transition">LeetCode Stack/Queue</a>
+              <a href="https://www.hackerrank.com/domains/data-structures/stacks" target="_blank" class="px-3 py-1 bg-green-50 text-green-700 rounded-lg text-sm font-medium hover:bg-green-100 transition">HackerRank</a>
+              <a href="https://exercism.org/" target="_blank" class="px-3 py-1 bg-indigo-50 text-indigo-700 rounded-lg text-sm font-medium hover:bg-indigo-100 transition">Exercism</a>
+            </div>
+          </div>
+
+          <!-- Stage 4 -->
+          <div class="border-l-4 border-orange-500 pl-6 py-2">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="bg-orange-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">4</span>
+              <h4 class="text-xl font-bold text-gray-800">Trees & Binary Search Trees</h4>
+            </div>
+            <p class="text-gray-600 mb-3">
+              <strong>What to expect:</strong> Learn tree traversals (inorder, preorder, postorder), BST properties, tree construction, lowest common ancestor, and balanced tree concepts (AVL, Red-Black).
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-sm text-gray-600"><strong>Practice on:</strong></span>
+              <a href="https://leetcode.com/tag/tree/" target="_blank" class="px-3 py-1 bg-blue-50 text-blue-700 rounded-lg text-sm font-medium hover:bg-blue-100 transition">LeetCode Trees</a>
+              <a href="https://www.geeksforgeeks.org/binary-search-tree-data-structure/" target="_blank" class="px-3 py-1 bg-orange-50 text-orange-700 rounded-lg text-sm font-medium hover:bg-orange-100 transition">GeeksforGeeks</a>
+              <a href="https://binarysearch.com/" target="_blank" class="px-3 py-1 bg-teal-50 text-teal-700 rounded-lg text-sm font-medium hover:bg-teal-100 transition">BinarySearch</a>
+            </div>
+          </div>
+
+          <!-- Stage 5 -->
+          <div class="border-l-4 border-red-500 pl-6 py-2">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="bg-red-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">5</span>
+              <h4 class="text-xl font-bold text-gray-800">Graphs & Advanced Structures</h4>
+            </div>
+            <p class="text-gray-600 mb-3">
+              <strong>What to expect:</strong> Master graph representations, BFS/DFS traversals, shortest path algorithms (Dijkstra, Bellman-Ford), topological sorting, union-find, heaps, and tries.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-sm text-gray-600"><strong>Practice on:</strong></span>
+              <a href="https://leetcode.com/tag/graph/" target="_blank" class="px-3 py-1 bg-blue-50 text-blue-700 rounded-lg text-sm font-medium hover:bg-blue-100 transition">LeetCode Graphs</a>
+              <a href="https://www.hackerrank.com/domains/data-structures/graphs" target="_blank" class="px-3 py-1 bg-green-50 text-green-700 rounded-lg text-sm font-medium hover:bg-green-100 transition">HackerRank</a>
+              <a href="https://codeforces.com/" target="_blank" class="px-3 py-1 bg-blue-50 text-blue-800 rounded-lg text-sm font-medium hover:bg-blue-100 transition">Codeforces</a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-gray-200 flex items-center justify-between">
+          <div class="flex items-center gap-6 text-sm text-gray-600">
+            <span class="flex items-center gap-2">
+              <i class="fas fa-layer-group text-green-600"></i>
+              <strong>5</strong> Stages
+            </span>
+            <span class="flex items-center gap-2">
+              <i class="fas fa-clock text-green-600"></i>
+              <strong>40-60</strong> Hours
+            </span>
+            <span class="flex items-center gap-2">
+              <i class="fas fa-signal text-green-600"></i>
+              Beginner to Advanced
+            </span>
+          </div>
+          <span class="px-6 py-2 bg-gray-400 text-white font-semibold rounded-lg cursor-not-allowed flex items-center gap-2">
+            <i class="fas fa-lock"></i>
+            Coming Soon
+          </span>
+        </div>
+      </div>
+
+      <!-- Other Topics Grid -->
+      <div id="interviewContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+        <!-- Removed - only Data Structures shown above -->
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-gray-800 mb-12">Frequently Asked Questions</h2>
+      <div id="faqContainer" class="space-y-3 mb-8">
+        <!-- FAQs will be loaded here dynamically -->
+      </div>
+      
+      <!-- All FAQs Button -->
+      <div class="text-center">
+        <a href="FAQs.html" class="inline-flex items-center gap-2 px-8 py-4 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors shadow-md hover:shadow-lg">
+          <span>View All FAQs</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function loadFAQs() {
+      // Manual FAQ list
+      const faqs = [
+        { 
+          question: 'How do I track my progress?', 
+          answer: 'Create an account to view and track your learning journey across all skill maps and domains.'
+        },
+        { 
+          question: 'Are the courses free?', 
+          answer: 'Yes! All pathways, skill maps, and materials are completely free to access and use.'
+        },
+        { 
+          question: 'Can I contribute content?', 
+          answer: 'Absolutely! Join our community to share your expertise and help others learn.'
+        },
+        { 
+          question: 'What skill level do I need to start?', 
+          answer: 'Our skill maps cater to all levels, from complete beginners to advanced professionals.'
+        },
+        { 
+          question: 'How long does it take to complete a skill map?', 
+          answer: 'It varies by skill and your pace, but most paths take 2-6 months of consistent learning.'
+        },
+        { 
+          question: 'Do I get a certificate upon completion?', 
+          answer: 'Yes, you can earn certificates for completing skill maps and demonstrating proficiency.'
+        },
+        { 
+          question: 'Can I switch between different domains?', 
+          answer: 'Yes! You can explore multiple domains simultaneously and switch between them anytime.'
+        },
+        { 
+          question: 'Is there a mobile app available?', 
+          answer: 'Currently we offer a responsive web experience. A dedicated mobile app is in development.'
+        },
+        { 
+          question: 'How often is content updated?', 
+          answer: 'We regularly update our content to reflect the latest industry trends and best practices.'
+        }
+      ];
+      
+      const container = document.getElementById('faqContainer');
+
+      faqs.forEach((faq, index) => {
+        const faqBox = document.createElement('div');
+        faqBox.className = "group bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100";
+        
+        faqBox.innerHTML = `
+          <div class="flex items-center justify-between gap-3 p-4 cursor-pointer" onclick="toggleFAQ(${index})">
+            <div class="flex items-center gap-3 flex-1">
+              <div class="bg-green-100 w-8 h-8 rounded-lg flex items-center justify-center text-green-600 flex-shrink-0">
+                <i class="fas fa-question text-sm"></i>
+              </div>
+              <h3 class="text-base font-semibold text-gray-800 group-hover:text-green-600 transition-colors">
+                ${faq.question}
+              </h3>
+            </div>
+            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300" id="icon-${index}"></i>
+          </div>
+          <div class="hidden px-4 pb-4 pl-15" id="answer-${index}">
+            <p class="text-gray-600 text-sm ml-11">${faq.answer}</p>
           </div>
         `;
         
-        container.appendChild(skillBox);
+        container.appendChild(faqBox);
       });
-
-      // Add "All Skill Maps" button
-      const viewAllBox = document.createElement('a');
-      viewAllBox.href = "skills.html";
-      viewAllBox.className = "block bg-green-50 border-2 border-green-200 rounded-lg shadow-md hover:shadow-xl hover:bg-green-100 transition transform hover:scale-[1.02] p-6";
-      
-      viewAllBox.innerHTML = `
-        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
-          <div class="flex items-center justify-between">
-            <h3 class="text-xl md:text-2xl font-semibold text-gray-800 md:min-w-[150px]">All Skill Maps</h3>
-            <span class="text-green-700 font-semibold whitespace-nowrap md:hidden">View All →</span>
-          </div>
-          <p class="text-gray-600 md:flex-1 md:px-8">Browse all interactive skill maps and pathways</p>
-          <span class="text-green-700 font-semibold whitespace-nowrap hidden md:block">View All →</span>
-        </div>
-      `;
-      
-      container.appendChild(viewAllBox);
-
-    } catch (err) {
-      console.error('Failed to load skills', err);
     }
-  }
 
-  document.addEventListener('DOMContentLoaded', loadSkills);
-</script>
+    function toggleFAQ(index) {
+      const answer = document.getElementById(`answer-${index}`);
+      const icon = document.getElementById(`icon-${index}`);
+      
+      if (answer.classList.contains('hidden')) {
+        answer.classList.remove('hidden');
+        icon.style.transform = 'rotate(180deg)';
+      } else {
+        answer.classList.add('hidden');
+        icon.style.transform = 'rotate(0deg)';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', loadFAQs);
+  </script>
 
     <!-- Placeholder for the footer -->
     <div id="footer-placeholder"></div>
