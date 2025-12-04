@@ -1,0 +1,44 @@
+[
+  {
+    "title": "Frontend Development",
+    "description": "Master modern web interfaces with HTML, CSS, JavaScript, React, and responsive design principles.",
+    "link": "domains/frontend/index.html",
+    "icon": "fab fa-html5",
+    "color": "#E44D26"
+  },
+  {
+    "title": "Backend Development",
+    "description": "Build robust server-side applications with Node.js, databases, APIs, and cloud services.",
+    "link": "domains/backend/index.html",
+    "icon": "fas fa-server",
+    "color": "#68A063"
+  },
+  {
+    "title": "Fullstack Development",
+    "description": "Combine frontend and backend skills to build complete web applications from start to finish.",
+    "link": "domains/fullstack/index.html",
+    "icon": "fas fa-layer-group",
+    "color": "#4A90E2"
+  },
+  {
+    "title": "Software Architect",
+    "description": "Design scalable systems, make architectural decisions, and lead technical strategy for complex projects.",
+    "link": "domains/architect/index.html",
+    "icon": "fas fa-drafting-compass",
+    "color": "#8E44AD"
+  },
+  {
+    "title": "DevOps",
+    "description": "Learn CI/CD pipelines, containerization, Kubernetes, cloud platforms, and automation tools.",
+    "link": "domains/devops/index.html",
+    "icon": "fas fa-infinity",
+    "color": "#0DB7ED"
+  },
+  {
+    "title": "AI & Machine Learning",
+    "description": "Build intelligent systems with neural networks, deep learning, NLP, and computer vision.",
+    "link": "domains/ai/index.html",
+    "icon": "fas fa-brain",
+    "color": "#FF6B6B"
+  }
+]
