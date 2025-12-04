@@ -2,42 +2,42 @@
   {
     "title": "Python",
     "description": "Learn Python fundamentals, OOP, data structures, and popular frameworks like Django and Flask.",
-    "link": "skills/python/index.html",
+    "link": "skills/Python.html",
     "icon": "fab fa-python",
     "color": "#3776AB"
   },
   {
     "title": "Java",
     "description": "Master object-oriented programming, Spring Framework, and enterprise application development.",
-    "link": "skills/java/index.html",
+    "link": "skills/Java.html",
     "icon": "fab fa-java",
     "color": "#007396"
   },
   {
     "title": "JavaScript",
     "description": "Master ES6+, async programming, DOM manipulation, and modern JavaScript frameworks.",
-    "link": "skills/javascript/index.html",
+    "link": "skills/JavaScript.html",
     "icon": "fab fa-js-square",
     "color": "#F7DF1E"
   },
   {
     "title": "Vue.js",
     "description": "Build reactive user interfaces with Vue 3, Composition API, and state management with Pinia.",
-    "link": "skills/vue/index.html",
+    "link": "skills/Vue.html",
     "icon": "fab fa-vuejs",
     "color": "#42B883"
   },
   {
     "title": "Docker",
     "description": "Containerize applications, manage images, orchestrate with Docker Compose and Kubernetes.",
-    "link": "skills/docker/index.html",
+    "link": "skills/Docker.html",
     "icon": "fab fa-docker",
     "color": "#2496ED"
   },
   {
     "title": "Angular",
     "description": "Develop scalable applications with TypeScript, RxJS, and Angular's component-based architecture.",
-    "link": "skills/angular/index.html",
+    "link": "skills/Angular.html",
     "icon": "fab fa-angular",
     "color": "#DD0031"
   }
