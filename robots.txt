@@ -1,0 +1,23 @@
+# robots.txt for www.skill-maps.com
+
+User-agent: *
+Allow: /
+
+# Disallow private or admin areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /cgi-bin/
+
+# Disallow search results and temporary pages
+Disallow: /search
+Disallow: /*?*
+Disallow: /temp/
+
+# Allow crawling of assets
+Allow: /assets/
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+# Sitemap location
+Sitemap: https://www.skill-maps.com/sitemap.xml
