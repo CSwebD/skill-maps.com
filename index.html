@@ -54,7 +54,7 @@
 
   <section id="articles" class="py-8 md:py-12">
     <div class="max-w-7xl mx-auto px-6">
-      <h2 class="text-1xl font-bold text-gray-800 mb-8">Latest Articles</h2>
+      <h2 class="text-1xl font-bold text-gray-800 mb-1 pt-9">Latest Articles</h2>
       
       <!-- Main Grid: 40% - 40% - 20% -->
       <div class="grid grid-cols-1 lg:grid-cols-5 gap-6">
@@ -111,7 +111,7 @@
                 <h3 class="text-2xl font-bold text-gray-900 group-hover:text-green-700 transition-colors">
                   ${post.title}
                 </h3>
-                <p class="text-gray-600 leading-relaxed">
+                <p class="text-gray-600 leading-relaxed line-clamp-3 lg:line-clamp-none">
                   ${post.desc}
                 </p>
               </div>
@@ -152,14 +152,14 @@
           middleContainer.appendChild(postCard);
         });
 
-        // Right Posts (6th-9th)
+        // Right Posts (6th-8th)
         const rightContainer = document.getElementById('rightPosts');
-        const rightPosts = posts.slice(5, 10);
+        const rightPosts = posts.slice(5, 9);
         
         rightPosts.forEach(post => {
           const postCard = document.createElement('a');
           postCard.href = post.link;
-          postCard.className = "block group pb-3.5 border-gray-200 last:border-b-0";
+          postCard.className = "block group pb-3.4 border-gray-200 last:border-b-0";
           
           postCard.innerHTML = `
             <div class="space-y-2 bg-white">
@@ -172,6 +172,9 @@
               <h4 class="text-base font-bold text-gray-900 group-hover:text-green-700 transition-colors line-clamp-3">
                 ${post.title}
               </h4>
+                            <p class="text-sm text-gray-600 line-clamp-1">
+                ${post.desc}
+              </p>
             </div>
           `;
           
@@ -184,12 +187,15 @@
         discoverCard.className = "block border-2 border-green-700 hover:bg-green-100 transition-colors group";
         
         discoverCard.innerHTML = `
-          <div class="space-y-2">
+          <div class="space-y-3">
             <span class="inline-block text-xs font-semibold text-green-700 uppercase tracking-wide">
               More
             </span>
             <h4 class="text-base font-bold text-gray-900 group-hover:text-red-500 transition-colors">
               Discover other posts
+            </h4>
+            <h4 class="text-base font-bold text-gray-900 group-hover:text-red-500 transition-colors">
+              ...
             </h4>
           </div>
         `;
