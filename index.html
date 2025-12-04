@@ -534,139 +534,140 @@
     document.addEventListener('DOMContentLoaded', loadSkills);
   </script>
 
-  <section id="interview-prep" class="py-16 bg-gray-50">
+  <section id="interview-prep" class="py-8 md:py-12 bg-white">
     <div class="max-w-7xl mx-auto px-6">
-      <h2 class="text-4xl font-bold text-gray-800 mb-8">Interview Preparation</h2>
-
-      <div class="bg-white rounded-2xl shadow-lg p-8">
-        <div class="flex items-center gap-4 mb-6">
-          <div class="bg-gradient-to-br from-green-500 to-green-700 w-16 h-16 rounded-xl flex items-center justify-center">
-            <i class="fas fa-code text-white text-3xl"></i>
-          </div>
-          <div>
-            <h3 class="text-3xl font-bold text-gray-900">Data Structures</h3>
-            <p class="text-gray-500 text-sm">Master essential concepts for technical interviews</p>
+      <h2 class="text-1xl font-bold text-gray-800 mb-1">Interview Preparation</h2>
+      
+      <!-- Data Structures Card -->
+      <div class="bg-white border-2 border-gray-300 hover:border-green-600 shadow-sm hover:shadow-lg transition-all overflow-hidden">
+        
+        <!-- Header -->
+        <div class="bg-gray-50 p-4 md:p-6 border-b-2 border-gray-200">
+          <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
+            <div class="bg-gradient-to-br from-green-500 to-green-700 w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-code text-white text-2xl sm:text-3xl"></i>
+            </div>
+            <div>
+              <h3 class="text-xl sm:text-2xl font-bold text-gray-900">Data Structures</h3>
+              <p class="text-gray-600 text-xs sm:text-sm">Master essential concepts for technical interviews</p>
+            </div>
           </div>
         </div>
 
-        <p class="text-gray-700 leading-relaxed mb-8">
-          Build a strong foundation in data structures to ace technical interviews at top tech companies. This comprehensive guide walks you through essential data structures step-by-step, from arrays to advanced graph algorithms.
-        </p>
+        <!-- Content -->
+        <div class="p-4 md:p-6">
+          <p class="text-sm md:text-base text-gray-700 leading-relaxed mb-6">
+            Build a strong foundation in data structures to ace technical interviews at top tech companies. This comprehensive guide walks you through essential data structures step-by-step, from arrays to advanced graph algorithms.
+          </p>
 
-        <div class="space-y-6">
+          <!-- Stages Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-6">
 
-          <!-- Stage 1 -->
-          <div class="border-l-4 border-blue-500 pl-6 py-2">
-            <div class="flex items-center gap-3 mb-3">
-              <span class="bg-blue-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">1</span>
-              <h4 class="text-xl font-bold text-gray-800">Arrays & Strings</h4>
+            <!-- Stage 1 -->
+            <div class="bg-gray-50 border-2 border-blue-500 p-3 hover:shadow-md transition-shadow">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="bg-blue-500 text-white w-6 h-6 flex items-center justify-center font-bold text-xs flex-shrink-0">1</span>
+                <h4 class="text-sm font-bold text-gray-800">Arrays & Strings</h4>
+              </div>
+              <p class="text-xs text-gray-600 mb-2">
+                Array manipulation, two-pointer techniques, sliding window algorithms.
+              </p>
+              <div class="flex flex-wrap gap-1">
+                <a href="https://leetcode.com/tag/array/" target="_blank" class="px-2 py-1 bg-blue-100 text-blue-700 text-xs font-medium hover:bg-blue-200 transition">LeetCode</a>
+                <a href="https://www.hackerrank.com/domains/data-structures/arrays" target="_blank" class="px-2 py-1 bg-green-100 text-green-700 text-xs font-medium hover:bg-green-200 transition">HackerRank</a>
+              </div>
             </div>
-            <p class="text-gray-600 mb-3">
-              <strong>What to expect:</strong> Learn array manipulation, two-pointer techniques, sliding window algorithms, string operations, and common patterns like substring searches and palindrome detection.
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span class="text-sm text-gray-600"><strong>Practice on:</strong></span>
-              <a href="https://leetcode.com/tag/array/" target="_blank" class="px-3 py-1 bg-blue-50 text-blue-700 rounded-lg text-sm font-medium hover:bg-blue-100 transition">LeetCode Arrays</a>
-              <a href="https://www.hackerrank.com/domains/data-structures/arrays" target="_blank" class="px-3 py-1 bg-green-50 text-green-700 rounded-lg text-sm font-medium hover:bg-green-100 transition">HackerRank</a>
-              <a href="https://www.codewars.com/" target="_blank" class="px-3 py-1 bg-red-50 text-red-700 rounded-lg text-sm font-medium hover:bg-red-100 transition">Codewars</a>
+
+            <!-- Stage 2 -->
+            <div class="bg-gray-50 border-2 border-green-500 p-3 hover:shadow-md transition-shadow">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="bg-green-500 text-white w-6 h-6 flex items-center justify-center font-bold text-xs flex-shrink-0">2</span>
+                <h4 class="text-sm font-bold text-gray-800">Hash Maps & Sets</h4>
+              </div>
+              <p class="text-xs text-gray-600 mb-2">
+                Hash table operations, collision handling, frequency counting problems.
+              </p>
+              <div class="flex flex-wrap gap-1">
+                <a href="https://leetcode.com/tag/hash-table/" target="_blank" class="px-2 py-1 bg-blue-100 text-blue-700 text-xs font-medium hover:bg-blue-200 transition">LeetCode</a>
+                <a href="https://www.algoexpert.io/" target="_blank" class="px-2 py-1 bg-purple-100 text-purple-700 text-xs font-medium hover:bg-purple-200 transition">AlgoExpert</a>
+              </div>
             </div>
+
+            <!-- Stage 3 -->
+            <div class="bg-gray-50 border-2 border-purple-500 p-3 hover:shadow-md transition-shadow">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="bg-purple-500 text-white w-6 h-6 flex items-center justify-center font-bold text-xs flex-shrink-0">3</span>
+                <h4 class="text-sm font-bold text-gray-800">Linked Lists & Stacks</h4>
+              </div>
+              <p class="text-xs text-gray-600 mb-2">
+                Linked list operations, stack/queue implementations, monotonic stacks.
+              </p>
+              <div class="flex flex-wrap gap-1">
+                <a href="https://leetcode.com/tag/linked-list/" target="_blank" class="px-2 py-1 bg-blue-100 text-blue-700 text-xs font-medium hover:bg-blue-200 transition">LeetCode</a>
+                <a href="https://www.interviewbit.com/" target="_blank" class="px-2 py-1 bg-indigo-100 text-indigo-700 text-xs font-medium hover:bg-indigo-200 transition">InterviewBit</a>
+              </div>
+            </div>
+
+            <!-- Stage 4 -->
+            <div class="bg-gray-50 border-2 border-orange-500 p-3 hover:shadow-md transition-shadow">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="bg-orange-500 text-white w-6 h-6 flex items-center justify-center font-bold text-xs flex-shrink-0">4</span>
+                <h4 class="text-sm font-bold text-gray-800">Trees & BST</h4>
+              </div>
+              <p class="text-xs text-gray-600 mb-2">
+                Tree traversals, BST properties, tree construction, balanced trees.
+              </p>
+              <div class="flex flex-wrap gap-1">
+                <a href="https://leetcode.com/tag/tree/" target="_blank" class="px-2 py-1 bg-blue-100 text-blue-700 text-xs font-medium hover:bg-blue-200 transition">LeetCode</a>
+                <a href="https://www.geeksforgeeks.org/binary-search-tree-data-structure/" target="_blank" class="px-2 py-1 bg-orange-100 text-orange-700 text-xs font-medium hover:bg-orange-200 transition">GFG</a>
+              </div>
+            </div>
+
+            <!-- Stage 5 -->
+            <div class="bg-gray-50 border-2 border-red-500 p-3 hover:shadow-md transition-shadow">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="bg-red-500 text-white w-6 h-6 flex items-center justify-center font-bold text-xs flex-shrink-0">5</span>
+                <h4 class="text-sm font-bold text-gray-800">Graphs & Advanced</h4>
+              </div>
+              <p class="text-xs text-gray-600 mb-2">
+                Graph representations, BFS/DFS, shortest paths, topological sorting.
+              </p>
+              <div class="flex flex-wrap gap-1">
+                <a href="https://leetcode.com/tag/graph/" target="_blank" class="px-2 py-1 bg-blue-100 text-blue-700 text-xs font-medium hover:bg-blue-200 transition">LeetCode</a>
+                <a href="https://www.hackerrank.com/domains/data-structures/graphs" target="_blank" class="px-2 py-1 bg-green-100 text-green-700 text-xs font-medium hover:bg-green-200 transition">HackerRank</a>
+              </div>
+            </div>
+
           </div>
 
-          <!-- Stage 2 -->
-          <div class="border-l-4 border-green-500 pl-6 py-2">
-            <div class="flex items-center gap-3 mb-3">
-              <span class="bg-green-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">2</span>
-              <h4 class="text-xl font-bold text-gray-800">Hash Maps & Sets</h4>
+          <!-- Stats and Button -->
+          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pt-4 border-t-2 border-gray-200">
+            <div class="flex flex-wrap items-center gap-3 md:gap-4 text-xs md:text-sm text-gray-600">
+              <span class="flex items-center gap-2">
+                <i class="fas fa-layer-group" style="color: #377536;"></i>
+                <strong>5</strong> Stages
+              </span>
+              <span class="flex items-center gap-2">
+                <i class="fas fa-clock" style="color: #377536;"></i>
+                <strong>40-60</strong> Hours
+              </span>
+              <span class="flex items-center gap-2">
+                <i class="fas fa-signal" style="color: #377536;"></i>
+                Beginner to Advanced
+              </span>
             </div>
-            <p class="text-gray-600 mb-3">
-              <strong>What to expect:</strong> Understand hash table operations, collision handling, frequency counting problems, set operations, and time complexity trade-offs in lookups and insertions.
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span class="text-sm text-gray-600"><strong>Practice on:</strong></span>
-              <a href="https://leetcode.com/tag/hash-table/" target="_blank" class="px-3 py-1 bg-blue-50 text-blue-700 rounded-lg text-sm font-medium hover:bg-blue-100 transition">LeetCode Hash</a>
-              <a href="https://www.algoexpert.io/" target="_blank" class="px-3 py-1 bg-purple-50 text-purple-700 rounded-lg text-sm font-medium hover:bg-purple-100 transition">AlgoExpert</a>
-              <a href="https://neetcode.io/" target="_blank" class="px-3 py-1 bg-orange-50 text-orange-700 rounded-lg text-sm font-medium hover:bg-orange-100 transition">NeetCode</a>
-            </div>
-          </div>
-
-          <!-- Stage 3 -->
-          <div class="border-l-4 border-purple-500 pl-6 py-2">
-            <div class="flex items-center gap-3 mb-3">
-              <span class="bg-purple-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">3</span>
-              <h4 class="text-xl font-bold text-gray-800">Linked Lists & Stacks/Queues</h4>
-            </div>
-            <p class="text-gray-600 mb-3">
-              <strong>What to expect:</strong> Master linked list operations (reversal, cycle detection), stack/queue implementations, monotonic stacks, deque usage, and practice common interview patterns.
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span class="text-sm text-gray-600"><strong>Practice on:</strong></span>
-              <a href="https://leetcode.com/tag/linked-list/" target="_blank" class="px-3 py-1 bg-blue-50 text-blue-700 rounded-lg text-sm font-medium hover:bg-blue-100 transition">LeetCode Lists</a>
-              <a href="https://www.interviewbit.com/" target="_blank" class="px-3 py-1 bg-indigo-50 text-indigo-700 rounded-lg text-sm font-medium hover:bg-indigo-100 transition">InterviewBit</a>
-              <a href="https://exercism.org/" target="_blank" class="px-3 py-1 bg-indigo-50 text-indigo-700 rounded-lg text-sm font-medium hover:bg-indigo-100 transition">Exercism</a>
-            </div>
-          </div>
-
-          <!-- Stage 4 -->
-          <div class="border-l-4 border-orange-500 pl-6 py-2">
-            <div class="flex items-center gap-3 mb-3">
-              <span class="bg-orange-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">4</span>
-              <h4 class="text-xl font-bold text-gray-800">Trees & Binary Search Trees</h4>
-            </div>
-            <p class="text-gray-600 mb-3">
-              <strong>What to expect:</strong> Learn tree traversals (inorder, preorder, postorder), BST properties, tree construction, lowest common ancestor, and balanced tree concepts (AVL, Red-Black).
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span class="text-sm text-gray-600"><strong>Practice on:</strong></span>
-              <a href="https://leetcode.com/tag/tree/" target="_blank" class="px-3 py-1 bg-blue-50 text-blue-700 rounded-lg text-sm font-medium hover:bg-blue-100 transition">LeetCode Trees</a>
-              <a href="https://www.geeksforgeeks.org/binary-search-tree-data-structure/" target="_blank" class="px-3 py-1 bg-orange-50 text-orange-700 rounded-lg text-sm font-medium hover:bg-orange-100 transition">GeeksforGeeks</a>
-              <a href="https://binarysearch.com/" target="_blank" class="px-3 py-1 bg-teal-50 text-teal-700 rounded-lg text-sm font-medium hover:bg-teal-100 transition">BinarySearch</a>
-            </div>
-          </div>
-
-          <!-- Stage 5 -->
-          <div class="border-l-4 border-red-500 pl-6 py-2">
-            <div class="flex items-center gap-3 mb-3">
-              <span class="bg-red-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">5</span>
-              <h4 class="text-xl font-bold text-gray-800">Graphs & Advanced Structures</h4>
-            </div>
-            <p class="text-gray-600 mb-3">
-              <strong>What to expect:</strong> Master graph representations, BFS/DFS traversals, shortest path algorithms (Dijkstra, Bellman-Ford), topological sorting, union-find, heaps, and tries.
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span class="text-sm text-gray-600"><strong>Practice on:</strong></span>
-              <a href="https://leetcode.com/tag/graph/" target="_blank" class="px-3 py-1 bg-blue-50 text-blue-700 rounded-lg text-sm font-medium hover:bg-blue-100 transition">LeetCode Graphs</a>
-              <a href="https://www.hackerrank.com/domains/data-structures/graphs" target="_blank" class="px-3 py-1 bg-green-50 text-green-700 rounded-lg text-sm font-medium hover:bg-green-100 transition">HackerRank</a>
-              <a href="https://codeforces.com/" target="_blank" class="px-3 py-1 bg-blue-50 text-blue-800 rounded-lg text-sm font-medium hover:bg-blue-100 transition">Codeforces</a>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="mt-8 pt-6 border-t border-gray-200 flex items-center justify-between">
-          <div class="flex items-center gap-6 text-sm text-gray-600">
-            <span class="flex items-center gap-2">
-              <i class="fas fa-layer-group" style="color: #377536;"></i>
-              <strong>5</strong> Stages
+            <span class="px-4 py-2 bg-gray-400 text-white text-sm font-semibold cursor-not-allowed flex items-center gap-2">
+              <i class="fas fa-lock"></i>
+              Coming Soon
             </span>
-            <span class="flex items-center gap-2">
-              <i class="fas fa-clock" style="color: #377536;"></i>
-              <strong>40-60</strong> Hours
-            </span>
-            <span class="flex items-center gap-2">
-              <i class="fas fa-signal" style="color: #377536;"></i>
-              Beginner to Advanced
-            </span>
           </div>
-          <span class="px-6 py-2 bg-gray-400 text-white font-semibold rounded-lg cursor-not-allowed flex items-center gap-2">
-            <i class="fas fa-lock"></i>
-            Coming Soon
-          </span>
+
         </div>
       </div>
 
       <!-- Other Topics Grid -->
-      <div id="interviewContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-        <!-- Removed - only Data Structures shown above -->
+      <div id="interviewContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8 mt-6">
+        <!-- Future interview prep topics can go here -->
       </div>
     </div>
   </section>
