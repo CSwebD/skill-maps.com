@@ -103,12 +103,12 @@
               </div>
               <div class="space-y-2">
                 <div class="flex items-center justify-between">
-                  <span class="inline-block text-xs font-semibold text-green-700 uppercase tracking-wide">
+                  <span class="inline-block text-xs font-semibold text-green-700 uppercase tracking-wide" style="color: #377536;">
                     ${post.category || 'Article'}
                   </span>
                   <span class="text-xs text-gray-500">${post.date || ''}</span>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-900 group-hover:text-green-700 transition-colors">
+                <h3 class="text-2xl font-bold text-gray-900 transition-colors" style="transition: color 0.3s;" onmouseover="this.style.color='#377536'" onmouseout="this.style.color=''">
                   ${post.title}
                 </h3>
                 <p class="text-gray-600 leading-relaxed line-clamp-3 lg:line-clamp-none">
@@ -135,12 +135,12 @@
             </div>
             <div class="space-y-1">
               <div class="flex items-center justify-between">
-                <span class="inline-block text-xs font-semibold text-green-700 uppercase tracking-wide">
+                <span class="inline-block text-xs font-semibold uppercase tracking-wide" style="color: #377536;">
                   ${post.category || 'Article'}
                 </span>
                 <span class="text-xs text-gray-500">${post.date || ''}</span>
               </div>
-              <h4 class="text-base font-bold text-gray-900 group-hover:text-green-700 transition-colors line-clamp-2">
+              <h4 class="text-base font-bold text-gray-900 transition-colors line-clamp-2" style="transition: color 0.3s;" onmouseover="this.style.color='#377536'" onmouseout="this.style.color=''">
                 ${post.title}
               </h4>
               <p class="text-sm text-gray-600 line-clamp-2">
@@ -164,15 +164,15 @@
           postCard.innerHTML = `
             <div class="space-y-2 bg-white">
               <div class="flex items-center justify-between">
-                <span class="inline-block text-xs font-semibold text-green-700 uppercase tracking-wide">
+                <span class="inline-block text-xs font-semibold uppercase tracking-wide" style="color: #377536;">
                   ${post.category || 'Article'}
                 </span>
                 <span class="text-xs text-gray-500">${post.date || ''}</span>
               </div>
-              <h4 class="text-base font-bold text-gray-900 group-hover:text-green-700 transition-colors line-clamp-3">
+              <h4 class="text-base font-bold text-gray-900 transition-colors line-clamp-3" style="transition: color 0.3s;" onmouseover="this.style.color='#377536'" onmouseout="this.style.color=''">
                 ${post.title}
               </h4>
-                            <p class="text-sm text-gray-600 line-clamp-1">
+              <p class="text-sm text-gray-600 line-clamp-1">
                 ${post.desc}
               </p>
             </div>
@@ -184,17 +184,17 @@
         // Discover More Card
         const discoverCard = document.createElement('a');
         discoverCard.href = "blog.html";
-        discoverCard.className = "block border-2 border-green-700 hover:bg-green-100 transition-colors group";
+        discoverCard.className = "block border-2 border-green-700 hover:bg-green-100 transition-colors group p-4";
         
         discoverCard.innerHTML = `
           <div class="space-y-3">
             <span class="inline-block text-xs font-semibold text-green-700 uppercase tracking-wide">
               More
             </span>
-            <h4 class="text-base font-bold text-gray-900 group-hover:text-red-500 transition-colors">
+            <h4 class="text-base font-bold text-gray-900 group-hover:text-green-700 transition-colors">
               Discover other posts
             </h4>
-            <h4 class="text-base font-bold text-gray-900 group-hover:text-red-500 transition-colors">
+            <h4 class="text-base font-bold text-gray-900 group-hover:text-green-700 transition-colors">
               ...
             </h4>
           </div>
@@ -202,205 +202,390 @@
         
         rightContainer.appendChild(discoverCard);
 
-      } catch (err) {
-        console.error('Failed to load blog posts', err);
+      } catch (error) {
+        console.error('Error loading blog posts:', error);
       }
     }
 
     document.addEventListener('DOMContentLoaded', loadBlogPosts);
   </script>
 
-  <section id="domains" class="py-16">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-4xl font-bold text-gray-800 mb-12">Domains</h2>
-      <div id="domainsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-        <!-- Domains will be loaded here dynamically -->
-      </div>
+  <!-- DOMAINS SECTION -->
+  <section id="domains" class="py-8 md:py-12 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-1xl font-bold text-gray-800 mb-1">Domains</h2>
       
-      <!-- Explore More Button -->
-      <div class="text-center">
-        <a href="domains.html" class="inline-flex items-center gap-2 px-8 py-4 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors shadow-md hover:shadow-lg">
-          <span>Explore All Domains</span>
-          <i class="fas fa-arrow-right"></i>
-        </a>
+      <!-- 4 Column Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+        
+        <!-- COLUMN 1: Single Domain -->
+        <div class="lg:col-span-1">
+          <div id="firstDomain" class="h-full">
+            <!-- First domain will load here -->
+          </div>
+        </div>
+
+        <!-- COLUMN 2: 2 Domains -->
+        <div class="lg:col-span-1">
+          <div id="secondDomains" class="space-y-6">
+            <!-- Domains 2-3 will load here -->
+          </div>
+        </div>
+
+        <!-- COLUMN 3: 2 Domains -->
+        <div class="lg:col-span-1">
+          <div id="thirdDomains" class="space-y-6">
+            <!-- Domains 4-5 will load here -->
+          </div>
+        </div>
+
+        <!-- COLUMN 4: 1 Domain + Explore All -->
+        <div class="lg:col-span-1">
+          <div id="fourthDomain" class="space-y-6">
+            <!-- Domain 6 and explore button will load here -->
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
   <script>
-    // Icon mapping for different domains
-    const domainIcons = {
-      'Frontend Developer': { icon: 'fas fa-laptop-code', color: 'bg-blue-600' },
-      'Backend Developer': { icon: 'fas fa-server', color: 'bg-green-600' },
-      'DevOps Engineer': { icon: 'fas fa-infinity', color: 'bg-purple-600' },
-      'AI/ML Engineer': { icon: 'fas fa-robot', color: 'bg-red-600' },
-      'Full-Stack Developer': { icon: 'fas fa-code', color: 'bg-indigo-600' },
-      'Software Architect': { icon: 'fas fa-project-diagram', color: 'bg-orange-600' }
-    };
+    async function loadDomains() {
+      try {
+        const res = await fetch('./domains/domains.json');
+        const domains = await res.json();
 
-    function loadDomains() {
-      // Manual domains list
-      const domains = [
-        { title: 'Frontend Developer', link: 'domains.html#frontend' },
-        { title: 'Backend Developer', link: 'domains.html#backend' },
-        { title: 'DevOps Engineer', link: 'domains.html#devops' },
-        { title: 'AI/ML Engineer', link: 'domains.html#aiml' },
-        { title: 'Full-Stack Developer', link: 'domains.html#fullstack' },
-        { title: 'Software Architect', link: 'domains.html#architect' }
-      ];
-      
-      const container = document.getElementById('domainsContainer');
+        // First Domain
+        if (domains[0]) {
+          const firstContainer = document.getElementById('firstDomain');
+          const domain = domains[0];
+          
+          firstContainer.innerHTML = `
+            <a href="${domain.link}" class="block group h-full bg-white overflow-hidden border-2 border-gray-300 hover:border-green-600 shadow-sm hover:shadow-lg transition-all">
+              <div class="relative h-32 overflow-hidden flex items-center justify-center bg-gray-50">
+                <i class="${domain.icon} text-6xl" style="color: ${domain.color || '#377536'};"></i>
+              </div>
+              <div class="p-4 space-y-2">
+                <h3 class="text-xl font-bold text-gray-900 transition-colors" style="transition: color 0.3s;" onmouseover="this.style.color='#377536'" onmouseout="this.style.color=''">
+                  ${domain.title}
+                </h3>
+                <p class="text-sm text-gray-600 line-clamp-3">
+                  ${domain.description}
+                </p>
+              </div>
+            </a>
+          `;
+        }
 
-      domains.forEach(domain => {
-        // Get icon and color from mapping, or use default
-        const iconData = domainIcons[domain.title] || { icon: 'fas fa-briefcase', color: 'bg-gray-600' };
+        // Second Column Domains (2-3)
+        const secondContainer = document.getElementById('secondDomains');
+        const secondDomains = domains.slice(1, 3);
         
-        const domainBox = document.createElement('a');
-        domainBox.href = domain.link;
-        domainBox.className = "group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100";
-        
-        domainBox.innerHTML = `
-          <div class="flex items-center gap-3 p-3">
-            <div class="${iconData.color} w-10 h-10 rounded-lg flex items-center justify-center text-white shadow-md group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
-              <i class="${iconData.icon} text-lg"></i>
+        secondDomains.forEach(domain => {
+          const domainCard = document.createElement('a');
+          domainCard.href = domain.link;
+          domainCard.className = "block group bg-white overflow-hidden border-2 border-gray-300 hover:border-green-600 shadow-sm hover:shadow-lg transition-all";
+          
+          domainCard.innerHTML = `
+            <div class="relative h-24 overflow-hidden flex items-center justify-center bg-gray-50">
+              <i class="${domain.icon} text-5xl" style="color: ${domain.color || '#377536'};"></i>
             </div>
-            <h3 class="text-base font-semibold text-gray-800 group-hover:text-green-600 transition-colors">
-              ${domain.title}
-            </h3>
-          </div>
-        `;
+            <div class="p-4 space-y-2">
+              <h3 class="text-lg font-bold text-gray-900 transition-colors" style="transition: color 0.3s;" onmouseover="this.style.color='#377536'" onmouseout="this.style.color=''">
+                ${domain.title}
+              </h3>
+              <p class="text-sm text-gray-600 line-clamp-2">
+                ${domain.description}
+              </p>
+            </div>
+          `;
+          
+          secondContainer.appendChild(domainCard);
+        });
+
+        // Third Column Domains (4-5)
+        const thirdContainer = document.getElementById('thirdDomains');
+        const thirdDomains = domains.slice(3, 5);
         
-        container.appendChild(domainBox);
-      });
+        thirdDomains.forEach(domain => {
+          const domainCard = document.createElement('a');
+          domainCard.href = domain.link;
+          domainCard.className = "block group bg-white overflow-hidden border-2 border-gray-300 hover:border-green-600 shadow-sm hover:shadow-lg transition-all";
+          
+          domainCard.innerHTML = `
+            <div class="relative h-24 overflow-hidden flex items-center justify-center bg-gray-50">
+              <i class="${domain.icon} text-5xl" style="color: ${domain.color || '#377536'};"></i>
+            </div>
+            <div class="p-4 space-y-2">
+              <h3 class="text-lg font-bold text-gray-900 transition-colors" style="transition: color 0.3s;" onmouseover="this.style.color='#377536'" onmouseout="this.style.color=''">
+                ${domain.title}
+              </h3>
+              <p class="text-sm text-gray-600 line-clamp-2">
+                ${domain.description}
+              </p>
+            </div>
+          `;
+          
+          thirdContainer.appendChild(domainCard);
+        });
+
+        // Fourth Column - Domain 6
+        const fourthContainer = document.getElementById('fourthDomain');
+        if (domains[5]) {
+          const domain = domains[5];
+          const domainCard = document.createElement('a');
+          domainCard.href = domain.link;
+          domainCard.className = "block group bg-white overflow-hidden border-2 border-gray-300 hover:border-green-600 shadow-sm hover:shadow-lg transition-all";
+          
+          domainCard.innerHTML = `
+            <div class="relative h-24 overflow-hidden flex items-center justify-center bg-gray-50">
+              <i class="${domain.icon} text-5xl" style="color: ${domain.color || '#377536'};"></i>
+            </div>
+            <div class="p-4 space-y-2">
+              <h3 class="text-lg font-bold text-gray-900 transition-colors" style="transition: color 0.3s;" onmouseover="this.style.color='#377536'" onmouseout="this.style.color=''">
+                ${domain.title}
+              </h3>
+              <p class="text-sm text-gray-600 line-clamp-2">
+                ${domain.description}
+              </p>
+            </div>
+          `;
+          
+          fourthContainer.appendChild(domainCard);
+        }
+
+        // Explore All Domains Button
+        const exploreButton = document.createElement('div');
+        exploreButton.innerHTML = `
+          <a href="domains.html" class="block w-full text-center py-12 bg-green-600 font-semibold text-white hover:bg-green-700 transition-colors">
+            Explore All Domains
+          </a>
+        `;
+        fourthContainer.appendChild(exploreButton);
+
+      } catch (error) {
+        console.error('Error loading domains:', error);
+      }
     }
 
     document.addEventListener('DOMContentLoaded', loadDomains);
   </script>
-    
-  <section id="maps" class="py-16">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-4xl font-bold text-gray-800 mb-12">Skill Maps</h2>
-      <div id="skillsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-        <!-- Skills will be loaded here dynamically -->
-      </div>
+
+  <!-- SKILL MAPS SECTION -->
+  <section id="skillmaps" class="py-8 md:py-12 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-1xl font-bold text-gray-800 mb-1">Skill Maps</h2>
       
-      <!-- Explore More Button -->
-      <div class="text-center">
-        <a href="skills.html" class="inline-flex items-center gap-2 px-8 py-4 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors shadow-md hover:shadow-lg">
-          <span>Explore More Skills</span>
-          <i class="fas fa-arrow-right"></i>
-        </a>
+      <!-- 4 Column Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+        
+        <!-- COLUMN 1: Single Skill -->
+        <div class="lg:col-span-1">
+          <div id="firstSkill" class="h-full">
+            <!-- First skill will load here -->
+          </div>
+        </div>
+
+        <!-- COLUMN 2: 2 Skills -->
+        <div class="lg:col-span-1">
+          <div id="secondSkills" class="space-y-6">
+            <!-- Skills 2-3 will load here -->
+          </div>
+        </div>
+
+        <!-- COLUMN 3: 2 Skills -->
+        <div class="lg:col-span-1">
+          <div id="thirdSkills" class="space-y-6">
+            <!-- Skills 4-5 will load here -->
+          </div>
+        </div>
+
+        <!-- COLUMN 4: 1 Skill + Explore All -->
+        <div class="lg:col-span-1">
+          <div id="fourthSkill" class="space-y-6">
+            <!-- Skill 6 and explore button will load here -->
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
   <script>
-    // Icon mapping for different skills
-    const skillIcons = {
-      'Python': { icon: 'fab fa-python', color: 'bg-blue-500' },
-      'Java': { icon: 'fab fa-java', color: 'bg-red-600' },
-      'JavaScript': { icon: 'fab fa-js', color: 'bg-yellow-400' },
-      'Docker': { icon: 'fab fa-docker', color: 'bg-blue-600' },
-      'Vue.js': { icon: 'fab fa-vuejs', color: 'bg-green-500' },
-      'Angular': { icon: 'fab fa-angular', color: 'bg-red-500' }
-    };
-
     async function loadSkills() {
-      // Manual skill list
-      const skills = [
-        { title: 'Python', link: 'skills/python.html' },
-        { title: 'Java', link: 'skills/java.html' },
-        { title: 'JavaScript', link: 'skills/javascript.html' },
-        { title: 'Docker', link: 'skills/docker.html' },
-        { title: 'Vue.js', link: 'skills/vue.html' },
-        { title: 'Angular', link: 'skills/angular.html' }
-      ];
-      
-      const container = document.getElementById('skillsContainer');
+      try {
+        const res = await fetch('./skills/skills.json');
+        const skills = await res.json();
 
-      skills.forEach(skill => {
-          // Get icon and color from mapping, or use default
-          const iconData = skillIcons[skill.title] || { icon: 'fas fa-map', color: 'bg-green-600' };
+        // First Skill
+        if (skills[0]) {
+          const firstContainer = document.getElementById('firstSkill');
+          const skill = skills[0];
           
-          const skillBox = document.createElement('a');
-          skillBox.href = skill.link;
-          skillBox.className = "group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100";
-          
-          skillBox.innerHTML = `
-            <div class="flex items-center gap-3 p-3">
-              <div class="${iconData.color} w-10 h-10 rounded-lg flex items-center justify-center text-white shadow-md group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
-                <i class="${iconData.icon} text-lg"></i>
+          firstContainer.innerHTML = `
+            <a href="${skill.link}" class="block group h-full bg-white overflow-hidden border-2 border-gray-300 hover:border-green-600 shadow-sm hover:shadow-lg transition-all">
+              <div class="relative h-32 overflow-hidden flex items-center justify-center bg-gray-50">
+                <i class="${skill.icon} text-6xl" style="color: ${skill.color || '#377536'};"></i>
               </div>
-              <h3 class="text-base font-semibold text-gray-800 group-hover:text-green-600 transition-colors">
+              <div class="p-4 space-y-2">
+                <h3 class="text-xl font-bold text-gray-900 transition-colors" style="transition: color 0.3s;" onmouseover="this.style.color='#377536'" onmouseout="this.style.color=''">
+                  ${skill.title}
+                </h3>
+                <p class="text-sm text-gray-600 line-clamp-3">
+                  ${skill.description}
+                </p>
+              </div>
+            </a>
+          `;
+        }
+
+        // Second Column Skills (2-3)
+        const secondContainer = document.getElementById('secondSkills');
+        const secondSkills = skills.slice(1, 3);
+        
+        secondSkills.forEach(skill => {
+          const skillCard = document.createElement('a');
+          skillCard.href = skill.link;
+          skillCard.className = "block group bg-white overflow-hidden border-2 border-gray-300 hover:border-green-600 shadow-sm hover:shadow-lg transition-all";
+          
+          skillCard.innerHTML = `
+            <div class="relative h-24 overflow-hidden flex items-center justify-center bg-gray-50">
+              <i class="${skill.icon} text-5xl" style="color: ${skill.color || '#377536'};"></i>
+            </div>
+            <div class="p-4 space-y-2">
+              <h3 class="text-lg font-bold text-gray-900 transition-colors" style="transition: color 0.3s;" onmouseover="this.style.color='#377536'" onmouseout="this.style.color=''">
                 ${skill.title}
               </h3>
+              <p class="text-sm text-gray-600 line-clamp-2">
+                ${skill.description}
+              </p>
             </div>
           `;
           
-          container.appendChild(skillBox);
-      });
+          secondContainer.appendChild(skillCard);
+        });
+
+        // Third Column Skills (4-5)
+        const thirdContainer = document.getElementById('thirdSkills');
+        const thirdSkills = skills.slice(3, 5);
+        
+        thirdSkills.forEach(skill => {
+          const skillCard = document.createElement('a');
+          skillCard.href = skill.link;
+          skillCard.className = "block group bg-white overflow-hidden border-2 border-gray-300 hover:border-green-600 shadow-sm hover:shadow-lg transition-all";
+          
+          skillCard.innerHTML = `
+            <div class="relative h-24 overflow-hidden flex items-center justify-center bg-gray-50">
+              <i class="${skill.icon} text-5xl" style="color: ${skill.color || '#377536'};"></i>
+            </div>
+            <div class="p-4 space-y-2">
+              <h3 class="text-lg font-bold text-gray-900 transition-colors" style="transition: color 0.3s;" onmouseover="this.style.color='#377536'" onmouseout="this.style.color=''">
+                ${skill.title}
+              </h3>
+              <p class="text-sm text-gray-600 line-clamp-2">
+                ${skill.description}
+              </p>
+            </div>
+          `;
+          
+          thirdContainer.appendChild(skillCard);
+        });
+
+        // Fourth Column - Skill 6
+        const fourthContainer = document.getElementById('fourthSkill');
+        if (skills[5]) {
+          const skill = skills[5];
+          const skillCard = document.createElement('a');
+          skillCard.href = skill.link;
+          skillCard.className = "block group bg-white overflow-hidden border-2 border-gray-300 hover:border-green-600 shadow-sm hover:shadow-lg transition-all";
+          
+          skillCard.innerHTML = `
+            <div class="relative h-24 overflow-hidden flex items-center justify-center bg-gray-50">
+              <i class="${skill.icon} text-5xl" style="color: ${skill.color || '#377536'};"></i>
+            </div>
+            <div class="p-4 space-y-2">
+              <h3 class="text-lg font-bold text-gray-900 transition-colors" style="transition: color 0.3s;" onmouseover="this.style.color='#377536'" onmouseout="this.style.color=''">
+                ${skill.title}
+              </h3>
+              <p class="text-sm text-gray-600 line-clamp-2">
+                ${skill.description}
+              </p>
+            </div>
+          `;
+          
+          fourthContainer.appendChild(skillCard);
+        }
+
+        // Explore All Skills Button
+        const exploreButton = document.createElement('div');
+        exploreButton.innerHTML = `
+          <a href="skills.html" class="block w-full text-center py-12 bg-green-600 font-semibold text-white hover:bg-green-700 transition-colors">
+            Explore All Skill Maps
+          </a>
+        `;
+        fourthContainer.appendChild(exploreButton);
+
+      } catch (error) {
+        console.error('Error loading skills:', error);
+      }
     }
 
     document.addEventListener('DOMContentLoaded', loadSkills);
   </script>
 
-  <section id="interview-prep" class="py-16">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="mb-12">
-        <h2 class="text-4xl font-bold text-gray-800 mb-4">Interview Preparation</h2>
-        <p class="text-lg text-gray-600 max-w-3xl">
-          Master technical interviews with structured learning paths. Follow our stage-by-stage guides to build strong fundamentals and ace your interviews.
-        </p>
-      </div>
+  <section id="interview-prep" class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-gray-800 mb-8">Interview Preparation</h2>
 
-      <!-- Data Structures Example -->
-      <div class="bg-white rounded-2xl shadow-xl p-8 mb-12 border-2 border-green-100">
-        <div class="flex items-start gap-6 mb-8">
-          <div class="bg-gradient-to-br from-blue-500 to-blue-600 w-16 h-16 rounded-xl flex items-center justify-center text-white shadow-lg flex-shrink-0">
-            <i class="fas fa-sitemap text-2xl"></i>
+      <div class="bg-white rounded-2xl shadow-lg p-8">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="bg-gradient-to-br from-green-500 to-green-700 w-16 h-16 rounded-xl flex items-center justify-center">
+            <i class="fas fa-code text-white text-3xl"></i>
           </div>
-          <div class="flex-1">
-            <h3 class="text-2xl font-bold text-gray-800 mb-2">Data Structures</h3>
-            <p class="text-gray-600">
-              Master the fundamental building blocks of programming. Learn to choose and implement the right data structure for any problem.
-            </p>
+          <div>
+            <h3 class="text-3xl font-bold text-gray-900">Data Structures</h3>
+            <p class="text-gray-500 text-sm">Master essential concepts for technical interviews</p>
           </div>
         </div>
 
-        <!-- Stages -->
+        <p class="text-gray-700 leading-relaxed mb-8">
+          Build a strong foundation in data structures to ace technical interviews at top tech companies. This comprehensive guide walks you through essential data structures step-by-step, from arrays to advanced graph algorithms.
+        </p>
+
         <div class="space-y-6">
-          
+
           <!-- Stage 1 -->
-          <div class="border-l-4 border-green-500 pl-6 py-2">
+          <div class="border-l-4 border-blue-500 pl-6 py-2">
             <div class="flex items-center gap-3 mb-3">
-              <span class="bg-green-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">1</span>
-              <h4 class="text-xl font-bold text-gray-800">Fundamentals - Arrays & Strings</h4>
+              <span class="bg-blue-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">1</span>
+              <h4 class="text-xl font-bold text-gray-800">Arrays & Strings</h4>
             </div>
             <p class="text-gray-600 mb-3">
-              <strong>What to expect:</strong> Learn basic operations, two-pointer techniques, sliding window patterns, and string manipulation. Focus on time/space complexity analysis.
+              <strong>What to expect:</strong> Learn array manipulation, two-pointer techniques, sliding window algorithms, string operations, and common patterns like substring searches and palindrome detection.
             </p>
             <div class="flex flex-wrap gap-2">
               <span class="text-sm text-gray-600"><strong>Practice on:</strong></span>
               <a href="https://leetcode.com/tag/array/" target="_blank" class="px-3 py-1 bg-blue-50 text-blue-700 rounded-lg text-sm font-medium hover:bg-blue-100 transition">LeetCode Arrays</a>
               <a href="https://www.hackerrank.com/domains/data-structures/arrays" target="_blank" class="px-3 py-1 bg-green-50 text-green-700 rounded-lg text-sm font-medium hover:bg-green-100 transition">HackerRank</a>
-              <a href="https://www.geeksforgeeks.org/array-data-structure/" target="_blank" class="px-3 py-1 bg-orange-50 text-orange-700 rounded-lg text-sm font-medium hover:bg-orange-100 transition">GeeksforGeeks</a>
+              <a href="https://www.codewars.com/" target="_blank" class="px-3 py-1 bg-red-50 text-red-700 rounded-lg text-sm font-medium hover:bg-red-100 transition">Codewars</a>
             </div>
           </div>
 
           <!-- Stage 2 -->
-          <div class="border-l-4 border-blue-500 pl-6 py-2">
+          <div class="border-l-4 border-green-500 pl-6 py-2">
             <div class="flex items-center gap-3 mb-3">
-              <span class="bg-blue-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">2</span>
-              <h4 class="text-xl font-bold text-gray-800">Linked Lists</h4>
+              <span class="bg-green-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">2</span>
+              <h4 class="text-xl font-bold text-gray-800">Hash Maps & Sets</h4>
             </div>
             <p class="text-gray-600 mb-3">
-              <strong>What to expect:</strong> Understand node-based structures, pointer manipulation, reversal techniques, cycle detection, and merge operations. Practice both singly and doubly linked lists.
+              <strong>What to expect:</strong> Understand hash table operations, collision handling, frequency counting problems, set operations, and time complexity trade-offs in lookups and insertions.
             </p>
             <div class="flex flex-wrap gap-2">
               <span class="text-sm text-gray-600"><strong>Practice on:</strong></span>
-              <a href="https://leetcode.com/tag/linked-list/" target="_blank" class="px-3 py-1 bg-blue-50 text-blue-700 rounded-lg text-sm font-medium hover:bg-blue-100 transition">LeetCode Linked Lists</a>
-              <a href="https://www.codewars.com/kata/search/linked-list" target="_blank" class="px-3 py-1 bg-red-50 text-red-700 rounded-lg text-sm font-medium hover:bg-red-100 transition">CodeWars</a>
-              <a href="https://www.algoexpert.io/data-structures" target="_blank" class="px-3 py-1 bg-purple-50 text-purple-700 rounded-lg text-sm font-medium hover:bg-purple-100 transition">AlgoExpert</a>
+              <a href="https://leetcode.com/tag/hash-table/" target="_blank" class="px-3 py-1 bg-blue-50 text-blue-700 rounded-lg text-sm font-medium hover:bg-blue-100 transition">LeetCode Hash</a>
+              <a href="https://www.algoexpert.io/" target="_blank" class="px-3 py-1 bg-purple-50 text-purple-700 rounded-lg text-sm font-medium hover:bg-purple-100 transition">AlgoExpert</a>
+              <a href="https://neetcode.io/" target="_blank" class="px-3 py-1 bg-orange-50 text-orange-700 rounded-lg text-sm font-medium hover:bg-orange-100 transition">NeetCode</a>
             </div>
           </div>
 
@@ -408,15 +593,15 @@
           <div class="border-l-4 border-purple-500 pl-6 py-2">
             <div class="flex items-center gap-3 mb-3">
               <span class="bg-purple-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">3</span>
-              <h4 class="text-xl font-bold text-gray-800">Stacks, Queues & Hash Tables</h4>
+              <h4 class="text-xl font-bold text-gray-800">Linked Lists & Stacks/Queues</h4>
             </div>
             <p class="text-gray-600 mb-3">
-              <strong>What to expect:</strong> Master LIFO/FIFO operations, implement min/max stacks, learn hash table collision handling, and solve problems using HashMap/HashSet for O(1) lookups.
+              <strong>What to expect:</strong> Master linked list operations (reversal, cycle detection), stack/queue implementations, monotonic stacks, deque usage, and practice common interview patterns.
             </p>
             <div class="flex flex-wrap gap-2">
               <span class="text-sm text-gray-600"><strong>Practice on:</strong></span>
-              <a href="https://leetcode.com/tag/stack/" target="_blank" class="px-3 py-1 bg-blue-50 text-blue-700 rounded-lg text-sm font-medium hover:bg-blue-100 transition">LeetCode Stack/Queue</a>
-              <a href="https://www.hackerrank.com/domains/data-structures/stacks" target="_blank" class="px-3 py-1 bg-green-50 text-green-700 rounded-lg text-sm font-medium hover:bg-green-100 transition">HackerRank</a>
+              <a href="https://leetcode.com/tag/linked-list/" target="_blank" class="px-3 py-1 bg-blue-50 text-blue-700 rounded-lg text-sm font-medium hover:bg-blue-100 transition">LeetCode Lists</a>
+              <a href="https://www.interviewbit.com/" target="_blank" class="px-3 py-1 bg-indigo-50 text-indigo-700 rounded-lg text-sm font-medium hover:bg-indigo-100 transition">InterviewBit</a>
               <a href="https://exercism.org/" target="_blank" class="px-3 py-1 bg-indigo-50 text-indigo-700 rounded-lg text-sm font-medium hover:bg-indigo-100 transition">Exercism</a>
             </div>
           </div>
@@ -460,15 +645,15 @@
         <div class="mt-8 pt-6 border-t border-gray-200 flex items-center justify-between">
           <div class="flex items-center gap-6 text-sm text-gray-600">
             <span class="flex items-center gap-2">
-              <i class="fas fa-layer-group text-green-600"></i>
+              <i class="fas fa-layer-group" style="color: #377536;"></i>
               <strong>5</strong> Stages
             </span>
             <span class="flex items-center gap-2">
-              <i class="fas fa-clock text-green-600"></i>
+              <i class="fas fa-clock" style="color: #377536;"></i>
               <strong>40-60</strong> Hours
             </span>
             <span class="flex items-center gap-2">
-              <i class="fas fa-signal text-green-600"></i>
+              <i class="fas fa-signal" style="color: #377536;"></i>
               Beginner to Advanced
             </span>
           </div>
@@ -495,7 +680,7 @@
       
       <!-- All FAQs Button -->
       <div class="text-center">
-        <a href="FAQs.html" class="inline-flex items-center gap-2 px-8 py-4 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors shadow-md hover:shadow-lg">
+        <a href="FAQs.html" class="inline-flex items-center gap-2 px-8 py-4 text-white font-semibold rounded-lg hover:opacity-90 transition-opacity shadow-md hover:shadow-lg" style="background-color: #377536;">
           <span>View All FAQs</span>
           <i class="fas fa-arrow-right"></i>
         </a>
@@ -554,10 +739,10 @@
         faqBox.innerHTML = `
           <div class="flex items-center justify-between gap-3 p-4 cursor-pointer" onclick="toggleFAQ(${index})">
             <div class="flex items-center gap-3 flex-1">
-              <div class="bg-green-100 w-8 h-8 rounded-lg flex items-center justify-center text-green-600 flex-shrink-0">
-                <i class="fas fa-question text-sm"></i>
+              <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style="background-color: rgba(55, 117, 54, 0.1);">
+                <i class="fas fa-question text-sm" style="color: #377536;"></i>
               </div>
-              <h3 class="text-base font-semibold text-gray-800 group-hover:text-green-600 transition-colors">
+              <h3 class="text-base font-semibold text-gray-800 transition-colors" style="transition: color 0.3s;" onmouseover="this.style.color='#377536'" onmouseout="this.style.color=''">
                 ${faq.question}
               </h3>
             </div>
