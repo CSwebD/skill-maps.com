@@ -1,4 +1,41 @@
-[ {
+[
+  {
+    "id": "0017",
+    "title": "TypeScript 7 Native: The 10x Faster Compiler That's Changing Everything",
+    "desc": "Microsoft's complete rewrite of TypeScript in Go promises 10x faster builds, parallel compilation, and dramatically reduced memory usage. Here's what it means for developers.",
+    "date": "2024-12-09",
+    "image": "/blog/images/0017.png",
+    "link": "/blog/html/TypeScript-7-Native-The-10x-Faster-Compiler-That's-Changing-Everything.html",
+    "category": "Development"
+  },
+  {
+    "id": "0016",
+    "title": "Hacktoberfest: Your Journey from Student to Developer",
+    "desc": "The month-long celebration of open source that transforms beginners into contributors. Learn what Hacktoberfest is, how to participate, and why it matters for your developer journey.",
+    "date": "2024-12-09",
+    "image": "/blog/images/0016.png",
+    "link": "/blog/html/Hacktoberfest-Your-Journey-from-Student-to-Developer.html",
+    "category": "Career"
+  },
+  {
+    "id": "0015",
+    "title": "Jarvis AI Agent: Google's Digital Assistant That Actually Does Your Work",
+    "desc": "Google's Project Jarvis can browse the web and complete tasks for you. Discover its capabilities, advantages, and the fierce AI agent competition heating up in 2024.",
+    "date": "2024-12-09",
+    "image": "/blog/images/0015.png",
+    "link": "/blog/html/Jarvis-AI-Agent-Google's-Digital-Assistant-That-Actually-Does-Your-Work.html",
+    "category": "AI"
+  },
+  {
+    "id": "0014",
+    "title": "UX 3.0: The Evolution of Design in the Age of Intelligence",
+    "desc": "Discover UX 3.0 and how AI is transforming user experience design. Learn why AI won't replace designers and how to thrive in the intelligence era.",
+    "date": "2024-12-09",
+    "image": "/blog/images/0014.png",
+    "link": "/blog/html/UX-3-0-The-Evolution-of-Design-in-the-Age-of-Intelligence.html",
+    "category": "Design"
+  },
+  {
     "id": "0013",
     "title": "Gemini AI Deep Research Can Read Your Gmail",
     "desc": "Google's latest AI feature raises important questions about privacy and data access. Here's what you need to know about how Gemini Deep Research interacts with your personal emails.",
@@ -46,7 +83,7 @@
   {
     "id": "0008",
     "title": "ChatGPT-3o: What Makes It So Special?",
-    "desc": "Artificial intelligence is moving fast, and OpenAI’s latest model, ChatGPT-3o, is shaking things up. But what makes it so special? Is it just another update, or are we witnessing the future of AI in action? Let’s find out.",
+    "desc": "Artificial intelligence is moving fast, and OpenAI's latest model, ChatGPT-3o, is shaking things up. But what makes it so special? Is it just another update, or are we witnessing the future of AI in action? Let's find out.",
     "date": "2025-08-17",
     "image": "/blog/images/0008.png",
     "link":  "/blog/html/0008.html",
@@ -55,7 +92,7 @@
   {
     "id": "0007",
     "title": "Just Say No to JavaScript and Hi to...",
-    "desc": "JavaScript has been the king of the web for years, but new alternatives are emerging. Let’s explore what’s next.",
+    "desc": "JavaScript has been the king of the web for years, but new alternatives are emerging. Let's explore what's next.",
     "date": "2025-07-17",
     "image": "/blog/images/0007.png",
     "link":  "/blog/html/0007.html",
@@ -64,7 +101,7 @@
   {
     "id": "0006",
     "title": "What is DeepSeek and How is it Outdoing ChatGPT?",
-    "desc": "DeepSeek is making waves in the AI space—here’s how it’s challenging ChatGPT and why you should pay attention.",
+    "desc": "DeepSeek is making waves in the AI space—here's how it's challenging ChatGPT and why you should pay attention.",
     "date": "2025-06-17",
     "image": "/blog/images/0006.jpg",
     "link":  "/blog/html/0006.html",
