@@ -1,5 +1,14 @@
 [
   {
+    "id": "0018",
+    "title": "Top 10 Cloud Development Platforms 2025: Complete Comparison & The Best",
+    "desc": "Complete comparison of AWS, Azure, GCP, GitHub Codespaces, GitPod and 5 more platforms. Scored across 7 features with sortable table. Discover which platform will dominate 2026.",
+    "date": "2024-12-11",
+    "image": "/blog/images/0018.png",
+    "link": "/blog/html/0018.html",
+    "category": "Development"
+  },
+  {
     "id": "0017",
     "title": "TypeScript 7 Native: The 10x Faster Compiler That's Changing Everything",
     "desc": "Microsoft's complete rewrite of TypeScript in Go promises 10x faster builds, parallel compilation, and dramatically reduced memory usage. Here's what it means for developers.",
