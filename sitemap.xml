@@ -65,42 +65,42 @@
   </url>
 
   <url>
-    <loc>https://www.skill-maps.com/domains/frontend/index.html</loc>
+    <loc>https://www.skill-maps.com/domains/frontend.html</loc>
     <lastmod>2024-12-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.skill-maps.com/domains/backend/index.html</loc>
+    <loc>https://www.skill-maps.com/domains/backend.html</loc>
     <lastmod>2024-12-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.skill-maps.com/domains/fullstack/index.html</loc>
+    <loc>https://www.skill-maps.com/domains/fullstack.html</loc>
     <lastmod>2024-12-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.skill-maps.com/domains/architect/index.html</loc>
+    <loc>https://www.skill-maps.com/domains/architect.html</loc>
     <lastmod>2024-12-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.skill-maps.com/domains/devops/index.html</loc>
+    <loc>https://www.skill-maps.com/domains/devops.html</loc>
     <lastmod>2024-12-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.skill-maps.com/domains/ai/index.html</loc>
+    <loc>https://www.skill-maps.com/domains/ai.html</loc>
     <lastmod>2024-12-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -115,53 +115,45 @@
   </url>
 
   <url>
-    <loc>https://www.skill-maps.com/skills/python/index.html</loc>
+    <loc>https://www.skill-maps.com/skills/python.html</loc>
     <lastmod>2024-12-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.skill-maps.com/skills/java/index.html</loc>
+    <loc>https://www.skill-maps.com/skills/java.html</loc>
     <lastmod>2024-12-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.skill-maps.com/skills/javascript/index.html</loc>
+    <loc>https://www.skill-maps.com/skills/javascript.html</loc>
     <lastmod>2024-12-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.skill-maps.com/skills/vue/index.html</loc>
+    <loc>https://www.skill-maps.com/skills/vue.html</loc>
     <lastmod>2024-12-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.skill-maps.com/skills/docker/index.html</loc>
+    <loc>https://www.skill-maps.com/skills/docker.html</loc>
     <lastmod>2024-12-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.skill-maps.com/skills/angular/index.html</loc>
+    <loc>https://www.skill-maps.com/skills/angular.html</loc>
     <lastmod>2024-12-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-  </url>
-
-  <!-- Quiz Pages -->
-  <url>
-    <loc>https://www.skill-maps.com/quiz.html</loc>
-    <lastmod>2024-12-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
 
   <!-- Roles Pages -->
@@ -170,14 +162,6 @@
     <lastmod>2024-12-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-  </url>
-
-  <!-- Browse All Courses -->
-  <url>
-    <loc>https://www.skill-maps.com/browse_all_courses.html</loc>
-    <lastmod>2024-12-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
   </url>
 
 </urlset>
