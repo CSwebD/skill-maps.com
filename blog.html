@@ -85,10 +85,9 @@
 
       <div id="blogGrid" class="grid gap-8 md:grid-cols-2 lg:grid-cols-3"></div>
 
-      <div class="text-center mt-10">
-        <button id="loadMoreBtn" class="px-6 py-3 bg-green-600 text-white font-semibold rounded-full hover:bg-green-700 transition">
-          Load More Articles
-        </button>
+      <div id="loadingIndicator" class="text-center mt-10 hidden">
+        <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-green-600"></div>
+        <p class="mt-2 text-gray-600">Loading more articles...</p>
       </div>
     </div>
   </section>
@@ -98,10 +97,12 @@
 <script>
   let allArticles = [];
   let visibleCount = 0;
+  let currentFilteredArticles = [];
   const increment = 6;
+  let isLoading = false;
 
   const blogGrid = document.getElementById('blogGrid');
-  const loadMoreBtn = document.getElementById('loadMoreBtn');
+  const loadingIndicator = document.getElementById('loadingIndicator');
   const searchInput = document.getElementById('searchInput');
 
   // CATEGORY FILTER
@@ -113,20 +114,22 @@
       btn.classList.add('bg-green-600', 'text-white');
 
       const category = btn.getAttribute('data-category');
-      let filtered = (category === 'all')
+      currentFilteredArticles = (category === 'all')
         ? allArticles
         : allArticles.filter(article => article.category === category);
 
       visibleCount = 0;
-      renderArticles(filtered);
+      blogGrid.innerHTML = '';
+      renderArticles();
     });
   });
 
 
   async function loadArticleData() {
     try {
-      const res = await fetch('../blog/blog.json'); // Fixed path
+      const res = await fetch('../blog/blog.json');
       allArticles = await res.json();
+      currentFilteredArticles = allArticles;
       renderArticles();
     } catch (error) {
       console.error("Could not load blog.json", error);
@@ -134,53 +137,107 @@
     }
   }
 
-  function renderArticles(filtered = null) {
-    const list = filtered || allArticles;
-    const articlesToShow = list.slice(0, visibleCount + increment);
-    blogGrid.innerHTML = '';
-
-    articlesToShow.forEach(article => {
-      // Create wrapper link
-      const cardLink = document.createElement('a');
-      cardLink.href = article.link;
-      cardLink.className = "block bg-gray-50 rounded-xl shadow hover:shadow-2xl transition overflow-hidden";
-
-      // Create the image container dynamically:
-      const imgDiv = document.createElement('div');
-      imgDiv.className = "h-40 bg-cover bg-center cursor-pointer";
-      // Inline style for the actual URL:
-      imgDiv.style.backgroundImage = `url('${article.image}')`;
-
-      const content = document.createElement('div');
-      content.className = "p-6";
-      content.innerHTML = `
-        <h3 class="text-xl font-semibold mb-2">${article.title}</h3>
-        <p class="text-sm text-gray-500 mb-1">${new Date(article.date).toLocaleDateString()}</p>
-        <p class="text-sm text-gray-600 mb-4">${article.desc}</p>
-        <span class="text-green-700 font-semibold hover:underline">Read More →</span>
-      `;
-
-      cardLink.appendChild(imgDiv);
-      cardLink.appendChild(content);
-      blogGrid.appendChild(cardLink);
-    });
-
-    visibleCount += increment;
-    loadMoreBtn.style.display = (visibleCount < list.length) ? 'inline-block' : 'none';
+  function createAdBlock() {
+    const adContainer = document.createElement('div');
+    adContainer.className = "col-span-1 md:col-span-2 lg:col-span-3 py-8 bg-gray-50";
+    adContainer.innerHTML = `
+      <div class="max-w-7xl mx-auto px-6">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7439109164508333"
+             crossorigin="anonymous"><\/script>
+        <!-- Index-Header -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-7439109164508333"
+             data-ad-slot="4111274044"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        <\/script>
+      </div>
+    `;
+    return adContainer;
   }
 
+  function createArticleCard(article) {
+    const cardLink = document.createElement('a');
+    cardLink.href = article.link;
+    cardLink.className = "block bg-gray-50 rounded-xl shadow hover:shadow-2xl transition overflow-hidden";
 
-  loadMoreBtn.addEventListener('click', () => renderArticles());
+    const imgDiv = document.createElement('div');
+    imgDiv.className = "h-40 bg-cover bg-center cursor-pointer";
+    imgDiv.style.backgroundImage = `url('${article.image}')`;
+
+    const content = document.createElement('div');
+    content.className = "p-6";
+    content.innerHTML = `
+      <h3 class="text-xl font-semibold mb-2">${article.title}</h3>
+      <p class="text-sm text-gray-500 mb-1">${new Date(article.date).toLocaleDateString()}</p>
+      <p class="text-sm text-gray-600 mb-4">${article.desc}</p>
+      <span class="text-green-700 font-semibold hover:underline">Read More →</span>
+    `;
+
+    cardLink.appendChild(imgDiv);
+    cardLink.appendChild(content);
+    return cardLink;
+  }
+
+  function renderArticles() {
+    if (isLoading || visibleCount >= currentFilteredArticles.length) return;
+    
+    isLoading = true;
+    loadingIndicator.classList.remove('hidden');
+
+    // Simulate slight delay for better UX
+    setTimeout(() => {
+      const articlesToShow = currentFilteredArticles.slice(visibleCount, visibleCount + increment);
+      
+      articlesToShow.forEach((article, index) => {
+        const card = createArticleCard(article);
+        blogGrid.appendChild(card);
+        
+        // Add ad after every 6 articles
+        if ((visibleCount + index + 1) % 6 === 0 && (visibleCount + index + 1) < currentFilteredArticles.length) {
+          const adBlock = createAdBlock();
+          blogGrid.appendChild(adBlock);
+        }
+      });
+
+      visibleCount += increment;
+      isLoading = false;
+      loadingIndicator.classList.add('hidden');
+    }, 300);
+  }
+
+  // Infinite scroll implementation
+  function handleScroll() {
+    const scrollPosition = window.innerHeight + window.scrollY;
+    const documentHeight = document.documentElement.scrollHeight;
+    
+    // Trigger when user is 200px from bottom
+    if (scrollPosition >= documentHeight - 200 && !isLoading && visibleCount < currentFilteredArticles.length) {
+      renderArticles();
+    }
+  }
+
+  // Throttle scroll event for better performance
+  let scrollTimeout;
+  window.addEventListener('scroll', () => {
+    if (scrollTimeout) {
+      clearTimeout(scrollTimeout);
+    }
+    scrollTimeout = setTimeout(handleScroll, 100);
+  });
+
   searchInput.addEventListener('input', e => {
     const q = e.target.value.toLowerCase();
-    const filtered = allArticles.filter(article =>
+    currentFilteredArticles = allArticles.filter(article =>
       article.title.toLowerCase().includes(q) || article.desc.toLowerCase().includes(q)
     );
     visibleCount = 0;
-    renderArticles(filtered);
+    blogGrid.innerHTML = '';
+    renderArticles();
   });
-
-
 
   window.addEventListener('DOMContentLoaded', loadArticleData);
 </script>
