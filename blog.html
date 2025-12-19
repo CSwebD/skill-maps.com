@@ -223,8 +223,8 @@
     const scrollPosition = window.innerHeight + window.scrollY;
     const documentHeight = document.documentElement.scrollHeight;
     
-    // Trigger when user is 200px from bottom
-    if (scrollPosition >= documentHeight - 200 && !isLoading && visibleCount < currentFilteredArticles.length) {
+    // Trigger when user is 800px from bottom (approximately when ad appears)
+    if (scrollPosition >= documentHeight - 800 && !isLoading && visibleCount < currentFilteredArticles.length) {
       renderArticles();
     }
   }
