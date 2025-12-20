@@ -1,0 +1,174 @@
+/* adblock-detector.css */
+
+#adblock-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999;
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.adblock-modal {
+    background: white;
+    border-radius: 16px;
+    padding: 40px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.adblock-icon {
+    color: #ff6b6b;
+    margin-bottom: 20px;
+}
+
+.adblock-icon svg {
+    filter: drop-shadow(0 2px 8px rgba(255, 107, 107, 0.3));
+}
+
+.adblock-modal h2 {
+    color: #2c3e50;
+    font-size: 28px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.adblock-modal p {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.adblock-modal p strong {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.adblock-instructions {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 25px 0;
+    text-align: left;
+}
+
+.adblock-instructions h3 {
+    color: #2c3e50;
+    font-size: 18px;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.adblock-instructions ol {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.adblock-instructions li {
+    color: #555;
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.refresh-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 14px 32px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.refresh-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+}
+
+.refresh-btn:active {
+    transform: translateY(0);
+}
+
+.dismiss-btn {
+    background: transparent;
+    color: #888;
+    border: 1px solid #ddd;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.dismiss-btn:hover {
+    background: #f8f9fa;
+    border-color: #bbb;
+    color: #555;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .adblock-modal {
+        padding: 30px 20px;
+        max-width: 95%;
+    }
+
+    .adblock-modal h2 {
+        font-size: 24px;
+    }
+
+    .adblock-modal p {
+        font-size: 14px;
+    }
+
+    .adblock-instructions {
+        padding: 15px;
+    }
+
+    .adblock-instructions h3 {
+        font-size: 16px;
+    }
+
+    .refresh-btn,
+    .dismiss-btn {
+        font-size: 14px;
+        padding: 12px 24px;
+    }
+}
