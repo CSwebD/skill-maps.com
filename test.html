@@ -1,448 +1,365 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Roadmaps | Skill Maps</title>
-  <link rel="icon" href="images/logo.jpg" type="image/x-icon">
-  <meta name="description" content="Structured AI learning roadmaps, including ML, NLP, Deep Learning, Ethics, and practical projects." />
-  <meta property="og:title" content="AI Roadmaps | Skill Maps" />
-  <meta property="og:description" content="Learn AI concepts, frameworks, and projects through guided roadmaps." />
-  <meta property="og:url" content="https://www.skill-maps.com/AI.html" />
-  <meta property="og:image" content="https://www.skill-maps.com/logo.jpg" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdBlock Test - All in One</title>
+    <style>
+        /* AdBlock Detection Styles */
+        #adblock-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.97);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2147483647;
+            backdrop-filter: blur(10px);
+            animation: fadeIn 0.3s ease-in;
+            overflow: auto;
+        }
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
 
-  <style>
-    body { 
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    html { scroll-behavior: smooth; }
+        .adblock-modal {
+            background: white;
+            border-radius: 20px;
+            padding: 50px 40px;
+            max-width: 550px;
+            width: 90%;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            animation: slideUp 0.5s ease-out;
+            margin: 20px;
+        }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
 
-    .course-container {
-      display: flex;
-      height: 100vh;
-      overflow: hidden;
-      background-color: #f8f9fa;
-    }
+        .adblock-icon {
+            color: #e74c3c;
+            margin-bottom: 25px;
+        }
 
-    .sidebar {
-      width: 320px;
-      background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
-      padding: 30px 20px;
-      padding-top: 80px;
-      border-right: 2px solid #e9ecef;
-      overflow-y: auto;
-      height: 100vh;
-      box-shadow: 2px 0 10px rgba(0,0,0,0.05);
-    }
+        .adblock-modal h2 {
+            color: #2c3e50;
+            font-size: 32px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
 
-    .page-title {
-      font-size: 20px;
-      font-weight: 700;
-      color: #212529;
-      margin-bottom: 20px;
-    }
+        .adblock-modal p {
+            color: #555;
+            font-size: 17px;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
 
-    .page-description {
-      font-size: 15px;
-      color: #6c757d;
-      line-height: 1.6;
-      margin-bottom: 30px;
-    }
+        .adblock-modal p strong {
+            color: #e74c3c;
+            font-weight: 600;
+        }
 
-    .sidebar-header {
-      margin-bottom: 15px;
-      padding-bottom: 15px;
-    }
+        .support-text {
+            color: #7f8c8d;
+            font-size: 15px;
+            font-style: italic;
+            margin-bottom: 25px;
+        }
 
-    .back-button {
-      display: inline-block;
-      background-color: white;
-      color: #377536;
-      padding: 10px 20px;
-      border-radius: 6px;
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 15px;
-      transition: all 0.2s;
-      text-align: center;
-      border: 2px solid #377536;
-      text-decoration: none;
-    }
+        .adblock-instructions {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: left;
+            border: 2px solid #dee2e6;
+        }
 
-    .back-button:hover {
-      background-color: #377536;
-      color: #377536;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(55, 117, 54, 0.3);
-    }
+        .adblock-instructions h3 {
+            color: #2c3e50;
+            font-size: 19px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
 
-    .content-label {
-      font-size: 18px;
-      font-weight: 700;
-      color: #212529;
-      display: block;
-      margin-bottom: 10px;
-    }
+        .adblock-instructions ol {
+            margin: 0;
+            padding-left: 24px;
+        }
 
-    .sidebar a {
-      display: block;
-      color: #495057;
-      text-decoration: none;
-      margin-bottom: 8px;
-      font-size: 15px;
-      cursor: pointer;
-      transition: all 0.2s;
-      padding: 8px 12px;
-      border-radius: 6px;
-    }
+        .adblock-instructions li {
+            color: #495057;
+            margin-bottom: 12px;
+            line-height: 1.6;
+            font-size: 15px;
+        }
 
-    .sidebar a:hover {
-      color: #377536;
-      background-color: rgba(55, 117, 54, 0.08);
-      transform: translateX(4px);
-    }
+        .common-adblockers {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #dee2e6;
+        }
 
-    .sidebar h2 {
-      font-size: 17px;
-      margin-top: 8px;
-      margin-bottom: 8px;
-      cursor: pointer;
-      color: #212529;
-      transition: all 0.2s;
-      padding: 10px 12px;
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+        .common-adblockers p {
+            font-size: 13px;
+            color: #6c757d;
+            margin: 0;
+        }
 
-    .sidebar h2:hover {
-      color: #377536;
-      background-color: rgba(55, 117, 54, 0.08);
-    }
+        .refresh-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 18px 36px;
+            font-size: 17px;
+            font-weight: 600;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+            width: 100%;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-    .sidebar h2::after {
-      content: '▼';
-      font-size: 12px;
-      transition: transform 0.3s;
-      color: #6c757d;
-    }
+        .refresh-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+        }
 
-    .sidebar h2.collapsed::after {
-      transform: rotate(-90deg);
-    }
+        .help-text {
+            color: #95a5a6;
+            font-size: 13px;
+            margin-top: 20px;
+        }
 
-    .sidebar h3 {
-      font-size: 15px;
-      margin-left: 20px;
-      margin-bottom: 6px;
-      font-weight: normal;
-    }
+        /* Page styles */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
 
-    .sidebar .section-title {
-      font-weight: 600;
-    }
+        .test-box {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            text-align: center;
+        }
 
-    .substeps {
-      max-height: 500px;
-      overflow: hidden;
-      transition: max-height 0.3s ease-out;
-    }
+        .test-box h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
 
-    .substeps.collapsed {
-      max-height: 0;
-    }
+        .status {
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-size: 18px;
+            font-weight: 600;
+        }
 
-    .content {
-      flex: 1;
-      height: 100vh;
-      overflow-y: auto;
-      padding: 50px 60px;
-      padding-top: 80px;
-      background-color: #ffffff;
-    }
+        .checking {
+            background: #fff3cd;
+            color: #856404;
+        }
 
-    .content-header {
-      margin-bottom: 40px;
-    }
+        .success {
+            background: #d4edda;
+            color: #155724;
+        }
 
-    .content h1 {
-      font-size: 36px;
-      margin-bottom: 15px;
-      color: #212529;
-      font-weight: 600;
-      position: relative;
-      padding-bottom: 15px;
-    }
+        .detected {
+            background: #f8d7da;
+            color: #721c24;
+        }
 
-    .content h1::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 80px;
-      height: 4px;
-      background-color: #377536;
-      border-radius: 2px;
-    }
-
-    .content h2 {
-      font-size: 30px;
-      margin-top: 60px;
-      margin-bottom: 30px;
-      color: #212529;
-      font-weight: 600;
-      position: relative;
-      padding-bottom: 12px;
-    }
-
-    .content h2::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 60px;
-      height: 3px;
-      background-color: #6c757d;
-      border-radius: 2px;
-    }
-
-    .content h3 {
-      color: #495057;
-      margin-bottom: 20px;
-      font-size: 20px;
-      font-weight: 600;
-    }
-
-    .dotted-lines {
-      margin-bottom: 12px;
-      padding-bottom: 12px;
-      color: #495057;
-      font-size: 15px;
-      line-height: 1.6;
-    }
-
-    .video-container {
-      margin-top: 40px;
-      margin-bottom: 40px;
-      background-color: #f8f9fa;
-      padding: 30px;
-      border-radius: 12px;
-    }
-
-    .video-source {
-      font-style: italic;
-      color: #6c757d;
-      margin-top: 15px;
-      font-size: 14px;
-    }
-
-    .content p {
-      color: #495057;
-      line-height: 1.8;
-      font-size: 16px;
-    }
-
-    .progress-bar {
-      position: fixed;
-      top: 0;
-      left: 320px;
-      right: 0;
-      height: 3px;
-      background-color: #e9ecef;
-      z-index: 1000;
-    }
-
-    .progress-fill {
-      height: 100%;
-      background-color: #377536;
-      width: 0%;
-      transition: width 0.3s;
-    }
-
-    ::-webkit-scrollbar {
-      width: 10px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: #f1f1f1;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: #377536;
-      border-radius: 5px;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-      background: #2a5a29;
-    }
-  </style>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7439109164508333"
-     crossorigin="anonymous"></script>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZS5VZ74BH8"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-ZS5VZ74BH8');
-  </script>
+        .info {
+            background: #d1ecf1;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: left;
+            font-size: 14px;
+            color: #0c5460;
+        }
+    </style>
 </head>
-
-<body class="bg-gray-50 text-gray-800">
-
-  <!-- Navbar Placeholder -->
-  <div id="panel-bar-placeholder"></div>
-  <script src="panel-nav.js"></script>
-
-  <!-- Course Container -->
-  <div class="course-container">
-    <div class="sidebar">
-      <div class="sidebar-header">
-        <a href="#" class="back-button">← Back to main</a>
-        <h1 class="page-title">Frontend Developer</h1>
-        <span class="content-label">Content</span>
-      </div>
-      
-      <h2 class="section-title collapsed" onclick="toggleSubsteps('internet', this)">1 Internet</h2>
-      <div id="internet" class="substeps collapsed">
-        <h3><a href="#how-internet-works">1.1 How the internet works</a></h3>
-        <h3><a href="#browsers">1.2 Browsers</a></h3>
-      </div>
-      
-      <h2 class="section-title collapsed" onclick="toggleSubsteps('web-dev', this)">2 Core Web Development</h2>
-      <div id="web-dev" class="substeps collapsed">
-        <h3><a href="#html">2.1 Html</a></h3>
-        <h3><a href="#css">2.2 CSS</a></h3>
-        <h3><a href="#javascript">2.3 JavaScript</a></h3>
-      </div>
-      
-      <h2 class="section-title collapsed" onclick="toggleSubsteps('version-control', this)">3 Version Control Systems</h2>
-      <div id="version-control" class="substeps collapsed">
-        <h3><a href="#git">3.1 Git</a></h3>
-        <h3><a href="#repo-hosting">3.2 Repo Hosting Service</a></h3>
-      </div>
-      
-      <h2 class="section-title collapsed" onclick="toggleSubsteps('package-managers', this)">4 Package Managers</h2>
-      <div id="package-managers" class="substeps collapsed">
-        <h3><a href="#npm">4.1 npm</a></h3>
-        <h3><a href="#alternatives">4.2 Alternatives</a></h3>
-      </div>
-      
-      <h2 class="section-title collapsed" onclick="toggleSubsteps('build-tools', this)">5 Build Tools</h2>
-      <div id="build-tools" class="substeps collapsed">
-        <h3><a href="#linters">5.1 Linters and Formaters</a></h3>
-        <h3><a href="#bundlers">5.2 Module Bandlers</a></h3>
-      </div>
-      
-      <h2 class="section-title collapsed" style="font-weight: 700; margin-top: 8px;" onclick="toggleSubsteps('test', this)">Test</h2>
-      <div id="test" class="substeps collapsed">
-        <h3><a href="#exam">Take an Exam</a></h3>
-      </div>
-      
-      <h2 class="section-title collapsed" style="font-weight: 700; margin-top: 8px;" onclick="toggleSubsteps('projects', this)">Projects:</h2>
-      <div id="projects" class="substeps collapsed">
-        <h3><a href="#project1">- First Web Page</a></h3>
-        <h3><a href="#project2">- Portfolio Website</a></h3>
-        <h3><a href="#project3">- Interactive Calculator</a></h3>
-      </div>
-    </div>
-
-    <div class="progress-bar">
-      <div class="progress-fill" id="progressFill"></div>
-    </div>
-
-    <div class="content" id="content">
-      <h1 class="page-title">Frontend Developer</h1>
-      <p class="page-description">Master the essential skills to build modern, responsive, and interactive web applications. Learn HTML, CSS, JavaScript, and modern frameworks to create stunning user experiences. This comprehensive roadmap will guide you from basics to advanced concepts in frontend development.</p>
-      
-      <div class="content-header">
-        <h1 id="how-internet-works">1.1 How the internet works</h1>
-      </div>
-
-      <div class="dotted-lines">Introduction to how the internet infrastructure works and the basic concepts behind network communication.</div>
-      <div class="dotted-lines">Understanding protocols like TCP/IP, HTTP, and DNS that make the internet function.</div>
-      <div class="dotted-lines">Learn about servers, clients, and how data travels across the web.</div>
-      <div class="dotted-lines">Explore the concept of IP addresses and domain names.</div>
-      <div class="dotted-lines">Discover how packets of data are transmitted and reassembled.</div>
-      
-      <div class="video-container">
-        <h3>Video Tutorial:</h3>
-        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
-          <iframe 
-            src="https://www.youtube.com/embed/sMHzfigUxz4" 
-            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
-            allowfullscreen>
-          </iframe>
+<body>
+    <div class="test-box">
+        <h1>🧪 AdBlock Detection Test</h1>
+        <div id="status" class="status checking">⏳ Checking for AdBlock...</div>
+        <div class="info">
+            <strong>What should happen:</strong><br>
+            • WITH AdBlock: You'll see a blocking overlay<br>
+            • WITHOUT AdBlock: You'll see a green success message<br><br>
+            <strong>Check your browser console (F12)</strong> for detailed logs.
         </div>
-        <p class="video-source">Source: youtube</p>
-      </div>
-
-      <h2 id="browsers">1.2 Browsers</h2>
-
-      <div class="dotted-lines">Web browsers are applications that allow you to access and interact with content on the World Wide Web.</div>
-      <div class="dotted-lines">Popular browsers include Chrome, Firefox, Safari, and Edge.</div>
-      <div class="dotted-lines">Learn how browsers render HTML, CSS, and JavaScript to display web pages.</div>
-      <div class="dotted-lines">Understanding the browser's Document Object Model (DOM) and rendering engine.</div>
-      <div class="dotted-lines">Explore developer tools built into modern browsers for debugging and testing.</div>
-      
-      <div class="video-container">
-        <h3>Video Tutorial:</h3>
-        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
-          <iframe 
-            src="https://www.youtube.com/embed/EoYkl8rwbiM" 
-            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
-            allowfullscreen>
-          </iframe>
-        </div>
-        <p class="video-source">Source: youtube</p>
-      </div>
-
-      <p style="margin-top: 30px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      <p style="margin-top: 20px;">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <p style="margin-top: 20px;">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-      <p style="margin-top: 20px;">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.</p>
-      <p style="margin-top: 20px;">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
-      <p style="margin-top: 20px;">Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit.</p>
     </div>
-  </div>
 
-  <script>
-    function toggleSubsteps(id, element) {
-      const substeps = document.getElementById(id);
-      substeps.classList.toggle('collapsed');
-      element.classList.toggle('collapsed');
-    }
+    <script>
+        console.log('%c=== ADBLOCK DETECTION TEST STARTED ===', 'color: blue; font-size: 16px; font-weight: bold');
+        
+        // Show blocking overlay
+        function showAdBlockWarning() {
+            if (document.getElementById('adblock-overlay')) {
+                console.log('Overlay already exists, skipping...');
+                return;
+            }
 
-    // Progress bar
-    const content = document.getElementById('content');
-    const progressFill = document.getElementById('progressFill');
+            console.log('%c✗ SHOWING ADBLOCK OVERLAY NOW', 'color: red; font-size: 14px; font-weight: bold');
 
-    content.addEventListener('scroll', () => {
-      const scrollTop = content.scrollTop;
-      const scrollHeight = content.scrollHeight - content.clientHeight;
-      const scrollPercent = (scrollTop / scrollHeight) * 100;
-      progressFill.style.width = scrollPercent + '%';
-    });
-  </script>
+            const overlay = document.createElement('div');
+            overlay.id = 'adblock-overlay';
+            overlay.innerHTML = `
+                <div class="adblock-modal">
+                    <div class="adblock-icon">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line>
+                        </svg>
+                    </div>
+                    <h2>🚫 AdBlock Detected</h2>
+                    <p>We've detected that you're using an ad blocker.</p>
+                    <p><strong>Please disable your ad blocker to access this site.</strong></p>
+                    <p class="support-text">We rely on ads to keep our platform free.</p>
+                    <div class="adblock-instructions">
+                        <h3>📋 How to disable AdBlock:</h3>
+                        <ol>
+                            <li><strong>Click</strong> your ad blocker icon in the browser toolbar</li>
+                            <li><strong>Select</strong> "Pause on this site" or similar</li>
+                            <li><strong>Click</strong> the refresh button below</li>
+                        </ol>
+                        <div class="common-adblockers">
+                            <p><strong>Popular ad blockers:</strong> uBlock Origin, AdBlock Plus, AdGuard, AdBlock, Ghostery</p>
+                        </div>
+                    </div>
+                    <button id="adblock-refresh-btn" class="refresh-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px;">
+                            <polyline points="23 4 23 10 17 10"></polyline>
+                            <polyline points="1 20 1 14 7 14"></polyline>
+                            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+                        </svg>
+                        I've Disabled AdBlock - Refresh
+                    </button>
+                    <p class="help-text">Still seeing this? Disable ALL ad blocking extensions.</p>
+                </div>
+            `;
 
-  <!-- Placeholder for the footer -->
-  <div id="footer-placeholder"></div>
-  <script src="analytics.js"></script>
-  <script src="nav-switcher.js"></script>
-  <script src="footer.js"></script>
+            document.body.appendChild(overlay);
+            document.getElementById('adblock-refresh-btn').onclick = function() {
+                location.reload(true);
+            };
+            document.body.style.overflow = 'hidden';
+
+            // Update status box
+            const statusBox = document.getElementById('status');
+            if (statusBox) {
+                statusBox.className = 'status detected';
+                statusBox.innerHTML = '🚫 AdBlock DETECTED! Overlay shown above.';
+            }
+        }
+
+        // Detection function
+        function detectAdBlock() {
+            console.log('Running detection...');
+
+            // Create bait element
+            const bait = document.createElement('div');
+            bait.className = 'ad ads adsbox doubleclick ad-placement carbon-ads';
+            bait.style.cssText = 'width:1px!important;height:1px!important;position:absolute!important;left:-999px!important;top:-999px!important;';
+            bait.innerHTML = '&nbsp;';
+            
+            document.body.appendChild(bait);
+
+            setTimeout(function() {
+                let blocked = false;
+
+                try {
+                    console.log('Checking bait element...');
+                    console.log('offsetHeight:', bait.offsetHeight);
+                    console.log('offsetWidth:', bait.offsetWidth);
+                    console.log('offsetParent:', bait.offsetParent);
+
+                    if (bait.offsetHeight === 0 || 
+                        bait.offsetWidth === 0 || 
+                        bait.offsetParent === null) {
+                        blocked = true;
+                        console.log('%c→ Element is hidden/blocked', 'color: orange');
+                    }
+
+                    const style = window.getComputedStyle(bait);
+                    console.log('display:', style.display);
+                    console.log('visibility:', style.visibility);
+
+                    if (style.display === 'none' || style.visibility === 'hidden') {
+                        blocked = true;
+                        console.log('%c→ Style is hidden', 'color: orange');
+                    }
+                } catch (e) {
+                    blocked = true;
+                    console.error('Detection error:', e);
+                }
+
+                // Remove bait
+                try {
+                    document.body.removeChild(bait);
+                } catch (e) {}
+
+                // Show result
+                if (blocked) {
+                    console.log('%c✗ ADBLOCK DETECTED!', 'color: red; font-size: 16px; font-weight: bold');
+                    showAdBlockWarning();
+                } else {
+                    console.log('%c✓ No AdBlock detected', 'color: green; font-size: 16px; font-weight: bold');
+                    const statusBox = document.getElementById('status');
+                    if (statusBox) {
+                        statusBox.className = 'status success';
+                        statusBox.innerHTML = '✅ No AdBlock detected! Access granted.';
+                    }
+                }
+            }, 100);
+        }
+
+        // Run detection
+        if (document.body) {
+            detectAdBlock();
+        } else {
+            document.addEventListener('DOMContentLoaded', detectAdBlock);
+        }
+
+        // Check again after load
+        window.addEventListener('load', function() {
+            if (!document.getElementById('adblock-overlay')) {
+                console.log('Running secondary check...');
+                setTimeout(detectAdBlock, 500);
+            }
+        });
+    </script>
 </body>
 </html>

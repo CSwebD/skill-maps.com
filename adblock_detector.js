@@ -1,195 +1,15 @@
-// adblock-detector.js - Universal AdBlock Detection
+// adblock-detector.js - Simplified and More Reliable
 (function() {
     'use strict';
 
-    let detectionAttempts = 0;
-    const MAX_ATTEMPTS = 3;
-
-    // Method 1: Multiple Bait Elements with Different Classes
-    function createBaitElements() {
-        const baitConfigs = [
-            'ad ads advertisement advert advertise advertising',
-            'pub_300x250 pub_300x250m pub_728x90',
-            'ad-placement ad-container banner-ad',
-            'google-ad adsense adsbygoogle',
-            'sponsored-content promoted-content',
-            'text-ad text_ad textAd textads'
-        ];
-
-        const baits = [];
-        baitConfigs.forEach((classes, index) => {
-            const bait = document.createElement('div');
-            bait.className = classes;
-            bait.id = `ad-bait-${index}`;
-            bait.style.cssText = 'width: 1px !important; height: 1px !important; position: absolute !important; left: -10000px !important; top: -1000px !important;';
-            bait.innerHTML = '&nbsp;';
-            document.body.appendChild(bait);
-            baits.push(bait);
-        });
-
-        return baits;
-    }
-
-    // Method 2: Check if bait elements are blocked
-    function checkBaitElements(baits) {
-        let blocked = false;
-        
-        baits.forEach(bait => {
-            try {
-                if (bait.offsetParent === null || 
-                    bait.offsetHeight === 0 || 
-                    bait.offsetWidth === 0 ||
-                    bait.clientHeight === 0 ||
-                    bait.clientWidth === 0) {
-                    blocked = true;
-                }
-
-                const style = window.getComputedStyle(bait);
-                if (style.display === 'none' || 
-                    style.visibility === 'hidden' ||
-                    style.opacity === '0') {
-                    blocked = true;
-                }
-            } catch (e) {
-                blocked = true;
-            }
-        });
-
-        // Clean up
-        baits.forEach(bait => {
-            try {
-                document.body.removeChild(bait);
-            } catch (e) {}
-        });
-
-        return blocked;
-    }
-
-    // Method 3: Try to load actual ad scripts
-    function checkAdScripts() {
-        return new Promise((resolve) => {
-            const testUrls = [
-                'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
-                'https://www.googletagservices.com/tag/js/gpt.js'
-            ];
-
-            let blocked = false;
-            let completed = 0;
-
-            testUrls.forEach(url => {
-                const script = document.createElement('script');
-                script.type = 'text/javascript';
-                script.async = true;
-                
-                script.onerror = () => {
-                    blocked = true;
-                    completed++;
-                    if (completed === testUrls.length) {
-                        resolve(blocked);
-                    }
-                };
-
-                script.onload = () => {
-                    completed++;
-                    if (completed === testUrls.length) {
-                        resolve(blocked);
-                    }
-                };
-
-                script.src = url;
-                document.head.appendChild(script);
-            });
-
-            // Timeout fallback
-            setTimeout(() => {
-                if (completed < testUrls.length) {
-                    resolve(true); // Assume blocked if scripts don't load
-                }
-            }, 2000);
-        });
-    }
-
-    // Method 4: Check for AdBlock browser extensions
-    function checkExtensions() {
-        const blockerIndicators = [
-            'blockAdBlock',
-            'canRunAds',
-            'isAdBlockActive'
-        ];
-
-        for (let indicator of blockerIndicators) {
-            if (window[indicator] === false) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    // Method 5: Fake Ad Element Detection
-    function checkFakeAd() {
-        return new Promise((resolve) => {
-            const fakeAd = document.createElement('div');
-            fakeAd.className = 'adsbygoogle';
-            fakeAd.style.cssText = 'display:block;width:1px;height:1px;position:absolute;top:-10000px;';
-            fakeAd.setAttribute('data-ad-client', 'ca-pub-1234567890123456');
-            fakeAd.setAttribute('data-ad-slot', '1234567890');
-            fakeAd.setAttribute('data-ad-format', 'auto');
-            
-            document.body.appendChild(fakeAd);
-
-            setTimeout(() => {
-                const blocked = fakeAd.innerHTML === '' || 
-                               fakeAd.offsetHeight === 0 ||
-                               fakeAd.offsetWidth === 0;
-                
-                try {
-                    document.body.removeChild(fakeAd);
-                } catch (e) {}
-                
-                resolve(blocked);
-            }, 200);
-        });
-    }
-
-    // Method 6: Image-based detection
-    function checkAdImage() {
-        return new Promise((resolve) => {
-            const img = document.createElement('img');
-            img.src = 'https://pagead2.googlesyndication.com/pagead/show_ads.js';
-            img.style.cssText = 'position:absolute;top:-10000px;left:-10000px;width:1px;height:1px;';
-            
-            img.onerror = () => {
-                try {
-                    document.body.removeChild(img);
-                } catch (e) {}
-                resolve(true);
-            };
-            
-            img.onload = () => {
-                try {
-                    document.body.removeChild(img);
-                } catch (e) {}
-                resolve(false);
-            };
-            
-            document.body.appendChild(img);
-            
-            setTimeout(() => {
-                try {
-                    document.body.removeChild(img);
-                } catch (e) {}
-                resolve(true);
-            }, 1000);
-        });
-    }
-
-    // Show the blocking overlay
+    // Function to show the blocking overlay
     function showAdBlockWarning() {
-        // Check if already shown
+        // Prevent duplicate overlays
         if (document.getElementById('adblock-overlay')) {
             return;
         }
+
+        console.log('SHOWING ADBLOCK OVERLAY');
 
         const overlay = document.createElement('div');
         overlay.id = 'adblock-overlay';
@@ -208,8 +28,8 @@
                 <div class="adblock-instructions">
                     <h3>📋 How to disable your AdBlock:</h3>
                     <ol>
-                        <li><strong>Click</strong> on your ad blocker extension icon (usually in the top-right corner of your browser)</li>
-                        <li><strong>Select</strong> "Pause on this site" or "Disable on skill-maps.com"</li>
+                        <li><strong>Click</strong> on your ad blocker extension icon (usually in the top-right corner)</li>
+                        <li><strong>Select</strong> "Pause on this site" or "Disable for this site"</li>
                         <li><strong>Click</strong> the refresh button below</li>
                     </ol>
                     <div class="common-adblockers">
@@ -224,108 +44,116 @@
                     </svg>
                     I've Disabled AdBlock - Refresh Now
                 </button>
-                <p class="help-text">Still seeing this message? Make sure ALL ad blocking extensions are disabled.</p>
+                <p class="help-text">Still seeing this? Make sure ALL ad blocking extensions are disabled.</p>
             </div>
         `;
 
         document.body.appendChild(overlay);
 
-        // Refresh button handler
-        document.getElementById('adblock-refresh-btn').addEventListener('click', () => {
-            window.location.reload(true);
-        });
+        // Add refresh button handler
+        const refreshBtn = document.getElementById('adblock-refresh-btn');
+        if (refreshBtn) {
+            refreshBtn.addEventListener('click', function() {
+                window.location.reload(true);
+            });
+        }
 
         // Prevent scrolling
         document.body.style.overflow = 'hidden';
         document.documentElement.style.overflow = 'hidden';
-
-        // Prevent ESC key
-        document.addEventListener('keydown', preventEscape);
-
-        console.warn('AdBlock detected and overlay shown');
     }
 
-    function preventEscape(e) {
-        if (e.key === 'Escape') {
-            e.preventDefault();
-            e.stopPropagation();
-            return false;
-        }
-    }
+    // Detection Method: Create invisible ad element
+    function detectAdBlock() {
+        console.log('Starting AdBlock detection...');
 
-    // Main detection function
-    async function detectAdBlock() {
-        detectionAttempts++;
-        console.log(`AdBlock detection attempt ${detectionAttempts}/${MAX_ATTEMPTS}`);
+        // Create ad bait element
+        const adBait = document.createElement('div');
+        adBait.className = 'ad ads adsbox ad-placement ad-container advert advertisement banner-ad';
+        adBait.style.cssText = 'height: 1px !important; width: 1px !important; position: absolute !important; left: -999px !important; top: -999px !important;';
+        adBait.innerHTML = '&nbsp;';
+        
+        document.body.appendChild(adBait);
 
-        try {
-            // Create and check bait elements
-            const baits = createBaitElements();
-            
-            // Wait a moment for ad blockers to act
-            await new Promise(resolve => setTimeout(resolve, 150));
-            
-            const baitBlocked = checkBaitElements(baits);
-            
-            // Run other checks in parallel
-            const [scriptsBlocked, fakeAdBlocked, imageBlocked] = await Promise.all([
-                checkAdScripts(),
-                checkFakeAd(),
-                checkAdImage()
-            ]);
+        // Check after a brief delay
+        setTimeout(function() {
+            let isBlocked = false;
 
-            const extensionsDetected = checkExtensions();
+            try {
+                // Check multiple properties
+                if (adBait.offsetHeight === 0 || 
+                    adBait.offsetWidth === 0 ||
+                    adBait.offsetParent === null ||
+                    adBait.clientHeight === 0 ||
+                    adBait.clientWidth === 0) {
+                    isBlocked = true;
+                    console.log('AdBlock detected: Element dimensions are 0 or hidden');
+                }
 
-            // Log results for debugging
-            console.log('Detection results:', {
-                baitBlocked,
-                scriptsBlocked,
-                fakeAdBlocked,
-                imageBlocked,
-                extensionsDetected
-            });
+                // Check computed styles
+                const styles = window.getComputedStyle(adBait);
+                if (styles.display === 'none' || 
+                    styles.visibility === 'hidden' ||
+                    styles.opacity === '0') {
+                    isBlocked = true;
+                    console.log('AdBlock detected: Element style is hidden');
+                }
 
-            // If ANY method detects ad blocker, show warning
-            if (baitBlocked || scriptsBlocked || fakeAdBlocked || imageBlocked || extensionsDetected) {
+                console.log('Detection results:', {
+                    offsetHeight: adBait.offsetHeight,
+                    offsetWidth: adBait.offsetWidth,
+                    offsetParent: adBait.offsetParent,
+                    clientHeight: adBait.clientHeight,
+                    clientWidth: adBait.clientWidth,
+                    display: styles.display,
+                    visibility: styles.visibility,
+                    opacity: styles.opacity
+                });
+
+            } catch (e) {
+                isBlocked = true;
+                console.error('Error during detection:', e);
+            }
+
+            // Clean up
+            try {
+                document.body.removeChild(adBait);
+            } catch (e) {
+                console.error('Error removing bait:', e);
+            }
+
+            // Show warning if blocked
+            if (isBlocked) {
+                console.log('✗ AdBlock IS ACTIVE - Showing overlay');
                 showAdBlockWarning();
-                return true;
+            } else {
+                console.log('✓ No AdBlock detected');
             }
-
-            return false;
-        } catch (error) {
-            console.error('Error during AdBlock detection:', error);
-            // On error, try again if we haven't reached max attempts
-            if (detectionAttempts < MAX_ATTEMPTS) {
-                setTimeout(detectAdBlock, 1000);
-            }
-            return false;
-        }
+        }, 100);
     }
 
-    // Initial detection
+    // Run detection when page is ready
     function init() {
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', () => {
-                setTimeout(detectAdBlock, 100);
-            });
+        if (document.body) {
+            detectAdBlock();
         } else {
-            setTimeout(detectAdBlock, 100);
+            // Wait for body to be available
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', detectAdBlock);
+            } else {
+                setTimeout(detectAdBlock, 10);
+            }
         }
-
-        // Additional check after full page load
-        window.addEventListener('load', () => {
-            if (!document.getElementById('adblock-overlay') && detectionAttempts < MAX_ATTEMPTS) {
-                setTimeout(detectAdBlock, 500);
-            }
-        });
-
-        // Final check after 2 seconds (for lazy-loading ad blockers)
-        setTimeout(() => {
-            if (!document.getElementById('adblock-overlay') && detectionAttempts < MAX_ATTEMPTS) {
-                detectAdBlock();
-            }
-        }, 2000);
     }
 
+    // Start immediately
     init();
+
+    // Also check after page fully loads
+    window.addEventListener('load', function() {
+        if (!document.getElementById('adblock-overlay')) {
+            setTimeout(detectAdBlock, 500);
+        }
+    });
+
 })();
