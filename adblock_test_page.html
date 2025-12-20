@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test AdBlock Detection - Skill Maps</title>
+    
+    <!-- AdBlock Detection -->
+    <link rel="stylesheet" href="adblock-detector.css">
+    <script src="adblock-detector.js"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .test-container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+        
+        .status {
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+            border: 2px solid #c3e6cb;
+        }
+        
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 2px solid #f5c6cb;
+        }
+        
+        .instructions {
+            text-align: left;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        .instructions h2 {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .instructions ol {
+            padding-left: 20px;
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        .instructions li {
+            margin-bottom: 10px;
+        }
+        
+        .note {
+            background: #fff3cd;
+            color: #856404;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border: 2px solid #ffeaa7;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🧪 AdBlock Detection Test Page</h1>
+        
+        <div id="detection-status" class="status success">
+            ⏳ Checking for AdBlock...
+        </div>
+        
+        <div class="instructions">
+            <h2>How to Test:</h2>
+            <ol>
+                <li><strong>With AdBlock ON:</strong> You should see a blocking overlay appear in a few seconds. The page will be completely blocked.</li>
+                <li><strong>With AdBlock OFF:</strong> You should see a green "No AdBlock Detected" message below.</li>
+                <li><strong>After disabling:</strong> Click the refresh button in the overlay or press Ctrl+F5 to hard refresh.</li>
+            </ol>
+        </div>
+        
+        <div class="note">
+            <strong>⚠️ Note:</strong> If you're seeing this page content, either AdBlock is not installed, or you've already disabled it. Try enabling your ad blocker to see the blocking overlay.
+        </div>
+    </div>
+    
+    <script>
+        // Update status after detection runs
+        setTimeout(() => {
+            const statusDiv = document.getElementById('detection-status');
+            const overlay = document.getElementById('adblock-overlay');
+            
+            if (overlay) {
+                statusDiv.innerHTML = '🚫 AdBlock Detected! Overlay should be visible.';
+                statusDiv.className = 'status error';
+            } else {
+                statusDiv.innerHTML = '✅ No AdBlock Detected! You can access the site.';
+                statusDiv.className = 'status success';
+            }
+        }, 1500);
+    </script>
+</body>
+</html>
