@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test AdBlock Detection - Skill Maps</title>
+    <title>AdBlock Detection Test - Skill Maps</title>
     
-    <!-- AdBlock Detection -->
+    <!-- AdBlock Detection - MUST BE LOADED FIRST -->
     <link rel="stylesheet" href="adblock-detector.css">
     <script src="adblock-detector.js"></script>
     
@@ -32,7 +32,7 @@
             padding: 40px;
             border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            max-width: 600px;
+            max-width: 700px;
             text-align: center;
         }
         
@@ -42,48 +42,136 @@
             font-size: 28px;
         }
         
-        .status {
+        .status-box {
             padding: 20px;
             border-radius: 10px;
             margin: 20px 0;
-            font-size: 18px;
-            font-weight: 600;
         }
         
-        .status.success {
+        .checking {
+            background: #fff3cd;
+            color: #856404;
+            border: 2px solid #ffeaa7;
+        }
+        
+        .success {
             background: #d4edda;
             color: #155724;
             border: 2px solid #c3e6cb;
         }
         
-        .status.error {
+        .error {
             background: #f8d7da;
             color: #721c24;
             border: 2px solid #f5c6cb;
         }
         
-        .instructions {
+        .status-icon {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+        
+        .status-text {
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .detection-details {
+            margin-top: 20px;
             text-align: left;
             background: #f8f9fa;
             padding: 20px;
             border-radius: 10px;
+        }
+        
+        .detection-details h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .detection-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            margin-bottom: 8px;
+            background: white;
+            border-radius: 6px;
+            border: 1px solid #dee2e6;
+        }
+        
+        .detection-item span:first-child {
+            color: #495057;
+            font-weight: 500;
+        }
+        
+        .detection-item .pass {
+            color: #28a745;
+            font-weight: 600;
+        }
+        
+        .detection-item .fail {
+            color: #dc3545;
+            font-weight: 600;
+        }
+        
+        .instructions {
+            text-align: left;
+            background: #e7f3ff;
+            padding: 20px;
+            border-radius: 10px;
             margin-top: 20px;
+            border: 2px solid #b3d9ff;
         }
         
         .instructions h2 {
-            color: #2c3e50;
+            color: #004085;
             font-size: 20px;
             margin-bottom: 15px;
         }
         
         .instructions ol {
             padding-left: 20px;
-            color: #555;
+            color: #004085;
             line-height: 1.8;
         }
         
         .instructions li {
             margin-bottom: 10px;
+        }
+        
+        .instructions strong {
+            color: #002752;
+        }
+        
+        .supported-blockers {
+            background: #d1ecf1;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border: 2px solid #bee5eb;
+        }
+        
+        .supported-blockers h3 {
+            color: #0c5460;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        
+        .supported-blockers ul {
+            list-style: none;
+            padding: 0;
+            color: #0c5460;
+        }
+        
+        .supported-blockers li {
+            padding: 5px 0;
+        }
+        
+        .supported-blockers li:before {
+            content: "✓ ";
+            font-weight: bold;
+            margin-right: 8px;
         }
         
         .note {
@@ -95,44 +183,128 @@
             border: 2px solid #ffeaa7;
             font-size: 14px;
         }
+        
+        .console-hint {
+            margin-top: 20px;
+            padding: 15px;
+            background: #2c3e50;
+            color: #ecf0f1;
+            border-radius: 8px;
+            text-align: left;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+        }
+        
+        .console-hint strong {
+            color: #3498db;
+        }
     </style>
 </head>
 <body>
     <div class="test-container">
-        <h1>🧪 AdBlock Detection Test Page</h1>
+        <h1>🧪 Universal AdBlock Detection Test</h1>
         
-        <div id="detection-status" class="status success">
-            ⏳ Checking for AdBlock...
+        <div id="status-container" class="status-box checking">
+            <div class="status-icon">⏳</div>
+            <div class="status-text">Running detection tests...</div>
+        </div>
+        
+        <div id="detection-details" class="detection-details" style="display:none;">
+            <h3>Detection Method Results:</h3>
+            <div class="detection-item">
+                <span>Bait Elements</span>
+                <span id="result-bait">Testing...</span>
+            </div>
+            <div class="detection-item">
+                <span>Script Loading</span>
+                <span id="result-scripts">Testing...</span>
+            </div>
+            <div class="detection-item">
+                <span>Fake Ad Element</span>
+                <span id="result-fakead">Testing...</span>
+            </div>
+            <div class="detection-item">
+                <span>Image Loading</span>
+                <span id="result-image">Testing...</span>
+            </div>
+            <div class="detection-item">
+                <span>Extension Detection</span>
+                <span id="result-extension">Testing...</span>
+            </div>
         </div>
         
         <div class="instructions">
-            <h2>How to Test:</h2>
+            <h2>📖 Testing Instructions:</h2>
             <ol>
-                <li><strong>With AdBlock ON:</strong> You should see a blocking overlay appear in a few seconds. The page will be completely blocked.</li>
-                <li><strong>With AdBlock OFF:</strong> You should see a green "No AdBlock Detected" message below.</li>
-                <li><strong>After disabling:</strong> Click the refresh button in the overlay or press Ctrl+F5 to hard refresh.</li>
+                <li><strong>With AdBlock Enabled:</strong> You should see a full-screen blocking overlay appear within 1-2 seconds. The page will be completely blocked.</li>
+                <li><strong>With AdBlock Disabled:</strong> You'll see a green success message and be able to view all content normally.</li>
+                <li><strong>To Test:</strong> Enable your ad blocker → Refresh page (Ctrl/Cmd + R) → See overlay → Disable ad blocker → Click refresh button in overlay.</li>
             </ol>
         </div>
         
+        <div class="supported-blockers">
+            <h3>✅ Tested & Supported Ad Blockers:</h3>
+            <ul>
+                <li>uBlock Origin</li>
+                <li>AdBlock Plus</li>
+                <li>AdBlock</li>
+                <li>AdGuard</li>
+                <li>Ghostery</li>
+                <li>Privacy Badger</li>
+                <li>Brave Browser Shields</li>
+                <li>Most other popular ad blockers</li>
+            </ul>
+        </div>
+        
         <div class="note">
-            <strong>⚠️ Note:</strong> If you're seeing this page content, either AdBlock is not installed, or you've already disabled it. Try enabling your ad blocker to see the blocking overlay.
+            <strong>⚠️ Important:</strong> If you can read this text, either:
+            <ul style="margin: 10px 0 0 20px; text-align: left;">
+                <li>Your ad blocker is disabled</li>
+                <li>You don't have an ad blocker installed</li>
+                <li>The overlay has already appeared above this content</li>
+            </ul>
+        </div>
+        
+        <div class="console-hint">
+            <strong>For Developers:</strong><br>
+            Open browser console (F12) to see detailed detection logs.<br>
+            Look for: "AdBlock detection attempt" and "Detection results"
         </div>
     </div>
     
     <script>
-        // Update status after detection runs
-        setTimeout(() => {
-            const statusDiv = document.getElementById('detection-status');
+        // Monitor detection results
+        let checkCount = 0;
+        const maxChecks = 30;
+        
+        const checkInterval = setInterval(() => {
+            checkCount++;
             const overlay = document.getElementById('adblock-overlay');
+            const statusContainer = document.getElementById('status-container');
             
             if (overlay) {
-                statusDiv.innerHTML = '🚫 AdBlock Detected! Overlay should be visible.';
-                statusDiv.className = 'status error';
-            } else {
-                statusDiv.innerHTML = '✅ No AdBlock Detected! You can access the site.';
-                statusDiv.className = 'status success';
+                // AdBlock detected and overlay shown
+                statusContainer.className = 'status-box error';
+                statusContainer.innerHTML = `
+                    <div class="status-icon">🚫</div>
+                    <div class="status-text">AdBlock DETECTED! Overlay should be blocking the page.</div>
+                `;
+                clearInterval(checkInterval);
+            } else if (checkCount >= maxChecks) {
+                // No AdBlock detected after all checks
+                statusContainer.className = 'status-box success';
+                statusContainer.innerHTML = `
+                    <div class="status-icon">✅</div>
+                    <div class="status-text">No AdBlock Detected! You can access the site normally.</div>
+                `;
+                clearInterval(checkInterval);
             }
-        }, 1500);
+        }, 100);
+        
+        // Show detection details after a delay
+        setTimeout(() => {
+            document.getElementById('detection-details').style.display = 'block';
+        }, 1000);
     </script>
 </body>
 </html>
