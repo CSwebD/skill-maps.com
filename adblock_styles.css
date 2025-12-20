@@ -1,4 +1,4 @@
-/* adblock-detector.css */
+/* adblock-detector.css - Enhanced Styles */
 
 #adblock-overlay {
     position: fixed;
@@ -6,13 +6,14 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.95);
+    background: rgba(0, 0, 0, 0.97);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 999999;
-    backdrop-filter: blur(5px);
+    z-index: 2147483647; /* Maximum z-index */
+    backdrop-filter: blur(10px);
     animation: fadeIn 0.3s ease-in;
+    overflow: auto;
 }
 
 @keyframes fadeIn {
@@ -26,18 +27,19 @@
 
 .adblock-modal {
     background: white;
-    border-radius: 16px;
-    padding: 40px;
-    max-width: 500px;
+    border-radius: 20px;
+    padding: 50px 40px;
+    max-width: 550px;
     width: 90%;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
     text-align: center;
-    animation: slideUp 0.4s ease-out;
+    animation: slideUp 0.5s ease-out;
+    margin: 20px;
 }
 
 @keyframes slideUp {
     from {
-        transform: translateY(30px);
+        transform: translateY(50px);
         opacity: 0;
     }
     to {
@@ -47,128 +49,206 @@
 }
 
 .adblock-icon {
-    color: #ff6b6b;
-    margin-bottom: 20px;
+    color: #e74c3c;
+    margin-bottom: 25px;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
 }
 
 .adblock-icon svg {
-    filter: drop-shadow(0 2px 8px rgba(255, 107, 107, 0.3));
+    filter: drop-shadow(0 4px 12px rgba(231, 76, 60, 0.4));
 }
 
 .adblock-modal h2 {
     color: #2c3e50;
-    font-size: 28px;
-    margin-bottom: 15px;
+    font-size: 32px;
+    margin-bottom: 20px;
     font-weight: 700;
+    line-height: 1.2;
 }
 
 .adblock-modal p {
     color: #555;
-    font-size: 16px;
-    line-height: 1.6;
+    font-size: 17px;
+    line-height: 1.7;
     margin-bottom: 15px;
 }
 
 .adblock-modal p strong {
-    color: #2c3e50;
+    color: #e74c3c;
     font-weight: 600;
 }
 
+.support-text {
+    color: #7f8c8d;
+    font-size: 15px;
+    font-style: italic;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
 .adblock-instructions {
-    background: #f8f9fa;
-    border-radius: 8px;
-    padding: 20px;
-    margin: 25px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 12px;
+    padding: 25px;
+    margin: 30px 0;
     text-align: left;
+    border: 2px solid #dee2e6;
 }
 
 .adblock-instructions h3 {
     color: #2c3e50;
-    font-size: 18px;
-    margin-bottom: 12px;
+    font-size: 19px;
+    margin-bottom: 15px;
     font-weight: 600;
 }
 
 .adblock-instructions ol {
     margin: 0;
-    padding-left: 20px;
+    padding-left: 24px;
 }
 
 .adblock-instructions li {
-    color: #555;
-    margin-bottom: 8px;
-    line-height: 1.5;
+    color: #495057;
+    margin-bottom: 12px;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+.adblock-instructions li strong {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.adblock-instructions li:last-child {
+    margin-bottom: 0;
 }
 
 .refresh-btn {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     border: none;
-    padding: 14px 32px;
-    font-size: 16px;
+    padding: 18px 36px;
+    font-size: 17px;
     font-weight: 600;
-    border-radius: 8px;
+    border-radius: 12px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
     width: 100%;
-    margin-bottom: 12px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .refresh-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
 }
 
 .refresh-btn:active {
-    transform: translateY(0);
+    transform: translateY(-1px);
 }
 
-.dismiss-btn {
-    background: transparent;
-    color: #888;
-    border: 1px solid #ddd;
-    padding: 12px 24px;
-    font-size: 14px;
-    font-weight: 500;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+.refresh-btn svg {
+    flex-shrink: 0;
+}
+
+.help-text {
+    color: #95a5a6;
+    font-size: 13px;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+/* Ensure overlay cannot be closed or bypassed */
+#adblock-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-}
-
-.dismiss-btn:hover {
-    background: #f8f9fa;
-    border-color: #bbb;
-    color: #555;
+    height: 100%;
+    background: inherit;
+    z-index: -1;
 }
 
 /* Responsive design */
 @media (max-width: 600px) {
     .adblock-modal {
-        padding: 30px 20px;
+        padding: 35px 25px;
         max-width: 95%;
+        margin: 10px;
     }
 
     .adblock-modal h2 {
-        font-size: 24px;
+        font-size: 26px;
     }
 
     .adblock-modal p {
-        font-size: 14px;
+        font-size: 15px;
+    }
+
+    .adblock-icon svg {
+        width: 60px;
+        height: 60px;
     }
 
     .adblock-instructions {
-        padding: 15px;
+        padding: 20px;
     }
 
     .adblock-instructions h3 {
-        font-size: 16px;
+        font-size: 17px;
     }
 
-    .refresh-btn,
-    .dismiss-btn {
+    .adblock-instructions li {
         font-size: 14px;
-        padding: 12px 24px;
+        margin-bottom: 10px;
+    }
+
+    .refresh-btn {
+        font-size: 15px;
+        padding: 15px 28px;
+    }
+
+    .refresh-btn svg {
+        width: 18px;
+        height: 18px;
+        margin-right: 6px;
+    }
+}
+
+@media (max-width: 400px) {
+    .adblock-modal {
+        padding: 25px 20px;
+    }
+
+    .adblock-modal h2 {
+        font-size: 22px;
+    }
+
+    .refresh-btn {
+        font-size: 14px;
+        padding: 14px 24px;
+    }
+}
+
+/* Print styles - hide overlay when printing */
+@media print {
+    #adblock-overlay {
+        display: none !important;
     }
 }
