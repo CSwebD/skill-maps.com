@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AdBlock Test - All in One</title>
+    <title>AdBlock Test - Script Loading Method</title>
     <style>
         /* AdBlock Detection Styles */
         #adblock-overlay {
@@ -213,26 +213,30 @@
 <body>
     <div class="test-box">
         <h1>🧪 AdBlock Detection Test</h1>
-        <div id="status" class="status checking">⏳ Checking for AdBlock...</div>
+        <div id="status" class="status checking">⏳ Testing ad script loading...</div>
         <div class="info">
+            <strong>Testing Method:</strong> Loading actual Google AdSense scripts<br><br>
             <strong>What should happen:</strong><br>
-            • WITH AdBlock: You'll see a blocking overlay<br>
-            • WITHOUT AdBlock: You'll see a green success message<br><br>
+            • WITH AdBlock: Scripts blocked → Overlay appears<br>
+            • WITHOUT AdBlock: Scripts load → Green success message<br><br>
             <strong>Check your browser console (F12)</strong> for detailed logs.
         </div>
     </div>
 
     <script>
-        console.log('%c=== ADBLOCK DETECTION TEST STARTED ===', 'color: blue; font-size: 16px; font-weight: bold');
+        console.log('%c=== ADBLOCK DETECTION TEST (Script Loading Method) ===', 'color: blue; font-size: 16px; font-weight: bold');
         
+        let adBlockDetected = false;
+        let testsCompleted = 0;
+        const totalTests = 2;
+
         // Show blocking overlay
         function showAdBlockWarning() {
             if (document.getElementById('adblock-overlay')) {
-                console.log('Overlay already exists, skipping...');
                 return;
             }
 
-            console.log('%c✗ SHOWING ADBLOCK OVERLAY NOW', 'color: red; font-size: 14px; font-weight: bold');
+            console.log('%c✗ SHOWING ADBLOCK OVERLAY', 'color: red; font-size: 14px; font-weight: bold');
 
             const overlay = document.createElement('div');
             overlay.id = 'adblock-overlay';
@@ -252,7 +256,7 @@
                         <h3>📋 How to disable AdBlock:</h3>
                         <ol>
                             <li><strong>Click</strong> your ad blocker icon in the browser toolbar</li>
-                            <li><strong>Select</strong> "Pause on this site" or similar</li>
+                            <li><strong>Select</strong> "Pause on this site" or "Disable for this site"</li>
                             <li><strong>Click</strong> the refresh button below</li>
                         </ol>
                         <div class="common-adblockers">
@@ -277,63 +281,20 @@
             };
             document.body.style.overflow = 'hidden';
 
-            // Update status box
             const statusBox = document.getElementById('status');
             if (statusBox) {
                 statusBox.className = 'status detected';
-                statusBox.innerHTML = '🚫 AdBlock DETECTED! Overlay shown above.';
+                statusBox.innerHTML = '🚫 AdBlock DETECTED! Overlay shown.';
             }
         }
 
-        // Detection function
-        function detectAdBlock() {
-            console.log('Running detection...');
+        function checkResults() {
+            testsCompleted++;
+            console.log(`Tests completed: ${testsCompleted}/${totalTests}`);
 
-            // Create bait element
-            const bait = document.createElement('div');
-            bait.className = 'ad ads adsbox doubleclick ad-placement carbon-ads';
-            bait.style.cssText = 'width:1px!important;height:1px!important;position:absolute!important;left:-999px!important;top:-999px!important;';
-            bait.innerHTML = '&nbsp;';
-            
-            document.body.appendChild(bait);
-
-            setTimeout(function() {
-                let blocked = false;
-
-                try {
-                    console.log('Checking bait element...');
-                    console.log('offsetHeight:', bait.offsetHeight);
-                    console.log('offsetWidth:', bait.offsetWidth);
-                    console.log('offsetParent:', bait.offsetParent);
-
-                    if (bait.offsetHeight === 0 || 
-                        bait.offsetWidth === 0 || 
-                        bait.offsetParent === null) {
-                        blocked = true;
-                        console.log('%c→ Element is hidden/blocked', 'color: orange');
-                    }
-
-                    const style = window.getComputedStyle(bait);
-                    console.log('display:', style.display);
-                    console.log('visibility:', style.visibility);
-
-                    if (style.display === 'none' || style.visibility === 'hidden') {
-                        blocked = true;
-                        console.log('%c→ Style is hidden', 'color: orange');
-                    }
-                } catch (e) {
-                    blocked = true;
-                    console.error('Detection error:', e);
-                }
-
-                // Remove bait
-                try {
-                    document.body.removeChild(bait);
-                } catch (e) {}
-
-                // Show result
-                if (blocked) {
-                    console.log('%c✗ ADBLOCK DETECTED!', 'color: red; font-size: 16px; font-weight: bold');
+            if (testsCompleted >= totalTests) {
+                if (adBlockDetected) {
+                    console.log('%c✗ ADBLOCK IS ACTIVE!', 'color: red; font-size: 16px; font-weight: bold');
                     showAdBlockWarning();
                 } else {
                     console.log('%c✓ No AdBlock detected', 'color: green; font-size: 16px; font-weight: bold');
@@ -343,23 +304,65 @@
                         statusBox.innerHTML = '✅ No AdBlock detected! Access granted.';
                     }
                 }
-            }, 100);
-        }
-
-        // Run detection
-        if (document.body) {
-            detectAdBlock();
-        } else {
-            document.addEventListener('DOMContentLoaded', detectAdBlock);
-        }
-
-        // Check again after load
-        window.addEventListener('load', function() {
-            if (!document.getElementById('adblock-overlay')) {
-                console.log('Running secondary check...');
-                setTimeout(detectAdBlock, 500);
             }
+        }
+
+        // Test 1: Try to load Google AdSense script
+        (function testAdSense() {
+            console.log('Test 1: Loading Google AdSense script...');
+            
+            const script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.async = true;
+            script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+            
+            script.onerror = function() {
+                console.log('%c→ AdSense script BLOCKED (onerror fired)', 'color: orange; font-weight: bold');
+                adBlockDetected = true;
+                checkResults();
+            };
+            
+            script.onload = function() {
+                console.log('%c→ AdSense script loaded successfully', 'color: green');
+                checkResults();
+            };
+
+            document.head.appendChild(script);
+
+            // Timeout fallback
+            setTimeout(function() {
+                if (testsCompleted === 0) {
+                    console.log('%c→ AdSense script timeout - assuming blocked', 'color: orange');
+                    adBlockDetected = true;
+                    checkResults();
+                }
+            }, 3000);
+        })();
+
+        // Test 2: Check if window.adsbygoogle exists after load
+        window.addEventListener('load', function() {
+            console.log('Test 2: Checking for adsbygoogle object...');
+            
+            setTimeout(function() {
+                if (typeof window.adsbygoogle === 'undefined') {
+                    console.log('%c→ adsbygoogle is undefined - AdBlock likely active', 'color: orange; font-weight: bold');
+                    adBlockDetected = true;
+                } else {
+                    console.log('%c→ adsbygoogle exists', 'color: green');
+                }
+                checkResults();
+            }, 1000);
         });
+
+        // Fallback: If nothing triggers after 5 seconds, assume no adblock
+        setTimeout(function() {
+            if (testsCompleted < totalTests) {
+                console.log('Fallback triggered - assuming no AdBlock');
+                while (testsCompleted < totalTests) {
+                    checkResults();
+                }
+            }
+        }, 5000);
     </script>
 </body>
 </html>

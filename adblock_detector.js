@@ -1,15 +1,18 @@
-// adblock-detector.js - Simplified and More Reliable
+// adblock-detector.js - Script Loading Detection Method
 (function() {
     'use strict';
 
+    let adBlockDetected = false;
+    let detectionComplete = false;
+
     // Function to show the blocking overlay
     function showAdBlockWarning() {
-        // Prevent duplicate overlays
-        if (document.getElementById('adblock-overlay')) {
+        if (document.getElementById('adblock-overlay') || detectionComplete) {
             return;
         }
 
-        console.log('SHOWING ADBLOCK OVERLAY');
+        detectionComplete = true;
+        console.log('AdBlock detected - showing overlay');
 
         const overlay = document.createElement('div');
         overlay.id = 'adblock-overlay';
@@ -63,81 +66,59 @@
         document.documentElement.style.overflow = 'hidden';
     }
 
-    // Detection Method: Create invisible ad element
+    // Detection Method: Try to load Google AdSense script
     function detectAdBlock() {
-        console.log('Starting AdBlock detection...');
+        console.log('Starting AdBlock detection (Script Loading Method)...');
 
-        // Create ad bait element
-        const adBait = document.createElement('div');
-        adBait.className = 'ad ads adsbox ad-placement ad-container advert advertisement banner-ad';
-        adBait.style.cssText = 'height: 1px !important; width: 1px !important; position: absolute !important; left: -999px !important; top: -999px !important;';
-        adBait.innerHTML = '&nbsp;';
+        // Try to load the actual ad script
+        const script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.async = true;
+        script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
         
-        document.body.appendChild(adBait);
+        script.onerror = function() {
+            console.log('AdSense script blocked - AdBlock detected');
+            adBlockDetected = true;
+            showAdBlockWarning();
+        };
+        
+        script.onload = function() {
+            console.log('AdSense script loaded successfully');
+            // Double check if adsbygoogle exists
+            setTimeout(function() {
+                if (typeof window.adsbygoogle === 'undefined') {
+                    console.log('adsbygoogle undefined despite load - AdBlock detected');
+                    adBlockDetected = true;
+                    showAdBlockWarning();
+                } else {
+                    console.log('No AdBlock detected');
+                }
+            }, 100);
+        };
 
-        // Check after a brief delay
+        try {
+            document.head.appendChild(script);
+        } catch (e) {
+            console.error('Error appending script:', e);
+            adBlockDetected = true;
+            showAdBlockWarning();
+        }
+
+        // Timeout fallback - if script doesn't load or error in 3 seconds, assume blocked
         setTimeout(function() {
-            let isBlocked = false;
-
-            try {
-                // Check multiple properties
-                if (adBait.offsetHeight === 0 || 
-                    adBait.offsetWidth === 0 ||
-                    adBait.offsetParent === null ||
-                    adBait.clientHeight === 0 ||
-                    adBait.clientWidth === 0) {
-                    isBlocked = true;
-                    console.log('AdBlock detected: Element dimensions are 0 or hidden');
-                }
-
-                // Check computed styles
-                const styles = window.getComputedStyle(adBait);
-                if (styles.display === 'none' || 
-                    styles.visibility === 'hidden' ||
-                    styles.opacity === '0') {
-                    isBlocked = true;
-                    console.log('AdBlock detected: Element style is hidden');
-                }
-
-                console.log('Detection results:', {
-                    offsetHeight: adBait.offsetHeight,
-                    offsetWidth: adBait.offsetWidth,
-                    offsetParent: adBait.offsetParent,
-                    clientHeight: adBait.clientHeight,
-                    clientWidth: adBait.clientWidth,
-                    display: styles.display,
-                    visibility: styles.visibility,
-                    opacity: styles.opacity
-                });
-
-            } catch (e) {
-                isBlocked = true;
-                console.error('Error during detection:', e);
-            }
-
-            // Clean up
-            try {
-                document.body.removeChild(adBait);
-            } catch (e) {
-                console.error('Error removing bait:', e);
-            }
-
-            // Show warning if blocked
-            if (isBlocked) {
-                console.log('✗ AdBlock IS ACTIVE - Showing overlay');
+            if (!adBlockDetected && !detectionComplete && typeof window.adsbygoogle === 'undefined') {
+                console.log('Timeout reached - assuming AdBlock is active');
+                adBlockDetected = true;
                 showAdBlockWarning();
-            } else {
-                console.log('✓ No AdBlock detected');
             }
-        }, 100);
+        }, 3000);
     }
 
-    // Run detection when page is ready
+    // Initialize detection
     function init() {
-        if (document.body) {
+        if (document.head) {
             detectAdBlock();
         } else {
-            // Wait for body to be available
             if (document.readyState === 'loading') {
                 document.addEventListener('DOMContentLoaded', detectAdBlock);
             } else {
@@ -146,14 +127,7 @@
         }
     }
 
-    // Start immediately
+    // Start detection
     init();
-
-    // Also check after page fully loads
-    window.addEventListener('load', function() {
-        if (!document.getElementById('adblock-overlay')) {
-            setTimeout(detectAdBlock, 500);
-        }
-    });
 
 })();
