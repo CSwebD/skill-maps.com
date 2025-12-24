@@ -1206,36 +1206,55 @@
   </div>
 
   <script>
+    // Toggle substeps - needs to be global for onclick attributes
+    function toggleSubsteps(id, element) {
+      const substeps = document.getElementById(id);
+      if (substeps) {
+        substeps.classList.toggle('collapsed');
+        element.classList.toggle('collapsed');
+      }
+    }
+
+    // Close mobile sidebar - needs to be global
+    function closeMobileSidebar() {
+      const mobileSidebar = document.getElementById('mobileSidebar');
+      const mobileSidebarOverlay = document.getElementById('mobileSidebarOverlay');
+      if (mobileSidebar) mobileSidebar.classList.remove('active');
+      if (mobileSidebarOverlay) mobileSidebarOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
     // Wait for DOM to be fully loaded
-    document.addEventListener('DOMContentLoaded', function() {
+    window.addEventListener('load', function() {
+      console.log('Page loaded, initializing...');
+      
       // Mobile sidebar toggle functionality
       const mobileContentToggle = document.getElementById('mobileContentToggle');
       const mobileSidebar = document.getElementById('mobileSidebar');
       const mobileSidebarOverlay = document.getElementById('mobileSidebarOverlay');
       const mobileCloseBtn = document.getElementById('mobileCloseBtn');
 
+      console.log('Mobile button:', mobileContentToggle);
+      console.log('Mobile sidebar:', mobileSidebar);
+
       function openMobileSidebar() {
         console.log('Opening mobile sidebar');
-        mobileSidebar.classList.add('active');
-        mobileSidebarOverlay.classList.add('active');
+        if (mobileSidebar) mobileSidebar.classList.add('active');
+        if (mobileSidebarOverlay) mobileSidebarOverlay.classList.add('active');
         document.body.style.overflow = 'hidden';
       }
 
-      window.closeMobileSidebar = function() {
-        console.log('Closing mobile sidebar');
-        mobileSidebar.classList.remove('active');
-        mobileSidebarOverlay.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-
       if (mobileContentToggle) {
-        mobileContentToggle.addEventListener('click', openMobileSidebar);
+        mobileContentToggle.addEventListener('click', function(e) {
+          console.log('Button clicked!');
+          openMobileSidebar();
+        });
       }
       if (mobileCloseBtn) {
-        mobileCloseBtn.addEventListener('click', window.closeMobileSidebar);
+        mobileCloseBtn.addEventListener('click', closeMobileSidebar);
       }
       if (mobileSidebarOverlay) {
-        mobileSidebarOverlay.addEventListener('click', window.closeMobileSidebar);
+        mobileSidebarOverlay.addEventListener('click', closeMobileSidebar);
       }
 
       // Resizable sidebar functionality (desktop)
@@ -1292,15 +1311,6 @@
         });
       });
     });
-
-    // Toggle substeps - needs to be global for onclick attributes
-    function toggleSubsteps(id, element) {
-      const substeps = document.getElementById(id);
-      if (substeps) {
-        substeps.classList.toggle('collapsed');
-        element.classList.toggle('collapsed');
-      }
-    }
   </script>
 
   <!-- Placeholder for the footer -->
