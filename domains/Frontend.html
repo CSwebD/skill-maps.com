@@ -678,8 +678,82 @@
 
       <h4>Document Structure:</h4>
 
-      <p>Every HTML document follows a standard structure that browsers expect to see. The <!DOCTYPE html> declaration at the very top tells the browser that this is an HTML5 document and should be rendered using modern standards. The <html> tag wraps all content on the page and typically includes a lang attribute to specify the language (like lang="en" for English), which helps screen readers and search engines. Inside the <html> tag, you'll find two main sections: the <head> and the <body>.</p>
+      <p>Every HTML document follows a standard structure that browsers expect to see. The <code>&lt;!DOCTYPE html&gt;</code> declaration at the very top tells the browser that this is an HTML5 document and should be rendered using modern standards. The <code>&lt;html&gt;</code> tag wraps all content on the page and typically includes a <code>&lt;lang&gt;</code> attribute to specify the language (like <code>&lt;lang="en"&gt;</code> for English), which helps screen readers and search engines. Inside the <code>&lt;html&gt;</code> tag, you'll find two main sections: the <code>&lt;head&gt;</code> and the <code>&lt;body&gt;</code>.</p>
       
+      <p>The <code>&lt;head&gt;</code> section contains metadata about your webpage information that doesn't appear directly on the page but is essential for how it functions. This includes the <code>&lt;title&gt;</code> that appears in browser tabs, links to CSS stylesheets, character encoding declarations <code>&lt;meta charset="UTF-8"&gt;</code>, viewport settings for mobile responsiveness, and meta descriptions for search engines. Think of the head as the control center that configures how your page behaves and appears to both users and search engines.</p>
+
+      <p>The <code>&lt;body&gt;</code> section contains all the visible content users interact with text, images, videos, forms, and everything else displayed in the browser window. Proper document structure is not just a best practice; it's essential for your pages to work correctly across all browsers and devices. Understanding this foundation helps you debug issues, ensures accessibility, and creates a solid base for adding CSS and JavaScript later.</p>
+
+      <h4>Semantic HTML5 Elements:</h4>
+
+      <p>Semantic HTML elements describe the meaning of their content rather than just how it should look. Before HTML5, developers used generic <code>&lt;div&gt;</code> tags for everything, adding class names to indicate purpose. HTML5 introduced elements like <code>&lt;header&gt;</code>, <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;aside&gt;</code>, and <code>&lt;footer&gt;</code> that explicitly communicate the role of content. A <code>&lt;nav&gt;</code> element tells everyone browsers, developers, and assistive technologies that this section contains navigation links. This clarity makes your code self-documenting and more maintainable.</p>
+
+      <p>Using semantic HTML dramatically improves accessibility. Screen readers used by visually impaired users can navigate pages more effectively when landmarks are clearly marked. For example, a screen reader can jump directly to the main content when it's wrapped in a <code>&lt;main&gt;</code> tag, or list all navigation sections when they're properly marked with <code>&lt;nav&gt;</code>. This isn't just about compliance; it's about making the web usable for everyone. Additionally, search engines use semantic elements to better understand your content structure, potentially improving your SEO rankings.</p>
+
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: Learn How to Create a Standard HTML Document Structure</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/ZEZOrZLLoW0?si=IcS2fo9DCLC8EhMc" title="Learn HTML in 1 Hour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+
+      <h4>Text Formatting</h4>
+
+      <p>Text is the primary way we communicate information on the web, and HTML provides numerous elements for formatting and structuring text content. Headings (<code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code>) create a hierarchical structure, with <code>&lt;h1&gt;</code> being the most important and <code>&lt;h6&gt;</code> the least. Each page should typically have one <code>&lt;h1&gt;</code> that describes the main topic, followed by subheadings that create an outline of your content. Paragraphs use the <code>&lt;p&gt;</code> tag, and for lists, you can choose between unordered lists (<code>&lt;ul&gt;</code>) for bullet points and ordered lists (<code>&lt;ol&gt;</code>) for numbered items.</p>
+      
+      <p>Emphasis elements like <code>&lt;strong&gt;</code> and <code>&lt;em&gt;</code> do more than just make text bold or italic they convey semantic meaning. <code>&lt;strong&gt;</code> indicates strong importance, while <code>&lt;em&gt;</code> indicates emphasis or stress. This distinction matters for screen readers and search engines. There's also <code>&lt;mark&gt;</code> for highlighted text, <code>&lt;small&gt;</code> for fine print, <code>&lt;del&gt;</code> for deleted text, and <code>&lt;ins&gt;</code> for inserted text. Understanding when to use each element appropriately is key to writing semantic, accessible HTML.</p>
+      
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: Learn HTML text formatting in 3 minutes</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/urT4pdM3sr4?si=XYgAyLFyAcrf7krd" title="Learn HTML in 1 Hour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+
+      <h4>Links & Images:</h4>
+
+      <p>Links and images are fundamental to the web experience. The anchor tag <code>&lt;a&gt;</code> creates hyperlinks that connect pages together, forming the "web" in World Wide Web. Links use the href&gt;</code> attribute to specify the destination this could be another page on your site, an external website, an email address using <code>&lt;mailto:&gt;</code>, or even a specific section of the current page using ID anchors. Understanding relative vs absolute URLs is crucial: relative paths work within your site structure, while absolute paths include the full URL including protocol.</p>
+
+      <p>Images are added with the <code>&lt;img&gt;</code> tag, which is self-closing and requires a <code>&lt;src&gt;</code> attribute pointing to the image file. The <code>&lt;alt&gt;</code> attribute is not optional it provides alternative text for screen readers and displays when images fail to load. Good alt text describes the image content and context concisely. You should also consider using the <code>&lt;width&gt;</code> and <code>&lt;height&gt;</code> attributes to prevent layout shifts as pages load, and the <code>&lt;loading="lazy"&gt;</code> attribute to defer loading images until they're needed, improving performance.</p>
+
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: Learn HTML images in 3 minutes</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/Hh_se2Zqsdk?si=FwBC4WduWChZRIiY" title="Learn HTML in 1 Hour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+
+      <h4>Forms:</h4>
+
+      <p>HTML forms are how users interact with and send data to web servers. The <code>&lt;form&gt;</code> element wraps all form controls and defines where data is sent <code>&lt;action&gt;</code> attribute and how it's sent <code>&lt;method&gt;</code> attribute typically GET or POST. Inside forms, you'll use various input types: <code>&lt;input type="text"&gt;</code> for single-line text, <code>&lt;input type="email"&gt;</code> for email addresses with built-in validation, <code>&lt;input type="password"&gt;</code> for hidden password fields, <code>&lt;input type="checkbox"&gt;</code> and <code>&lt;input type="radio"&gt;</code> for selections, and many more. HTML5 added powerful input types like date, color, range, and number.</p>
+      
+      <p>Every form control should be paired with a <code>&lt;label&gt;</code> element that describes its purpose. Labels improve accessibility and usability clicking a label focuses its associated input. Use the <code>&lt;for&gt;</code> attribute on the label matching the <code>&lt;id&gt;</code> of the input. The <code>&lt;textarea&gt;</code> element creates multi-line text input, <code>&lt;select&gt;</code> with <code>&lt;option&gt;</code> elements creates dropdown menus, and <code>&lt;button&gt;</code> submits the form or triggers JavaScript actions. Form validation can be added using HTML5 attributes like <code>&lt;required&gt;</code>, <code>&lt;pattern&gt;</code>, <code>&lt;min&gt;</code>, <code>&lt;max&gt;</code>, and <code>&lt;minlength&gt;</code>, providing immediate user feedback without JavaScript.</p>
+      
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: Learn HTML forms in 8 minutes</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/2O8pkybH6po?si=9hR_JfpEvFfNyRs7" title="Learn HTML in 1 Hour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+
+      <h4>Tables:</h4>
+
+      <p>HTML tables display data in a grid of rows and columns, making them perfect for presenting structured, tabular data like schedules, pricing comparisons, or statistical information. Tables should only be used for actual data tables never for page layout, which should use CSS instead. A basic table uses <code>&lt;table&gt;</code> as the wrapper, <code>&lt;tr&gt;</code> for table rows, <code>&lt;td&gt;</code> for data cells, and <code>&lt;th&gt;</code> for header cells. Header cells are semantically distinct and typically displayed bold and centered by default.</p>
+      
+      <p>For more complex tables, you can add structure with <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, and <code>&lt;tfoot&gt;</code> to group header rows, body content, and footer rows respectively. The <code>&lt;caption&gt;</code> element provides a title or description for the table, improving accessibility. You can merge cells horizontally with <code>&lt;colspan&gt;</code> or vertically with <code>&lt;rowspan&gt;</code> attributes. The <code>&lt;scope&gt;</code> attribute on <code>&lt;th&gt;</code> elements tells screen readers whether the header applies to a row, column, or group. Well-structured tables are accessible, semantically clear, and easy to style with CSS.</p>
+      
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: Learn HTML tables in 3 minutes</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/iDA0kF5lrVk?si=p_NtjRX2mfEhmifL" title="Learn HTML in 1 Hour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+
       <h4>Core HTML Concepts:</h4>
       <ul class="topic-list">
         <li><strong>Document structure:</strong> DOCTYPE, html, head, body tags and their purposes</li>
@@ -691,12 +765,12 @@
       </ul>
       
       <div class="project-box">
-        <h4>➡️ Mini Project: Personal Bio Page</h4>
-        <p>Create a simple HTML page about yourself with a photo, biography, list of hobbies, and a contact form. Focus on using semantic HTML elements properly.</p>
-        <p style="margin-top: 15px; margin-bottom: 15px;"><strong>📹 Project Tutorial: Step-by-Step Guide</strong></p>
+        <h4>Mini Project: How to make a Landing Page</h4>
+        <p>Product Landing Page Tutorial using HTML and CSS</p>
         <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
           <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/s01FcnT075Q" title="HTML Bio Page Project Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
+        <p>Source: Youtube</p>
       </div>
 
       <!-- Ad Block: After HTML Section -->
