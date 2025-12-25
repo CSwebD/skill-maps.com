@@ -791,7 +791,92 @@
 
       <h3 id="css-basics">2. CSS Basics</h3>
       <p>CSS (Cascading Style Sheets) brings your HTML to life by controlling the visual presentation of web pages.</p>
-      
+
+      <h4>General Information:</h4>
+      <p>CSS (Cascading Style Sheets) transforms plain HTML into visually appealing, branded experiences. While HTML provides structure and content, CSS controls every visual aspect: colors, fonts, spacing, layout, and even animations. The "cascading" part means styles flow down from parent to child elements and can be overridden based on specificity rules. This system gives you incredible control over your designs while keeping your HTML clean and semantic.</p>
+      <p>CSS works through selectors that target HTML elements and declarations that define styling properties. A simple example: <code>&lt;p { color: blue; }&gt;</code> targets all paragraph elements and makes their text blue. You can write CSS in three ways: inline styles directly on HTML elements (not recommended for maintainability), internal styles within a <code>&lt;style&gt;</code>  tag in your HTML document, or external stylesheets linked to your HTML (the professional approach). External stylesheets keep your code organized and allow you to reuse styles across multiple pages.</p>
+      <p>Modern CSS has evolved dramatically, offering powerful features like custom properties (CSS variables), grid and flexbox for layouts, and sophisticated animations. Learning CSS is learning to think about visual design programmatically. You'll develop an eye for spacing, typography, color harmony, and responsive design. The best way to learn CSS is through practice experiment with different properties, break things, fix them, and gradually build your intuition for how styles interact and cascade.</p>
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: CSS in 5 minutes</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/Z4pCqK-V_Wo?si=O5S8Hd6rcnrbJExF" title="Learn HTML in 1 Hour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+
+      <h4>Selectors:</h4>
+      <p>CSS selectors are patterns that match HTML elements you want to style. The most basic selectors are element selectors (like p, div, h1) that target all instances of an element type. Class selectors use a dot prefix (.button, .card) and can be applied to any elements by adding the class attribute. ID selectors use a hash prefix (#header, #main-content) and should be unique per page. Classes are reusable and preferred for styling, while IDs are better for JavaScript targeting or anchor links.</p>
+      <p>More advanced selectors include attribute selectors that target elements with specific attributes ([type="text"], [href^="https"]), pseudo-classes that target element states (:hover for mouse-over, :focus for focused inputs, :nth-child() for position-based selection), and pseudo-elements that style specific parts of elements (::before, ::after, ::first-line). Combinators let you target elements based on their relationship to others: descendant selectors (space), child selectors (>), adjacent sibling (+), and general sibling (~).</p>
+      <p>Understanding selector specificity is crucial for managing CSS effectively. Inline styles have the highest specificity, followed by IDs, then classes/attributes/pseudo-classes, and finally element selectors. When multiple rules target the same element, the most specific one wins. This system prevents chaos but can create frustrating debugging situations if you don't understand it. Learning to write specific enough selectors without over-specificity is an art that comes with practice.</p>
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: Learn CSS Selectors In 5 Minutes</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/2rXVTnji5NA?si=cgzXkEKK9biiJjx8" title="Learn HTML in 1 Hour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+
+      <h4>Box Model:</h4>
+
+      <p>The CSS box model is fundamental to understanding layout and spacing on the web. Every HTML element is rendered as a rectangular box with four distinct areas: content, padding, border, and margin. The content area holds your text, images, or other elements. Padding is transparent space between the content and border, creating breathing room inside the element. The border wraps around the padding and can be styled with color, width, and style. Margin is transparent space outside the border that pushes other elements away.</p>
+      <p>By default, when you set width and height on an element, you're only setting the content area size padding and border add to the total space the element occupies. This can make layouts unpredictable. The box-sizing: border-box; property changes this behavior to include padding and border in the specified width/height, making sizing more intuitive. Most modern developers apply box-sizing: border-box; to all elements using a universal selector at the start of their stylesheet.</p>
+      <p>Understanding the box model is essential for controlling spacing and creating precise layouts. Margins collapse between adjacent elements (the larger margin wins), while padding doesn't. Margins can be negative to pull elements closer or overlap them. Padding expands the clickable area of buttons and links, improving user experience. Master the box model, and layout puzzles become much easier to solve. Browser DevTools can visualize the box model for any element, showing you exactly how much space each area occupies.</p>
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: Learn CSS Box-Model in 4 Minutes</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/qvx2SZzoqqQ?si=-ADjqkfK8w3_kQDp" title="Learn HTML in 1 Hour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+
+      <h4>Colors & Typography:</h4>
+      <p>Color and typography are the primary tools for establishing visual hierarchy, brand identity, and emotional tone on the web. CSS offers multiple ways to define colors: named colors (red, blue), hexadecimal codes (#FF5733), RGB/RGBA for colors with transparency (rgba(255, 87, 51, 0.8)), and HSL/HSLA for more intuitive color adjustments (hsl(9, 100%, 60%)). Modern CSS also supports custom properties (variables) for colors, making it easy to maintain consistent color schemes across your site.</p>
+      <p>Typography involves much more than just picking a font. The font-family property sets the typeface, often with a fallback stack in case the primary font doesn't load. font-size controls text size, font-weight adjusts thickness (normal, bold, or numeric values), and line-height controls vertical spacing between lines of text crucial for readability. The letter-spacing and word-spacing properties fine-tune horizontal spacing. Services like Google Fonts provide free, web-optimized fonts you can easily integrate into your projects.</p>
+      <p>Good typography is largely about readability and hierarchy. Body text typically works best at 16-18px with a line-height of 1.5-1.7. Headings should have clear size distinctions that establish visual hierarchy. Pair fonts thoughtfully usually one for headings and one for body text, ensuring they complement rather than clash. Pay attention to contrast between text and background colors; proper contrast isn't just aesthetic, it's an accessibility requirement. Tools like the WebAIM contrast checker can help ensure your color choices meet WCAG standards.</p>
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: Learn CSS colors in 4 minutes</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/LwbKb2J8iy8?si=q0qdiLbGaKyZwtaS" title="Learn HTML in 1 Hour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+
+      <h4>Positioning:</h4>
+      <p>CSS positioning controls where elements appear on the page and how they interact with the normal document flow. The position property has five key values, each with distinct behavior. static is the default elements appear in normal document flow in the order they appear in HTML. relative positioning lets you nudge an element from its normal position using top, right, bottom, and left properties, but the original space is preserved in the layout. Other elements still flow around where it would have been.</p>
+      <p>“absolute” positioning removes an element from normal document flow entirely, positioning it relative to its nearest positioned ancestor (any ancestor with position other than static). If no positioned ancestor exists, it positions relative to the viewport. This is powerful for overlays, tooltips, and dropdowns. fixed positioning is similar but always positions relative to the viewport, staying in place even when scrolling perfect for sticky headers or navigation. sticky is a hybrid that acts like relative positioning until scrolling reaches a specified threshold, then becomes fixed.</p>
+      <p>Understanding positioning context is crucial. When you absolutely position an element, it looks up the DOM tree for the first parent with position relative, absolute, or fixed that becomes its positioning reference. This parent-child relationship is the key to creating complex layouts with positioned elements. The z-index property controls stacking order when elements overlap, but it only works on positioned elements (not static). Mastering positioning unlocks the ability to create sophisticated layouts and interactions that would be impossible otherwise.</p>
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: Learn CSS Positions in 4 minutes</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/YEmdHbQBCSQ?si=pGvXl0fO5sbgie9j" title="Learn HTML in 1 Hour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+
+      <h4>Display Property:</h4>
+      <p>The display property is one of the most fundamental CSS properties, controlling how an element participates in the page layout. block elements (like divs, paragraphs, and headings) take up the full width available and start on a new line, stacking vertically. They respect width, height, and vertical margins. inline elements (like spans, links, and strong tags) flow within text content, only taking up as much width as their content requires. They don't respect width, height, or vertical margins, but do respect horizontal margins and padding.</p>
+      <p>“inline-block” combines features of both: elements flow inline like text but can have width, height, and all margins/padding like block elements. This is useful for horizontal navigation menus or grid layouts without flexbox/grid. none completely removes the element from the document flow as if it doesn't exist different from visibility: hidden, which hides the element but preserves its space. The display property also enables modern layout modes: flex for flexbox layouts and grid for CSS Grid layouts.</p>
+      <p>Understanding display behavior is essential for debugging layout issues. If an element isn't respecting width/height, check if it's inline. If elements aren't lining up horizontally, consider their display property. The display property can be changed with CSS to override default behavior you can make list items display inline for horizontal menus, or make links display block for full-width clickable areas. Modern responsive design often involves changing display properties at different screen sizes using media queries.</p>
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: Learn CSS display property in 4 minutes</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/9T8uxp5hQ60?si=lLiX-CPcN9es2wV5" title="Learn HTML in 1 Hour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+
+      <h4>Basic Animations:</h4>
+      <p>CSS animations bring web pages to life, creating smooth, performant motion without JavaScript. There are two main approaches: transitions and keyframe animations. Transitions animate changes between two states when a property changes (like on hover). You specify which properties to animate, how long the animation should take, and the timing function (linear, ease-in, ease-out, etc.). For example, transition: all 0.3s ease; smoothly animates all property changes over 0.3 seconds. Transitions are perfect for hover effects, focus states, and simple state changes.</p>
+      <p>Keyframe animations provide more control, allowing you to define multiple animation stages. You create named animations with @keyframes, specifying styles at different points using percentages or from/to keywords. Then you apply the animation to elements using the animation property, setting duration, timing function, iteration count, and more. Keyframes enable complex effects like loading spinners, bouncing buttons, or attention-grabbing pulses. You can control animation playback with properties like animation-play-state, pause and resume animations, or run them in reverse.</p>
+      <p>Performance matters with animations. Browsers can efficiently animate transform (translate, rotate, scale, skew) and opacity properties because they don't trigger layout recalculations. Avoid animating properties like width, height, or margins when possible, as these force the browser to recalculate layout, causing jank. Keep animations subtle and purposeful they should enhance user experience, not distract. Test animations on mobile devices to ensure smooth performance. Used well, animations improve user experience by providing feedback, guiding attention, and making interfaces feel responsive and polished.</p>
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: Learn CSS animations in 15 minutes!</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/u_GIT5MJAtc?si=fx66jaXDgZw1fnLW" title="Learn HTML in 1 Hour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+
       <h4>Essential CSS Skills:</h4>
       <ul class="topic-list">
         <li><strong>Selectors:</strong> element, class, ID, attribute, pseudo-classes (:hover, :focus)</li>
@@ -803,8 +888,27 @@
       </ul>
       
       <div class="project-box">
-        <h4>➡️ Mini Project: Styled Recipe Page</h4>
-        <p>Take a recipe and style it beautifully with CSS. Experiment with colors, fonts, spacing, and hover effects to make it visually appealing.</p>
+         <p style="margin-bottom: 15px;"><strong>Video Mini project: CSS Mini-Project for Beginners</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/rwTs9NR3Du8?si=szJEwxuaaPdoIIGw" title="Learn HTML in 1 Hour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+
+      <!-- Ad Block: After HTML Section -->
+      <div style="margin: 40px 0; text-align: center;">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7439109164508333"
+             crossorigin="anonymous"></script>
+        <!-- Index-Header -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-7439109164508333"
+             data-ad-slot="4111274044"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
       </div>
 
       <h3 id="tools-basics">3. Developer Tools & Setup</h3>
@@ -818,6 +922,22 @@
         <li><strong>Package managers:</strong> npm basics, installing packages</li>
       </ul>
 
+      <!-- Ad Block: After HTML Section -->
+      <div style="margin: 40px 0; text-align: center;">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7439109164508333"
+             crossorigin="anonymous"></script>
+        <!-- Index-Header -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-7439109164508333"
+             data-ad-slot="4111274044"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+
       <!-- STEP 2: JAVASCRIPT FUNDAMENTALS -->
       <h2 id="javascript-basics">JavaScript Fundamentals</h2>
       
@@ -825,6 +945,8 @@
       <p>JavaScript adds interactivity and dynamic behavior to web pages — it's the programming language of the web.</p>
       
       <h4>JavaScript Fundamentals:</h4>
+
+
       <ul class="topic-list">
         <li><strong>Variables & data types:</strong> let, const, var, strings, numbers, booleans, arrays, objects</li>
         <li><strong>Operators:</strong> arithmetic, comparison, logical, assignment</li>
@@ -835,8 +957,24 @@
       </ul>
       
       <div class="project-box">
-        <h4>➡️ Mini Project: Simple Calculator</h4>
+        <h4>Mini Project: Simple Calculator</h4>
         <p>Build a basic calculator that performs addition, subtraction, multiplication, and division. Style it nicely and handle edge cases like division by zero.</p>
+      </div>
+
+      <!-- Ad Block: After HTML Section -->
+      <div style="margin: 40px 0; text-align: center;">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7439109164508333"
+             crossorigin="anonymous"></script>
+        <!-- Index-Header -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-7439109164508333"
+             data-ad-slot="4111274044"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
       </div>
 
       <h3 id="dom-manipulation">5. DOM Manipulation</h3>
@@ -856,6 +994,22 @@
         <p>Create a product landing page that looks great on mobile, tablet, and desktop. Include a hero section, features, and call-to-action buttons.</p>
       </div>
 
+      <!-- Ad Block: After HTML Section -->
+      <div style="margin: 40px 0; text-align: center;">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7439109164508333"
+             crossorigin="anonymous"></script>
+        <!-- Index-Header -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-7439109164508333"
+             data-ad-slot="4111274044"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+
       <h3 id="javascript-advanced">6. Advanced JavaScript</h3>
       <p>Master the powerful layout systems that make building complex, responsive layouts straightforward.</p>
       
@@ -872,6 +1026,22 @@
         <p>Build a responsive photo gallery using CSS Grid that automatically adjusts the number of columns based on screen size. Add hover effects and lightbox functionality with JavaScript.</p>
       </div>
 
+      <!-- Ad Block: After HTML Section -->
+      <div style="margin: 40px 0; text-align: center;">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7439109164508333"
+             crossorigin="anonymous"></script>
+        <!-- Index-Header -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-7439109164508333"
+             data-ad-slot="4111274044"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+
       <!-- STEP 3: RESPONSIVE DESIGN & LAYOUT -->
       <h2 id="responsive-design">Responsive Design & Layout</h2>
       
@@ -885,6 +1055,22 @@
         <li><strong>When to use frameworks:</strong> Rapid prototyping, consistent design systems, team collaboration</li>
         <li><strong>Custom CSS vs Frameworks:</strong> Understanding trade-offs between control and convenience</li>
       </ul>
+
+      <!-- Ad Block: After HTML Section -->
+      <div style="margin: 40px 0; text-align: center;">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7439109164508333"
+             crossorigin="anonymous"></script>
+        <!-- Index-Header -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-7439109164508333"
+             data-ad-slot="4111274044"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
 
       <h3 id="css-layout">8. Modern CSS Layout</h3>
       <p>Git is essential for professional development — it tracks changes, enables collaboration, and protects your work.</p>
@@ -900,6 +1086,22 @@
       <div class="project-box">
         <h4>➡️ Mini Project: Portfolio Website v1</h4>
         <p>Build your first portfolio website showcasing your projects. Use Git for version control and deploy it to GitHub Pages. Include an about section, project showcase, and contact information.</p>
+      </div>
+
+      <!-- Ad Block: After HTML Section -->
+      <div style="margin: 40px 0; text-align: center;">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7439109164508333"
+             crossorigin="anonymous"></script>
+        <!-- Index-Header -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-7439109164508333"
+             data-ad-slot="4111274044"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
       </div>
 
       <!-- STEP 5: REACT & STATE MANAGEMENT -->
@@ -923,6 +1125,22 @@
         <p>Build a weather app using React that fetches data from a weather API. Include search functionality, current weather display, and 5-day forecast.</p>
       </div>
 
+      <!-- Ad Block: After HTML Section -->
+      <div style="margin: 40px 0; text-align: center;">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7439109164508333"
+             crossorigin="anonymous"></script>
+        <!-- Index-Header -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-7439109164508333"
+             data-ad-slot="4111274044"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+      
       <h3 id="state-management">12. State Management</h3>
       <p>As applications grow, managing state across components becomes challenging. Learn strategies to handle complex state.</p>
       
@@ -933,6 +1151,22 @@
         <li><strong>Zustand:</strong> Lightweight state management alternative</li>
         <li><strong>When to use what:</strong> Local state vs global state decisions</li>
       </ul>
+
+      <!-- Ad Block: After HTML Section -->
+      <div style="margin: 40px 0; text-align: center;">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7439109164508333"
+             crossorigin="anonymous"></script>
+        <!-- Index-Header -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-7439109164508333"
+             data-ad-slot="4111274044"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
       
       <!-- STEP 6: APIs & DATA -->
       <h2 id="apis">APIs & Data</h2>
@@ -952,6 +1186,22 @@
       <div class="project-box">
         <h4>➡️ Mini Project: Movie Browser App</h4>
         <p>Create a movie database browser using The Movie Database (TMDB) API. Implement search, filters, and details pages.</p>
+      </div>
+
+      <!-- Ad Block: After HTML Section -->
+      <div style="margin: 40px 0; text-align: center;">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7439109164508333"
+             crossorigin="anonymous"></script>
+        <!-- Index-Header -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-7439109164508333"
+             data-ad-slot="4111274044"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
       </div>
 
       <!-- STEP 7: TESTING & PERFORMANCE -->
@@ -979,6 +1229,22 @@
         <li><strong>Caching strategies:</strong> Browser caching, service workers, CDN usage</li>
         <li><strong>Bundle size optimization:</strong> Tree shaking, minification, compression</li>
       </ul>
+
+      <!-- Ad Block: After HTML Section -->
+      <div style="margin: 40px 0; text-align: center;">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7439109164508333"
+             crossorigin="anonymous"></script>
+        <!-- Index-Header -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-7439109164508333"
+             data-ad-slot="4111274044"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
 
       <!-- STEP 8: DOCUMENTATION & DEPLOYMENT -->
       <h2 id="documentation">Documentation & Deployment</h2>
@@ -1011,6 +1277,22 @@
         <p>Deploy your portfolio website to production with a custom domain. Set up automated deployments from GitHub.</p>
       </div>
 
+      <!-- Ad Block: After HTML Section -->
+      <div style="margin: 40px 0; text-align: center;">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7439109164508333"
+             crossorigin="anonymous"></script>
+        <!-- Index-Header -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-7439109164508333"
+             data-ad-slot="4111274044"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+
       <!-- STEP 9: PROGRESSIVE WEB APPS -->
       <h2 id="pwa">Progressive Web Apps</h2>
       
@@ -1024,6 +1306,22 @@
         <li><strong>Offline strategies:</strong> Cache-first, network-first, stale-while-revalidate</li>
         <li><strong>Push notifications:</strong> Engaging users with web push</li>
       </ul>
+
+      <!-- Ad Block: After HTML Section -->
+      <div style="margin: 40px 0; text-align: center;">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7439109164508333"
+             crossorigin="anonymous"></script>
+        <!-- Index-Header -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-7439109164508333"
+             data-ad-slot="4111274044"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
 
       <!-- STEP 10: ADVANCED TOPICS -->
       <h2 id="typescript">Advanced Topics</h2>
@@ -1062,6 +1360,22 @@
         <li><strong>Content Security Policy:</strong> Preventing code injection attacks</li>
         <li><strong>Authentication best practices:</strong> Secure password handling, tokens</li>
       </ul>
+
+      <!-- Ad Block: After HTML Section -->
+      <div style="margin: 40px 0; text-align: center;">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7439109164508333"
+             crossorigin="anonymous"></script>
+        <!-- Index-Header -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-7439109164508333"
+             data-ad-slot="4111274044"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
 
       <!-- FINAL PROJECTS -->
       <h2 id="final-projects">Final Projects (Portfolio Pieces)</h2>
@@ -1114,6 +1428,23 @@
       </ul>
 
       <p style="margin-top: 30px;">Continue learning by contributing to open-source projects, staying updated with web technologies, and building more complex applications. The frontend landscape evolves rapidly — make continuous learning part of your journey!</p>
+    
+      <!-- Ad Block: After HTML Section -->
+      <div style="margin: 40px 0; text-align: center;">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7439109164508333"
+             crossorigin="anonymous"></script>
+        <!-- Index-Header -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-7439109164508333"
+             data-ad-slot="4111274044"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+
     </main>
   </div>
 
