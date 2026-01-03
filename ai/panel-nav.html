@@ -1,6 +1,6 @@
 <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md shadow-sm z-50">
   <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-    <a href="../index.html" class="text-2xl font-bold text-green-700 hover:text-green-800 transition">Skill Maps</a>
+    <a href="index.html" class="text-2xl font-bold text-green-700 hover:text-green-800 transition">Skill Maps</a>
     
     <!-- Mobile menu toggle -->
     <button id="navToggle" class="sm:hidden text-gray-800 focus:outline-none">
@@ -10,22 +10,42 @@
     <!-- Desktop navigation -->
     <div id="navLinks" class="hidden sm:flex items-center space-x-8 text-sm">
       <a href="../index.html" class="hover:text-green-700">Home</a>
-      <a href="../domains.html" class="hover:text-green-700">Domains</a>
-      <a href="../skills.html" class="hover:text-green-700">Skill Maps</a>
-      <a href="../ai.html" class="hover:text-green-700">AI</a>
       <a href="../blog.html" class="hover:text-green-700">Blog</a>
+      
+      <!-- Courses-Maps dropdown -->
+      <div class="relative group">
+        <button class="hover:text-green-700 flex items-center gap-1">
+          Courses
+          <i class="fas fa-chevron-down text-xs"></i>
+        </button>
+        
+        <!-- Dropdown menu -->
+        <div class="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+          <a href="../domains.html" class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 rounded-t-lg">
+            <i class="fas fa-globe mr-2"></i>Domains
+          </a>
+          <a href="../skills.html" class="block px-4 py-3 hover:bg-green-50 hover:text-green-700">
+            <i class="fas fa-code mr-2"></i>Skills
+          </a>
+          <a href="../ai.html" class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 rounded-b-lg">
+            <i class="fas fa-robot mr-2"></i>AI
+          </a>
+        </div>
+      </div>
+      
+      <a href="../news-update.html" class="hover:text-green-700">Announcement</a>
       <a href="../FAQs.html" class="hover:text-green-700">FAQ</a>
       
       <!-- FOR UNLOGGED USERS: Login / Signup -->
-      <div id="authButtons" style="display: flex; gap: 2rem;">
-        <a href="../login.html" class="hover:text-green-700 font-medium">Login</a>
-        <a href="../signup.html" class="hover:text-green-700 font-medium">Signup</a>
+      <div id="authButtons" style="display: flex; gap: 1rem; align-items: center;">
+        <a href="../login.html" class="px-4 py-2 bg-green-700 text-white rounded-lg hover:bg-green-800 transition font-medium">Login</a>
+        <a href="../signup.html" class="px-4 py-2 bg-orange-300 text-green rounded-lg hover:bg-orange-400 transition font-medium cursor-pointer border-none">Signup</a>
       </div>
       
       <!-- FOR LOGGED IN USERS: Nickname / Logout -->
-      <div id="userButtons" style="display: none; gap: 2rem;">
-        <a href="../profile.html" id="nicknameBtn" class="hover:text-green-700 font-medium">Nickname</a>
-        <button id="logoutBtn" class="hover:text-green-700 font-medium bg-transparent border-none cursor-pointer">Logout</button>
+      <div id="userButtons" style="display: none; gap: 1rem; align-items: center;">
+        <a href="../profile.html" id="nicknameBtn" class="px-4 py-2 bg-green-700 text-white rounded-lg hover:bg-green-800 transition font-medium">Nickname</a>
+        <button id="logoutBtn" class="px-4 py-2 bg-red-400 text-green rounded-lg hover:bg-red-500 transition font-medium cursor-pointer border-none">Logout</button>
       </div>
     </div>
   </div>
@@ -33,16 +53,17 @@
   <!-- Mobile menu -->
   <div id="mobileMenu" class="sm:hidden hidden bg-white shadow-inner">
     <a href="../index.html" class="block px-6 py-3 hover:bg-gray-100">Home</a>
-    <a href="../domains.html" class="block px-6 py-3 hover:bg-gray-100">Domains</a>
-    <a href="../skills.html" class="block px-6 py-3 hover:bg-gray-100">Skill Maps</a>
-    <a href="../ai.html" class="block px-6 py-3 hover:bg-gray-100">AI</a>
     <a href="../blog.html" class="block px-6 py-3 hover:bg-gray-100">Blog</a>
+    <a href="../domains.html" class="block px-6 py-3 hover:bg-gray-100">Domain Courses</a>    
+    <a href="../skills.html" class="block px-6 py-3 hover:bg-gray-100">Skill Courses</a>
+    <a href="../ai.html" class="block px-6 py-3 hover:bg-gray-100">AI Courses</a>
+    <a href="../news-update.html" class="block px-6 py-3 hover:bg-gray-100">Announcement</a>
     <a href="../FAQs.html" class="block px-6 py-3 hover:bg-gray-100">FAQ</a>
     
     <!-- Mobile: Login/Signup -->
     <div id="mobileAuthButtons" style="display: block;" class="border-t border-gray-200">
-      <a href="../login.html" class="block px-6 py-3 hover:bg-gray-100">Login</a>
-      <a href="../signup.html" class="block px-6 py-3 hover:bg-gray-100">Signup</a>
+      <a href="../login.html" class="block px-6 py-3 hover:bg-green-100 bg-green-200">Login</a>
+      <a href="../signup.html" class="block px-6 py-3 hover:bg-orange-100 bg-orange-200">Signup</a>
     </div>
     
     <!-- Mobile: Nickname/Logout -->
@@ -52,3 +73,18 @@
     </div>
   </div>
 </nav>
+
+<script>
+  // Existing mobile menu toggle
+  document.getElementById('navToggle').addEventListener('click', function() {
+    document.getElementById('mobileMenu').classList.toggle('hidden');
+  });
+
+  // Mobile Courses-Maps submenu toggle
+  document.getElementById('mobileCoursesToggle').addEventListener('click', function() {
+    const submenu = document.getElementById('mobileCoursesSubmenu');
+    const icon = document.getElementById('mobileCoursesIcon');
+    submenu.classList.toggle('hidden');
+    icon.classList.toggle('rotate-180');
+  });
+</script>
