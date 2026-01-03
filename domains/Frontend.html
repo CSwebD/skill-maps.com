@@ -1110,7 +1110,67 @@
 
       <h3 id="dom-manipulation">5. DOM Manipulation</h3>
       <p>Modern websites must work flawlessly across all device sizes — from mobile phones to large desktop monitors.</p>
+
+      <h4>General Information:</h4>
+      <p>The DOM (Document Object Model) is the bridge between JavaScript and HTML/CSS, representing your web page as a tree of objects that JavaScript can manipulate. When a browser loads HTML, it parses it into the DOM a structured representation where each HTML element becomes a DOM node you can access and modify. JavaScript can read, create, modify, and delete elements, change styles, add event listeners, and dynamically update content without page reloads. This is how modern web applications create interactive, responsive experiences that feel like native apps.</p>
+      <p>DOM manipulation is what makes web pages dynamic. You can select elements using methods like <code>document.querySelector()</code>  for single elements or <code>document.querySelectorAll()</code> for multiple elements, using CSS selectors to target what you need. Once you have a reference to an element, you can read or modify its properties: <code>textContent</code> changes text inside elements, <code>innerHTML</code> adds HTML content, <code>style</code> modifies CSS properties, <code>classList</code> adds/removes CSS classes, and attributes can be read or set. These operations happen instantly in the browser, providing immediate visual feedback.</p>
+      <p>Understanding DOM manipulation means understanding the relationship between your JavaScript code, the HTML structure, and what users see on screen. Performance matters repeated DOM manipulations are expensive, so batch updates when possible and use efficient selectors. Modern frameworks like React handle DOM manipulation for you with a virtual DOM, but understanding how the DOM actually works makes you a better developer regardless of what tools you use. DOM manipulation is where JavaScript becomes visibly powerful, transforming static pages into dynamic applications.</p>
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: The JavaScript DOM explained in 5 minutes</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/NO5kUNxGIu0?si=X92uyjfLsPjfpRRl" title="Learn HTML in 1 Hour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+
+      <h4>Selecting Elements:</h4>
+      <p>Before you can manipulate DOM elements, you need to select them. Modern JavaScript provides several methods for selecting elements, with <code>querySelector()</code> and <code>querySelectorAll()</code> being the most versatile. <code>querySelector()</code> returns the first element matching a CSS selector: <code>document.querySelector('.button')</code>  finds the first element with class "button". <code>querySelectorAll()</code> returns all matching elements as a NodeList. These methods accept any valid CSS selector, making them incredibly powerful you can select by class, ID, attributes, pseudo-classes, or complex combinations.</p>
+      <p>Older selection methods are still useful in specific cases. <code>getElementById()</code> is very fast when you need a single element by ID. <code>getElementsByClassName()</code> and <code>getElementsByTagName()</code> return live HTMLCollections that automatically update when the DOM changes unlike NodeLists from <code>querySelectorAll()</code> which are static snapshots. Understanding this distinction prevents confusing bugs when manipulating collections while iterating. The <code>closest()</code> method finds the nearest ancestor matching a selector, useful for event delegation and traversing up the DOM tree.</p>
+      <p>Selection is about specificity and efficiency. Overly broad selectors (like selecting all divs) slow performance and make your code fragile. Specific selectors (like <code>#header .nav-link.active</code>) are more maintainable. Cache selections in variables rather than repeatedly querying the DOM: <code>const button = document.querySelector('.btn')</code>  is more efficient than selecting it multiple times. Most modern JavaScript runs after the DOM loads, but if you run scripts in the <code>&lt;head&gt;</code>, ensure the DOM is ready with <code>DOMContentLoaded</code> event or defer/async script attributes.</p>
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: Selecting HTML Elements - JavaScript DOM Tutorial</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/qnWqecp4QsY?si=c5EGWSnwgrntq2Gh" title="Learn HTML in 1 Hour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
       
+      <h4>Modifying Elements:</h4>
+      <p>Once you've selected elements, you can modify them in countless ways. <code>textContent</code> sets or gets an element's text, treating HTML as plain text (safe from injection attacks). <code>innerHTML</code> gets or sets HTML content as a string, allowing you to inject complex markup but be careful with user-provided content as it can introduce security vulnerabilities. Creating elements programmatically with <code>document.createElement()</code> followed by setting properties and appending to the DOM is safer and often clearer than building HTML strings.</p>
+      <p>Modifying attributes uses <code>getAttribute()</code> and <code>setAttribute(): element.setAttribute('href', 'https://example.com'</code>) changes a link's destination. For common attributes, direct property access is cleaner: <code>element.href</code>, <code>element.src</code>, <code>element.value. </code> Data attributes (<code>data-</code>* in HTML) store custom data on elements, accessible via <code>element.dataset.attributeName</code>. Removing attributes uses <code>removeAttribute()</code>. Understanding attributes versus properties is important attributes initialize elements, while properties represent the live, current state.</p>
+      <p>CSS manipulation happens through the <code>style</code> property for inline styles or the <code>classList</code> API for classes. Direct style manipulation (<code>element.style.color = 'red'</code>) adds inline styles that override stylesheets useful for dynamic values but harder to maintain. <code>classList.add()</code>, <code>classList.remove()</code>, <code>classList.toggle()</code>, and <code>classList.contains()</code> provide clean class manipulation. Toggling classes based on state is generally better than inline styles for maintainable code. The <code>classList</code> API is your primary tool for connecting JavaScript behavior with CSS presentation.</p>
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: Modifying HTML Elements (getElementByID, innerHTML etc. )</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/SrSBhuuuIsg?si=Le9Chdz28RsgNXtT" title="Learn HTML in 1 Hour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+
+      <h4>Creating & Removing Elements:</h4>
+      <p>Dynamic web applications constantly create and remove elements based on user actions and data. <code>document.createElement(tagName)</code> creates new elements: <code>const div = document.createElement('div') </code>. The newly created element exists in memory but isn't visible until appended to the DOM. Set properties, add classes, and modify the element before appending. <code>appendChild()</code> adds an element as the last child of a parent, while <code>insertBefore()</code> provides more precise placement. <code>append()</code> and <code>prepend()</code> are modern alternatives supporting multiple nodes and text strings.</p>
+      <p>Removing elements uses <code>removeChild()</code> on the parent or the simpler <code>element.remove()</code> to remove an element directly. When removing elements with event listeners, consider removing listeners first to prevent memory leaks, though modern JavaScript engines handle this better than historically. Replacing elements uses <code>replaceChild()</code> or the newer replaceWith()</code> method. Cloning elements with cloneNode(deep) </code> duplicates elements <code>deep: true</code> includes all descendants, while <code>deep: false</code> clones only the element itself.</p>
+      <p>Efficiently creating and removing many elements requires strategy. Building elements in memory and appending once is much faster than repeatedly modifying the live DOM. Document fragments (<code>document.createDocumentFragment()</code>) let you build complex structures in memory and insert them in one operation. Template literals make creating HTML strings convenient, though you must be cautious about injection vulnerabilities with user data. Modern frameworks abstract much of this complexity, but understanding the underlying DOM APIs makes you a better developer regardless of framework choice.</p>
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: Create ,Add , Replace and Remove Elements From the DOM</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/pRN6WFUEFFE?si=wDrIZNqNBhIhzi-A" title="Learn HTML in 1 Hour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+
+      <h4>Event Handling:</h4>
+      <p>Events are how JavaScript responds to user interactions and browser actions. Clicking buttons, typing in inputs, scrolling, resizing windows, loading resources all trigger events. Event listeners attach functions (event handlers) to elements that execute when events occur: <code>button.addEventListener('click', handleClick)</code>. The first argument is the event type (string), the second is the handler function. This decouples behavior from HTML (better than inline <code>onclick</code> attributes) and allows multiple handlers for the same event.</p>
+      <p>Event objects contain information about what happened. Handlers receive an event parameter: <code>function handleClick(event)</code>. Event properties include <code>event.target</code> (the element that triggered the event), <code>event.currentTarget</code> (the element with the listener attached), <code>event.type</code>, and for mouse events, coordinates and button information. Keyboard events provide <code>event.key</code> for which key was pressed. <code>event.preventDefault()</code> stops default behavior (like form submission or link navigation), and <code>event.stopPropagation()</code> prevents the event from bubbling up to parent elements.</p>
+      <p>Event delegation leverages event bubbling to handle events on multiple elements with a single listener on their parent. Instead of adding listeners to every list item, add one to the list and check <code>event.target</code> to determine which item was clicked. This is more performant and handles dynamically added elements automatically. Common events include <code>click, submit, input, change, keydown, keyup, mouseenter, mouseleave, scroll, resize, load</code>, and <code>DOMContentLoaded</code>. Understanding events transforms static pages into responsive, interactive applications that react to user behavior naturally.</p>
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: Learn JavaScript EventListeners in 4 Minutes</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/i_8NQuEAOmg?si=lEnLr_eXqHPpReSN" title="Learn HTML in 1 Hour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+
       <h4>Responsive Design Techniques:</h4>
       <ul class="topic-list">
         <li><strong>Mobile-first approach:</strong> Design for small screens first, then scale up</li>
@@ -1119,11 +1179,6 @@
         <li><strong>Flexible units:</strong> rem, em, %, vw, vh instead of fixed px values</li>
         <li><strong>Flexible images:</strong> max-width: 100%, responsive image techniques</li>
       </ul>
-      
-      <div class="project-box">
-        <h4>➡️ Mini Project: Responsive Landing Page</h4>
-        <p>Create a product landing page that looks great on mobile, tablet, and desktop. Include a hero section, features, and call-to-action buttons.</p>
-      </div>
 
       <!-- Ad Block: After HTML Section -->
       <div style="margin: 40px 0; text-align: center;">
@@ -1143,7 +1198,67 @@
 
       <h3 id="javascript-advanced">6. Advanced JavaScript</h3>
       <p>Master the powerful layout systems that make building complex, responsive layouts straightforward.</p>
+
+      <h4>General Information:</h4>
+      <p>Advanced JavaScript topics build on fundamentals to handle complexity, asynchronous operations, and modern development patterns. These concepts separate competent developers from experts. Asynchronous JavaScript handles operations that take time fetching data from servers, reading files, waiting for user input without freezing the entire application. Understanding the event loop, callbacks, promises, and async/await is crucial for modern web development where nearly every interesting feature involves asynchronous operations.</p>
+      <p>Modern JavaScript (ES6+) introduced transformative features that make code more readable, maintainable, and expressive. Destructuring extracts values from arrays and objects with clean syntax. Template literals build strings with embedded expressions. Spread and rest operators work with arrays and objects flexibly. Modules organize code into separate files with explicit imports and exports. Classes provide syntactic sugar over JavaScript's prototype-based inheritance. These features aren't just conveniences they change how you structure programs and think about code organization.</p>
+      <p>Advanced topics also include error handling (try-catch blocks, error objects, custom errors), working with modern APIs (fetch, local storage, geolocation), understanding "this" keyword behavior, working with JSON data, and manipulating dates and times. You don't need to master everything at once these skills develop as you build real projects and encounter specific challenges. What matters is knowing what's possible and where to look when you need it. Solid fundamentals plus curiosity and practice will naturally lead you to expertise.</p>
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: JavaScript Pro Tips - Code This, NOT That</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/Mus_vwhTCq0?si=WsnALYFbaH7sjg9F" title="Learn HTML in 1 Hour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+
+      <h4>Asynchronous JavaScript:</h4>
+      <p>JavaScript runs on a single thread, meaning it can only execute one thing at a time. Asynchronous operations let you start long-running tasks without blocking execution. Traditional async handling used callbacks functions passed to other functions to execute when operations complete. While functional, callbacks lead to "callback hell" with deeply nested code that's hard to read and maintain: <code>doSomething(function(result1) { doSomethingElse(result1, function(result2) { ... })})</code>. This pyramid of doom makes error handling and logic flow difficult to follow.</p>
+      <p>Promises revolutionized async JavaScript, representing values that will be available in the future. A promise is in one of three states: pending (incomplete), fulfilled (successful with a value), or rejected (failed with an error). Create promises with <code>new Promise((resolve, reject) => {...})</code> and consume them with <code>.then(</code>) for success and .catch()</code> for errors. Promises chain cleanly: <code>fetch(url).then(response => response.json()).then(data => console.log(data)).catch(error => console.error(error)) </code>. Each <code>.then()</code> returns a new promise, enabling sequential async operations without nesting.</p>
+      <p>Async/await syntax makes asynchronous code look synchronous, dramatically improving readability. Mark functions <code>async</code> to use <code>await</code> inside them: <code>async function getData() { const response = await fetch(url); const data = await response.json(); return data; }. Await</code> pauses execution until the promise resolves, but doesn't block the thread. Use try-catch blocks for error handling with async/await. This syntax is just sugar over promises but makes async code feel natural. Understanding the event loop how JavaScript manages async operations with callback queues deepens your comprehension of how everything works together.</p>
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: What is asynchronous JavaScript code?</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/Coyy79wRz_s?si=L8M70mRh43h2F5Ie" title="Learn HTML in 1 Hour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
       
+      <h4>ES6+ Features:</h4>
+      <p>Destructuring extracts values from arrays and objects with concise syntax. Array destructuring: <code>const [first, second] = array</code> assigns array elements to variables. Object destructuring: <code>const {name, age} = person</code> extracts object properties. You can use different variable names: <code>const {name: fullName} = person</code>, provide defaults: <code>const {age = 18} = person</code>, and destructure nested objects. Destructuring function parameters makes APIs cleaner: <code>function greet({name, age})</code> instead of accessing properties from a parameter object.</p>
+      <p>Template literals use backticks and enable multi-line strings and embedded expressions: <code>const greeting = `Hello ${name}!`</code> evaluates the expression inside <code>${}</code>. This is cleaner than string concatenation, especially for HTML generation or complex strings. Tagged templates let you process template literals with functions for advanced use cases like internationalization or sanitization. The spread operator (<code>...</code>) expands arrays or objects: <code> [...array1, ...array2] </code> merges arrays, <code>{...obj1, ...obj2}</code> merges objects. Rest parameters gather function arguments into an array: <code>function sum(...numbers) </code>.</p>
+      <p>Arrow functions provide concise syntax and lexically bind this, making them perfect for callbacks. Default parameters specify fallback values: <code>function greet(name = "Guest")</code>. Classes organize related data and behavior: <code>class Person { constructor(name) { this.name = name; } }</code>. While classes are syntactic sugar over prototypes, they make object-oriented patterns more familiar to developers from other languages. Modules split code into files with <code>import</code> and <code>export</code> statements, making large applications manageable. Understanding these features makes you fluent in modern JavaScript rather than just competent.</p>
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: ES6+ Features in JavaScript: Let & Const, Arrow Functions, Destructuring & More</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/eW6otoH290g?si=YCSt2Ob25ULhOsp_" title="Learn HTML in 1 Hour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+
+      <h4>Error Handling:</h4>
+      <p>Proper error handling prevents crashes, provides informative feedback, and makes applications robust. Try-catch blocks wrap code that might throw errors: <code>try { riskyOperation(); } catch (error) { console.error(error); }</code>. The catch block executes only if an error occurs, receiving an error object with information about what went wrong. The <code>finally</code> block executes regardless of whether an error occurred, useful for cleanup operations like closing connections or hiding loading spinners.</p>
+      <p>JavaScript's Error object includes a <code>message</code> property describing the error and a <code>stack</code> property showing where it occurred. You can throw custom errors: <code>throw new Error("Something went wrong")</code>. Creating custom error classes helps distinguish error types: <code>class ValidationError extends Error {}</code>. Async error handling requires care promises use <code>.catch()</code>, while async/await uses try-catch blocks. Unhandled promise rejections can crash Node.js applications, so always handle errors appropriately.</p>
+      <p>Error handling isn't just about catching exceptions; it's about building defensive, resilient code. Validate inputs, check for undefined/null before accessing properties, provide meaningful error messages to users, and log errors for debugging. Don't silently swallow errors empty catch blocks hide problems. At the same time, don't let error handling clutter your code's primary logic. Well-placed error boundaries contain problems, providing graceful degradation when something goes wrong. Good error handling separates robust production code from fragile prototypes.</p>
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: try, catch, finally, throw - error handling in JavaScript</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/cFTFtuEQ-10?si=EaLCRr0bqpliYcs8" title="Learn HTML in 1 Hour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+
+      <h4>Working with JSON:</h4>
+      <p>JSON (JavaScript Object Notation) is the universal data exchange format for web applications. It's text-based, human-readable, and language-agnostic, though its syntax is based on JavaScript object literals. JSON supports strings, numbers, booleans, null, arrays, and objects (key-value pairs), but not functions, dates (which become strings), or undefined. APIs almost universally use JSON for requests and responses, making it essential for fetching and sending data. Understanding JSON means understanding how data flows in modern web applications.</p>
+      <p>JavaScript provides built-in JSON handling through <code>JSON.parse()</code> and <code>JSON.stringify(). JSON.parse()</code> converts JSON strings into JavaScript objects: <code>const data = JSON.parse(jsonString)</code>. This is how you work with API responses. <code>JSON.stringify()</code> converts JavaScript objects into JSON strings: <code>const jsonString = JSON.stringify(data)</code>. This is how you prepare data to send to servers. Both methods accept optional parameters for custom handling, like replacers for stringify and revivers for parse that transform values during conversion.</p>
+      <p>Working with JSON requires defensive coding. Parsing invalid JSON throws errors, so wrap <code>JSON.parse()</code> in try-catch blocks when handling uncertain input. Deeply nested JSON can be unwieldy destructuring and optional chaining help extract values safely. When working with APIs, examine response structure carefully; real-world JSON can be complex with nested arrays and objects. Understanding JSON deeply makes API integration straightforward and debugging data issues much easier. Tools like JSONLint validate JSON syntax, and browser DevTools beautifully format JSON responses for inspection.</p>
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: What is JSON?</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/cj3h3Fb10QY?si=J1ttuV2PXm-xhbpa" title="Learn HTML in 1 Hour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+
       <h4>Layout Techniques:</h4>
       <ul class="topic-list">
         <li><strong>Flexbox:</strong> flex-direction, justify-content, align-items, flex-wrap, flex-grow/shrink/basis</li>
@@ -1153,8 +1268,11 @@
       </ul>
       
       <div class="project-box">
-        <h4>➡️ Mini Project: Photo Gallery</h4>
-        <p>Build a responsive photo gallery using CSS Grid that automatically adjusts the number of columns based on screen size. Add hover effects and lightbox functionality with JavaScript.</p>
+         <p style="margin-bottom: 15px;"><strong>Video Mini project: How To Make Quiz App Using JavaScript | Build Quiz App With HTML CSS & JavaScript</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/PBcqGxrr9g8?si=nU9IOhgUN-SBKdPY" title="Learn HTML in 1 Hour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
       </div>
 
       <!-- Ad Block: After HTML Section -->
