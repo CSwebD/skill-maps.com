@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frontend Developer Guide - JavaScript Basics</title>
+  <link rel="icon" href="../../images/logo.jpg" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="../style2.css">
+  <meta name="description" content="Complete frontend developer roadmap from beginner to advanced. Master HTML, CSS, JavaScript, React, and modern web development." />
+  <meta property="og:title" content="Frontend Developer Roadmap | Skill Maps" />
+  <meta property="og:description" content="Learn frontend development through structured levels, from web basics to advanced PWAs and TypeScript." />
+  <meta property="og:url" content="https://www.skill-maps.com/frontend-developer.html" />
+  <meta property="og:image" content="https://www.skill-maps.com/logo.jpg" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <div id="panel-bar-placeholder"></div>
+  <script src="panel-nav.js"></script>
+
+  
+  <div class="progress-bar">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+
+  <!-- Mobile Content Toggle Button -->
+  <button class="mobile-content-toggle" id="mobileContentToggle">
+    <i class="fas fa-bars"></i>
+    Content
+  </button>
+
+
+  <div class="course-container">
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <button class="sidebar-close-btn" id="sidebarCloseBtn">×</button>
+      <div class="resizer" id="resizer"></div>
+      <div class="sidebar-header">
+        <a href="../../domains.html" class="back-button">← Back to Home</a>
+        <h1 class="page-title">Frontend Developer</h1>
+        <span style="font-size: 13px; color: #377536; display: block; margin-top: -10px; margin-bottom: 15px;">Full Course</span>
+      </div>
+
+      <!-- Introduction -->
+      <h2>Getting Started</h2>
+      <h3><a href="Frontend-Developer-Guide-Main.html">Introduction</a></h3>
+
+      <!-- Step 1: HTML & CSS Fundamentals -->
+      <h2>HTML & CSS Fundamentals</h2>
+      <h3><a href="Frontend-Developer-Guide-Html.html">1. HTML Basics</a></h3>
+      <h3><a href="Frontend-Developer-Guide-CSS.html">2. CSS Basics</a></h3>
+      <h3><a href="Frontend-Developer-Guide-Developer-Tools.html">3. Developer Tools & Setup</a></h3>
+
+      <!-- Step 2: JavaScript Fundamentals -->
+      <h2>JavaScript Fundamentals</h2>
+      <h3><a href="Frontend-Developer-Guide-JavaScript.html">4. JavaScript Basics</a></h3>
+      <h3><a href="Frontend-Developer-Guide-DOM-Manipulation.html">5. DOM Manipulation</a></h3>
+      <h3><a href="Frontend-Developer-Guide-Advanced-JavaScript.html">6. Advanced JavaScript</a></h3>
+
+      <!-- Step 3: Responsive Design & Layout -->
+      <h2>Responsive Design & Layout</h2>
+      <h3><a href="Frontend-Developer-Guide-Responsive-Design.html">7. Responsive Design</a></h3>
+      <h3><a href="Frontend-Developer-Guide-Modern-CSS-Layout.html">8. Modern CSS Layout</a></h3>
+      <h3><a href="Frontend-Developer-Guide-CSS-Frameworks.html">9. CSS Frameworks</a></h3>
+
+      <!-- Step 4: Version Control -->
+      <h2>Version Control</h2>
+      <h3><a href="Frontend-Developer-Guide-Git-&-GitHub.html">10. Git & GitHub</a></h3>
+
+      <!-- Step 5: React & State Management -->
+      <h2>React & State Management</h2>
+      <h3><a href="Frontend-Developer-Guide-React-Fundamentals.html">11. React Fundamentals</a></h3>
+      <h3><a href="Frontend-Developer-Guide-State-Management.html">12. State Management</a></h3>
+
+      <!-- Step 6: APIs & Data -->
+      <h2>APIs & Data</h2>
+      <h3><a href="Frontend-Developer-Guide-Working-with-APIs.html">13. Working with APIs</a></h3>
+
+      <!-- Step 7: Testing & Performance -->
+      <h2>Testing & Performance</h2>
+      <h3><a href="Frontend-Developer-Guide-Testing.html">14. Testing</a></h3>
+      <h3><a href="Frontend-Developer-Guide-Performance-&-Optimization.html">15. Performance & Optimization</a></h3>
+
+      <!-- Step 8: Documentation & Deployment -->
+      <h2>Documentation & Deployment</h2>
+      <h3><a href="Frontend-Developer-Guide-Documentation-&-UX.html">16. Documentation & UX</a></h3>
+      <h3><a href="Frontend-Developer-Guide-Deployment.html">17. Deployment</a></h3>
+
+      <!-- Step 9: Progressive Web Apps -->
+      <h2>Progressive Web Apps</h2>
+      <h3><a href="Frontend-Developer-Guide-Progressive-Web-Apps.html">18. Progressive Web Apps</a></h3>
+
+      <!-- Step 10: Advanced Topics -->
+      <h2>Advanced Topics</h2>
+      <h3><a href="Frontend-Developer-Guide-TypeScript.html">19. TypeScript</a></h3>
+      <h3><a href="Frontend-Developer-Guide-Web-Accessibility.html">20. Web Accessibility</a></h3>
+      <h3><a href="Frontend-Developer-Guide-Security-Basics.html">21. Security Basics</a></h3>
+
+      <h2 style="font-weight: 700; color: #377536;">Final Projects</h2>
+      <h3><a href="Frontend-Developer-Guide-Portfolio-Projects.html">Portfolio Projects</a></h3>
+    </aside>
+
+    <!-- CONTENT -->
+    <main class="content" id="content">
+      <div class="content-header">
+        <h1>Frontend Development Course</h1>
+      </div>
+
+      <!-- Ad Block: After HTML Section -->
+      <div style="margin: 40px 0; text-align: center;">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7439109164508333"
+             crossorigin="anonymous"></script>
+        <!-- Index-Header -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-7439109164508333"
+             data-ad-slot="4111274044"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+
+      <!-- STEP 1: HTML & CSS FUNDAMENTALS -->
+      <h2 id="html-basics">4. JavaScipt Basics</h2>
+      
+      <!-- Navigation Buttons Top -->
+      <div class="nav-buttons">
+        <a href="Frontend-Developer-Guide-Developer-Tools.html" class="nav-btn nav-btn-prev">Developer Tools & Setup</a>
+        <a href="Frontend-Developer-Guide-DOM-Manipulation.html" class="nav-btn nav-btn-next">DOM Manipulation</a>
+      </div>
+      
+      <p>JavaScript adds interactivity and dynamic behavior to web pages — it's the programming language of the web.</p>
+      
+      <h4>Free Resources:</h4>
+      <div class="resource-item">
+        <span class="resource-badge video-badge">Video</span>
+        <a href="https://www.youtube.com/watch?v=E3XxeE7NF30" target="_blank" class="resource-link">Tutorial: JavaScript Tutorial for Beginners</a>
+      </div>
+      <div class="resource-item">
+        <span class="resource-badge video-badge">Video</span>
+        <a href="https://www.youtube.com/watch?v=cOUNOi297Mw" target="_blank" class="resource-link">Mini Project: To Do List With Javascript</a>
+      </div>
+      <div class="resource-item">
+        <span class="resource-badge book-badge">Book</span>
+        <a href="https://www.amazon.co.uk/Learn-JavaScript-Quickly-Programming-Hands-ebook/dp/B08N5TGRZ1/ref=zg_bs_g_10608474031_d_sccl_1/261-9076005-9063938?psc=1" target="_blank" class="resource-link">Learn JavaScript Quickly</a>
+      </div>
+      <div class="resource-item">
+        <span class="resource-badge article-badge">Article</span>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" class="resource-link">JavaScript</a>
+      </div>
+
+      <h4>General Information:</h4>
+      <p>JavaScript is the programming language that brings interactivity to the web. While HTML structures content and CSS styles it, JavaScript makes pages dynamic, responding to user actions, manipulating content in real-time, fetching data from servers, and creating rich, app-like experiences. Every interactive feature you encounter on modern websites dropdown menus, form validation, infinite scrolling, real-time updates is powered by JavaScript. Unlike HTML and CSS which are declarative markup languages, JavaScript is a fully-featured programming language with variables, logic, loops, functions, and complex data structures.</p>
+      <p>JavaScript started as a simple scripting language for browsers but has evolved into one of the world's most popular programming languages, now running on servers (Node.js), mobile apps (React Native), desktop applications (Electron), and even embedded devices. This means learning JavaScript opens doors beyond just web development. The language is constantly evolving with new features added regularly through the ECMAScript specification. Modern JavaScript (ES6+) introduced transformative features like arrow functions, promises, classes, and destructuring that make code more readable and powerful.</p>
+      <p>Learning JavaScript means learning to think programmatically breaking problems into steps, managing state and data flow, handling edge cases, and debugging when things go wrong. It's more challenging than HTML/CSS because you're not just describing what you want but instructing the computer how to do it. Start with fundamentals ariables, data types, operators, control flow, and functions. Don't rush to frameworks and libraries before solidifying these basics. JavaScript has quirks and surprising behaviors that trip up beginners, but understanding the core language deeply will make you a much stronger developer regardless of what frameworks you later use.</p>
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: Learn JAVASCRIPT in just 5 MINUTES</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/c-I5S_zTwAc?si=V63yv2xAUC1o3o7b" title="Learn HTML in 1 Hour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+
+      <h4>Variables & Data Types:</h4>
+      <p>Variables store data values that you can reference and manipulate throughout your program. Modern JavaScript offers three ways to declare variables: <code> let, const</code>, and the older <code> var. let</code> creates variables that can be reassigned, <code> const</code> creates constants that cannot be reassigned (though objects and arrays declared with const can still be mutated), and <code> var</code>  has function scope rather than block scope, making it unpredictable and largely deprecated. Best practice is to use <code> const</code> by default and only use <code> let</code> when you specifically need to reassign a variable. Meaningful variable names make code self-documenting <code> userAge</code> is better than <code> x</code>.</p>
+      <p>JavaScript has several primitive data types: strings for text (enclosed in quotes), numbers for both integers and decimals (JavaScript doesn't distinguish), booleans for true/false values, undefined for variables declared but not assigned, null for explicitly empty values, symbols for unique identifiers, and bigint for very large integers. Understanding these types is crucial because JavaScript's dynamic typing means variables can hold any type, and the type can change. The <code> typeof</code>  operator tells you a value's type. JavaScript also automatically converts types (coercion) in certain contexts, which can cause unexpected behavior if you're not aware.</p>
+      <p>Complex data types include objects (collections of key-value pairs) and arrays (ordered lists of values). Objects use curly braces with properties: <code> const person = { name: "Alex", age: 30 }</code>. Access properties with dot notation (person.name) or bracket notation (<code> person["name"]</code>). Arrays use square brackets: <code> const colors = ["red", "blue", "green"]</code>. Arrays are zero-indexed, so <code> colors[0]</code> returns "red". Both objects and arrays are reference types, meaning variables store references to them rather than the actual data, which affects how they're copied and compared. Mastering data types and structures is fundamental to all programming.</p>
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: JavaScript Variables and Datatypes in 6 Minutes</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/7qpE9rjfDXo?si=NRakpXt3zVrqk4d6" title="Learn HTML in 1 Hour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+
+      <h4>Operators:</h4>
+      <p>Operators perform operations on values and variables, forming the building blocks of logic and computation. Arithmetic operators (<code>+, -, *, /, %, **</code>) perform mathematical calculations. Addition also concatenates strings, which can cause confusion <code>"5" + 3</code> equals "53" (string), not 8. The modulo operator <code>%</code> returns the remainder of division, useful for checking if numbers are even/odd or cycling through patterns. The exponentiation operator <code>**</code> raises numbers to powers: <code>2 ** 3</code> equals 8.</p>
+      <p>Assignment operators assign values to variables. Simple assignment uses <code>=</code>, while compound assignments combine operations with assignment: <code>x += 5</code> is shorthand for<code> x = x + 5</code>. Increment (<code>++</code>) and decrement (<code>--</code>) operators add or subtract 1: <code>count++</code> increases count by one. Pre-increment (<code>++x</code>) increments then returns the new value, while post-increment (<code>x++</code>) returns the current value then increments this distinction matters in complex expressions. Understanding operator precedence (multiplication before addition, etc.) prevents bugs and clarifies complex expressions.</p>
+      <p>Comparison operators compare values and return boolean results: <code>==</code> checks equality with type coercion (avoid this), <code>===</code> checks strict equality without coercion (always prefer this), <code>!= </code> and <code>!== </code> check inequality, and <code><, >, <=, >=</code> compare numeric values. Logical operators combine boolean expressions: <code>&&</code> (AND) requires both conditions true, <code>||</code> (OR) requires at least one condition true, and <code>!</code> (NOT) inverts a boolean. The ternary operator (<code>condition ? valueIfTrue : valueIfFalse</code>) provides a concise way to assign values based on conditions. Mastering operators lets you write expressive, efficient logic.</p>
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: Learn JavaScript LOGICAL OPERATORS in 5 minutes</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/ovWYhDVQiR8?si=ilCUqi8mOblqZGeS" title="Learn HTML in 1 Hour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+
+      <h4>Control Flow:</h4>
+      <p>Control flow determines which code executes and in what order, letting programs make decisions and respond dynamically. The if statement executes code only when a condition is true: <code>if (age >= 18) { console.log("Adult"); }</code>. Add <code>else</code> for alternative code when the condition is false, or else if</code> to check multiple conditions in sequence. Only the first true condition's code executes. Keep conditions clear and simple complex boolean logic is hard to read and debug. Proper indentation shows which code belongs to which condition at a glance.</p>
+      <p>The <code>switch</code> statement provides cleaner syntax for checking one value against multiple possibilities. Each <code>case</code> represents a possible value, and you need <code>break</code> statements to prevent fall-through (executing subsequent cases). A <code>default</code> case handles values that don't match any case. Switch statements are most useful when checking a single variable against many specific values, like menu selections or status codes. For complex conditions with multiple variables, if/else chains are usually clearer.</p>
+      <p>The ternary operator offers a compact way to assign values based on conditions: <code>const status = age >= 18 ? "adult" : "minor";</code>. It's essentially a condensed if/else for simple cases. While concise, overusing ternary operators or nesting them makes code harder to read. Use them for simple assignments and stick with if/else for complex logic or multiple statements. The nullish coalescing operator (<code>??</code>) provides default values when variables are null or undefined, and optional chaining (<code>?.</code>) safely accesses nested object properties that might not exist.</p>
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: What is JS Control flow?</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/-VxB_96Q3Ps?si=XgpsmEqdhSDu5nR_" title="Learn HTML in 1 Hour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+
+      <h4>Loops:</h4>
+      <p>Loops execute code repeatedly, essential for processing lists, generating patterns, or repeating actions until conditions are met. The <code>for</code> loop is most common for iterating a specific number of times: <code>for (let i = 0; i < 10; i++)</code> runs 10 times with <code>i</code> counting from 0 to 9. The three parts initialization, condition, and increment control the loop. The <code>while</code> loop continues as long as a condition is true: <code>while (count < 100) </code>. Make sure the condition eventually becomes false, or you'll create an infinite loop that freezes your program.</p>
+      <p>Array iteration has evolved with modern JavaScript. The <code>forEach</code> method executes a function for each array element: <code>array.forEach(item => console.log(item))</code>. Unlike traditional for loops, forEach focuses on what to do with each item rather than managing indices. The <code>map</code> method transforms arrays, creating a new array by applying a function to each element: <code>const doubled = numbers.map(n => n * 2) </code>. This functional approach leads to cleaner, more declarative code.</p>
+      <p>The <code>filter</code> method creates new arrays containing only elements that pass a test: <code>const adults = people.filter(person => person.age >= 18) </code>. The <code>reduce</code> method accumulates array values into a single result, like summing numbers or building objects from arrays. <code>for...of</code> loops iterate over array values directly without indices: <code>for (const color of colors). for...in</code> loops iterate over object properties. Understanding when to use each loop type makes your code more readable and expressive. Avoid modifying arrays while iterating over them, as this causes unpredictable behavior.</p>
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: Learn JavaScript FOR LOOPS in 5 minutes</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/ZOQYIWLngSU?si=2Jt6ujdneJSYq3Cu" title="Learn HTML in 1 Hour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+
+      <h4>Functions:</h4>
+      <p>Functions are reusable blocks of code that perform specific tasks, fundamental to organizing programs and avoiding repetition. Function declarations use the <code>function</code> keyword: <code>function greet(name) { return "Hello " + name; }</code>. Parameters (name) receive input values when the function is called. The <code>return</code> statement sends a value back to whoever called the function without it, functions return <code>undefined</code>. Functions should do one thing and do it well, with names that clearly describe their purpose. Small, focused functions are easier to test, debug, and reuse.</p>
+      <p>Arrow functions (<code>=></code>) provide concise syntax especially useful for short functions: <code>const double = x => x * 2</code>. For multiple parameters or statements, use parentheses and curly braces: <code>const add = (a, b) => { return a + b; }</code>. Arrow functions differ from traditional functions in how they handle <code>this</code> context, though that's more relevant with objects and classes. Default parameters let you specify fallback values: <code>function greet(name = "Guest")</code> uses "Guest" if no name is provided. Rest parameters (<code>...args</code>) gather remaining arguments into an array.</p>
+      <p>Function expressions assign functions to variables: <code>const greet = function(name) { return "Hello " + name; }</code>. This enables passing functions as arguments to other functions (higher-order functions), a powerful pattern in JavaScript. Callbacks are functions passed to other functions to be called later common in event handling and asynchronous operations. Understanding functions deeply including scope, closures, and higher-order functions unlocks JavaScript's true power. Functions aren't just about reusing code; they're about composing programs from small, testable, understandable pieces.</p>
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: JavaScript FUNCTIONS are easy</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/HFaxylC7bUc?si=oFOlnAw_YzVJMYLz" title="Learn HTML in 1 Hour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+
+      <h4>Scope & Closures:</h4>
+      <p>Scope determines where variables are accessible in your code, preventing naming conflicts and organizing code logically. Block scope (introduced with <code>let</code> and <code>const</code>) means variables are only accessible within the curly braces where they're defined if statements, loops, functions all create scopes. Function scope means variables declared with var are accessible anywhere within the function, regardless of blocks. Global scope means variables declared outside all functions are accessible everywhere, though global variables should be minimized as they can cause conflicts and make code harder to reason about.</p>
+      <p>The scope chain means JavaScript looks for variables first in the local scope, then in enclosing scopes, and finally in global scope. Inner scopes can access outer scope variables, but not vice versa. This creates natural encapsulation inner functions can use outer function variables, while the outer function can't access the inner function's variables. Understanding the scope chain is crucial for debugging "variable not defined" errors and understanding how variables are resolved.</p>
+      <p>Closures occur when inner functions remember variables from outer functions even after the outer function has finished executing. This happens because functions retain references to their lexical scope. Closures enable powerful patterns like data privacy (variables that can't be accessed directly), function factories (functions that create customized functions), and event handlers that remember state. While closures might seem abstract initially, you use them constantly in JavaScript, often without realizing it. They're fundamental to how JavaScript handles asynchronous operations and event handling.</p>
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: https://www.youtube.com/embed/vKJpN5FAeF4?si=YW9rYPEZrM3hQMmb</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/vKJpN5FAeF4?si=YW9rYPEZrM3hQMmb" title="Learn HTML in 1 Hour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+
+      <h4>JavaScript Fundamentals:</h4>
+      <ul class="topic-list">
+        <li><strong>Variables & data types:</strong> let, const, var, strings, numbers, booleans, arrays, objects</li>
+        <li><strong>Operators:</strong> arithmetic, comparison, logical, assignment</li>
+        <li><strong>Control flow:</strong> if/else statements, switch, ternary operator</li>
+        <li><strong>Loops:</strong> for, while, forEach, map, filter, reduce</li>
+        <li><strong>Functions:</strong> function declarations, arrow functions, parameters, return values</li>
+        <li><strong>Scope & closures:</strong> block scope, function scope, lexical scope</li>
+      </ul>
+
+
+      <!-- Ad Block: After HTML Section -->
+      <div style="margin: 40px 0; text-align: center;">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7439109164508333"
+             crossorigin="anonymous"></script>
+        <!-- Index-Header -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-7439109164508333"
+             data-ad-slot="4111274044"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+
+      <!-- Navigation Buttons Bottom -->
+      <div class="nav-buttons">
+        <a href="Frontend-Developer-Guide-Developer-Tools.html" class="nav-btn nav-btn-prev">Developer Tools & Setup</a>
+        <a href="Frontend-Developer-Guide-DOM-Manipulation.html" class="nav-btn nav-btn-next">DOM Manipulation</a>
+      </div>
+    </main>
+  </div>
+
+  <!-- Placeholder for the footer -->
+  <div id="footer-placeholder"></div>
+  <script src="../../analytics.js"></script>
+  <script src="../../nav-switcher.js"></script>
+  <script src="footer.js"></script>
+  <script src="../script.js"></script>
+
+  <script>
+    // Sidebar resizer functionality
+    const resizer = document.getElementById('resizer');
+    const sidebar = document.getElementById('sidebar');
+    
+    let isResizing = false;
+    
+    resizer.addEventListener('mousedown', (e) => {
+      isResizing = true;
+      document.body.style.cursor = 'col-resize';
+      document.body.style.userSelect = 'none';
+    });
+    
+    document.addEventListener('mousemove', (e) => {
+      if (!isResizing) return;
+      
+      const newWidth = e.clientX;
+      if (newWidth >= 200 && newWidth <= 500) {
+        sidebar.style.width = newWidth + 'px';
+      }
+    });
+    
+    document.addEventListener('mouseup', () => {
+      isResizing = false;
+      document.body.style.cursor = '';
+      document.body.style.userSelect = '';
+    });
+
+    // Mobile sidebar toggle
+    const mobileToggle = document.getElementById('mobileContentToggle');
+    const sidebarCloseBtn = document.getElementById('sidebarCloseBtn');
+    
+    if (mobileToggle) {
+      mobileToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('mobile-open');
+      });
+    }
+    
+    if (sidebarCloseBtn) {
+      sidebarCloseBtn.addEventListener('click', () => {
+        sidebar.classList.remove('mobile-open');
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frontend Developer Guide - Deployment</title>
+  <link rel="icon" href="../../images/logo.jpg" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="../style2.css">
+  <meta name="description" content="Complete frontend developer roadmap from beginner to advanced. Master HTML, CSS, JavaScript, React, and modern web development." />
+  <meta property="og:title" content="Frontend Developer Roadmap | Skill Maps" />
+  <meta property="og:description" content="Learn frontend development through structured levels, from web basics to advanced PWAs and TypeScript." />
+  <meta property="og:url" content="https://www.skill-maps.com/frontend-developer.html" />
+  <meta property="og:image" content="https://www.skill-maps.com/logo.jpg" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <div id="panel-bar-placeholder"></div>
+  <script src="panel-nav.js"></script>
+
+  
+  <div class="progress-bar">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+
+  <!-- Mobile Content Toggle Button -->
+  <button class="mobile-content-toggle" id="mobileContentToggle">
+    <i class="fas fa-bars"></i>
+    Content
+  </button>
+
+
+  <div class="course-container">
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <button class="sidebar-close-btn" id="sidebarCloseBtn">×</button>
+      <div class="resizer" id="resizer"></div>
+      <div class="sidebar-header">
+        <a href="../../domains.html" class="back-button">← Back to Home</a>
+        <h1 class="page-title">Frontend Developer</h1>
+        <span style="font-size: 13px; color: #377536; display: block; margin-top: -10px; margin-bottom: 15px;">Full Course</span>
+      </div>
+
+      <!-- Introduction -->
+      <h2>Getting Started</h2>
+      <h3><a href="Frontend-Developer-Guide-Main.html">Introduction</a></h3>
+
+      <!-- Step 1: HTML & CSS Fundamentals -->
+      <h2>HTML & CSS Fundamentals</h2>
+      <h3><a href="Frontend-Developer-Guide-Html.html">1. HTML Basics</a></h3>
+      <h3><a href="Frontend-Developer-Guide-CSS.html">2. CSS Basics</a></h3>
+      <h3><a href="Frontend-Developer-Guide-Developer-Tools.html">3. Developer Tools & Setup</a></h3>
+
+      <!-- Step 2: JavaScript Fundamentals -->
+      <h2>JavaScript Fundamentals</h2>
+      <h3><a href="Frontend-Developer-Guide-JavaScript.html">4. JavaScript Basics</a></h3>
+      <h3><a href="Frontend-Developer-Guide-DOM-Manipulation.html">5. DOM Manipulation</a></h3>
+      <h3><a href="Frontend-Developer-Guide-Advanced-JavaScript.html">6. Advanced JavaScript</a></h3>
+
+      <!-- Step 3: Responsive Design & Layout -->
+      <h2>Responsive Design & Layout</h2>
+      <h3><a href="Frontend-Developer-Guide-Responsive-Design.html">7. Responsive Design</a></h3>
+      <h3><a href="Frontend-Developer-Guide-Modern-CSS-Layout.html">8. Modern CSS Layout</a></h3>
+      <h3><a href="Frontend-Developer-Guide-CSS-Frameworks.html">9. CSS Frameworks</a></h3>
+
+      <!-- Step 4: Version Control -->
+      <h2>Version Control</h2>
+      <h3><a href="Frontend-Developer-Guide-Git-&-GitHub.html">10. Git & GitHub</a></h3>
+
+      <!-- Step 5: React & State Management -->
+      <h2>React & State Management</h2>
+      <h3><a href="Frontend-Developer-Guide-React-Fundamentals.html">11. React Fundamentals</a></h3>
+      <h3><a href="Frontend-Developer-Guide-State-Management.html">12. State Management</a></h3>
+
+      <!-- Step 6: APIs & Data -->
+      <h2>APIs & Data</h2>
+      <h3><a href="Frontend-Developer-Guide-Working-with-APIs.html">13. Working with APIs</a></h3>
+
+      <!-- Step 7: Testing & Performance -->
+      <h2>Testing & Performance</h2>
+      <h3><a href="Frontend-Developer-Guide-Testing.html">14. Testing</a></h3>
+      <h3><a href="Frontend-Developer-Guide-Performance-&-Optimization.html">15. Performance & Optimization</a></h3>
+
+      <!-- Step 8: Documentation & Deployment -->
+      <h2>Documentation & Deployment</h2>
+      <h3><a href="Frontend-Developer-Guide-Documentation-&-UX.html">16. Documentation & UX</a></h3>
+      <h3><a href="Frontend-Developer-Guide-Deployment.html">17. Deployment</a></h3>
+
+      <!-- Step 9: Progressive Web Apps -->
+      <h2>Progressive Web Apps</h2>
+      <h3><a href="Frontend-Developer-Guide-Progressive-Web-Apps.html">18. Progressive Web Apps</a></h3>
+
+      <!-- Step 10: Advanced Topics -->
+      <h2>Advanced Topics</h2>
+      <h3><a href="Frontend-Developer-Guide-TypeScript.html">19. TypeScript</a></h3>
+      <h3><a href="Frontend-Developer-Guide-Web-Accessibility.html">20. Web Accessibility</a></h3>
+      <h3><a href="Frontend-Developer-Guide-Security-Basics.html">21. Security Basics</a></h3>
+
+      <h2 style="font-weight: 700; color: #377536;">Final Projects</h2>
+      <h3><a href="Frontend-Developer-Guide-Portfolio-Projects.html">Portfolio Projects</a></h3>
+    </aside>
+
+    <!-- CONTENT -->
+    <main class="content" id="content">
+      <div class="content-header">
+        <h1>Frontend Development Course</h1>
+      </div>
+
+      <!-- Ad Block: After HTML Section -->
+      <div style="margin: 40px 0; text-align: center;">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7439109164508333"
+             crossorigin="anonymous"></script>
+        <!-- Index-Header -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-7439109164508333"
+             data-ad-slot="4111274044"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+
+      <!-- STEP 1: HTML & CSS FUNDAMENTALS -->
+      <h2 id="html-basics">17. Deployment</h2>
+      
+      <!-- Navigation Buttons Top -->
+      <div class="nav-buttons">
+        <a href="Frontend-Developer-Guide-Documentation-&-UX.html" class="nav-btn nav-btn-prev">Documentation & UX</a>
+        <a href="Frontend-Developer-Guide-Progressive-Web-Apps.html" class="nav-btn nav-btn-next">Progressive Web Apps</a>
+      </div>
+      
+      <p>Deployment transitions your application from local development to production, making it accessible to users worldwide.</p>
+      
+      <h4>Free Resources:</h4>
+      <div class="resource-item">
+        <span class="resource-badge video-badge">Video</span>
+        <a href="https://www.youtube.com/watch?v=vROMXzOWqec" target="_blank" class="resource-link">Tutorial: How to Deploy a Web App Using Multiple Methods (Azure, Render, MongoDB Atlas, Koyeb, and more )</a>
+      </div>
+      <div class="resource-item">
+        <span class="resource-badge video-badge">Video</span>
+        <a href="https://www.youtube.com/watch?v=XltFOyGanYE" target="_blank" class="resource-link">Mini Project: Kubernetes - Deploying Your First Application</a>
+      </div>
+      <div class="resource-item">
+        <span class="resource-badge book-badge">Book</span>
+        <a href="https://www.amazon.co.uk/Continuous-Delivery-Deployment-Automation-Addison-Wesley/dp/0321601912" target="_blank" class="resource-link">Continuous Delivery: Reliable Software Releases through Build, Test, and Deployment Automation</a>
+      </div>
+      <div class="resource-item">
+        <span class="resource-badge article-badge">Article</span>
+        <a href="https://www.jetbrains.com/teamcity/ci-cd-guide/#continuous-deployment" target="_blank" class="resource-link">What is CI/CD?</a>
+      </div>
+
+      <h4>General Information:</h4>
+      <p>Deployment makes your application accessible on the internet, transitioning from local development to production. Modern deployment platforms dramatically simplify this process, handling infrastructure, scaling, SSL certificates, and CDN distribution automatically. Traditional deployment involved manually configuring servers, setting up web servers (Nginx, Apache), managing SSL certificates, and handling scaling. Modern platforms like Netlify, Vercel, GitHub Pages, and AWS Amplify automate most of this, letting you focus on building applications rather than managing infrastructure. Most support continuous deployment—push to Git, and your site automatically rebuilds and deploys.</p>
+      <p>Deployment considerations include build processes (transpiling, bundling, minification), environment variables (API keys, secrets—never commit these), database and API connectivity (different URLs for dev/production), error logging and monitoring (know when production breaks), and analytics. Separate environments—development (local machine), staging (production-like for testing), and production (live site users access)—let you test changes before affecting real users. Feature flags allow deploying code without exposing features, enabling gradual rollouts and A/B testing. Blue-green deployments maintain two identical environments, switching traffic when new versions are ready, enabling instant rollbacks if problems arise.</p>
+      <p>Static site deployment is simplest—build assets locally (<code>npm run build</code>), upload to hosting, done. Services like Netlify and Vercel automate this, building from Git repositories and deploying automatically on push. They include features like preview deploys for pull requests, automatic HTTPS, CDN distribution, and form handling. Full-stack applications requiring servers need more complex setups—platforms like Heroku, Railway, or cloud providers (AWS, Google Cloud, Azure) provide compute resources. Containerisation (Docker) packages applications with dependencies, ensuring consistency across environments. Understanding deployment options helps you choose appropriate platforms for project needs.</p>
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: Web App Deployment Explained</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/AWVTKBUnoIg?si=IkBTn4kWAcURrkp8" title="Deployment Basics" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+
+      <h4>GitHub Pages:</h4>
+      <p>GitHub Pages provides free hosting for static sites directly from GitHub repositories, making it perfect for portfolios, documentation, and simple projects. Every GitHub account gets one user site (username.github.io) plus unlimited project sites. Enable GitHub Pages in repository settings, selecting a branch (usually main or a dedicated gh-pages branch) and optionally a folder (/ or /docs). GitHub builds and deploys your site automatically when you push—no separate build step or hosting configuration needed. Sites are served over HTTPS automatically with free SSL certificates.</p>
+      <p>For static HTML/CSS/JS sites, just push files and enable Pages. For React/Vue/Angular apps, build locally (<code>npm run build</code>), push the build directory, and configure GitHub Pages to serve from that directory. Alternatively, use GitHub Actions to automate building and deploying—GitHub builds on every push, eliminating manual build steps. GitHub Pages supports custom domains: add CNAME file with your domain, configure DNS records with your domain provider, and enable HTTPS enforcement in settings. GitHub handles SSL certificate provisioning automatically via Let's Encrypt.</p>
+      <p>GitHub Pages limitations include: static content only (no server-side code, though APIs can be called from client-side code), 1GB size limit per repository, 100GB bandwidth per month (soft limit), and builds timeout after 10 minutes. For most portfolios and documentation, these limits are generous. Since Pages sites are public repositories, ensure you don't commit sensitive data. Pages integrates naturally with GitHub workflows—documentation lives in the same repository as code, automatically updating when merged. For simple projects, Pages is unbeatable: zero cost, zero configuration complexity, automatic deployments, and reliable hosting from GitHub's infrastructure.</p>
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: Deploy to GitHub Pages</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/5XhxR9Vs6zc?si=e7PUBBlcFtw5o4QO" title="GitHub Pages" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+
+      <h4>Netlify & Vercel:</h4>
+      <p>Netlify and Vercel are modern hosting platforms optimised for static sites and Jamstack applications. Both offer continuous deployment—connect your Git repository, and they automatically build and deploy on every push. They provide instant rollbacks (revert to any previous deploy with one click), preview deploys (every pull request gets a unique URL for testing), and global CDN distribution (your site serves from locations worldwide). Both include free tiers generous enough for portfolios and small projects, with paid tiers adding team features, more bandwidth, and advanced functionality.</p>
+      <p>Netlify excels at static sites with bonus features: form handling (process form submissions without backend code), serverless functions (run backend code without servers), split testing (A/B test different versions), and large media handling. Configuration uses netlify.toml file or web UI. Netlify automatically detects common frameworks (React, Vue, Next.js), configuring build commands appropriately. For custom builds, specify build command (<code>npm run build</code>) and publish directory (<code>dist</code> or <code>build</code>). Netlify Functions let you run server-side code—perfect for API calls requiring secret keys, processing payments, or sending emails without exposing credentials.</p>
+      <p>Vercel is optimised for Next.js (also created by Vercel) but supports other frameworks excellently. It provides serverless functions, edge functions (running at CDN edge locations for maximum speed), automatic caching, image optimisation, and analytics. Vercel's developer experience is exceptional—zero-configuration for supported frameworks, instant deployments, and comprehensive documentation. Both platforms support environment variables (for API keys), custom domains with automatic HTTPS, and integrations with numerous services. Choose based on specific needs—Vercel for Next.js projects, Netlify for its form/function features—but both are excellent. Try both and see which workflow you prefer.</p>
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: Netlify & Vercel Deployment</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/bRecWSrtCXI?si=dgszkb3O-dUgNr3l" title="Netlify Vercel" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+
+      <h4>Custom Domains & HTTPS:</h4>
+      <p>Custom domains (yourname.com instead of username.github.io or random-words-1234.netlify.app) provide professional appearance and brand identity. Register domains through registrars like Namecheap, Google Domains, or Cloudflare Registrar. Domains cost $10-15 annually for common TLDs (.com, .net, .org), with some TLDs (.dev, .app, .io) costing more. After registration, configure DNS (Domain Name System) records to point your domain at your hosting provider. Most platforms provide documentation for this—typically adding A records for apex domains (example.com) and CNAME records for subdomains (www.example.com).</p>
+      <p>DNS configuration requires patience—changes take time to propagate (minutes to 48 hours, though usually under an hour). Common DNS record types: A records map domains to IPv4 addresses, AAAA records map to IPv6, CNAME records create aliases (www pointing to example.com), MX records handle email, and TXT records verify domain ownership or configure services. Cloudflare offers free DNS with performance benefits and security features, even if you're not using their hosting. Many developers use Cloudflare for DNS regardless of their hosting provider—it's fast, reliable, and includes useful free features like analytics and DDoS protection.</p>
+      <p>HTTPS (HTTP Secure) encrypts traffic between browsers and servers, protecting sensitive data and preventing tampering. Modern browsers mark HTTP sites as "Not Secure," and Google prioritises HTTPS sites in search rankings. Let's Encrypt provides free SSL/TLS certificates, democratising HTTPS. Most modern hosting platforms (Netlify, Vercel, GitHub Pages) handle HTTPS automatically—enable custom domain, and they provision certificates via Let's Encrypt. For self-hosted sites, use Certbot to automate certificate issuance and renewal. HTTPS is no longer optional—it's a baseline requirement for production sites. Configure HSTS (HTTP Strict Transport Security) header to force HTTPS connections after first visit, improving security.</p>
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: Custom Domains & SSL</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/Tm1e9ItkpYo?si=ddg5ydCzgUWyzKcx" title="Custom Domains" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+
+      <h4>CI/CD Basics:</h4>
+      <p>CI/CD (Continuous Integration/Continuous Deployment) automates testing, building, and deploying code. Continuous Integration means automatically running tests when code changes, catching bugs early before they reach production. Developers push code frequently (multiple times daily), automated tests run, and failures notify the team immediately. This rapid feedback loop improves code quality and reduces integration problems. Continuous Deployment takes this further—code that passes tests automatically deploys to production without manual intervention. This enables rapid iteration but requires robust testing and monitoring to prevent deploying broken code.</p>
+      <p>GitHub Actions provides CI/CD workflows directly in GitHub. Workflows are YAML files in <code>.github/workflows/</code> defining when and what to run. Example workflow: on every push to main branch, run tests, build production bundle, deploy to hosting. Actions has pre-built steps for common tasks (checkout code, setup Node.js, run npm commands, deploy to various platforms), making workflows quick to configure. Example: <code>on: push, branches: [main], jobs: build: runs-on: ubuntu-latest, steps: - uses: actions/checkout@v2, - uses: actions/setup-node@v2, - run: npm ci, - run: npm test, - run: npm run build</code>. Similar capabilities exist in GitLab CI, Bitbucket Pipelines, and CircleCI.</p>
+      <p>CI/CD benefits include: faster feedback on broken code, consistent build and deployment process (no manual steps to forget), confidence in refactoring (tests catch regressions), and rapid deployment of fixes and features. Start simple: automate running tests on pull requests. Add linting and type checking. Then automate deployments to staging environments. Finally, automate production deployments with appropriate safeguards (manual approval gates for sensitive deployments). CI/CD has learning curve but pays dividends quickly. For small projects, platforms like Netlify and Vercel provide deployment automation out-of-box. For larger teams or complex workflows, dedicated CI/CD tools offer more control and customisation.</p>
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: GitHub Actions CI/CD</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/scEDHsr3APg?si=ygaBkuN4YJkd6Pbu" title="CI/CD Basics" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+      
+      <h4>Deployment Platforms:</h4>
+      <ul class="topic-list">
+        <li><strong>GitHub Pages:</strong> Free hosting for static sites directly from GitHub repos</li>
+        <li><strong>Netlify:</strong> Continuous deployment with automatic builds from Git</li>
+        <li><strong>Vercel:</strong> Optimized for Next.js and React applications</li>
+        <li><strong>Custom domains:</strong> Connecting your own domain name</li>
+        <li><strong>CI/CD basics:</strong> Automated testing and deployment pipelines</li>
+      </ul>
+
+      <!-- Ad Block: After HTML Section -->
+      <div style="margin: 40px 0; text-align: center;">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7439109164508333"
+             crossorigin="anonymous"></script>
+        <!-- Index-Header -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-7439109164508333"
+             data-ad-slot="4111274044"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+
+      <!-- Navigation Buttons Bottom -->
+      <div class="nav-buttons">
+        <a href="Frontend-Developer-Guide-Documentation-&-UX.html" class="nav-btn nav-btn-prev">Documentation & UX</a>
+        <a href="Frontend-Developer-Guide-Progressive-Web-Apps.html" class="nav-btn nav-btn-next">Progressive Web Apps</a>
+      </div>
+    </main>
+  </div>
+
+  <!-- Placeholder for the footer -->
+  <div id="footer-placeholder"></div>
+  <script src="../../analytics.js"></script>
+  <script src="../../nav-switcher.js"></script>
+  <script src="footer.js"></script>
+  <script src="../script.js"></script>
+
+  <script>
+    // Sidebar resizer functionality
+    const resizer = document.getElementById('resizer');
+    const sidebar = document.getElementById('sidebar');
+    
+    let isResizing = false;
+    
+    resizer.addEventListener('mousedown', (e) => {
+      isResizing = true;
+      document.body.style.cursor = 'col-resize';
+      document.body.style.userSelect = 'none';
+    });
+    
+    document.addEventListener('mousemove', (e) => {
+      if (!isResizing) return;
+      
+      const newWidth = e.clientX;
+      if (newWidth >= 200 && newWidth <= 500) {
+        sidebar.style.width = newWidth + 'px';
+      }
+    });
+    
+    document.addEventListener('mouseup', () => {
+      isResizing = false;
+      document.body.style.cursor = '';
+      document.body.style.userSelect = '';
+    });
+
+    // Mobile sidebar toggle
+    const mobileToggle = document.getElementById('mobileContentToggle');
+    const sidebarCloseBtn = document.getElementById('sidebarCloseBtn');
+    
+    if (mobileToggle) {
+      mobileToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('mobile-open');
+      });
+    }
+    
+    if (sidebarCloseBtn) {
+      sidebarCloseBtn.addEventListener('click', () => {
+        sidebar.classList.remove('mobile-open');
+      });
+    }
+  </script>
+</body>
+</html>

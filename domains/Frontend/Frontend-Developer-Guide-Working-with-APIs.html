@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frontend Developer Guide - Working with APIs</title>
+  <link rel="icon" href="../../images/logo.jpg" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="../style2.css">
+  <meta name="description" content="Complete frontend developer roadmap from beginner to advanced. Master HTML, CSS, JavaScript, React, and modern web development." />
+  <meta property="og:title" content="Frontend Developer Roadmap | Skill Maps" />
+  <meta property="og:description" content="Learn frontend development through structured levels, from web basics to advanced PWAs and TypeScript." />
+  <meta property="og:url" content="https://www.skill-maps.com/frontend-developer.html" />
+  <meta property="og:image" content="https://www.skill-maps.com/logo.jpg" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <div id="panel-bar-placeholder"></div>
+  <script src="panel-nav.js"></script>
+
+  
+  <div class="progress-bar">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+
+  <!-- Mobile Content Toggle Button -->
+  <button class="mobile-content-toggle" id="mobileContentToggle">
+    <i class="fas fa-bars"></i>
+    Content
+  </button>
+
+
+  <div class="course-container">
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <button class="sidebar-close-btn" id="sidebarCloseBtn">×</button>
+      <div class="resizer" id="resizer"></div>
+      <div class="sidebar-header">
+        <a href="../../domains.html" class="back-button">← Back to Home</a>
+        <h1 class="page-title">Frontend Developer</h1>
+        <span style="font-size: 13px; color: #377536; display: block; margin-top: -10px; margin-bottom: 15px;">Full Course</span>
+      </div>
+
+      <!-- Introduction -->
+      <h2>Getting Started</h2>
+      <h3><a href="Frontend-Developer-Guide-Main.html">Introduction</a></h3>
+
+      <!-- Step 1: HTML & CSS Fundamentals -->
+      <h2>HTML & CSS Fundamentals</h2>
+      <h3><a href="Frontend-Developer-Guide-Html.html">1. HTML Basics</a></h3>
+      <h3><a href="Frontend-Developer-Guide-CSS.html">2. CSS Basics</a></h3>
+      <h3><a href="Frontend-Developer-Guide-Developer-Tools.html">3. Developer Tools & Setup</a></h3>
+
+      <!-- Step 2: JavaScript Fundamentals -->
+      <h2>JavaScript Fundamentals</h2>
+      <h3><a href="Frontend-Developer-Guide-JavaScript.html">4. JavaScript Basics</a></h3>
+      <h3><a href="Frontend-Developer-Guide-DOM-Manipulation.html">5. DOM Manipulation</a></h3>
+      <h3><a href="Frontend-Developer-Guide-Advanced-JavaScript.html">6. Advanced JavaScript</a></h3>
+
+      <!-- Step 3: Responsive Design & Layout -->
+      <h2>Responsive Design & Layout</h2>
+      <h3><a href="Frontend-Developer-Guide-Responsive-Design.html">7. Responsive Design</a></h3>
+      <h3><a href="Frontend-Developer-Guide-Modern-CSS-Layout.html">8. Modern CSS Layout</a></h3>
+      <h3><a href="Frontend-Developer-Guide-CSS-Frameworks.html">9. CSS Frameworks</a></h3>
+
+      <!-- Step 4: Version Control -->
+      <h2>Version Control</h2>
+      <h3><a href="Frontend-Developer-Guide-Git-&-GitHub.html">10. Git & GitHub</a></h3>
+
+      <!-- Step 5: React & State Management -->
+      <h2>React & State Management</h2>
+      <h3><a href="Frontend-Developer-Guide-React-Fundamentals.html">11. React Fundamentals</a></h3>
+      <h3><a href="Frontend-Developer-Guide-State-Management.html">12. State Management</a></h3>
+
+      <!-- Step 6: APIs & Data -->
+      <h2>APIs & Data</h2>
+      <h3><a href="Frontend-Developer-Guide-Working-with-APIs.html">13. Working with APIs</a></h3>
+
+      <!-- Step 7: Testing & Performance -->
+      <h2>Testing & Performance</h2>
+      <h3><a href="Frontend-Developer-Guide-Testing.html">14. Testing</a></h3>
+      <h3><a href="Frontend-Developer-Guide-Performance-&-Optimization.html">15. Performance & Optimization</a></h3>
+
+      <!-- Step 8: Documentation & Deployment -->
+      <h2>Documentation & Deployment</h2>
+      <h3><a href="Frontend-Developer-Guide-Documentation-&-UX.html">16. Documentation & UX</a></h3>
+      <h3><a href="Frontend-Developer-Guide-Deployment.html">17. Deployment</a></h3>
+
+      <!-- Step 9: Progressive Web Apps -->
+      <h2>Progressive Web Apps</h2>
+      <h3><a href="Frontend-Developer-Guide-Progressive-Web-Apps.html">18. Progressive Web Apps</a></h3>
+
+      <!-- Step 10: Advanced Topics -->
+      <h2>Advanced Topics</h2>
+      <h3><a href="Frontend-Developer-Guide-TypeScript.html">19. TypeScript</a></h3>
+      <h3><a href="Frontend-Developer-Guide-Web-Accessibility.html">20. Web Accessibility</a></h3>
+      <h3><a href="Frontend-Developer-Guide-Security-Basics.html">21. Security Basics</a></h3>
+
+      <h2 style="font-weight: 700; color: #377536;">Final Projects</h2>
+      <h3><a href="Frontend-Developer-Guide-Portfolio-Projects.html">Portfolio Projects</a></h3>
+    </aside>
+
+    <!-- CONTENT -->
+    <main class="content" id="content">
+      <div class="content-header">
+        <h1>Frontend Development Course</h1>
+      </div>
+
+      <!-- Ad Block: After HTML Section -->
+      <div style="margin: 40px 0; text-align: center;">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7439109164508333"
+             crossorigin="anonymous"></script>
+        <!-- Index-Header -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-7439109164508333"
+             data-ad-slot="4111274044"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+
+      <!-- STEP 1: HTML & CSS FUNDAMENTALS -->
+      <h2 id="html-basics">13. Working with APIs</h2>
+      
+      <!-- Navigation Buttons Top -->
+      <div class="nav-buttons">
+        <a href="Frontend-Developer-Guide-State-Management.html" class="nav-btn nav-btn-prev">State Management</a>
+        <a href="Frontend-Developer-Guide-Testing.html" class="nav-btn nav-btn-next">Testing</a>
+      </div>
+      
+      <p>Modern web applications communicate with servers through APIs, requiring understanding of REST principles, HTTP methods, and asynchronous data handling.</p>
+      
+      <h4>Free Resources:</h4>
+      <div class="resource-item">
+        <span class="resource-badge video-badge">Video</span>
+        <a href="https://www.youtube.com/watch?v=WXsD0ZgxjRw" target="_blank" class="resource-link">Tutorial: APIs for Beginners - How to use an API</a>
+      </div>
+      <div class="resource-item">
+        <span class="resource-badge video-badge">Video</span>
+        <a href="https://www.youtube.com/watch?v=PUkgK7TI0x0&list=PLNCevxogE3fiLT6bEObGeVfHVLnttptKv&index=3" target="_blank" class="resource-link">Mini Project: Dictionary App - HTML, CSS And Javascript</a>
+      </div>
+      <div class="resource-item">
+        <span class="resource-badge book-badge">Book</span>
+        <a href="https://www.amazon.co.uk/APIs-Strategy-Guide-Daniel-Jacobson/dp/1449308929" target="_blank" class="resource-link">APIs – A Strategy Guide</a>
+      </div>
+      <div class="resource-item">
+        <span class="resource-badge article-badge">Article</span>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API" target="_blank" class="resource-link">Web APIs</a>
+      </div>
+
+      <h4>General Information:</h4>
+      <p>REST (Representational State Transfer) is an architectural style for designing networked applications. RESTful APIs use HTTP methods to perform operations on resources, identified by URLs. Resources are any data objects—users, posts, products, orders. REST defines standard HTTP methods: GET retrieves resources (read-only, safe, idempotent), POST creates new resources, PUT updates entire resources or creates them if they don't exist (idempotent), PATCH partially updates resources, and DELETE removes resources. These methods combined with URLs create intuitive APIs: <code>GET /users</code> lists users, <code>POST /users</code> creates a user, <code>GET /users/123</code> retrieves user 123, <code>PUT /users/123</code> updates user 123.</p>
+      <p>REST APIs communicate using JSON (JavaScript Object Notation) for data exchange—lightweight, human-readable, and natively supported by JavaScript. HTTP status codes communicate results: 200 OK (success), 201 Created (resource created), 204 No Content (success with no body), 400 Bad Request (client error), 401 Unauthorised (authentication required), 403 Forbidden (authenticated but not permitted), 404 Not Found (resource doesn't exist), 500 Internal Server Error (server problem). Understanding these codes helps you handle different scenarios appropriately—retry on 500, show error messages on 400, redirect to login on 401.</p>
+      <p>RESTful design principles include statelessness (each request contains all needed information, no server-side session), client-server separation (clients and servers are independent), cacheability (responses indicate if they can be cached), and uniform interface (consistent, predictable API structure). Well-designed REST APIs are intuitive, self-documenting, and easy to use. API documentation specifies available endpoints, required parameters, authentication methods, response formats, and example requests/responses. Tools like Swagger/OpenAPI standardise API documentation. Understanding REST principles helps you consume APIs effectively and design your own when needed.</p>
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: What is a REST API?</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/LzOtbUw6f_o?si=MROaH81_WU2C3FqE" title="REST API Basics" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+
+      <h4>Fetch API & Axios:</h4>
+      <p>The Fetch API is the modern, built-in JavaScript interface for making HTTP requests. Basic usage: <code>fetch(url)</code> returns a promise that resolves to a Response object. Extract JSON with <code>response.json()</code>, which returns another promise: <code>fetch(url).then(response =&gt; response.json()).then(data =&gt; console.log(data))</code>. With async/await: <code>const response = await fetch(url); const data = await response.json();</code>. Fetch is promise-based, integrating naturally with modern async patterns. However, fetch doesn't reject on HTTP error statuses (404, 500)—you must check <code>response.ok</code> manually: <code>if (!response.ok) throw new Error('Request failed')</code>.</p>
+      <p>For POST requests, specify method, headers, and body: <code>fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })</code>. PUT, PATCH, and DELETE follow similar patterns. The Content-Type header tells servers how to interpret request bodies—<code>application/json</code> for JSON, <code>application/x-www-form-urlencoded</code> for form data. Request headers also include authentication tokens: <code>headers: { 'Authorization': `Bearer ${token}` }</code>. Understanding headers, methods, and body formatting is essential for working with APIs beyond simple GET requests.</p>
+      <p>Axios is a popular HTTP client library that simplifies common tasks. It automatically transforms JSON, provides better error handling (rejecting on HTTP errors), offers request/response interceptors (for adding authentication tokens or logging), supports request cancellation, and provides cleaner syntax. Basic usage: <code>axios.get(url).then(response =&gt; console.log(response.data))</code>. Axios includes shorthand methods: <code>axios.post(url, data)</code>, <code>axios.put(url, data)</code>. Configure defaults globally: <code>axios.defaults.baseURL = 'https://api.example.com'; axios.defaults.headers.common['Authorization'] = token;</code>. Axios reduces boilerplate for complex API interactions, though modern fetch with wrapper functions achieves similar results. Choose based on project needs and preferences.</p>
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: Fetch API vs Axios</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/OFWATycG_Wc?si=9B-2frEk0sB_ANhN" title="Fetch and Axios" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+
+      <h4>Error Handling & Loading States:</h4>
+      <p>Robust applications handle errors gracefully rather than crashing or showing blank screens. API requests can fail for many reasons: network issues, server errors, timeouts, invalid responses, or authentication problems. Wrap fetch calls in try-catch blocks: <code>try { const response = await fetch(url); if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`); const data = await response.json(); } catch (error) { console.error('Fetch failed:', error); }</code>. Display user-friendly error messages rather than technical details—"Failed to load data. Please try again." is better than exposing API error messages or stack traces.</p>
+      <p>Loading states provide feedback during asynchronous operations. Track loading with state: <code>const [loading, setLoading] = useState(false)</code>. Set to true before requests, false after (in both success and error cases, often in a finally block). Display loading indicators (spinners, skeletons, progress bars) whilst loading is true. This prevents users from clicking repeatedly, provides feedback that something is happening, and improves perceived performance. Skeleton screens (placeholder UI resembling loaded content) feel faster than spinners. For quick operations, delay showing loading indicators briefly (200-300ms) to avoid flashing that makes the interface feel janky.</p>
+      <p>Error boundaries catch React component errors, preventing entire app crashes. Create error boundaries with class components (functional component support coming in future React versions): <code>class ErrorBoundary extends React.Component { componentDidCatch(error, info) { /* log error */ } render() { if (this.state.hasError) return &lt;ErrorMessage /&gt;; return this.props.children; } }</code>. Wrap parts of your app in error boundaries to isolate failures. For API errors specifically, store error state and display conditionally: <code>{error && &lt;div&gt;Error: {error.message}&lt;/div&gt;}</code>. Good error handling includes logging errors for debugging, displaying helpful messages to users, and providing recovery options (retry buttons, refresh prompts, alternative navigation paths).</p>
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: Error Handling in React</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/G_HZtL8BpCA?si=ANe-vlqzRsQJ2vA_" title="Error Handling" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+
+      <h4>Working with JSON Data:</h4>
+      <p>JSON (JavaScript Object Notation) is the universal data format for web APIs. JSON syntax closely resembles JavaScript object literals but with strict rules: property names must be double-quoted, strings use double quotes only, no trailing commas, no comments, and no undefined (use null instead). JSON supports strings, numbers, booleans, null, arrays, and objects—no functions, dates (represented as strings), or special values. This simplicity makes JSON language-agnostic and easy to parse. Most APIs return JSON responses, and you'll send JSON request bodies for POST/PUT operations.</p>
+      <p>Parse JSON with <code>JSON.parse(jsonString)</code> to convert JSON strings to JavaScript objects. Stringify JavaScript objects with <code>JSON.stringify(object)</code> to create JSON strings for API requests. Both methods accept optional parameters: <code>JSON.stringify(object, null, 2)</code> pretty-prints with 2-space indentation, useful for debugging. Replacer functions filter or transform values during stringification: <code>JSON.stringify(obj, (key, value) =&gt; typeof value === 'bigint' ? value.toString() : value)</code>. Reviver functions transform parsed values: <code>JSON.parse(text, (key, value) =&gt; key === 'date' ? new Date(value) : value)</code> converts date strings to Date objects.</p>
+      <p>Real-world JSON can be deeply nested and complex. Access nested properties safely with optional chaining: <code>data?.user?.address?.city</code> returns undefined if any level is missing, preventing errors. Destructuring extracts values cleanly: <code>const { id, name, email } = userData</code>. When API response structures differ from UI needs, transform data after fetching but before setting state: map arrays, flatten nested objects, filter unwanted properties, or compute derived values. This separation—raw API data versus UI-ready data—makes components cleaner and isolates data transformation logic. Understanding JSON deeply means handling edge cases gracefully and transforming data effectively.</p>
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: Working with JSON in JavaScript</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/iiADhChRriM?si=OYOXZDsXYhrWt9Vm" title="Working with JSON" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+
+      <h4>Authentication Basics:</h4>
+      <p>Authentication verifies user identity, whilst authorisation determines what authenticated users can access. Most web apps use token-based authentication: users submit credentials (username/password), the server validates them and returns a token (typically a JWT—JSON Web Token), and clients include this token in subsequent requests to prove identity. Store tokens securely—never in localStorage if possible (vulnerable to XSS attacks). HttpOnly cookies provide better security, though they require server-side support. For localStorage storage, sanitise all user input rigorously to prevent XSS attacks that could steal tokens.</p>
+      <p>JWTs (JSON Web Tokens) are self-contained tokens encoding user information and expiration times, signed by the server. They consist of three parts: header (algorithm and token type), payload (claims like user ID and expiration), and signature (ensures token wasn't tampered with). Include JWTs in request headers: <code>Authorization: Bearer &lt;token&gt;</code>. The server verifies the signature and checks expiration before processing requests. JWTs typically have short lifespans (15-60 minutes) with longer refresh tokens to obtain new access tokens, balancing security with user experience. Implementing refresh token flow prevents users from needing to log in constantly.</p>
+      <p>Handle authentication state in React with Context: store user data and authentication status globally. Create an AuthContext providing user, login, logout, and loading values. Protected routes check authentication status and redirect unauthenticated users to login. Axios interceptors can automatically add auth tokens to requests: <code>axios.interceptors.request.use(config =&gt; { config.headers.Authorization = `Bearer ${token}`; return config; })</code>. Response interceptors handle token expiration, triggering logout or refresh token flow. Understanding authentication thoroughly is crucial—security vulnerabilities here compromise entire applications. Always use HTTPS in production, never log sensitive data, and follow OWASP authentication guidelines.</p>
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: JWT Authentication Explained</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/GcVtElYa17s?si=R8t7LyUxTdddp8Wf" title="JWT Authentication" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+
+      <h4>API Topics:</h4>
+      <ul class="topic-list">
+        <li><strong>REST APIs:</strong> Understanding RESTful architecture, HTTP methods (GET, POST, PUT, DELETE)</li>
+        <li><strong>Fetch & Axios:</strong> Making API requests, handling responses</li>
+        <li><strong>Error handling:</strong> Try-catch blocks, displaying error messages to users</li>
+        <li><strong>JSON:</strong> Working with JSON data format, parsing and stringifying</li>
+        <li><strong>Authentication:</strong> API keys, tokens, OAuth basics</li>
+      </ul>
+
+      <!-- Ad Block: After HTML Section -->
+      <div style="margin: 40px 0; text-align: center;">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7439109164508333"
+             crossorigin="anonymous"></script>
+        <!-- Index-Header -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-7439109164508333"
+             data-ad-slot="4111274044"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+
+      <!-- Navigation Buttons Bottom -->
+      <div class="nav-buttons">
+        <a href="Frontend-Developer-Guide-State-Management.html" class="nav-btn nav-btn-prev">State Management</a>
+        <a href="Frontend-Developer-Guide-Testing.html" class="nav-btn nav-btn-next">Testing</a>
+      </div>
+    </main>
+  </div>
+
+  <!-- Placeholder for the footer -->
+  <div id="footer-placeholder"></div>
+  <script src="../../analytics.js"></script>
+  <script src="../../nav-switcher.js"></script>
+  <script src="footer.js"></script>
+  <script src="../script.js"></script>
+
+  <script>
+    // Sidebar resizer functionality
+    const resizer = document.getElementById('resizer');
+    const sidebar = document.getElementById('sidebar');
+    
+    let isResizing = false;
+    
+    resizer.addEventListener('mousedown', (e) => {
+      isResizing = true;
+      document.body.style.cursor = 'col-resize';
+      document.body.style.userSelect = 'none';
+    });
+    
+    document.addEventListener('mousemove', (e) => {
+      if (!isResizing) return;
+      
+      const newWidth = e.clientX;
+      if (newWidth >= 200 && newWidth <= 500) {
+        sidebar.style.width = newWidth + 'px';
+      }
+    });
+    
+    document.addEventListener('mouseup', () => {
+      isResizing = false;
+      document.body.style.cursor = '';
+      document.body.style.userSelect = '';
+    });
+
+    // Mobile sidebar toggle
+    const mobileToggle = document.getElementById('mobileContentToggle');
+    const sidebarCloseBtn = document.getElementById('sidebarCloseBtn');
+    
+    if (mobileToggle) {
+      mobileToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('mobile-open');
+      });
+    }
+    
+    if (sidebarCloseBtn) {
+      sidebarCloseBtn.addEventListener('click', () => {
+        sidebar.classList.remove('mobile-open');
+      });
+    }
+  </script>
+</body>
+</html>

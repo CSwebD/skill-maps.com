@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frontend Developer Guide - State Management</title>
+  <link rel="icon" href="../../images/logo.jpg" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="../style2.css">
+  <meta name="description" content="Complete frontend developer roadmap from beginner to advanced. Master HTML, CSS, JavaScript, React, and modern web development." />
+  <meta property="og:title" content="Frontend Developer Roadmap | Skill Maps" />
+  <meta property="og:description" content="Learn frontend development through structured levels, from web basics to advanced PWAs and TypeScript." />
+  <meta property="og:url" content="https://www.skill-maps.com/frontend-developer.html" />
+  <meta property="og:image" content="https://www.skill-maps.com/logo.jpg" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <div id="panel-bar-placeholder"></div>
+  <script src="panel-nav.js"></script>
+
+  
+  <div class="progress-bar">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+
+  <!-- Mobile Content Toggle Button -->
+  <button class="mobile-content-toggle" id="mobileContentToggle">
+    <i class="fas fa-bars"></i>
+    Content
+  </button>
+
+
+  <div class="course-container">
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <button class="sidebar-close-btn" id="sidebarCloseBtn">×</button>
+      <div class="resizer" id="resizer"></div>
+      <div class="sidebar-header">
+        <a href="../../domains.html" class="back-button">← Back to Home</a>
+        <h1 class="page-title">Frontend Developer</h1>
+        <span style="font-size: 13px; color: #377536; display: block; margin-top: -10px; margin-bottom: 15px;">Full Course</span>
+      </div>
+
+      <!-- Introduction -->
+      <h2>Getting Started</h2>
+      <h3><a href="Frontend-Developer-Guide-Main.html">Introduction</a></h3>
+
+      <!-- Step 1: HTML & CSS Fundamentals -->
+      <h2>HTML & CSS Fundamentals</h2>
+      <h3><a href="Frontend-Developer-Guide-Html.html">1. HTML Basics</a></h3>
+      <h3><a href="Frontend-Developer-Guide-CSS.html">2. CSS Basics</a></h3>
+      <h3><a href="Frontend-Developer-Guide-Developer-Tools.html">3. Developer Tools & Setup</a></h3>
+
+      <!-- Step 2: JavaScript Fundamentals -->
+      <h2>JavaScript Fundamentals</h2>
+      <h3><a href="Frontend-Developer-Guide-JavaScript.html">4. JavaScript Basics</a></h3>
+      <h3><a href="Frontend-Developer-Guide-DOM-Manipulation.html">5. DOM Manipulation</a></h3>
+      <h3><a href="Frontend-Developer-Guide-Advanced-JavaScript.html">6. Advanced JavaScript</a></h3>
+
+      <!-- Step 3: Responsive Design & Layout -->
+      <h2>Responsive Design & Layout</h2>
+      <h3><a href="Frontend-Developer-Guide-Responsive-Design.html">7. Responsive Design</a></h3>
+      <h3><a href="Frontend-Developer-Guide-Modern-CSS-Layout.html">8. Modern CSS Layout</a></h3>
+      <h3><a href="Frontend-Developer-Guide-CSS-Frameworks.html">9. CSS Frameworks</a></h3>
+
+      <!-- Step 4: Version Control -->
+      <h2>Version Control</h2>
+      <h3><a href="Frontend-Developer-Guide-Git-&-GitHub.html">10. Git & GitHub</a></h3>
+
+      <!-- Step 5: React & State Management -->
+      <h2>React & State Management</h2>
+      <h3><a href="Frontend-Developer-Guide-React-Fundamentals.html">11. React Fundamentals</a></h3>
+      <h3><a href="Frontend-Developer-Guide-State-Management.html">12. State Management</a></h3>
+
+      <!-- Step 6: APIs & Data -->
+      <h2>APIs & Data</h2>
+      <h3><a href="Frontend-Developer-Guide-Working-with-APIs.html">13. Working with APIs</a></h3>
+
+      <!-- Step 7: Testing & Performance -->
+      <h2>Testing & Performance</h2>
+      <h3><a href="Frontend-Developer-Guide-Testing.html">14. Testing</a></h3>
+      <h3><a href="Frontend-Developer-Guide-Performance-&-Optimization.html">15. Performance & Optimization</a></h3>
+
+      <!-- Step 8: Documentation & Deployment -->
+      <h2>Documentation & Deployment</h2>
+      <h3><a href="Frontend-Developer-Guide-Documentation-&-UX.html">16. Documentation & UX</a></h3>
+      <h3><a href="Frontend-Developer-Guide-Deployment.html">17. Deployment</a></h3>
+
+      <!-- Step 9: Progressive Web Apps -->
+      <h2>Progressive Web Apps</h2>
+      <h3><a href="Frontend-Developer-Guide-Progressive-Web-Apps.html">18. Progressive Web Apps</a></h3>
+
+      <!-- Step 10: Advanced Topics -->
+      <h2>Advanced Topics</h2>
+      <h3><a href="Frontend-Developer-Guide-TypeScript.html">19. TypeScript</a></h3>
+      <h3><a href="Frontend-Developer-Guide-Web-Accessibility.html">20. Web Accessibility</a></h3>
+      <h3><a href="Frontend-Developer-Guide-Security-Basics.html">21. Security Basics</a></h3>
+
+      <h2 style="font-weight: 700; color: #377536;">Final Projects</h2>
+      <h3><a href="Frontend-Developer-Guide-Portfolio-Projects.html">Portfolio Projects</a></h3>
+    </aside>
+
+    <!-- CONTENT -->
+    <main class="content" id="content">
+      <div class="content-header">
+        <h1>Frontend Development Course</h1>
+      </div>
+
+      <!-- Ad Block: After HTML Section -->
+      <div style="margin: 40px 0; text-align: center;">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7439109164508333"
+             crossorigin="anonymous"></script>
+        <!-- Index-Header -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-7439109164508333"
+             data-ad-slot="4111274044"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+
+      <!-- STEP 1: HTML & CSS FUNDAMENTALS -->
+      <h2 id="html-basics">12. State Management</h2>
+      
+      <!-- Navigation Buttons Top -->
+      <div class="nav-buttons">
+        <a href="Frontend-Developer-Guide-React-Fundamentals.html" class="nav-btn nav-btn-prev">React Fundamentals</a>
+        <a href="Frontend-Developer-Guide-Working-with-APIs.html" class="nav-btn nav-btn-next">Working with APIs</a>
+      </div>
+      
+      <p>Managing state across complex React applications requires understanding when to use local state, Context API, or dedicated state management libraries.</p>
+      
+      <h4>Free Resources:</h4>
+      <div class="resource-item">
+        <span class="resource-badge video-badge">Video</span>
+        <a href="https://www.youtube.com/watch?v=-bEzt5ISACA" target="_blank" class="resource-link">Tutorial: React State Management – Intermediate JavaScript Course</a>
+      </div>
+      <div class="resource-item">
+        <span class="resource-badge video-badge">Video</span>
+        <a href="https://www.youtube.com/watch?v=rF6eq1oru-Y" target="_blank" class="resource-link">Mini Project: BLoC for Beginners - State Management - Flutter</a>
+      </div>
+      <div class="resource-item">
+        <span class="resource-badge book-badge">Book</span>
+        <a href="https://www.amazon.co.uk/Micro-State-Management-React-Hooks/dp/1801812373" target="_blank" class="resource-link">Micro State Management with React Hooks</a>
+      </div>
+      <div class="resource-item">
+        <span class="resource-badge article-badge">Article</span>
+        <a href="https://react.dev/learn/managing-state" target="_blank" class="resource-link">Managing State</a>
+      </div>
+
+      <h4>General Information:</h4>
+      <p>React's Context API solves prop drilling—passing props through many component levels to reach deeply nested children. Context provides a way to share values across the component tree without explicitly passing props through every level. Create context with <code>const MyContext = React.createContext(defaultValue)</code>, provide values with <code>&lt;MyContext.Provider value={sharedValue}&gt;</code>, and consume with <code>const value = useContext(MyContext)</code> in any descendant component. Context is perfect for values needed throughout your app: themes, authentication status, language preferences, or application configuration.</p>
+      <p>Context should be used judiciously—it's not a complete state management solution. Context triggers re-renders in all consuming components when the provided value changes, potentially causing performance issues with frequently updating values or large consumer trees. For values that change often or affect only part of your app, lifting state up or using specialised state management might be better. Context excels for stable values that many components need access to. Combine multiple contexts for different concerns rather than cramming everything into one context—a ThemeContext, AuthContext, and UserPreferencesContext are more maintainable than one giant AppContext.</p>
+      <p>Context providers can be nested and combined. Components can consume multiple contexts by using multiple <code>useContext</code> calls. Custom hooks can wrap context consumption for cleaner APIs: <code>function useAuth() { const context = useContext(AuthContext); if (!context) throw new Error('useAuth must be used within AuthProvider'); return context; }</code>. This pattern provides helpful error messages and centralises context logic. Context updates are optimised—React only re-renders consuming components, not intermediate ones. Understanding Context deeply means knowing when to use it versus when simpler solutions (prop passing) or more powerful ones (Redux, Zustand) are appropriate.</p>
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: React Context API Explained</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/aCetxGOp7_8?si=UFyrLDxEukYHFtZM" title="Context API" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+
+      <h4>Redux Fundamentals:</h4>
+      <p>Redux is a predictable state container for JavaScript apps, providing centralised state management with strict rules about how state can change. Redux principles: single source of truth (one store holds all application state), state is read-only (only changed by dispatching actions), and changes are made with pure functions (reducers). These constraints make state changes predictable and debuggable. Redux shines in large applications with complex state, many components needing the same data, or state that updates from many places. For simple apps, Redux is overkill—Context API or local state suffice.</p>
+      <p>Redux architecture has three core concepts: store (holds application state), actions (plain objects describing what happened), and reducers (pure functions that create new state based on actions). The flow: components dispatch actions like <code>{ type: 'INCREMENT', payload: 5 }</code>, the store forwards actions to reducers, reducers return new state based on action type, and the store updates and notifies subscribed components. React-Redux connects React components to the Redux store with hooks: <code>useSelector(state =&gt; state.value)</code> reads state, <code>useDispatch()</code> returns a dispatch function for sending actions. This separation between state logic (reducers) and UI (components) improves maintainability and testability.</p>
+      <p>Redux Toolkit (RTK) is the modern, recommended way to use Redux, reducing boilerplate significantly. <code>configureStore()</code> creates the store with good defaults. <code>createSlice()</code> generates actions and reducers together, eliminating manual action creator writing. RTK includes <code>createAsyncThunk</code> for handling asynchronous operations, automatically dispatching pending/fulfilled/rejected actions. RTK Query provides powerful data fetching and caching capabilities. Whilst Redux has a learning curve, RTK makes it much more approachable. Redux DevTools browser extension provides incredible debugging capabilities—time-travel debugging, action history, and state inspection make complex state bugs tractable.</p>
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: Redux for Beginners</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/_shA5Xwe8_4?si=EYmSNMIgul3ppLB5" title="Redux Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+
+      <h4>Zustand & Alternative Libraries:</h4>
+      <p>Zustand is a lightweight state management library that provides Redux-like centralised state with far less boilerplate. Create a store by defining a hook: <code>const useStore = create(set =&gt; ({ count: 0, increment: () =&gt; set(state =&gt; ({ count: state.count + 1 })) }))</code>. Use it in components like any hook: <code>const { count, increment } = useStore()</code>. That's it—no providers, no reducers, no actions, just a simple hook-based API. Zustand automatically handles React integration, rendering only components that use changed state slices. For many applications, Zustand's simplicity beats Redux's power-to-complexity ratio.</p>
+      <p>Other state management alternatives include Jotai (atomic state management with minimal API), Recoil (Facebook's state management for complex dependency graphs), Valtio (proxy-based state), and MobX (observable state with automatic tracking). Each has different philosophies and trade-offs. Jotai and Recoil use atoms—small pieces of state that can depend on each other, scaling well for complex applications. MobX's observables feel more like traditional OOP, automatically tracking dependencies and re-rendering. Valtio uses JavaScript proxies for direct state mutation (with immutable updates under the hood), providing the most intuitive API.</p>
+      <p>Choosing state management depends on app complexity, team preferences, and specific requirements. Start simple—local state and Context cover surprising amounts of ground. Add Zustand when you need centralised state without Redux complexity. Reach for Redux when you need its ecosystem, debugging tools, and patterns for very large applications, or when your team already knows Redux. Most apps don't need complex state management—the simplest solution that works is always best. Understanding multiple approaches helps you choose wisely and avoid over-engineering. State management is a means to an end (maintainable, predictable applications), not an end itself.</p>
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: Zustand Tutorial</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/AXB6ZwbgGaY?si=QJtDV0EBBMI4H-iu" title="Zustand State Management" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+
+      <h4>Global State vs Local State:</h4>
+      <p>Local state (<code>useState</code> in components) should be your default choice—it's simple, keeps related data close to where it's used, and makes components self-contained. Use local state for UI state (is dropdown open, which tab is active), form inputs, toggles, counters, and anything used by only one component or a small component subtree. Don't lift state up prematurely. Keep state as local as possible, lifting it only when multiple components genuinely need shared access. Over-use of global state makes applications harder to understand and test, as everything depends on everything.</p>
+      <p>Lift state to the nearest common ancestor when multiple sibling components need shared state. If components are closely related and always used together, their shared state can live in their parent. Only reach for global state (Context, Redux, Zustand) when state is needed across distant parts of your application, updates from many places, or persists across navigation. Examples of legitimate global state: authentication status, user preferences, theme selection, shopping cart contents, and notification state. Even then, consider whether you could fetch data when needed rather than storing it globally.</p>
+      <p>Server state (data from APIs) deserves special consideration—it's different from client state. Libraries like React Query, SWR, and RTK Query specialise in server state management, handling caching, background updates, optimistic updates, and request deduplication automatically. These libraries often eliminate the need for Redux or other global state management for API data. They treat server data as a cache with automatic invalidation and refetching rather than as application state you must manually manage. Understanding the distinction between different state types—local UI state, global client state, and server cache state—helps you choose appropriate tools.</p>
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: When to Use Global State</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/Cl8VJindR2Y?si=53AApwdVGmSdMlQw" title="Global vs Local State" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+      
+      <h4>State Management Approaches:</h4>
+      <ul class="topic-list">
+        <li><strong>Context API:</strong> React's built-in solution for global state</li>
+        <li><strong>Redux:</strong> Predictable state container, actions, reducers, store</li>
+        <li><strong>Zustand:</strong> Lightweight state management alternative</li>
+        <li><strong>When to use what:</strong> Local state vs global state decisions</li>
+      </ul>
+
+      <!-- Ad Block: After HTML Section -->
+      <div style="margin: 40px 0; text-align: center;">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7439109164508333"
+             crossorigin="anonymous"></script>
+        <!-- Index-Header -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-7439109164508333"
+             data-ad-slot="4111274044"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+
+      <!-- Navigation Buttons Bottom -->
+      <div class="nav-buttons">
+        <a href="Frontend-Developer-Guide-React-Fundamentals.html" class="nav-btn nav-btn-prev">React Fundamentals</a>
+        <a href="Frontend-Developer-Guide-Working-with-APIs.html" class="nav-btn nav-btn-next">Working with APIs</a>
+      </div>
+    </main>
+  </div>
+
+  <!-- Placeholder for the footer -->
+  <div id="footer-placeholder"></div>
+  <script src="../../analytics.js"></script>
+  <script src="../../nav-switcher.js"></script>
+  <script src="footer.js"></script>
+  <script src="../script.js"></script>
+
+  <script>
+    // Sidebar resizer functionality
+    const resizer = document.getElementById('resizer');
+    const sidebar = document.getElementById('sidebar');
+    
+    let isResizing = false;
+    
+    resizer.addEventListener('mousedown', (e) => {
+      isResizing = true;
+      document.body.style.cursor = 'col-resize';
+      document.body.style.userSelect = 'none';
+    });
+    
+    document.addEventListener('mousemove', (e) => {
+      if (!isResizing) return;
+      
+      const newWidth = e.clientX;
+      if (newWidth >= 200 && newWidth <= 500) {
+        sidebar.style.width = newWidth + 'px';
+      }
+    });
+    
+    document.addEventListener('mouseup', () => {
+      isResizing = false;
+      document.body.style.cursor = '';
+      document.body.style.userSelect = '';
+    });
+
+    // Mobile sidebar toggle
+    const mobileToggle = document.getElementById('mobileContentToggle');
+    const sidebarCloseBtn = document.getElementById('sidebarCloseBtn');
+    
+    if (mobileToggle) {
+      mobileToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('mobile-open');
+      });
+    }
+    
+    if (sidebarCloseBtn) {
+      sidebarCloseBtn.addEventListener('click', () => {
+        sidebar.classList.remove('mobile-open');
+      });
+    }
+  </script>
+</body>
+</html>

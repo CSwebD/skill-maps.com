@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frontend Developer Guide - Performance & Optimization</title>
+  <link rel="icon" href="../../images/logo.jpg" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="../style2.css">
+  <meta name="description" content="Complete frontend developer roadmap from beginner to advanced. Master HTML, CSS, JavaScript, React, and modern web development." />
+  <meta property="og:title" content="Frontend Developer Roadmap | Skill Maps" />
+  <meta property="og:description" content="Learn frontend development through structured levels, from web basics to advanced PWAs and TypeScript." />
+  <meta property="og:url" content="https://www.skill-maps.com/frontend-developer.html" />
+  <meta property="og:image" content="https://www.skill-maps.com/logo.jpg" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <div id="panel-bar-placeholder"></div>
+  <script src="panel-nav.js"></script>
+
+  
+  <div class="progress-bar">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+
+  <!-- Mobile Content Toggle Button -->
+  <button class="mobile-content-toggle" id="mobileContentToggle">
+    <i class="fas fa-bars"></i>
+    Content
+  </button>
+
+
+  <div class="course-container">
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <button class="sidebar-close-btn" id="sidebarCloseBtn">×</button>
+      <div class="resizer" id="resizer"></div>
+      <div class="sidebar-header">
+        <a href="../../domains.html" class="back-button">← Back to Home</a>
+        <h1 class="page-title">Frontend Developer</h1>
+        <span style="font-size: 13px; color: #377536; display: block; margin-top: -10px; margin-bottom: 15px;">Full Course</span>
+      </div>
+
+      <!-- Introduction -->
+      <h2>Getting Started</h2>
+      <h3><a href="Frontend-Developer-Guide-Main.html">Introduction</a></h3>
+
+      <!-- Step 1: HTML & CSS Fundamentals -->
+      <h2>HTML & CSS Fundamentals</h2>
+      <h3><a href="Frontend-Developer-Guide-Html.html">1. HTML Basics</a></h3>
+      <h3><a href="Frontend-Developer-Guide-CSS.html">2. CSS Basics</a></h3>
+      <h3><a href="Frontend-Developer-Guide-Developer-Tools.html">3. Developer Tools & Setup</a></h3>
+
+      <!-- Step 2: JavaScript Fundamentals -->
+      <h2>JavaScript Fundamentals</h2>
+      <h3><a href="Frontend-Developer-Guide-JavaScript.html">4. JavaScript Basics</a></h3>
+      <h3><a href="Frontend-Developer-Guide-DOM-Manipulation.html">5. DOM Manipulation</a></h3>
+      <h3><a href="Frontend-Developer-Guide-Advanced-JavaScript.html">6. Advanced JavaScript</a></h3>
+
+      <!-- Step 3: Responsive Design & Layout -->
+      <h2>Responsive Design & Layout</h2>
+      <h3><a href="Frontend-Developer-Guide-Responsive-Design.html">7. Responsive Design</a></h3>
+      <h3><a href="Frontend-Developer-Guide-Modern-CSS-Layout.html">8. Modern CSS Layout</a></h3>
+      <h3><a href="Frontend-Developer-Guide-CSS-Frameworks.html">9. CSS Frameworks</a></h3>
+
+      <!-- Step 4: Version Control -->
+      <h2>Version Control</h2>
+      <h3><a href="Frontend-Developer-Guide-Git-&-GitHub.html">10. Git & GitHub</a></h3>
+
+      <!-- Step 5: React & State Management -->
+      <h2>React & State Management</h2>
+      <h3><a href="Frontend-Developer-Guide-React-Fundamentals.html">11. React Fundamentals</a></h3>
+      <h3><a href="Frontend-Developer-Guide-State-Management.html">12. State Management</a></h3>
+
+      <!-- Step 6: APIs & Data -->
+      <h2>APIs & Data</h2>
+      <h3><a href="Frontend-Developer-Guide-Working-with-APIs.html">13. Working with APIs</a></h3>
+
+      <!-- Step 7: Testing & Performance -->
+      <h2>Testing & Performance</h2>
+      <h3><a href="Frontend-Developer-Guide-Testing.html">14. Testing</a></h3>
+      <h3><a href="Frontend-Developer-Guide-Performance-&-Optimization.html">15. Performance & Optimization</a></h3>
+
+      <!-- Step 8: Documentation & Deployment -->
+      <h2>Documentation & Deployment</h2>
+      <h3><a href="Frontend-Developer-Guide-Documentation-&-UX.html">16. Documentation & UX</a></h3>
+      <h3><a href="Frontend-Developer-Guide-Deployment.html">17. Deployment</a></h3>
+
+      <!-- Step 9: Progressive Web Apps -->
+      <h2>Progressive Web Apps</h2>
+      <h3><a href="Frontend-Developer-Guide-Progressive-Web-Apps.html">18. Progressive Web Apps</a></h3>
+
+      <!-- Step 10: Advanced Topics -->
+      <h2>Advanced Topics</h2>
+      <h3><a href="Frontend-Developer-Guide-TypeScript.html">19. TypeScript</a></h3>
+      <h3><a href="Frontend-Developer-Guide-Web-Accessibility.html">20. Web Accessibility</a></h3>
+      <h3><a href="Frontend-Developer-Guide-Security-Basics.html">21. Security Basics</a></h3>
+
+      <h2 style="font-weight: 700; color: #377536;">Final Projects</h2>
+      <h3><a href="Frontend-Developer-Guide-Portfolio-Projects.html">Portfolio Projects</a></h3>
+    </aside>
+
+    <!-- CONTENT -->
+    <main class="content" id="content">
+      <div class="content-header">
+        <h1>Frontend Development Course</h1>
+      </div>
+
+      <!-- Ad Block: After HTML Section -->
+      <div style="margin: 40px 0; text-align: center;">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7439109164508333"
+             crossorigin="anonymous"></script>
+        <!-- Index-Header -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-7439109164508333"
+             data-ad-slot="4111274044"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+
+      <!-- STEP 1: HTML & CSS FUNDAMENTALS -->
+      <h2 id="html-basics">15. Performance & Optimization</h2>
+      
+      <!-- Navigation Buttons Top -->
+      <div class="nav-buttons">
+        <a href="Frontend-Developer-Guide-Testing.html" class="nav-btn nav-btn-prev">Tesing</a>
+        <a href="Frontend-Developer-Guide-Documentation-&-UX.html" class="nav-btn nav-btn-next">Documentation & UX</a>
+      </div>
+      
+      <p>Performance directly impacts user experience, conversion rates, and search rankings—optimising speed is essential for modern web applications.</p>
+ 
+      <h4>Free Resources:</h4>
+      <div class="resource-item">
+        <span class="resource-badge video-badge">Video</span>
+        <a href="https://www.youtube.com/watch?v=KUdqbIHn8Ic" target="_blank" class="resource-link">Tutorial: Frontend System Design</a>
+      </div>
+      <div class="resource-item">
+        <span class="resource-badge video-badge">Video</span>
+        <a href="https://www.youtube.com/watch?v=Hu1K2ZGJ_K4" target="_blank" class="resource-link">Mini Project: Performance Testing your web app with k6</a>
+      </div>
+      <div class="resource-item">
+        <span class="resource-badge book-badge">Book</span>
+        <a href="https://www.amazon.co.uk/High-Performance-Web-Sites-Essential/dp/0596529309" target="_blank" class="resource-link">High Performance Web Sites</a>
+      </div>
+      <div class="resource-item">
+        <span class="resource-badge article-badge">Article</span>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/Performance" target="_blank" class="resource-link">Web performance</a>
+      </div>
+
+      <h4>General Information:</h4>
+      <p>Performance affects user experience, conversion rates, and SEO rankings. Studies show users abandon slow sites—even 100ms delays impact conversion. Performance optimisation balances speed, user experience, and development complexity. Not every optimisation is worth it—measure first, optimise bottlenecks, and avoid premature optimisation that complicates code for negligible gains. Modern tools make measuring performance straightforward: Chrome DevTools, Lighthouse, WebPageTest, and real user monitoring provide detailed metrics and improvement suggestions.</p>
+      <p>Core Web Vitals are Google's key performance metrics: Largest Contentful Paint (LCP—how quickly main content loads, target &lt;2.5s), First Input Delay (FID—how quickly the site responds to first interaction, target &lt;100ms), and Cumulative Layout Shift (CLS—how much content shifts unexpectedly, target &lt;0.1). These metrics focus on user experience rather than technical details. Tools like Lighthouse audit your site against these metrics, providing scored reports and specific recommendations. Improving Core Web Vitals improves user experience and can boost search rankings—Google uses them as ranking factors.</p>
+      <p>Performance optimisation spans many areas: reducing bundle size (code splitting, tree shaking, minification), optimising images (compression, modern formats, lazy loading), minimising render-blocking resources (defer JavaScript, inline critical CSS), caching strategies (service workers, HTTP caching, CDNs), and optimising JavaScript execution (debouncing, throttling, web workers for heavy computations). Modern frameworks handle many optimisations automatically, but understanding performance principles helps you make informed decisions. Measure performance throughout development, not just before launch—performance regressions sneak in gradually. Build a performance budget and monitor it continuously.</p>
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: Web Performance Fundamentals</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/0fONene3OIA?si=WCu8O7U49TwoJtY7" title="Performance Basics" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+
+      <h4>Lazy Loading & Code Splitting:</h4>
+      <p>Code splitting breaks your bundle into smaller chunks that load on-demand rather than all at once, dramatically reducing initial page load time. Instead of one large bundle containing your entire app, users download only what they need immediately, loading additional code as they navigate. React supports code splitting with <code>React.lazy()</code> and Suspense: <code>const Dashboard = React.lazy(() =&gt; import('./Dashboard')); &lt;Suspense fallback={&lt;Loading /&gt;}&gt;&lt;Dashboard /&gt;&lt;/Suspense&gt;</code>. The Dashboard component only loads when rendered, with the Loading component displayed during load. This pattern is perfect for routes—users visiting your home page don't need to download code for admin dashboards.</p>
+      <p>Route-based splitting is the easiest win—split each route into separate chunks. With React Router: <code>const Home = lazy(() =&gt; import('./pages/Home')); const About = lazy(() =&gt; import('./pages/About'));</code> then wrap routes in Suspense. Most users only visit a few pages, so this dramatically reduces what they download. Component-based splitting applies to heavy components: modals, charts, rich text editors, video players—anything large that's not always needed. Dynamic imports also work for data: <code>const translations = await import(`./lang/${language}.json`)</code> loads only the needed language file.</p>
+      <p>Webpack and other bundlers automatically code-split dynamic imports, creating separate chunk files. Configure bundle analysers to visualise what's in your bundles and identify optimisation opportunities. Be strategic—splitting creates overhead (additional HTTP requests, slightly larger total size). Don't split tiny components or create hundreds of micro-bundles. Balance initial load (should be fast) against lazy load overhead. Prefetch/preload hints tell browsers to download bundles during idle time, eliminating delays when users need them: <code>&lt;link rel="prefetch" href="dashboard.chunk.js"&gt;</code>. Modern frameworks handle much of this automatically—understanding the principles helps you optimise manually when needed.</p>
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: Code Splitting in React</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/trYfDFel8e8?si=X6AXMqq7PoRKvHFA" title="Code Splitting" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+
+      <h4>Image Optimisation:</h4>
+      <p>Images typically constitute the majority of page weight, making them the highest-impact optimisation target. Start with appropriate dimensions—never load 2000px images for 300px display areas. Resize images to their display size (or 2x for retina displays). Modern formats like WebP (30-40% smaller than JPEG) and AVIF (50% smaller than JPEG) dramatically reduce file sizes whilst maintaining quality. Use <code>&lt;picture&gt;</code> elements to serve modern formats with fallbacks: <code>&lt;picture&gt;&lt;source type="image/avif" srcset="image.avif"&gt;&lt;source type="image/webp" srcset="image.webp"&gt;&lt;img src="image.jpg" alt="description"&gt;&lt;/picture&gt;</code>. Browsers automatically use the first format they support.</p>
+      <p>Lazy loading defers image loading until they're near the viewport: <code>&lt;img loading="lazy" src="image.jpg" alt="description"&gt;</code>. This native HTML attribute requires no JavaScript and dramatically improves initial page load—users only download images they actually see. Combine with responsive images using <code>srcset</code> to serve appropriately sized images based on screen size and density: <code>&lt;img srcset="small.jpg 400w, medium.jpg 800w, large.jpg 1200w" sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px" src="medium.jpg"&gt;</code>. Browsers choose the best image automatically based on viewport size and pixel density.</p>
+      <p>Image CDNs automatically optimise images on-the-fly, serving appropriately sized, compressed, and formatted images based on user agent and request. Services like Cloudinary, Imgix, and Cloudflare Images transform images via URL parameters—resize, crop, compress, convert format—without manual processing. This is especially valuable for user-uploaded content where you can't pre-optimise images. Implement blur-up technique: display tiny, blurred placeholder images that load instantly, then swap in full-resolution images when loaded. This improves perceived performance dramatically—users see something immediately rather than blank spaces. Tools like sqoosh.app help manually optimise images when needed.</p>
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: Image Optimisation Techniques</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/-zzmfjIiC3M?si=ImYp-q47f-Dlp4wS" title="Image Optimisation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+
+      <h4>Lighthouse Audits & Metrics:</h4>
+      <p>Lighthouse is an automated tool built into Chrome DevTools that audits web pages for performance, accessibility, SEO, and best practises. Run audits via DevTools (Lighthouse tab) or command line, testing in incognito mode to avoid extension interference. Lighthouse generates comprehensive reports with scores (0-100) for each category and specific recommendations for improvements. Performance score considers multiple metrics—not just load time but interactivity, visual stability, and more. Lighthouse simulates mobile connections (slow 4G) and devices by default, reflecting real-world conditions for many users.</p>
+      <p>Key Lighthouse metrics include First Contentful Paint (FCP—when first content appears, target &lt;1.8s), Largest Contentful Paint (LCP—when main content loads, target &lt;2.5s), Total Blocking Time (TBT—how long the main thread is blocked, target &lt;200ms), Cumulative Layout Shift (CLS—visual stability, target &lt;0.1), and Speed Index (how quickly content is visually populated). Each metric highlights different performance aspects. Lighthouse also audits accessibility (ARIA labels, colour contrast, keyboard navigation), SEO (meta tags, mobile-friendliness, structured data), and best practises (HTTPS, console errors, image aspect ratios).</p>
+      <p>Lighthouse recommendations are prioritised by impact—focus on high-impact suggestions first. Common recommendations include: enable text compression, serve images in next-gen formats, properly size images, defer offscreen images, eliminate render-blocking resources, minimise main-thread work, and reduce JavaScript execution time. Some recommendations are easy wins (serving compressed text, adding meta tags), others require significant refactoring (code splitting, eliminating third-party scripts). Run Lighthouse regularly during development—don't wait until launch to discover performance issues. Set performance budgets based on Lighthouse scores and fail builds that exceed budgets. Real user monitoring (RUM) complements Lighthouse by showing how actual users experience your site, not just lab conditions.</p>
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: Google Lighthouse Explained</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/6IL7-EmUhQ0?si=EZ5wiFcILHB9dQ-J" title="Lighthouse Audits" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+
+      <h4>Caching Strategies:</h4>
+      <p>Caching stores resources locally, eliminating redundant downloads and dramatically improving load times for returning users. Browser caching uses HTTP headers to control how long browsers store resources. The <code>Cache-Control</code> header specifies caching behaviour: <code>Cache-Control: max-age=31536000</code> tells browsers to cache for one year—appropriate for versioned assets (bundle.abc123.js) that never change. For HTML documents that update frequently, use <code>Cache-Control: no-cache</code>, forcing browsers to validate with the server (using ETags) rather than using stale cached versions. <code>immutable</code> directive tells browsers versioned assets never change, eliminating validation requests.</p>
+      <p>Service workers enable programmatic caching control, forming the backbone of Progressive Web Apps. Service workers run in the background, intercepting network requests and serving cached responses when appropriate. Common strategies: network-first (try network, fall back to cache—good for frequently changing data), cache-first (use cache if available, fall back to network—good for static assets), stale-whilst-revalidate (serve cached version immediately whilst fetching update in background—balances speed and freshness). Service workers also enable offline functionality, background sync, and push notifications. Workbox simplifies service worker development, providing pre-built strategies and utilities.</p>
+      <p>Content Delivery Networks (CDNs) cache assets geographically close to users, reducing latency dramatically. CDNs like Cloudflare, Fastly, or AWS CloudFront sit between your origin server and users, caching responses at edge locations worldwide. First request hits origin server; subsequent requests serve from nearest edge location. CDNs handle traffic spikes gracefully, protect against DDoS attacks, and provide analytics. Configure caching rules per resource type—long caching for versioned assets, short for HTML, purge cache when deploying. Many modern hosting platforms (Netlify, Vercel) include integrated CDNs. Proper caching dramatically improves performance for minimal effort—it's usually the highest-ROI optimisation.</p>
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: Caching Strategies Explained</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/wh98s0XhMmQ?si=f0CKvv3lCCi6Ldkk" title="Caching Strategies" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+      
+      <h4>Optimization Strategies:</h4>
+      <ul class="topic-list">
+        <li><strong>Lazy loading:</strong> Code splitting, dynamic imports, route-based splitting</li>
+        <li><strong>Image optimization:</strong> Modern formats (WebP, AVIF), responsive images, lazy loading</li>
+        <li><strong>Lighthouse audits:</strong> Using Chrome DevTools to measure and improve performance</li>
+        <li><strong>Caching strategies:</strong> Browser caching, service workers, CDN usage</li>
+        <li><strong>Bundle size optimization:</strong> Tree shaking, minification, compression</li>
+      </ul>
+
+      <!-- Ad Block: After HTML Section -->
+      <div style="margin: 40px 0; text-align: center;">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7439109164508333"
+             crossorigin="anonymous"></script>
+        <!-- Index-Header -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-7439109164508333"
+             data-ad-slot="4111274044"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+
+      <!-- Navigation Buttons Bottom -->
+      <div class="nav-buttons">
+        <a href="Frontend-Developer-Guide-Testing.html" class="nav-btn nav-btn-prev">Tesing</a>
+        <a href="Frontend-Developer-Guide-Documentation-&-UX.html" class="nav-btn nav-btn-next">Documentation & UX</a>
+      </div>
+    </main>
+  </div>
+
+  <!-- Placeholder for the footer -->
+  <div id="footer-placeholder"></div>
+  <script src="../../analytics.js"></script>
+  <script src="../../nav-switcher.js"></script>
+  <script src="footer.js"></script>
+  <script src="../script.js"></script>
+
+  <script>
+    // Sidebar resizer functionality
+    const resizer = document.getElementById('resizer');
+    const sidebar = document.getElementById('sidebar');
+    
+    let isResizing = false;
+    
+    resizer.addEventListener('mousedown', (e) => {
+      isResizing = true;
+      document.body.style.cursor = 'col-resize';
+      document.body.style.userSelect = 'none';
+    });
+    
+    document.addEventListener('mousemove', (e) => {
+      if (!isResizing) return;
+      
+      const newWidth = e.clientX;
+      if (newWidth >= 200 && newWidth <= 500) {
+        sidebar.style.width = newWidth + 'px';
+      }
+    });
+    
+    document.addEventListener('mouseup', () => {
+      isResizing = false;
+      document.body.style.cursor = '';
+      document.body.style.userSelect = '';
+    });
+
+    // Mobile sidebar toggle
+    const mobileToggle = document.getElementById('mobileContentToggle');
+    const sidebarCloseBtn = document.getElementById('sidebarCloseBtn');
+    
+    if (mobileToggle) {
+      mobileToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('mobile-open');
+      });
+    }
+    
+    if (sidebarCloseBtn) {
+      sidebarCloseBtn.addEventListener('click', () => {
+        sidebar.classList.remove('mobile-open');
+      });
+    }
+  </script>
+</body>
+</html>

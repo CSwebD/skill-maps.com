@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frontend Developer Guide - Security Basics</title>
+  <link rel="icon" href="../../images/logo.jpg" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="../style2.css">
+  <meta name="description" content="Complete frontend developer roadmap from beginner to advanced. Master HTML, CSS, JavaScript, React, and modern web development." />
+  <meta property="og:title" content="Frontend Developer Roadmap | Skill Maps" />
+  <meta property="og:description" content="Learn frontend development through structured levels, from web basics to advanced PWAs and TypeScript." />
+  <meta property="og:url" content="https://www.skill-maps.com/frontend-developer.html" />
+  <meta property="og:image" content="https://www.skill-maps.com/logo.jpg" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <div id="panel-bar-placeholder"></div>
+  <script src="panel-nav.js"></script>
+
+  
+  <div class="progress-bar">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+
+  <!-- Mobile Content Toggle Button -->
+  <button class="mobile-content-toggle" id="mobileContentToggle">
+    <i class="fas fa-bars"></i>
+    Content
+  </button>
+
+
+  <div class="course-container">
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <button class="sidebar-close-btn" id="sidebarCloseBtn">×</button>
+      <div class="resizer" id="resizer"></div>
+      <div class="sidebar-header">
+        <a href="../../domains.html" class="back-button">← Back to Home</a>
+        <h1 class="page-title">Frontend Developer</h1>
+        <span style="font-size: 13px; color: #377536; display: block; margin-top: -10px; margin-bottom: 15px;">Full Course</span>
+      </div>
+
+      <!-- Introduction -->
+      <h2>Getting Started</h2>
+      <h3><a href="Frontend-Developer-Guide-Main.html">Introduction</a></h3>
+
+      <!-- Step 1: HTML & CSS Fundamentals -->
+      <h2>HTML & CSS Fundamentals</h2>
+      <h3><a href="Frontend-Developer-Guide-Html.html">1. HTML Basics</a></h3>
+      <h3><a href="Frontend-Developer-Guide-CSS.html">2. CSS Basics</a></h3>
+      <h3><a href="Frontend-Developer-Guide-Developer-Tools.html">3. Developer Tools & Setup</a></h3>
+
+      <!-- Step 2: JavaScript Fundamentals -->
+      <h2>JavaScript Fundamentals</h2>
+      <h3><a href="Frontend-Developer-Guide-JavaScript.html">4. JavaScript Basics</a></h3>
+      <h3><a href="Frontend-Developer-Guide-DOM-Manipulation.html">5. DOM Manipulation</a></h3>
+      <h3><a href="Frontend-Developer-Guide-Advanced-JavaScript.html">6. Advanced JavaScript</a></h3>
+
+      <!-- Step 3: Responsive Design & Layout -->
+      <h2>Responsive Design & Layout</h2>
+      <h3><a href="Frontend-Developer-Guide-Responsive-Design.html">7. Responsive Design</a></h3>
+      <h3><a href="Frontend-Developer-Guide-Modern-CSS-Layout.html">8. Modern CSS Layout</a></h3>
+      <h3><a href="Frontend-Developer-Guide-CSS-Frameworks.html">9. CSS Frameworks</a></h3>
+
+      <!-- Step 4: Version Control -->
+      <h2>Version Control</h2>
+      <h3><a href="Frontend-Developer-Guide-Git-&-GitHub.html">10. Git & GitHub</a></h3>
+
+      <!-- Step 5: React & State Management -->
+      <h2>React & State Management</h2>
+      <h3><a href="Frontend-Developer-Guide-React-Fundamentals.html">11. React Fundamentals</a></h3>
+      <h3><a href="Frontend-Developer-Guide-State-Management.html">12. State Management</a></h3>
+
+      <!-- Step 6: APIs & Data -->
+      <h2>APIs & Data</h2>
+      <h3><a href="Frontend-Developer-Guide-Working-with-APIs.html">13. Working with APIs</a></h3>
+
+      <!-- Step 7: Testing & Performance -->
+      <h2>Testing & Performance</h2>
+      <h3><a href="Frontend-Developer-Guide-Testing.html">14. Testing</a></h3>
+      <h3><a href="Frontend-Developer-Guide-Performance-&-Optimization.html">15. Performance & Optimization</a></h3>
+
+      <!-- Step 8: Documentation & Deployment -->
+      <h2>Documentation & Deployment</h2>
+      <h3><a href="Frontend-Developer-Guide-Documentation-&-UX.html">16. Documentation & UX</a></h3>
+      <h3><a href="Frontend-Developer-Guide-Deployment.html">17. Deployment</a></h3>
+
+      <!-- Step 9: Progressive Web Apps -->
+      <h2>Progressive Web Apps</h2>
+      <h3><a href="Frontend-Developer-Guide-Progressive-Web-Apps.html">18. Progressive Web Apps</a></h3>
+
+      <!-- Step 10: Advanced Topics -->
+      <h2>Advanced Topics</h2>
+      <h3><a href="Frontend-Developer-Guide-TypeScript.html">19. TypeScript</a></h3>
+      <h3><a href="Frontend-Developer-Guide-Web-Accessibility.html">20. Web Accessibility</a></h3>
+      <h3><a href="Frontend-Developer-Guide-Security-Basics.html">21. Security Basics</a></h3>
+
+      <h2 style="font-weight: 700; color: #377536;">Final Projects</h2>
+      <h3><a href="Frontend-Developer-Guide-Portfolio-Projects.html">Portfolio Projects</a></h3>
+    </aside>
+
+    <!-- CONTENT -->
+    <main class="content" id="content">
+      <div class="content-header">
+        <h1>Frontend Development Course</h1>
+      </div>
+
+      <!-- Ad Block: After HTML Section -->
+      <div style="margin: 40px 0; text-align: center;">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7439109164508333"
+             crossorigin="anonymous"></script>
+        <!-- Index-Header -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-7439109164508333"
+             data-ad-slot="4111274044"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+
+      <!-- STEP 1: HTML & CSS FUNDAMENTALS -->
+      <h2 id="html-basics">21. Security Basics</h2>
+      
+      <!-- Navigation Buttons Top -->
+      <div class="nav-buttons">
+        <a href="Frontend-Developer-Guide-Web-Accessibility.html" class="nav-btn nav-btn-prev">Web Accessibility</a>
+        <a href="Frontend-Developer-Guide-Portfolio-Projects.html" class="nav-btn nav-btn-next">Portfolio Projects</a>
+      </div>
+      
+      <p>Web security protects users and applications from attacks, requiring constant vigilance and adherence to security best practises.</p>
+      
+      <h4>Free Resources:</h4>
+      <div class="resource-item">
+        <span class="resource-badge video-badge">Video</span>
+        <a href="https://www.youtube.com/watch?v=eRJ_r8WF1Y0" target="_blank" class="resource-link">Tutorial: Web Security Model</a>
+      </div>
+      <div class="resource-item">
+        <span class="resource-badge video-badge">Video</span>
+        <a href="https://www.youtube.com/watch?v=Gd6AQsthXNY" target="_blank" class="resource-link">Mini Project: Build a Blog Platform with Spring Security for Beginners - Full Build</a>
+      </div>
+      <div class="resource-item">
+        <span class="resource-badge book-badge">Book</span>
+        <a href="https://www.amazon.co.uk/Web-Application-Security-Exploitation-Countermeasures/dp/1492053112" target="_blank" class="resource-link">Web Application Security: Exploitation and Countermeasures for Modern Web Applications</a>
+      </div>
+      <div class="resource-item">
+        <span class="resource-badge article-badge">Article</span>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/Security" target="_blank" class="resource-link">Security on the web</a>
+      </div>
+
+      <h4>General Information:</h4>
+      <p>Web security protects users and applications from attacks that steal data, hijack accounts, or compromise systems. Security isn't optional or an add-on—it's fundamental to responsible development. Attacks are constant and automated—even small sites face bot attacks. Security vulnerabilities harm users (identity theft, financial loss) and businesses (data breaches, lawsuits, reputation damage, regulatory fines). As developers, we're responsible for user safety. Fortunately, modern frameworks and platforms handle many security concerns automatically, and following best practises prevents most vulnerabilities. Security requires ongoing attention—new vulnerabilities emerge, dependencies need updating, and threat landscapes evolve.</p>
+      <p>Common web vulnerabilities include: Cross-Site Scripting (XSS—injecting malicious scripts), Cross-Site Request Forgery (CSRF—tricking users into unwanted actions), SQL injection (manipulating database queries through inputs), authentication/authorisation flaws (bypassing login, accessing unauthorised resources), insecure dependencies (using libraries with known vulnerabilities), and misconfigurations (exposing sensitive data, using weak encryption). OWASP Top 10 lists the most critical web application security risks—familiarise yourself with these. Most frameworks protect against common vulnerabilities if used correctly, but developers must understand underlying threats to avoid misuse.</p>
+      <p>Security principles include: validate and sanitise all inputs (never trust user data), use HTTPS everywhere (encrypt all traffic), implement proper authentication and authorisation (verify identity and permissions), keep dependencies updated (patch vulnerabilities promptly), follow principle of least privilege (grant minimum necessary access), store sensitive data securely (hash passwords, encrypt data at rest), and prepare for breaches (logging, monitoring, incident response plans). Security is layered—defence in depth means multiple security measures, so compromising one doesn't compromise everything. Regular security audits, penetration testing, and staying informed about emerging threats are part of ongoing security practise.</p>
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: Web Security Basics</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/zYLkdT731x8?si=XUvnxz0661vJ8Wjo" title="Security Fundamentals" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+
+      <h4>Cross-Site Scripting (XSS):</h4>
+      <p>XSS (Cross-Site Scripting) injects malicious JavaScript into web pages, executing in other users' browsers. Attackers inject scripts through any user input displayed on pages: comments, usernames, search queries, form fields. If an app displays user input without sanitisation, attackers inject <code>&lt;script&gt;</code> tags or event handlers that steal cookies, capture keystrokes, redirect users, or deface content. XSS is amongst the most common and dangerous web vulnerabilities. XSS comes in three types: stored (malicious code saved in database, affecting all users viewing it), reflected (malicious code in URL, affecting users who click malicious links), and DOM-based (client-side JavaScript mishandles input).</p>
+      <p>Prevent XSS by properly escaping/encoding user input before displaying. React automatically escapes values in JSX—<code>{userInput}</code> is safe because React escapes HTML. However, <code>dangerouslySetInnerHTML</code> bypasses protection and should rarely be used—only with sanitised HTML from trusted sources. Sanitise HTML with libraries like DOMPurify before using <code>dangerouslySetInnerHTML</code>. Never build HTML strings from user input and inject with <code>innerHTML</code>—use DOM APIs or framework-provided safe methods. Validate inputs server-side (never trust client validation)—reject obviously malicious patterns, though perfect input validation is impossible (XSS attacks are creative).</p>
+      <p>Content Security Policy (CSP) headers provide additional protection by restricting where scripts can load from: <code>Content-Security-Policy: default-src 'self'; script-src 'self' https://trusted-cdn.com</code>. This prevents injected scripts from executing even if XSS vulnerabilities exist. Modern frameworks make XSS harder but not impossible—developer vigilance remains essential. Never concatenate user input into HTML/JavaScript/CSS/URLs. Always use framework-provided data binding and sanitisation. Regular security audits and dependency updates patch XSS vulnerabilities in third-party code. Users trust us with sensitive data—preventing XSS is fundamental to honouring that trust.</p>
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: Understanding XSS Attacks</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/EoaDgUgS6QA?si=9fDR4RX9ZP7-nR35" title="XSS Security" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+
+      <h4>HTTPS & Secure Communication:</h4>
+      <p>HTTPS (HTTP Secure) encrypts traffic between browsers and servers using TLS/SSL, preventing eavesdropping and tampering. Without HTTPS, anyone on the network path (coffee shop WiFi operators, ISPs, government agencies) can read and modify traffic—seeing passwords, personal information, session tokens, everything. HTTPS protects confidentiality (encrypted data is unreadable), integrity (tampering is detected), and authenticity (certificate proves server identity). Modern browsers mark HTTP sites as "Not Secure," Google penalises them in search rankings, and some browser features (geolocation, camera, push notifications) require HTTPS. HTTPS is no longer optional—it's baseline requirement for production sites.</p>
+      <p>Let's Encrypt provides free SSL/TLS certificates with automated renewal, eliminating cost as an excuse. Most hosting platforms (Netlify, Vercel, GitHub Pages, Cloudflare Pages) provide HTTPS automatically. For self-hosted sites, Certbot automates certificate issuance and renewal from Let's Encrypt. Configure servers to redirect HTTP to HTTPS automatically: <code>if (req.protocol !== 'https') res.redirect('https://' + req.get('host') + req.url)</code>. HSTS (HTTP Strict Transport Security) header forces HTTPS after first visit: <code>Strict-Transport-Security: max-age=31536000; includeSubDomains; preload</code>. Preload HSTS to browser preload lists (hstspreload.org) to protect even first visits.</p>
+      <p>HTTPS best practises: use TLS 1.2+ (disable older versions with known vulnerabilities), use strong cipher suites (disable weak ciphers), keep certificates valid (automate renewal), and use HSTS headers. Mixed content (HTTPS pages loading HTTP resources) breaks security—browsers block or warn about HTTP scripts/stylesheets. Update all asset URLs to HTTPS or use protocol-relative URLs (<code>//example.com/image.jpg</code>). Regular certificate monitoring prevents expiration surprises. Security is holistic—HTTPS protects data in transit but doesn't secure applications against XSS, SQL injection, or other vulnerabilities. HTTPS is essential foundation, not complete solution.</p>
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: HTTPS Explained</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/j9QmMEWmcfo?si=cR050nPqhp1pRqMP" title="HTTPS Security" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+
+      <h4>Authentication Security:</h4>
+      <p>Strong authentication protects user accounts from unauthorised access. Password security starts with requirements: minimum length (12+ characters), complexity requirements are debatable (long passphrases are stronger than short complex passwords). Never store passwords in plain text—attackers who compromise databases steal all passwords. Hash passwords with bcrypt, scrypt, or Argon2 (strong, intentionally slow algorithms that resist brute-force attacks). Salting (adding random data before hashing) prevents rainbow table attacks. Never build your own crypto—use established libraries and follow security experts' guidance. Password reset flows require care—use one-time tokens with expiration, send to verified email addresses only.</p>
+      <p>Multi-factor authentication (MFA) dramatically improves security by requiring multiple proofs of identity—something you know (password), something you have (phone, hardware token), or something you are (fingerprint, face). Even compromised passwords don't grant access without second factor. Implement TOTP (Time-based One-Time Password) with authenticator apps using libraries like speakeasy. SMS-based MFA is better than nothing but vulnerable to SIM-swapping attacks—authenticator apps are more secure. Recovery codes provide backup access when users lose devices. Enforce MFA for privileged accounts and encourage for all users.</p>
+      <p>Session management affects security significantly. Use secure, httpOnly cookies for session tokens (JavaScript can't access, reducing XSS impact). Set appropriate session timeouts—short for sensitive operations, longer for low-risk sites. Regenerate session IDs on login to prevent fixation attacks. Implement account lockout after failed login attempts (temporarily, to avoid DoS attacks). Monitor suspicious activities (logins from unusual locations, many failed attempts, account changes). Consider device fingerprinting and anomaly detection. Store minimal session data—session IDs that reference server-side data, not sensitive information in cookies. Security is usability trade-off—balance protection with user experience. Forced reauthentication for sensitive operations (password changes, purchases) adds security without constant login prompts.</p>
+      <div class="highlight-box" style="margin-top: 25px;">
+        <p style="margin-bottom: 15px;"><strong>Video Tutorial: Authentication Best Practises</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/6WZ6S-qmtqY?si=vriCNTzh7-Byermj" title="Authentication Security" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 15px">Source: Youtube</p>
+      </div>
+      
+      <h4>Security Concepts:</h4>
+      <ul class="topic-list">
+        <li><strong>Cross-Site Scripting (XSS):</strong> Understanding and preventing XSS attacks</li>
+        <li><strong>HTTPS:</strong> Secure communication with SSL/TLS certificates</li>
+        <li><strong>CORS:</strong> Cross-Origin Resource Sharing policies</li>
+        <li><strong>Content Security Policy:</strong> Preventing code injection attacks</li>
+        <li><strong>Authentication best practices:</strong> Secure password handling, tokens</li>
+      </ul>
+
+      <!-- Ad Block: After HTML Section -->
+      <div style="margin: 40px 0; text-align: center;">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7439109164508333"
+             crossorigin="anonymous"></script>
+        <!-- Index-Header -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-7439109164508333"
+             data-ad-slot="4111274044"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+
+      <!-- Navigation Buttons Bottom -->
+      <div class="nav-buttons">
+        <a href="Frontend-Developer-Guide-Web-Accessibility.html" class="nav-btn nav-btn-prev">Web Accessibility</a>
+        <a href="Frontend-Developer-Guide-Portfolio-Projects.html" class="nav-btn nav-btn-next">Portfolio Projects</a>
+      </div>
+    </main>
+  </div>
+
+  <!-- Placeholder for the footer -->
+  <div id="footer-placeholder"></div>
+  <script src="../../analytics.js"></script>
+  <script src="../../nav-switcher.js"></script>
+  <script src="footer.js"></script>
+  <script src="../script.js"></script>
+
+  <script>
+    // Sidebar resizer functionality
+    const resizer = document.getElementById('resizer');
+    const sidebar = document.getElementById('sidebar');
+    
+    let isResizing = false;
+    
+    resizer.addEventListener('mousedown', (e) => {
+      isResizing = true;
+      document.body.style.cursor = 'col-resize';
+      document.body.style.userSelect = 'none';
+    });
+    
+    document.addEventListener('mousemove', (e) => {
+      if (!isResizing) return;
+      
+      const newWidth = e.clientX;
+      if (newWidth >= 200 && newWidth <= 500) {
+        sidebar.style.width = newWidth + 'px';
+      }
+    });
+    
+    document.addEventListener('mouseup', () => {
+      isResizing = false;
+      document.body.style.cursor = '';
+      document.body.style.userSelect = '';
+    });
+
+    // Mobile sidebar toggle
+    const mobileToggle = document.getElementById('mobileContentToggle');
+    const sidebarCloseBtn = document.getElementById('sidebarCloseBtn');
+    
+    if (mobileToggle) {
+      mobileToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('mobile-open');
+      });
+    }
+    
+    if (sidebarCloseBtn) {
+      sidebarCloseBtn.addEventListener('click', () => {
+        sidebar.classList.remove('mobile-open');
+      });
+    }
+  </script>
+</body>
+</html>
