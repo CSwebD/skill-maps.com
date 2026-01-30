@@ -1,5 +1,14 @@
 [
   {
+    "id": "0020",
+    "title": "AI Recommends Non-Existent Software Versions 28% of the Time, Security Report Finds",
+    "desc": "Sonatype's 2026 report reveals AI tools hallucinate nearly 28% of package upgrade recommendations, pointing developers to non-existent versions. Analysis of 37,000 AI-driven suggestions exposes risks in automated development.",
+    "date": "2025-01-30",
+    "image": "/blog/images/0020.jpg",
+    "link": "/blog/html/ai-recommends-non-existent-projects-28-percentage-of-the-time-security-report-finds.html",
+    "category": "OpenSource"
+  },
+  {
     "id": "0019",
     "title": "Apple Hits iPhone Sales Records as Mac Numbers Slide",
     "desc": "Apple reports record-breaking iPhone sales reaching $144 billion in Q4 2024, but Mac sales drop 7% and wearables decline 3%. Analysis of Tim Cook's supply constraints and Google Gemini AI partnership.",
