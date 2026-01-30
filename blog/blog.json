@@ -1,5 +1,14 @@
 [
   {
+    "id": "0019",
+    "title": "Apple Hits iPhone Sales Records as Mac Numbers Slide",
+    "desc": "Apple reports record-breaking iPhone sales reaching $144 billion in Q4 2024, but Mac sales drop 7% and wearables decline 3%. Analysis of Tim Cook's supply constraints and Google Gemini AI partnership.",
+    "date": "2025-01-30",
+    "image": "/blog/images/0019.jpg",
+    "link": "/blog/html/apple-hits-iphone-sales-records-as-mac-numbers-slide.html",
+    "category": "Tech"
+  },
+  {
     "id": "0018",
     "title": "Top 10 Cloud Development Platforms 2025: Complete Comparison & The Best",
     "desc": "Complete comparison of AWS, Azure, GCP, GitHub Codespaces, GitPod and 5 more platforms. Scored across 7 features with sortable table. Discover which platform will dominate 2026.",
