@@ -1,0 +1,1892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-adsense-account" content="ca-pub-7439109164508333">
+    <title>CV Editor - Skill Maps</title>
+    <link rel="icon" href="images/logo.jpg" type="image/x-icon">
+    <meta name="description" content="Build your professional resume in real-time with our interactive CV Editor." />
+    <!-- Open Graph -->
+    <meta property="og:title" content="CV Editor | Skill Maps" />
+    <meta property="og:description" content="Create and export professional CVs with our free online CV Editor." />
+    <meta property="og:url" content="https://www.skill-maps.com" />
+    <meta property="og:image" content="https://www.skill-maps.com/images/logo.jpg" />
+    <!-- PDF Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <!-- DOCX Library -->
+    <script src="https://unpkg.com/docx@7.8.2/build/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": "Skill Maps",
+      "url": "https://www.skill-maps.com",
+      "logo": "https://www.skill-maps.com/images/logo.jpg"
+    }
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7439109164508333"
+         crossorigin="anonymous"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZS5VZ74BH8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-ZS5VZ74BH8');
+    </script>
+    <style>
+        /* CV Editor Scoped Styles */
+        #cv-editor-app * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #cv-editor-app {
+            --cv-primary: #3b82f6;
+            --cv-primary-hover: #2563eb;
+            --cv-secondary: #f8fafc;
+            --cv-accent: #16a34a;
+            --cv-accent-hover: #30d46c;
+            --cv-text: #0f172a;
+            --cv-text-muted: #64748b;
+            --cv-border: #e2e8f0;
+            --cv-bg-input: #ffffff;
+            --cv-bg-panel: #f8fafc;
+            --cv-success: #3b82f6;
+            --cv-danger: #dc2626;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+        }
+
+        #cv-editor-app {
+            background: #f8fafc;
+            color: var(--cv-text);
+            min-height: 100vh;
+            padding: 2rem;
+            padding-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        /* Custom scrollbar styling */
+        #cv-editor-app .cv-panel::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        #cv-editor-app .cv-panel::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 4px;
+        }
+
+        #cv-editor-app .cv-panel::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+
+        #cv-editor-app .cv-panel::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        #cv-editor-app .cv-container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        #cv-editor-app .cv-header-section {
+            text-align: center;
+            margin-bottom: 3rem;
+            animation: fadeInDown 0.6s ease-out;
+        }
+
+        #cv-editor-app .cv-main-title {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--cv-text);
+        }
+
+        #cv-editor-app .cv-subtitle {
+            color: var(--cv-text-muted);
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        #cv-editor-app .cv-editor-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            animation: fadeIn 0.8s ease-out 0.2s both;
+            height: calc(100vh - 280px);
+            align-items: start;
+        }
+
+        #cv-editor-app .cv-panel {
+            background: white;
+            border: 1px solid var(--cv-border);
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+            overflow-y: auto;
+            max-height: 100%;
+        }
+
+        #cv-editor-app .cv-panel h2 {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--cv-text);
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        #cv-editor-app .cv-form-section {
+            margin-bottom: 2.5rem;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        #cv-editor-app .cv-form-section h3 {
+            font-size: 1.125rem;
+            margin-bottom: 1.25rem;
+            color: var(--cv-text);
+            font-weight: 700;
+        }
+
+        #cv-editor-app .cv-form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        #cv-editor-app .cv-form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--cv-text);
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        #cv-editor-app input[type="text"],
+        #cv-editor-app input[type="email"],
+        #cv-editor-app input[type="tel"],
+        #cv-editor-app textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            background: var(--cv-bg-input);
+            border: 1.5px solid var(--cv-border);
+            border-radius: 8px;
+            color: var(--cv-text);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 0.95rem;
+            transition: all 0.15s ease;
+        }
+
+        #cv-editor-app input:focus,
+        #cv-editor-app textarea:focus {
+            outline: none;
+            border-color: var(--cv-accent);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        #cv-editor-app textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        #cv-editor-app .cv-button-group {
+            display: flex;
+            gap: 1rem;
+            margin: 0;
+        }
+
+        #cv-editor-app button {
+            padding: 0.75rem 1.5rem;
+            background: var(--cv-accent);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.95rem;
+        }
+
+        #cv-editor-app button:hover {
+            background: var(--cv-accent-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+        }
+
+        #cv-editor-app .cv-add-btn {
+            background: white;
+            border: 2px dashed var(--cv-border);
+            color: var(--cv-text-muted);
+            width: 100%;
+        }
+
+        #cv-editor-app .cv-add-btn:hover {
+            border-color: var(--cv-accent);
+            color: var(--cv-accent);
+            background: rgba(59, 130, 246, 0.05);
+            transform: none;
+            box-shadow: none;
+        }
+
+        #cv-editor-app .cv-remove-btn {
+            background: white;
+            color: var(--cv-danger);
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--cv-danger);
+        }
+
+        #cv-editor-app .cv-remove-btn:hover {
+            background: var(--cv-danger);
+            color: white;
+        }
+
+        #cv-editor-app .cv-dynamic-item {
+            background: var(--cv-bg-panel);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            border: 1px solid var(--cv-border);
+            animation: slideIn 0.3s ease-out;
+        }
+
+        #cv-editor-app .cv-preview-container {
+            background: white;
+            color: var(--cv-text);
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            min-height: 800px;
+        }
+
+        #cv-editor-app .cv-header {
+            border-bottom: 3px solid var(--cv-text);
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        #cv-editor-app .cv-name {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--cv-text);
+            margin-bottom: 0.5rem;
+        }
+
+        #cv-editor-app .cv-title {
+            font-size: 1.125rem;
+            color: var(--cv-text);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        #cv-editor-app .cv-contact {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            color: var(--cv-text-muted);
+            font-size: 0.9rem;
+        }
+
+        #cv-editor-app .cv-contact span {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        #cv-editor-app .cv-section {
+            margin-bottom: 2rem;
+        }
+
+        #cv-editor-app .cv-section h3 {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--cv-text);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--cv-text);
+            padding-bottom: 0.5rem;
+        }
+
+        #cv-editor-app .cv-item {
+            margin-bottom: 1.5rem;
+        }
+
+        #cv-editor-app .cv-item-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        #cv-editor-app .cv-item-title {
+            font-weight: 600;
+            color: var(--cv-text);
+            font-size: 1.1rem;
+        }
+
+        #cv-editor-app .cv-item-date {
+            color: var(--cv-text-muted);
+            font-size: 0.9rem;
+        }
+
+        #cv-editor-app .cv-item-subtitle {
+            color: var(--cv-text);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        #cv-editor-app .cv-item-description {
+            color: var(--cv-text-muted);
+            line-height: 1.8;
+            white-space: pre-wrap;
+        }
+
+        #cv-editor-app .cv-skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        #cv-editor-app .cv-skill-tag {
+            color: var(--cv-text);
+            font-size: 0.875rem;
+        }
+
+        #cv-editor-app .cv-language-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        #cv-editor-app .cv-language-add-btn {
+            background: white;
+            border: 2px dashed var(--cv-border);
+            color: var(--cv-text-muted);
+            width: 100%;
+            padding: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        #cv-editor-app .cv-language-add-btn:hover {
+            border-color: var(--cv-accent);
+            color: var(--cv-accent);
+            background: rgba(59, 130, 246, 0.05);
+            transform: none;
+            box-shadow: none;
+        }
+
+        #cv-editor-app .cv-export-section {
+            background: white;
+            padding: 1.25rem 2rem;
+            border-top: 2px solid var(--cv-border);
+            border-bottom: 2px solid var(--cv-border);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            margin: 2rem 0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        #cv-editor-app .cv-export-section h3 {
+            margin: 0;
+            color: var(--cv-text);
+            font-weight: 700;
+            font-size: 1rem;
+            margin-right: 1rem;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @media (max-width: 1200px) {
+            #cv-editor-app .cv-editor-grid {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+            
+            #cv-editor-app .cv-panel {
+                max-height: 600px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #cv-editor-app .cv-export-section {
+                flex-direction: column;
+                padding: 1rem;
+                gap: 0.75rem;
+            }
+
+            #cv-editor-app .cv-export-section h3 {
+                margin-right: 0;
+                margin-bottom: 0.5rem;
+            }
+
+            #cv-editor-app .cv-button-group {
+                width: 100%;
+                justify-content: center;
+            }
+
+            #cv-editor-app button {
+                flex: 1;
+                min-width: 0;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            #cv-editor-app .cv-panel:first-child,
+            #cv-editor-app .cv-header-section,
+            #cv-editor-app .cv-export-section {
+                display: none;
+            }
+            #cv-editor-app .cv-preview-container {
+                box-shadow: none;
+                padding: 0;
+            }
+            #cv-editor-app .cv-title {
+                color: #000000 !important;
+            }
+            #cv-editor-app .cv-item-subtitle {
+                color: #000000 !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 pt-16">
+
+    <!-- Placeholder for the panel bar -->
+    <div id="panel-bar-placeholder"></div>
+    <script src="panel-nav.js"></script>
+
+    <div id="cv-editor-app">
+        <div class="cv-container">
+            <header class="cv-header-section">
+                <h1 class="cv-main-title">CV Editor</h1>
+                <p class="cv-subtitle">Build your professional resume in real-time</p>
+            </header>
+
+            <div class="cv-editor-grid">
+                <!-- Input Panel -->
+                <div class="cv-panel">
+                    <h2>Your Information</h2>
+                    
+                    <!-- Personal Info -->
+                    <div class="cv-form-section">
+                        <h3>Personal Details</h3>
+                        <div class="cv-form-group">
+                            <label>Full Name</label>
+                            <input type="text" id="fullName" placeholder="John Doe" oninput="updatePreview()">
+                        </div>
+                        <div class="cv-form-group">
+                            <label>Professional Title</label>
+                            <input type="text" id="title" placeholder="Senior Software Engineer" oninput="updatePreview()">
+                        </div>
+                        <div class="cv-form-group">
+                            <label>Email</label>
+                            <input type="email" id="email" placeholder="john@example.com" oninput="updatePreview()">
+                        </div>
+                        <div class="cv-form-group">
+                            <label>Phone</label>
+                            <input type="tel" id="phone" placeholder="+1 234 567 8900" oninput="updatePreview()">
+                        </div>
+                        <div class="cv-form-group">
+                            <label>Location</label>
+                            <input type="text" id="location" placeholder="San Francisco, CA" oninput="updatePreview()">
+                        </div>
+                        <div class="cv-form-group">
+                            <label>LinkedIn</label>
+                            <input type="text" id="linkedin" placeholder="linkedin.com/in/johndoe" oninput="updatePreview()">
+                        </div>
+                        <div class="cv-form-group">
+                            <label>GitHub</label>
+                            <input type="text" id="github" placeholder="github.com/johndoe" oninput="updatePreview()">
+                        </div>
+                    </div>
+
+                    <!-- Summary -->
+                    <div class="cv-form-section">
+                        <h3>Professional Summary</h3>
+                        <div class="cv-form-group">
+                            <textarea id="summary" placeholder="Brief professional summary highlighting your key achievements and expertise..." oninput="updatePreview()"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Experience -->
+                    <div class="cv-form-section">
+                        <h3>Work Experience</h3>
+                        <div id="experienceContainer"></div>
+                        <button class="cv-add-btn" onclick="addExperience()">+ Add Experience</button>
+                    </div>
+
+                    <!-- Education -->
+                    <div class="cv-form-section">
+                        <h3>Education</h3>
+                        <div id="educationContainer"></div>
+                        <button class="cv-add-btn" onclick="addEducation()">+ Add Education</button>
+                    </div>
+
+                    <!-- Skills -->
+                    <div class="cv-form-section">
+                        <h3>Skills</h3>
+                        <div class="cv-form-group">
+                            <label>Add skills (comma-separated)</label>
+                            <input type="text" id="skills" placeholder="JavaScript, Python, React, Node.js, Docker" oninput="updatePreview()">
+                        </div>
+                    </div>
+
+                    <!-- Projects -->
+                    <div class="cv-form-section">
+                        <h3>Projects</h3>
+                        <div id="projectsContainer"></div>
+                        <button class="cv-add-btn" onclick="addProject()">+ Add Project</button>
+                    </div>
+
+                    <!-- Certifications -->
+                    <div class="cv-form-section">
+                        <h3>Certifications</h3>
+                        <div id="certificationsContainer"></div>
+                        <button class="cv-add-btn" onclick="addCertification()">+ Add Certification</button>
+                    </div>
+
+                    <!-- Languages -->
+                    <div class="cv-form-section">
+                        <h3>Languages</h3>
+                        <div id="languagesContainer"></div>
+                        <button class="cv-language-add-btn" onclick="addLanguage()">+ Add Language</button>
+                    </div>
+                </div>
+
+                <!-- Preview Panel -->
+                <div class="cv-panel">
+                    <h2>Live Preview</h2>
+                    <div class="cv-preview-container" id="cvPreview">
+                        <div class="cv-header">
+                            <div class="cv-name" id="previewName">Your Name</div>
+                            <div class="cv-title" id="previewTitle">Professional Title</div>
+                            <div class="cv-contact" id="previewContact">
+                            </div>
+                        </div>
+
+                        <div class="cv-section" id="summarySection" style="display: none;">
+                            <h3>Professional Summary</h3>
+                            <div class="cv-item-description" id="previewSummary"></div>
+                        </div>
+
+                        <div class="cv-section" id="experienceSection" style="display: none;">
+                            <h3>Work Experience</h3>
+                            <div id="previewExperience"></div>
+                        </div>
+
+                        <div class="cv-section" id="educationSection" style="display: none;">
+                            <h3>Education</h3>
+                            <div id="previewEducation"></div>
+                        </div>
+
+                        <div class="cv-section" id="skillsSection" style="display: none;">
+                            <h3>Skills</h3>
+                            <div class="cv-skills-grid" id="previewSkills"></div>
+                        </div>
+
+                        <div class="cv-section" id="projectsSection" style="display: none;">
+                            <h3>Projects</h3>
+                            <div id="previewProjects"></div>
+                        </div>
+
+                        <div class="cv-section" id="certificationsSection" style="display: none;">
+                            <h3>Certifications</h3>
+                            <div id="previewCertifications"></div>
+                        </div>
+
+                        <div class="cv-section" id="languagesSection" style="display: none;">
+                            <h3>Languages</h3>
+                            <div id="previewLanguages"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ad Block: Index-Header -->
+            <div style="padding: 2rem 0; background: #f8fafc; margin: 2rem 0; border-radius: 8px;">
+                <div style="max-width: 1600px; margin: 0 auto; padding: 0 1.5rem;">
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7439109164508333"
+                         crossorigin="anonymous"></script>
+                    <!-- Index-Header -->
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-7439109164508333"
+                         data-ad-slot="4111274044"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                    <script>
+                         (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+
+            <!-- Export Section -->
+            <div class="cv-export-section">
+                <h3>Export Options:</h3>
+                <div class="cv-button-group">
+                    <button onclick="downloadPDF()">PDF</button>
+                    <button onclick="downloadDOCX()">Word</button>
+                    <button onclick="window.print()">Print</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Placeholder for the footer -->
+    <div id="footer-placeholder"></div>
+    <script src="analytics.js"></script>
+    <script src="nav-switcher.js"></script>
+    <script src="footer.js"></script>
+
+    <script>
+        let experienceCount = 0;
+        let educationCount = 0;
+        let projectCount = 0;
+        let certificationCount = 0;
+        let languageCount = 0;
+
+        function addExperience() {
+            experienceCount++;
+            const container = document.getElementById('experienceContainer');
+            const div = document.createElement('div');
+            div.className = 'cv-dynamic-item';
+            div.id = `experience-${experienceCount}`;
+            div.innerHTML = `
+                <div class="cv-form-group">
+                    <label>Job Title</label>
+                    <input type="text" id="expTitle-${experienceCount}" placeholder="Software Engineer" oninput="updatePreview()">
+                </div>
+                <div class="cv-form-group">
+                    <label>Company</label>
+                    <input type="text" id="expCompany-${experienceCount}" placeholder="Tech Company Inc." oninput="updatePreview()">
+                </div>
+                <div class="cv-form-group">
+                    <label>Duration</label>
+                    <input type="text" id="expDuration-${experienceCount}" placeholder="Jan 2020 - Present" oninput="updatePreview()">
+                </div>
+                <div class="cv-form-group">
+                    <label>Description</label>
+                    <textarea id="expDesc-${experienceCount}" placeholder="Key responsibilities and achievements..." oninput="updatePreview()"></textarea>
+                </div>
+                <button class="cv-remove-btn" onclick="removeExperience(${experienceCount})">Remove</button>
+            `;
+            container.appendChild(div);
+        }
+
+        function removeExperience(id) {
+            document.getElementById(`experience-${id}`).remove();
+            updatePreview();
+        }
+
+        function addEducation() {
+            educationCount++;
+            const container = document.getElementById('educationContainer');
+            const div = document.createElement('div');
+            div.className = 'cv-dynamic-item';
+            div.id = `education-${educationCount}`;
+            div.innerHTML = `
+                <div class="cv-form-group">
+                    <label>Degree</label>
+                    <input type="text" id="eduDegree-${educationCount}" placeholder="Bachelor of Science in Computer Science" oninput="updatePreview()">
+                </div>
+                <div class="cv-form-group">
+                    <label>Institution</label>
+                    <input type="text" id="eduInstitution-${educationCount}" placeholder="University Name" oninput="updatePreview()">
+                </div>
+                <div class="cv-form-group">
+                    <label>Year</label>
+                    <input type="text" id="eduYear-${educationCount}" placeholder="2016 - 2020" oninput="updatePreview()">
+                </div>
+                <button class="cv-remove-btn" onclick="removeEducation(${educationCount})">Remove</button>
+            `;
+            container.appendChild(div);
+        }
+
+        function removeEducation(id) {
+            document.getElementById(`education-${id}`).remove();
+            updatePreview();
+        }
+
+        function addProject() {
+            projectCount++;
+            const container = document.getElementById('projectsContainer');
+            const div = document.createElement('div');
+            div.className = 'cv-dynamic-item';
+            div.id = `project-${projectCount}`;
+            div.innerHTML = `
+                <div class="cv-form-group">
+                    <label>Project Name</label>
+                    <input type="text" id="projName-${projectCount}" placeholder="E-commerce Platform" oninput="updatePreview()">
+                </div>
+                <div class="cv-form-group">
+                    <label>Technologies Used</label>
+                    <input type="text" id="projTech-${projectCount}" placeholder="React, Node.js, MongoDB" oninput="updatePreview()">
+                </div>
+                <div class="cv-form-group">
+                    <label>Description</label>
+                    <textarea id="projDesc-${projectCount}" placeholder="Built a full-stack e-commerce platform with real-time inventory management..." oninput="updatePreview()"></textarea>
+                </div>
+                <div class="cv-form-group">
+                    <label>Link (optional)</label>
+                    <input type="text" id="projLink-${projectCount}" placeholder="https://github.com/username/project" oninput="updatePreview()">
+                </div>
+                <button class="cv-remove-btn" onclick="removeProject(${projectCount})">Remove</button>
+            `;
+            container.appendChild(div);
+        }
+
+        function removeProject(id) {
+            document.getElementById(`project-${id}`).remove();
+            updatePreview();
+        }
+
+        function addCertification() {
+            certificationCount++;
+            const container = document.getElementById('certificationsContainer');
+            const div = document.createElement('div');
+            div.className = 'cv-dynamic-item';
+            div.id = `certification-${certificationCount}`;
+            div.innerHTML = `
+                <div class="cv-form-group">
+                    <label>Certification Name</label>
+                    <input type="text" id="certName-${certificationCount}" placeholder="AWS Certified Solutions Architect" oninput="updatePreview()">
+                </div>
+                <div class="cv-form-group">
+                    <label>Issuing Organization</label>
+                    <input type="text" id="certOrg-${certificationCount}" placeholder="Amazon Web Services" oninput="updatePreview()">
+                </div>
+                <div class="cv-form-group">
+                    <label>Date Obtained</label>
+                    <input type="text" id="certDate-${certificationCount}" placeholder="March 2024" oninput="updatePreview()">
+                </div>
+                <button class="cv-remove-btn" onclick="removeCertification(${certificationCount})">Remove</button>
+            `;
+            container.appendChild(div);
+        }
+
+        function removeCertification(id) {
+            document.getElementById(`certification-${id}`).remove();
+            updatePreview();
+        }
+
+        function addLanguage() {
+            languageCount++;
+            const container = document.getElementById('languagesContainer');
+            const div = document.createElement('div');
+            div.className = 'cv-dynamic-item';
+            div.id = `language-${languageCount}`;
+            div.innerHTML = `
+                <div class="cv-language-item">
+                    <div class="cv-form-group" style="margin-bottom: 0;">
+                        <label>Language</label>
+                        <input type="text" id="langName-${languageCount}" placeholder="English" oninput="updatePreview()">
+                    </div>
+                    <div class="cv-form-group" style="margin-bottom: 0;">
+                        <label>Proficiency Level</label>
+                        <input type="text" id="langLevel-${languageCount}" placeholder="Native" oninput="updatePreview()">
+                    </div>
+                </div>
+                <button class="cv-remove-btn" onclick="removeLanguage(${languageCount})">Remove</button>
+            `;
+            container.appendChild(div);
+            updatePreview();
+        }
+
+        function removeLanguage(id) {
+            document.getElementById(`language-${id}`).remove();
+            updatePreview();
+        }
+
+        function updatePreview() {
+            // Personal info
+            document.getElementById('previewName').textContent = 
+                document.getElementById('fullName').value || 'Your Name';
+            document.getElementById('previewTitle').textContent = 
+                document.getElementById('title').value || 'Professional Title';
+            
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const location = document.getElementById('location').value;
+            const linkedin = document.getElementById('linkedin').value;
+            const github = document.getElementById('github').value;
+
+            // Build contact info with text labels
+            let contactParts = [];
+            if (email) contactParts.push(email);
+            if (phone) contactParts.push(phone);
+            if (location) contactParts.push(location);
+            if (linkedin) contactParts.push('LinkedIn: ' + linkedin);
+            if (github) contactParts.push('GitHub: ' + github);
+
+            const contactContainer = document.getElementById('previewContact');
+            if (contactParts.length > 0) {
+                contactContainer.innerHTML = contactParts.join(' | ');
+            } else {
+                contactContainer.innerHTML = '';
+            }
+
+            // Summary
+            const summary = document.getElementById('summary').value;
+            const summarySection = document.getElementById('summarySection');
+            if (summary) {
+                summarySection.style.display = 'block';
+                document.getElementById('previewSummary').textContent = summary;
+            } else {
+                summarySection.style.display = 'none';
+            }
+
+            // Experience
+            const experiencePreview = document.getElementById('previewExperience');
+            experiencePreview.innerHTML = '';
+            let hasExperience = false;
+
+            for (let i = 1; i <= experienceCount; i++) {
+                const titleEl = document.getElementById(`expTitle-${i}`);
+                if (!titleEl) continue;
+
+                const title = titleEl.value;
+                const company = document.getElementById(`expCompany-${i}`).value;
+                const duration = document.getElementById(`expDuration-${i}`).value;
+                const desc = document.getElementById(`expDesc-${i}`).value;
+
+                if (title || company) {
+                    hasExperience = true;
+                    const expDiv = document.createElement('div');
+                    expDiv.className = 'cv-item';
+                    expDiv.innerHTML = `
+                        <div class="cv-item-header">
+                            <div class="cv-item-title">${title || 'Position'}</div>
+                            <div class="cv-item-date">${duration}</div>
+                        </div>
+                        <div class="cv-item-subtitle">${company}</div>
+                        <div class="cv-item-description">${desc}</div>
+                    `;
+                    experiencePreview.appendChild(expDiv);
+                }
+            }
+            document.getElementById('experienceSection').style.display = hasExperience ? 'block' : 'none';
+
+            // Education
+            const educationPreview = document.getElementById('previewEducation');
+            educationPreview.innerHTML = '';
+            let hasEducation = false;
+
+            for (let i = 1; i <= educationCount; i++) {
+                const degreeEl = document.getElementById(`eduDegree-${i}`);
+                if (!degreeEl) continue;
+
+                const degree = degreeEl.value;
+                const institution = document.getElementById(`eduInstitution-${i}`).value;
+                const year = document.getElementById(`eduYear-${i}`).value;
+
+                if (degree || institution) {
+                    hasEducation = true;
+                    const eduDiv = document.createElement('div');
+                    eduDiv.className = 'cv-item';
+                    eduDiv.innerHTML = `
+                        <div class="cv-item-header">
+                            <div class="cv-item-title">${degree || 'Degree'}</div>
+                            <div class="cv-item-date">${year}</div>
+                        </div>
+                        <div class="cv-item-subtitle">${institution}</div>
+                    `;
+                    educationPreview.appendChild(eduDiv);
+                }
+            }
+            document.getElementById('educationSection').style.display = hasEducation ? 'block' : 'none';
+
+            // Skills
+            const skillsInput = document.getElementById('skills').value;
+            const skillsPreview = document.getElementById('previewSkills');
+            skillsPreview.innerHTML = '';
+
+            if (skillsInput) {
+                const skills = skillsInput.split(',').map(s => s.trim()).filter(s => s);
+                skills.forEach(skill => {
+                    const tag = document.createElement('div');
+                    tag.className = 'cv-skill-tag';
+                    tag.textContent = skill;
+                    skillsPreview.appendChild(tag);
+                });
+                document.getElementById('skillsSection').style.display = 'block';
+            } else {
+                document.getElementById('skillsSection').style.display = 'none';
+            }
+
+            // Projects
+            const projectsPreview = document.getElementById('previewProjects');
+            projectsPreview.innerHTML = '';
+            let hasProjects = false;
+
+            for (let i = 1; i <= projectCount; i++) {
+                const nameEl = document.getElementById(`projName-${i}`);
+                if (!nameEl) continue;
+
+                const name = nameEl.value;
+                const tech = document.getElementById(`projTech-${i}`).value;
+                const desc = document.getElementById(`projDesc-${i}`).value;
+                const link = document.getElementById(`projLink-${i}`).value;
+
+                if (name) {
+                    hasProjects = true;
+                    const projDiv = document.createElement('div');
+                    projDiv.className = 'cv-item';
+                    projDiv.innerHTML = `
+                        <div class="cv-item-title">${name}</div>
+                        ${tech ? `<div class="cv-item-subtitle">${tech}</div>` : ''}
+                        ${desc ? `<div class="cv-item-description">${desc}</div>` : ''}
+                        ${link ? `<div style="margin-top: 0.5rem; color: var(--cv-text); font-size: 0.875rem;">${link}</div>` : ''}
+                    `;
+                    projectsPreview.appendChild(projDiv);
+                }
+            }
+            document.getElementById('projectsSection').style.display = hasProjects ? 'block' : 'none';
+
+            // Certifications
+            const certificationsPreview = document.getElementById('previewCertifications');
+            certificationsPreview.innerHTML = '';
+            let hasCertifications = false;
+
+            for (let i = 1; i <= certificationCount; i++) {
+                const nameEl = document.getElementById(`certName-${i}`);
+                if (!nameEl) continue;
+
+                const name = nameEl.value;
+                const org = document.getElementById(`certOrg-${i}`).value;
+                const date = document.getElementById(`certDate-${i}`).value;
+
+                if (name) {
+                    hasCertifications = true;
+                    const certDiv = document.createElement('div');
+                    certDiv.className = 'cv-item';
+                    certDiv.innerHTML = `
+                        <div class="cv-item-header">
+                            <div class="cv-item-title">${name}</div>
+                            <div class="cv-item-date">${date}</div>
+                        </div>
+                        ${org ? `<div class="cv-item-subtitle">${org}</div>` : ''}
+                    `;
+                    certificationsPreview.appendChild(certDiv);
+                }
+            }
+            document.getElementById('certificationsSection').style.display = hasCertifications ? 'block' : 'none';
+
+            // Languages
+            const languagesPreview = document.getElementById('previewLanguages');
+            languagesPreview.innerHTML = '';
+            let hasLanguages = false;
+            
+            for (let i = 1; i <= languageCount; i++) {
+                const nameEl = document.getElementById(`langName-${i}`);
+                if (!nameEl) continue;
+
+                const langName = nameEl.value;
+                const langLevel = document.getElementById(`langLevel-${i}`).value;
+
+                if (langName || langLevel) {
+                    hasLanguages = true;
+                    const langText = langName && langLevel ? `${langName} (${langLevel})` : (langName || langLevel);
+                    const langDiv = document.createElement('div');
+                    langDiv.style.marginBottom = '0.5rem';
+                    langDiv.style.color = 'var(--cv-text)';
+                    langDiv.textContent = langText;
+                    languagesPreview.appendChild(langDiv);
+                }
+            }
+            document.getElementById('languagesSection').style.display = hasLanguages ? 'block' : 'none';
+        }
+
+        function downloadPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            
+            let yPos = 20;
+            const pageWidth = 190;
+            const lineHeight = 7;
+            
+            function addText(text, x, y, maxWidth, fontSize = 10, isBold = false) {
+                doc.setFontSize(fontSize);
+                if (isBold) {
+                    doc.setFont(undefined, 'bold');
+                } else {
+                    doc.setFont(undefined, 'normal');
+                }
+                const lines = doc.splitTextToSize(text, maxWidth);
+                doc.text(lines, x, y);
+                return lines.length * (fontSize * 0.5);
+            }
+            
+            // Name
+            const fullName = document.getElementById('fullName').value || 'Your Name';
+            yPos += addText(fullName, 20, yPos, pageWidth, 20, true);
+            yPos += 3;
+            
+            // Title (no color)
+            const title = document.getElementById('title').value || 'Professional Title';
+            yPos += addText(title, 20, yPos, pageWidth, 14, true);
+            yPos += 5;
+            
+            // Contact Info
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const location = document.getElementById('location').value;
+            const linkedin = document.getElementById('linkedin').value;
+            const github = document.getElementById('github').value;
+            
+            let contactInfo = [];
+            if (email) contactInfo.push(email);
+            if (phone) contactInfo.push(phone);
+            if (location) contactInfo.push(location);
+            if (linkedin) contactInfo.push('LinkedIn: ' + linkedin);
+            if (github) contactInfo.push('GitHub: ' + github);
+            
+            if (contactInfo.length > 0) {
+                doc.setFontSize(9);
+                doc.setTextColor(100, 116, 139);
+                doc.text(contactInfo.join(' | '), 20, yPos);
+                doc.setTextColor(0, 0, 0);
+                yPos += 8;
+            }
+            
+            // Horizontal line
+            doc.setLineWidth(0.5);
+            doc.line(20, yPos, 200, yPos);
+            yPos += 8;
+            
+            // Summary
+            const summary = document.getElementById('summary').value;
+            if (summary) {
+                yPos += addText('PROFESSIONAL SUMMARY', 20, yPos, pageWidth, 12, true);
+                doc.setLineWidth(0.3);
+                doc.line(20, yPos + 1, 200, yPos + 1);
+                yPos += 4;
+                yPos += addText(summary, 20, yPos, pageWidth, 10);
+                yPos += 5;
+            }
+            
+            // Experience
+            let hasExperience = false;
+            for (let i = 1; i <= experienceCount; i++) {
+                const titleEl = document.getElementById(`expTitle-${i}`);
+                if (!titleEl) continue;
+                
+                const jobTitle = titleEl.value;
+                const company = document.getElementById(`expCompany-${i}`).value;
+                const duration = document.getElementById(`expDuration-${i}`).value;
+                const desc = document.getElementById(`expDesc-${i}`).value;
+                
+                if (!hasExperience && (jobTitle || company)) {
+                    hasExperience = true;
+                    if (yPos > 250) {
+                        doc.addPage();
+                        yPos = 20;
+                    }
+                    yPos += addText('WORK EXPERIENCE', 20, yPos, pageWidth, 12, true);
+                    doc.setLineWidth(0.3);
+                    doc.line(20, yPos + 1, 200, yPos + 1);
+                    yPos += 4;
+                }
+                
+                if (jobTitle || company) {
+                    if (yPos > 250) {
+                        doc.addPage();
+                        yPos = 20;
+                    }
+                    
+                    yPos += addText(jobTitle || 'Position', 20, yPos, 130, 11, true);
+                    if (duration) {
+                        doc.setFontSize(9);
+                        doc.setTextColor(100, 116, 139);
+                        doc.text(duration, 200, yPos, { align: 'right' });
+                        doc.setTextColor(0, 0, 0);
+                    }
+                    yPos += 2;
+                    
+                    if (company) {
+                        yPos += addText(company, 20, yPos, pageWidth, 10);
+                        yPos += 2;
+                    }
+                    
+                    if (desc) {
+                        yPos += addText(desc, 20, yPos, pageWidth, 9);
+                    }
+                    yPos += 4;
+                }
+            }
+            
+            // Education
+            let hasEducation = false;
+            for (let i = 1; i <= educationCount; i++) {
+                const degreeEl = document.getElementById(`eduDegree-${i}`);
+                if (!degreeEl) continue;
+                
+                const degree = degreeEl.value;
+                const institution = document.getElementById(`eduInstitution-${i}`).value;
+                const year = document.getElementById(`eduYear-${i}`).value;
+                
+                if (!hasEducation && (degree || institution)) {
+                    hasEducation = true;
+                    if (yPos > 250) {
+                        doc.addPage();
+                        yPos = 20;
+                    }
+                    yPos += addText('EDUCATION', 20, yPos, pageWidth, 12, true);
+                    doc.setLineWidth(0.3);
+                    doc.line(20, yPos + 1, 200, yPos + 1);
+                    yPos += 4;
+                }
+                
+                if (degree || institution) {
+                    if (yPos > 260) {
+                        doc.addPage();
+                        yPos = 20;
+                    }
+                    
+                    yPos += addText(degree || 'Degree', 20, yPos, 130, 11, true);
+                    if (year) {
+                        doc.setFontSize(9);
+                        doc.setTextColor(100, 116, 139);
+                        doc.text(year, 200, yPos, { align: 'right' });
+                        doc.setTextColor(0, 0, 0);
+                    }
+                    yPos += 2;
+                    
+                    if (institution) {
+                        yPos += addText(institution, 20, yPos, pageWidth, 10);
+                    }
+                    yPos += 4;
+                }
+            }
+            
+            // Skills
+            const skillsInput = document.getElementById('skills').value;
+            if (skillsInput) {
+                if (yPos > 250) {
+                    doc.addPage();
+                    yPos = 20;
+                }
+                yPos += addText('SKILLS', 20, yPos, pageWidth, 12, true);
+                doc.setLineWidth(0.3);
+                doc.line(20, yPos + 1, 200, yPos + 1);
+                yPos += 4;
+                yPos += addText(skillsInput, 20, yPos, pageWidth, 10);
+                yPos += 5;
+            }
+            
+            // Projects
+            let hasProjects = false;
+            for (let i = 1; i <= projectCount; i++) {
+                const nameEl = document.getElementById(`projName-${i}`);
+                if (!nameEl) continue;
+                
+                const name = nameEl.value;
+                const tech = document.getElementById(`projTech-${i}`).value;
+                const desc = document.getElementById(`projDesc-${i}`).value;
+                const link = document.getElementById(`projLink-${i}`).value;
+                
+                if (!hasProjects && name) {
+                    hasProjects = true;
+                    if (yPos > 250) {
+                        doc.addPage();
+                        yPos = 20;
+                    }
+                    yPos += addText('PROJECTS', 20, yPos, pageWidth, 12, true);
+                    doc.setLineWidth(0.3);
+                    doc.line(20, yPos + 1, 200, yPos + 1);
+                    yPos += 4;
+                }
+                
+                if (name) {
+                    if (yPos > 250) {
+                        doc.addPage();
+                        yPos = 20;
+                    }
+                    
+                    yPos += addText(name, 20, yPos, pageWidth, 11, true);
+                    yPos += 2;
+                    
+                    if (tech) {
+                        yPos += addText(tech, 20, yPos, pageWidth, 9);
+                        yPos += 2;
+                    }
+                    
+                    if (desc) {
+                        yPos += addText(desc, 20, yPos, pageWidth, 9);
+                        yPos += 2;
+                    }
+                    
+                    if (link) {
+                        doc.setFontSize(8);
+                        doc.text(link, 20, yPos);
+                        yPos += 3;
+                    }
+                    yPos += 3;
+                }
+            }
+            
+            // Certifications
+            let hasCertifications = false;
+            for (let i = 1; i <= certificationCount; i++) {
+                const nameEl = document.getElementById(`certName-${i}`);
+                if (!nameEl) continue;
+                
+                const name = nameEl.value;
+                const org = document.getElementById(`certOrg-${i}`).value;
+                const date = document.getElementById(`certDate-${i}`).value;
+                
+                if (!hasCertifications && name) {
+                    hasCertifications = true;
+                    if (yPos > 250) {
+                        doc.addPage();
+                        yPos = 20;
+                    }
+                    yPos += addText('CERTIFICATIONS', 20, yPos, pageWidth, 12, true);
+                    doc.setLineWidth(0.3);
+                    doc.line(20, yPos + 1, 200, yPos + 1);
+                    yPos += 4;
+                }
+                
+                if (name) {
+                    if (yPos > 260) {
+                        doc.addPage();
+                        yPos = 20;
+                    }
+                    
+                    yPos += addText(name, 20, yPos, 130, 11, true);
+                    if (date) {
+                        doc.setFontSize(9);
+                        doc.setTextColor(100, 116, 139);
+                        doc.text(date, 200, yPos, { align: 'right' });
+                        doc.setTextColor(0, 0, 0);
+                    }
+                    yPos += 2;
+                    
+                    if (org) {
+                        yPos += addText(org, 20, yPos, pageWidth, 10);
+                    }
+                    yPos += 4;
+                }
+            }
+            
+            // Languages
+            let hasLanguages = false;
+            for (let i = 1; i <= languageCount; i++) {
+                const nameEl = document.getElementById(`langName-${i}`);
+                if (!nameEl) continue;
+                
+                const langName = nameEl.value;
+                const langLevel = document.getElementById(`langLevel-${i}`).value;
+                
+                if (!hasLanguages && (langName || langLevel)) {
+                    hasLanguages = true;
+                    if (yPos > 250) {
+                        doc.addPage();
+                        yPos = 20;
+                    }
+                    yPos += addText('LANGUAGES', 20, yPos, pageWidth, 12, true);
+                    doc.setLineWidth(0.3);
+                    doc.line(20, yPos + 1, 200, yPos + 1);
+                    yPos += 4;
+                }
+                
+                if (langName || langLevel) {
+                    const langText = langName && langLevel ? `${langName} (${langLevel})` : (langName || langLevel);
+                    yPos += addText(langText, 20, yPos, pageWidth, 10);
+                    yPos += 2;
+                }
+            }
+            
+            // Save
+            const fileName = 'CV_' + (fullName.replace(/\s+/g, '_')) + '.pdf';
+            doc.save(fileName);
+        }
+
+        async function downloadDOCX() {
+            const fullName = document.getElementById('fullName').value || 'Your Name';
+            const title = document.getElementById('title').value || 'Professional Title';
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const location = document.getElementById('location').value;
+            const linkedin = document.getElementById('linkedin').value;
+            const github = document.getElementById('github').value;
+            const summary = document.getElementById('summary').value;
+
+            const { Document, Paragraph, TextRun, HeadingLevel, AlignmentType, UnderlineType } = docx;
+
+            const children = [];
+
+            // Header - Name and Title
+            children.push(
+                new Paragraph({
+                    children: [
+                        new TextRun({
+                            text: fullName,
+                            bold: true,
+                            size: 32,
+                            color: "0f172a"
+                        })
+                    ],
+                    spacing: { after: 100 }
+                }),
+                new Paragraph({
+                    children: [
+                        new TextRun({
+                            text: title,
+                            size: 24,
+                            color: "0f172a"
+                        })
+                    ],
+                    spacing: { after: 200 }
+                })
+            );
+
+            // Contact Information
+            let contactParts = [];
+            if (email) contactParts.push(email);
+            if (phone) contactParts.push(phone);
+            if (location) contactParts.push(location);
+            if (linkedin) contactParts.push('LinkedIn: ' + linkedin);
+            if (github) contactParts.push('GitHub: ' + github);
+            
+            if (contactParts.length > 0) {
+                children.push(
+                    new Paragraph({
+                        children: [
+                            new TextRun({
+                                text: contactParts.join(' | '),
+                                size: 20,
+                                color: "64748b"
+                            })
+                        ],
+                        spacing: { after: 300 }
+                    })
+                );
+            }
+
+            // Professional Summary
+            if (summary) {
+                children.push(
+                    new Paragraph({
+                        children: [
+                            new TextRun({
+                                text: "PROFESSIONAL SUMMARY",
+                                bold: true,
+                                size: 24,
+                                color: "0f172a"
+                            })
+                        ],
+                        spacing: { before: 200, after: 100 },
+                        border: {
+                            bottom: {
+                                color: "e2e8f0",
+                                space: 1,
+                                size: 6,
+                                style: "single"
+                            }
+                        }
+                    }),
+                    new Paragraph({
+                        children: [
+                            new TextRun({
+                                text: summary,
+                                size: 22
+                            })
+                        ],
+                        spacing: { after: 300 }
+                    })
+                );
+            }
+
+            // Work Experience
+            let hasExperience = false;
+            const experienceParagraphs = [];
+            
+            for (let i = 1; i <= experienceCount; i++) {
+                const titleEl = document.getElementById(`expTitle-${i}`);
+                if (!titleEl) continue;
+                
+                const jobTitle = titleEl.value;
+                const company = document.getElementById(`expCompany-${i}`).value;
+                const duration = document.getElementById(`expDuration-${i}`).value;
+                const desc = document.getElementById(`expDesc-${i}`).value;
+
+                if (jobTitle || company) {
+                    hasExperience = true;
+                    
+                    experienceParagraphs.push(
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: jobTitle || 'Position',
+                                    bold: true,
+                                    size: 22
+                                }),
+                                new TextRun({
+                                    text: duration ? `     ${duration}` : '',
+                                    size: 20,
+                                    color: "64748b"
+                                })
+                            ],
+                            spacing: { before: 150, after: 50 }
+                        }),
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: company,
+                                    size: 22,
+                                    color: "0f172a"
+                                })
+                            ],
+                            spacing: { after: 100 }
+                        })
+                    );
+
+                    if (desc) {
+                        experienceParagraphs.push(
+                            new Paragraph({
+                                children: [
+                                    new TextRun({
+                                        text: desc,
+                                        size: 22
+                                    })
+                                ],
+                                spacing: { after: 200 }
+                            })
+                        );
+                    }
+                }
+            }
+
+            if (hasExperience) {
+                children.push(
+                    new Paragraph({
+                        children: [
+                            new TextRun({
+                                text: "WORK EXPERIENCE",
+                                bold: true,
+                                size: 24,
+                                color: "0f172a"
+                            })
+                        ],
+                        spacing: { before: 200, after: 100 },
+                        border: {
+                            bottom: {
+                                color: "e2e8f0",
+                                space: 1,
+                                size: 6,
+                                style: "single"
+                            }
+                        }
+                    }),
+                    ...experienceParagraphs
+                );
+            }
+
+            // Education
+            let hasEducation = false;
+            const educationParagraphs = [];
+            
+            for (let i = 1; i <= educationCount; i++) {
+                const degreeEl = document.getElementById(`eduDegree-${i}`);
+                if (!degreeEl) continue;
+                
+                const degree = degreeEl.value;
+                const institution = document.getElementById(`eduInstitution-${i}`).value;
+                const year = document.getElementById(`eduYear-${i}`).value;
+
+                if (degree || institution) {
+                    hasEducation = true;
+                    
+                    educationParagraphs.push(
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: degree || 'Degree',
+                                    bold: true,
+                                    size: 22
+                                }),
+                                new TextRun({
+                                    text: year ? `     ${year}` : '',
+                                    size: 20,
+                                    color: "64748b"
+                                })
+                            ],
+                            spacing: { before: 150, after: 50 }
+                        }),
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: institution,
+                                    size: 22,
+                                    color: "0f172a"
+                                })
+                            ],
+                            spacing: { after: 200 }
+                        })
+                    );
+                }
+            }
+
+            if (hasEducation) {
+                children.push(
+                    new Paragraph({
+                        children: [
+                            new TextRun({
+                                text: "EDUCATION",
+                                bold: true,
+                                size: 24,
+                                color: "0f172a"
+                            })
+                        ],
+                        spacing: { before: 200, after: 100 },
+                        border: {
+                            bottom: {
+                                color: "e2e8f0",
+                                space: 1,
+                                size: 6,
+                                style: "single"
+                            }
+                        }
+                    }),
+                    ...educationParagraphs
+                );
+            }
+
+            // Skills
+            const skillsInput = document.getElementById('skills').value;
+            if (skillsInput) {
+                children.push(
+                    new Paragraph({
+                        children: [
+                            new TextRun({
+                                text: "SKILLS",
+                                bold: true,
+                                size: 24,
+                                color: "0f172a"
+                            })
+                        ],
+                        spacing: { before: 200, after: 100 },
+                        border: {
+                            bottom: {
+                                color: "e2e8f0",
+                                space: 1,
+                                size: 6,
+                                style: "single"
+                            }
+                        }
+                    }),
+                    new Paragraph({
+                        children: [
+                            new TextRun({
+                                text: skillsInput,
+                                size: 22
+                            })
+                        ],
+                        spacing: { after: 200 }
+                    })
+                );
+            }
+
+            // Projects
+            let hasProjects = false;
+            const projectParagraphs = [];
+            
+            for (let i = 1; i <= projectCount; i++) {
+                const nameEl = document.getElementById(`projName-${i}`);
+                if (!nameEl) continue;
+                
+                const name = nameEl.value;
+                const tech = document.getElementById(`projTech-${i}`).value;
+                const desc = document.getElementById(`projDesc-${i}`).value;
+                const link = document.getElementById(`projLink-${i}`).value;
+
+                if (name) {
+                    hasProjects = true;
+                    
+                    projectParagraphs.push(
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: name,
+                                    bold: true,
+                                    size: 22
+                                })
+                            ],
+                            spacing: { before: 150, after: 50 }
+                        })
+                    );
+
+                    if (tech) {
+                        projectParagraphs.push(
+                            new Paragraph({
+                                children: [
+                                    new TextRun({
+                                        text: tech,
+                                        size: 22,
+                                        color: "0f172a"
+                                    })
+                                ],
+                                spacing: { after: 100 }
+                            })
+                        );
+                    }
+
+                    if (desc) {
+                        projectParagraphs.push(
+                            new Paragraph({
+                                children: [
+                                    new TextRun({
+                                        text: desc,
+                                        size: 22
+                                    })
+                                ],
+                                spacing: { after: link ? 50 : 200 }
+                            })
+                        );
+                    }
+
+                    if (link) {
+                        projectParagraphs.push(
+                            new Paragraph({
+                                children: [
+                                    new TextRun({
+                                        text: link,
+                                        size: 20,
+                                        color: "0f172a"
+                                    })
+                                ],
+                                spacing: { after: 200 }
+                            })
+                        );
+                    }
+                }
+            }
+
+            if (hasProjects) {
+                children.push(
+                    new Paragraph({
+                        children: [
+                            new TextRun({
+                                text: "PROJECTS",
+                                bold: true,
+                                size: 24,
+                                color: "0f172a"
+                            })
+                        ],
+                        spacing: { before: 200, after: 100 },
+                        border: {
+                            bottom: {
+                                color: "e2e8f0",
+                                space: 1,
+                                size: 6,
+                                style: "single"
+                            }
+                        }
+                    }),
+                    ...projectParagraphs
+                );
+            }
+
+            // Certifications
+            let hasCertifications = false;
+            const certificationParagraphs = [];
+            
+            for (let i = 1; i <= certificationCount; i++) {
+                const nameEl = document.getElementById(`certName-${i}`);
+                if (!nameEl) continue;
+                
+                const name = nameEl.value;
+                const org = document.getElementById(`certOrg-${i}`).value;
+                const date = document.getElementById(`certDate-${i}`).value;
+
+                if (name) {
+                    hasCertifications = true;
+                    
+                    certificationParagraphs.push(
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: name,
+                                    bold: true,
+                                    size: 22
+                                }),
+                                new TextRun({
+                                    text: date ? `     ${date}` : '',
+                                    size: 20,
+                                    color: "64748b"
+                                })
+                            ],
+                            spacing: { before: 150, after: 50 }
+                        })
+                    );
+
+                    if (org) {
+                        certificationParagraphs.push(
+                            new Paragraph({
+                                children: [
+                                    new TextRun({
+                                        text: org,
+                                        size: 22,
+                                        color: "0f172a"
+                                    })
+                                ],
+                                spacing: { after: 200 }
+                            })
+                        );
+                    }
+                }
+            }
+
+            if (hasCertifications) {
+                children.push(
+                    new Paragraph({
+                        children: [
+                            new TextRun({
+                                text: "CERTIFICATIONS",
+                                bold: true,
+                                size: 24,
+                                color: "0f172a"
+                            })
+                        ],
+                        spacing: { before: 200, after: 100 },
+                        border: {
+                            bottom: {
+                                color: "e2e8f0",
+                                space: 1,
+                                size: 6,
+                                style: "single"
+                            }
+                        }
+                    }),
+                    ...certificationParagraphs
+                );
+            }
+
+            // Languages
+            let hasLanguages = false;
+            const languageParagraphs = [];
+            
+            for (let i = 1; i <= languageCount; i++) {
+                const nameEl = document.getElementById(`langName-${i}`);
+                if (!nameEl) continue;
+                
+                const langName = nameEl.value;
+                const langLevel = document.getElementById(`langLevel-${i}`).value;
+
+                if (langName || langLevel) {
+                    hasLanguages = true;
+                    const langText = langName && langLevel ? `${langName} (${langLevel})` : (langName || langLevel);
+                    
+                    languageParagraphs.push(
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: langText,
+                                    size: 22
+                                })
+                            ],
+                            spacing: { after: 100 }
+                        })
+                    );
+                }
+            }
+
+            if (hasLanguages) {
+                children.push(
+                    new Paragraph({
+                        children: [
+                            new TextRun({
+                                text: "LANGUAGES",
+                                bold: true,
+                                size: 24,
+                                color: "0f172a"
+                            })
+                        ],
+                        spacing: { before: 200, after: 100 },
+                        border: {
+                            bottom: {
+                                color: "e2e8f0",
+                                space: 1,
+                                size: 6,
+                                style: "single"
+                            }
+                        }
+                    }),
+                    ...languageParagraphs
+                );
+            }
+
+            // Create document
+            const doc = new Document({
+                sections: [{
+                    properties: {},
+                    children: children
+                }]
+            });
+
+            // Generate and save
+            const blob = await docx.Packer.toBlob(doc);
+            const fileName = 'CV_' + (fullName.replace(/\s+/g, '_')) + '.docx';
+            saveAs(blob, fileName);
+        }
+
+        // Initialize with one experience and education
+        addExperience();
+        addEducation();
+        addLanguage();
+    </script>
+</body>
+</html>
