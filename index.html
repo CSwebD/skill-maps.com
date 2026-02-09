@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -49,7 +47,13 @@
 
   <section id="articles" class="py-8 md:py-12">
     <div class="max-w-7xl mx-auto px-6">
-      <h2 class="text-1xl font-bold text-gray-800 mb-1 pt-9">Latest Articles</h2>
+      <!-- Header with Latest Articles and View All -->
+      <div class="flex items-center justify-between mb-1 pt-9">
+        <h2 class="text-1xl font-bold text-gray-800">Latest Articles</h2>
+        <a href="blog.html" class="text-xs font-semibold hover:underline" style="color: #377536;">
+          View All →
+        </a>
+      </div>
       
       <!-- Main Grid: 40% - 40% - 20% -->
       <div class="grid grid-cols-1 lg:grid-cols-5 gap-6">
@@ -68,10 +72,10 @@
           </div>
         </div>
 
-        <!-- RIGHT COLUMN: 20% - Posts 6-8 + Discover More -->
+        <!-- RIGHT COLUMN: 20% - Posts 6-7 in 2 cards -->
         <div class="lg:col-span-1">
-          <div id="rightPosts" class="space-y-6">
-            <!-- Posts 6-8 and discover more will load here -->
+          <div id="rightPosts" class="space-y-4">
+            <!-- Posts 6-7 will load here -->
           </div>
         </div>
 
@@ -97,12 +101,9 @@
                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
               </div>
               <div class="space-y-2">
-                <div class="flex items-center justify-between">
-                  <span class="inline-block text-xs font-semibold text-green-700 uppercase tracking-wide" style="color: #377536;">
-                    ${post.category || 'Article'}
-                  </span>
-                  <span class="text-xs text-gray-500">${post.date || ''}</span>
-                </div>
+                <span class="inline-block text-xs font-semibold text-green-700 uppercase tracking-wide" style="color: #377536;">
+                  ${post.category || 'Article'}
+                </span>
                 <h3 class="text-2xl font-bold text-gray-900 transition-colors" style="transition: color 0.3s;" onmouseover="this.style.color='#377536'" onmouseout="this.style.color=''">
                   ${post.title}
                 </h3>
@@ -129,12 +130,9 @@
                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
             </div>
             <div class="space-y-1">
-              <div class="flex items-center justify-between">
-                <span class="inline-block text-xs font-semibold uppercase tracking-wide" style="color: #377536;">
-                  ${post.category || 'Article'}
-                </span>
-                <span class="text-xs text-gray-500">${post.date || ''}</span>
-              </div>
+              <span class="inline-block text-xs font-semibold uppercase tracking-wide" style="color: #377536;">
+                ${post.category || 'Article'}
+              </span>
               <h4 class="text-base font-bold text-gray-900 transition-colors line-clamp-2" style="transition: color 0.3s;" onmouseover="this.style.color='#377536'" onmouseout="this.style.color=''">
                 ${post.title}
               </h4>
@@ -147,27 +145,28 @@
           middleContainer.appendChild(postCard);
         });
 
-        // Right Posts (6th-8th)
+        // Right Posts (6th-7th) - Same style as middle column
         const rightContainer = document.getElementById('rightPosts');
-        const rightPosts = posts.slice(5, 9);
+        const rightPosts = posts.slice(5, 7);
         
         rightPosts.forEach(post => {
           const postCard = document.createElement('a');
           postCard.href = post.link;
-          postCard.className = "block group pb-3.4 border-gray-200 last:border-b-0";
+          postCard.className = "block group bg-white p-1";
           
           postCard.innerHTML = `
-            <div class="space-y-2 bg-white">
-              <div class="flex items-center justify-between">
-                <span class="inline-block text-xs font-semibold uppercase tracking-wide" style="color: #377536;">
-                  ${post.category || 'Article'}
-                </span>
-                <span class="text-xs text-gray-500">${post.date || ''}</span>
-              </div>
+            <div class="relative h-24 lg:h-40 overflow-hidden mb-3">
+              <img src="${post.image}" alt="${post.title}" 
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="space-y-1">
+              <span class="inline-block text-xs font-semibold uppercase tracking-wide" style="color: #377536;">
+                ${post.category || 'Article'}
+              </span>
               <h4 class="text-base font-bold text-gray-900 transition-colors line-clamp-2" style="transition: color 0.3s;" onmouseover="this.style.color='#377536'" onmouseout="this.style.color=''">
                 ${post.title}
               </h4>
-              <p class="text-sm text-gray-600 line-clamp-1">
+              <p class="text-sm text-gray-600 line-clamp-2">
                 ${post.desc}
               </p>
             </div>
@@ -176,27 +175,105 @@
           rightContainer.appendChild(postCard);
         });
 
-        // Discover More Card
-        const discoverCard = document.createElement('a');
-        discoverCard.href = "blog.html";
-        discoverCard.className = "block border-2 border-green-700 hover:bg-green-100 transition-colors group p-4";
-        
-        discoverCard.innerHTML = `
-          <div class="space-y-3">
-            <span class="inline-block text-xs font-semibold text-green-700 uppercase tracking-wide">
-              More
-            </span>
-            <h4 class="text-base font-bold text-gray-900 group-hover:text-green-700 transition-colors">
-              Discover other posts
-            </h4>
+      } catch (error) {
+        console.error('Error loading blog posts:', error);
+      }
+    }
+  </script>
 
+  <!-- RANDOM CATEGORY ARTICLES SECTION -->
+  <section id="category-articles" class="py-8 md:py-12 ">
+    <div class="max-w-7xl mx-auto px-6">
+      <!-- Header will be dynamically generated -->
+      <div id="categoryHeader" class="flex items-center justify-between mb-4">
+        <!-- Category name will load here -->
+      </div>
+      
+      <!-- Articles Grid: 5 cards in one row -->
+      <div id="categoryPostsGrid" class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+        <!-- 5 category posts will load here -->
+      </div>
+    </div>
+  </section>
+
+  <script>
+    async function loadRandomCategoryArticles() {
+      try {
+        const res = await fetch('./blog/blog.json');
+        const posts = await res.json();
+
+        // Define categories (excluding "all")
+        const categories = ["AI", "Tech", "Development", "OpenSource", "Design", "Career", "Research", "CyberSecurity"];
+        
+        // Pick random category
+        const randomCategory = categories[Math.floor(Math.random() * categories.length)];
+        
+        // Filter posts by selected category
+        const categoryPosts = posts.filter(post => post.category === randomCategory);
+        
+        // Take only first 4 posts (5th slot will be ad)
+        const selectedPosts = categoryPosts.slice(0, 4);
+        
+        // Update header
+        const headerContainer = document.getElementById('categoryHeader');
+        headerContainer.innerHTML = `
+          <h2 class="text-1xl font-bold text-gray-800">Latest in ${randomCategory}</h2>
+          <a href="blog.html" class="text-xs font-semibold hover:underline" style="color: #377536;">
+            View All →
+          </a>
+        `;
+
+        // Load first 4 posts in a row
+        const gridContainer = document.getElementById('categoryPostsGrid');
+        
+        selectedPosts.forEach(post => {
+          const postCard = document.createElement('a');
+          postCard.href = post.link;
+          postCard.className = "block group bg-white p-1";
+          
+          postCard.innerHTML = `
+            <div class="relative h-32 overflow-hidden mb-3">
+              <img src="${post.image}" alt="${post.title}" 
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="space-y-1">
+              <span class="inline-block text-xs font-semibold uppercase tracking-wide" style="color: #377536;">
+                ${post.category || 'Article'}
+              </span>
+              <h4 class="text-sm font-bold text-gray-900 transition-colors line-clamp-2" style="transition: color 0.3s;" onmouseover="this.style.color='#377536'" onmouseout="this.style.color=''">
+                ${post.title}
+              </h4>
+              <p class="text-xs text-gray-600 line-clamp-4">
+                ${post.desc}
+              </p>
+            </div>
+          `;
+          
+          gridContainer.appendChild(postCard);
+        });
+
+        // Add Google Ad as 5th card
+        const adCard = document.createElement('div');
+        adCard.className = "bg-white p-1 flex items-center justify-center";
+        adCard.innerHTML = `
+          <div class="w-full h-full flex items-center justify-center">
+            <!-- Index-Category-5th -->
+            <ins class="adsbygoogle"
+                 style="display:block; min-height: 200px;"
+                 data-ad-client="ca-pub-7439109164508333"
+                 data-ad-slot="3447716297"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
           </div>
         `;
         
-        rightContainer.appendChild(discoverCard);
+        gridContainer.appendChild(adCard);
+        
+        // Initialize the ad
+        (adsbygoogle = window.adsbygoogle || []).push({});
 
       } catch (error) {
-        console.error('Error loading blog posts:', error);
+        console.error('Error loading category articles:', error);
       }
     }
   </script>
@@ -205,46 +282,26 @@
     // Load updates when page loads
     document.addEventListener('DOMContentLoaded', () => {
       loadBlogPosts();
+      loadRandomCategoryArticles();
       loadLatestUpdates();
     });
   </script>
 
   <!-- DOMAINS SECTION -->
-  <section id="domains" class="py-8 md:py-12 bg-gray-50">
+  <section id="domains" class="py-6 md:py-8 bg-gray-50">
     <div class="max-w-7xl mx-auto px-6">
-      <h2 class="text-1xl font-bold text-gray-800 mb-1">Domains</h2>
+      <!-- Header with Career Roadmaps centered with lines -->
+      <div class="flex items-center mb-3">
+        <div class="flex-1 border-t-2 border-gray-300"></div>
+        <h2 class="text-xl font-bold text-gray-800 px-4">Career Roadmaps</h2>
+        <div class="flex-1 border-t-2 border-gray-300"></div>
+      </div>
       
-      <!-- 4 Column Grid -->
-      <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
-        
-        <!-- COLUMN 1: Single Domain -->
-        <div class="lg:col-span-1">
-          <div id="firstDomain" class="h-full">
-            <!-- First domain will load here -->
-          </div>
+      <!-- 3 Buttons Per Row Grid - 70% width -->
+      <div class="flex justify-center">
+        <div id="domainButtonsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 w-full lg:w-[70%]">
+          <!-- Domain buttons will load here -->
         </div>
-
-        <!-- COLUMN 2: 2 Domains -->
-        <div class="lg:col-span-1">
-          <div id="secondDomains" class="space-y-6">
-            <!-- Domains 2-3 will load here -->
-          </div>
-        </div>
-
-        <!-- COLUMN 3: 2 Domains -->
-        <div class="lg:col-span-1">
-          <div id="thirdDomains" class="space-y-6">
-            <!-- Domains 4-5 will load here -->
-          </div>
-        </div>
-
-        <!-- COLUMN 4: 1 Domain + Explore All -->
-        <div class="lg:col-span-1">
-          <div id="fourthDomain" class="space-y-6">
-            <!-- Domain 6 and explore button will load here -->
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
@@ -255,113 +312,17 @@
         const res = await fetch('./domains/domains.json');
         const domains = await res.json();
 
-        // First Domain
-        if (domains[0]) {
-          const firstContainer = document.getElementById('firstDomain');
-          const domain = domains[0];
-          
-          firstContainer.innerHTML = `
-            <a href="${domain.link}" class="block group h-full bg-white overflow-hidden border-2 border-gray-300 hover:border-green-600 shadow-sm hover:shadow-lg transition-all">
-              <div class="relative h-32 overflow-hidden flex items-center justify-center bg-gray-50">
-                <i class="${domain.icon} text-6xl" style="color: ${domain.color || '#377536'};"></i>
-              </div>
-              <div class="p-4 space-y-2">
-                <h3 class="text-xl font-bold text-gray-900 transition-colors" style="transition: color 0.3s;" onmouseover="this.style.color='#377536'" onmouseout="this.style.color=''">
-                  ${domain.title}
-                </h3>
-                <p class="text-sm text-gray-600 line-clamp-3">
-                  ${domain.description}
-                </p>
-              </div>
-            </a>
-          `;
-        }
-
-        // Second Column Domains (2-3)
-        const secondContainer = document.getElementById('secondDomains');
-        const secondDomains = domains.slice(1, 3);
+        const container = document.getElementById('domainButtonsContainer');
         
-        secondDomains.forEach(domain => {
-          const domainCard = document.createElement('a');
-          domainCard.href = domain.link;
-          domainCard.className = "block group bg-white overflow-hidden border-2 border-gray-300 hover:border-green-600 shadow-sm hover:shadow-lg transition-all";
+        // Create button for each domain
+        domains.forEach(domain => {
+          const button = document.createElement('a');
+          button.href = domain.link;
+          button.className = "block px-4 py-2.5 bg-white border-2 border-gray-300 hover:border-green-600 hover:bg-gray-50 transition-all text-center font-semibold text-gray-800 hover:text-green-700 text-sm";
+          button.textContent = domain.title;
           
-          domainCard.innerHTML = `
-            <div class="relative h-24 overflow-hidden flex items-center justify-center bg-gray-50">
-              <i class="${domain.icon} text-5xl" style="color: ${domain.color || '#377536'};"></i>
-            </div>
-            <div class="p-4 space-y-2">
-              <h3 class="text-lg font-bold text-gray-900 transition-colors" style="transition: color 0.3s;" onmouseover="this.style.color='#377536'" onmouseout="this.style.color=''">
-                ${domain.title}
-              </h3>
-              <p class="text-sm text-gray-600 line-clamp-2">
-                ${domain.description}
-              </p>
-            </div>
-          `;
-          
-          secondContainer.appendChild(domainCard);
+          container.appendChild(button);
         });
-
-        // Third Column Domains (4-5)
-        const thirdContainer = document.getElementById('thirdDomains');
-        const thirdDomains = domains.slice(3, 5);
-        
-        thirdDomains.forEach(domain => {
-          const domainCard = document.createElement('a');
-          domainCard.href = domain.link;
-          domainCard.className = "block group bg-white overflow-hidden border-2 border-gray-300 hover:border-green-600 shadow-sm hover:shadow-lg transition-all";
-          
-          domainCard.innerHTML = `
-            <div class="relative h-24 overflow-hidden flex items-center justify-center bg-gray-50">
-              <i class="${domain.icon} text-5xl" style="color: ${domain.color || '#377536'};"></i>
-            </div>
-            <div class="p-4 space-y-2">
-              <h3 class="text-lg font-bold text-gray-900 transition-colors" style="transition: color 0.3s;" onmouseover="this.style.color='#377536'" onmouseout="this.style.color=''">
-                ${domain.title}
-              </h3>
-              <p class="text-sm text-gray-600 line-clamp-2">
-                ${domain.description}
-              </p>
-            </div>
-          `;
-          
-          thirdContainer.appendChild(domainCard);
-        });
-
-        // Fourth Column - Domain 6
-        const fourthContainer = document.getElementById('fourthDomain');
-        if (domains[5]) {
-          const domain = domains[5];
-          const domainCard = document.createElement('a');
-          domainCard.href = domain.link;
-          domainCard.className = "block group bg-white overflow-hidden border-2 border-gray-300 hover:border-green-600 shadow-sm hover:shadow-lg transition-all";
-          
-          domainCard.innerHTML = `
-            <div class="relative h-24 overflow-hidden flex items-center justify-center bg-gray-50">
-              <i class="${domain.icon} text-5xl" style="color: ${domain.color || '#377536'};"></i>
-            </div>
-            <div class="p-4 space-y-2">
-              <h3 class="text-lg font-bold text-gray-900 transition-colors" style="transition: color 0.3s;" onmouseover="this.style.color='#377536'" onmouseout="this.style.color=''">
-                ${domain.title}
-              </h3>
-              <p class="text-sm text-gray-600 line-clamp-2">
-                ${domain.description}
-              </p>
-            </div>
-          `;
-          
-          fourthContainer.appendChild(domainCard);
-        }
-
-        // Explore All Domains Button
-        const exploreButton = document.createElement('div');
-        exploreButton.innerHTML = `
-          <a href="domains.html" class="block w-full text-center py-12 bg-green-600 font-semibold text-white hover:bg-green-700 transition-colors">
-            Explore All Domains
-          </a>
-        `;
-        fourthContainer.appendChild(exploreButton);
 
       } catch (error) {
         console.error('Error loading domains:', error);
@@ -372,41 +333,20 @@
   </script>
 
   <!-- SKILL MAPS SECTION -->
-  <section id="skillmaps" class="py-8 md:py-12 bg-gray-50">
+  <section id="skillmaps" class="py-6 md:py-8 bg-gray-50">
     <div class="max-w-7xl mx-auto px-6">
-      <h2 class="text-1xl font-bold text-gray-800 mb-1">Skill Maps</h2>
+      <!-- Header with Technology Guides centered with lines -->
+      <div class="flex items-center mb-3">
+        <div class="flex-1 border-t-2 border-gray-300"></div>
+        <h2 class="text-xl font-bold text-gray-800 px-4">Technology Guides</h2>
+        <div class="flex-1 border-t-2 border-gray-300"></div>
+      </div>
       
-      <!-- 4 Column Grid -->
-      <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
-        
-        <!-- COLUMN 1: Single Skill -->
-        <div class="lg:col-span-1">
-          <div id="firstSkill" class="h-full">
-            <!-- First skill will load here -->
-          </div>
+      <!-- 3 Buttons Per Row Grid - 70% width -->
+      <div class="flex justify-center">
+        <div id="skillButtonsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 w-full lg:w-[70%]">
+          <!-- Skill buttons will load here -->
         </div>
-
-        <!-- COLUMN 2: 2 Skills -->
-        <div class="lg:col-span-1">
-          <div id="secondSkills" class="space-y-6">
-            <!-- Skills 2-3 will load here -->
-          </div>
-        </div>
-
-        <!-- COLUMN 3: 2 Skills -->
-        <div class="lg:col-span-1">
-          <div id="thirdSkills" class="space-y-6">
-            <!-- Skills 4-5 will load here -->
-          </div>
-        </div>
-
-        <!-- COLUMN 4: 1 Skill + Explore All -->
-        <div class="lg:col-span-1">
-          <div id="fourthSkill" class="space-y-6">
-            <!-- Skill 6 and explore button will load here -->
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
@@ -417,113 +357,17 @@
         const res = await fetch('./skills/skills.json');
         const skills = await res.json();
 
-        // First Skill
-        if (skills[0]) {
-          const firstContainer = document.getElementById('firstSkill');
-          const skill = skills[0];
-          
-          firstContainer.innerHTML = `
-            <a href="${skill.link}" class="block group h-full bg-white overflow-hidden border-2 border-gray-300 hover:border-green-600 shadow-sm hover:shadow-lg transition-all">
-              <div class="relative h-32 overflow-hidden flex items-center justify-center bg-gray-50">
-                <i class="${skill.icon} text-6xl" style="color: ${skill.color || '#377536'};"></i>
-              </div>
-              <div class="p-4 space-y-2">
-                <h3 class="text-xl font-bold text-gray-900 transition-colors" style="transition: color 0.3s;" onmouseover="this.style.color='#377536'" onmouseout="this.style.color=''">
-                  ${skill.title}
-                </h3>
-                <p class="text-sm text-gray-600 line-clamp-3">
-                  ${skill.description}
-                </p>
-              </div>
-            </a>
-          `;
-        }
-
-        // Second Column Skills (2-3)
-        const secondContainer = document.getElementById('secondSkills');
-        const secondSkills = skills.slice(1, 3);
+        const container = document.getElementById('skillButtonsContainer');
         
-        secondSkills.forEach(skill => {
-          const skillCard = document.createElement('a');
-          skillCard.href = skill.link;
-          skillCard.className = "block group bg-white overflow-hidden border-2 border-gray-300 hover:border-green-600 shadow-sm hover:shadow-lg transition-all";
+        // Create button for each skill
+        skills.forEach(skill => {
+          const button = document.createElement('a');
+          button.href = skill.link;
+          button.className = "block px-4 py-2.5 bg-white border-2 border-gray-300 hover:border-green-600 hover:bg-gray-50 transition-all text-center font-semibold text-gray-800 hover:text-green-700 text-sm";
+          button.textContent = skill.title;
           
-          skillCard.innerHTML = `
-            <div class="relative h-24 overflow-hidden flex items-center justify-center bg-gray-50">
-              <i class="${skill.icon} text-5xl" style="color: ${skill.color || '#377536'};"></i>
-            </div>
-            <div class="p-4 space-y-2">
-              <h3 class="text-lg font-bold text-gray-900 transition-colors" style="transition: color 0.3s;" onmouseover="this.style.color='#377536'" onmouseout="this.style.color=''">
-                ${skill.title}
-              </h3>
-              <p class="text-sm text-gray-600 line-clamp-2">
-                ${skill.description}
-              </p>
-            </div>
-          `;
-          
-          secondContainer.appendChild(skillCard);
+          container.appendChild(button);
         });
-
-        // Third Column Skills (4-5)
-        const thirdContainer = document.getElementById('thirdSkills');
-        const thirdSkills = skills.slice(3, 5);
-        
-        thirdSkills.forEach(skill => {
-          const skillCard = document.createElement('a');
-          skillCard.href = skill.link;
-          skillCard.className = "block group bg-white overflow-hidden border-2 border-gray-300 hover:border-green-600 shadow-sm hover:shadow-lg transition-all";
-          
-          skillCard.innerHTML = `
-            <div class="relative h-24 overflow-hidden flex items-center justify-center bg-gray-50">
-              <i class="${skill.icon} text-5xl" style="color: ${skill.color || '#377536'};"></i>
-            </div>
-            <div class="p-4 space-y-2">
-              <h3 class="text-lg font-bold text-gray-900 transition-colors" style="transition: color 0.3s;" onmouseover="this.style.color='#377536'" onmouseout="this.style.color=''">
-                ${skill.title}
-              </h3>
-              <p class="text-sm text-gray-600 line-clamp-2">
-                ${skill.description}
-              </p>
-            </div>
-          `;
-          
-          thirdContainer.appendChild(skillCard);
-        });
-
-        // Fourth Column - Skill 6
-        const fourthContainer = document.getElementById('fourthSkill');
-        if (skills[5]) {
-          const skill = skills[5];
-          const skillCard = document.createElement('a');
-          skillCard.href = skill.link;
-          skillCard.className = "block group bg-white overflow-hidden border-2 border-gray-300 hover:border-green-600 shadow-sm hover:shadow-lg transition-all";
-          
-          skillCard.innerHTML = `
-            <div class="relative h-24 overflow-hidden flex items-center justify-center bg-gray-50">
-              <i class="${skill.icon} text-5xl" style="color: ${skill.color || '#377536'};"></i>
-            </div>
-            <div class="p-4 space-y-2">
-              <h3 class="text-lg font-bold text-gray-900 transition-colors" style="transition: color 0.3s;" onmouseover="this.style.color='#377536'" onmouseout="this.style.color=''">
-                ${skill.title}
-              </h3>
-              <p class="text-sm text-gray-600 line-clamp-2">
-                ${skill.description}
-              </p>
-            </div>
-          `;
-          
-          fourthContainer.appendChild(skillCard);
-        }
-
-        // Explore All Skills Button
-        const exploreButton = document.createElement('div');
-        exploreButton.innerHTML = `
-          <a href="skills.html" class="block w-full text-center py-12 bg-green-600 font-semibold text-white hover:bg-green-700 transition-colors">
-            Explore All Skill Maps
-          </a>
-        `;
-        fourthContainer.appendChild(exploreButton);
 
       } catch (error) {
         console.error('Error loading skills:', error);
@@ -533,140 +377,62 @@
     document.addEventListener('DOMContentLoaded', loadSkills);
   </script>
 
-  <section id="interview-prep" class="py-8 md:py-12 bg-white">
+  <!-- AI LEARNING & TOOLS SECTION -->
+  <section id="aihub" class="py-6 md:py-8 bg-gray-50">
     <div class="max-w-7xl mx-auto px-6">
-      <h2 class="text-1xl font-bold text-gray-800 mb-1">Interview Preparation</h2>
+      <!-- Header with AI Learning & Tools centered with lines -->
+      <div class="flex items-center mb-3">
+        <div class="flex-1 border-t-2 border-gray-300"></div>
+        <h2 class="text-xl font-bold text-gray-800 px-4">AI Learning & Tools</h2>
+        <div class="flex-1 border-t-2 border-gray-300"></div>
+      </div>
       
-      <!-- Data Structures Card -->
-      <div class="bg-white border-2 border-gray-300 hover:border-green-600 shadow-sm hover:shadow-lg transition-all overflow-hidden">
-        
-        <!-- Header -->
-        <div class="bg-gray-50 p-4 md:p-6 border-b-2 border-gray-200">
-          <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
-            <div class="bg-gradient-to-br from-green-500 to-green-700 w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center flex-shrink-0">
-              <i class="fas fa-code text-white text-2xl sm:text-3xl"></i>
-            </div>
-            <div>
-              <h3 class="text-xl sm:text-2xl font-bold text-gray-900">Data Structures</h3>
-              <p class="text-gray-600 text-xs sm:text-sm">Master essential concepts for technical interviews</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Content -->
-        <div class="p-4 md:p-6">
-          <p class="text-sm md:text-base text-gray-700 leading-relaxed mb-6">
-            Build a strong foundation in data structures to ace technical interviews at top tech companies. This comprehensive guide walks you through essential data structures step-by-step, from arrays to advanced graph algorithms.
-          </p>
-
-          <!-- Stages Grid -->
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-6">
-
-            <!-- Stage 1 -->
-            <div class="bg-gray-50 border-2 border-blue-500 p-3 hover:shadow-md transition-shadow">
-              <div class="flex items-center gap-2 mb-2">
-                <span class="bg-blue-500 text-white w-6 h-6 flex items-center justify-center font-bold text-xs flex-shrink-0">1</span>
-                <h4 class="text-sm font-bold text-gray-800">Arrays & Strings</h4>
-              </div>
-              <p class="text-xs text-gray-600 mb-2">
-                Array manipulation, two-pointer techniques, sliding window algorithms.
-              </p>
-              <div class="flex flex-wrap gap-1">
-                <a href="https://leetcode.com/tag/array/" target="_blank" class="px-2 py-1 bg-blue-100 text-blue-700 text-xs font-medium hover:bg-blue-200 transition">LeetCode</a>
-                <a href="https://www.hackerrank.com/domains/data-structures/arrays" target="_blank" class="px-2 py-1 bg-green-100 text-green-700 text-xs font-medium hover:bg-green-200 transition">HackerRank</a>
-              </div>
-            </div>
-
-            <!-- Stage 2 -->
-            <div class="bg-gray-50 border-2 border-green-500 p-3 hover:shadow-md transition-shadow">
-              <div class="flex items-center gap-2 mb-2">
-                <span class="bg-green-500 text-white w-6 h-6 flex items-center justify-center font-bold text-xs flex-shrink-0">2</span>
-                <h4 class="text-sm font-bold text-gray-800">Hash Maps & Sets</h4>
-              </div>
-              <p class="text-xs text-gray-600 mb-2">
-                Hash table operations, collision handling, frequency counting problems.
-              </p>
-              <div class="flex flex-wrap gap-1">
-                <a href="https://leetcode.com/tag/hash-table/" target="_blank" class="px-2 py-1 bg-blue-100 text-blue-700 text-xs font-medium hover:bg-blue-200 transition">LeetCode</a>
-                <a href="https://www.algoexpert.io/" target="_blank" class="px-2 py-1 bg-purple-100 text-purple-700 text-xs font-medium hover:bg-purple-200 transition">AlgoExpert</a>
-              </div>
-            </div>
-
-            <!-- Stage 3 -->
-            <div class="bg-gray-50 border-2 border-purple-500 p-3 hover:shadow-md transition-shadow">
-              <div class="flex items-center gap-2 mb-2">
-                <span class="bg-purple-500 text-white w-6 h-6 flex items-center justify-center font-bold text-xs flex-shrink-0">3</span>
-                <h4 class="text-sm font-bold text-gray-800">Linked Lists & Stacks</h4>
-              </div>
-              <p class="text-xs text-gray-600 mb-2">
-                Linked list operations, stack/queue implementations, monotonic stacks.
-              </p>
-              <div class="flex flex-wrap gap-1">
-                <a href="https://leetcode.com/tag/linked-list/" target="_blank" class="px-2 py-1 bg-blue-100 text-blue-700 text-xs font-medium hover:bg-blue-200 transition">LeetCode</a>
-                <a href="https://www.interviewbit.com/" target="_blank" class="px-2 py-1 bg-indigo-100 text-indigo-700 text-xs font-medium hover:bg-indigo-200 transition">InterviewBit</a>
-              </div>
-            </div>
-
-            <!-- Stage 4 -->
-            <div class="bg-gray-50 border-2 border-orange-500 p-3 hover:shadow-md transition-shadow">
-              <div class="flex items-center gap-2 mb-2">
-                <span class="bg-orange-500 text-white w-6 h-6 flex items-center justify-center font-bold text-xs flex-shrink-0">4</span>
-                <h4 class="text-sm font-bold text-gray-800">Trees & BST</h4>
-              </div>
-              <p class="text-xs text-gray-600 mb-2">
-                Tree traversals, BST properties, tree construction, balanced trees.
-              </p>
-              <div class="flex flex-wrap gap-1">
-                <a href="https://leetcode.com/tag/tree/" target="_blank" class="px-2 py-1 bg-blue-100 text-blue-700 text-xs font-medium hover:bg-blue-200 transition">LeetCode</a>
-                <a href="https://www.geeksforgeeks.org/binary-search-tree-data-structure/" target="_blank" class="px-2 py-1 bg-orange-100 text-orange-700 text-xs font-medium hover:bg-orange-200 transition">GFG</a>
-              </div>
-            </div>
-
-            <!-- Stage 5 -->
-            <div class="bg-gray-50 border-2 border-red-500 p-3 hover:shadow-md transition-shadow">
-              <div class="flex items-center gap-2 mb-2">
-                <span class="bg-red-500 text-white w-6 h-6 flex items-center justify-center font-bold text-xs flex-shrink-0">5</span>
-                <h4 class="text-sm font-bold text-gray-800">Graphs & Advanced</h4>
-              </div>
-              <p class="text-xs text-gray-600 mb-2">
-                Graph representations, BFS/DFS, shortest paths, topological sorting.
-              </p>
-              <div class="flex flex-wrap gap-1">
-                <a href="https://leetcode.com/tag/graph/" target="_blank" class="px-2 py-1 bg-blue-100 text-blue-700 text-xs font-medium hover:bg-blue-200 transition">LeetCode</a>
-                <a href="https://www.hackerrank.com/domains/data-structures/graphs" target="_blank" class="px-2 py-1 bg-green-100 text-green-700 text-xs font-medium hover:bg-green-200 transition">HackerRank</a>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- Stats and Button -->
-          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pt-4 border-t-2 border-gray-200">
-            <div class="flex flex-wrap items-center gap-3 md:gap-4 text-xs md:text-sm text-gray-600">
-              <span class="flex items-center gap-2">
-                <i class="fas fa-layer-group" style="color: #377536;"></i>
-                <strong>5</strong> Stages
-              </span>
-              <span class="flex items-center gap-2">
-                <i class="fas fa-clock" style="color: #377536;"></i>
-                <strong>40-60</strong> Hours
-              </span>
-              <span class="flex items-center gap-2">
-                <i class="fas fa-signal" style="color: #377536;"></i>
-                Beginner to Advanced
-              </span>
-            </div>
-            <span class="px-4 py-2 bg-gray-400 text-white text-sm font-semibold cursor-not-allowed flex items-center gap-2">
-              <i class="fas fa-lock"></i>
-              Coming Soon
-            </span>
-          </div>
-
+      <!-- 3 Buttons Per Row Grid - 70% width -->
+      <div class="flex justify-center">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 w-full lg:w-[70%]">
+          <a href="ai/Introduction_to_AI.html" class="block px-4 py-2.5 bg-white border-2 border-gray-300 hover:border-green-600 hover:bg-gray-50 transition-all text-center font-semibold text-gray-800 hover:text-green-700 text-sm">
+            Introduction to AI
+          </a>
+          <a href="ai/maths_and_statistics_for_ai.html" class="block px-4 py-2.5 bg-white border-2 border-gray-300 hover:border-green-600 hover:bg-gray-50 transition-all text-center font-semibold text-gray-800 hover:text-green-700 text-sm">
+            Maths & Statistics
+          </a>
+          <a href="ai/machine_learning.html" class="block px-4 py-2.5 bg-white border-2 border-gray-300 hover:border-green-600 hover:bg-gray-50 transition-all text-center font-semibold text-gray-800 hover:text-green-700 text-sm">
+            Machine Learning
+          </a>
+          <a href="ai/deep_learning.html" class="block px-4 py-2.5 bg-white border-2 border-gray-300 hover:border-green-600 hover:bg-gray-50 transition-all text-center font-semibold text-gray-800 hover:text-green-700 text-sm">
+            Deep Learning
+          </a>
+          <a href="ai/natural_language_processing.html" class="block px-4 py-2.5 bg-white border-2 border-gray-300 hover:border-green-600 hover:bg-gray-50 transition-all text-center font-semibold text-gray-800 hover:text-green-700 text-sm">
+            Natural Language Processing
+          </a>
+          <a href="ai/ai_ethics.html" class="block px-4 py-2.5 bg-white border-2 border-gray-300 hover:border-green-600 hover:bg-gray-50 transition-all text-center font-semibold text-gray-800 hover:text-green-700 text-sm">
+            AI Ethics
+          </a>
+          <a href="ai/practics_and_projects.html" class="block px-4 py-2.5 bg-white border-2 border-gray-300 hover:border-green-600 hover:bg-gray-50 transition-all text-center font-semibold text-gray-800 hover:text-green-700 text-sm">
+            Practical Projects
+          </a>
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- Other Topics Grid -->
-      <div id="interviewContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8 mt-6">
-        <!-- Future interview prep topics can go here -->
+  <!-- OFFICE TOOLS SECTION -->
+  <section id="officetools" class="py-6 md:py-8 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <!-- Header with Office Tools centered with lines -->
+      <div class="flex items-center mb-3">
+        <div class="flex-1 border-t-2 border-gray-300"></div>
+        <h2 class="text-xl font-bold text-gray-800 px-4">Office Tools</h2>
+        <div class="flex-1 border-t-2 border-gray-300"></div>
+      </div>
+      
+      <!-- Single Button Centered - 70% width -->
+      <div class="flex justify-center">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 w-full lg:w-[70%]">
+          <a href="cv-editor.html" class="block px-4 py-2.5 bg-white border-2 border-gray-300 hover:border-green-600 hover:bg-gray-50 transition-all text-center font-semibold text-gray-800 hover:text-green-700 text-sm">
+            CV Editor
+          </a>
+        </div>
       </div>
     </div>
   </section>
