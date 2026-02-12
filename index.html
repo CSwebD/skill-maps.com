@@ -23,7 +23,6 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
   
   <style>
-  /* Your existing slide transitions */
   .slide {
     opacity: 0;
     transition: opacity 1s ease-in-out;
@@ -36,7 +35,6 @@
   }
   </style>
   
-  <!-- Rest of your code... -->
 </head>
 
 <body class="bg-gray-50 bg-gray-50">
@@ -181,103 +179,6 @@
     }
   </script>
 
-  <!-- RANDOM CATEGORY ARTICLES SECTION -->
-  <section id="category-articles" class="py-8 md:py-12 ">
-    <div class="max-w-7xl mx-auto px-6">
-      <!-- Header will be dynamically generated -->
-      <div id="categoryHeader" class="flex items-center justify-between mb-4">
-        <!-- Category name will load here -->
-      </div>
-      
-      <!-- Articles Grid: 5 cards in one row -->
-      <div id="categoryPostsGrid" class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
-        <!-- 5 category posts will load here -->
-      </div>
-    </div>
-  </section>
-
-  <script>
-    async function loadRandomCategoryArticles() {
-      try {
-        const res = await fetch('./blog/blog.json');
-        const posts = await res.json();
-
-        // Define categories (excluding "all")
-        const categories = ["AI", "Tech", "Development", "OpenSource", "Design", "Career", "Research", "CyberSecurity"];
-        
-        // Pick random category
-        const randomCategory = categories[Math.floor(Math.random() * categories.length)];
-        
-        // Filter posts by selected category
-        const categoryPosts = posts.filter(post => post.category === randomCategory);
-        
-        // Take only first 4 posts (5th slot will be ad)
-        const selectedPosts = categoryPosts.slice(0, 4);
-        
-        // Update header
-        const headerContainer = document.getElementById('categoryHeader');
-        headerContainer.innerHTML = `
-          <h2 class="text-1xl font-bold text-gray-800">Latest in ${randomCategory}</h2>
-          <a href="blog.html" class="text-xs font-semibold hover:underline" style="color: #377536;">
-            View All →
-          </a>
-        `;
-
-        // Load first 4 posts in a row
-        const gridContainer = document.getElementById('categoryPostsGrid');
-        
-        selectedPosts.forEach(post => {
-          const postCard = document.createElement('a');
-          postCard.href = post.link;
-          postCard.className = "block group bg-white p-1";
-          
-          postCard.innerHTML = `
-            <div class="relative h-32 overflow-hidden mb-3">
-              <img src="${post.image}" alt="${post.title}" 
-                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-            </div>
-            <div class="space-y-1">
-              <span class="inline-block text-xs font-semibold uppercase tracking-wide" style="color: #377536;">
-                ${post.category || 'Article'}
-              </span>
-              <h4 class="text-sm font-bold text-gray-900 transition-colors line-clamp-2" style="transition: color 0.3s;" onmouseover="this.style.color='#377536'" onmouseout="this.style.color=''">
-                ${post.title}
-              </h4>
-              <p class="text-xs text-gray-600 line-clamp-4">
-                ${post.desc}
-              </p>
-            </div>
-          `;
-          
-          gridContainer.appendChild(postCard);
-        });
-
-        // Add Google Ad as 5th card
-        const adCard = document.createElement('div');
-        adCard.className = "bg-white p-1 flex items-center justify-center";
-        adCard.innerHTML = `
-          <div class="w-full h-full flex items-center justify-center">
-            <!-- Index-Category-5th -->
-            <ins class="adsbygoogle"
-                 style="display:block; min-height: 200px;"
-                 data-ad-client="ca-pub-7439109164508333"
-                 data-ad-slot="3447716297"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-          </div>
-        `;
-        
-        gridContainer.appendChild(adCard);
-        
-        // Initialize the ad
-        (adsbygoogle = window.adsbygoogle || []).push({});
-
-      } catch (error) {
-        console.error('Error loading category articles:', error);
-      }
-    }
-  </script>
-
   <script>
     // Load updates when page loads
     document.addEventListener('DOMContentLoaded', () => {
@@ -299,7 +200,7 @@
       
       <!-- 3 Buttons Per Row Grid - 70% width -->
       <div class="flex justify-center">
-        <div id="domainButtonsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 w-full lg:w-[70%]">
+        <div id="domainButtonsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full lg:w-[70%]">
           <!-- Domain buttons will load here -->
         </div>
       </div>
@@ -314,12 +215,90 @@
 
         const container = document.getElementById('domainButtonsContainer');
         
+        // Icon mapping for different domains
+        const iconMap = {
+          'development': 'fa-laptop-code',
+          'devops': 'fa-server',
+          'data': 'fa-database',
+          'cloud': 'fa-cloud',
+          'security': 'fa-shield-alt',
+          'mobile': 'fa-mobile-alt',
+          'web': 'fa-globe',
+          'fullstack': 'fa-layer-group',
+          'backend': 'fa-cogs',
+          'frontend': 'fa-paint-brush'
+        };
+        
+        // Softer color mapping for different domains
+        const colorMap = {
+          'development': 'bg-blue-50 text-blue-600 group-hover:bg-blue-100',
+          'devops': 'bg-orange-50 text-orange-600 group-hover:bg-orange-100',
+          'data': 'bg-purple-50 text-purple-600 group-hover:bg-purple-100',
+          'cloud': 'bg-sky-50 text-sky-600 group-hover:bg-sky-100',
+          'security': 'bg-red-50 text-red-600 group-hover:bg-red-100',
+          'mobile': 'bg-pink-50 text-pink-600 group-hover:bg-pink-100',
+          'web': 'bg-teal-50 text-teal-600 group-hover:bg-teal-100',
+          'fullstack': 'bg-indigo-50 text-indigo-600 group-hover:bg-indigo-100',
+          'backend': 'bg-green-50 text-green-600 group-hover:bg-green-100',
+          'frontend': 'bg-cyan-50 text-cyan-600 group-hover:bg-cyan-100'
+        };
+        
+        const borderMap = {
+          'development': 'hover:border-blue-500',
+          'devops': 'hover:border-orange-500',
+          'data': 'hover:border-purple-500',
+          'cloud': 'hover:border-sky-500',
+          'security': 'hover:border-red-500',
+          'mobile': 'hover:border-pink-500',
+          'web': 'hover:border-teal-500',
+          'fullstack': 'hover:border-indigo-500',
+          'backend': 'hover:border-green-500',
+          'frontend': 'hover:border-cyan-500'
+        };
+        
+        const textColorMap = {
+          'development': 'group-hover:text-blue-700',
+          'devops': 'group-hover:text-orange-700',
+          'data': 'group-hover:text-purple-700',
+          'cloud': 'group-hover:text-sky-700',
+          'security': 'group-hover:text-red-700',
+          'mobile': 'group-hover:text-pink-700',
+          'web': 'group-hover:text-teal-700',
+          'fullstack': 'group-hover:text-indigo-700',
+          'backend': 'group-hover:text-green-700',
+          'frontend': 'group-hover:text-cyan-700'
+        };
+        
         // Create button for each domain
-        domains.forEach(domain => {
+        domains.forEach((domain, index) => {
+          const titleLower = domain.title.toLowerCase();
+          let icon = 'fa-briefcase'; // default icon
+          let colorClasses = 'bg-gray-50 text-gray-600 group-hover:bg-gray-100'; // default color
+          let borderClass = 'hover:border-gray-500';
+          let textColor = 'group-hover:text-gray-700';
+          
+          for (const [key, value] of Object.entries(iconMap)) {
+            if (titleLower.includes(key)) {
+              icon = value;
+              colorClasses = colorMap[key];
+              borderClass = borderMap[key];
+              textColor = textColorMap[key];
+              break;
+            }
+          }
+          
           const button = document.createElement('a');
           button.href = domain.link;
-          button.className = "block px-4 py-2.5 bg-white border-2 border-gray-300 hover:border-green-600 hover:bg-gray-50 transition-all text-center font-semibold text-gray-800 hover:text-green-700 text-sm";
-          button.textContent = domain.title;
+          button.className = `group relative block px-5 py-3.5 bg-white rounded-lg border border-gray-200 ${borderClass} hover:shadow-md transition-all duration-200`;
+          
+          button.innerHTML = `
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-md ${colorClasses} flex items-center justify-center flex-shrink-0 transition-colors duration-200">
+                <i class="fas ${icon} text-base"></i>
+              </div>
+              <span class="font-semibold text-gray-700 ${textColor} transition-colors text-sm">${domain.title}</span>
+            </div>
+          `;
           
           container.appendChild(button);
         });
@@ -344,7 +323,7 @@
       
       <!-- 3 Buttons Per Row Grid - 70% width -->
       <div class="flex justify-center">
-        <div id="skillButtonsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 w-full lg:w-[70%]">
+        <div id="skillButtonsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full lg:w-[70%]">
           <!-- Skill buttons will load here -->
         </div>
       </div>
@@ -359,12 +338,122 @@
 
         const container = document.getElementById('skillButtonsContainer');
         
+        // Icon mapping for different technologies
+        const iconMap = {
+          'python': 'fa-python',
+          'javascript': 'fa-js',
+          'java': 'fa-java',
+          'react': 'fa-react',
+          'angular': 'fa-angular',
+          'vue': 'fa-vuejs',
+          'node': 'fa-node-js',
+          'docker': 'fa-docker',
+          'kubernetes': 'fa-dharmachakra',
+          'git': 'fa-git-alt',
+          'aws': 'fa-aws',
+          'linux': 'fa-linux',
+          'database': 'fa-database',
+          'api': 'fa-plug',
+          'testing': 'fa-vial',
+          'design': 'fa-palette',
+          'security': 'fa-lock',
+          'analytics': 'fa-chart-line'
+        };
+        
+        // Softer color mapping for different technologies
+        const colorMap = {
+          'python': 'bg-yellow-50 text-yellow-600 group-hover:bg-yellow-100',
+          'javascript': 'bg-yellow-50 text-yellow-600 group-hover:bg-yellow-100',
+          'java': 'bg-red-50 text-red-600 group-hover:bg-red-100',
+          'react': 'bg-cyan-50 text-cyan-600 group-hover:bg-cyan-100',
+          'angular': 'bg-red-50 text-red-600 group-hover:bg-red-100',
+          'vue': 'bg-green-50 text-green-600 group-hover:bg-green-100',
+          'node': 'bg-green-50 text-green-600 group-hover:bg-green-100',
+          'docker': 'bg-blue-50 text-blue-600 group-hover:bg-blue-100',
+          'kubernetes': 'bg-blue-50 text-blue-600 group-hover:bg-blue-100',
+          'git': 'bg-orange-50 text-orange-600 group-hover:bg-orange-100',
+          'aws': 'bg-orange-50 text-orange-600 group-hover:bg-orange-100',
+          'linux': 'bg-gray-50 text-gray-700 group-hover:bg-gray-100',
+          'database': 'bg-purple-50 text-purple-600 group-hover:bg-purple-100',
+          'api': 'bg-indigo-50 text-indigo-600 group-hover:bg-indigo-100',
+          'testing': 'bg-pink-50 text-pink-600 group-hover:bg-pink-100',
+          'design': 'bg-fuchsia-50 text-fuchsia-600 group-hover:bg-fuchsia-100',
+          'security': 'bg-red-50 text-red-600 group-hover:bg-red-100',
+          'analytics': 'bg-teal-50 text-teal-600 group-hover:bg-teal-100'
+        };
+        
+        const borderMap = {
+          'python': 'hover:border-yellow-500',
+          'javascript': 'hover:border-yellow-500',
+          'java': 'hover:border-red-500',
+          'react': 'hover:border-cyan-500',
+          'angular': 'hover:border-red-500',
+          'vue': 'hover:border-green-500',
+          'node': 'hover:border-green-500',
+          'docker': 'hover:border-blue-500',
+          'kubernetes': 'hover:border-blue-500',
+          'git': 'hover:border-orange-500',
+          'aws': 'hover:border-orange-500',
+          'linux': 'hover:border-gray-500',
+          'database': 'hover:border-purple-500',
+          'api': 'hover:border-indigo-500',
+          'testing': 'hover:border-pink-500',
+          'design': 'hover:border-fuchsia-500',
+          'security': 'hover:border-red-500',
+          'analytics': 'hover:border-teal-500'
+        };
+        
+        const textColorMap = {
+          'python': 'group-hover:text-yellow-700',
+          'javascript': 'group-hover:text-yellow-700',
+          'java': 'group-hover:text-red-700',
+          'react': 'group-hover:text-cyan-700',
+          'angular': 'group-hover:text-red-700',
+          'vue': 'group-hover:text-green-700',
+          'node': 'group-hover:text-green-700',
+          'docker': 'group-hover:text-blue-700',
+          'kubernetes': 'group-hover:text-blue-700',
+          'git': 'group-hover:text-orange-700',
+          'aws': 'group-hover:text-orange-700',
+          'linux': 'group-hover:text-gray-800',
+          'database': 'group-hover:text-purple-700',
+          'api': 'group-hover:text-indigo-700',
+          'testing': 'group-hover:text-pink-700',
+          'design': 'group-hover:text-fuchsia-700',
+          'security': 'group-hover:text-red-700',
+          'analytics': 'group-hover:text-teal-700'
+        };
+        
         // Create button for each skill
-        skills.forEach(skill => {
+        skills.forEach((skill, index) => {
+          const titleLower = skill.title.toLowerCase();
+          let icon = 'fa-code'; // default icon
+          let colorClasses = 'bg-blue-50 text-blue-600 group-hover:bg-blue-100'; // default color
+          let borderClass = 'hover:border-blue-500';
+          let textColor = 'group-hover:text-blue-700';
+          
+          for (const [key, value] of Object.entries(iconMap)) {
+            if (titleLower.includes(key)) {
+              icon = value;
+              colorClasses = colorMap[key];
+              borderClass = borderMap[key];
+              textColor = textColorMap[key];
+              break;
+            }
+          }
+          
           const button = document.createElement('a');
           button.href = skill.link;
-          button.className = "block px-4 py-2.5 bg-white border-2 border-gray-300 hover:border-green-600 hover:bg-gray-50 transition-all text-center font-semibold text-gray-800 hover:text-green-700 text-sm";
-          button.textContent = skill.title;
+          button.className = `group relative block px-5 py-3.5 bg-white rounded-lg border border-gray-200 ${borderClass} hover:shadow-md transition-all duration-200`;
+          
+          button.innerHTML = `
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-md ${colorClasses} flex items-center justify-center flex-shrink-0 transition-colors duration-200">
+                <i class="fab ${icon} text-base"></i>
+              </div>
+              <span class="font-semibold text-gray-700 ${textColor} transition-colors text-sm">${skill.title}</span>
+            </div>
+          `;
           
           container.appendChild(button);
         });
@@ -389,27 +478,62 @@
       
       <!-- 3 Buttons Per Row Grid - 70% width -->
       <div class="flex justify-center">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 w-full lg:w-[70%]">
-          <a href="ai/Introduction_to_AI.html" class="block px-4 py-2.5 bg-white border-2 border-gray-300 hover:border-green-600 hover:bg-gray-50 transition-all text-center font-semibold text-gray-800 hover:text-green-700 text-sm">
-            Introduction to AI
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full lg:w-[70%]">
+          <a href="ai/Introduction_to_AI.html" class="group relative block px-5 py-3.5 bg-white rounded-lg border border-gray-200 hover:border-green-500 hover:shadow-md transition-all duration-200">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-md bg-green-50 flex items-center justify-center flex-shrink-0 group-hover:bg-green-100 transition-colors duration-200">
+                <i class="fas fa-brain text-green-600 text-base"></i>
+              </div>
+              <span class="font-semibold text-gray-700 group-hover:text-green-700 transition-colors text-sm">Introduction to AI</span>
+            </div>
           </a>
-          <a href="ai/maths_and_statistics_for_ai.html" class="block px-4 py-2.5 bg-white border-2 border-gray-300 hover:border-green-600 hover:bg-gray-50 transition-all text-center font-semibold text-gray-800 hover:text-green-700 text-sm">
-            Maths & Statistics
+          <a href="ai/maths_and_statistics_for_ai.html" class="group relative block px-5 py-3.5 bg-white rounded-lg border border-gray-200 hover:border-blue-500 hover:shadow-md transition-all duration-200">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-md bg-blue-50 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-100 transition-colors duration-200">
+                <i class="fas fa-calculator text-blue-600 text-base"></i>
+              </div>
+              <span class="font-semibold text-gray-700 group-hover:text-blue-700 transition-colors text-sm">Maths & Statistics</span>
+            </div>
           </a>
-          <a href="ai/machine_learning.html" class="block px-4 py-2.5 bg-white border-2 border-gray-300 hover:border-green-600 hover:bg-gray-50 transition-all text-center font-semibold text-gray-800 hover:text-green-700 text-sm">
-            Machine Learning
+          <a href="ai/machine_learning.html" class="group relative block px-5 py-3.5 bg-white rounded-lg border border-gray-200 hover:border-purple-500 hover:shadow-md transition-all duration-200">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-md bg-purple-50 flex items-center justify-center flex-shrink-0 group-hover:bg-purple-100 transition-colors duration-200">
+                <i class="fas fa-robot text-purple-600 text-base"></i>
+              </div>
+              <span class="font-semibold text-gray-700 group-hover:text-purple-700 transition-colors text-sm">Machine Learning</span>
+            </div>
           </a>
-          <a href="ai/deep_learning.html" class="block px-4 py-2.5 bg-white border-2 border-gray-300 hover:border-green-600 hover:bg-gray-50 transition-all text-center font-semibold text-gray-800 hover:text-green-700 text-sm">
-            Deep Learning
+          <a href="ai/deep_learning.html" class="group relative block px-5 py-3.5 bg-white rounded-lg border border-gray-200 hover:border-indigo-500 hover:shadow-md transition-all duration-200">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-md bg-indigo-50 flex items-center justify-center flex-shrink-0 group-hover:bg-indigo-100 transition-colors duration-200">
+                <i class="fas fa-network-wired text-indigo-600 text-base"></i>
+              </div>
+              <span class="font-semibold text-gray-700 group-hover:text-indigo-700 transition-colors text-sm">Deep Learning</span>
+            </div>
           </a>
-          <a href="ai/natural_language_processing.html" class="block px-4 py-2.5 bg-white border-2 border-gray-300 hover:border-green-600 hover:bg-gray-50 transition-all text-center font-semibold text-gray-800 hover:text-green-700 text-sm">
-            Natural Language Processing
+          <a href="ai/natural_language_processing.html" class="group relative block px-5 py-3.5 bg-white rounded-lg border border-gray-200 hover:border-cyan-500 hover:shadow-md transition-all duration-200">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-md bg-cyan-50 flex items-center justify-center flex-shrink-0 group-hover:bg-cyan-100 transition-colors duration-200">
+                <i class="fas fa-comments text-cyan-600 text-base"></i>
+              </div>
+              <span class="font-semibold text-gray-700 group-hover:text-cyan-700 transition-colors text-sm">Natural Language Processing</span>
+            </div>
           </a>
-          <a href="ai/ai_ethics.html" class="block px-4 py-2.5 bg-white border-2 border-gray-300 hover:border-green-600 hover:bg-gray-50 transition-all text-center font-semibold text-gray-800 hover:text-green-700 text-sm">
-            AI Ethics
+          <a href="ai/ai_ethics.html" class="group relative block px-5 py-3.5 bg-white rounded-lg border border-gray-200 hover:border-amber-500 hover:shadow-md transition-all duration-200">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-md bg-amber-50 flex items-center justify-center flex-shrink-0 group-hover:bg-amber-100 transition-colors duration-200">
+                <i class="fas fa-balance-scale text-amber-600 text-base"></i>
+              </div>
+              <span class="font-semibold text-gray-700 group-hover:text-amber-700 transition-colors text-sm">AI Ethics</span>
+            </div>
           </a>
-          <a href="ai/practics_and_projects.html" class="block px-4 py-2.5 bg-white border-2 border-gray-300 hover:border-green-600 hover:bg-gray-50 transition-all text-center font-semibold text-gray-800 hover:text-green-700 text-sm">
-            Practical Projects
+          <a href="ai/practics_and_projects.html" class="group relative block px-5 py-3.5 bg-white rounded-lg border border-gray-200 hover:border-rose-500 hover:shadow-md transition-all duration-200">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-md bg-rose-50 flex items-center justify-center flex-shrink-0 group-hover:bg-rose-100 transition-colors duration-200">
+                <i class="fas fa-code text-rose-600 text-base"></i>
+              </div>
+              <span class="font-semibold text-gray-700 group-hover:text-rose-700 transition-colors text-sm">Practical Projects</span>
+            </div>
           </a>
         </div>
       </div>
@@ -428,9 +552,14 @@
       
       <!-- Single Button Centered - 70% width -->
       <div class="flex justify-center">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 w-full lg:w-[70%]">
-          <a href="cv-editor.html" class="block px-4 py-2.5 bg-white border-2 border-gray-300 hover:border-green-600 hover:bg-gray-50 transition-all text-center font-semibold text-gray-800 hover:text-green-700 text-sm">
-            CV Editor
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full lg:w-[70%]">
+          <a href="cv-editor.html" class="group relative block px-5 py-3.5 bg-white rounded-lg border border-gray-200 hover:border-emerald-500 hover:shadow-md transition-all duration-200">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-md bg-emerald-50 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-100 transition-colors duration-200">
+                <i class="fas fa-file-alt text-emerald-600 text-base"></i>
+              </div>
+              <span class="font-semibold text-gray-700 group-hover:text-emerald-700 transition-colors text-sm">CV Editor</span>
+            </div>
           </a>
         </div>
       </div>
