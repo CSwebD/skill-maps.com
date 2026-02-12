@@ -394,25 +394,16 @@
         }
 
         #cv-editor-app .cv-export-section {
-            background: white;
-            padding: 1.25rem 2rem;
-            border-top: 2px solid var(--cv-border);
-            border-bottom: 2px solid var(--cv-border);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            margin: 2rem 0;
-            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 1rem;
         }
 
         #cv-editor-app .cv-export-section h3 {
             margin: 0;
             color: var(--cv-text);
-            font-weight: 700;
+            font-weight: 600;
             font-size: 1rem;
-            margin-right: 1rem;
         }
 
         @keyframes fadeIn {
@@ -724,6 +715,24 @@
                 <p class="cv-subtitle">Build your professional resume in real-time</p>
             </header>
 
+            <!-- Ad Block: Index-Header -->
+            <div style="padding: 2rem 0; background: #f8fafc; margin: 2rem 0; border-radius: 8px;">
+                <div style="max-width: 1600px; margin: 0 auto; padding: 0 1.5rem;">
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7439109164508333"
+                         crossorigin="anonymous"></script>
+                    <!-- Index-Header -->
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-7439109164508333"
+                         data-ad-slot="4111274044"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                    <script>
+                         (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+
             <div class="cv-editor-grid">
                 <!-- Input Panel -->
                 <div class="cv-panel">
@@ -816,9 +825,9 @@
                 </div>
 
                 <!-- Preview Panel -->
-                <div class="cv-panel">
+                <div class="cv-panel" style="display: flex; flex-direction: column;">
                     <h2>Live Preview</h2>
-                    <div class="cv-preview-container" id="cvPreview">
+                    <div class="cv-preview-container" id="cvPreview" style="flex: 1; overflow-y: auto;">
                         <div class="cv-header">
                             <div class="cv-name" id="previewName">Your Name</div>
                             <div class="cv-title" id="previewTitle">Professional Title</div>
@@ -861,34 +870,25 @@
                             <div id="previewLanguages"></div>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <!-- Ad Block: Index-Header -->
-            <div style="padding: 2rem 0; background: #f8fafc; margin: 2rem 0; border-radius: 8px;">
-                <div style="max-width: 1600px; margin: 0 auto; padding: 0 1.5rem;">
-                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7439109164508333"
-                         crossorigin="anonymous"></script>
-                    <!-- Index-Header -->
-                    <ins class="adsbygoogle"
-                         style="display:block"
-                         data-ad-client="ca-pub-7439109164508333"
-                         data-ad-slot="4111274044"
-                         data-ad-format="auto"
-                         data-full-width-responsive="true"></ins>
-                    <script>
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                </div>
-            </div>
-
-            <!-- Export Section -->
-            <div class="cv-export-section">
-                <h3>Export Options:</h3>
-                <div class="cv-button-group">
-                    <button onclick="downloadPDF()">PDF</button>
-                    <button onclick="downloadDOCX()">Word</button>
-                    <button onclick="window.print()">Print</button>
+                    
+                    <!-- Export Section -->
+                    <div class="cv-export-section" style="margin-top: auto; padding-top: 1.5rem; border-top: 1px solid var(--cv-border); background: transparent; border-bottom: none; box-shadow: none; border-radius: 0;">
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
+                            <h3 style="margin: 0;">Export Options:</h3>
+                            <button onclick="downloadPDF()">
+                                <i class="fas fa-file-pdf"></i>
+                                PDF
+                            </button>
+                            <button onclick="downloadDOCX()">
+                                <i class="fas fa-file-word"></i>
+                                Word
+                            </button>
+                            <button onclick="window.print()">
+                                <i class="fas fa-print"></i>
+                                Print
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

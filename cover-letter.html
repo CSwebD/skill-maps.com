@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-adsense-account" content="ca-pub-7439109164508333">
+    <title>Cover Letter Editor - Skill Maps</title>
+    <link rel="icon" href="images/logo.jpg" type="image/x-icon">
+    <meta name="description" content="Create professional cover letters with our interactive editor." />
+    <!-- Open Graph -->
+    <meta property="og:title" content="Cover Letter Editor | Skill Maps" />
+    <meta property="og:description" content="Create and export professional cover letters with our free online editor." />
+    <meta property="og:url" content="https://www.skill-maps.com" />
+    <meta property="og:image" content="https://www.skill-maps.com/images/logo.jpg" />
+    <!-- PDF Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <!-- DOCX Library -->
+    <script src="https://unpkg.com/docx@7.8.2/build/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": "Skill Maps",
+      "url": "https://www.skill-maps.com",
+      "logo": "https://www.skill-maps.com/images/logo.jpg"
+    }
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7439109164508333"
+         crossorigin="anonymous"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZS5VZ74BH8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-ZS5VZ74BH8');
+    </script>
+    <style>
+        /* Cover Letter Editor Scoped Styles */
+        #cover-letter-editor-app * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #cover-letter-editor-app {
+            --cv-primary: #3b82f6;
+            --cv-primary-hover: #2563eb;
+            --cv-secondary: #f8fafc;
+            --cv-accent: #16a34a;
+            --cv-accent-hover: #30d46c;
+            --cv-text: #0f172a;
+            --cv-text-muted: #64748b;
+            --cv-border: #e2e8f0;
+            --cv-bg-input: #ffffff;
+            --cv-bg-panel: #f8fafc;
+            --cv-success: #3b82f6;
+            --cv-danger: #dc2626;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+        }
+
+        #cover-letter-editor-app {
+            background: #f8fafc;
+            color: var(--cv-text);
+            min-height: 100vh;
+            padding: 2rem;
+            padding-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        /* Custom scrollbar styling */
+        #cover-letter-editor-app .cv-panel::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        #cover-letter-editor-app .cv-panel::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 4px;
+        }
+
+        #cover-letter-editor-app .cv-panel::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+
+        #cover-letter-editor-app .cv-panel::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        #cover-letter-editor-app .cv-container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        #cover-letter-editor-app .cv-header-section {
+            text-align: center;
+            margin-bottom: 3rem;
+            animation: fadeInDown 0.6s ease-out;
+        }
+
+        #cover-letter-editor-app .cv-main-title {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--cv-text);
+        }
+
+        #cover-letter-editor-app .cv-subtitle {
+            color: var(--cv-text-muted);
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        #cover-letter-editor-app .cv-editor-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            animation: fadeIn 0.8s ease-out 0.2s both;
+            height: calc(100vh - 280px);
+            align-items: start;
+        }
+
+        #cover-letter-editor-app .cv-panel {
+            background: white;
+            border: 1px solid var(--cv-border);
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+            overflow-y: auto;
+            max-height: 100%;
+        }
+
+        #cover-letter-editor-app .cv-panel h2 {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--cv-text);
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        #cover-letter-editor-app .cv-form-section {
+            margin-bottom: 2.5rem;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        #cover-letter-editor-app .cv-form-section h3 {
+            font-size: 1.125rem;
+            margin-bottom: 1.25rem;
+            color: var(--cv-text);
+            font-weight: 700;
+        }
+
+        #cover-letter-editor-app .cv-form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        #cover-letter-editor-app .cv-form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--cv-text);
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        #cover-letter-editor-app input[type="text"],
+        #cover-letter-editor-app input[type="email"],
+        #cover-letter-editor-app input[type="tel"],
+        #cover-letter-editor-app input[type="date"],
+        #cover-letter-editor-app textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            background: var(--cv-bg-input);
+            border: 1.5px solid var(--cv-border);
+            border-radius: 8px;
+            color: var(--cv-text);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 0.95rem;
+            transition: all 0.15s ease;
+        }
+
+        #cover-letter-editor-app input:focus,
+        #cover-letter-editor-app textarea:focus {
+            outline: none;
+            border-color: var(--cv-accent);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        #cover-letter-editor-app textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        #cover-letter-editor-app .cv-button-group {
+            display: flex;
+            gap: 1rem;
+            margin: 0;
+        }
+
+        #cover-letter-editor-app button {
+            padding: 0.75rem 1.5rem;
+            background: var(--cv-accent);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.9375rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.15s ease;
+        }
+
+        #cover-letter-editor-app button:hover {
+            background: var(--cv-accent-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(22, 163, 74, 0.2);
+        }
+
+        #cover-letter-editor-app button i {
+            font-size: 1rem;
+        }
+
+        /* Preview styling */
+        #cover-letter-editor-app .preview-container {
+            min-height: 800px;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+        }
+
+        #cover-letter-editor-app .preview-header {
+            margin-bottom: 2.5rem;
+        }
+
+        #cover-letter-editor-app .preview-name {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--cv-text);
+            margin-bottom: 0.5rem;
+        }
+
+        #cover-letter-editor-app .preview-contact {
+            color: var(--cv-text-muted);
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        #cover-letter-editor-app .preview-date {
+            margin-bottom: 2rem;
+            color: var(--cv-text);
+        }
+
+        #cover-letter-editor-app .preview-recipient {
+            margin-bottom: 2rem;
+        }
+
+        #cover-letter-editor-app .preview-recipient-name {
+            font-weight: 600;
+            color: var(--cv-text);
+        }
+
+        #cover-letter-editor-app .preview-recipient-title,
+        #cover-letter-editor-app .preview-recipient-company,
+        #cover-letter-editor-app .preview-recipient-address {
+            color: var(--cv-text-muted);
+            line-height: 1.6;
+        }
+
+        #cover-letter-editor-app .preview-greeting {
+            margin-bottom: 1.5rem;
+            color: var(--cv-text);
+            font-weight: 500;
+        }
+
+        #cover-letter-editor-app .preview-body {
+            margin-bottom: 2rem;
+            color: var(--cv-text);
+            line-height: 1.8;
+            white-space: pre-wrap;
+        }
+
+        #cover-letter-editor-app .preview-closing {
+            margin-bottom: 3rem;
+        }
+
+        #cover-letter-editor-app .preview-closing-text {
+            margin-bottom: 0.5rem;
+            color: var(--cv-text);
+        }
+
+        #cover-letter-editor-app .preview-signature {
+            font-weight: 600;
+            color: var(--cv-text);
+        }
+
+        /* Export Section */
+        #cover-letter-editor-app .cv-export-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #cover-letter-editor-app .cv-export-section h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 0;
+            color: var(--cv-text);
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            #cover-letter-editor-app .cv-editor-grid {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+
+            #cover-letter-editor-app .cv-panel {
+                max-height: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #cover-letter-editor-app {
+                padding: 1rem;
+            }
+
+            #cover-letter-editor-app .cv-main-title {
+                font-size: 2rem;
+            }
+
+            #cover-letter-editor-app .cv-panel {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 pt-16">
+
+    <!-- Placeholder for the panel bar -->
+    <div id="panel-bar-placeholder"></div>
+    <script src="panel-nav.js"></script>
+
+    <div id="cover-letter-editor-app">
+        <div class="cv-container">
+            <!-- Header Section -->
+            <div class="cv-header-section">
+                <h1 class="cv-main-title">Cover Letter Editor</h1>
+                <p class="cv-subtitle">Create a professional cover letter in minutes</p>
+            </div>
+
+            <!-- Ad Block: Index-Header -->
+            <div style="padding: 2rem 0; background: #f8fafc; margin: 2rem 0; border-radius: 8px;">
+                <div style="max-width: 1600px; margin: 0 auto; padding: 0 1.5rem;">
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7439109164508333"
+                         crossorigin="anonymous"></script>
+                    <!-- Index-Header -->
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-7439109164508333"
+                         data-ad-slot="4111274044"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                    <script>
+                         (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+
+            <!-- Editor Grid -->
+            <div class="cv-editor-grid">
+                <!-- Editor Panel -->
+                <div class="cv-panel">
+                    <h2>Your Information</h2>
+
+                    <!-- Personal Information -->
+                    <div class="cv-form-section">
+                        <h3>Personal Details</h3>
+                        
+                        <div class="cv-form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" placeholder="John Doe" oninput="updatePreview()">
+                        </div>
+
+                        <div class="cv-form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="john.doe@email.com" oninput="updatePreview()">
+                        </div>
+
+                        <div class="cv-form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" placeholder="+1 (555) 123-4567" oninput="updatePreview()">
+                        </div>
+
+                        <div class="cv-form-group">
+                            <label for="address">Address</label>
+                            <input type="text" id="address" placeholder="123 Main St, City, State 12345" oninput="updatePreview()">
+                        </div>
+
+                        <div class="cv-form-group">
+                            <label for="date">Date</label>
+                            <input type="date" id="date" oninput="updatePreview()">
+                        </div>
+                    </div>
+
+                    <!-- Recipient Information -->
+                    <div class="cv-form-section">
+                        <h3>Recipient Details</h3>
+                        
+                        <div class="cv-form-group">
+                            <label for="recipientName">Hiring Manager Name</label>
+                            <input type="text" id="recipientName" placeholder="Jane Smith" oninput="updatePreview()">
+                        </div>
+
+                        <div class="cv-form-group">
+                            <label for="recipientTitle">Title</label>
+                            <input type="text" id="recipientTitle" placeholder="Hiring Manager" oninput="updatePreview()">
+                        </div>
+
+                        <div class="cv-form-group">
+                            <label for="company">Company Name</label>
+                            <input type="text" id="company" placeholder="Company Inc." oninput="updatePreview()">
+                        </div>
+
+                        <div class="cv-form-group">
+                            <label for="companyAddress">Company Address</label>
+                            <input type="text" id="companyAddress" placeholder="456 Business Ave, City, State 67890" oninput="updatePreview()">
+                        </div>
+                    </div>
+
+                    <!-- Letter Content -->
+                    <div class="cv-form-section">
+                        <h3>Letter Content</h3>
+                        
+                        <div class="cv-form-group">
+                            <label for="greeting">Greeting</label>
+                            <input type="text" id="greeting" placeholder="Dear Hiring Manager," oninput="updatePreview()">
+                        </div>
+
+                        <div class="cv-form-group">
+                            <label for="body">Letter Body</label>
+                            <textarea id="body" placeholder="Write your cover letter here...
+
+Paragraph 1: Express your interest in the position and company.
+
+Paragraph 2: Highlight your relevant skills and experiences.
+
+Paragraph 3: Explain why you're a great fit for the role.
+
+Paragraph 4: Thank them and express enthusiasm for next steps." oninput="updatePreview()"></textarea>
+                        </div>
+
+                        <div class="cv-form-group">
+                            <label for="closing">Closing</label>
+                            <input type="text" id="closing" placeholder="Sincerely," oninput="updatePreview()">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Preview Panel -->
+                <div class="cv-panel" style="display: flex; flex-direction: column;">
+                    <h2>Preview</h2>
+                    <div class="preview-container" id="preview" style="flex: 1; overflow-y: auto;">
+                        <!-- Preview content will be dynamically generated -->
+                    </div>
+                    
+                    <!-- Export Section -->
+                    <div class="cv-export-section" style="margin-top: auto; padding-top: 1.5rem; border-top: 1px solid var(--cv-border);">
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
+                            <h3 style="margin: 0;">Export Options:</h3>
+                            <button onclick="exportToPDF()">
+                                <i class="fas fa-file-pdf"></i>
+                                PDF
+                            </button>
+                            <button onclick="exportToWord()">
+                                <i class="fas fa-file-word"></i>
+                                Word
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Set today's date as default
+        document.getElementById('date').valueAsDate = new Date();
+
+        // Update preview function
+        function updatePreview() {
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const address = document.getElementById('address').value;
+            const date = document.getElementById('date').value;
+            const recipientName = document.getElementById('recipientName').value;
+            const recipientTitle = document.getElementById('recipientTitle').value;
+            const company = document.getElementById('company').value;
+            const companyAddress = document.getElementById('companyAddress').value;
+            const greeting = document.getElementById('greeting').value;
+            const body = document.getElementById('body').value;
+            const closing = document.getElementById('closing').value;
+
+            // Format date
+            let formattedDate = '';
+            if (date) {
+                const dateObj = new Date(date);
+                formattedDate = dateObj.toLocaleDateString('en-US', { 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                });
+            }
+
+            // Build contact info
+            let contactInfo = [];
+            if (email) contactInfo.push(email);
+            if (phone) contactInfo.push(phone);
+            if (address) contactInfo.push(address);
+
+            const preview = document.getElementById('preview');
+            preview.innerHTML = `
+                ${fullName ? `
+                <div class="preview-header">
+                    <div class="preview-name">${fullName}</div>
+                    ${contactInfo.length > 0 ? `
+                    <div class="preview-contact">
+                        ${contactInfo.join(' • ')}
+                    </div>
+                    ` : ''}
+                </div>
+                ` : ''}
+
+                ${formattedDate ? `
+                <div class="preview-date">${formattedDate}</div>
+                ` : ''}
+
+                ${(recipientName || recipientTitle || company || companyAddress) ? `
+                <div class="preview-recipient">
+                    ${recipientName ? `<div class="preview-recipient-name">${recipientName}</div>` : ''}
+                    ${recipientTitle ? `<div class="preview-recipient-title">${recipientTitle}</div>` : ''}
+                    ${company ? `<div class="preview-recipient-company">${company}</div>` : ''}
+                    ${companyAddress ? `<div class="preview-recipient-address">${companyAddress}</div>` : ''}
+                </div>
+                ` : ''}
+
+                ${greeting ? `<div class="preview-greeting">${greeting}</div>` : ''}
+
+                ${body ? `<div class="preview-body">${body}</div>` : ''}
+
+                ${closing || fullName ? `
+                <div class="preview-closing">
+                    ${closing ? `<div class="preview-closing-text">${closing}</div>` : ''}
+                    ${fullName ? `<div class="preview-signature">${fullName}</div>` : ''}
+                </div>
+                ` : ''}
+            `;
+        }
+
+        // Export to PDF
+        async function exportToPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const address = document.getElementById('address').value;
+            const date = document.getElementById('date').value;
+            const recipientName = document.getElementById('recipientName').value;
+            const recipientTitle = document.getElementById('recipientTitle').value;
+            const company = document.getElementById('company').value;
+            const companyAddress = document.getElementById('companyAddress').value;
+            const greeting = document.getElementById('greeting').value;
+            const body = document.getElementById('body').value;
+            const closing = document.getElementById('closing').value;
+
+            let y = 20;
+            const leftMargin = 20;
+            const lineHeight = 7;
+            const pageWidth = doc.internal.pageSize.width;
+            const maxWidth = pageWidth - 40;
+
+            // Header - Your Name
+            if (fullName) {
+                doc.setFontSize(18);
+                doc.setFont(undefined, 'bold');
+                doc.text(fullName, leftMargin, y);
+                y += 10;
+            }
+
+            // Contact Information
+            doc.setFontSize(10);
+            doc.setFont(undefined, 'normal');
+            if (email || phone || address) {
+                let contactInfo = [];
+                if (email) contactInfo.push(email);
+                if (phone) contactInfo.push(phone);
+                if (address) contactInfo.push(address);
+                
+                const contactText = contactInfo.join(' • ');
+                const lines = doc.splitTextToSize(contactText, maxWidth);
+                lines.forEach(line => {
+                    doc.text(line, leftMargin, y);
+                    y += lineHeight;
+                });
+                y += 5;
+            }
+
+            // Date
+            if (date) {
+                const dateObj = new Date(date);
+                const formattedDate = dateObj.toLocaleDateString('en-US', { 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                });
+                doc.text(formattedDate, leftMargin, y);
+                y += 10;
+            }
+
+            // Recipient Information
+            if (recipientName) {
+                doc.setFont(undefined, 'bold');
+                doc.text(recipientName, leftMargin, y);
+                y += lineHeight;
+                doc.setFont(undefined, 'normal');
+            }
+            if (recipientTitle) {
+                doc.text(recipientTitle, leftMargin, y);
+                y += lineHeight;
+            }
+            if (company) {
+                doc.text(company, leftMargin, y);
+                y += lineHeight;
+            }
+            if (companyAddress) {
+                doc.text(companyAddress, leftMargin, y);
+                y += 10;
+            }
+
+            // Greeting
+            if (greeting) {
+                doc.text(greeting, leftMargin, y);
+                y += 10;
+            }
+
+            // Body
+            if (body) {
+                const bodyLines = doc.splitTextToSize(body, maxWidth);
+                bodyLines.forEach(line => {
+                    if (y > 270) {
+                        doc.addPage();
+                        y = 20;
+                    }
+                    doc.text(line, leftMargin, y);
+                    y += lineHeight;
+                });
+                y += 10;
+            }
+
+            // Closing
+            if (closing) {
+                doc.text(closing, leftMargin, y);
+                y += 15;
+            }
+
+            // Signature
+            if (fullName) {
+                doc.setFont(undefined, 'bold');
+                doc.text(fullName, leftMargin, y);
+            }
+
+            const fileName = 'CoverLetter_' + (fullName ? fullName.replace(/\s+/g, '_') : 'Document') + '.pdf';
+            doc.save(fileName);
+        }
+
+        // Export to Word
+        async function exportToWord() {
+            const { Document, Paragraph, TextRun, AlignmentType, HeadingLevel } = docx;
+
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const address = document.getElementById('address').value;
+            const date = document.getElementById('date').value;
+            const recipientName = document.getElementById('recipientName').value;
+            const recipientTitle = document.getElementById('recipientTitle').value;
+            const company = document.getElementById('company').value;
+            const companyAddress = document.getElementById('companyAddress').value;
+            const greeting = document.getElementById('greeting').value;
+            const body = document.getElementById('body').value;
+            const closing = document.getElementById('closing').value;
+
+            const children = [];
+
+            // Header - Name
+            if (fullName) {
+                children.push(
+                    new Paragraph({
+                        children: [
+                            new TextRun({
+                                text: fullName,
+                                bold: true,
+                                size: 32,
+                                color: "0f172a"
+                            })
+                        ],
+                        spacing: { after: 100 }
+                    })
+                );
+            }
+
+            // Contact Info
+            if (email || phone || address) {
+                let contactParts = [];
+                if (email) contactParts.push(email);
+                if (phone) contactParts.push(phone);
+                if (address) contactParts.push(address);
+
+                children.push(
+                    new Paragraph({
+                        children: [
+                            new TextRun({
+                                text: contactParts.join(' • '),
+                                size: 20,
+                                color: "64748b"
+                            })
+                        ],
+                        spacing: { after: 300 }
+                    })
+                );
+            }
+
+            // Date
+            if (date) {
+                const dateObj = new Date(date);
+                const formattedDate = dateObj.toLocaleDateString('en-US', { 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                });
+                children.push(
+                    new Paragraph({
+                        children: [
+                            new TextRun({
+                                text: formattedDate,
+                                size: 22
+                            })
+                        ],
+                        spacing: { after: 200 }
+                    })
+                );
+            }
+
+            // Recipient Info
+            if (recipientName) {
+                children.push(
+                    new Paragraph({
+                        children: [
+                            new TextRun({
+                                text: recipientName,
+                                bold: true,
+                                size: 22
+                            })
+                        ],
+                        spacing: { after: 50 }
+                    })
+                );
+            }
+            if (recipientTitle) {
+                children.push(
+                    new Paragraph({
+                        children: [
+                            new TextRun({
+                                text: recipientTitle,
+                                size: 22
+                            })
+                        ],
+                        spacing: { after: 50 }
+                    })
+                );
+            }
+            if (company) {
+                children.push(
+                    new Paragraph({
+                        children: [
+                            new TextRun({
+                                text: company,
+                                size: 22
+                            })
+                        ],
+                        spacing: { after: 50 }
+                    })
+                );
+            }
+            if (companyAddress) {
+                children.push(
+                    new Paragraph({
+                        children: [
+                            new TextRun({
+                                text: companyAddress,
+                                size: 22
+                            })
+                        ],
+                        spacing: { after: 200 }
+                    })
+                );
+            }
+
+            // Greeting
+            if (greeting) {
+                children.push(
+                    new Paragraph({
+                        children: [
+                            new TextRun({
+                                text: greeting,
+                                size: 22
+                            })
+                        ],
+                        spacing: { after: 200 }
+                    })
+                );
+            }
+
+            // Body - split by paragraphs
+            if (body) {
+                const paragraphs = body.split('\n\n');
+                paragraphs.forEach((para, index) => {
+                    if (para.trim()) {
+                        children.push(
+                            new Paragraph({
+                                children: [
+                                    new TextRun({
+                                        text: para.trim(),
+                                        size: 22
+                                    })
+                                ],
+                                spacing: { after: 200 }
+                            })
+                        );
+                    }
+                });
+            }
+
+            // Closing
+            if (closing) {
+                children.push(
+                    new Paragraph({
+                        children: [
+                            new TextRun({
+                                text: closing,
+                                size: 22
+                            })
+                        ],
+                        spacing: { after: 300 }
+                    })
+                );
+            }
+
+            // Signature
+            if (fullName) {
+                children.push(
+                    new Paragraph({
+                        children: [
+                            new TextRun({
+                                text: fullName,
+                                bold: true,
+                                size: 22
+                            })
+                        ]
+                    })
+                );
+            }
+
+            // Create document
+            const doc = new Document({
+                sections: [{
+                    properties: {},
+                    children: children
+                }]
+            });
+
+            // Generate and save
+            const blob = await docx.Packer.toBlob(doc);
+            const fileName = 'CoverLetter_' + (fullName ? fullName.replace(/\s+/g, '_') : 'Document') + '.docx';
+            saveAs(blob, fileName);
+        }
+
+        // Initialize preview
+        updatePreview();
+    </script>
+
+    <!-- Placeholder for the footer -->
+    <div id="footer-placeholder"></div>
+    <script src="analytics.js"></script>
+    <script src="nav-switcher.js"></script>
+    <script src="footer.js"></script>
+</body>
+</html>
