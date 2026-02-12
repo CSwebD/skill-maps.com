@@ -104,37 +104,126 @@
   const blogGrid = document.getElementById('blogGrid');
   const loadingIndicator = document.getElementById('loadingIndicator');
   const searchInput = document.getElementById('searchInput');
-
-  // CATEGORY FILTER
   const categoryBtns = document.querySelectorAll('.category-btn');
 
+  // Get URL parameters
+  function getURLParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+  }
+
+  // Update button highlighting
+  function updateCategoryButton(category) {
+    categoryBtns.forEach(btn => {
+      const btnCategory = btn.getAttribute('data-category');
+      if (btnCategory === category) {
+        btn.classList.remove('bg-gray-200', 'text-gray-800');
+        btn.classList.add('bg-green-600', 'text-white');
+      } else {
+        btn.classList.remove('bg-green-600', 'text-white');
+        btn.classList.add('bg-gray-200', 'text-gray-800');
+      }
+    });
+  }
+
+  // Filter articles by category
+  function filterByCategory(category) {
+    if (category === 'all' || !category) {
+      currentFilteredArticles = allArticles;
+    } else {
+      currentFilteredArticles = allArticles.filter(article => article.category === category);
+    }
+    updateCategoryButton(category || 'all');
+  }
+
+  // CATEGORY FILTER BUTTONS
   categoryBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      categoryBtns.forEach(b => b.classList.remove('bg-green-600', 'text-white'));
-      btn.classList.add('bg-green-600', 'text-white');
-
       const category = btn.getAttribute('data-category');
-      currentFilteredArticles = (category === 'all')
-        ? allArticles
-        : allArticles.filter(article => article.category === category);
-
+      
+      // Update URL
+      const url = new URL(window.location);
+      if (category === 'all') {
+        url.searchParams.delete('category');
+      } else {
+        url.searchParams.set('category', category);
+      }
+      url.searchParams.delete('searchInput'); // Clear search when clicking category
+      window.history.pushState({}, '', url);
+      
+      // Remove existing filter indicator
+      const existingIndicator = document.getElementById('filter-indicator');
+      if (existingIndicator) {
+        existingIndicator.remove();
+      }
+      
+      filterByCategory(category);
+      
+      // Add new filter indicator if not "all"
+      if (category !== 'all') {
+        addFilterIndicator(`Category: ${category}`, currentFilteredArticles.length);
+      }
+      
       visibleCount = 0;
       blogGrid.innerHTML = '';
       renderArticles();
     });
   });
 
-
   async function loadArticleData() {
     try {
       const res = await fetch('../blog/blog.json');
       allArticles = await res.json();
-      currentFilteredArticles = allArticles;
+      
+      // Check URL parameters
+      const urlCategory = getURLParam('category');
+      const urlSearch = getURLParam('searchInput');
+      
+      if (urlSearch) {
+        // Handle search parameter
+        searchInput.value = urlSearch;
+        const query = urlSearch.toLowerCase();
+        currentFilteredArticles = allArticles.filter(article => {
+          const titleMatch = article.title && article.title.toLowerCase().includes(query);
+          const descMatch = article.desc && article.desc.toLowerCase().includes(query);
+          const categoryMatch = article.category && article.category.toLowerCase().includes(query);
+          return titleMatch || descMatch || categoryMatch;
+        });
+        
+        // Add visual indicator
+        addFilterIndicator(`Search: "${urlSearch}"`, currentFilteredArticles.length);
+      } else if (urlCategory) {
+        // Handle category parameter
+        filterByCategory(urlCategory);
+        
+        // Add visual indicator
+        if (urlCategory !== 'all') {
+          addFilterIndicator(`Category: ${urlCategory}`, currentFilteredArticles.length);
+        }
+      } else {
+        // No parameters - show all
+        currentFilteredArticles = allArticles;
+      }
+      
       renderArticles();
     } catch (error) {
       console.error("Could not load blog.json", error);
       blogGrid.innerHTML = "<p class='text-center text-gray-600'>Failed to load articles.</p>";
     }
+  }
+
+  // Add visual feedback for filtering
+  function addFilterIndicator(filterText, count) {
+    const indicator = document.createElement('div');
+    indicator.id = 'filter-indicator';
+    indicator.className = 'mb-6 p-4 bg-green-50 border-l-4 border-green-500 rounded';
+    indicator.innerHTML = `
+      <p class="text-green-800 font-medium">
+        <i class="fas fa-filter mr-2"></i>
+        Filtered by ${filterText} — Showing ${count} article${count !== 1 ? 's' : ''}
+      </p>
+    `;
+    blogGrid.parentElement.insertBefore(indicator, blogGrid);
   }
 
   function createAdBlock() {
@@ -240,6 +329,17 @@
 
   searchInput.addEventListener('input', e => {
     const q = e.target.value.toLowerCase();
+    
+    // Update URL
+    const url = new URL(window.location);
+    if (q) {
+      url.searchParams.set('searchInput', q);
+      url.searchParams.delete('category'); // Clear category when searching
+    } else {
+      url.searchParams.delete('searchInput');
+    }
+    window.history.pushState({}, '', url);
+    
     currentFilteredArticles = allArticles.filter(article =>
       article.title.toLowerCase().includes(q) || article.desc.toLowerCase().includes(q)
     );
