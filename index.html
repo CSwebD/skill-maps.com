@@ -229,18 +229,18 @@
           'frontend': 'fa-paint-brush'
         };
         
-        // Softer color mapping for different domains
+        // Authentic brand colors for different domains
         const colorMap = {
-          'development': 'bg-blue-50 text-blue-600 group-hover:bg-blue-100',
-          'devops': 'bg-orange-50 text-orange-600 group-hover:bg-orange-100',
-          'data': 'bg-purple-50 text-purple-600 group-hover:bg-purple-100',
-          'cloud': 'bg-sky-50 text-sky-600 group-hover:bg-sky-100',
-          'security': 'bg-red-50 text-red-600 group-hover:bg-red-100',
-          'mobile': 'bg-pink-50 text-pink-600 group-hover:bg-pink-100',
-          'web': 'bg-teal-50 text-teal-600 group-hover:bg-teal-100',
-          'fullstack': 'bg-indigo-50 text-indigo-600 group-hover:bg-indigo-100',
-          'backend': 'bg-green-50 text-green-600 group-hover:bg-green-100',
-          'frontend': 'bg-cyan-50 text-cyan-600 group-hover:bg-cyan-100'
+          'development': '#3178C6', // Blue
+          'devops': '#F05032', // Orange/Red
+          'data': '#8B5CF6', // Purple
+          'cloud': '#0EA5E9', // Sky blue
+          'security': '#DC2626', // Red
+          'mobile': '#EC4899', // Pink
+          'web': '#14B8A6', // Teal
+          'fullstack': '#6366F1', // Indigo
+          'backend': '#22C55E', // Green
+          'frontend': '#06B6D4' // Cyan
         };
         
         const borderMap = {
@@ -273,14 +273,14 @@
         domains.forEach((domain, index) => {
           const titleLower = domain.title.toLowerCase();
           let icon = 'fa-briefcase'; // default icon
-          let colorClasses = 'bg-gray-50 text-gray-600 group-hover:bg-gray-100'; // default color
-          let borderClass = 'hover:border-gray-500';
-          let textColor = 'group-hover:text-gray-700';
+          let brandColor = '#377536'; // default brand green
+          let borderClass = 'hover:border-green-500';
+          let textColor = 'group-hover:text-green-700';
           
           for (const [key, value] of Object.entries(iconMap)) {
             if (titleLower.includes(key)) {
               icon = value;
-              colorClasses = colorMap[key];
+              brandColor = colorMap[key] || brandColor;
               borderClass = borderMap[key];
               textColor = textColorMap[key];
               break;
@@ -293,8 +293,8 @@
           
           button.innerHTML = `
             <div class="flex items-center gap-3">
-              <div class="w-9 h-9 rounded-md ${colorClasses} flex items-center justify-center flex-shrink-0 transition-colors duration-200">
-                <i class="fas ${icon} text-base"></i>
+              <div class="w-9 h-9 rounded-md flex items-center justify-center flex-shrink-0 transition-colors duration-200" style="background-color: ${brandColor};">
+                <i class="fas ${icon} text-base text-white"></i>
               </div>
               <span class="font-semibold text-gray-700 ${textColor} transition-colors text-sm">${domain.title}</span>
             </div>
@@ -360,32 +360,32 @@
           'analytics': 'fa-chart-line'
         };
         
-        // Softer color mapping for different technologies
+        // Authentic brand colors for different technologies
         const colorMap = {
-          'python': 'bg-yellow-50 text-yellow-600 group-hover:bg-yellow-100',
-          'javascript': 'bg-yellow-50 text-yellow-600 group-hover:bg-yellow-100',
-          'java': 'bg-red-50 text-red-600 group-hover:bg-red-100',
-          'react': 'bg-cyan-50 text-cyan-600 group-hover:bg-cyan-100',
-          'angular': 'bg-red-50 text-red-600 group-hover:bg-red-100',
-          'vue': 'bg-green-50 text-green-600 group-hover:bg-green-100',
-          'node': 'bg-green-50 text-green-600 group-hover:bg-green-100',
-          'docker': 'bg-blue-50 text-blue-600 group-hover:bg-blue-100',
-          'kubernetes': 'bg-blue-50 text-blue-600 group-hover:bg-blue-100',
-          'git': 'bg-orange-50 text-orange-600 group-hover:bg-orange-100',
-          'aws': 'bg-orange-50 text-orange-600 group-hover:bg-orange-100',
-          'linux': 'bg-gray-50 text-gray-700 group-hover:bg-gray-100',
-          'database': 'bg-purple-50 text-purple-600 group-hover:bg-purple-100',
-          'api': 'bg-indigo-50 text-indigo-600 group-hover:bg-indigo-100',
-          'testing': 'bg-pink-50 text-pink-600 group-hover:bg-pink-100',
-          'design': 'bg-fuchsia-50 text-fuchsia-600 group-hover:bg-fuchsia-100',
-          'security': 'bg-red-50 text-red-600 group-hover:bg-red-100',
-          'analytics': 'bg-teal-50 text-teal-600 group-hover:bg-teal-100'
+          'python': '#3776AB', // Python blue
+          'javascript': '#F7DF1E', // JavaScript yellow
+          'java': '#007396', // Java blue
+          'react': '#61DAFB', // React cyan
+          'angular': '#DD0031', // Angular red
+          'vue': '#42B883', // Vue green
+          'node': '#339933', // Node green
+          'docker': '#2496ED', // Docker blue
+          'kubernetes': '#326CE5', // Kubernetes blue
+          'git': '#F05032', // Git orange
+          'aws': '#FF9900', // AWS orange
+          'linux': '#FCC624', // Linux yellow
+          'database': '#8B5CF6', // Purple
+          'api': '#6366F1', // Indigo
+          'testing': '#EC4899', // Pink
+          'design': '#D946EF', // Fuchsia
+          'security': '#DC2626', // Red
+          'analytics': '#14B8A6' // Teal
         };
         
         const borderMap = {
-          'python': 'hover:border-yellow-500',
+          'python': 'hover:border-blue-500',
           'javascript': 'hover:border-yellow-500',
-          'java': 'hover:border-red-500',
+          'java': 'hover:border-blue-600',
           'react': 'hover:border-cyan-500',
           'angular': 'hover:border-red-500',
           'vue': 'hover:border-green-500',
@@ -394,7 +394,7 @@
           'kubernetes': 'hover:border-blue-500',
           'git': 'hover:border-orange-500',
           'aws': 'hover:border-orange-500',
-          'linux': 'hover:border-gray-500',
+          'linux': 'hover:border-yellow-500',
           'database': 'hover:border-purple-500',
           'api': 'hover:border-indigo-500',
           'testing': 'hover:border-pink-500',
@@ -404,9 +404,9 @@
         };
         
         const textColorMap = {
-          'python': 'group-hover:text-yellow-700',
+          'python': 'group-hover:text-blue-700',
           'javascript': 'group-hover:text-yellow-700',
-          'java': 'group-hover:text-red-700',
+          'java': 'group-hover:text-blue-700',
           'react': 'group-hover:text-cyan-700',
           'angular': 'group-hover:text-red-700',
           'vue': 'group-hover:text-green-700',
@@ -415,7 +415,7 @@
           'kubernetes': 'group-hover:text-blue-700',
           'git': 'group-hover:text-orange-700',
           'aws': 'group-hover:text-orange-700',
-          'linux': 'group-hover:text-gray-800',
+          'linux': 'group-hover:text-yellow-700',
           'database': 'group-hover:text-purple-700',
           'api': 'group-hover:text-indigo-700',
           'testing': 'group-hover:text-pink-700',
@@ -428,14 +428,14 @@
         skills.forEach((skill, index) => {
           const titleLower = skill.title.toLowerCase();
           let icon = 'fa-code'; // default icon
-          let colorClasses = 'bg-blue-50 text-blue-600 group-hover:bg-blue-100'; // default color
-          let borderClass = 'hover:border-blue-500';
-          let textColor = 'group-hover:text-blue-700';
+          let brandColor = '#377536'; // default brand green
+          let borderClass = 'hover:border-green-600';
+          let textColor = 'group-hover:text-green-700';
           
           for (const [key, value] of Object.entries(iconMap)) {
             if (titleLower.includes(key)) {
               icon = value;
-              colorClasses = colorMap[key];
+              brandColor = colorMap[key] || brandColor;
               borderClass = borderMap[key];
               textColor = textColorMap[key];
               break;
@@ -448,8 +448,8 @@
           
           button.innerHTML = `
             <div class="flex items-center gap-3">
-              <div class="w-9 h-9 rounded-md ${colorClasses} flex items-center justify-center flex-shrink-0 transition-colors duration-200">
-                <i class="fab ${icon} text-base"></i>
+              <div class="w-9 h-9 rounded-md flex items-center justify-center flex-shrink-0 transition-colors duration-200" style="background-color: ${brandColor};">
+                <i class="fab ${icon} text-base text-white"></i>
               </div>
               <span class="font-semibold text-gray-700 ${textColor} transition-colors text-sm">${skill.title}</span>
             </div>
@@ -479,60 +479,60 @@
       <!-- 3 Buttons Per Row Grid - 70% width -->
       <div class="flex justify-center">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full lg:w-[70%]">
-          <a href="ai/Introduction_to_AI.html" class="group relative block px-5 py-3.5 bg-white rounded-lg border border-gray-200 hover:border-green-500 hover:shadow-md transition-all duration-200">
+          <a href="ai/Introduction_to_AI.html" class="group relative block px-5 py-3.5 bg-white rounded-lg border border-gray-200 hover:border-purple-500 hover:shadow-md transition-all duration-200">
             <div class="flex items-center gap-3">
-              <div class="w-9 h-9 rounded-md bg-green-50 flex items-center justify-center flex-shrink-0 group-hover:bg-green-100 transition-colors duration-200">
-                <i class="fas fa-brain text-green-600 text-base"></i>
+              <div class="w-9 h-9 rounded-md flex items-center justify-center flex-shrink-0 transition-colors duration-200" style="background-color: #8B5CF6;">
+                <i class="fas fa-brain text-white text-base"></i>
               </div>
-              <span class="font-semibold text-gray-700 group-hover:text-green-700 transition-colors text-sm">Introduction to AI</span>
+              <span class="font-semibold text-gray-700 group-hover:text-purple-700 transition-colors text-sm">Introduction to AI</span>
             </div>
           </a>
           <a href="ai/maths_and_statistics_for_ai.html" class="group relative block px-5 py-3.5 bg-white rounded-lg border border-gray-200 hover:border-blue-500 hover:shadow-md transition-all duration-200">
             <div class="flex items-center gap-3">
-              <div class="w-9 h-9 rounded-md bg-blue-50 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-100 transition-colors duration-200">
-                <i class="fas fa-calculator text-blue-600 text-base"></i>
+              <div class="w-9 h-9 rounded-md flex items-center justify-center flex-shrink-0 transition-colors duration-200" style="background-color: #3B82F6;">
+                <i class="fas fa-calculator text-white text-base"></i>
               </div>
               <span class="font-semibold text-gray-700 group-hover:text-blue-700 transition-colors text-sm">Maths & Statistics</span>
             </div>
           </a>
-          <a href="ai/machine_learning.html" class="group relative block px-5 py-3.5 bg-white rounded-lg border border-gray-200 hover:border-purple-500 hover:shadow-md transition-all duration-200">
+          <a href="ai/machine_learning.html" class="group relative block px-5 py-3.5 bg-white rounded-lg border border-gray-200 hover:border-indigo-500 hover:shadow-md transition-all duration-200">
             <div class="flex items-center gap-3">
-              <div class="w-9 h-9 rounded-md bg-purple-50 flex items-center justify-center flex-shrink-0 group-hover:bg-purple-100 transition-colors duration-200">
-                <i class="fas fa-robot text-purple-600 text-base"></i>
+              <div class="w-9 h-9 rounded-md flex items-center justify-center flex-shrink-0 transition-colors duration-200" style="background-color: #6366F1;">
+                <i class="fas fa-robot text-white text-base"></i>
               </div>
-              <span class="font-semibold text-gray-700 group-hover:text-purple-700 transition-colors text-sm">Machine Learning</span>
+              <span class="font-semibold text-gray-700 group-hover:text-indigo-700 transition-colors text-sm">Machine Learning</span>
             </div>
           </a>
-          <a href="ai/deep_learning.html" class="group relative block px-5 py-3.5 bg-white rounded-lg border border-gray-200 hover:border-indigo-500 hover:shadow-md transition-all duration-200">
+          <a href="ai/deep_learning.html" class="group relative block px-5 py-3.5 bg-white rounded-lg border border-gray-200 hover:border-violet-500 hover:shadow-md transition-all duration-200">
             <div class="flex items-center gap-3">
-              <div class="w-9 h-9 rounded-md bg-indigo-50 flex items-center justify-center flex-shrink-0 group-hover:bg-indigo-100 transition-colors duration-200">
-                <i class="fas fa-network-wired text-indigo-600 text-base"></i>
+              <div class="w-9 h-9 rounded-md flex items-center justify-center flex-shrink-0 transition-colors duration-200" style="background-color: #7C3AED;">
+                <i class="fas fa-network-wired text-white text-base"></i>
               </div>
-              <span class="font-semibold text-gray-700 group-hover:text-indigo-700 transition-colors text-sm">Deep Learning</span>
+              <span class="font-semibold text-gray-700 group-hover:text-violet-700 transition-colors text-sm">Deep Learning</span>
             </div>
           </a>
           <a href="ai/natural_language_processing.html" class="group relative block px-5 py-3.5 bg-white rounded-lg border border-gray-200 hover:border-cyan-500 hover:shadow-md transition-all duration-200">
             <div class="flex items-center gap-3">
-              <div class="w-9 h-9 rounded-md bg-cyan-50 flex items-center justify-center flex-shrink-0 group-hover:bg-cyan-100 transition-colors duration-200">
-                <i class="fas fa-comments text-cyan-600 text-base"></i>
+              <div class="w-9 h-9 rounded-md flex items-center justify-center flex-shrink-0 transition-colors duration-200" style="background-color: #06B6D4;">
+                <i class="fas fa-comments text-white text-base"></i>
               </div>
               <span class="font-semibold text-gray-700 group-hover:text-cyan-700 transition-colors text-sm">Natural Language Processing</span>
             </div>
           </a>
           <a href="ai/ai_ethics.html" class="group relative block px-5 py-3.5 bg-white rounded-lg border border-gray-200 hover:border-amber-500 hover:shadow-md transition-all duration-200">
             <div class="flex items-center gap-3">
-              <div class="w-9 h-9 rounded-md bg-amber-50 flex items-center justify-center flex-shrink-0 group-hover:bg-amber-100 transition-colors duration-200">
-                <i class="fas fa-balance-scale text-amber-600 text-base"></i>
+              <div class="w-9 h-9 rounded-md flex items-center justify-center flex-shrink-0 transition-colors duration-200" style="background-color: #F59E0B;">
+                <i class="fas fa-balance-scale text-white text-base"></i>
               </div>
               <span class="font-semibold text-gray-700 group-hover:text-amber-700 transition-colors text-sm">AI Ethics</span>
             </div>
           </a>
-          <a href="ai/practics_and_projects.html" class="group relative block px-5 py-3.5 bg-white rounded-lg border border-gray-200 hover:border-rose-500 hover:shadow-md transition-all duration-200">
+          <a href="ai/practics_and_projects.html" class="group relative block px-5 py-3.5 bg-white rounded-lg border border-gray-200 hover:border-emerald-500 hover:shadow-md transition-all duration-200">
             <div class="flex items-center gap-3">
-              <div class="w-9 h-9 rounded-md bg-rose-50 flex items-center justify-center flex-shrink-0 group-hover:bg-rose-100 transition-colors duration-200">
-                <i class="fas fa-code text-rose-600 text-base"></i>
+              <div class="w-9 h-9 rounded-md flex items-center justify-center flex-shrink-0 transition-colors duration-200" style="background-color: #10B981;">
+                <i class="fas fa-code text-white text-base"></i>
               </div>
-              <span class="font-semibold text-gray-700 group-hover:text-rose-700 transition-colors text-sm">Practical Projects</span>
+              <span class="font-semibold text-gray-700 group-hover:text-emerald-700 transition-colors text-sm">Practical Projects</span>
             </div>
           </a>
         </div>
@@ -553,12 +553,12 @@
       <!-- Single Button Centered - 70% width -->
       <div class="flex justify-center">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full lg:w-[70%]">
-          <a href="cv-editor.html" class="group relative block px-5 py-3.5 bg-white rounded-lg border border-gray-200 hover:border-emerald-500 hover:shadow-md transition-all duration-200">
+          <a href="cv-editor.html" class="group relative block px-5 py-3.5 bg-white rounded-lg border border-gray-200 hover:border-blue-500 hover:shadow-md transition-all duration-200">
             <div class="flex items-center gap-3">
-              <div class="w-9 h-9 rounded-md bg-emerald-50 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-100 transition-colors duration-200">
-                <i class="fas fa-file-alt text-emerald-600 text-base"></i>
+              <div class="w-9 h-9 rounded-md flex items-center justify-center flex-shrink-0 transition-colors duration-200" style="background-color: #2B579A;">
+                <i class="fas fa-file-alt text-white text-base"></i>
               </div>
-              <span class="font-semibold text-gray-700 group-hover:text-emerald-700 transition-colors text-sm">CV Editor</span>
+              <span class="font-semibold text-gray-700 group-hover:text-blue-700 transition-colors text-sm">CV Editor</span>
             </div>
           </a>
         </div>
@@ -584,22 +584,170 @@
     </div>
   </div>
 
-  <section id="faq" class="py-16">
+  <!-- ABOUT SECTION -->
+  <section id="about" class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <!-- First Part: Green Background with About Info -->
+        <div class="p-8 rounded-xl" style="background-color: #377536;">
+          <h2 class="text-3xl font-bold text-white mb-6">About Skill Maps</h2>
+          <p class="text-white leading-relaxed mb-4 opacity-95">
+            Skill Maps is designed to make learning software development and modern technologies accessible to everyone.
+            We provide clear, structured learning paths that guide you from beginner to advanced levels — helping you
+            acquire real-world skills at your own pace.
+          </p>
+          <p class="text-white leading-relaxed opacity-95">
+            Whether you're preparing for a career in tech, improving your professional skill set, or exploring new areas
+            like AI, Data Science, or DevOps — Skill Maps offers curated content, resources, and insights to support your journey.
+          </p>
+        </div>
+
+        <!-- Second Part: White Background with Options and Learn More -->
+        <div class="space-y-6">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" style="background-color: rgba(55, 117, 54, 0.1);">
+              <i class="fas fa-lightbulb text-xl" style="color: #377536;"></i>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-800 mb-1">Structured Learning</h3>
+              <p class="text-gray-600 text-sm">Follow step-by-step learning paths for key technology domains.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" style="background-color: rgba(55, 117, 54, 0.1);">
+              <i class="fas fa-users text-xl" style="color: #377536;"></i>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-800 mb-1">Community Driven</h3>
+              <p class="text-gray-600 text-sm">Connect with learners and professionals who share your interests.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" style="background-color: rgba(55, 117, 54, 0.1);">
+              <i class="fas fa-chart-line text-xl" style="color: #377536;"></i>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-800 mb-1">Career Focused</h3>
+              <p class="text-gray-600 text-sm">Every path is designed to help you reach your dream role faster.</p>
+            </div>
+          </div>
+          <a href="about.html" class="inline-flex items-center gap-2 px-6 py-3 text-white font-semibold rounded-lg hover:opacity-90 transition-opacity" style="background-color: #377536;">
+            <span>Learn More</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Get in Touch</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Have a question or want to collaborate? We're always happy to hear from you.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <!-- First Part: White Background with Contact Options -->
+        <div class="space-y-6">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" style="background-color: rgba(55, 117, 54, 0.1);">
+              <i class="fas fa-envelope text-xl" style="color: #377536;"></i>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-800 mb-1">Email Us</h3>
+              <a href="mailto:contact@skill-maps.com" class="text-gray-600 hover:text-green-600 transition-colors">contact@skill-maps.com</a>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" style="background-color: rgba(55, 117, 54, 0.1);">
+              <i class="fas fa-globe text-xl" style="color: #377536;"></i>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-800 mb-1">Website</h3>
+              <a href="https://www.skill-maps.com" class="text-gray-600 hover:text-green-600 transition-colors">www.skill-maps.com</a>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" style="background-color: rgba(55, 117, 54, 0.1);">
+              <i class="fas fa-clock text-xl" style="color: #377536;"></i>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-800 mb-1">Response Time</h3>
+              <p class="text-gray-600">We typically respond within 24 hours</p>
+            </div>
+          </div>
+          <div class="text-center md:text-left mt-6">
+            <a href="contact.html" class="text-sm text-gray-600 hover:text-green-600 transition-colors">
+              Visit full contact page →
+            </a>
+          </div>
+        </div>
+
+        <!-- Second Part: Green Background with Send a Message Form -->
+        <div class="rounded-xl shadow-lg p-8" style="background-color: #377536;">
+          <h3 class="text-xl font-semibold text-white mb-6">Send a Message</h3>
+          <form class="space-y-4">
+            <div>
+              <input type="text" placeholder="Your Name" required class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-white focus:border-white focus:outline-none transition-all">
+            </div>
+            <div>
+              <input type="email" placeholder="Your Email" required class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-white focus:border-white focus:outline-none transition-all">
+            </div>
+            <div>
+              <textarea rows="4" placeholder="Your Message" required class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-white focus:border-white focus:outline-none transition-all resize-none"></textarea>
+            </div>
+            <button type="submit" class="w-full bg-white py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity shadow-md hover:shadow-lg" style="color: #377536;">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="py-12 bg-white">
     <div class="max-w-4xl mx-auto px-6">
-      <h2 class="text-4xl font-bold text-gray-800 mb-12">Frequently Asked Questions</h2>
-      <div id="faqContainer" class="space-y-3 mb-8">
+      <div class="text-center mb-8">
+        <h2 class="text-3xl font-bold text-gray-800 mb-3">Frequently Asked Questions</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Find answers to common questions about Skill Maps and how to get started.
+        </p>
+      </div>
+      <div id="faqContainer" class="space-y-2 mb-6">
         <!-- FAQs will be loaded here dynamically -->
       </div>
       
       <!-- All FAQs Button -->
       <div class="text-center">
-        <a href="FAQs.html" class="inline-flex items-center gap-2 px-8 py-4 text-white font-semibold rounded-lg hover:opacity-90 transition-opacity shadow-md hover:shadow-lg" style="background-color: #377536;">
+        <a href="FAQs.html" class="inline-flex items-center gap-2 px-8 py-3 text-white font-semibold rounded-lg hover:opacity-90 transition-opacity shadow-md hover:shadow-lg" style="background-color: #377536;">
           <span>View All FAQs</span>
           <i class="fas fa-arrow-right"></i>
         </a>
       </div>
     </div>
   </section>
+
+  <!-- Ad Block: Before Footer -->
+  <div class="bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6 py-4">
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7439109164508333"
+           crossorigin="anonymous"></script>
+      <!-- Before-Footer -->
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-7439109164508333"
+           data-ad-slot="4111274044"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div>
 
   <script>
     function loadFAQs() {
@@ -647,22 +795,22 @@
 
       faqs.forEach((faq, index) => {
         const faqBox = document.createElement('div');
-        faqBox.className = "group bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100";
+        faqBox.className = "group bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100";
         
         faqBox.innerHTML = `
-          <div class="flex items-center justify-between gap-3 p-4 cursor-pointer" onclick="toggleFAQ(${index})">
+          <div class="flex items-center justify-between gap-3 p-3 cursor-pointer" onclick="toggleFAQ(${index})">
             <div class="flex items-center gap-3 flex-1">
-              <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style="background-color: rgba(55, 117, 54, 0.1);">
-                <i class="fas fa-question text-sm" style="color: #377536;"></i>
+              <div class="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0" style="background-color: rgba(55, 117, 54, 0.1);">
+                <i class="fas fa-question text-xs" style="color: #377536;"></i>
               </div>
-              <h3 class="text-base font-semibold text-gray-800 transition-colors" style="transition: color 0.3s;" onmouseover="this.style.color='#377536'" onmouseout="this.style.color=''">
+              <h3 class="text-sm font-semibold text-gray-800 transition-colors" style="transition: color 0.3s;" onmouseover="this.style.color='#377536'" onmouseout="this.style.color=''">
                 ${faq.question}
               </h3>
             </div>
-            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300" id="icon-${index}"></i>
+            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300 text-sm" id="icon-${index}"></i>
           </div>
-          <div class="hidden px-4 pb-4 pl-15" id="answer-${index}">
-            <p class="text-gray-600 text-sm ml-11">${faq.answer}</p>
+          <div class="hidden px-3 pb-3 pl-10" id="answer-${index}">
+            <p class="text-gray-600 text-sm ml-7">${faq.answer}</p>
           </div>
         `;
         
