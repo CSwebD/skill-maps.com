@@ -101,6 +101,40 @@
             background: #94a3b8;
         }
 
+        /* Print Styles */
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            
+            #printable-content,
+            #printable-content * {
+                visibility: visible;
+            }
+            
+            #printable-content {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                padding: 2rem;
+                background: white;
+            }
+            
+            /* Hide everything except the printable content */
+            #cover-letter-editor-app .cv-editor-grid {
+                display: block;
+            }
+            
+            #cover-letter-editor-app .cv-panel:first-child {
+                display: none;
+            }
+            
+            #cover-letter-editor-app .cv-export-section {
+                display: none !important;
+            }
+        }
+
         #cover-letter-editor-app .cv-container {
             max-width: 1600px;
             margin: 0 auto;
@@ -525,6 +559,10 @@ Paragraph 4: Thank them and express enthusiasm for next steps." oninput="updateP
                                 <i class="fas fa-file-word"></i>
                                 Word
                             </button>
+                            <button onclick="printCoverLetter()">
+                                <i class="fas fa-print"></i>
+                                Print
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -935,6 +973,25 @@ Paragraph 4: Thank them and express enthusiasm for next steps." oninput="updateP
             const blob = await docx.Packer.toBlob(doc);
             const fileName = 'CoverLetter_' + (fullName ? fullName.replace(/\s+/g, '_') : 'Document') + '.docx';
             saveAs(blob, fileName);
+        }
+
+        // Print function
+        function printCoverLetter() {
+            // Create a temporary div for print content
+            const printDiv = document.createElement('div');
+            printDiv.id = 'printable-content';
+            printDiv.innerHTML = document.getElementById('preview').innerHTML;
+            
+            // Add print div to body
+            document.body.appendChild(printDiv);
+            
+            // Trigger print
+            window.print();
+            
+            // Remove print div after printing
+            setTimeout(() => {
+                document.body.removeChild(printDiv);
+            }, 100);
         }
 
         // Initialize preview
