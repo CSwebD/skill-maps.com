@@ -1,6 +1,6 @@
 <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md shadow-sm z-50">
   <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-    <a href="/index.html" class="text-2xl font-bold text-green-700 hover:text-green-800 transition">Skill Maps</a>
+    <a href="../index.html" class="text-2xl font-bold text-green-700 hover:text-green-800 transition">Skill Maps</a>
     
     <!-- Mobile menu toggle -->
     <button id="navToggle" class="sm:hidden text-gray-800 focus:outline-none">
@@ -9,11 +9,11 @@
     
     <!-- Desktop navigation -->
     <div id="navLinks" class="hidden sm:flex items-center space-x-8 text-sm">
-      <a href="/index.html" class="hover:text-green-700">Home</a>
-      <a href="/blog.html" class="hover:text-green-700">Blog</a>
+      <a href="../index.html" class="hover:text-green-700">Home</a>
+      <a href="../blog.html" class="hover:text-green-700">Blog</a>
       
       <!-- Courses-Maps dropdown -->
-      <div class="relative group"> 
+      <div class="relative group">
         <button class="hover:text-green-700 flex items-center gap-1">
           Learning Paths
           <i class="fas fa-chevron-down text-xs"></i>
@@ -21,35 +21,66 @@
         
         <!-- Dropdown menu -->
         <div class="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-          <a href="/domains.html" class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 rounded-t-lg">
+          <a href="../domains.html" class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 rounded-t-lg">
             Career Roadmaps
           </a>
-          <a href="/skills.html" class="block px-4 py-3 hover:bg-green-50 hover:text-green-700">
+          <a href="../skills.html" class="block px-4 py-3 hover:bg-green-50 hover:text-green-700">
             Technology Guides
           </a>
-          <a href="/ai.html" class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 rounded-b-lg">
+          <a href="../ai.html" class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 rounded-b-lg">
             AI learning & tools
           </a>
         </div>
       </div>
-      <a href="/cv-editor.html" class="hover:text-green-700">CV editor</a>
-      <a href="/about.html" class="hover:text-green-700">About</a>
-      <a href="/contact.html" class="hover:text-green-700">Contact</a>
-      <a href="/FAQs.html" class="hover:text-green-700">FAQ</a>
+      
+      <!-- Office Tools dropdown -->
+      <div class="relative group">
+        <button class="hover:text-green-700 flex items-center gap-1">
+          Office Tools
+          <i class="fas fa-chevron-down text-xs"></i>
+        </button>
+        
+        <!-- Dropdown menu -->
+        <div class="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+          <a href="../cv-editor.html" class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 rounded-t-lg">
+            CV Editor
+          </a>
+          <a href="../cover-letter.html" class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 rounded-b-lg">
+            Cover Letter Editor
+          </a>
+        </div>
+      </div>
+      
+      <a href="../about.html" class="hover:text-green-700">About</a>
+      <a href="../contact.html" class="hover:text-green-700">Contact</a>
+      <a href="../FAQs.html" class="hover:text-green-700">FAQ</a>
     </div>
   </div>
   
   <!-- Mobile menu -->
   <div id="mobileMenu" class="sm:hidden hidden bg-white shadow-inner">
-    <a href="/index.html" class="block px-6 py-3 hover:bg-gray-100">Home</a>
-    <a href="/blog.html" class="block px-6 py-3 hover:bg-gray-100">Blog</a>
-    <a href="/domains.html" class="block px-6 py-3 hover:bg-gray-100">Career Roadmaps</a>    
-    <a href="/skills.html" class="block px-6 py-3 hover:bg-gray-100">Technology Guides</a>
-    <a href="/ai.html" class="block px-6 py-3 hover:bg-gray-100">AI learning & tools</a>
-    <a href="/cv-editor.html" class="block px-6 py-3 hover:bg-gray-100">CV editor</a>
-    <a href="/about.html" class="block px-6 py-3 hover:bg-gray-100">About</a>
-    <a href="/contact.html" class="block px-6 py-3 hover:bg-gray-100">Contact</a>
-    <a href="/FAQs.html" class="block px-6 py-3 hover:bg-gray-100">FAQ</a>
+    <a href="../index.html" class="block px-6 py-3 hover:bg-gray-100">Home</a>
+    <a href="../blog.html" class="block px-6 py-3 hover:bg-gray-100">Blog</a>
+    <a href="../domains.html" class="block px-6 py-3 hover:bg-gray-100">Career Roadmaps</a>    
+    <a href="../skills.html" class="block px-6 py-3 hover:bg-gray-100">Technology Guides</a>
+    <a href="../ai.html" class="block px-6 py-3 hover:bg-gray-100">AI learning & tools</a>
+    
+    <!-- Mobile Office Tools submenu -->
+    <div>
+      <button id="mobileOfficeToggle" class="w-full text-left px-6 py-3 hover:bg-gray-100 flex items-center justify-between">
+        Office Tools
+        <i id="mobileOfficeIcon" class="fas fa-chevron-down text-xs transition-transform"></i>
+      </button>
+      <div id="mobileOfficeSubmenu" class="hidden bg-gray-50">
+        <a href="../cv-editor.html" class="block px-10 py-2 hover:bg-gray-100">CV Editor</a>
+        <a href="../cover-letter.html" class="block px-10 py-2 hover:bg-gray-100">Cover Letter Editor</a>
+      </div>
+    </div>
+    
+    <a href="../about.html" class="block px-6 py-3 hover:bg-gray-100">About</a>
+    <a href="../contact.html" class="block px-6 py-3 hover:bg-gray-100">Contact</a>
+    <a href="../FAQs.html" class="block px-6 py-3 hover:bg-gray-100">FAQ</a>
+    
   </div>
 </nav>
 
@@ -63,6 +94,14 @@
   document.getElementById('mobileCoursesToggle').addEventListener('click', function() {
     const submenu = document.getElementById('mobileCoursesSubmenu');
     const icon = document.getElementById('mobileCoursesIcon');
+    submenu.classList.toggle('hidden');
+    icon.classList.toggle('rotate-180');
+  });
+
+  // Mobile Office Tools submenu toggle
+  document.getElementById('mobileOfficeToggle').addEventListener('click', function() {
+    const submenu = document.getElementById('mobileOfficeSubmenu');
+    const icon = document.getElementById('mobileOfficeIcon');
     submenu.classList.toggle('hidden');
     icon.classList.toggle('rotate-180');
   });
