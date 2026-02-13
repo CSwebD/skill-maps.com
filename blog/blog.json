@@ -1,5 +1,14 @@
 [
   {
+  "id": "0021",
+  "title": "Claude AI Creator Secures $30 Billion in Record Funding, Valuation Soars to $380 Billion",
+  "desc": "Anthropic closes massive $30B funding round led by GIC and Coatue, pushing valuation to $380B. Annual revenue hits $14B as Claude Code drives enterprise adoption. IPO expected in second half of 2026.",
+  "date": "2026-02-13",
+  "image": "/blog/images/0021.png",
+  "link": "/blog/html/Claude-AI-Creator-Secures-$30-Billion-in-Record-Funding-Valuation-Soars-to-$380-Billion.html",
+  "category": "AI"
+  },
+  {
     "id": "0020",
     "title": "AI Recommends Non-Existent Software Versions 28% of the Time, Security Report Finds",
     "desc": "Sonatype's 2026 report reveals AI tools hallucinate nearly 28% of package upgrade recommendations, pointing developers to non-existent versions. Analysis of 37,000 AI-driven suggestions exposes risks in automated development.",
